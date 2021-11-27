@@ -3923,7 +3923,7 @@
                                 <rect key="frame" x="0.0" y="75" width="414" height="661"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIO-Me-baV" userLabel="MainView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="473"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="520"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBz-mf-Bq2" userLabel="Top">
                                                 <rect key="frame" x="0.0" y="5" width="414" height="45"/>
@@ -4019,10 +4019,10 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3U4-WQ-zrj">
-                                                <rect key="frame" x="0.0" y="215" width="414" height="178"/>
+                                                <rect key="frame" x="0.0" y="215" width="414" height="167"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="178" id="cEW-sF-KSj"/>
+                                                    <constraint firstAttribute="height" constant="167" id="cEW-sF-KSj"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaymentDetailCell" rowHeight="77" id="mMl-pQ-ugp" customClass="PaymentDetailCell" customModule="ABC" customModuleProvider="target">
@@ -4198,14 +4198,14 @@
                                                     <outlet property="delegate" destination="H45-SZ-Y3M" id="39I-0i-1ve"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xi-iZ-HWL">
-                                                <rect key="frame" x="0.0" y="393" width="414" height="80"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xi-iZ-HWL">
+                                                <rect key="frame" x="0.0" y="393" width="414" height="260"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkl-9Y-B3d">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="33"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfk-HV-gXB">
-                                                                <rect key="frame" x="15" y="9.6666666666666856" width="389" height="20"/>
+                                                                <rect key="frame" x="16" y="6.6666666666666856" width="388" height="20"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -4213,22 +4213,22 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.92141729589999999" green="0.92159193750000001" blue="0.92577904460000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="gfk-HV-gXB" firstAttribute="centerY" secondItem="gkl-9Y-B3d" secondAttribute="centerY" constant="3" id="5UY-Ru-avc"/>
-                                                            <constraint firstItem="gfk-HV-gXB" firstAttribute="leading" secondItem="gkl-9Y-B3d" secondAttribute="leading" constant="15" id="RJn-03-pBE"/>
+                                                            <constraint firstItem="gfk-HV-gXB" firstAttribute="centerY" secondItem="gkl-9Y-B3d" secondAttribute="centerY" id="5UY-Ru-avc"/>
+                                                            <constraint firstItem="gfk-HV-gXB" firstAttribute="leading" secondItem="gkl-9Y-B3d" secondAttribute="leading" constant="16" id="RJn-03-pBE"/>
                                                             <constraint firstAttribute="trailing" secondItem="gfk-HV-gXB" secondAttribute="trailing" constant="10" id="UCX-BT-jFX"/>
                                                             <constraint firstAttribute="height" constant="33" id="eIF-Qc-c2j"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCA-pg-rgf">
-                                                        <rect key="frame" x="15" y="45" width="319" height="30"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCA-pg-rgf">
+                                                        <rect key="frame" x="15" y="222" width="319" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="G6r-eR-g5i"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwE-AG-j5a">
-                                                        <rect key="frame" x="344" y="45" width="55" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwE-AG-j5a">
+                                                        <rect key="frame" x="344" y="222" width="55" height="30"/>
                                                         <color key="backgroundColor" red="0.91451305150985718" green="0.31426060199737549" blue="0.2312464714050293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="55" id="XA4-BY-JzF"/>
@@ -4245,13 +4245,13 @@
                                                 <constraints>
                                                     <constraint firstItem="gkl-9Y-B3d" firstAttribute="top" secondItem="3xi-iZ-HWL" secondAttribute="top" id="73r-52-YH9"/>
                                                     <constraint firstItem="gkl-9Y-B3d" firstAttribute="leading" secondItem="3xi-iZ-HWL" secondAttribute="leading" id="74J-az-CHx"/>
-                                                    <constraint firstItem="QCA-pg-rgf" firstAttribute="top" secondItem="gkl-9Y-B3d" secondAttribute="bottom" constant="12" id="8te-Iy-mDn"/>
+                                                    <constraint firstItem="QCA-pg-rgf" firstAttribute="top" secondItem="gkl-9Y-B3d" secondAttribute="bottom" constant="50" id="8te-Iy-mDn"/>
                                                     <constraint firstItem="EwE-AG-j5a" firstAttribute="leading" secondItem="QCA-pg-rgf" secondAttribute="trailing" constant="10" id="WNl-GK-X3Z"/>
                                                     <constraint firstItem="EwE-AG-j5a" firstAttribute="centerY" secondItem="QCA-pg-rgf" secondAttribute="centerY" id="Ycp-4i-wAO"/>
-                                                    <constraint firstItem="QCA-pg-rgf" firstAttribute="leading" secondItem="3xi-iZ-HWL" secondAttribute="leading" constant="15" id="eXQ-Vp-aVt"/>
+                                                    <constraint firstItem="QCA-pg-rgf" firstAttribute="leading" secondItem="3xi-iZ-HWL" secondAttribute="leading" constant="26" id="eXQ-Vp-aVt"/>
                                                     <constraint firstAttribute="trailing" secondItem="EwE-AG-j5a" secondAttribute="trailing" constant="15" id="ksC-CL-QFS"/>
                                                     <constraint firstAttribute="trailing" secondItem="gkl-9Y-B3d" secondAttribute="trailing" id="qfp-an-Ydp"/>
-                                                    <constraint firstAttribute="height" constant="80" id="sBq-Rf-k7s"/>
+                                                    <constraint firstAttribute="height" constant="138" id="sBq-Rf-k7s"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -4275,14 +4275,31 @@
                                             <constraint firstAttribute="bottom" secondItem="3xi-iZ-HWL" secondAttribute="bottom" id="rhl-7G-mr2"/>
                                         </constraints>
                                     </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wxR-uu-5ch">
+                                        <rect key="frame" x="15" y="610" width="350" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="KBe-Wk-T91"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Current Due"/>
+                                            <segment title="Total Due"/>
+                                            <segment title="Other"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="payTypeChanged:forEvent:" destination="H45-SZ-Y3M" eventType="valueChanged" id="tk6-qo-EzC"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="wxR-uu-5ch" firstAttribute="centerX" secondItem="2HL-S1-GMt" secondAttribute="centerX" constant="-17" id="0Ec-qs-h6b"/>
                                     <constraint firstAttribute="trailing" secondItem="WIO-Me-baV" secondAttribute="trailing" id="4SA-dX-2gy"/>
                                     <constraint firstItem="WIO-Me-baV" firstAttribute="width" secondItem="2HL-S1-GMt" secondAttribute="width" id="LFr-v3-7sS"/>
                                     <constraint firstItem="WIO-Me-baV" firstAttribute="leading" secondItem="2HL-S1-GMt" secondAttribute="leading" id="MS3-i5-hHJ"/>
                                     <constraint firstItem="WIO-Me-baV" firstAttribute="height" secondItem="2HL-S1-GMt" secondAttribute="height" priority="250" id="MdG-Vl-n78"/>
                                     <constraint firstAttribute="bottom" secondItem="WIO-Me-baV" secondAttribute="bottom" id="Pgg-Om-ome"/>
+                                    <constraint firstItem="wxR-uu-5ch" firstAttribute="top" secondItem="2HL-S1-GMt" secondAttribute="top" constant="610" id="Qmo-MO-xGV"/>
                                     <constraint firstItem="WIO-Me-baV" firstAttribute="top" secondItem="2HL-S1-GMt" secondAttribute="top" id="o4P-xN-jQz"/>
+                                    <constraint firstItem="wxR-uu-5ch" firstAttribute="leading" secondItem="2HL-S1-GMt" secondAttribute="leading" constant="15" id="vuA-8w-vqh"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -4298,6 +4315,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PayOptions" destination="wxR-uu-5ch" id="Feu-d4-ha9"/>
                         <outlet property="StudentDetailTableView" destination="Sd4-5n-gsI" id="qAY-fU-7vS"/>
                         <outlet property="firstSectionNameLabel" destination="NIM-li-vo6" id="ubH-a2-j9N"/>
                         <outlet property="menuButton" destination="KfB-la-gsG" id="fLl-lm-OjX"/>
@@ -4313,7 +4331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cQ-zI-d88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4027.5" y="304.22535211267603"/>
+            <point key="canvasLocation" x="4026.0869565217395" y="304.07608695652175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wby-So-nHs">

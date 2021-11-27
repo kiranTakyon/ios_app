@@ -179,7 +179,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     
         dictionary["UserId"] =  id
         dictionary[LogInKeys().platform] = "ios"
-        dictionary[LogInKeys().package] = Bundle.main.bundleIdentifier
+        dictionary[LogInKeys().Package] = Bundle.main.bundleIdentifier
         dictionary[LogInKeys().username] =  siblingUname
         dictionary[LogInKeys().password] = siblingPwd 
         

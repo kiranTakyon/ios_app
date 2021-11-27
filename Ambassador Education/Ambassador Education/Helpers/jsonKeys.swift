@@ -14,7 +14,7 @@ struct LogInKeys{
     let password = "Password"
     let language = "Language"
     let platform = "Platform"
-    let package = "Package"
+    let Package = "Package"
 }
 
 struct UserIdKey {

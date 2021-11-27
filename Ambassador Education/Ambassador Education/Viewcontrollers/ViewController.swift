@@ -157,7 +157,7 @@ class ViewController: UIViewController {
         dictionary[LogInKeys().language] = self.getLanguageCodes(textValue:countryPicker.pickerTextField.text! )
         currentLanguage = self.getLanguageCodes(textValue:countryPicker.pickerTextField.text! )
         dictionary[LogInKeys().platform] = "ios"
-        dictionary[LogInKeys().package] = Bundle.main.bundleIdentifier
+        dictionary[LogInKeys().Package] = Bundle.main.bundleIdentifier
         
         let url = APIUrls().logIn
         

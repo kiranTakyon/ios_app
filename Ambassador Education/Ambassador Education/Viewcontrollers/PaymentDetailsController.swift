@@ -28,15 +28,16 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var secondSectionNameLabel: UILabel!
     @IBOutlet weak var thirdSectionNameLabel: UILabel!
 
-     @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var PayOptions: UISegmentedControl!
     let feeSummaryKeys = ["TotalFee","TotalPaid","TotalDue","CurrentDue"]
     let feeSummaryTitles = ["Toatal Fee","Total Paid","Total Payable","Current Due"]
     let feeSummarySubTitleKyes = ["TotalFeeLabel","TotalPaidLabel","TotalPayableLabel","CurrentDueFormLabel"]
     var feesummaryDictionary = NSDictionary()
     
-    var classValue = Division()
+    var classValue = ""//Division()
     var payemntDetails = [TNPayment]()
     var absentDetails = [TAbsents]()
     var payLink =  ""
@@ -55,15 +56,13 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     var payLabel =  ""
     var FeeLabel =  ""
 
-
-
-
-
+    var CurrentDue = "0.00"
+    var TotalDue = "0.00"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        self.getWeeklyPlan()
+      //  self.getWeeklyPlan()
         self.getWeeklyPlanView()
         self.setSlideMenuProporties()
     }
@@ -71,6 +70,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     func setUI(){
         payTF.delegate = self
         payTF.keyboardType = .numbersAndPunctuation
+       // payTF.isUserInteractionEnabled = false
         self.paymentDetailTable.estimatedRowHeight = 88.0
         self.paymentDetailTable.rowHeight = UITableView.automaticDimension
         if finance == 2{
@@ -90,6 +90,23 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     }
 
 
+    @IBAction func payTypeChanged(_ sender: UISegmentedControl, forEvent event: UIEvent) {
+       // payTF.isUserInteractionEnabled = false
+        switch sender.selectedSegmentIndex {
+        case 0://CurrentDue
+            payTF.text = CurrentDue
+            break
+        case 1://TotalDue
+            payTF.text = TotalDue
+            break
+        case 2://Other
+            payTF.text = ""
+           // payTF.isUserInteractionEnabled = true
+            break
+       default:
+            break
+        }
+    }
     
     func setSlideMenuProporties(){
         if self.revealViewController() != nil {
@@ -107,17 +124,14 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     func setSectionHeader(){
         
         if finance == 1{
-            
           
         }else{
             self.secondSectionNameLabel.text = accountDetailsLabel
-
         }
     }
 
     
-    func getWeeklyPlan(){
-        
+   /* func getWeeklyPlan(){
         self.startLoadingAnimation()
         var dictionary = [String: String]()
          let userId = UserDefaultsManager.manager.getUserId()
@@ -125,8 +139,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         let url = APIUrls().weeklyPlan
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            
-    
             
             if let divisionArray = result["Divisions"] as? NSArray{
                 
@@ -158,7 +170,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     self.amountLabel = result["AmountLabel"] as? String ?? "Amount"
                     self.accountDetailsLabel = result["AccountDetailsLabel"] as? String ?? "Payment Details"
                     self.payLabel = result["PayLabel"] as? String ?? "Payment Details"
-
             
              DispatchQueue.main.async {
                 self.titleLabel.text = self.headLabel
@@ -175,12 +186,12 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         }
         
     }
-
+*/
     
     func getWeeklyPlanView(){
-        
         var url = ""
         payView.isHidden = true
+        PayOptions.isHidden = true
         payViewHeightConstraint.constant = 0
         if finance == 1{
              url = APIUrls().paymentDetails
@@ -189,19 +200,17 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
 
         }else  if finance == 3 {
             payView.isHidden = false
-            payViewHeightConstraint.constant = 80
+            PayOptions.isHidden = false
+            payViewHeightConstraint.constant = 70
             url = APIUrls().feeSummary
         }
         else  if finance == 5 {
             url = APIUrls().absenceReport
         }
         
-        
         var dictionary = [String: Any]()
         let userId = UserDefaultsManager.manager.getUserId()
         dictionary[UserIdKey().id] =  userId
-        
-        
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: .POST, requestString: "", requestParameters: dictionary) { (result) in
             
@@ -220,9 +229,11 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             self.amountLabel = result["AmountLabel"] as? String ?? "Amount"
             self.accountDetailsLabel = result["AccountDetailsLabel"] as? String ?? "Payment Details"
             self.payLabel = result["PayLabel"] as? String ?? "Pay"
-
-
+            self.CurrentDue = result["CurrentDue"] as? String ?? "0.00"
+            self.TotalDue = result["TotalDue"] as? String ?? "0.00"
+            self.classValue = result["Division"] as? String ?? ""
             
+
             DispatchQueue.main.async {
                 self.titleLabel.text = self.headLabel
             }
@@ -233,7 +244,9 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     if let link  = self.feesummaryDictionary.value(forKey: "PaymentUrl") as? String{
                         self.payLink = link
                     }
+                    self.payTF.text = self.CurrentDue
                     self.paymentDetailTable.reloadData()
+                    self.StudentDetailTableView.reloadData()
                     self.stopLoadingAnimation()
                 }
 
@@ -245,6 +258,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     }
                     DispatchQueue.main.async {
                         self.paymentDetailTable.reloadData()
+                        self.StudentDetailTableView.reloadData()
                         self.stopLoadingAnimation()
                     }
 
@@ -258,15 +272,12 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     self.payemntDetails.append(contentsOf: transactions)
                     DispatchQueue.main.async {
                         self.paymentDetailTable.reloadData()
+                        self.StudentDetailTableView.reloadData()
                         self.stopLoadingAnimation()
                     }
                 }
             }
-            
-            
         }
-        
-        
     }
     
     //MARK:- UITableView delegate nad datasource
@@ -309,10 +320,10 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                 cell.titlePlaceHolder.text = self.nameLabel
                 
             }else{
-                if let titleVal = classValue.division{
-                    cell.titleLabel.text = titleVal
+                //if let titleVal = classValue.division{
+                    cell.titleLabel.text = classValue //titleVal
                     cell.titlePlaceHolder.text = self.classLabel
-                }
+               // }
             }
             
             
@@ -417,6 +428,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     func getProfileName() -> String{
         
         let details = logInResponseGloabl;// UserDefaultsManager.manager.getUserDefaultValue(key:DBKeys.logInDetails) as? NSDictionary else {return}
+        print("hh",details)
         
         if let values = details["Siblings"] as? NSArray{
             

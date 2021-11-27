@@ -504,7 +504,7 @@ class SlideController: UITableViewController,TaykonProtocol {
             dict[LogInKeys().password] = md5Password
             dict[LogInKeys().language] = currentLanguage
             dict[LogInKeys().platform] = "ios"
-            dict[LogInKeys().package] = Bundle.main.bundleIdentifier
+            dict[LogInKeys().Package] = Bundle.main.bundleIdentifier
             var url = "\(appURL)"
             url = url + "key1=" + currentUserName + "&key2=" + currentPassword
             let ns = URL(string : url)
