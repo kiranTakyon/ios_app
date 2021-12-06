@@ -8,7 +8,7 @@
 
 import UIKit
 protocol DRDAttechmentCellDelegate {
-    func downLoadMylink(index: Int)
+    func downLoadMylink(sender: UIButton,index: Int)
 }
 
 class DRDAttechmentCell: UITableViewCell {
@@ -19,7 +19,7 @@ class DRDAttechmentCell: UITableViewCell {
     @IBOutlet weak var btnDownload: UIButton!
     
     @IBAction func dwnloadButtnAction(_ sender: UIButton) {
-        self.delegate?.downLoadMylink(index: self.tag)
+        self.delegate?.downLoadMylink(sender: sender,index: self.tag)
     }
     
     override func awakeFromNib() {

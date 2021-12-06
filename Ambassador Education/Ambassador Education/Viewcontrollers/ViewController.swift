@@ -170,10 +170,21 @@ class ViewController: UIViewController {
             if let resultDict = result as? NSDictionary{
                 
                 if resultDict["StatusCode"] as? Int == 1{
-
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    let dateLast : Date = dateFormatter.date(from: "\(resultDict["last_pswd_updt"]!)") ?? Date()
+                    let dateNext : Date = Calendar.current.date(byAdding: .day, value: Int(resultDict["pass_updt_period"]as! String)!, to: dateLast) ?? Date()
+                    let datec1 : String = dateFormatter.string(from: Date())
+                    let dateToday : Date = dateFormatter.date(from: datec1) ?? Date()
+                    
                     DispatchQueue.main.async {
                         self.saveCredentials()
                         UserDefaultsManager.manager.saveUserId(id:  (resultDict.value(forKey: "UserId") as? String).safeValue)
+                        if (dateNext < dateToday) {
+                            print("show alert")
+                            self.popUpVc()
+                            return
+                        }
                         logInResponseGloabl.removeAllObjects()
                         logInResponseGloabl = NSMutableDictionary(dictionary: resultDict)
                         sibling = false
@@ -213,7 +224,17 @@ class ViewController: UIViewController {
         
         
     }
-    
+    func popUpVc(){
+        DispatchQueue.main.async {
+            let heightVal = 375
+            let popvc = mainStoryBoard.instantiateViewController(withIdentifier: "changePasswordVc") as! ChangePasswordController
+            popvc.delegate = self
+            popvc.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width - 50, height: CGFloat(heightVal))
+            self.accessibilityHint = "ForceFully"
+            self.popUpEffectType = .flipDown
+            self.presentPopUpViewController(popvc)
+        }
+    }
     @IBAction func forgotButtonAction(_ sender: Any) {
         showPopUpView()
     }
@@ -246,3 +267,43 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController : TaykonProtocol {
+    
+    func deleteTheSelectedAttachment(index: Int) {
+        
+    }
+    
+    func downloadPdfButtonAction(url: String, fileName: String?) {
+        
+    }
+    
+    func getBackToParentView(value: Any?, titleValue: String?) {
+        
+    }
+    
+    func getBackToTableView(value: Any?, tagValueInt: Int) {
+        
+    }
+    
+    func selectedPickerRow(selctedRow: Int) {
+        
+    }
+    
+    func popUpDismiss() {
+        
+    }
+    
+    func moveToComposeController(titleTxt: String, index: Int, tag: Int) {
+        
+    }
+    
+    func getSearchWithCommunicate(searchTxt: String, type: Int) {
+        
+    }
+    
+    func getUploadedAttachments(isUpload: Bool) {
+        
+    }
+    
+    
+}

@@ -355,7 +355,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "messageDetailSecondCell", for: indexPath) as! messageDetailSecondCell
-            
+            cell.navigationcontroller = self.navigationController
             let message = self.messageList[indexPath.row]
             cell.delegate = self
             cell.personLabel.text = message.sender
@@ -612,6 +612,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var dropDownButton: UIButton!
     
+    var navigationcontroller : UINavigationController! = nil
     var imageUrl : String = ""{
         
         didSet{
@@ -645,6 +646,11 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         self.tableViewAttachments.rowHeight = UITableView.automaticDimension
         
     }
+    func gotoWeb(str : String) {
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.strU = str
+        self.navigationcontroller?.pushViewController(vc, animated: true)
+    }
     @IBAction func replyAction(_ sender: UIButton) {
         
         delegate?.getBackToTableView(value: sender.tag,tagValueInt : -1)
@@ -673,12 +679,16 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         
     }
     
-    func downLoadMylink(index: Int) {
+    func downLoadMylink(sender: UIButton, index: Int) {
         if let myData = data{
             if let value = myData[index] as? Attachment{
                 if let downLink = value.linkAddress{
                     let downname = value.linkName
-                    delegate?.downloadPdfButtonAction(url:downLink, fileName: downname)
+                    if sender.accessibilityHint == nil {
+                        self.gotoWeb(str: "\(downLink)")
+                    }
+                    else {
+                        delegate?.downloadPdfButtonAction(url:downLink, fileName: downname) }
                 }
             }
         }
@@ -696,6 +706,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageDownLoadCell", for: indexPath) as? MessageDownLoadCell
         cell?.downldLabel.text  = data![indexPath.row].linkName
+        cell?.btnDownload.accessibilityHint = "Download"
         cell?.tag = indexPath.row
         cell?.selectionStyle = .none
         cell?.delegate = self
@@ -741,7 +752,7 @@ extension String {
 }
 
 protocol MessageDownLoadDelegate {
-    func downLoadMylink(index: Int)
+    func downLoadMylink(sender: UIButton, index: Int)
 }
 
 class MessageDownLoadCell: UITableViewCell{
@@ -749,14 +760,15 @@ class MessageDownLoadCell: UITableViewCell{
     var delegate : MessageDownLoadDelegate?
     
     @IBOutlet weak var downldLabel: UILabel!
+    @IBOutlet weak var btnDownload: UIButton!
     
     @IBAction func dwnloadButtnAction(_ sender: UIButton) {
-        self.delegate?.downLoadMylink(index: self.tag)
+        self.delegate?.downLoadMylink(sender: sender, index: self.tag)
     }
+    
 }
 
 extension MessageDetailController:VideoDownloadDelegate{
-    
     func loadingStarted(){
        // self.startLoadingAnimation()
     }

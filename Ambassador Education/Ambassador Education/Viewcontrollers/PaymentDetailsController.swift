@@ -70,7 +70,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     func setUI(){
         payTF.delegate = self
         payTF.keyboardType = .numbersAndPunctuation
-       // payTF.isUserInteractionEnabled = false
+        payTF.isUserInteractionEnabled = false
         self.paymentDetailTable.estimatedRowHeight = 88.0
         self.paymentDetailTable.rowHeight = UITableView.automaticDimension
         if finance == 2{
@@ -91,7 +91,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
 
 
     @IBAction func payTypeChanged(_ sender: UISegmentedControl, forEvent event: UIEvent) {
-       // payTF.isUserInteractionEnabled = false
+        payTF.isUserInteractionEnabled = false
         switch sender.selectedSegmentIndex {
         case 0://CurrentDue
             payTF.text = CurrentDue
@@ -101,7 +101,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             break
         case 2://Other
             payTF.text = ""
-           // payTF.isUserInteractionEnabled = true
+            payTF.isUserInteractionEnabled = true
             break
        default:
             break
@@ -201,7 +201,8 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         }else  if finance == 3 {
             payView.isHidden = false
             PayOptions.isHidden = false
-            payViewHeightConstraint.constant = 70
+//            payViewHeightConstraint.constant = 70
+            payViewHeightConstraint.constant = 138
             url = APIUrls().feeSummary
         }
         else  if finance == 5 {

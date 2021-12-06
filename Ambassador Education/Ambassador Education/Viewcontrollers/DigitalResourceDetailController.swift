@@ -252,9 +252,9 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
 
 
 extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDelegate,MessageDownLoadDelegate{
-    
-    
-    
+    func downLoadMylink(index: Int) {
+        
+    }
     //    func setTableViewHeight(){
     //        if let count = data.count as? Int {
     //            TABLEhEIGHT.constant = CGFloat(50.0 * Double(count))
@@ -285,17 +285,25 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
     }
     
     
-    func downLoadMylink(index: Int) {
+    func downLoadMylink(sender: UIButton, index: Int) {
         if let myData = data as? [Attachment]{
             if let value = myData[index] as? Attachment{
                 if let downLink = value.fileLink{
                     let downname = value.fileName
-                    downloadPdfButtonAction(url: downLink, fileName: downname ?? "")
+                    if sender.accessibilityHint == nil {
+                        self.gotoWeb(str: "\(downLink)")
+                    }
+                    else {
+                        downloadPdfButtonAction(url: downLink, fileName: downname ?? "") }
                 }
                 else{
                     if let downLink = value.linkAddress{
-                         let downname = value.linkName
-                        downloadPdfButtonAction(url: downLink, fileName: downname ?? "")
+                        let downname = value.linkName
+                        if sender.accessibilityHint == nil {
+                            self.gotoWeb(str: "\(downLink)")
+                        }
+                        else {
+                            downloadPdfButtonAction(url: downLink, fileName: downname ?? "") }
                     }
                 }
             }
@@ -340,6 +348,7 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
         }
         cell.tag = indexPath.row
         cell.selectionStyle = .none
+        cell.btnDownload.accessibilityHint = "Download"
         cell.delegate = self
         heightConstraint.constant = tableView.contentSize.height + 20
         return cell
@@ -357,7 +366,8 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
     
 }
 protocol DRDDownLoadDelegate {
-    func downLoadMylink(index: Int)
+//    func downLoadMylink(index: Int)
+    func downLoadMylink(sender: UIButton, index: Int)
 }
 
 class DRDDownLoadCell: UITableViewCell{
@@ -367,11 +377,21 @@ class DRDDownLoadCell: UITableViewCell{
     @IBOutlet weak var downldLabel: UILabel!
 
     @IBAction func dwnloadButtnAction(_ sender: UIButton) {
-        self.delegate?.downLoadMylink(index: self.tag)
+        if sender.tag == 1 {
+            //preview
+            DigitalResourceDetailController().gotoWeb(str: "")
+            
+        }
+        else {
+            self.delegate?.downLoadMylink(sender: sender, index: self.tag) }
     }
 }
 extension DigitalResourceDetailController:VideoDownloadDelegate{
-    
+    func gotoWeb(str : String) {
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.strU = str
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func loadingStarted(){
         //  self.startLoadingAnimation()
     }
