@@ -58,6 +58,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
 
     var CurrentDue = "0.00"
     var TotalDue = "0.00"
+    var compid = "0"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -233,6 +234,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             self.CurrentDue = result["CurrentDue"] as? String ?? "0.00"
             self.TotalDue = result["TotalDue"] as? String ?? "0.00"
             self.classValue = result["Division"] as? String ?? ""
+            self.compid = result["comp_id"] as? String ?? "0"
             
 
             DispatchQueue.main.async {
@@ -246,6 +248,10 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                         self.payLink = link
                     }
                     self.payTF.text = self.CurrentDue
+                    if(self.compid == "216" || self.compid == "262")
+                    {
+                        self.PayOptions.setEnabled(false, forSegmentAt: 2);
+                    }
                     self.paymentDetailTable.reloadData()
                     self.StudentDetailTableView.reloadData()
                     self.stopLoadingAnimation()
@@ -429,8 +435,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     func getProfileName() -> String{
         
         let details = logInResponseGloabl;// UserDefaultsManager.manager.getUserDefaultValue(key:DBKeys.logInDetails) as? NSDictionary else {return}
-        print("hh",details)
-        
         if let values = details["Siblings"] as? NSArray{
             
             let siblings = ModelClassManager.sharedManager.createModelArray(data: values, modelType: ModelType.TSibling) as! [TSibling]
