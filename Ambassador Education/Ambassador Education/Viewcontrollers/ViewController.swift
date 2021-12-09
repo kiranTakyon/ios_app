@@ -8,6 +8,7 @@
 
 import UIKit
 import BIZPopupView
+import SCLAlertView
 
 let kAlert = "Orison"
 let fillFields = "All fields are mandatory"
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
     
     let tick = UIImage(named:"Tick")
     let unTick = UIImage(named:"UnTick")
+    var  popUpViewVc : BIZPopupViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         setCountryPicker()
@@ -177,12 +179,24 @@ class ViewController: UIViewController {
                     let datec1 : String = dateFormatter.string(from: Date())
                     let dateToday : Date = dateFormatter.date(from: datec1) ?? Date()
                     
+                    let VUser : Int = Int(resultDict["VerifiedUser"] as! String)!
+                    let Vemail : String = resultDict["Email"] as! String
+                    //(resultDict["Verify"] as! String) ?? resultDict["Email"] as! String
+                    let pass_updt_period : Int = Int(resultDict["pass_updt_period"]as! String)!
+                   // let pass_updt_period : Int = 1
                     DispatchQueue.main.async {
                         self.saveCredentials()
                         UserDefaultsManager.manager.saveUserId(id:  (resultDict.value(forKey: "UserId") as? String).safeValue)
-                        if (dateNext < dateToday) {
+                        if (dateNext < dateToday && pass_updt_period != 0) {
                             print("show alert")
-                            self.popUpVc()
+                            if(VUser==1)
+                            {
+                                self.popUpVc()
+                            }
+                            else
+                            {
+                                self.popVerify(email: Vemail)
+                            }
                             return
                         }
                         logInResponseGloabl.removeAllObjects()
@@ -219,11 +233,141 @@ class ViewController: UIViewController {
             print("result value is ",result)
             
         }
+    }
+    func popVerify(email : String)
+    {
+        let appearance = SCLAlertView.SCLAppearance(
+            kTextFieldHeight: 60,
+            showCloseButton: false
+        )
+        let alert = SCLAlertView(appearance: appearance)
+      
+        let txt = alert.addTextField("Enter your new email id")
+        if(email != ""){
+            txt.text = email
+        }
+        _ = alert.addButton("Send OTP") {
+            if txt.text != ""{
+                txt.resignFirstResponder()
+                if isValidEmail(testStr: txt.text.safeValue){
+                self.callEmailVerificationApi(email: txt.text.safeValue)
+                }
+                else{
+                    alert.hideView()
+                    self.errormsg(email: txt.text.safeValue,msg: "Please enter a valid email",isconfirm: false)
+                }
+            }
+            else{
+            alert.hideView()
+                self.errormsg(email: txt.text.safeValue, msg: "Please enter a valid email", isconfirm: false)
+            }
+        }
+        _ = alert.showEdit("Verify Email", subTitle:"Your password has expired. Please verify your email and change password to proceed.")
+    }
+    func errormsg(email : String,msg : String, isconfirm : Bool)
+    {
+          SweetAlert().showAlert("", subTitle:  msg, style: .warning,buttonTitle:"OK"){(isOtherButton) -> Void in
+              if isOtherButton == true {
+                  print(isconfirm)
+                  if(isconfirm == true)
+                  {
+                      self.popUpVcToEmailVerification(email: email)
+                  }
+                  else{
+                      self.popVerify(email: email)
+                  }
+              }
+          }
+    }
+    func callEmailVerificationApi(email: String){
+        self.startLoadingAnimation()
+        let url = APIUrls().emailVerificationCode
+        var dictionary = [String: String]()
         
-   
-        
+        dictionary[EmailVerifications().getEmailVCode] = email
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            
+            DispatchQueue.main.async {
+                self.stopLoadingAnimation()
+                if result["StatusCode"] as? Int == 1{
+                    self.popUpVcToEmailVerification(email: email)
+                }
+                else{
+                    if let mesaage = result["StatusMessage"] as? String{
+                        SweetAlert().showAlert(kAppName, subTitle:  mesaage, style: AlertStyle.error)
+                    }
+                }
+                
+            }
+        }
         
     }
+    func popUpVcToEmailVerification(email: String){
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            kTextFieldHeight: 60,
+            showCloseButton: false
+        )
+        let alert = SCLAlertView(appearance: appearance)
+        let txt = alert.addTextField("Enter OTP")
+        _ = alert.addButton("Verify OTP") {
+            if txt.text != ""{
+                txt.resignFirstResponder()
+                self.setEmailVerification(key: txt.text.safeValue, email: email)
+            }
+            else{
+                alert.hideView()
+                self.errormsg(email: email, msg: "Please enter a valid OTP", isconfirm: true)
+            }
+        }
+        _ = alert.showEdit("Verify Email", subTitle:"Thank you for verifying your email id.A message with a verification code was sent to \(email).To complete the verification process,enter the verification code below.")
+    }
+    func setEmailVerification(key : String, email : String){
+            self.startLoadingAnimation()
+            let url = APIUrls().emailVerificationCode
+            var dictionary = [String: String]()
+            
+            dictionary[EmailVerifications().getEmailVCode] = email
+            dictionary[EmailVerifications().verificationKey] = key
+            APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+                
+                DispatchQueue.main.async {
+                    self.stopLoadingAnimation()
+                    
+                    if result["StatusCode"] as? Int == 1{
+                        if let  message = result["StatusMessage"] as? String{
+                            SweetAlert().showAlert(kAppName, subTitle: message, style: .success, buttonTitle: alertOk, action: { (index) in
+                                if index{
+                                   // self.delegate?.popUpDismiss()
+                                    self.popUpVc()
+
+                                }
+                            })
+                       }
+                    }
+                    else{
+                        if let mesaage = result["StatusMessage"] as? String{
+                            
+                            
+                            //SweetAlert().showAlert(kAppName, subTitle: mesaage, style: .error, buttonTitle: alertOk, action: { (index) in
+                                //if index{
+                                    self.dismiss(animated: true, completion: nil)
+                                    self.errormsg(email: email, msg: mesaage, isconfirm: true)
+                                   // self.popVerify(email: email)
+                                    
+                                //}
+                           // })
+
+                            
+                        }
+                        
+                    }
+                    
+                }
+            }
+            
+        }
+
     func popUpVc(){
         DispatchQueue.main.async {
             let heightVal = 375
@@ -290,7 +434,8 @@ extension ViewController : TaykonProtocol {
     }
     
     func popUpDismiss() {
-        
+        popUpViewVc?.dismiss(animated: true, completion: nil)
+
     }
     
     func moveToComposeController(titleTxt: String, index: Int, tag: Int) {
