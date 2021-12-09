@@ -243,6 +243,11 @@ class WeeklyPlanFilterController: UIViewController,UITextFieldDelegate{
         self.datePicker.backgroundColor = UIColor.white
         self.datePicker.datePickerMode = UIDatePicker.Mode.date
         textField.inputView = self.datePicker
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         datePicker.isSelected = true
         // ToolBar
         let toolBar = UIToolbar()
