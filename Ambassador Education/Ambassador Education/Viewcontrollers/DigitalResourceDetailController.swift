@@ -38,7 +38,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     var downloadTask: URLSessionDownloadTask!
     var digitalResource : TNDigitalResourceSubList?
     var arrDataList : [String] = [String]()
-    
+    var divId = ""
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,6 +174,16 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         tableViewAttachments.reloadData()
         
     }
+    func showPopUpView(){
+        let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
+        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "AddCommentVC") as! AddCommentVC
+        popvc.delegate = self
+        popvc.weeklyPlan = self.weeklyPlan
+        popvc.strDId = self.divId
+        popvc.view.frame = CGRect(x: 0, y: 0, width: 310, height: CGFloat(350))
+         popUpEffectType = .flipDown
+         presentPopUpViewController(popvc)
+    }
     func rectForText(text: String, font: UIFont, maxSize: CGSize) -> CGSize {
         let attrString = NSAttributedString.init(string: text, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font):font]))
         let rect = attrString.boundingRect(with: maxSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
@@ -228,6 +239,9 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         }
     }
     
+    @IBAction func btnSubmitAction(_ sender: UIButton) {
+        self.showPopUpView()
+    }
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -281,7 +295,7 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
     
     
     func setTbHeight(){
-        //  heightConstraint.constant = CGFloat(data.count * 50)
+          heightConstraint.constant = CGFloat(data.count * 50)
     }
     
     
@@ -482,4 +496,44 @@ fileprivate func convertFromNSAttributedStringDocumentType(_ input: NSAttributed
 
 class DigitalResourceDataListCell: UITableViewCell{
     @IBOutlet weak var richEditorViewBG: RichEditorWebView!
+}
+extension DigitalResourceDetailController : TaykonProtocol {
+    
+    func deleteTheSelectedAttachment(index: Int) {
+        
+    }
+    
+    func downloadPdfButtonAction(url: String, fileName: String?) {
+        
+    }
+    
+    func getBackToParentView(value: Any?, titleValue: String?) {
+        print(value)
+    }
+    
+    func getBackToTableView(value: Any?, tagValueInt: Int) {
+        
+    }
+    
+    func selectedPickerRow(selctedRow: Int) {
+        
+    }
+    
+    func popUpDismiss() {
+        
+    }
+    
+    func moveToComposeController(titleTxt: String, index: Int, tag: Int) {
+        
+    }
+    
+    func getSearchWithCommunicate(searchTxt: String, type: Int) {
+        
+    }
+    
+    func getUploadedAttachments(isUpload: Bool) {
+        
+    }
+    
+    
 }

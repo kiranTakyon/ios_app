@@ -33,6 +33,7 @@ class APIUrls{
     let forgotPassword  = "T0048"
     let weeklyPlan      = "T0005"
     let weeklyPlanView  = "T0006"
+    let weeklyPlanComment  = "T0205"
     let paymentDetails  = "T0037"
     let feeDetails      = "T0036"
     let feeSummary      = "T0035"

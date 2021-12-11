@@ -653,8 +653,8 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     func navigateToDetail(weeklyPlan:WeeklyPlanList){
         
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
-        
         detailVc.weeklyPlan = weeklyPlan
+        detailVc.divId = self.divId
         self.navigationController?.pushViewController(detailVc, animated: true)
         
     }
