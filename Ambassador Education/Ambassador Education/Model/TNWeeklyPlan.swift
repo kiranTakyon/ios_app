@@ -131,6 +131,8 @@ class WeeklyPlanList{
     
     var attachments : [Attachment]?
     
+    var commentStatus : String?
+    var communicateID : String?
     
     init(values:NSDictionary) {
         
@@ -145,7 +147,8 @@ class WeeklyPlanList{
         self.attachIconCount = values["AttachIcon"] as? Int
         self.id = values["Id"] as? String
         
-        
+        self.commentStatus = values["CommentStatus"] as? String
+        self.communicateID = values["CommunicateID"] as? String
         
         if let divisionsValues = values["Attachments"] as? NSArray{
             

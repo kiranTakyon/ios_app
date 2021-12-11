@@ -11,7 +11,9 @@ import QuickLook
 import RichEditorView
 
 class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelegate,DRDDownLoadDelegate {
+    @IBOutlet weak var btnViewComment: UIButton!
     
+    @IBOutlet weak var btnAddComment: UIButton!
     @IBOutlet weak var richEditor1ViewHeigh: NSLayoutConstraint!
     @IBOutlet weak var richEditorView1: RichEditorView!
     @IBOutlet weak var seperatorView: UIView!
@@ -45,8 +47,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         super.viewDidLoad()
 //        self.tableViewAttachments.register(DRDDownLoadCell.self, forCellReuseIdentifier: "DRDDownLoadCell")
 //        self.tableViewAttachments.register(UINib.init(nibName: "DRDAttechmentCell", bundle: nil), forCellReuseIdentifier: "DRDAttechmentCell")
-       // richEditorView.editingEnabled = false
-      // richEditorView.clipsToBounds = true
         richEditorView1.editingEnabled = false
         richEditorView1.clipsToBounds = true
         setUI()
@@ -77,6 +77,9 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         self.tableViewDataListBG.delegate = self
         self.tableViewDataListBG.tableFooterView = UIView()
         self.tableViewDataListBG.rowHeight = 300
+        
+        btnAddComment.isHidden = true
+        btnViewComment.isHidden = true
     }
     
     func setUiWithType(top : CGFloat,height : CGFloat,hide: Bool){
@@ -115,13 +118,10 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             if let content = digital.content{
                 
                 let htmlDecode = content.replacingHTMLEntities
-                 print("load text1 :- ",htmlDecode.safeValue)
                 //richEditorView.html = htmlDecode.safeValue
                 richEditorView1.html = htmlDecode.safeValue
             }
             if arrDataList.count != 0 {
-                print("Show")
-                print("herem",self.constraintViewWebDataTableHeight.constant)
               //  self.constraintviewBGHeight.constant = CGFloat((self.arrDataList.count * 300) + 20)
               //  self.constraintViewWebDataTableHeight.constant = CGFloat((self.arrDataList.count * 300) + 20)
             }
@@ -129,15 +129,23 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             {
                 //self.constraintViewWebDataTableHeight.constant = 100
             }
-            print("here",self.constraintViewWebDataTableHeight.constant)
            
             let lHeight : CGFloat = (self.titleLabel.text?.height(withConstrainedWidth: self.titleLabel.frame.width, font: UIFont(name: "HelveticaNeue-Medium", size: 18.0)!))!
-            print("herelh",lHeight)
             setUiWithType(top: 20, height: lHeight, hide: !(lHeight > 0))
             
         }else if let weeklyPlanValue = weeklyPlan{
             setUiWithType(top: 20, height: 21, hide: false)
             
+            guard let user = UserDefaultsManager.manager.getUserType() as? String else{
+            }
+            
+            if user == UserType.parent.rawValue || user == UserType.student.rawValue{
+                btnAddComment.isHidden = false
+            }
+            else
+            {
+                btnAddComment.isHidden = true
+            }
             self.topTitleLabel.text = "Weekly Plan Details"
             self.constraintViewWebDataTableHeight.constant = 100
             getAttachments(weeklyPlan: weeklyPlanValue)
@@ -146,6 +154,12 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
             //richEditorView.html = htmlDecode.safeValue
             richEditorView1.html = htmlDecode.safeValue
+            if(weeklyPlanValue.commentStatus == "1")
+            {
+                btnViewComment.isHidden = false
+                btnAddComment.isHidden = true
+            }
+  
         }
       /* if richEditorView.html == ""{
             richEditorViewHeight.constant =  0 //+ 100*/
@@ -160,11 +174,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let labelHeight = labelSize.height //here it is!
             richEditor1ViewHeigh.constant =  labelHeight + 10 //+ 100
            // newREVHeight.constant = labelHeight + 10
-            print("here11",self.constraintViewWebDataTableHeight.constant)
            // self.constraintViewWebDataTableHeight.constant = CGFloat((self.arrDataList.count * 300) + 20)
-            print("here11",self.constraintViewWebDataTableHeight.constant)
             self.constraintViewWebDataTableHeight.constant = CGFloat(self.constraintViewWebDataTableHeight.constant) + richEditor1ViewHeigh.constant;
-            print("here22",self.constraintViewWebDataTableHeight.constant)
         }
        // if richEditorViewHeight.constant <= 70.0{s
             //    addBottomLineToView()
