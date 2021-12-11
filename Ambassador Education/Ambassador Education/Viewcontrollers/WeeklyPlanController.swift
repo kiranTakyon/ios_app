@@ -74,11 +74,19 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     
     func setDateFormatter(){
         dateFormatter1.dateStyle = .long
-        dateFormatter1.dateFormat = DateTypes.yyyMMdd
+        dateFormatter1.dateFormat = DateTypes.yyyyMMdd
     }
     func setDatesOnPicker(){
-        self.fromDateLabel.text = "From : \(dateFormatter1.string(from: today as Date))"
-        self.toDateLabel.text = "To : \(getThe5thDayFromSelectedDate(date: today, value: +1))"
+        var daycomponents = DateComponents(calendar: Calendar.current,weekday:  Calendar.current.firstWeekday)
+        print("hh",Calendar.current.timeZone)
+        
+        let startday = Calendar.current.nextDate(after: Date(), matching: daycomponents, matchingPolicy: .nextTimePreservingSmallerComponents)
+        daycomponents.day = -8
+        var fromdate = Calendar.current.date(byAdding: daycomponents, to: startday ?? today as Date)
+       // self.fromDateLabel.text = "From : \(dateFormatter1.string(from: today as Date))"
+        self.fromDateLabel.text = "From : \(dateFormatter1.string(from: fromdate ?? today as Date))"
+        
+        self.toDateLabel.text = "To : \(getThe5thDayFromSelectedDate(date: fromdate as! NSDate, value: +1))"
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -95,7 +103,8 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
-            //  print("result :- ",result)
+              print("requestParameters :- ",dictionary)
+            print("result :- ",result)
             DispatchQueue.main.async{
                 
                 if result["StatusCode"] as? Int == 1{
@@ -122,6 +131,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                         }
                     }
                 }
+               
                 if self.weeklyPlan != nil{
                     if let div = self.weeklyPlan?.divisions,let sub = self.weeklyPlan?.subjects{
                         if div.count > 0{
@@ -129,6 +139,10 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                             self.subId = sub[0].subject_id.safeValue
                             self.getWeeklyPlanDetails(fromDate: "", toDate: "", isSearch: 1, Sub_Id: self.subId, div: self.divId)
                         }
+                    }
+                    else
+                    {
+                        self.getWeeklyPlanDetails(fromDate: "", toDate: "", isSearch: 1, Sub_Id: self.subId, div: self.divId)
                     }
                 }
             }
@@ -182,7 +196,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         dictionary[WeeklyPlanKeys().FromDate]   = fromDate
         dictionary[WeeklyPlanKeys().ToDate]     = toDate
         dictionary[WeeklyPlanKeys().Limit]      = limit
-        
+        print("hh",dictionary)
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
@@ -361,13 +375,10 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
 
         if toDateLabel.text != ""{
             if let  value = toDateLabel.text?.components(separatedBy: ": ") as? [String]{
-                
                 for each in value{
                     if each.contains("-") || each.contains("/"){
                         fromDateLabel.text = each
-                        
                         if let dt = fromDateLabel.text {
-                            
                             if  let dates = dt.components(separatedBy: "-") as? [String]{
                                 var newdate = ""
                                 var format = ""
@@ -381,9 +392,13 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                                         format = "yyyy-MM-dd"
                                     }
                                     let date =  changetoDiffFormatInDate(value:newdate,fromFormat:format ,toFormat:"yyyy-MM-dd hh:mm:ss")
-                                    let nextDate = getThe5thDayFromSelectedDate(date: date as NSDate, value: +1)
+                                print("hh",date)
+                                let ndate = getprevSelectedDate(date : date as NSDate,value: +1)
+                                let nextDate = getThe5thDayFromSelectedDate(date: date as NSDate, value: +1)
+                                print("hh3",nextDate)
+                                print("hh3",ndate)
                                     self.toDateLabel.text = "To : " + nextDate
-                                    self.getWeeklyPlanDetails(fromDate: newdate, toDate: nextDate, isSearch: 0, Sub_Id: subId, div: divId)
+                                    self.getWeeklyPlanDetails(fromDate: ndate, toDate: nextDate, isSearch: 0, Sub_Id: subId, div: divId)
                             }
                         }
                     }
@@ -411,11 +426,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         
     }
-    
-    
-    
-    
-    
     
     
     func loadPDFAndShare(url: String,formatString: String,fileName: String){
@@ -592,6 +602,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
             let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
             divId = values.3
             subId = values.4
+            print("hh4",formatedStart)
             self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
         }
         
@@ -615,17 +626,29 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     func getThe5thDayFromSelectedDate(date : NSDate,value : Int) -> String{
         var dayComponent = DateComponents()
         dayComponent.day = value*(weeklyPlan?.no_days ?? 5)
+        
         let theCalendar = Calendar.current
         let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
         print("nextDate: \(nextDate) ...")
         
         let dateValue  = dateFormatter1.string(from: nextDate!)
-        
+        print("nextDate1: \(dateValue) ...")
         return dateValue
         
     }
     
-    
+    func getprevSelectedDate(date : NSDate,value : Int) -> String{
+        var dayComponent = DateComponents()
+        dayComponent.day = value
+        let theCalendar = Calendar.current
+        print("hh",date)
+        print("hh",dayComponent)
+        let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
+        print("nextDate: \(nextDate) ...")
+        let dateValue  = dateFormatter1.string(from: nextDate!)
+        return dateValue
+        
+    }
     
     func navigateToDetail(weeklyPlan:WeeklyPlanList){
         

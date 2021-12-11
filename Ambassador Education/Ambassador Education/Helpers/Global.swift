@@ -322,9 +322,10 @@ enum UserType : String {
 class DateTypes{
     
     static let mmmddyyy = "MMM dd, YYYY"
-    static let mmddyyyy = "dd-MM-YYYY"
+    static let mmddYYYY = "dd-MM-YYYY"
+    static let mmddyyyy = "dd-MM-yyyy"
     static let yyyMMdd = "YYYY-MM-dd"
-
+    static let yyyyMMdd = "yyyy-MM-dd"
     static let ddmmyyyy = "dd/MM/YYYY"
 
 

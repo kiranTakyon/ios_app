@@ -188,7 +188,7 @@ class ViewController: UIViewController {
                         self.saveCredentials()
                         UserDefaultsManager.manager.saveUserId(id:  (resultDict.value(forKey: "UserId") as? String).safeValue)
                         if (dateNext < dateToday && pass_updt_period != 0) {
-                            print("show alert")
+                           
                             if(VUser==1)
                             {
                                 self.popUpVc()
