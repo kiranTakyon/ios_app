@@ -32,6 +32,8 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     var fileURLs = [NSURL]()
     let quickLookController = QLPreviewController()
     
+    var itemId : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -65,13 +67,11 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         let url = APIUrls().messageDetails
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            
+        
             if result["StatusCode"] as? Int == 1{
                 self.resultValue = MessageModel(values: result)//ModelClassManager.sharedManager.createModelArray(data: [result], modelType: ModelType.MessageModel) as! MessageModel
-
+            
                 if let messages = result["MessageList"] as? NSArray{
-                    
-                    
                     let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TinboxMessage) as! [TinboxMessage]
                     
                     self.messageList.append(contentsOf: list)
@@ -405,19 +405,38 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+       
         let message = self.messageList[indexPath.row]
+       
         if message.message != "" {
             let strU : String = self.getLinkFormHtml(strV: message.message!)
             if strU != "" {
                 UIApplication.shared.open(URL(string:strU)!)
             }
+            else if ((message.message?.contains("weeklyplan?cat_id=")) != nil)
+                {
+                self.itemId = message.message?.components(separatedBy: "&message_id=")[1]
+                self.itemId = self.itemId?.components(separatedBy: "\">click here")[0]
+                if(itemId != "")
+                {
+                    showComments(itemid: itemId ?? "")
+                }
+               }
+                
         }
         /*   NSString URLString = [bookmarks objectAtIndex:indexPath.row];
         NSURL URL = [NSURL URLWithString: URLString];
         NSURLRequest URLRequest = [NSURLRequest requestWithURL:URLRequest];
         [webView loadURLRequest:URLRequest];*/
     }
-    
+    func showComments(itemid : String)
+    {
+        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        //detailVc.weeklyPlan = weeklyPlan
+        detailVc.WpID = itemid
+        self.navigationController?.pushViewController(detailVc, animated: true)
+        
+    }
     func getLinkFormHtml(strV : String)-> String {
         let types: NSTextCheckingResult.CheckingType = .link
         let detector = try? NSDataDetector(types: types.rawValue)

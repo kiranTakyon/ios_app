@@ -18,6 +18,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     
     var inBoxVC = CommunicateController()
     var sentBoxVC = CommunicateController()
+    var WPBoxVC = CommunicateController()
     var searchText = ""
     var delegates : TaykonProtocol?
     
@@ -80,7 +81,12 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         sentBoxVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
         sentBoxVC.type = CommunicationType.sent
         sentBoxVC.delegate = self
-        self.setupPager(tabNames: [(list?.inboxLabel.safeValue.uppercased()).safeValue,(list?.sentItemsLabel.safeValue.uppercased()).safeValue], tabControllers: [self.inBoxVC,self.sentBoxVC])
+        
+        WPBoxVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
+        WPBoxVC.type = CommunicationType.WP
+        WPBoxVC.delegate = self
+        
+        self.setupPager(tabNames: [(list?.inboxLabel.safeValue.uppercased()).safeValue,(list?.sentItemsLabel.safeValue.uppercased()).safeValue,(list?.WPItemsLabel.safeValue.uppercased()).safeValue], tabControllers: [self.inBoxVC,self.sentBoxVC,self.WPBoxVC])
         self.reloadData()
         
     }

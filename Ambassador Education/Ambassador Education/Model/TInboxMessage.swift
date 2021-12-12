@@ -155,6 +155,7 @@ class MessageModel {
     var replyLabel : String?
     var sendLabel : String?
     var sentItemsLabel : String?
+    var WPItemsLabel : String?
     var statusCode : Int?
     var statusMessage : String?
     var subjectLabel : String?
@@ -215,6 +216,6 @@ class MessageModel {
          self.trashLabel = values?["TrashLabel"] as? String
          self.typingCount = values?["typingCount"] as? Int
         
-    
+        self.WPItemsLabel = values?["WPItemsLabel"] as? String
     }
 }

@@ -196,7 +196,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         dictionary[WeeklyPlanKeys().FromDate]   = fromDate
         dictionary[WeeklyPlanKeys().ToDate]     = toDate
         dictionary[WeeklyPlanKeys().Limit]      = limit
-        print("hh",dictionary)
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
@@ -225,8 +224,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         
     }
-    
-    
     func setPagerView(){
         if completeListDetails !=  nil{
             titlesnew.removeAll();
@@ -641,8 +638,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         var dayComponent = DateComponents()
         dayComponent.day = value
         let theCalendar = Calendar.current
-        print("hh",date)
-        print("hh",dayComponent)
         let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
         print("nextDate: \(nextDate) ...")
         let dateValue  = dateFormatter1.string(from: nextDate!)

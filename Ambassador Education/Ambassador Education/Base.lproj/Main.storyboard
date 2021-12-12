@@ -7099,12 +7099,12 @@
                                                                             <action selector="btnSubmitAction:" destination="HEA-II-HZL" eventType="touchUpInside" id="Ptk-UW-Iuv"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ8-Q7-JfK">
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ8-Q7-JfK">
                                                                         <rect key="frame" x="202" y="0.0" width="192" height="45"/>
                                                                         <color key="backgroundColor" red="0.91372549020000005" green="0.31372549020000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                                         <state key="normal" title="VIEW COMMENTS">
-                                                                            <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -7113,7 +7113,7 @@
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
-                                                                            <action selector="btnSubmitAction:" destination="HEA-II-HZL" eventType="touchUpInside" id="lBG-fD-79F"/>
+                                                                            <action selector="btnViewComment:" destination="HEA-II-HZL" eventType="touchUpInside" id="bYZ-tC-h1M"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -7438,9 +7438,6 @@
         </systemColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
             <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -41,6 +41,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     var digitalResource : TNDigitalResourceSubList?
     var arrDataList : [String] = [String]()
     var divId = ""
+    var msgId = ""
+    var WpID = ""
 
   
     override func viewDidLoad() {
@@ -51,9 +53,15 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         richEditorView1.clipsToBounds = true
         setUI()
         videoDownload.delegate = self
+        if(WpID != "")
+        {
+            getWPDetailsbyID()
+        }
+        else
+        {
         setData()
-        
-        
+        }
+
         // Do any additional setup after loading the view.
     }
     
@@ -89,7 +97,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     }
     
     func setData(){
-        
         if let digital = digitalResource{
             setUiWithType(top: 0, height: 0, hide: true)
             if let attachment = digital.attachments as? [Attachment]{
@@ -139,13 +146,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             guard let user = UserDefaultsManager.manager.getUserType() as? String else{
             }
             
-            if user == UserType.parent.rawValue || user == UserType.student.rawValue{
-                btnAddComment.isHidden = false
-            }
-            else
-            {
-                btnAddComment.isHidden = true
-            }
             self.topTitleLabel.text = "Weekly Plan Details"
             self.constraintViewWebDataTableHeight.constant = 100
             getAttachments(weeklyPlan: weeklyPlanValue)
@@ -154,15 +154,20 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
             //richEditorView.html = htmlDecode.safeValue
             richEditorView1.html = htmlDecode.safeValue
-            if(weeklyPlanValue.commentStatus == "1")
-            {
-                btnViewComment.isHidden = false
-                btnAddComment.isHidden = true
+            
+            if user == UserType.parent.rawValue || user == UserType.student.rawValue{
+                if(weeklyPlanValue.commentStatus == "1")
+                {
+                    btnViewComment.isHidden = false
+                    btnAddComment.isHidden = true
+                    self.msgId = weeklyPlanValue.communicateID ?? "0"
+                }
+                else
+                {
+                    btnAddComment.isHidden = false
+                }
             }
-  
         }
-      /* if richEditorView.html == ""{
-            richEditorViewHeight.constant =  0 //+ 100*/
         if richEditorView1.html == ""{
             richEditor1ViewHeigh.constant = 0
         }
@@ -250,7 +255,17 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         }
     }
     
+    func showComments()
+    {
+        
+        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "MessageDetailController") as! MessageDetailController
+        detailVc.messageId = self.msgId
+        detailVc.typeMsg  = 3
+        detailVc.text = self.weeklyPlan?.topic
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
     @IBAction func btnSubmitAction(_ sender: UIButton) {
+    
         self.showPopUpView()
     }
     
@@ -262,6 +277,36 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnViewComment(_ sender: UIButton) {
+        self.showComments()
+    }
+    
+    func getWPDetailsbyID(){
+       // startLoadingAnimation()
+        let url = APIUrls().WPbyID
+        let userId = UserDefaultsManager.manager.getUserId()
+        var dictionary = [String: Any]()
+        dictionary[UserIdKey().id] = userId
+        dictionary[DetailsKeys().itemId] = WpID
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            DispatchQueue.main.async {
+            if result["StatusCode"] as? Int == 1{
+                if let messages = result["HomeWork"] as? NSArray{
+                    print("hh1",messages)
+                    let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
+                    print("hh2",list[0])
+                    self.weeklyPlan = list[0]
+                    self.setData()
+                }
+                self.stopLoadingAnimation()
+                }
+            else{
+                    self.stopLoadingAnimation()
+                    SweetAlert().showAlert(kAppName, subTitle: "Not able to get the weeklyplan details", style: .warning)
+                }
+            }
+        }
+    }
     
     /*
      // MARK: - Navigation

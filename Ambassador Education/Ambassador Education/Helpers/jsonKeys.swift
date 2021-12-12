@@ -33,6 +33,10 @@ struct UserIdKey {
     let msgType = "MsgType"
 }
 
+struct DetailsKeys{
+    
+    let itemId = "Id"
+ }
 struct LocationUpdate {
     
     let latitude = "Latitude"
@@ -47,6 +51,7 @@ struct Communicate{
     let messageId = "MsgId"
     let groupId = "grp_id"
     let isMobile = "IsMobile"
+    let ModuleCode = "ModuleCode"
 }
 
 struct GetGroups{

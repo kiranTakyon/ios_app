@@ -49,8 +49,8 @@ class APIUrls{
     let absenceReport = "T0038"
     let siblingLogin = "SIBLING_LOGIN"
     let subjectList = "T0067"
-    
-
+    let WPCommentList = "T0250"
+    let WPbyID = "T0206"
 
 }
 

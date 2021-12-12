@@ -9,7 +9,43 @@
 import UIKit
 import MobileCoreServices
 
-class AddCommentVC: UIViewController,UIDocumentMenuDelegate,UIDocumentPickerDelegate {
+class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDocumentPickerDelegate {
+    func deleteTheSelectedAttachment(index: Int) {
+        
+    }
+    
+    func downloadPdfButtonAction(url: String, fileName: String?) {
+        
+    }
+    
+    func getBackToParentView(value: Any?, titleValue: String?) {
+        
+    }
+    
+    func getBackToTableView(value: Any?, tagValueInt: Int) {
+        
+    }
+    
+    func selectedPickerRow(selctedRow: Int) {
+        
+    }
+    
+    func popUpDismiss() {
+        
+    }
+    
+    func moveToComposeController(titleTxt: String, index: Int, tag: Int) {
+        
+    }
+    
+    func getSearchWithCommunicate(searchTxt: String, type: Int) {
+        
+    }
+    
+    func getUploadedAttachments(isUpload: Bool) {
+        
+    }
+    
 
     @IBOutlet weak var lblChooseFile: UILabel!
     @IBOutlet weak var txtViewComment: UITextView!
@@ -21,14 +57,32 @@ class AddCommentVC: UIViewController,UIDocumentMenuDelegate,UIDocumentPickerDele
     var strDId : String = ""
     var attachmentItems = [String]()
     var weeklyPlan : WeeklyPlanList?
-
+    var fileUpload = FTPUpload()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getFTPDetails()
 
         // Do any additional setup after loading the view.
     }
     func getUdidOfDevide() -> String {
         return  UIDevice.current.identifierForVendor!.uuidString
+    }
+    //GetFtpLocation Credebtilas
+    
+    func getFTPDetails() {
+        let url = APIUrls().getFTPUrls
+        let userId  = UserDefaultsManager.manager.getUserId()
+        var dictionary = [String: Any]()
+        dictionary[UserIdKey().id] = userId
+        dictionary[Communicate().isMobile] = 1
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "",typingCountVal:typingCount, requestParameters: dictionary) { (result) in
+            DispatchQueue.main.async {
+                print("FTP location details details",result)
+                UserDefaultsManager.manager.insertUserDefaultValue(value: result, key:DBKeys.FTPDetails)
+            }
+        }
     }
     func getSendDictionary() -> [String:Any] {
         var dictionary = [String: Any]()
@@ -158,7 +212,7 @@ class AddCommentVC: UIViewController,UIDocumentMenuDelegate,UIDocumentPickerDele
         }
         let tempArr = attachmentItems
         attachmentItems = removeDuplicates(array: tempArr)
-        self.lblChooseFile.text = "\(attachmentItems.count) file is atteched"
+        self.lblChooseFile.text = "\(attachmentItems.count) file is attached"
 //        attachmentTb.reloadData()
     }
     
@@ -214,6 +268,15 @@ class AddCommentVC: UIViewController,UIDocumentMenuDelegate,UIDocumentPickerDele
             _ = SweetAlert().showAlert("", subTitle: "Please enter comment", style: .warning)
             return
         }
+        var ftpUrls = [String]()
+        if attachmentItems.count > 0{
+            for each in attachmentItems{
+               ftpUrls.append(each)
+            }
+        }
+        if attachmentItems.count > 0 {
+            connectFtp(list : ftpUrls)
+        } 
         let sendDict = self.getSendDictionary()
         print("sending dictionary is :-",sendDict)
         let url = APIUrls().weeklyPlanComment
@@ -243,6 +306,12 @@ class AddCommentVC: UIViewController,UIDocumentMenuDelegate,UIDocumentPickerDele
             print("sent mail response is \(result)")
             
         })
+    }
+    func connectFtp(list : [String]){
+        if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary{
+            fileUpload.delegate = self
+            fileUpload.upload(attachments: list )
+    }
     }
 }
 extension AddCommentVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextViewDelegate {

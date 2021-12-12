@@ -15,6 +15,7 @@ enum CommunicationType : String{
     
     case inbox = "INBOX"
     case sent  = "SENT"
+    case WP = "WEEKLYPLAN"
 }
 
 class CommunicateController: UIViewController,UITableViewDataSource, UITableViewDelegate,TaykonProtocol {
@@ -84,11 +85,15 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
             typeValue = 2
             url = APIUrls().getInBox
          }
-         else{
+        else if type == CommunicationType.WP{
+            typeValue = 3
+            url = APIUrls().WPCommentList
+        }
+        else{
             typeValue = 1
             url = APIUrls().getSentBox
         }
-        
+
         print("communicate send urk :- ",url)
         
         var dictionary = [String: Any]()
@@ -97,6 +102,10 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
         dictionary[UserIdKey().id] =  UserDefaultsManager.manager.getUserId()//self.checkSibingsAndGetId()
         dictionary[Communicate().searchText] = txt
         dictionary[Communicate().paginationNumber] = paginationNumber
+        if(typeValue == 3)
+        {
+            dictionary[Communicate().ModuleCode] = "weeklyplan"
+        }
         
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
