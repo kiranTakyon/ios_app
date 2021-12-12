@@ -5528,7 +5528,6 @@
 		CEE50C1726E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1A26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1B26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
-		CEE50C1D26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1E26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1F26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C2026E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
@@ -5560,7 +5559,6 @@
 		CEE50C6226E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6526E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6626E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
-		CEE50C6826E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6926E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6A26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6B26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
@@ -8884,8 +8882,6 @@
 				44CE62442548515D005C3DED /* sampleImage.png in Resources */,
 				44CE62452548515D005C3DED /* WeeklyPlanCell.xib in Resources */,
 				44CE62462548515D005C3DED /* Main.storyboard in Resources */,
-				CEE50C1D26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
-				CEE50C6826E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				44CE62472548515D005C3DED /* CalendarSection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -20293,7 +20289,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.17;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = GB8Q5JTUBQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -20305,7 +20301,7 @@
 				INFOPLIST_FILE = "Taryam-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.17;
+				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -20437,7 +20433,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.17;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = GB8Q5JTUBQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -20449,7 +20445,7 @@
 				INFOPLIST_FILE = "Taryam-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.17;
+				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -20964,7 +20960,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.17;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = 5VXG48XRVV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -20976,7 +20972,7 @@
 				INFOPLIST_FILE = "OrisonSchool V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.17;
+				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -21109,7 +21105,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.17;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = 5VXG48XRVV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -21121,7 +21117,7 @@
 				INFOPLIST_FILE = "OrisonSchool V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.17;
+				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -21301,7 +21297,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.16;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = A98Q7Q46A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -21313,7 +21309,7 @@
 				INFOPLIST_FILE = "FutureLeader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.16;
+				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -21445,7 +21441,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.16;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = A98Q7Q46A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -21457,7 +21453,7 @@
 				INFOPLIST_FILE = "FutureLeader-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.16;
+				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24438,7 +24434,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.17;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = B78NL2Q5JM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24450,7 +24446,7 @@
 				INFOPLIST_FILE = "ICS V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.17;
+				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24583,7 +24579,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.17;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = B78NL2Q5JM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24595,7 +24591,7 @@
 				INFOPLIST_FILE = "ICS V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.17;
+				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
