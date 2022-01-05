@@ -5382,7 +5382,6 @@
 		CEE50C1426E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1726E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1B26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
-		CEE50C1E26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C1F26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C2026E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C2126E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
@@ -5408,7 +5407,6 @@
 		CEE50C5F26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6226E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6626E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
-		CEE50C6926E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6A26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6B26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6D26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
@@ -8696,8 +8694,6 @@
 				44CE646025486A4A005C3DED /* sampleImage.png in Resources */,
 				44CE646125486A4A005C3DED /* WeeklyPlanCell.xib in Resources */,
 				44CE646225486A4A005C3DED /* Main.storyboard in Resources */,
-				CEE50C1E26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
-				CEE50C6926E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				44CE646325486A4A005C3DED /* CalendarSection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -21360,7 +21356,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.14;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = 8DUU25XJP6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -21372,7 +21368,7 @@
 				INFOPLIST_FILE = "AmbassadorV2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.14;
+				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -21504,7 +21500,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.14;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = 8DUU25XJP6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -21516,7 +21512,7 @@
 				INFOPLIST_FILE = "AmbassadorV2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.14;
+				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -22032,7 +22028,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.14;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = H37Q68Q3SD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -22044,7 +22040,7 @@
 				INFOPLIST_FILE = "Habitat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.14;
+				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -22176,7 +22172,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.14;
+				CURRENT_PROJECT_VERSION = 1.18;
 				DEVELOPMENT_TEAM = H37Q68Q3SD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -22188,7 +22184,7 @@
 				INFOPLIST_FILE = "Habitat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.14;
+				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
