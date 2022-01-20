@@ -10,6 +10,7 @@
 import UIKit
 import BIZPopupView
 import QuickLook
+import EzPopup
 
 let html =   NSAttributedString.DocumentType.self
 
@@ -27,7 +28,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     var resultValue  : MessageModel?
 
     var messageList = [TinboxMessage]()
-    var popUpViewVc = BIZPopupViewController()
+//    var popUpViewVc = BIZPopupViewController()
     let videoDownload  = VideoDownload()
     var fileURLs = [NSURL]()
     let quickLookController = QLPreviewController()
@@ -98,10 +99,13 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     func showPicker(tag : Int){
         if let colorVC = mainStoryBoard.instantiateViewController(withIdentifier: "ReadSelectViewController") as? ReadSelectViewController {
             if messageList.count > 0{
+
+                var msgId = [String]()
+                
                 for each in messageList{
-                    colorVC.msgId.append(each.id.safeValue)
+                    msgId.append(each.id.safeValue)
                 }
-                popUpViewVc = BIZPopupViewController(contentViewController: colorVC, contentSize: CGSize(width: 300, height: 300))
+                colorVC.msgId = msgId
 
                 guard let user = UserDefaultsManager.manager.getUserType() as? String else{
                     
@@ -121,7 +125,11 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             colorVC.delegate = self
             colorVC.typeval = typeMsg
             colorVC.tag = tag
-            self.present(popUpViewVc, animated: true, completion: nil)
+//            colorVC.tableView.reloadData()
+//            popUpViewVc = BIZPopupViewController(contentViewController: colorVC, contentSize: CGSize(width: 300, height: 300))
+//            self.present(popUpViewVc, animated: true, completion: nil)
+            let popupVC = PopupViewController(contentController: colorVC, popupWidth: 300, popupHeight: 300)
+            self.present(popupVC, animated: true)
         }}
     
     

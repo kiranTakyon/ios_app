@@ -9,6 +9,7 @@
 import UIKit
 import DGActivityIndicatorView
 import BIZPopupView
+import EzPopup
 
 class ForgotPasswordController: UIViewController {
     
@@ -88,10 +89,12 @@ class ForgotPasswordController: UIViewController {
         let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
         let popvc = MainStoyboard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
         popvc.userEmail = passwordField.text
-        var popUpViewVc : BIZPopupViewController?
-        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))
-        self.present(popUpViewVc!, animated: true, completion: nil)
+//        var popUpViewVc : BIZPopupViewController?
+//        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))
+//        self.present(popUpViewVc!, animated: true, completion: nil)
         
+        let popupVC = PopupViewController(contentController: popvc, popupWidth: 300, popupHeight: 300)
+        self.present(popupVC, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

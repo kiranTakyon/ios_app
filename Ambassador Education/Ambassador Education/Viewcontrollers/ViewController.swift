@@ -9,6 +9,7 @@
 import UIKit
 import BIZPopupView
 import SCLAlertView
+import EzPopup
 
 let kAlert = "Orison"
 let fillFields = "All fields are mandatory"
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
     
     let tick = UIImage(named:"Tick")
     let unTick = UIImage(named:"UnTick")
-    var  popUpViewVc : BIZPopupViewController?
+//    var  popUpViewVc : BIZPopupViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         setCountryPicker()
@@ -387,10 +388,13 @@ class ViewController: UIViewController {
         
         let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
         let popvc = MainStoyboard.instantiateViewController(withIdentifier: "forgottPasswordVc") as! ForgotPasswordController
-         var popUpViewVc : BIZPopupViewController?
-        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))
-        self.present(popUpViewVc!, animated: true, completion: nil)
+//         var popUpViewVc : BIZPopupViewController?
+//        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))
+//        self.present(popUpViewVc!, animated: true, completion: nil)
         
+        let popupVC = PopupViewController(contentController: popvc, popupWidth: 300, popupHeight: 300)
+        self.present(popupVC, animated: true)
+
     }
 
     

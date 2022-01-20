@@ -7,6 +7,7 @@ PODS:
   - DatePickerDialog (2.0)
   - DGActivityIndicatorView (2.1.1)
   - DropDown (2.3.2)
+  - EzPopup (1.2)
   - Fabric (1.7.6)
   - Firebase/Analytics (4.13.0):
     - Firebase/Core
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - DatePickerDialog
   - DGActivityIndicatorView
   - DropDown
+  - EzPopup
   - Fabric
   - Firebase/Analytics
   - Firebase/Core
@@ -92,13 +94,14 @@ DEPENDENCIES:
   - Toast-Swift (~> 2.0.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - BIZPopupView
     - CCBottomRefreshControl
     - Crashlytics
     - DatePickerDialog
     - DGActivityIndicatorView
     - DropDown
+    - EzPopup
     - Fabric
     - Firebase
     - FirebaseAnalytics
@@ -106,7 +109,14 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FSCalendar
     - GGLInstanceID
+    - Google
+    - GoogleCloudMessaging
+    - GoogleInterchangeUtilities
+    - GoogleIPhoneUtilities
+    - GoogleNetworkingUtilities
+    - GoogleSymbolUtilities
     - GoogleToolboxForMac
+    - GoogleUtilities
     - HMSegmentedControl
     - MBCalendarKit
     - MXPagerView
@@ -119,23 +129,16 @@ SPEC REPOS:
     - SwiftSoup
     - Toast-Swift
     - TPKeyboardAvoiding
-  trunk:
-    - Google
-    - GoogleCloudMessaging
-    - GoogleInterchangeUtilities
-    - GoogleIPhoneUtilities
-    - GoogleNetworkingUtilities
-    - GoogleSymbolUtilities
-    - GoogleUtilities
 
 SPEC CHECKSUMS:
   BIZPopupView: 2f16ecbc852baa16e1ef20b67abaa831909ec994
   CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
-  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Crashlytics: 0ea46c8966ec6c2eab61f5d1bb71d6461c33278f
   DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
-  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
+  EzPopup: 989ac21992a82ad6d1245c747a78bf3833279ef0
+  Fabric: 0d4097606c34460a8ba5c7eb9dab75a467f0b30e
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
@@ -163,6 +166,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: b8b7e9236612448c292ac1045e5da77525b94b71
+PODFILE CHECKSUM: 542f9c81497e886770695c5b5b10490beb9efd8a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

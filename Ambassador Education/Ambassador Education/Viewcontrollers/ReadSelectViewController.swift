@@ -11,6 +11,7 @@ import UIKit
 class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var typeval = Int()
     var tag = Int()
     var msgObj : TinboxMessage?
@@ -20,14 +21,23 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-        self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.layoutIfNeeded()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        self.automaticallyAdjustsScrollViewInsets = false
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

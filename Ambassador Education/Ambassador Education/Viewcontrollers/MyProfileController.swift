@@ -9,6 +9,7 @@
 import UIKit
 import BIZPopupView
 import SCLAlertView
+import EzPopup
 
 class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDelegate,UIPopoverPresentationControllerDelegate,TaykonProtocol {
   
@@ -32,7 +33,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     
     var isFromCamera = false
     var profileInfo : TMyProfile?
-    var  popUpViewVc : BIZPopupViewController?
+//    var  popUpViewVc : BIZPopupViewController?
     var isEditClicked : Bool?
     
     @IBOutlet weak var profileTable: UITableView!
@@ -396,8 +397,10 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         let heightVal = 400
         let popvc = mainStoryBoard.instantiateViewController(withIdentifier: "changePasswordVc") as! ChangePasswordController
         popvc.delegate = self
-        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width: self.view.frame.size.width - 40,height: CGFloat(heightVal)))
-        self.present(popUpViewVc!, animated: true, completion: nil)
+//        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width: self.view.frame.size.width - 40,height: CGFloat(heightVal)))
+//        self.present(popUpViewVc!, animated: true, completion: nil)
+        let popupVC = PopupViewController(contentController: popvc, popupWidth: 300, popupHeight: 300)
+        self.present(popupVC, animated: true)
     }
     
     
@@ -408,9 +411,11 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         popvc.delegate = self
         if let emailValue = email as? String{
             popvc.email = emailValue
-            popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width: self.view.frame.size.width - 40,height: CGFloat(heightVal)))
-            self.present(popUpViewVc!, animated: true, completion: nil)
-
+//            popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width: self.view.frame.size.width - 40,height: CGFloat(heightVal)))
+//            self.present(popUpViewVc!, animated: true, completion: nil)
+            
+            let popupVC = PopupViewController(contentController: popvc, popupWidth: 300, popupHeight: 300)
+            self.present(popupVC, animated: true)
         }
     }
     
