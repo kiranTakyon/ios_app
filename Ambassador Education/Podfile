@@ -1,8 +1,10 @@
 # Uncomment this line to define a global platform for your project
- #platform :ios, '10.0'
+platform :ios, '12.0'
 workspace 'Ambassador Education.xcworkspace'
-target 'T360' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+#target 'T360' do
+
+target 'PEPS V2' do
+# Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 pod 'DGActivityIndicatorView'
 pod 'SkyFloatingLabelTextField', '~> 3.0'

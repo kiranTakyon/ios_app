@@ -27,7 +27,7 @@ public struct Pattern {
          _ = try NSRegularExpression(pattern: self.pattern, options: [])
     }
 
-    func matcher(in text: String) -> Matcher {
+    public func matcher(in text: String) -> Matcher {
         do {
             let regex = try NSRegularExpression(pattern: self.pattern, options: [])
             let nsString = NSString(string: text)
@@ -69,7 +69,7 @@ public class  Matcher {
     public func group(_ i: Int) -> String? {
         let b = matches[index]
         #if !os(Linux) && !swift(>=4)
-            let c = b.range(at: i)
+            let c = b.rangeAt(i)
         #else
             let c = b.range(at: i)
         #endif

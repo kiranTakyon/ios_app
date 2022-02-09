@@ -13,7 +13,7 @@ open class DatePickerDialog: UIView {
     private let kDefaultButtonHeight: CGFloat = 50
     private let kDefaultButtonSpacerHeight: CGFloat = 1
     private let kCornerRadius: CGFloat = 7
-    private let kDoneButtonTag: Int     = 1
+    private let kDoneButtonTag: Int = 1
 
     // MARK: - Views
     private var dialogView: UIView!
@@ -33,66 +33,76 @@ open class DatePickerDialog: UIView {
     private var buttonColor: UIColor!
     private var font: UIFont!
 
+    private var container: UIView?
+    private lazy var gradient = CAGradientLayer(layer: self.layer)
+
     // MARK: - Dialog initialization
-    public init(textColor: UIColor = UIColor.black,
-                buttonColor: UIColor = UIColor.blue,
-                font: UIFont = .boldSystemFont(ofSize: 15),
-                locale: Locale? = nil,
-                showCancelButton: Bool = true) {
+    @objc public init(
+        textColor: UIColor? = nil,
+        buttonColor: UIColor? = nil,
+        font: UIFont = .boldSystemFont(ofSize: 15),
+        locale: Locale? = nil,
+        showCancelButton: Bool = true
+    ) {
         let size = UIScreen.main.bounds.size
         super.init(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        self.textColor = textColor
-        self.buttonColor = buttonColor
+        self.textColor = textColor ?? Colors.text
+        self.buttonColor = buttonColor ?? Colors.accent
         self.font = font
         self.showCancelButton = showCancelButton
         self.locale = locale
         setupView()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    @objc required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
     func setupView() {
-        self.dialogView = createContainerView()
+        dialogView = createContainerView()
 
-        self.dialogView!.layer.shouldRasterize = true
-        self.dialogView!.layer.rasterizationScale = UIScreen.main.scale
+        dialogView?.layer.shouldRasterize = true
+        dialogView?.layer.rasterizationScale = UIScreen.main.scale
 
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = UIScreen.main.scale
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
 
-        self.dialogView!.layer.opacity = 0.5
-        self.dialogView!.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1)
+        dialogView?.layer.opacity = 0.5
+        dialogView?.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1)
 
-        self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
 
-        self.addSubview(self.dialogView!)
+        if let dialogView = dialogView {
+            addSubview(dialogView)
+        }
     }
 
     /// Handle device orientation changes
     @objc func deviceOrientationDidChange(_ notification: Notification) {
         self.frame = UIScreen.main.bounds
         let dialogSize = CGSize(width: 300, height: 230 + kDefaultButtonHeight + kDefaultButtonSpacerHeight)
-        dialogView.frame = CGRect(x: (UIScreen.main.bounds.size.width - dialogSize.width) / 2,
-                                  y: (UIScreen.main.bounds.size.height - dialogSize.height) / 2,
-                                  width: dialogSize.width,
-                                  height: dialogSize.height)
+        dialogView.frame = CGRect(
+            x: (UIScreen.main.bounds.size.width - dialogSize.width) / 2,
+            y: (UIScreen.main.bounds.size.height - dialogSize.height) / 2,
+            width: dialogSize.width,
+            height: dialogSize.height
+        )
     }
 
     /// Create the dialog view, and animate opening the dialog
-    open func show(_ title: String,
-                   doneButtonTitle: String = "Done",
-                   cancelButtonTitle: String = "Cancel",
-                   defaultDate: Date = Date(),
-                   minimumDate: Date? = nil, maximumDate: Date? = nil,
-                   datePickerMode: UIDatePicker.Mode = .dateAndTime,
-                   callback: @escaping DatePickerCallback) {
+    open func show(
+        _ title: String,
+        doneButtonTitle: String = "Done",
+        cancelButtonTitle: String = "Cancel",
+        defaultDate: Date = Date(),
+        minimumDate: Date? = nil, maximumDate: Date? = nil,
+        datePickerMode: UIDatePicker.Mode = .dateAndTime,
+        callback: @escaping DatePickerCallback
+    ) {
         self.titleLabel.text = title
         self.doneButton.setTitle(doneButtonTitle, for: .normal)
-        if showCancelButton {
-            self.cancelButton.setTitle(cancelButtonTitle, for: .normal)
-        }
+        if showCancelButton { self.cancelButton.setTitle(cancelButtonTitle, for: .normal) }
         self.datePickerMode = datePickerMode
         self.callback = callback
         self.defaultDate = defaultDate
@@ -100,9 +110,10 @@ open class DatePickerDialog: UIView {
         self.datePicker.date = self.defaultDate ?? Date()
         self.datePicker.maximumDate = maximumDate
         self.datePicker.minimumDate = minimumDate
-        if let locale = self.locale {
-            self.datePicker.locale = locale
-        }
+        if let locale = self.locale { self.datePicker.locale = locale }
+
+        if #available(iOS 13.4, *) { datePicker.preferredDatePickerStyle = .wheels }
+
         /* Add dialog to main window */
         guard let appDelegate = UIApplication.shared.delegate else { fatalError() }
         guard let window = appDelegate.window else { fatalError() }
@@ -110,9 +121,11 @@ open class DatePickerDialog: UIView {
         window?.bringSubviewToFront(self)
         window?.endEditing(true)
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: .deviceOrientationDidChange,
-                                               name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: .deviceOrientationDidChange,
+            name: UIDevice.orientationDidChangeNotification, object: nil
+        )
 
         /* Anim */
         UIView.animate(
@@ -121,9 +134,9 @@ open class DatePickerDialog: UIView {
             options: .curveEaseInOut,
             animations: {
                 self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-                self.dialogView!.layer.opacity = 1
-                self.dialogView!.layer.transform = CATransform3DMakeScale(1, 1, 1)
-        }
+                self.dialogView?.layer.opacity = 1
+                self.dialogView?.layer.transform = CATransform3DMakeScale(1, 1, 1)
+            }
         )
     }
 
@@ -146,7 +159,8 @@ open class DatePickerDialog: UIView {
                 let transform = CATransform3DConcat(currentTransform, CATransform3DMakeScale(0.6, 0.6, 1))
                 self.dialogView.layer.transform = transform
                 self.dialogView.layer.opacity = 0
-        }) { (_) in
+            }
+        ) { _ in
             for v in self.subviews {
                 v.removeFromSuperview()
             }
@@ -165,39 +179,45 @@ open class DatePickerDialog: UIView {
         self.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
 
         // This is the dialog's container; we attach the custom content and the buttons to this one
-        let container = UIView(frame: CGRect(x: (screenSize.width - dialogSize.width) / 2,
-                                                   y: (screenSize.height - dialogSize.height) / 2,
-                                                   width: dialogSize.width,
-                                                   height: dialogSize.height))
+        let container = UIView()
+        self.container = container
+        container.frame = CGRect(
+            x: (screenSize.width - dialogSize.width) / 2,
+            y: (screenSize.height - dialogSize.height) / 2,
+            width: dialogSize.width,
+            height: dialogSize.height
+        )
 
         // First, we style the dialog to match the iOS8 UIAlertView >>>
-        let gradient: CAGradientLayer = CAGradientLayer(layer: self.layer)
         gradient.frame = container.bounds
-        gradient.colors = [UIColor(red: 218/255, green: 218/255, blue: 218/255, alpha: 1).cgColor,
-                           UIColor(red: 233/255, green: 233/255, blue: 233/255, alpha: 1).cgColor,
-                           UIColor(red: 218/255, green: 218/255, blue: 218/255, alpha: 1).cgColor]
+        gradient.colors = Colors.gradientBackground
 
         let cornerRadius = kCornerRadius
         gradient.cornerRadius = cornerRadius
         container.layer.insertSublayer(gradient, at: 0)
 
         container.layer.cornerRadius = cornerRadius
-        container.layer.borderColor = UIColor(red: 198/255, green: 198/255, blue: 198/255, alpha: 1).cgColor
+        container.layer.borderColor = Colors.separator.cgColor
         container.layer.borderWidth = 1
         container.layer.shadowRadius = cornerRadius + 5
         container.layer.shadowOpacity = 0.1
         container.layer.shadowOffset = CGSize(width: 0 - (cornerRadius + 5) / 2, height: 0 - (cornerRadius + 5) / 2)
         container.layer.shadowColor = UIColor.black.cgColor
-        container.layer.shadowPath = UIBezierPath(roundedRect: container.bounds,
-                                                        cornerRadius: container.layer.cornerRadius).cgPath
+        container.layer.shadowPath = UIBezierPath(
+            roundedRect: container.bounds,
+            cornerRadius: container.layer.cornerRadius
+        ).cgPath
 
         // There is a line above the button
         let yPosition = container.bounds.size.height - kDefaultButtonHeight - kDefaultButtonSpacerHeight
-        let lineView = UIView(frame: CGRect(x: 0,
-                                            y: yPosition,
-                                            width: container.bounds.size.width,
-                                            height: kDefaultButtonSpacerHeight))
-        lineView.backgroundColor = UIColor(red: 198/255, green: 198/255, blue: 198/255, alpha: 1)
+        let lineView = UIView(frame: CGRect(
+            x: 0,
+            y: yPosition,
+            width: container.bounds.size.width,
+            height: kDefaultButtonSpacerHeight
+        ))
+
+        lineView.backgroundColor = Colors.separator
         container.addSubview(lineView)
 
         //Title
@@ -255,27 +275,28 @@ open class DatePickerDialog: UIView {
         let isLeftToRightDirection = interfaceLayoutDirection == .leftToRight
 
         if showCancelButton {
-            self.cancelButton = UIButton(type: .custom) as UIButton
+            self.cancelButton = UIButton(type: .system)
             self.cancelButton.frame = isLeftToRightDirection ? leftButtonFrame : rightButtonFrame
             self.cancelButton.setTitleColor(self.buttonColor, for: .normal)
             self.cancelButton.setTitleColor(self.buttonColor, for: .highlighted)
-            self.cancelButton.titleLabel!.font = self.font.withSize(14)
+            self.cancelButton.titleLabel?.font = self.font.withSize(14)
             self.cancelButton.layer.cornerRadius = kCornerRadius
             self.cancelButton.addTarget(self, action: .buttonTapped, for: .touchUpInside)
             container.addSubview(self.cancelButton)
         }
-        self.doneButton = UIButton(type: .custom) as UIButton
+
+        self.doneButton = UIButton(type: .system)
         self.doneButton.frame = isLeftToRightDirection ? rightButtonFrame : leftButtonFrame
         self.doneButton.tag = kDoneButtonTag
         self.doneButton.setTitleColor(self.buttonColor, for: .normal)
         self.doneButton.setTitleColor(self.buttonColor, for: .highlighted)
-        self.doneButton.titleLabel!.font = self.font.withSize(14)
+        self.doneButton.titleLabel?.font = self.font.withSize(14)
         self.doneButton.layer.cornerRadius = kCornerRadius
         self.doneButton.addTarget(self, action: .buttonTapped, for: .touchUpInside)
         container.addSubview(self.doneButton)
     }
 
-    @objc func buttonTapped(sender: UIButton!) {
+    @objc func buttonTapped(sender: UIButton) {
         if sender.tag == kDoneButtonTag {
             self.callback?(self.datePicker.date)
         } else {
@@ -287,5 +308,11 @@ open class DatePickerDialog: UIView {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        container?.layer.borderColor = Colors.separator.cgColor
+        gradient.colors = Colors.gradientBackground
     }
 }
