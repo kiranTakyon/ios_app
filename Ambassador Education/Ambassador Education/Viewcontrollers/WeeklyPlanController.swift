@@ -214,6 +214,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 }
                 
                 self.viewPager.segmentedControl.selectedSegmentIndex = 0
+               // self.viewPager.segmentedControl.select(index: 0, animated: true)
                 self.setPagerView()
                 self.stopLoadingAnimation()
                 self.titles.removeAll()
@@ -411,14 +412,15 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         viewPager.delegate = self
         viewPager.dataSource = self
-        viewPager.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocation.down//HMSegmentedControlSelectionIndicatorLocationDown
+        viewPager.segmentedControl.selectionIndicatorLocation =  HMSegmentedControlSelectionIndicatorLocation.down//HMSegmentedControlSelectionIndicatorLocationDown
         viewPager.segmentedControl.selectionIndicatorColor = UIColor.white
+        //viewPager.segmentedControl.indicatorColor = UIColor.white
         viewPager.segmentedControl.backgroundColor = UIColor.appOrangeColor()
         //        viewPager.segmentedControl.tintColor = UIColor.white
         
         let attributeFontSaySomething : [String : Any] = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white,convertFromNSAttributedStringKey(NSAttributedString.Key.font) : UIFont.boldSystemFont(ofSize: 14.0)]
         //
-        viewPager.segmentedControl.titleTextAttributes = attributeFontSaySomething
+       // viewPager.segmentedControl.titleTextAttributes = attributeFontSaySomething
         
         
         

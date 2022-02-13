@@ -438,7 +438,7 @@ extension ViewController : TaykonProtocol {
     }
     
     func popUpDismiss() {
-        popUpViewVc?.dismiss(animated: true, completion: nil)
+       // popUpViewVc?.dismiss(animated: true, completion: nil)
 
     }
     

@@ -13,7 +13,7 @@
 - (void)layoutSubviews
 {
     //Moves cell text label over to make space for color square on left
-    self.textLabel.frame = CGRectMake(10, 0, 260, 60);
+    self.textLabel.frame = CGRectMake(35, 0, 260, 44);
     [super layoutSubviews];
 }
 

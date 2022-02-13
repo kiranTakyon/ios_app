@@ -110,7 +110,7 @@
     
     [self installCalendarView];
     [self installTableView];
- //   [self installToolbar];
+    [self installToolbar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,8 +127,6 @@
     self.calendarView.dataSource = self;
     self.calendarView.delegate = self;
     [self installShadow];
-  //  self.calendarView.frame = CGRectMake(0, 0,250, 250);
-    //self.calendarView.frame.origin.y = 100;
     [self.view addSubview:self.calendarView];
     [self layoutCalendar];
 }
@@ -172,8 +170,7 @@
         [self.view bringSubviewToFront:self.calendarView];
         
         self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-        self.tableView.tableFooterView = [[UIView alloc]
-                                          initWithFrame:CGRectZero];
+        
         NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:self.tableView
                                                                    attribute:NSLayoutAttributeLeading
                                                                    relatedBy:NSLayoutRelationEqual
@@ -208,7 +205,6 @@
         
         [self.view addConstraints:@[leading, trailing, top, bottom]];
     }
-    
 }
 
 
@@ -380,11 +376,10 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"noDataCell"];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.textColor = [UIColor colorWithWhite:0.2 alpha:0.8];
-        cell.textLabel.numberOfLines = 0;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         if (indexPath.row == 1) {
-            [cell.textLabel setText:NSLocalizedString(@"", @"A label for a table with no events.")];
+            [cell.textLabel setText:NSLocalizedString(@"No Events", @"A label for a table with no events.")];
         }
         else
         {
@@ -397,26 +392,25 @@
     
     CKCalendarEvent *event = self.events[indexPath.row];
     
-   // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     cell.textLabel.text = event.title;
-    cell.textLabel.numberOfLines = 0;
-
-   // UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 6, 20, 20)];
-//    CALayer *layer = [CALayer layer];
-//    layer.backgroundColor = event.color.CGColor;
-//    layer.frame = colorView.frame;
-    //[colorView.layer insertSublayer:layer atIndex:0];
+    
+    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 6, 20, 20)];
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = event.color.CGColor;
+    layer.frame = colorView.frame;
+    [colorView.layer insertSublayer:layer atIndex:0];
     
     if(nil != event.image)
     {
-      //  cell.imageView.image = [UIImage imageWithData:event.image];
+        cell.imageView.image = [UIImage imageWithData:event.image];
     }
     else {
-      //  cell.imageView.image = nil;
+        cell.imageView.image = nil;
     }
     
-   // [cell addSubview:colorView];
+    [cell addSubview:colorView];
     
     return cell;
 }

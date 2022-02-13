@@ -442,7 +442,7 @@
                                                                relatedBy:NSLayoutRelationEqual
                                                                   toItem:self
                                                                attribute:NSLayoutAttributeTop
-                                                               multiplier:1.0
+                                                              multiplier:1.0
                                                                 constant:0.0];
         
         NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:self.headerView

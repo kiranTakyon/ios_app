@@ -119,7 +119,8 @@ class NoticeboardDetailController: UIViewController {
         }
     
     func setHtml(){
-        richView.editingEnabled = false
+       // richView.editingEnabled = false
+        richView.isEditingEnabled = false
 
         if let _ = detail{
         if let desc = detail?.description{
