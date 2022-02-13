@@ -8,5 +8,5 @@
 #import "MPGTextField.h"
 #import "CCBottomRefreshControl/UIScrollView+BottomRefreshControl.h"
 #import "FSCalendar.h"
-#import <Google/CloudMessaging.h>
+//#import <Google/CloudMessaging.h>
 //#import <FTPKit/FTPKit.h>

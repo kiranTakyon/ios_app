@@ -78,11 +78,7 @@
         _showDismissButton = YES;
         _enableBackgroundFade = YES;
         
-        if (@available(iOS 9.0, *)) {
-            [self loadViewIfNeeded];
-        } else {
-            // Fallback on earlier versions
-        }
+        [self loadViewIfNeeded];
         
         [self createDismissButton];
         

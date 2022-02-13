@@ -506,7 +506,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     
     
     func popUpDismiss() {
-        popUpViewVc?.dismiss(animated: true, completion: nil)
+       // popUpViewVc?.dismiss(animated: true, completion: nil)
     }
     
     func getAllVisibleCellsFromTableView() -> (Bool,String){

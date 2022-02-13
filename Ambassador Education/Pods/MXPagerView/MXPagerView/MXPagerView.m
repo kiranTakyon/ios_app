@@ -245,7 +245,7 @@
     
     void(^loadPage)(NSInteger index) = ^(NSInteger index) {
         
-        if (!self.pages[@(index)] && (index >= 0) && (index < self->_count)) {
+        if (!self.pages[@(index)] && (index >= 0) && (index < _count)) {
             
             //Load page
             UIView *page = [self.dataSource pagerView:self viewForPageAtIndex:index];

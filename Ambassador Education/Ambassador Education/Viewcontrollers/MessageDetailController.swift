@@ -418,10 +418,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
        
         if message.message != "" {
             let strU : String = self.getLinkFormHtml(strV: message.message!)
-            if strU != "" {
-                UIApplication.shared.open(URL(string:strU)!)
-            }
-            else if ((message.message?.contains("weeklyplan?cat_id=")) != nil)
+            if ((message.message?.contains("weeklyplan?cat_id=")) != nil || (message.message?.contains("weeklyplan/?cat_id=")) != nil)
                 {
                 self.itemId = message.message?.components(separatedBy: "&message_id=")[1]
                 self.itemId = self.itemId?.components(separatedBy: "\">click here")[0]
@@ -430,6 +427,10 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                     showComments(itemid: itemId ?? "")
                 }
                }
+            else if strU != "" {
+                UIApplication.shared.open(URL(string:strU)!)
+            }
+            
                 
         }
         /*   NSString URLString = [bookmarks objectAtIndex:indexPath.row];

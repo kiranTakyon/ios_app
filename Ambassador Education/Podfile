@@ -1,4 +1,5 @@
 # Uncomment this line to define a global platform for your project
+#ENV['SWIFT_VERSION'] = '5'
 platform :ios, '12.0'
 workspace 'Ambassador Education.xcworkspace'
 #target 'T360' do
@@ -20,14 +21,29 @@ pod 'CCBottomRefreshControl'
 pod 'FSCalendar'
 pod 'BIZPopupView'
 pod 'SwiftSoup'
-pod 'Firebase/Core'
-pod 'Firebase/Analytics'
+#pod 'Firebase/Core','8.1.0'
+pod 'FirebaseAnalytics', '~> 7.0.0'
+#pod 'FirebaseAnalytics'
+pod 'FirebaseDatabase', '~> 7.0.0'
 pod 'SCLAlertView'
 pod 'GGLInstanceID'
-pod 'Google/CloudMessaging'
+pod 'FirebaseMessaging'
 pod 'EzPopup'
 
 #pod 'Google/AdMob'
 # Pods for Ambassador Education
-
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+    # some older pods don't support some architectures, anything over iOS 11 resolves that
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+end
+#post_install do |installer|
+#  installer.pods_project.build_configurations.each do |config|
+#    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+#  end
+#end
 end
