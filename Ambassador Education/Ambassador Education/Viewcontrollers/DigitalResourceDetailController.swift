@@ -179,8 +179,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let labelHeight = labelSize.height //here it is!
             richEditor1ViewHeigh.constant =  labelHeight + 10 //+ 100
            // newREVHeight.constant = labelHeight + 10
-           // self.constraintViewWebDataTableHeight.constant = CGFloat((self.arrDataList.count * 300) + 20)
-            self.constraintViewWebDataTableHeight.constant = CGFloat(self.constraintViewWebDataTableHeight.constant) + richEditor1ViewHeigh.constant;
+            self.constraintViewWebDataTableHeight.constant = CGFloat((self.arrDataList.count * 300) + 20) + richEditor1ViewHeigh.constant
+//            self.constraintViewWebDataTableHeight.constant = CGFloat(self.constraintViewWebDataTableHeight.constant) + richEditor1ViewHeigh.constant;
         }
        // if richEditorViewHeight.constant <= 70.0{s
             //    addBottomLineToView()
@@ -401,7 +401,7 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.tableViewDataListBG {
             let cell : DigitalResourceDataListCell = (tableView.dequeueReusableCell(withIdentifier: "DigitalResourceDataListCell", for: indexPath) as? DigitalResourceDataListCell)!
-               self.constraintViewWebDataTableHeight.constant = self.constraintViewWebDataTableHeight.constant + CGFloat(((self.arrDataList.count-1) * 300)  + 0)
+//               self.constraintViewWebDataTableHeight.constant = self.constraintViewWebDataTableHeight.constant + CGFloat(((self.arrDataList.count-1) * 300)  + 0)
             cell.richEditorViewBG.load(URLRequest.init(url: URL.init(string: "\(self.arrDataList[indexPath.row])")!))
 
             self.attachViewTop.constant = self.constraintViewWebDataTableHeight.constant + 10
