@@ -454,7 +454,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         if titles.count > 0{
             return titles.count
         }
-        return 0
+        return 1
     }
     
     

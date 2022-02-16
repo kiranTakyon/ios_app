@@ -3,7 +3,7 @@
 //  Ambassador Education
 //
 //  Created by // Kp on 29/08/17.
-//  Copyright © 2017 //. All rights reserved.
+//  Copyright Â© 2017 //. All rights reserved.
 //
 
 import UIKit
@@ -49,8 +49,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         super.viewDidLoad()
 //        self.tableViewAttachments.register(DRDDownLoadCell.self, forCellReuseIdentifier: "DRDDownLoadCell")
 //        self.tableViewAttachments.register(UINib.init(nibName: "DRDAttechmentCell", bundle: nil), forCellReuseIdentifier: "DRDAttechmentCell")
-       // richEditorView1.editingEnabled = false
-        richEditorView1.isEditingEnabled = false
+        richEditorView1.editingEnabled = false
         richEditorView1.clipsToBounds = true
         setUI()
         videoDownload.delegate = self
@@ -157,7 +156,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             richEditorView1.html = htmlDecode.safeValue
             
             if user == UserType.parent.rawValue || user == UserType.student.rawValue{
-                if(weeklyPlanValue.CommentStatus  == 1)
+                if(weeklyPlanValue.CommentStatus == 1)
                 {
                     btnViewComment.isHidden = false
                     btnAddComment.isHidden = true
@@ -403,9 +402,9 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
         if tableView == self.tableViewDataListBG {
             let cell : DigitalResourceDataListCell = (tableView.dequeueReusableCell(withIdentifier: "DigitalResourceDataListCell", for: indexPath) as? DigitalResourceDataListCell)!
                self.constraintViewWebDataTableHeight.constant = self.constraintViewWebDataTableHeight.constant + CGFloat(((self.arrDataList.count-1) * 300)  + 0)
-           // cell.richEditorViewBG.load(URLRequest.init(url: URL.init(string: "\(self.arrDataList[indexPath.row])")!))
+            cell.richEditorViewBG.load(URLRequest.init(url: URL.init(string: "\(self.arrDataList[indexPath.row])")!))
 
-            //self.attachViewTop.constant = self.constraintViewWebDataTableHeight.constant + 10
+            self.attachViewTop.constant = self.constraintViewWebDataTableHeight.constant + 10
             return cell
             }
         else if tableView == self.tableViewAttachments {
@@ -552,9 +551,7 @@ fileprivate func convertFromNSAttributedStringDocumentType(_ input: NSAttributed
 
 
 class DigitalResourceDataListCell: UITableViewCell{
-    
-   // @IBOutlet weak var richEditorViewBG: RichEditorWebView!
-    // @IBOutlet weak var richEditorViewBG: RichEditorWebView!
+    @IBOutlet weak var richEditorViewBG: RichEditorWebView!
 }
 extension DigitalResourceDetailController : TaykonProtocol {
     
