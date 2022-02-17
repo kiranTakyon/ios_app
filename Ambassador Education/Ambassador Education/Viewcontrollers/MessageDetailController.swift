@@ -37,7 +37,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.navigationController?.isNavigationBarHidden = true
         getMessageDetails()
         videoDownload.delegate = self
         quickLookController.dataSource = self
@@ -54,6 +54,9 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         progressBar.isHidden = true
         addBlurEffectToTableView(inputView: self.view, hide: true)
     }
+    override func viewDidAppear(_ animated: Bool) {
+//        self.performSegue(withIdentifier: "toMessageDetail", sender: self)
+    }
     
     func getMessageDetails(){
         titleLabel.text = text.safeValue
@@ -67,7 +70,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         
         let url = APIUrls().messageDetails
         
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [self] (result) in
         
             if result["StatusCode"] as? Int == 1{
                 self.resultValue = MessageModel(values: result)//ModelClassManager.sharedManager.createModelArray(data: [result], modelType: ModelType.MessageModel) as! MessageModel
@@ -77,6 +80,9 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                     
                     self.messageList.append(contentsOf: list)
                     DispatchQueue.main.async {
+                        if self.text.safeValue == "" && !list.isEmpty {
+                            self.titleLabel.text = "\(list.first!.subject!)"
+                        }
                         self.messageTable.reloadData()
                         self.stopLoadingAnimation()
                             if self.messageList.count == 0{
@@ -595,8 +601,13 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     
   
     @IBAction func backAction(_ sender: Any) {
-        
-        self.navigationController?.popViewController(animated: true)
+        if self.navigationController?.viewControllers.count == 1 {
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "CommunicateLandController") as! CommunicateLandController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            self.navigationController!.popViewController(animated: true)
+        }
     }
     
     func getHeightOfRichEditorView(cell: messageDetailSecondCell,text : String){
@@ -614,11 +625,14 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBackFromMessageDetail"{
+            let destinationVC = segue.destination as! UINavigationController
+//            let vc = destinationVC.children[0] as! CommunicateLandController
+        }
+
+    }
 
 }
 

@@ -582,6 +582,7 @@
                         <segue destination="zya-IY-67h" kind="custom" identifier="toWeeklyPlan" customClass="SWRevealViewControllerSeguePushController" id="a5g-dS-nU6"/>
                         <segue destination="Ony-op-uDq" kind="custom" identifier="toAwareness" customClass="SWRevealViewControllerSeguePushController" id="tb0-fX-yRr"/>
                         <segue destination="mt9-0V-900" kind="custom" identifier="toGradeBook" customClass="SWRevealViewControllerSeguePushController" id="ErV-LT-dJM"/>
+                        <segue destination="P7n-HN-FjU" kind="custom" identifier="toMessageDetail" customClass="SWRevealViewControllerSeguePushController" id="meb-yj-RnV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKC-U7-1eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2195,16 +2196,21 @@
                             <constraint firstItem="VtZ-vZ-scV" firstAttribute="top" secondItem="yTt-IJ-CT4" secondAttribute="bottom" id="nZ2-R1-gRZ"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
                     <navigationItem key="navigationItem" id="sl9-in-65g"/>
+=======
+                    <navigationItem key="navigationItem" id="ex7-sS-D1P"/>
+>>>>>>> a8f36b2b94a6604c3bec3cfd47485016587b18ab
                     <connections>
                         <outlet property="messageTable" destination="yTt-IJ-CT4" id="0pD-U2-hqT"/>
                         <outlet property="progressBar" destination="PzC-nb-jtW" id="Jsv-cc-Mbt"/>
                         <outlet property="titleLabel" destination="is4-s1-2tJ" id="QOH-d5-zMY"/>
+                        <segue destination="1F4-PR-wfw" kind="custom" identifier="toBackFromMessageDetail" customClass="SWRevealViewControllerSegueSetController" id="v0U-Gf-XJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKf-a7-rBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6416.25" y="138.38028169014083"/>
+            <point key="canvasLocation" x="7515.9420289855079" y="-483.42391304347831"/>
         </scene>
         <!--Down Loads View Controller-->
         <scene sceneID="tbh-ME-Cty">
@@ -7357,6 +7363,24 @@
             </objects>
             <point key="canvasLocation" x="9143" y="1704"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tG4-8S-FfH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P7n-HN-FjU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wbA-0T-kGU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="26x-jm-W0A" kind="relationship" relationship="rootViewController" id="lvD-WT-ez2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mG-Lp-ruL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6608.6956521739139" y="-483.42391304347831"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="1RO-2M-5PZ">
@@ -7394,7 +7418,12 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="sZY-Vn-uxT"/>
+=======
+        <segue reference="kZn-is-Jar"/>
+        <segue reference="LfD-ZK-Stt"/>
+>>>>>>> a8f36b2b94a6604c3bec3cfd47485016587b18ab
         <segue reference="jF7-Bc-YDF"/>
     </inferredMetricsTieBreakers>
     <resources>

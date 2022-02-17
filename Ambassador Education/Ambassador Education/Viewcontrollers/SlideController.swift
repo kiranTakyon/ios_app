@@ -20,7 +20,7 @@ class SlideController: UITableViewController,TaykonProtocol {
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
     var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
-    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource"]
+    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail"]
     
     var selectionTitles = [String]()
     var selectionIds = [Int]()
@@ -87,6 +87,13 @@ class SlideController: UITableViewController,TaykonProtocol {
                 vc?.hashkey =  selectedHash ?? ""
             }
         }
+        else if segue.identifier == "toMessageDetail"{
+            let destinationVC = segue.destination as! UINavigationController
+            let vc = destinationVC.children[0] as! MessageDetailController
+            vc.messageId = notificationObject.id
+            vc.typeMsg = typeValue
+//            vc.text = notificationObject.title
+        }
     }
 
     //MARK: - Other Helpers
@@ -96,7 +103,8 @@ class SlideController: UITableViewController,TaykonProtocol {
             if selectedAlertType == .gallery{
                 self.performSegue(withIdentifier: "toGallery", sender: nil)
             }else if selectedAlertType == .communicate{
-                self.performSegue(withIdentifier: "toCommunicate", sender: nil)
+//                self.performSegue(withIdentifier: "toCommunicate", sender: nil)
+                self.performSegue(withIdentifier: "toMessageDetail", sender: self)
             }else if selectedAlertType == .html{
                 self.performSegue(withIdentifier: "toDigitalReource", sender: nil)
 
