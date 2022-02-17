@@ -25,6 +25,7 @@ enum alertType:String{
 }
 
 var selectedAlertType : alertType = .gallery
+var notificationObject : TNotification = TNotification(values: NSDictionary())
 
 
 class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWRevealViewControllerDelegate {
@@ -349,6 +350,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
             if let proceddId = currentNotification.id{
                 if let typeVal = alertType(rawValue: notificationType){
                     selectedAlertType = typeVal
+                    notificationObject = currentNotification
                 }
                 self.readNotification(notiId: proceddId, type: notificationType,index : indexPath)
             }
