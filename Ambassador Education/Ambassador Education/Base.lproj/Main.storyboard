@@ -1463,7 +1463,7 @@
         <!--Communicate Land Controller-->
         <scene sceneID="c7F-IH-OqV">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BdV-XS-DaT" customClass="CommunicateLandController" customModule="ABC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunicateLandController" modalPresentationStyle="fullScreen" id="BdV-XS-DaT" customClass="CommunicateLandController" customModule="ABC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="snk-5j-mDu"/>
                         <viewControllerLayoutGuide type="bottom" id="7Qw-gQ-37a"/>
@@ -2196,11 +2196,7 @@
                             <constraint firstItem="VtZ-vZ-scV" firstAttribute="top" secondItem="yTt-IJ-CT4" secondAttribute="bottom" id="nZ2-R1-gRZ"/>
                         </constraints>
                     </view>
-<<<<<<< HEAD
-                    <navigationItem key="navigationItem" id="sl9-in-65g"/>
-=======
                     <navigationItem key="navigationItem" id="ex7-sS-D1P"/>
->>>>>>> a8f36b2b94a6604c3bec3cfd47485016587b18ab
                     <connections>
                         <outlet property="messageTable" destination="yTt-IJ-CT4" id="0pD-U2-hqT"/>
                         <outlet property="progressBar" destination="PzC-nb-jtW" id="Jsv-cc-Mbt"/>
@@ -7418,12 +7414,8 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="sZY-Vn-uxT"/>
-=======
         <segue reference="kZn-is-Jar"/>
         <segue reference="LfD-ZK-Stt"/>
->>>>>>> a8f36b2b94a6604c3bec3cfd47485016587b18ab
         <segue reference="jF7-Bc-YDF"/>
     </inferredMetricsTieBreakers>
     <resources>

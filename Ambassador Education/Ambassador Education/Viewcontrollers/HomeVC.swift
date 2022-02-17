@@ -19,7 +19,7 @@ enum alertType:String{
     case communicate    = "INTM"
     case noticeboard    = "NWS"
     case weeklyPlan     = "HMW"
-    case bus     = "BUS"
+    case bus            = "BUS"
 
 
 }
