@@ -3670,6 +3670,150 @@
 		CDE8246D275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE8246E275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE8246F275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
+		CDE8498B27BEB13F00F16EBE /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
+		CDE8498C27BEB13F00F16EBE /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
+		CDE8498D27BEB13F00F16EBE /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
+		CDE8498E27BEB13F00F16EBE /* WeeklyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */; };
+		CDE8498F27BEB13F00F16EBE /* TMyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E21F2E270300729AF8 /* TMyProfile.swift */; };
+		CDE8499027BEB13F00F16EBE /* TInboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B87561F2F87FD00B15818 /* TInboxMessage.swift */; };
+		CDE8499127BEB13F00F16EBE /* CalendarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45218A8320808FCF004CF24C /* CalendarSection.swift */; };
+		CDE8499227BEB13F00F16EBE /* DirectoryCreationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4C1F6AC6CF00599C36 /* DirectoryCreationOperation.swift */; };
+		CDE8499327BEB13F00F16EBE /* TNGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40751F533FCA000F62B8 /* TNGroupMember.swift */; };
+		CDE8499427BEB13F00F16EBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */; };
+		CDE8499527BEB13F00F16EBE /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7231F1FC9AF00C0D63F /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		CDE8499627BEB13F00F16EBE /* VerificationEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */; };
+		CDE8499727BEB13F00F16EBE /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436F429204DA0D40076A3D4 /* SweetAlert.swift */; };
+		CDE8499827BEB13F00F16EBE /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E01F2E1A6900729AF8 /* ModelManager.swift */; };
+		CDE8499927BEB13F00F16EBE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
+		CDE8499A27BEB13F00F16EBE /* FileUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4E1F6AC6CF00599C36 /* FileUploadOperation.swift */; };
+		CDE8499B27BEB13F00F16EBE /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7241F1FC9AF00C0D63F /* UITextField+fixCaretPosition.swift */; };
+		CDE8499C27BEB13F00F16EBE /* WeeklyPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6E200C766A00288C83 /* WeeklyPlanCell.swift */; };
+		CDE8499D27BEB13F00F16EBE /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EB209B0C7900EB0F1D /* KSTokenView.swift */; };
+		CDE8499E27BEB13F00F16EBE /* TNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DE1F2E199700729AF8 /* TNotification.swift */; };
+		CDE8499F27BEB13F00F16EBE /* UploadFTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32A45D1F6AC446008A4BC3 /* UploadFTP.swift */; };
+		CDE849A027BEB13F00F16EBE /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F6092044534700515F74 /* WebViewViewController.swift */; };
+		CDE849A127BEB13F00F16EBE /* ProgressViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97520F759730071DF9E /* ProgressViewBar.swift */; };
+		CDE849A227BEB13F00F16EBE /* WeeklyPlanTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6A200C763F00288C83 /* WeeklyPlanTable.swift */; };
+		CDE849A327BEB13F00F16EBE /* GalleryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6361F5094A3006F4D34 /* GalleryListController.swift */; };
+		CDE849A427BEB13F00F16EBE /* TNPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890CE02007C8EC00991BF7 /* TNPayment.swift */; };
+		CDE849A527BEB13F00F16EBE /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB3F1F23C7730089E203 /* APIHelper.swift */; };
+		CDE849A627BEB13F00F16EBE /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
+		CDE849A727BEB13F00F16EBE /* TNNoticeBoardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34402030A0C600A35086 /* TNNoticeBoardDetail.swift */; };
+		CDE849A827BEB13F00F16EBE /* FTPUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F66A3213F946400411212 /* FTPUploadHelper.swift */; };
+		CDE849A927BEB13F00F16EBE /* MPGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB148F31F4F1F9800444765 /* MPGTextField.m */; };
+		CDE849AA27BEB13F00F16EBE /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
+		CDE849AB27BEB13F00F16EBE /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374120504687002931EA /* FSCalendar.m */; };
+		CDE849AC27BEB13F00F16EBE /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E8209B0C7600EB0F1D /* KSToken.swift */; };
+		CDE849AD27BEB13F00F16EBE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7321F1FC9AF00C0D63F /* HomeVC.swift */; };
+		CDE849AE27BEB13F00F16EBE /* TNAwarnessArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */; };
+		CDE849AF27BEB13F00F16EBE /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA641F24E8A700BA82BE /* PagerController.swift */; };
+		CDE849B027BEB13F00F16EBE /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375120504687002931EA /* FSCalendarTransitionCoordinator.m */; };
+		CDE849B127BEB13F00F16EBE /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373320504687002931EA /* FSCalendarCollectionView.m */; };
+		CDE849B227BEB13F00F16EBE /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7121F1FC9AF00C0D63F /* APIUrls.swift */; };
+		CDE849B327BEB13F00F16EBE /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373720504687002931EA /* FSCalendarDelegationProxy.m */; };
+		CDE849B427BEB13F00F16EBE /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40711F52F607000F62B8 /* CustomCalendarCell.swift */; };
+		CDE849B527BEB13F00F16EBE /* TNPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D45BC1F545D930042727A /* TNPerson.swift */; };
+		CDE849B627BEB13F00F16EBE /* TNGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6381F5098D4006F4D34 /* TNGallery.swift */; };
+		CDE849B727BEB13F00F16EBE /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C501F6AC6CF00599C36 /* Operation.swift */; };
+		CDE849B827BEB13F00F16EBE /* StreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C541F6AC6CF00599C36 /* StreamOperation.swift */; };
+		CDE849B927BEB13F00F16EBE /* TNCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343A203077B500A35086 /* TNCalendarEvent.swift */; };
+		CDE849BA27BEB13F00F16EBE /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72E1F1FC9AF00C0D63F /* TPKeyboardAvoidingTableView.m */; };
+		CDE849BB27BEB13F00F16EBE /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71D1F1FC9AF00C0D63F /* DOAlertController.swift */; };
+		CDE849BC27BEB13F00F16EBE /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72C1F1FC9AF00C0D63F /* TPKeyboardAvoidingScrollView.m */; };
+		CDE849BD27BEB13F00F16EBE /* CommunicateLandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */; };
+		CDE849BE27BEB13F00F16EBE /* TSibling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E41F2E4DD700729AF8 /* TSibling.swift */; };
+		CDE849BF27BEB13F00F16EBE /* FSCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374820504687002931EA /* FSCalendarExtensions.m */; };
+		CDE849C027BEB13F00F16EBE /* NoticeboardCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */; };
+		CDE849C127BEB13F00F16EBE /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374220504687002931EA /* FSCalendarCollectionViewLayout.m */; };
+		CDE849C227BEB13F00F16EBE /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71F1F1FC9AF00C0D63F /* Picker.swift */; };
+		CDE849C327BEB13F00F16EBE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE11F2788AA00742127 /* Protocols.swift */; };
+		CDE849C427BEB13F00F16EBE /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7221F1FC9AF00C0D63F /* SkyFloatingLabelTextField.swift */; };
+		CDE849C527BEB13F00F16EBE /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */; };
+		CDE849C627BEB13F00F16EBE /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
+		CDE849C727BEB13F00F16EBE /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D406F1F52F607000F62B8 /* CalendarController.swift */; };
+		CDE849C827BEB13F00F16EBE /* FSCalendarScopeHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374320504687002931EA /* FSCalendarScopeHandle.m */; };
+		CDE849C927BEB13F00F16EBE /* WriteStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C551F6AC6CF00599C36 /* WriteStreamOperation.swift */; };
+		CDE849CA27BEB13F00F16EBE /* RegisterPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */; };
+		CDE849CB27BEB13F00F16EBE /* jsonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7131F1FC9AF00C0D63F /* jsonKeys.swift */; };
+		CDE849CC27BEB13F00F16EBE /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375320504687002931EA /* FSCalendarAppearance.m */; };
+		CDE849CD27BEB13F00F16EBE /* FileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4D1F6AC6CF00599C36 /* FileDownloadOperation.swift */; };
+		CDE849CE27BEB13F00F16EBE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB481F23C7F10089E203 /* Reachability.swift */; };
+		CDE849CF27BEB13F00F16EBE /* DBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DB1F2E14EF00729AF8 /* DBKeys.swift */; };
+		CDE849D027BEB13F00F16EBE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB401F23C7730089E203 /* Constants.swift */; };
+		CDE849D127BEB13F00F16EBE /* TNAwarenessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A8D2045960D006A0848 /* TNAwarenessDetail.swift */; };
+		CDE849D227BEB13F00F16EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45559BF41EBADB3B00F4E6FB /* AppDelegate.swift */; };
+		CDE849D327BEB13F00F16EBE /* ReadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C639262053D2970099B85E /* ReadSelectViewController.swift */; };
+		CDE849D427BEB13F00F16EBE /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373920504687002931EA /* FSCalendarDelegationFactory.m */; };
+		CDE849D527BEB13F00F16EBE /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */; };
+		CDE849D627BEB13F00F16EBE /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97F20F76B220071DF9E /* LinearProgressView.swift */; };
+		CDE849D727BEB13F00F16EBE /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE31F278C3700742127 /* ComposeController.swift */; };
+		CDE849D827BEB13F00F16EBE /* WeeklyPlanFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */; };
+		CDE849D927BEB13F00F16EBE /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */; };
+		CDE849DA27BEB13F00F16EBE /* NoticeBoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */; };
+		CDE849DB27BEB13F00F16EBE /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7301F1FC9AF00C0D63F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		CDE849DC27BEB13F00F16EBE /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
+		CDE849DD27BEB13F00F16EBE /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */; };
+		CDE849DE27BEB13F00F16EBE /* FSCalendarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374B20504687002931EA /* FSCalendarConstants.m */; };
+		CDE849DF27BEB13F00F16EBE /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373F20504687002931EA /* FSCalendarCell.m */; };
+		CDE849E027BEB13F00F16EBE /* DigitalResourceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */; };
+		CDE849E127BEB13F00F16EBE /* TNMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4E68D31F6C347E00F95547 /* TNMenuItem.swift */; };
+		CDE849E227BEB13F00F16EBE /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
+		CDE849E327BEB13F00F16EBE /* FSCalendar+Deprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374A20504687002931EA /* FSCalendar+Deprecated.m */; };
+		CDE849E427BEB13F00F16EBE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB4A1F23CB450089E203 /* Extensions.swift */; };
+		CDE849E527BEB13F00F16EBE /* TNDigitalResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7851F55ABA400A366AA /* TNDigitalResource.swift */; };
+		CDE849E627BEB13F00F16EBE /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374020504687002931EA /* FSCalendarStickyHeader.m */; };
+		CDE849E727BEB13F00F16EBE /* CommunicateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */; };
+		CDE849E827BEB13F00F16EBE /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E9209B0C7700EB0F1D /* KSTokenField.swift */; };
+		CDE849E927BEB13F00F16EBE /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB421F23C7730089E203 /* UserDefaultManager.swift */; };
+		CDE849EA27BEB13F00F16EBE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C531F6AC6CF00599C36 /* Session.swift */; };
+		CDE849EB27BEB13F00F16EBE /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
+		CDE849EC27BEB13F00F16EBE /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72A1F1FC9AF00C0D63F /* TPKeyboardAvoidingCollectionView.m */; };
+		CDE849ED27BEB13F00F16EBE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */; };
+		CDE849EE27BEB13F00F16EBE /* SlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA591F24637D00BA82BE /* SlideController.swift */; };
+		CDE849EF27BEB13F00F16EBE /* AwarenessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8C083203B411A00C921DB /* AwarenessViewController.swift */; };
+		CDE849F027BEB13F00F16EBE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7271F1FC9AF00C0D63F /* SWRevealViewController.m */; };
+		CDE849F127BEB13F00F16EBE /* AwarenessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */; };
+		CDE849F227BEB13F00F16EBE /* DigitalResourceSecondListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */; };
+		CDE849F327BEB13F00F16EBE /* NotificationDetailListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */; };
+		CDE849F427BEB13F00F16EBE /* DigitalResourcesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */; };
+		CDE849F527BEB13F00F16EBE /* NoticeboardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */; };
+		CDE849F627BEB13F00F16EBE /* VideoDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FBEA8220810D3D0035AECD /* VideoDownload.swift */; };
+		CDE849F727BEB13F00F16EBE /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40701F52F607000F62B8 /* CircleView.swift */; };
+		CDE849F827BEB13F00F16EBE /* FSCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374C20504687002931EA /* FSCalendarCalculator.m */; };
+		CDE849F927BEB13F00F16EBE /* ReadStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C511F6AC6CF00599C36 /* ReadStreamOperation.swift */; };
+		CDE849FA27BEB13F00F16EBE /* DownLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */; };
+		CDE849FB27BEB13F00F16EBE /* TNNoticeboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78D1F55E5A600A366AA /* TNNoticeboard.swift */; };
+		CDE849FC27BEB13F00F16EBE /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374420504687002931EA /* FSCalendarWeekdayView.m */; };
+		CDE849FD27BEB13F00F16EBE /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EA209B0C7800EB0F1D /* KSUtils.swift */; };
+		CDE849FE27BEB13F00F16EBE /* GalleryCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */; };
+		CDE849FF27BEB13F00F16EBE /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5007E71F2638A10013AA07 /* MapController.swift */; };
+		CDE84A0027BEB13F00F16EBE /* TNGalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6341F508561006F4D34 /* TNGalleryCategory.swift */; };
+		CDE84A0127BEB13F00F16EBE /* GradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41937672050510A002931EA /* GradeViewController.swift */; };
+		CDE84A0227BEB13F00F16EBE /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB411F23C7730089E203 /* Global.swift */; };
+		CDE84A0327BEB13F00F16EBE /* TNWeeklyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E72200C865500288C83 /* TNWeeklyPlan.swift */; };
+		CDE84A0427BEB13F00F16EBE /* PaymentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE169EA0200687A00019685A /* PaymentDetailsController.swift */; };
+		CDE84A0527BEB13F00F16EBE /* TNGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB148EF1F4F1D5E00444765 /* TNGroup.swift */; };
+		CDE84A0727BEB13F00F16EBE /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE630DB81F514D9200CE1022 /* MBCalendarKit.framework */; };
+		CDE84A0827BEB13F00F16EBE /* Toast_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7B4CC31F378AA10009D393 /* Toast_Swift.framework */; };
+		CDE84A0927BEB13F00F16EBE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
+		CDE84A0A27BEB13F00F16EBE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
+		CDE84A0B27BEB13F00F16EBE /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
+		CDE84A0C27BEB13F00F16EBE /* Pods_PEPS_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA09E24803B2D9F11DD6DA /* Pods_PEPS_V2.framework */; };
+		CDE84A0E27BEB13F00F16EBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
+		CDE84A0F27BEB13F00F16EBE /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
+		CDE84A1027BEB13F00F16EBE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C4A1F6AC6CF00599C36 /* .swiftlint.yml */; };
+		CDE84A1127BEB13F00F16EBE /* TestInapp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9D2101ECF6001B571E /* TestInapp.jpg */; };
+		CDE84A1227BEB13F00F16EBE /* Picker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFBA7201F1FC9AF00C0D63F /* Picker.xib */; };
+		CDE84A1327BEB13F00F16EBE /* ProgressViewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1376C97620F759730071DF9E /* ProgressViewBar.xib */; };
+		CDE84A1427BEB13F00F16EBE /* TestPenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9B2101EB6B001B571E /* TestPenguin.png */; };
+		CDE84A1527BEB13F00F16EBE /* SampleText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138C2A5620FDE98D00F8BE17 /* SampleText.txt */; };
+		CDE84A1627BEB13F00F16EBE /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
+		CDE84A1827BEB13F00F16EBE /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
+		CDE84A1927BEB13F00F16EBE /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
+		CDE84A1A27BEB13F00F16EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45559BF81EBADB3B00F4E6FB /* Main.storyboard */; };
+		CDE84A1B27BEB13F00F16EBE /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
+		CDE84A2827BEB57A00F16EBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE84A2727BEB57900F16EBE /* GoogleService-Info.plist */; };
+		CDE84A2A27BEB6D200F16EBE /* Athena.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE84A2927BEB6D100F16EBE /* Athena.xcassets */; };
 		CE0A5F8D24375C8000568C23 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CE0A5F8E24375C8000568C23 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CE0A5F8F24375C8000568C23 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -5721,6 +5865,10 @@
 		CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDAttechmentCell.swift; sourceTree = "<group>"; };
 		CDE82449275FC03D00BD4211 /* AddCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentVC.swift; sourceTree = "<group>"; };
+		CDE84A2227BEB13F00F16EBE /* Athena Education.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Athena Education.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE84A2527BEB14000F16EBE /* Athena-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Athena-Info.plist"; path = "/Users/takyon/ios_new/Ambassador Education/Athena-Info.plist"; sourceTree = "<absolute>"; };
+		CDE84A2727BEB57900F16EBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDE84A2927BEB6D100F16EBE /* Athena.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Athena.xcassets; sourceTree = "<group>"; };
 		CE0A602124375C8000568C23 /* Ajman Modern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ajman Modern.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0A602424375C8600568C23 /* AjmanModern-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AjmanModern-Info.plist"; path = "/Users/takyonsystems/Desktop/tachyon247-takyon360 Dynamic Menu/Ambassador Education/AjmanModern-Info.plist"; sourceTree = "<absolute>"; };
 		CE0A6026243774EB00568C23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -5762,7 +5910,6 @@
 		CE91B8D6220981CA009D79A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CED2E94426E8E4C6007C862E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CED2EA4D26E8FC33007C862E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CEDDB7812247CC500079D1DC /* OrisonSchool.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = OrisonSchool.xcassets; path = "../../../Ambassador Education Target1/Ambassador Education/Assets/OrisonSchool.xcassets"; sourceTree = "<group>"; };
 		CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE509F026E7C47500D355C4 /* Crescent V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crescent V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE50A3B26E7C4D000D355C4 /* Crescent V2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Crescent V2-Info.plist"; path = "/Users/takyonsystems/Desktop/t360-ios/Ambassador Education/Crescent V2-Info.plist"; sourceTree = "<absolute>"; };
@@ -6111,6 +6258,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDE84A0627BEB13F00F16EBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE84A0727BEB13F00F16EBE /* MBCalendarKit.framework in Frameworks */,
+				CDE84A0827BEB13F00F16EBE /* Toast_Swift.framework in Frameworks */,
+				CDE84A0927BEB13F00F16EBE /* MapKit.framework in Frameworks */,
+				CDE84A0A27BEB13F00F16EBE /* CloudKit.framework in Frameworks */,
+				CDE84A0B27BEB13F00F16EBE /* DGActivityIndicatorView.framework in Frameworks */,
+				CDE84A0C27BEB13F00F16EBE /* Pods_PEPS_V2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE0A600424375C8000568C23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -6337,6 +6497,7 @@
 		13C7D1DD21410DC80053D5DA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CDE84A2927BEB6D100F16EBE /* Athena.xcassets */,
 				CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */,
 				CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */,
 				44A75D9D257BEBA800AB6299 /* Alansar.xcassets */,
@@ -6354,7 +6515,6 @@
 				4421607A237C177D00C84C38 /* Ambassador_V2.xcassets */,
 				44DA10B2237B1C070028AE04 /* MSBDubai.xcassets */,
 				4442B1582379DAE3005148EE /* OrisonSchoolV2.xcassets */,
-				CEDDB7812247CC500079D1DC /* OrisonSchool.xcassets */,
 				CE10ED1B2201D7B200F24DE4 /* DarAlUloomAssets.xcassets */,
 				CE8868BA21FAF05D00FF0DE0 /* PEAAssets.xcassets */,
 				CE88681B21FACF8F00FF0DE0 /* ABCAssets.xcassets */,
@@ -6389,6 +6549,7 @@
 		13CD021721467749008F307A /* GooglePlists */ = {
 			isa = PBXGroup;
 			children = (
+				CDE84A2627BEB43600F16EBE /* GooglePlistAthena */,
 				CED2EA0026E8F97D007C862E /* GooglePlistLPSV2 */,
 				CED2E8F526E8DE64007C862E /* GooglePlistCEHSV2 */,
 				44A75D54257BE57A00AB6299 /* GooglePlistAlansar */,
@@ -6756,6 +6917,7 @@
 				CD92438E274C3B6B007B5C2B /* ICS V2-Info.plist */,
 				CD3A90ED2765A2F600B9AA49 /* OurOwn-Info.plist */,
 				6745CAFF68722B930D28F3A7 /* Pods */,
+				CDE84A2527BEB14000F16EBE /* Athena-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -6799,6 +6961,7 @@
 				CE6A452F27031BCE009B9421 /* AjyalSchools.app */,
 				CD92438B274C3B5F007B5C2B /* ICS V2.app */,
 				CD3A90EC2765A2F500B9AA49 /* OurOwn.app */,
+				CDE84A2227BEB13F00F16EBE /* Athena Education.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -7125,6 +7288,14 @@
 				CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */,
 			);
 			path = "UIViewController-Popup";
+			sourceTree = "<group>";
+		};
+		CDE84A2627BEB43600F16EBE /* GooglePlistAthena */ = {
+			isa = PBXGroup;
+			children = (
+				CDE84A2727BEB57900F16EBE /* GoogleService-Info.plist */,
+			);
+			path = GooglePlistAthena;
 			sourceTree = "<group>";
 		};
 		CE0A6025243774AD00568C23 /* GooglePlistAjmanModern */ = {
@@ -7703,6 +7874,26 @@
 			productReference = CD92438B274C3B5F007B5C2B /* ICS V2.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CDE8498827BEB13F00F16EBE /* Athena Education */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDE84A1F27BEB13F00F16EBE /* Build configuration list for PBXNativeTarget "Athena Education" */;
+			buildPhases = (
+				CDE8498927BEB13F00F16EBE /* [CP] Check Pods Manifest.lock */,
+				CDE8498A27BEB13F00F16EBE /* Sources */,
+				CDE84A0627BEB13F00F16EBE /* Frameworks */,
+				CDE84A0D27BEB13F00F16EBE /* Resources */,
+				CDE84A1D27BEB13F00F16EBE /* ShellScript */,
+				CDE84A1E27BEB13F00F16EBE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Athena Education";
+			productName = "Ambassador Education";
+			productReference = CDE84A2227BEB13F00F16EBE /* Athena Education.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CE0A5F8A24375C8000568C23 /* Ajman Modern */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE0A601E24375C8000568C23 /* Build configuration list for PBXNativeTarget "Ajman Modern" */;
@@ -8041,6 +8232,10 @@
 						DevelopmentTeam = B78NL2Q5JM;
 						ProvisioningStyle = Manual;
 					};
+					CDE8498827BEB13F00F16EBE = {
+						DevelopmentTeam = N78PMQ93HN;
+						ProvisioningStyle = Manual;
+					};
 					CE0A5F8A24375C8000568C23 = {
 						DevelopmentTeam = 7L66K48KRH;
 						ProvisioningStyle = Manual;
@@ -8153,6 +8348,7 @@
 				CE6A449727031BCE009B9421 /* AjyalSchools */,
 				CD9242F0274C3B5F007B5C2B /* ICS V2 */,
 				CD3A90502765A2F500B9AA49 /* OurOwn */,
+				CDE8498827BEB13F00F16EBE /* Athena Education */,
 			);
 		};
 /* End PBXProject section */
@@ -8745,6 +8941,28 @@
 				CD924383274C3B5F007B5C2B /* WeeklyPlanCell.xib in Resources */,
 				CD924384274C3B5F007B5C2B /* Main.storyboard in Resources */,
 				CD924385274C3B5F007B5C2B /* CalendarSection.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDE84A0D27BEB13F00F16EBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE84A0E27BEB13F00F16EBE /* LaunchScreen.storyboard in Resources */,
+				CDE84A0F27BEB13F00F16EBE /* WeeklyPlanTable.xib in Resources */,
+				CDE84A1027BEB13F00F16EBE /* .swiftlint.yml in Resources */,
+				CDE84A1127BEB13F00F16EBE /* TestInapp.jpg in Resources */,
+				CDE84A1227BEB13F00F16EBE /* Picker.xib in Resources */,
+				CDE84A1327BEB13F00F16EBE /* ProgressViewBar.xib in Resources */,
+				CDE84A1427BEB13F00F16EBE /* TestPenguin.png in Resources */,
+				CDE84A1527BEB13F00F16EBE /* SampleText.txt in Resources */,
+				CDE84A1627BEB13F00F16EBE /* sampleImage.png in Resources */,
+				CDE84A2827BEB57A00F16EBE /* GoogleService-Info.plist in Resources */,
+				CDE84A1827BEB13F00F16EBE /* Common.xcassets in Resources */,
+				CDE84A1927BEB13F00F16EBE /* WeeklyPlanCell.xib in Resources */,
+				CDE84A1A27BEB13F00F16EBE /* Main.storyboard in Resources */,
+				CDE84A1B27BEB13F00F16EBE /* CalendarSection.xib in Resources */,
+				CDE84A2A27BEB6D200F16EBE /* Athena.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9444,6 +9662,115 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		CDE8498927BEB13F00F16EBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PEPS V2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDE84A1D27BEB13F00F16EBE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
+		};
+		CDE84A1E27BEB13F00F16EBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PEPS V2/Pods-PEPS V2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PEPS V2/Pods-PEPS V2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		CE0A601D24375C8000568C23 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -12851,6 +13178,136 @@
 				CD92436A274C3B5F007B5C2B /* TNWeeklyPlan.swift in Sources */,
 				CD92436B274C3B5F007B5C2B /* PaymentDetailsController.swift in Sources */,
 				CD92436C274C3B5F007B5C2B /* TNGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDE8498A27BEB13F00F16EBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE8498B27BEB13F00F16EBE /* FSCalendarHeaderView.m in Sources */,
+				CDE8498C27BEB13F00F16EBE /* ResourceListOperation.swift in Sources */,
+				CDE8498D27BEB13F00F16EBE /* MessageDetailController.swift in Sources */,
+				CDE8498E27BEB13F00F16EBE /* WeeklyPlanController.swift in Sources */,
+				CDE8498F27BEB13F00F16EBE /* TMyProfile.swift in Sources */,
+				CDE8499027BEB13F00F16EBE /* TInboxMessage.swift in Sources */,
+				CDE8499127BEB13F00F16EBE /* CalendarSection.swift in Sources */,
+				CDE8499227BEB13F00F16EBE /* DirectoryCreationOperation.swift in Sources */,
+				CDE8499327BEB13F00F16EBE /* TNGroupMember.swift in Sources */,
+				CDE8499427BEB13F00F16EBE /* ViewController.swift in Sources */,
+				CDE8499527BEB13F00F16EBE /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				CDE8499627BEB13F00F16EBE /* VerificationEmailViewController.swift in Sources */,
+				CDE8499727BEB13F00F16EBE /* SweetAlert.swift in Sources */,
+				CDE8499827BEB13F00F16EBE /* ModelManager.swift in Sources */,
+				CDE8499927BEB13F00F16EBE /* ResetPasswordVC.swift in Sources */,
+				CDE8499A27BEB13F00F16EBE /* FileUploadOperation.swift in Sources */,
+				CDE8499B27BEB13F00F16EBE /* UITextField+fixCaretPosition.swift in Sources */,
+				CDE8499C27BEB13F00F16EBE /* WeeklyPlanCell.swift in Sources */,
+				CDE8499D27BEB13F00F16EBE /* KSTokenView.swift in Sources */,
+				CDE8499E27BEB13F00F16EBE /* TNotification.swift in Sources */,
+				CDE8499F27BEB13F00F16EBE /* UploadFTP.swift in Sources */,
+				CDE849A027BEB13F00F16EBE /* WebViewViewController.swift in Sources */,
+				CDE849A127BEB13F00F16EBE /* ProgressViewBar.swift in Sources */,
+				CDE849A227BEB13F00F16EBE /* WeeklyPlanTable.swift in Sources */,
+				CDE849A327BEB13F00F16EBE /* GalleryListController.swift in Sources */,
+				CDE849A427BEB13F00F16EBE /* TNPayment.swift in Sources */,
+				CDE849A527BEB13F00F16EBE /* APIHelper.swift in Sources */,
+				CDE849A627BEB13F00F16EBE /* UIViewController+PopUp.swift in Sources */,
+				CDE849A727BEB13F00F16EBE /* TNNoticeBoardDetail.swift in Sources */,
+				CDE849A827BEB13F00F16EBE /* FTPUploadHelper.swift in Sources */,
+				CDE849A927BEB13F00F16EBE /* MPGTextField.m in Sources */,
+				CDE849AA27BEB13F00F16EBE /* LoadMoreControl.swift in Sources */,
+				CDE849AB27BEB13F00F16EBE /* FSCalendar.m in Sources */,
+				CDE849AC27BEB13F00F16EBE /* KSToken.swift in Sources */,
+				CDE849AD27BEB13F00F16EBE /* HomeVC.swift in Sources */,
+				CDE849AE27BEB13F00F16EBE /* TNAwarnessArticleDetail.swift in Sources */,
+				CDE849AF27BEB13F00F16EBE /* PagerController.swift in Sources */,
+				CDE849B027BEB13F00F16EBE /* FSCalendarTransitionCoordinator.m in Sources */,
+				CDE849B127BEB13F00F16EBE /* FSCalendarCollectionView.m in Sources */,
+				CDE849B227BEB13F00F16EBE /* APIUrls.swift in Sources */,
+				CDE849B327BEB13F00F16EBE /* FSCalendarDelegationProxy.m in Sources */,
+				CDE849B427BEB13F00F16EBE /* CustomCalendarCell.swift in Sources */,
+				CDE849B527BEB13F00F16EBE /* TNPerson.swift in Sources */,
+				CDE849B627BEB13F00F16EBE /* TNGallery.swift in Sources */,
+				CDE849B727BEB13F00F16EBE /* Operation.swift in Sources */,
+				CDE849B827BEB13F00F16EBE /* StreamOperation.swift in Sources */,
+				CDE849B927BEB13F00F16EBE /* TNCalendarEvent.swift in Sources */,
+				CDE849BA27BEB13F00F16EBE /* TPKeyboardAvoidingTableView.m in Sources */,
+				CDE849BB27BEB13F00F16EBE /* DOAlertController.swift in Sources */,
+				CDE849BC27BEB13F00F16EBE /* TPKeyboardAvoidingScrollView.m in Sources */,
+				CDE849BD27BEB13F00F16EBE /* CommunicateLandController.swift in Sources */,
+				CDE849BE27BEB13F00F16EBE /* TSibling.swift in Sources */,
+				CDE849BF27BEB13F00F16EBE /* FSCalendarExtensions.m in Sources */,
+				CDE849C027BEB13F00F16EBE /* NoticeboardCategoryController.swift in Sources */,
+				CDE849C127BEB13F00F16EBE /* FSCalendarCollectionViewLayout.m in Sources */,
+				CDE849C227BEB13F00F16EBE /* Picker.swift in Sources */,
+				CDE849C327BEB13F00F16EBE /* Protocols.swift in Sources */,
+				CDE849C427BEB13F00F16EBE /* SkyFloatingLabelTextField.swift in Sources */,
+				CDE849C527BEB13F00F16EBE /* MyProfileController.swift in Sources */,
+				CDE849C627BEB13F00F16EBE /* DRDAttechmentCell.swift in Sources */,
+				CDE849C727BEB13F00F16EBE /* CalendarController.swift in Sources */,
+				CDE849C827BEB13F00F16EBE /* FSCalendarScopeHandle.m in Sources */,
+				CDE849C927BEB13F00F16EBE /* WriteStreamOperation.swift in Sources */,
+				CDE849CA27BEB13F00F16EBE /* RegisterPopUpVc.swift in Sources */,
+				CDE849CB27BEB13F00F16EBE /* jsonKeys.swift in Sources */,
+				CDE849CC27BEB13F00F16EBE /* FSCalendarAppearance.m in Sources */,
+				CDE849CD27BEB13F00F16EBE /* FileDownloadOperation.swift in Sources */,
+				CDE849CE27BEB13F00F16EBE /* Reachability.swift in Sources */,
+				CDE849CF27BEB13F00F16EBE /* DBKeys.swift in Sources */,
+				CDE849D027BEB13F00F16EBE /* Constants.swift in Sources */,
+				CDE849D127BEB13F00F16EBE /* TNAwarenessDetail.swift in Sources */,
+				CDE849D227BEB13F00F16EBE /* AppDelegate.swift in Sources */,
+				CDE849D327BEB13F00F16EBE /* ReadSelectViewController.swift in Sources */,
+				CDE849D427BEB13F00F16EBE /* FSCalendarDelegationFactory.m in Sources */,
+				CDE849D527BEB13F00F16EBE /* ImagePreviewController.swift in Sources */,
+				CDE849D627BEB13F00F16EBE /* LinearProgressView.swift in Sources */,
+				CDE849D727BEB13F00F16EBE /* ComposeController.swift in Sources */,
+				CDE849D827BEB13F00F16EBE /* WeeklyPlanFilterController.swift in Sources */,
+				CDE849D927BEB13F00F16EBE /* ChangePasswordController.swift in Sources */,
+				CDE849DA27BEB13F00F16EBE /* NoticeBoardListController.swift in Sources */,
+				CDE849DB27BEB13F00F16EBE /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				CDE849DC27BEB13F00F16EBE /* TNSubject.swift in Sources */,
+				CDE849DD27BEB13F00F16EBE /* ForgotPasswordController.swift in Sources */,
+				CDE849DE27BEB13F00F16EBE /* FSCalendarConstants.m in Sources */,
+				CDE849DF27BEB13F00F16EBE /* FSCalendarCell.m in Sources */,
+				CDE849E027BEB13F00F16EBE /* DigitalResourceDetailController.swift in Sources */,
+				CDE849E127BEB13F00F16EBE /* TNMenuItem.swift in Sources */,
+				CDE849E227BEB13F00F16EBE /* AddCommentVC.swift in Sources */,
+				CDE849E327BEB13F00F16EBE /* FSCalendar+Deprecated.m in Sources */,
+				CDE849E427BEB13F00F16EBE /* Extensions.swift in Sources */,
+				CDE849E527BEB13F00F16EBE /* TNDigitalResource.swift in Sources */,
+				CDE849E627BEB13F00F16EBE /* FSCalendarStickyHeader.m in Sources */,
+				CDE849E727BEB13F00F16EBE /* CommunicateController.swift in Sources */,
+				CDE849E827BEB13F00F16EBE /* KSTokenField.swift in Sources */,
+				CDE849E927BEB13F00F16EBE /* UserDefaultManager.swift in Sources */,
+				CDE849EA27BEB13F00F16EBE /* Session.swift in Sources */,
+				CDE849EB27BEB13F00F16EBE /* VisualEffectView.swift in Sources */,
+				CDE849EC27BEB13F00F16EBE /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				CDE849ED27BEB13F00F16EBE /* WebViewController.swift in Sources */,
+				CDE849EE27BEB13F00F16EBE /* SlideController.swift in Sources */,
+				CDE849EF27BEB13F00F16EBE /* AwarenessViewController.swift in Sources */,
+				CDE849F027BEB13F00F16EBE /* SWRevealViewController.m in Sources */,
+				CDE849F127BEB13F00F16EBE /* AwarenessDetailViewController.swift in Sources */,
+				CDE849F227BEB13F00F16EBE /* DigitalResourceSecondListController.swift in Sources */,
+				CDE849F327BEB13F00F16EBE /* NotificationDetailListController.swift in Sources */,
+				CDE849F427BEB13F00F16EBE /* DigitalResourcesListController.swift in Sources */,
+				CDE849F527BEB13F00F16EBE /* NoticeboardDetailController.swift in Sources */,
+				CDE849F627BEB13F00F16EBE /* VideoDownload.swift in Sources */,
+				CDE849F727BEB13F00F16EBE /* CircleView.swift in Sources */,
+				CDE849F827BEB13F00F16EBE /* FSCalendarCalculator.m in Sources */,
+				CDE849F927BEB13F00F16EBE /* ReadStreamOperation.swift in Sources */,
+				CDE849FA27BEB13F00F16EBE /* DownLoadsViewController.swift in Sources */,
+				CDE849FB27BEB13F00F16EBE /* TNNoticeboard.swift in Sources */,
+				CDE849FC27BEB13F00F16EBE /* FSCalendarWeekdayView.m in Sources */,
+				CDE849FD27BEB13F00F16EBE /* KSUtils.swift in Sources */,
+				CDE849FE27BEB13F00F16EBE /* GalleryCategoryListController.swift in Sources */,
+				CDE849FF27BEB13F00F16EBE /* MapController.swift in Sources */,
+				CDE84A0027BEB13F00F16EBE /* TNGalleryCategory.swift in Sources */,
+				CDE84A0127BEB13F00F16EBE /* GradeViewController.swift in Sources */,
+				CDE84A0227BEB13F00F16EBE /* Global.swift in Sources */,
+				CDE84A0327BEB13F00F16EBE /* TNWeeklyPlan.swift in Sources */,
+				CDE84A0427BEB13F00F16EBE /* PaymentDetailsController.swift in Sources */,
+				CDE84A0527BEB13F00F16EBE /* TNGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -17400,7 +17857,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = 55G8CBG289;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -17412,7 +17869,7 @@
 				INFOPLIST_FILE = "PEPSV2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.21;
+				MARKETING_VERSION = 5.22;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -17528,7 +17985,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = 55G8CBG289;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -17540,7 +17997,7 @@
 				INFOPLIST_FILE = "PEPSV2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.21;
+				MARKETING_VERSION = 5.22;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -22826,6 +23283,310 @@
 			};
 			name = Release;
 		};
+		CDE84A2027BEB13F00F16EBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8133FDCB67F7B3C9E8264C5C /* Pods-PEPS V2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.23;
+				DEVELOPMENT_TEAM = N78PMQ93HN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "Athena-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.23;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.athenaEducation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "Athena Education";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDE84A2127BEB13F00F16EBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C2F6056C0D7C8F94FE71E8E /* Pods-PEPS V2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.23;
+				DEVELOPMENT_TEAM = N78PMQ93HN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "Athena-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.23;
+				"OTHER_CFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BIZPopupView/BIZPopupView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog/DatePickerDialog.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown/DropDown.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar/FSCalendar.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HMSegmentedControl/HMSegmentedControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBCalendarKit/MBCalendarKit.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXPagerView/MXPagerView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXParallaxHeader/MXParallaxHeader.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXSegmentedPager/MXSegmentedPager.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RichEditorView/RichEditorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GGLInstanceID\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleCloudMessaging\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.athenaEducation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "Athena Education";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CE0A601F24375C8000568C23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -27039,6 +27800,15 @@
 			buildConfigurations = (
 				CD924389274C3B5F007B5C2B /* Debug */,
 				CD92438A274C3B5F007B5C2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDE84A1F27BEB13F00F16EBE /* Build configuration list for PBXNativeTarget "Athena Education" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDE84A2027BEB13F00F16EBE /* Debug */,
+				CDE84A2127BEB13F00F16EBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

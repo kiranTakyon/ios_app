@@ -270,13 +270,8 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                 self.alertTable.reloadData()
             }
         }
-
-        
      
     }
-    
-
-    
     
         
     func tableViewProporties(){
@@ -295,8 +290,6 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // create a new cell if needed or reuse an old one
-        
-        
         
        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeListViewCell", for: indexPath) as! HomeListViewCell
         
@@ -325,7 +318,6 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                 
             case msgTypes.gallery.rawValue:
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
-                
                 
             default:
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
@@ -374,12 +366,10 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                     print(index.row)
                     self.notificationList.remove(at: index.row)
                     self.alertTable.deleteRows(at: [index], with: .right)
-                        self.navigateToSpecificPage(typeValue: selectedAlertType)
+                    self.navigateToSpecificPage(typeValue: selectedAlertType)
                 }
             }
         }
-
-        
     }
     
     func navigateToSpecificPage(typeValue:alertType){
@@ -393,18 +383,15 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         
         
         var viewController : UINavigationController?
-        
-        if typeValue == .gallery{
+           if typeValue == .gallery{
             
             self.performSegue(withIdentifier: "toGallery", sender: self)
-            
-            
 //           viewController = mainStoryBoard.instantiateViewController(withIdentifier: "galleryrootVc") as? UINavigationController
 
-        }else if typeValue == .communicate{
-            
+        }
+        else if typeValue == .communicate{
            viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
-            
+          
         }else if typeValue == .html{
             
            viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
