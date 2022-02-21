@@ -20,7 +20,7 @@ class SlideController: UITableViewController,TaykonProtocol {
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
     var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
-    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail"]
+    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail","toImagePreview"]
     
     var selectionTitles = [String]()
     var selectionIds = [Int]()
@@ -94,6 +94,15 @@ class SlideController: UITableViewController,TaykonProtocol {
             vc.typeMsg = typeValue
 //            vc.text = notificationObject.title
         }
+        else if segue.identifier == "toImagePreview"{
+            let destinationVC = segue.destination as! UINavigationController
+            let vc = destinationVC.children[0] as! ImagePreviewController
+            var url = notificationObject.catid ?? ""
+            vc.imageUrl = url
+            vc.imageArr = Array([url])
+            vc.pageTitle = notificationObject.title
+            vc.position = 0
+        }
     }
 
     //MARK: - Other Helpers
@@ -101,7 +110,7 @@ class SlideController: UITableViewController,TaykonProtocol {
     @objc func onPostLoaded() {
 
             if selectedAlertType == .gallery{
-                self.performSegue(withIdentifier: "toGallery", sender: nil)
+                self.performSegue(withIdentifier: "toImagePreview", sender: nil)
             }else if selectedAlertType == .communicate{
 //                self.performSegue(withIdentifier: "toCommunicate", sender: nil)
                 self.performSegue(withIdentifier: "toMessageDetail", sender: self)
@@ -188,7 +197,7 @@ class SlideController: UITableViewController,TaykonProtocol {
         var financemenuid:String = ""
         
         for menu in unsortedItems{
-            print("menu",menu.label)
+           // print("menu",menu.label)
             if menu.label != ""{
                 if menu.parentid == "0"{
                     if menu.hashKey.safeValue == "T0008"

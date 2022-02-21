@@ -27,6 +27,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var scrollViewImage: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         setScrollView()
         setData()
         print(imageArr)
@@ -100,7 +101,17 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        //if self.pageTitle == "NOT_TEST"{
+        if self.navigationController?.viewControllers.count == 1 {
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        
     }
     @IBAction func leftButtonScrollAction(_ sender: UIButton) {
         if let imageArrays = imageArr as? [String]{
