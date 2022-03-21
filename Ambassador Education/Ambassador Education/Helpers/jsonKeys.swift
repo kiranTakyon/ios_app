@@ -37,6 +37,11 @@ struct DetailsKeys{
     
     let itemId = "Id"
  }
+struct DetailsKeys2{
+    
+    let itemId = "item_id"
+ }
+
 struct LocationUpdate {
     
     let latitude = "Latitude"

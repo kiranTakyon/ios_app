@@ -584,6 +584,7 @@
                         <segue destination="mt9-0V-900" kind="custom" identifier="toGradeBook" customClass="SWRevealViewControllerSeguePushController" id="ErV-LT-dJM"/>
                         <segue destination="P7n-HN-FjU" kind="custom" identifier="toMessageDetail" customClass="SWRevealViewControllerSeguePushController" id="meb-yj-RnV"/>
                         <segue destination="QRy-xw-2tt" kind="custom" identifier="toImagePreview" customClass="SWRevealViewControllerSeguePushController" id="8LJ-xZ-DOC"/>
+                        <segue destination="AaG-aW-wHW" kind="custom" identifier="toNBDetails" customClass="SWRevealViewControllerSeguePushController" id="0oY-Xl-4Lv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKC-U7-1eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3737,7 +3738,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mPl-5E-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3218" y="2469"/>
+            <point key="canvasLocation" x="3217.3913043478265" y="2468.4782608695655"/>
         </scene>
         <!--Calendar Controller-->
         <scene sceneID="SSf-lR-XAP">
@@ -4913,6 +4914,7 @@
                             <constraint firstItem="mn5-5B-AFP" firstAttribute="top" secondItem="Be1-dj-HAL" secondAttribute="top" id="yx2-w0-m9Q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nsO-PE-Wgh"/>
                     <connections>
                         <outlet property="downLoadButton" destination="qqH-Zx-KY2" id="w3l-ND-RET"/>
                         <outlet property="mainTitle" destination="u3g-AU-eg2" id="JHi-xL-DvJ"/>
@@ -4923,6 +4925,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsY-zJ-Eq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4642" y="2468"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MZZ-Ab-beW">
+            <objects>
+                <navigationController id="AaG-aW-wHW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sdJ-JS-KW7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mp1-2X-wYh" kind="relationship" relationship="rootViewController" id="c2j-MN-edK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFB-at-GBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3935" y="3125"/>
         </scene>
         <!--Notification Detail List Controller-->
         <scene sceneID="fSB-L9-Wnj">
@@ -7480,15 +7498,15 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Hoi-kE-4sh"/>
-                                                <exclude reference="bhI-I0-phM"/>
-                                                <exclude reference="64N-V0-8Df"/>
-                                                <exclude reference="jo6-ct-cUH"/>
-                                                <exclude reference="mcL-um-z8A"/>
                                                 <exclude reference="16V-Lo-U2I"/>
                                                 <exclude reference="2eM-FJ-sG1"/>
-                                                <exclude reference="Cga-E8-hHi"/>
+                                                <exclude reference="64N-V0-8Df"/>
                                                 <exclude reference="94u-Vx-al0"/>
+                                                <exclude reference="Cga-E8-hHi"/>
+                                                <exclude reference="Hoi-kE-4sh"/>
+                                                <exclude reference="bhI-I0-phM"/>
+                                                <exclude reference="jo6-ct-cUH"/>
+                                                <exclude reference="mcL-um-z8A"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -7508,8 +7526,8 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="C4f-mK-f8G"/>
-                                        <exclude reference="pOO-ye-1dG"/>
                                         <exclude reference="RYN-mA-ddC"/>
+                                        <exclude reference="pOO-ye-1dG"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -7564,8 +7582,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="nA2-W9-4Cg"/>
                                         <exclude reference="Cwc-55-VdK"/>
+                                        <exclude reference="nA2-W9-4Cg"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -7686,7 +7704,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="sZY-Vn-uxT"/>
+        <segue reference="Tdh-wl-VTk"/>
         <segue reference="LfD-ZK-Stt"/>
         <segue reference="jF7-Bc-YDF"/>
     </inferredMetricsTieBreakers>

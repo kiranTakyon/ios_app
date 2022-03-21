@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.5</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -47,28 +47,29 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 		<key>NSExceptionDomains</key>
-		<dict>
-			<key>67.43.0.78</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
+		<dict/>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This app needs the permission to media library to upload files if you chose to , in messaging &amp; other screens</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app needs bluetooth permission to share files</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Needs Bluetooth for sharing pictures</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Needs Calender for picking your dates to save your events</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs the permission to capture your photo for profile updation</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>This app needs the permission to documents &amp; downloads  to upload  and download files if you chose to , in messaging &amp; other screens</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>This app needs the permission to documents &amp; downloads  to upload  and download files if you chose to , in messaging &amp; other screens</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs the permission to save your data</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs the permission to access your photos for profile updation</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -82,6 +83,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -90,5 +92,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

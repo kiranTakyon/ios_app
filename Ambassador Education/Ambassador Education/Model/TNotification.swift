@@ -20,6 +20,7 @@ class TNotification{
     var hashKey : String?
     var type : String?
     var catid : String?
+    var processid : String?
 
     
     init(values:NSDictionary) {
@@ -31,5 +32,6 @@ class TNotification{
         self.hashKey = values["HashKey"] as? String
         self.type = values["Type"] as? String
         self.catid = values["cat_id"] as? String
+        self.processid = values["id"] as? String
     }
 }

@@ -153,24 +153,16 @@ class APIHelper {
                                                      encoding: .ascii)
                             print("JSON response string = \(theJSONText!)")
                         }
-                        
                         print(json)
                         if originalUrl.contains("authorize.net"){
                             completion(json)
                         }
                         else{
-                            
-                            
                             //   let typingDict = NSDictionary(object: typingCountVal, forKey: "typingCount" as NSCopying)
-                            
                             let combinedDict = NSMutableDictionary(dictionary: json)
                             combinedDict["typingCount"] = typingCountVal
-                            
                             print("combined dict is :",combinedDict)
-                            
                             let staticDict = NSDictionary(dictionary: combinedDict)
-                            
-                            
                             completion(staticDict)
                         }
                         
@@ -181,9 +173,7 @@ class APIHelper {
                         completion([JsonKeys().message :"Json error occured . Please try again"])
                         print("Error = \(error.debugDescription)")
                     }
-                    
                     // }
-                    
                 }
                 else{
                     completion([JsonKeys().message :"Some error occured . Please try again"])

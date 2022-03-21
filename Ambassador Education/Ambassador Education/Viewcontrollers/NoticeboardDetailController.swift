@@ -24,12 +24,20 @@ class NoticeboardDetailController: UIViewController {
     var awarnessPlan : TNAwarenessDetail?
     var downLoadLink = ""
     var pdfUrl : String?
+    var NbID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
        self.setVideoDownload()
         self.setTitle()
-        self.setHtml()
+        if(NbID != "")
+        {
+            getDetailsbyID()
+        }
+        else
+        {
+            self.setHtml()
+        }
   
         // Do any additional setup after loading the view.
     }
@@ -139,7 +147,34 @@ class NoticeboardDetailController: UIViewController {
             }
         }
     }
-    
+    func getDetailsbyID(){
+       // startLoadingAnimation()
+        let url = APIUrls().getNBDetails
+        let userId = UserDefaultsManager.manager.getUserId()
+        var dictionary = [String: Any]()
+        dictionary[UserIdKey().id] = userId
+        dictionary[DetailsKeys2().itemId] = NbID
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            DispatchQueue.main.async {
+                
+            if result["StatusCode"] as? Int == 1{
+                if let messages = result["item"] as? NSArray{
+                    print("hh1",messages)
+                    let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
+                    print("hh2",list[0])
+                    self.detail = list[0]
+                    self.setHtml()
+                }
+                self.stopLoadingAnimation()
+                }
+            else{
+                    self.stopLoadingAnimation()
+                    SweetAlert().showAlert(kAppName, subTitle: "Not able to get the details", style: .warning)
+                }
+            }
+        }
+    }
+
     
 //    func setActionOnAttributedText(desc : String){
 //        print(desc.replacingHTMLEntities)

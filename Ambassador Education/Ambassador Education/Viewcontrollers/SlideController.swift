@@ -20,7 +20,7 @@ class SlideController: UITableViewController,TaykonProtocol {
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
     var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
-    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail","toImagePreview"]
+    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail","toImagePreview","toImagePreview"]
     
     var selectionTitles = [String]()
     var selectionIds = [Int]()
@@ -103,6 +103,11 @@ class SlideController: UITableViewController,TaykonProtocol {
             vc.pageTitle = notificationObject.title
             vc.position = 0
         }
+        else if segue.identifier == "toNBDetails"{
+            let destinationVC = segue.destination as! UINavigationController
+            let vc = destinationVC.children[0] as! NoticeboardDetailController
+            vc.NbID = notificationObject.processid ?? ""
+        }
     }
 
     //MARK: - Other Helpers
@@ -119,7 +124,7 @@ class SlideController: UITableViewController,TaykonProtocol {
 
                 
             }else if selectedAlertType == .noticeboard{
-                self.performSegue(withIdentifier: "toNoticeboard", sender: nil)
+                self.performSegue(withIdentifier: "toNBDetails", sender: nil)
 
             }else if selectedAlertType == .weeklyPlan{
                 self.performSegue(withIdentifier: "toWeeklyPlan", sender: nil)

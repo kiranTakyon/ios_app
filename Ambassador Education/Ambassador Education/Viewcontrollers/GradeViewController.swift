@@ -109,7 +109,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
         webView.scrollView.bounces = true
         webView.scrollView.decelerationRate = UIScrollView.DecelerationRate.normal
         webView.uiDelegate = self
-
+  
         if let value = gradeBookLink{
             if value != ""{
                 var str = ""
@@ -169,7 +169,6 @@ class GradeViewController: UIViewController,WKUIDelegate {
             }
         }
     }
-    
     func downloadPdf(attachmentUrl : String, fileName: String){
         let urlvalue = URL(string: attachmentUrl)//URL(fileURLWithPath: attachmentUrl)
         self.loadPDFAndShare(url: attachmentUrl, fileName: fileName)
@@ -195,7 +194,6 @@ class GradeViewController: UIViewController,WKUIDelegate {
     */
 
 }
-
 extension GradeViewController : QLPreviewControllerDataSource ,QLPreviewControllerDelegate{
     
     func previewControllerWillDismiss(_ controller: QLPreviewController) {
