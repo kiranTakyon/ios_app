@@ -452,7 +452,12 @@ public class RichEditorWebView: WKWebView {
         // We use this to keep the scroll view from changing its offset when the keyboard comes up
         if !isScrollEnabled {
             scrollView.bounds = webView.bounds
+          //  scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y:scrollView.contentOffset.y)
+
         }
+       // if scrollView.contentOffset.y > 0  ||  scrollView.contentOffset.y < 0{
+              //  scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y:scrollView.contentOffset.y)
+         //   }
     }
     
     // MARK: WKWebViewDelegate

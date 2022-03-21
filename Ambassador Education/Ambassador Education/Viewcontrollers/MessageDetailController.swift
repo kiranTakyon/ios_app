@@ -616,9 +616,12 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     
     private func stringFromHtml(string: String,cell: messageDetailSecondCell)  {
    //     let htmlDecode = string.replacingHTMLEntities
+        cell.richEditorView.isScrollEnabled = true
+       // cell.richEditorView.setFontSize(30)
+        
         cell.richEditorView.html  = string //"Message Content";  //string
         getHeightOfRichEditorView(cell: cell, text: string.html2String )
-        cell.richEditorView.isUserInteractionEnabled = false
+        cell.richEditorView.isUserInteractionEnabled = true
     }
 
     /*

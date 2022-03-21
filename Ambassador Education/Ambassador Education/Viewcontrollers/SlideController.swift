@@ -103,11 +103,11 @@ class SlideController: UITableViewController,TaykonProtocol {
             vc.pageTitle = notificationObject.title
             vc.position = 0
         }
-        else if segue.identifier == "toNBDetails"{
+      /*  else if segue.identifier == "toNBDetails"{
             let destinationVC = segue.destination as! UINavigationController
             let vc = destinationVC.children[0] as! NoticeboardDetailController
             vc.NbID = notificationObject.processid ?? ""
-        }
+        }*/
     }
 
     //MARK: - Other Helpers
