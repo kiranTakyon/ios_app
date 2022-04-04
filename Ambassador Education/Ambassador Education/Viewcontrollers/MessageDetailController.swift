@@ -402,7 +402,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             cell.tag = indexPath.row
             cell.delegate = self
             setAttachmentsToCell(message: [message], cell: cell)
-        
+        cell.richEditorRight.constant = -(UIScreen.main.bounds.width-200)
         cell.selectionStyle = .none
         return cell
     }
@@ -611,7 +611,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func getHeightOfRichEditorView(cell: messageDetailSecondCell,text : String){
-        cell.richEditorHeight.constant =  text.height(withConstrainedWidth: cell.richEditorView.frame.width, font: UIFont.systemFont(ofSize: 18.0, weight: .black)) + 50
+        cell.richEditorHeight.constant =  text.height(withConstrainedWidth: cell.richEditorView.frame.width/2, font: UIFont.systemFont(ofSize: 18.0, weight: .black)) + 50
     }
     
     private func stringFromHtml(string: String,cell: messageDetailSecondCell)  {
@@ -619,7 +619,11 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         cell.richEditorView.isScrollEnabled = true
        // cell.richEditorView.setFontSize(30)
         
-        cell.richEditorView.html  = string //"Message Content";  //string
+        
+        let div =   """
+                    <div style="margin-right: 100px;">
+                    """
+        cell.richEditorView.html  = div + string + "</div>" //"Message Content";  //string
         getHeightOfRichEditorView(cell: cell, text: string.html2String )
         cell.richEditorView.isUserInteractionEnabled = true
     }
@@ -654,6 +658,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var tableViewAttachments: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var richEditorHeight: NSLayoutConstraint!
+    @IBOutlet weak var richEditorRight: NSLayoutConstraint!
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var dropDownButton: UIButton!
     
