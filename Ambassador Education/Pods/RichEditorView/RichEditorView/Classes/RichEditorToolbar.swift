@@ -4,7 +4,6 @@
 //  Created by Caesar Wirth on 4/2/15.
 //  Copyright (c) 2015 Caesar Wirth. All rights reserved.
 //
-
 import UIKit
 
 /// RichEditorToolbarDelegate is a protocol for the RichEditorToolbar.
@@ -20,22 +19,28 @@ import UIKit
     /// Called when the Insert Image toolbar item is pressed.
     @objc optional func richEditorToolbarInsertImage(_ toolbar: RichEditorToolbar)
 
+    /// Called when the Insert Video toolbar item is pressed
+    @objc optional func richEditorToolbarInsertVideo(_ toolbar: RichEditorToolbar)
+
     /// Called when the Insert Link toolbar item is pressed.
     @objc optional func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar)
+    
+    /// Called when the Insert Table toolbar item is pressed
+    @objc optional func richEditorToolbarInsertTable(_ toolbar: RichEditorToolbar)
 }
 
 /// RichBarButtonItem is a subclass of UIBarButtonItem that takes a callback as opposed to the target-action pattern
-open class RichBarButtonItem: UIBarButtonItem {
-    open var actionHandler: ((Void) -> Void)?
+@objcMembers open class RichBarButtonItem: UIBarButtonItem {
+    open var actionHandler: (() -> Void)?
     
-    public convenience init(image: UIImage? = nil, handler: ((Void) -> Void)? = nil) {
+    public convenience init(image: UIImage? = nil, handler: (() -> Void)? = nil) {
         self.init(image: image, style: .plain, target: nil, action: nil)
         target = self
         action = #selector(RichBarButtonItem.buttonWasTapped)
         actionHandler = handler
     }
     
-    public convenience init(title: String = "", handler: ((Void) -> Void)? = nil) {
+    public convenience init(title: String = "", handler: (() -> Void)? = nil) {
         self.init(title: title, style: .plain, target: nil, action: nil)
         target = self
         action = #selector(RichBarButtonItem.buttonWasTapped)
@@ -43,12 +48,12 @@ open class RichBarButtonItem: UIBarButtonItem {
     }
     
     @objc func buttonWasTapped() {
-        actionHandler?(())
+        actionHandler?()
     }
 }
 
 /// RichEditorToolbar is UIView that contains the toolbar for actions that can be performed on a RichEditorView
-open class RichEditorToolbar: UIView {
+@objcMembers open class RichEditorToolbar: UIView {
 
     /// The delegate to receive events that cannot be automatically completed
     open weak var delegate: RichEditorToolbarDelegate?
@@ -134,8 +139,8 @@ open class RichEditorToolbar: UIView {
         }
         toolbar.items = buttons
 
-        let defaultIconWidth: CGFloat = 22
-        let barButtonItemMargin: CGFloat = 11
+        let defaultIconWidth: CGFloat = 28
+        let barButtonItemMargin: CGFloat = 12
         let width: CGFloat = buttons.reduce(0) {sofar, new in
             if let view = new.value(forKey: "view") as? UIView {
                 return sofar + view.frame.size.width + barButtonItemMargin
@@ -145,9 +150,9 @@ open class RichEditorToolbar: UIView {
         }
         
         if width < frame.size.width {
-            toolbar.frame.size.width = frame.size.width
+            toolbar.frame.size.width = frame.size.width + barButtonItemMargin
         } else {
-            toolbar.frame.size.width = width
+            toolbar.frame.size.width = width + barButtonItemMargin
         }
         toolbar.frame.size.height = 44
         toolbarScroll.contentSize.width = width

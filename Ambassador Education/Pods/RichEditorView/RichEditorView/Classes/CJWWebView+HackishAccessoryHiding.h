@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
-    
+	
 // Inspiration for this extension comes from:
 //   - bjhomes: https://gist.github.com/bjhomer/2048571
 //   - diegoreymendez: http://stackoverflow.com/a/25415378/1403046

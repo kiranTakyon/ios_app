@@ -121,11 +121,9 @@ class SlideController: UITableViewController,TaykonProtocol {
                 self.performSegue(withIdentifier: "toMessageDetail", sender: self)
             }else if selectedAlertType == .html{
                 self.performSegue(withIdentifier: "toDigitalReource", sender: nil)
-
-                
-            }else if selectedAlertType == .noticeboard{
+          /*  }else if selectedAlertType == .noticeboard{
                 self.performSegue(withIdentifier: "toNBDetails", sender: nil)
-
+*/
             }else if selectedAlertType == .weeklyPlan{
                 self.performSegue(withIdentifier: "toWeeklyPlan", sender: nil)
 
