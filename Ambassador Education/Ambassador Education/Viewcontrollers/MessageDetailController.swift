@@ -403,6 +403,10 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             cell.tag = indexPath.row
             cell.delegate = self
             setAttachmentsToCell(message: [message], cell: cell)
+<<<<<<< HEAD
+=======
+        
+>>>>>>> parent of 69b2baa (Rich text changes)
         cell.selectionStyle = .none
         return cell
     }
@@ -657,7 +661,6 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var tableViewAttachments: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var richEditorHeight: NSLayoutConstraint!
-    @IBOutlet weak var richEditorRight: NSLayoutConstraint!
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var dropDownButton: UIButton!
     
