@@ -4,14 +4,13 @@
 //  Ambassador Education
 //
 //  Created by    Kp on 25/07/17.
-//  Copyright Â© 2017 //. All rights reserved.
+//  Copyright © 2017 //. All rights reserved.
 //
 
 import UIKit
 import BIZPopupView
 import QuickLook
 import EzPopup
-
 
 let html =   NSAttributedString.DocumentType.self
 
@@ -149,7 +148,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         var  values =   seperateMailWithType(msg: currentMessage,text : titleTxt)
         composeViewC.parentMessageId = Int(currentMessage.id.safeValue).safeValueOfInt
         if index == 1{
-            if titleTxt == "Reply All" ||  titleTxt == "Ø§Ù„Ø±Ø¯ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ù…ÙŠØ¹"{
+            if titleTxt == "Reply All" ||  titleTxt == "الرد على الجميع"{
                 composeViewC.selectedPersonCC = values.1
                 composeViewC.selectedPersons = values.0
                 var dict = NSMutableDictionary()
@@ -303,7 +302,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                 }
             }
         }
-        if  text == "Reply All" ||  text == "Ø§Ù„Ø±Ø¯ Ø¹Ù„Ù‰ Ø§Ù„Ø¬Ù…ÙŠØ¹"{
+        if  text == "Reply All" ||  text == "الرد على الجميع"{
           toArray.append(msg.sender.safeValue)
         }
         
@@ -403,10 +402,6 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             cell.tag = indexPath.row
             cell.delegate = self
             setAttachmentsToCell(message: [message], cell: cell)
-<<<<<<< HEAD
-=======
-        
->>>>>>> parent of 69b2baa (Rich text changes)
         cell.selectionStyle = .none
         return cell
     }
@@ -615,19 +610,17 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func getHeightOfRichEditorView(cell: messageDetailSecondCell,text : String){
-        cell.richEditorHeight.constant =  text.height(withConstrainedWidth: cell.richEditorView.frame.width, font: UIFont.systemFont(ofSize: 16.0, weight: .black)) + 50
-       // print(cell.richEditorHeight.constant)
+        cell.richEditorHeight.constant =  text.height(withConstrainedWidth: cell.richEditorView.frame.width, font: UIFont.systemFont(ofSize: 18.0, weight: .black)) + 50
     }
     
     private func stringFromHtml(string: String,cell: messageDetailSecondCell)  {
-        //let htmlDecode = string.replacingHTMLEntities
+   //     let htmlDecode = string.replacingHTMLEntities
         cell.richEditorView.isScrollEnabled = true
-     
-        cell.richEditorView.html = string
+       // cell.richEditorView.setFontSize(30)
         
+      
+        cell.richEditorView.html  = string  //"Message Content";  //string
         getHeightOfRichEditorView(cell: cell, text: string.html2String )
-        
-        
         cell.richEditorView.isUserInteractionEnabled = true
     }
 
@@ -661,6 +654,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var tableViewAttachments: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var richEditorHeight: NSLayoutConstraint!
+    @IBOutlet weak var richEditorRight: NSLayoutConstraint!
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var dropDownButton: UIButton!
     
@@ -880,26 +874,26 @@ extension String {
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToNSAttributedStringDocumentReadingOptionKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.DocumentReadingOptionKey: Any] {
-    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.DocumentReadingOptionKey(rawValue: key), value)})
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.DocumentReadingOptionKey(rawValue: key), value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringDocumentAttributeKey(_ input: NSAttributedString.DocumentAttributeKey) -> String {
-    return input.rawValue
+	return input.rawValue
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringDocumentType(_ input: NSAttributedString.DocumentType) -> String {
-    return input.rawValue
+	return input.rawValue
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
-    guard let input = input else { return nil }
-    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
-    return input.rawValue
+	return input.rawValue
 }
