@@ -154,17 +154,23 @@ class NoticeboardDetailController: UIViewController {
         var dictionary = [String: Any]()
         dictionary[UserIdKey().id] = userId
         dictionary[DetailsKeys2().itemId] = NbID
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [self] (result) in
+     //   APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
-                
-            if result["StatusCode"] as? Int == 1{
-                if let messages = result["item"] as? NSArray{
-                    print("hh1",messages)
-                    let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
-                    print("hh2",list[0])
-                    self.detail = list[0]
+                print(result)
+                if result["StatusCode"] as? Int == 1{
+                    self.detail = TNNoticeBoardDetail(values: result["item"] as! NSDictionary)
+                   // if let messages = result["item"] as? NSArray{
+                   // if let messages = result["item"] as? NSArray{
+                       // let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
+                  //  print("hh1",messages)
+                //let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
+                   // print("hh2",list[0])
+                   // self.detail = list[0]
                     self.setHtml()
-                }
+                    self.setTitle()
+               // }
                 self.stopLoadingAnimation()
                 }
             else{
@@ -197,7 +203,15 @@ class NoticeboardDetailController: UIViewController {
     
     
     @IBAction func backAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+       // self.navigationController?.popViewController(animated: true)
+        if self.navigationController?.viewControllers.count == 1 {
+            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardCategoryController") as! CommunicateLandController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else {
+            self.navigationController!.popViewController(animated: true)
+        }
+        
     }
 
 //    @IBAction func openLinkButtonAction(_ sender: UIButton) {
