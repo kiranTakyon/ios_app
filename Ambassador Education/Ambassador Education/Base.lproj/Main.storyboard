@@ -11,7 +11,7 @@
         <!--Forgot Password Controller-->
         <scene sceneID="pcN-YW-5aj">
             <objects>
-                <viewController storyboardIdentifier="forgottPasswordVc" id="E3b-Sn-fn1" customClass="ForgotPasswordController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="forgottPasswordVc" id="E3b-Sn-fn1" customClass="ForgotPasswordController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PFa-qP-ggW"/>
                         <viewControllerLayoutGuide type="bottom" id="VBs-Ql-XdC"/>
@@ -37,7 +37,7 @@
                                     <constraint firstItem="7Hn-HZ-Pwi" firstAttribute="leading" secondItem="uwo-Ia-gib" secondAttribute="leading" constant="20" id="r5Y-ia-bdM"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MvX-a9-toF" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MvX-a9-toF" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="88" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mTK-Ui-X1l"/>
@@ -62,7 +62,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWG-Ja-dFq" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWG-Ja-dFq" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="173" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0S2-sf-YhE"/>
@@ -140,7 +140,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -236,7 +236,7 @@
                                                             <constraint firstAttribute="width" constant="40" id="EsG-QC-ZoM"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2e-Xc-hgd" customClass="Picker" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2e-Xc-hgd" customClass="Picker" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="50" y="5" width="284" height="40"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -405,13 +405,13 @@
         <!--Slide Controller-->
         <scene sceneID="ssu-qz-Rf3">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="F0J-cP-zRj" customClass="SlideController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="F0J-cP-zRj" customClass="SlideController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="156" sectionHeaderHeight="28" sectionFooterHeight="28" id="JcE-rz-2ls">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="slideMenuFirstCell" rowHeight="167" id="3Jm-pj-d9i" customClass="slideMenuFirstCell" customModule="CredenceSchool" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="slideMenuFirstCell" rowHeight="167" id="3Jm-pj-d9i" customClass="slideMenuFirstCell" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Jm-pj-d9i" id="soO-Bx-rzc">
@@ -425,14 +425,14 @@
                                                 <constraint firstAttribute="height" constant="70" id="9Nc-Uy-ljl"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6VE-s4-gOH" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6VE-s4-gOH" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                             <rect key="frame" x="28" y="31" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="jFV-cZ-Rp0"/>
                                                 <constraint firstAttribute="height" constant="60" id="o6t-3G-LB8"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27d-oV-wSO" customClass="Picker" customModule="CredenceSchool" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27d-oV-wSO" customClass="Picker" customModule="Alameer_V2" customModuleProvider="target">
                                             <rect key="frame" x="10" y="111" width="394" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -502,7 +502,7 @@
                                     <outlet property="studentPicker" destination="27d-oV-wSO" id="WIo-1O-5Uc"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="slidemenuCell" rowHeight="75" id="szC-tB-Qop" customClass="slidemenuCell" customModule="CredenceSchool" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="slidemenuCell" rowHeight="75" id="szC-tB-Qop" customClass="slidemenuCell" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="211.66666603088379" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="szC-tB-Qop" id="SiQ-RR-se8">
@@ -594,7 +594,7 @@
         <!--Register Pop Up Vc-->
         <scene sceneID="aNp-7r-QKS">
             <objects>
-                <viewController storyboardIdentifier="registerPopUpVc" modalPresentationStyle="fullScreen" id="kTj-dd-fp9" customClass="RegisterPopUpVc" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerPopUpVc" modalPresentationStyle="fullScreen" id="kTj-dd-fp9" customClass="RegisterPopUpVc" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eNL-ga-E7t"/>
                         <viewControllerLayoutGuide type="bottom" id="stF-OD-PPg"/>
@@ -616,7 +616,7 @@
                                                     <constraint firstAttribute="height" constant="15" id="xMc-1c-KHV"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-ML-rp5" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="CredenceSchool" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-ML-rp5" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="160" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fNo-UX-sws"/>
@@ -677,7 +677,7 @@
                                                             <constraint firstAttribute="width" constant="30" id="r3R-UG-hke"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2w5-CS-Tle" customClass="Picker" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2w5-CS-Tle" customClass="Picker" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="5" width="324" height="30"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -758,7 +758,7 @@
                                                     <constraint firstAttribute="width" constant="130" id="tnz-lU-Q8G"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTX-Mo-8FL" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="CredenceSchool" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTX-Mo-8FL" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="100" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Xm9-Nm-FUD"/>
@@ -873,7 +873,7 @@
         <!--HomeVC-->
         <scene sceneID="DGI-AW-p0Y">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" modalPresentationStyle="fullScreen" id="N9y-Tb-nOJ" customClass="HomeVC" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" modalPresentationStyle="fullScreen" id="N9y-Tb-nOJ" customClass="HomeVC" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NtE-ab-6PN"/>
                         <viewControllerLayoutGuide type="bottom" id="qNB-2i-NIF"/>
@@ -949,14 +949,14 @@
                                 <rect key="frame" x="0.0" y="219.66666666666669" width="414" height="516.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeListViewCell" rowHeight="93" id="OXZ-Pa-uCM" customClass="HomeListViewCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeListViewCell" rowHeight="93" id="OXZ-Pa-uCM" customClass="HomeListViewCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OXZ-Pa-uCM" id="6HW-g5-ihT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3M-P8-I2k" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3M-P8-I2k" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="3" width="404" height="85"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert: Summer Vacation Holiday" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBU-rK-97R">
@@ -1038,10 +1038,10 @@
                                     <outlet property="delegate" destination="N9y-Tb-nOJ" id="bMw-HJ-0Vg"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-Cu-4hz" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-Cu-4hz" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="74.999999999999986" width="414" height="129.66666666666663"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MU7-q0-Qdy" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MU7-q0-Qdy" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="20" y="22.333333333333329" width="85" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="EeJ-nm-aIw"/>
@@ -1142,7 +1142,7 @@
         <!--My Profile Controller-->
         <scene sceneID="fOq-Dh-4f0">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="TXO-cA-fxL" customClass="MyProfileController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="TXO-cA-fxL" customClass="MyProfileController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QtO-V8-gcU"/>
                         <viewControllerLayoutGuide type="bottom" id="4G3-6l-rsu"/>
@@ -1248,7 +1248,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmK-ob-IHt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="572"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mWj-bh-22S" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mWj-bh-22S" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="172" y="30" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="Hox-yj-usT"/>
@@ -1268,7 +1268,7 @@
                                                     <constraint firstAttribute="height" constant="237" id="Whn-Xp-X5T"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileCell" rowHeight="58" id="Rtl-bN-yWa" customClass="ProfileCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileCell" rowHeight="58" id="Rtl-bN-yWa" customClass="ProfileCell" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="354" height="58"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rtl-bN-yWa" id="VWL-kr-yBh">
@@ -1282,7 +1282,7 @@
                                                                         <constraint firstAttribute="height" constant="20" id="ziM-VR-Ym8"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiS-zn-bc0" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiS-zn-bc0" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                                                     <rect key="frame" x="40" y="6" width="306" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="vi8-as-q5U"/>
@@ -1465,7 +1465,7 @@
         <!--Communicate Land Controller-->
         <scene sceneID="c7F-IH-OqV">
             <objects>
-                <viewController storyboardIdentifier="CommunicateLandController" modalPresentationStyle="fullScreen" id="BdV-XS-DaT" customClass="CommunicateLandController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommunicateLandController" modalPresentationStyle="fullScreen" id="BdV-XS-DaT" customClass="CommunicateLandController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="snk-5j-mDu"/>
                         <viewControllerLayoutGuide type="bottom" id="7Qw-gQ-37a"/>
@@ -1585,7 +1585,7 @@
         <!--Map Controller-->
         <scene sceneID="A5b-fc-bl7">
             <objects>
-                <viewController storyboardIdentifier="mapVc" modalPresentationStyle="fullScreen" id="jon-7K-OtT" customClass="MapController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapVc" modalPresentationStyle="fullScreen" id="jon-7K-OtT" customClass="MapController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aan-rm-Jgg"/>
                         <viewControllerLayoutGuide type="bottom" id="kZi-60-2Va"/>
@@ -1722,7 +1722,7 @@
         <!--Communicate Controller-->
         <scene sceneID="pS4-BU-smn">
             <objects>
-                <viewController storyboardIdentifier="communicateVC" modalPresentationStyle="fullScreen" id="Yg8-Cd-lBm" customClass="CommunicateController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="communicateVC" modalPresentationStyle="fullScreen" id="Yg8-Cd-lBm" customClass="CommunicateController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3qF-4I-Tn5"/>
                         <viewControllerLayoutGuide type="bottom" id="Vre-Es-KzA"/>
@@ -1735,14 +1735,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunicateCell" rowHeight="96" id="ari-1K-lqH" customClass="CommunicateCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunicateCell" rowHeight="96" id="ari-1K-lqH" customClass="CommunicateCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ari-1K-lqH" id="w27-jn-dV4">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-m2-8Cm" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-m2-8Cm" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="0.0" width="398" height="91"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -1765,7 +1765,7 @@
                                                     </constraints>
                                                     <state key="normal" backgroundImage="Attachments"/>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsx-eM-kbq" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsx-eM-kbq" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="15.666666666666664" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="Ln4-MF-jNx"/>
@@ -1871,7 +1871,7 @@
         <!--Read Select View Controller-->
         <scene sceneID="DqG-mx-PIj">
             <objects>
-                <viewController storyboardIdentifier="ReadSelectViewController" modalPresentationStyle="fullScreen" id="LuB-jo-LWM" customClass="ReadSelectViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReadSelectViewController" modalPresentationStyle="fullScreen" id="LuB-jo-LWM" customClass="ReadSelectViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Lv-Hv-p98"/>
                         <viewControllerLayoutGuide type="bottom" id="blz-Kj-mAI"/>
@@ -1885,7 +1885,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReadCell" rowHeight="55" id="fea-Th-rA9" customClass="ReadCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReadCell" rowHeight="55" id="fea-Th-rA9" customClass="ReadCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fea-Th-rA9" id="6Rc-wy-KKX">
@@ -1932,7 +1932,7 @@
         <!--Message Detail Controller-->
         <scene sceneID="2Zi-iF-p0J">
             <objects>
-                <viewController storyboardIdentifier="MessageDetailController" modalPresentationStyle="fullScreen" id="26x-jm-W0A" customClass="MessageDetailController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageDetailController" modalPresentationStyle="fullScreen" id="26x-jm-W0A" customClass="MessageDetailController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ba-iV-Jk6"/>
                         <viewControllerLayoutGuide type="bottom" id="VtZ-vZ-scV"/>
@@ -1984,14 +1984,14 @@
                                 <rect key="frame" x="0.0" y="75" width="414" height="661"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageDetailSecondCell" rowHeight="500" id="cVQ-Lc-gz8" customClass="messageDetailSecondCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageDetailSecondCell" rowHeight="500" id="cVQ-Lc-gz8" customClass="messageDetailSecondCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cVQ-Lc-gz8" id="Tx7-l6-Dw2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="0wV-mq-uNi" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="0wV-mq-uNi" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="10" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0wV-mq-uNi" secondAttribute="height" multiplier="1:1" id="vfR-Cq-3En"/>
@@ -2054,7 +2054,7 @@
                                                         <constraint firstAttribute="height" constant="111" id="zu2-zk-WUI"/>
                                                     </constraints>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageDownLoadCell" rowHeight="68" id="o5Z-7z-9XX" customClass="MessageDownLoadCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageDownLoadCell" rowHeight="68" id="o5Z-7z-9XX" customClass="MessageDownLoadCell" customModule="Alameer_V2" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="44.666666030883789" width="394" height="68"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o5Z-7z-9XX" id="oI2-V4-pXV">
@@ -2170,7 +2170,7 @@
                                     <outlet property="delegate" destination="26x-jm-W0A" id="Uh0-Dm-kEz"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzC-nb-jtW" customClass="ProgressViewBar" customModule="CredenceSchool" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzC-nb-jtW" customClass="ProgressViewBar" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="15" y="328" width="384" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2208,7 +2208,7 @@
         <!--Down Loads View Controller-->
         <scene sceneID="tbh-ME-Cty">
             <objects>
-                <viewController storyboardIdentifier="DownLoadsViewController" modalPresentationStyle="fullScreen" id="b5m-RS-P6r" customClass="DownLoadsViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DownLoadsViewController" modalPresentationStyle="fullScreen" id="b5m-RS-P6r" customClass="DownLoadsViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qiG-8J-9tl"/>
                         <viewControllerLayoutGuide type="bottom" id="rIG-mc-Bgd"/>
@@ -2298,7 +2298,7 @@
         <!--Compose Controller-->
         <scene sceneID="E3l-YG-34M">
             <objects>
-                <viewController storyboardIdentifier="composeVc" modalPresentationStyle="fullScreen" id="Ebw-2U-o19" customClass="ComposeController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="composeVc" modalPresentationStyle="fullScreen" id="Ebw-2U-o19" customClass="ComposeController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="28k-sj-a3k"/>
                         <viewControllerLayoutGuide type="bottom" id="MfF-MZ-6Bi"/>
@@ -2460,7 +2460,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" id="Dno-AN-zns" userLabel="GroupView" customClass="KSTokenView" customModule="CredenceSchool" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" id="Dno-AN-zns" userLabel="GroupView" customClass="KSTokenView" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="105" width="371" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2468,7 +2468,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="haO-4o-BTp"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" id="DR2-vs-Brj" userLabel="PersonView" customClass="KSTokenView" customModule="CredenceSchool" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" id="DR2-vs-Brj" userLabel="PersonView" customClass="KSTokenView" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="55" width="371" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2476,7 +2476,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="EEk-jH-pBu"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" id="1jO-EW-tMs" userLabel="GroupView" customClass="KSTokenView" customModule="CredenceSchool" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" id="1jO-EW-tMs" userLabel="GroupView" customClass="KSTokenView" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="5" width="371" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2488,14 +2488,14 @@
                                                     <constraint firstAttribute="height" constant="100" id="GzV-5s-C5B"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AttachCell" rowHeight="60" id="q01-Uc-n1h" customClass="AttachCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AttachCell" rowHeight="60" id="q01-Uc-n1h" customClass="AttachCell" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="394" height="60"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q01-Uc-n1h" id="gJt-oj-gZg">
                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-4c-FYf" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-4c-FYf" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                                     <rect key="frame" x="2" y="2" width="390" height="56"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="sdn-G2-bQI">
@@ -2656,7 +2656,7 @@
         <!--Web View Controller-->
         <scene sceneID="bNo-mI-r5r">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" modalPresentationStyle="fullScreen" id="SGa-of-hvM" customClass="WebViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" modalPresentationStyle="fullScreen" id="SGa-of-hvM" customClass="WebViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FcE-qF-BYV"/>
                         <viewControllerLayoutGuide type="bottom" id="6WF-U5-ips"/>
@@ -2731,7 +2731,7 @@
         <!--Change Password Controller-->
         <scene sceneID="Er2-9w-F2I">
             <objects>
-                <viewController storyboardIdentifier="changePasswordVc" modalPresentationStyle="fullScreen" id="Q66-gY-VKd" customClass="ChangePasswordController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changePasswordVc" modalPresentationStyle="fullScreen" id="Q66-gY-VKd" customClass="ChangePasswordController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fu1-Nd-Zkf"/>
                         <viewControllerLayoutGuide type="bottom" id="t4n-eG-Ya3"/>
@@ -2757,7 +2757,7 @@
                                     <constraint firstItem="9br-aQ-PqT" firstAttribute="centerY" secondItem="Hpx-Ni-0na" secondAttribute="centerY" id="TzJ-Ey-oSP"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MN-5q-L4d" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MN-5q-L4d" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Skk-Wv-jqN"/>
@@ -2790,7 +2790,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="Current Password"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcF-IQ-uyf" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcF-IQ-uyf" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="150" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Qr8-mb-mhl"/>
@@ -2823,7 +2823,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="New Password"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2F-vi-KzY" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2F-vi-KzY" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="220" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Gyb-5l-GPc"/>
@@ -2947,7 +2947,7 @@
         <!--Gallery Category List Controller-->
         <scene sceneID="xf1-z2-1kI">
             <objects>
-                <viewController storyboardIdentifier="galleryListVc" modalPresentationStyle="fullScreen" id="ROK-mF-R14" customClass="GalleryCategoryListController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="galleryListVc" modalPresentationStyle="fullScreen" id="ROK-mF-R14" customClass="GalleryCategoryListController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1r9-Dn-WXF"/>
                         <viewControllerLayoutGuide type="bottom" id="TEG-gs-Pzg"/>
@@ -3029,18 +3029,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryListCell" id="2ZK-Ow-7xx" customClass="GalleryListCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryListCell" id="2ZK-Ow-7xx" customClass="GalleryListCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-8h-g1S" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-8h-g1S" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="133"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LI2-2b-0bS" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LI2-2b-0bS" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="145" height="133"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt8-nm-hJX">
@@ -3132,7 +3132,7 @@
         <!--Gallery List Controller-->
         <scene sceneID="txI-SV-Ymr">
             <objects>
-                <viewController storyboardIdentifier="GalleryListController" modalPresentationStyle="fullScreen" id="uDW-OB-h2U" customClass="GalleryListController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryListController" modalPresentationStyle="fullScreen" id="uDW-OB-h2U" customClass="GalleryListController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bwe-PW-sb0"/>
                         <viewControllerLayoutGuide type="bottom" id="MV5-Yi-SkE"/>
@@ -3231,18 +3231,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryListCell" id="GDm-tg-gFf" customClass="GalleryListCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryListCell" id="GDm-tg-gFf" customClass="GalleryListCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="138"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sZ-5y-XO7" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sZ-5y-XO7" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="138"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-0g-6uJ" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-0g-6uJ" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="2" y="2" width="146" height="134"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -3385,7 +3385,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0F-w2-p9v">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
                                         <subviews>
-                                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FnP-xJ-gYL" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FnP-xJ-gYL" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -3570,7 +3570,7 @@
         <!--Noticeboard Category Controller-->
         <scene sceneID="jeb-rb-vE0">
             <objects>
-                <viewController storyboardIdentifier="NoticeboardCategoryController" modalPresentationStyle="fullScreen" id="gfc-bY-OCR" customClass="NoticeboardCategoryController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeboardCategoryController" modalPresentationStyle="fullScreen" id="gfc-bY-OCR" customClass="NoticeboardCategoryController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gqy-44-B6d"/>
                         <viewControllerLayoutGuide type="bottom" id="Iiy-JS-ylr"/>
@@ -3646,14 +3646,14 @@
                                 <rect key="frame" x="0.0" y="80" width="414" height="656"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GalleryCategoryList" rowHeight="60" id="zQz-zD-WyU" customClass="GalleryCategoryList" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GalleryCategoryList" rowHeight="60" id="zQz-zD-WyU" customClass="GalleryCategoryList" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zQz-zD-WyU" id="a4l-zH-NIa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnL-SW-9sF" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnL-SW-9sF" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="3" width="404" height="52"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-jul-2017 00:00:0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDW-h6-7cp">
@@ -3662,7 +3662,7 @@
                                                             <color key="textColor" systemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOc-nI-lSU" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOc-nI-lSU" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="5" width="47" height="42"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="47" id="Xwr-0Q-7md"/>
@@ -3738,7 +3738,7 @@
         <!--Calendar Controller-->
         <scene sceneID="SSf-lR-XAP">
             <objects>
-                <viewController storyboardIdentifier="CalendarController" modalPresentationStyle="fullScreen" id="jOr-fb-0G8" customClass="CalendarController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarController" modalPresentationStyle="fullScreen" id="jOr-fb-0G8" customClass="CalendarController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ogw-qe-vtS"/>
                         <viewControllerLayoutGuide type="bottom" id="Tue-hS-mu6"/>
@@ -3758,7 +3758,7 @@
         <!--Payment Details Controller-->
         <scene sceneID="4sd-pX-Tph">
             <objects>
-                <viewController storyboardIdentifier="PaymentDetailsController" modalPresentationStyle="fullScreen" id="H45-SZ-Y3M" customClass="PaymentDetailsController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentDetailsController" modalPresentationStyle="fullScreen" id="H45-SZ-Y3M" customClass="PaymentDetailsController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hym-82-BdW"/>
                         <viewControllerLayoutGuide type="bottom" id="dRs-fu-urA"/>
@@ -3855,7 +3855,7 @@
                                                     <constraint firstAttribute="height" constant="120" id="CLW-Jq-T33"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentDetailCell" rowHeight="60" id="vYg-dQ-Fjv" customClass="StudentDetailCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StudentDetailCell" rowHeight="60" id="vYg-dQ-Fjv" customClass="StudentDetailCell" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="60"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vYg-dQ-Fjv" id="DL3-Fy-eDK">
@@ -3930,14 +3930,14 @@
                                                     <constraint firstAttribute="height" constant="167" id="cEW-sF-KSj"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaymentDetailCell" rowHeight="77" id="mMl-pQ-ugp" customClass="PaymentDetailCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaymentDetailCell" rowHeight="77" id="mMl-pQ-ugp" customClass="PaymentDetailCell" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="77"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mMl-pQ-ugp" id="w79-UT-P4V">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-Qo-c8y" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baW-Qo-c8y" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                                     <rect key="frame" x="10" y="1" width="394" height="66"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="900" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-Rs-LAv">
@@ -3985,14 +3985,14 @@
                                                             <outlet property="receiptNumberLabel" destination="BUM-Rs-LAv" id="ba6-zK-L7s"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TotalCell" rowHeight="54" id="arg-GW-IAW" customClass="TotalCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TotalCell" rowHeight="54" id="arg-GW-IAW" customClass="TotalCell" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="121.66666603088379" width="414" height="54"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="arg-GW-IAW" id="jhS-2u-gHK">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1o-yR-2co" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1o-yR-2co" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                                     <rect key="frame" x="10" y="1" width="394" height="43"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="900" text="TOTAL :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-dB-340">
@@ -4031,7 +4031,7 @@
                                                             <outlet property="totalTitleLabel" destination="4eE-dB-340" id="21D-1i-EGf"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeeDetailCell" rowHeight="60" id="L6F-zk-onm" customClass="FeeDetailCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeeDetailCell" rowHeight="60" id="L6F-zk-onm" customClass="FeeDetailCell" customModule="Alameer_V2" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="175.66666603088379" width="414" height="60"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L6F-zk-onm" id="eAL-VU-xaS">
@@ -4260,7 +4260,7 @@
         <!--Grade View Controller-->
         <scene sceneID="4Vb-aT-yRz">
             <objects>
-                <viewController storyboardIdentifier="GradeViewController" modalPresentationStyle="fullScreen" id="Ija-XH-tRJ" customClass="GradeViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GradeViewController" modalPresentationStyle="fullScreen" id="Ija-XH-tRJ" customClass="GradeViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pUT-eB-Cys"/>
                         <viewControllerLayoutGuide type="bottom" id="jyN-ke-eeU"/>
@@ -4353,7 +4353,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35g-s7-gfh" customClass="ProgressViewBar" customModule="CredenceSchool" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35g-s7-gfh" customClass="ProgressViewBar" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="15" y="328" width="384" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -4412,7 +4412,7 @@
         <!--Digital Resources List Controller-->
         <scene sceneID="t9l-Ck-FR8">
             <objects>
-                <viewController storyboardIdentifier="DigitalResourcesListController" modalPresentationStyle="fullScreen" id="DdM-qk-oUb" customClass="DigitalResourcesListController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DigitalResourcesListController" modalPresentationStyle="fullScreen" id="DdM-qk-oUb" customClass="DigitalResourcesListController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nxx-nk-ORR"/>
                         <viewControllerLayoutGuide type="bottom" id="RAD-6F-UGf"/>
@@ -4522,14 +4522,14 @@
                                 <rect key="frame" x="0.0" y="80" width="414" height="656"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GalleryCategoryList" rowHeight="60" id="td9-pb-TNN" customClass="GalleryCategoryList" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GalleryCategoryList" rowHeight="60" id="td9-pb-TNN" customClass="GalleryCategoryList" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="td9-pb-TNN" id="982-Ya-YdV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="020-0f-Mdx" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="020-0f-Mdx" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="3" width="404" height="52"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-jul-2017 00:00:0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1g-e6-Edt">
@@ -4616,7 +4616,7 @@
         <!--Web View View Controller-->
         <scene sceneID="Pty-xC-qyC">
             <objects>
-                <viewController storyboardIdentifier="WebViewViewController" modalPresentationStyle="fullScreen" id="f1o-GX-dNh" customClass="WebViewViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewViewController" modalPresentationStyle="fullScreen" id="f1o-GX-dNh" customClass="WebViewViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FAD-WZ-oVG"/>
                         <viewControllerLayoutGuide type="bottom" id="UvS-6L-q7Z"/>
@@ -4713,7 +4713,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91S-J6-P3g" customClass="ProgressViewBar" customModule="CredenceSchool" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91S-J6-P3g" customClass="ProgressViewBar" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="15" y="328" width="384" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -4763,7 +4763,7 @@
         <!--Noticeboard Detail Controller-->
         <scene sceneID="30r-Eo-Zmc">
             <objects>
-                <viewController storyboardIdentifier="NoticeboardDetailController" modalPresentationStyle="fullScreen" id="Mp1-2X-wYh" customClass="NoticeboardDetailController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeboardDetailController" modalPresentationStyle="fullScreen" id="Mp1-2X-wYh" customClass="NoticeboardDetailController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s1s-3n-kQz"/>
                         <viewControllerLayoutGuide type="bottom" id="R38-d4-0zh"/>
@@ -4851,7 +4851,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnK-R6-Xfj" customClass="ProgressViewBar" customModule="CredenceSchool" customModuleProvider="target">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnK-R6-Xfj" customClass="ProgressViewBar" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="285.66666666666669" width="384" height="80"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -4940,7 +4940,7 @@
         <!--Notification Detail List Controller-->
         <scene sceneID="fSB-L9-Wnj">
             <objects>
-                <viewController storyboardIdentifier="NotificationDetailListController" modalPresentationStyle="fullScreen" id="pzY-GU-iDp" customClass="NotificationDetailListController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationDetailListController" modalPresentationStyle="fullScreen" id="pzY-GU-iDp" customClass="NotificationDetailListController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yw3-c4-rmq"/>
                         <viewControllerLayoutGuide type="bottom" id="73F-ec-DK2"/>
@@ -4953,14 +4953,14 @@
                                 <rect key="frame" x="0.0" y="80" width="414" height="656"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunicateCell" rowHeight="96" id="8qw-Ng-jaT" customClass="CommunicateCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunicateCell" rowHeight="96" id="8qw-Ng-jaT" customClass="CommunicateCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8qw-Ng-jaT" id="bhj-yf-1J3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gbf-fG-ezh" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gbf-fG-ezh" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="15.666666666666664" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="O7q-a3-19k"/>
@@ -5077,7 +5077,7 @@
         <!--Awareness Detail View Controller-->
         <scene sceneID="Gmf-L9-h9N">
             <objects>
-                <viewController storyboardIdentifier="AwarenessDetailViewController" modalPresentationStyle="fullScreen" id="71h-H8-JFk" customClass="AwarenessDetailViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AwarenessDetailViewController" modalPresentationStyle="fullScreen" id="71h-H8-JFk" customClass="AwarenessDetailViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xZY-Z7-5ib"/>
                         <viewControllerLayoutGuide type="bottom" id="pe0-49-Ie6"/>
@@ -5167,17 +5167,17 @@
                                 <rect key="frame" x="0.0" y="85" width="414" height="651"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoticeBoardListCell" rowHeight="96" id="5Mv-Gp-ucT" customClass="NoticeBoardListCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoticeBoardListCell" rowHeight="96" id="5Mv-Gp-ucT" customClass="NoticeBoardListCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Mv-Gp-ucT" id="ZOk-Aj-Eft">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igG-wl-ppm" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igG-wl-ppm" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="398" height="80"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-JC-VYv" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGJ-JC-VYv" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                             <rect key="frame" x="13" y="10.333333333333329" width="65" height="65"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="65" id="Gzw-aq-7wz"/>
@@ -5302,7 +5302,7 @@
         <!--Awareness View Controller-->
         <scene sceneID="XIL-SL-nUX">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vYg-ja-I3u" customClass="AwarenessViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="vYg-ja-I3u" customClass="AwarenessViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pzQ-Ot-3lB"/>
                         <viewControllerLayoutGuide type="bottom" id="4ha-C3-wQG"/>
@@ -5402,14 +5402,14 @@
                                 <rect key="frame" x="0.0" y="70" width="320" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCategoryList" rowHeight="89" id="EcU-BZ-tID" customClass="ArticleCategoryList" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCategoryList" rowHeight="89" id="EcU-BZ-tID" customClass="ArticleCategoryList" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="320" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EcU-BZ-tID" id="kkh-bK-deS">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4a-UI-kJC" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4a-UI-kJC" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="5" width="404" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-jul-2017 00:00:0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaG-cG-vEQ">
@@ -5418,7 +5418,7 @@
                                                             <color key="textColor" systemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="pps-kb-gSc" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="pps-kb-gSc" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="5" width="47" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="47" id="OgR-Qa-vBA"/>
@@ -5517,7 +5517,7 @@
         <!--Notice Board List Controller-->
         <scene sceneID="mDj-wW-trb">
             <objects>
-                <viewController storyboardIdentifier="NoticeBoardListController" modalPresentationStyle="fullScreen" id="j59-U5-vgS" customClass="NoticeBoardListController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeBoardListController" modalPresentationStyle="fullScreen" id="j59-U5-vgS" customClass="NoticeBoardListController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z42-rq-8lF"/>
                         <viewControllerLayoutGuide type="bottom" id="R9s-uG-8Qc"/>
@@ -5530,17 +5530,17 @@
                                 <rect key="frame" x="0.0" y="75" width="414" height="661"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoticeBoardListCell" rowHeight="96" id="fIo-OU-NOG" customClass="NoticeBoardListCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoticeBoardListCell" rowHeight="96" id="fIo-OU-NOG" customClass="NoticeBoardListCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fIo-OU-NOG" id="Uao-s8-FZz">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-wA-VGd" customClass="CardView" customModule="CredenceSchool" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-wA-VGd" customClass="CardView" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="398" height="80"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pci-SF-tB5" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pci-SF-tB5" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                             <rect key="frame" x="13" y="10.333333333333329" width="65" height="65"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="65" id="69g-Lc-nxK"/>
@@ -5724,7 +5724,7 @@
         <!--Reset PasswordVC-->
         <scene sceneID="Tm9-xJ-JKl">
             <objects>
-                <viewController storyboardIdentifier="ResetPasswordVC" modalPresentationStyle="overCurrentContext" id="l86-7x-MuO" customClass="ResetPasswordVC" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetPasswordVC" modalPresentationStyle="overCurrentContext" id="l86-7x-MuO" customClass="ResetPasswordVC" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zuY-Fw-ayH"/>
                         <viewControllerLayoutGuide type="bottom" id="chG-ld-mO6"/>
@@ -5750,7 +5750,7 @@
                                     <constraint firstAttribute="bottom" secondItem="ChW-TG-j3r" secondAttribute="bottom" constant="10" id="yHg-7N-v2j"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1RO-2M-5PZ" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1RO-2M-5PZ" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="125" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="u41-C7-MC6"/>
@@ -5775,7 +5775,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6n-BA-vRf" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6n-BA-vRf" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="180" width="288" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="70H-vF-dgi"/>
@@ -5820,7 +5820,7 @@
                                 <rect key="frame" x="141.66666666666666" y="131.66666666666666" width="37" height="37"/>
                                 <color key="color" red="0.91372549020000005" green="0.31372549020000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-zi-n7I" customClass="SkyFloatingLabelTextField" customModule="CredenceSchool" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-zi-n7I" customClass="SkyFloatingLabelTextField" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="15" y="70" width="290" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vQ3-Jb-Tdg"/>
@@ -5882,7 +5882,7 @@
         <!--Digital Resource Second List Controller-->
         <scene sceneID="o5I-aZ-oKp">
             <objects>
-                <viewController storyboardIdentifier="DigitalResourceSecondListController" modalPresentationStyle="fullScreen" id="MMu-fs-yqC" customClass="DigitalResourceSecondListController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DigitalResourceSecondListController" modalPresentationStyle="fullScreen" id="MMu-fs-yqC" customClass="DigitalResourceSecondListController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GOr-74-uxP"/>
                         <viewControllerLayoutGuide type="bottom" id="aoh-ZM-Fs9"/>
@@ -5895,14 +5895,14 @@
                                 <rect key="frame" x="0.0" y="80" width="414" height="656"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunicateCell" rowHeight="96" id="PKu-mU-uxJ" customClass="CommunicateCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommunicateCell" rowHeight="96" id="PKu-mU-uxJ" customClass="CommunicateCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PKu-mU-uxJ" id="ehh-fi-1am">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-vK-MJf" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-vK-MJf" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="15.666666666666664" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="59M-LA-xyo"/>
@@ -6063,7 +6063,7 @@
         <!--Weekly Plan Controller-->
         <scene sceneID="XMA-6A-vlj">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="CKi-hb-qrE" customClass="WeeklyPlanController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="CKi-hb-qrE" customClass="WeeklyPlanController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DEE-Hg-WOi"/>
                         <viewControllerLayoutGuide type="bottom" id="1w2-Eo-3RX"/>
@@ -6191,7 +6191,7 @@
                                     <action selector="FromdatePickerAction:" destination="CKi-hb-qrE" eventType="touchUpInside" id="hs3-Ic-NR7"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ker-OK-hsh" customClass="ProgressViewBar" customModule="CredenceSchool" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ker-OK-hsh" customClass="ProgressViewBar" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="15" y="328" width="384" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -6255,7 +6255,7 @@
         <!--Weekly Plan Filter Controller-->
         <scene sceneID="YwT-M6-gbT">
             <objects>
-                <viewController storyboardIdentifier="WeeklyPlanFilterController" modalPresentationStyle="overCurrentContext" id="pXj-Rv-UVG" customClass="WeeklyPlanFilterController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeeklyPlanFilterController" modalPresentationStyle="overCurrentContext" id="pXj-Rv-UVG" customClass="WeeklyPlanFilterController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IY4-hQ-E3a"/>
                         <viewControllerLayoutGuide type="bottom" id="ByW-ZV-21g"/>
@@ -6480,7 +6480,7 @@
         <!--Add CommentVC-->
         <scene sceneID="lTZ-Qt-rjW">
             <objects>
-                <viewController storyboardIdentifier="AddCommentVC" modalPresentationStyle="overCurrentContext" id="Gq8-uU-QAO" customClass="AddCommentVC" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCommentVC" modalPresentationStyle="overCurrentContext" id="Gq8-uU-QAO" customClass="AddCommentVC" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pwE-Ms-kIt"/>
                         <viewControllerLayoutGuide type="bottom" id="IcX-XZ-nGU"/>
@@ -6644,7 +6644,7 @@
         <!--Digital Resource Detail Controller-->
         <scene sceneID="jKN-bQ-WlB">
             <objects>
-                <viewController storyboardIdentifier="DigitalResourceDetailController" modalPresentationStyle="fullScreen" id="HEA-II-HZL" customClass="DigitalResourceDetailController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DigitalResourceDetailController" modalPresentationStyle="fullScreen" id="HEA-II-HZL" customClass="DigitalResourceDetailController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yed-m2-tCI"/>
                         <viewControllerLayoutGuide type="bottom" id="XT2-PT-n60"/>
@@ -6736,7 +6736,7 @@
                                     <constraint firstAttribute="height" constant="122.5" id="boB-FN-AXm"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="68" id="y4J-s0-50U" customClass="MessageDownLoadCell" customModule="CredenceSchool" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="68" id="y4J-s0-50U" customClass="MessageDownLoadCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="404" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y4J-s0-50U" id="hjd-DQ-njs">
@@ -6787,7 +6787,7 @@
                                         <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DigitalResourceDataListCell" rowHeight="450" id="jTu-Fz-cWD" customClass="DigitalResourceDataListCell" customModule="CredenceSchool" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DigitalResourceDataListCell" rowHeight="450" id="jTu-Fz-cWD" customClass="DigitalResourceDataListCell" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.666666030883789" width="394" height="450"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jTu-Fz-cWD" id="Lct-vC-3XN">
@@ -6841,7 +6841,7 @@
                                     <constraint firstItem="ZPh-ea-5Yr" firstAttribute="top" secondItem="bsY-ey-25h" secondAttribute="top" constant="10" id="v7W-uN-e7T"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1X-f9-CVw" customClass="ProgressViewBar" customModule="CredenceSchool" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1X-f9-CVw" customClass="ProgressViewBar" customModule="Alameer_V2" customModuleProvider="target">
                                 <rect key="frame" x="15" y="328" width="384" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -6942,7 +6942,7 @@
                                                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <prototypes>
-                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DigitalResourceDataListCell" rowHeight="450" id="mle-eA-Mvb" customClass="DigitalResourceDataListCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DigitalResourceDataListCell" rowHeight="450" id="mle-eA-Mvb" customClass="DigitalResourceDataListCell" customModule="Alameer_V2" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="374" height="450"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mle-eA-Mvb" id="SWg-pK-hOz">
@@ -7020,7 +7020,7 @@
                                                             <constraint firstAttribute="height" constant="122.5" id="Vdw-X3-uqJ"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DRDAttechmentCell" rowHeight="65" id="Z8b-pg-A4d" customClass="DRDAttechmentCell" customModule="CredenceSchool" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DRDAttechmentCell" rowHeight="65" id="Z8b-pg-A4d" customClass="DRDAttechmentCell" customModule="Alameer_V2" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="44.666666030883789" width="404" height="65"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z8b-pg-A4d" id="yzF-4W-arw">
@@ -7266,7 +7266,7 @@
         <!--Verification Email Login View Controller-->
         <scene sceneID="Bl8-cU-BCB">
             <objects>
-                <viewController storyboardIdentifier="VerificationEmailView" modalPresentationStyle="fullScreen" id="OV6-i1-Oun" userLabel="Verification Email Login View Controller" customClass="VerificationEmailViewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerificationEmailView" modalPresentationStyle="fullScreen" id="OV6-i1-Oun" userLabel="Verification Email Login View Controller" customClass="VerificationEmailViewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Woz-n8-lfc"/>
                         <viewControllerLayoutGuide type="bottom" id="iPV-b2-dAU"/>
@@ -7395,7 +7395,7 @@
         <!--Image Preview Controller-->
         <scene sceneID="kCS-QL-7cN">
             <objects>
-                <viewController storyboardIdentifier="ImagePreviewController" modalPresentationStyle="fullScreen" id="i7J-ou-y2c" customClass="ImagePreviewController" customModule="CredenceSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagePreviewController" modalPresentationStyle="fullScreen" id="i7J-ou-y2c" customClass="ImagePreviewController" customModule="Alameer_V2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Y7-OV-Clz"/>
                         <viewControllerLayoutGuide type="bottom" id="y0R-Jb-8G4"/>
@@ -7462,7 +7462,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veH-D2-OmQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="548"/>
                                         <subviews>
-                                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzq-NY-SMM" customClass="ImageLoader" customModule="CredenceSchool" customModuleProvider="target">
+                                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzq-NY-SMM" customClass="ImageLoader" customModule="Alameer_V2" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="548"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
