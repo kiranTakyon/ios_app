@@ -140,138 +140,6 @@
 		136575C42140F0E90045A958 /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
 		136575C52140F0E90045A958 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		136575C92140F0E90045A958 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
-		1365779C2140F1540045A958 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
-		1365779D2140F1540045A958 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
-		1365779E2140F1540045A958 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
-		1365779F2140F1540045A958 /* WeeklyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */; };
-		136577A02140F1540045A958 /* TMyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E21F2E270300729AF8 /* TMyProfile.swift */; };
-		136577A12140F1540045A958 /* TInboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B87561F2F87FD00B15818 /* TInboxMessage.swift */; };
-		136577A22140F1540045A958 /* CalendarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45218A8320808FCF004CF24C /* CalendarSection.swift */; };
-		136577A32140F1540045A958 /* DirectoryCreationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4C1F6AC6CF00599C36 /* DirectoryCreationOperation.swift */; };
-		136577A42140F1540045A958 /* TNGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40751F533FCA000F62B8 /* TNGroupMember.swift */; };
-		136577A52140F1540045A958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */; };
-		136577A62140F1540045A958 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7231F1FC9AF00C0D63F /* SkyFloatingLabelTextFieldWithIcon.swift */; };
-		136577A72140F1540045A958 /* VerificationEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */; };
-		136577A82140F1540045A958 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436F429204DA0D40076A3D4 /* SweetAlert.swift */; };
-		136577A92140F1540045A958 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E01F2E1A6900729AF8 /* ModelManager.swift */; };
-		136577AA2140F1540045A958 /* FileUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4E1F6AC6CF00599C36 /* FileUploadOperation.swift */; };
-		136577AB2140F1540045A958 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7241F1FC9AF00C0D63F /* UITextField+fixCaretPosition.swift */; };
-		136577AC2140F1540045A958 /* WeeklyPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6E200C766A00288C83 /* WeeklyPlanCell.swift */; };
-		136577AD2140F1540045A958 /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EB209B0C7900EB0F1D /* KSTokenView.swift */; };
-		136577AE2140F1540045A958 /* TNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DE1F2E199700729AF8 /* TNotification.swift */; };
-		136577AF2140F1540045A958 /* UploadFTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32A45D1F6AC446008A4BC3 /* UploadFTP.swift */; };
-		136577B02140F1540045A958 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F6092044534700515F74 /* WebViewViewController.swift */; };
-		136577B12140F1540045A958 /* ProgressViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97520F759730071DF9E /* ProgressViewBar.swift */; };
-		136577B22140F1540045A958 /* WeeklyPlanTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6A200C763F00288C83 /* WeeklyPlanTable.swift */; };
-		136577B32140F1540045A958 /* GalleryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6361F5094A3006F4D34 /* GalleryListController.swift */; };
-		136577B42140F1540045A958 /* TNPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890CE02007C8EC00991BF7 /* TNPayment.swift */; };
-		136577B52140F1540045A958 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB3F1F23C7730089E203 /* APIHelper.swift */; };
-		136577B62140F1540045A958 /* TNNoticeBoardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34402030A0C600A35086 /* TNNoticeBoardDetail.swift */; };
-		136577B72140F1540045A958 /* FTPUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F66A3213F946400411212 /* FTPUploadHelper.swift */; };
-		136577B82140F1540045A958 /* MPGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB148F31F4F1F9800444765 /* MPGTextField.m */; };
-		136577B92140F1540045A958 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374120504687002931EA /* FSCalendar.m */; };
-		136577BA2140F1540045A958 /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E8209B0C7600EB0F1D /* KSToken.swift */; };
-		136577BB2140F1540045A958 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7321F1FC9AF00C0D63F /* HomeVC.swift */; };
-		136577BC2140F1540045A958 /* TNAwarnessArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */; };
-		136577BD2140F1540045A958 /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA641F24E8A700BA82BE /* PagerController.swift */; };
-		136577BE2140F1540045A958 /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375120504687002931EA /* FSCalendarTransitionCoordinator.m */; };
-		136577BF2140F1540045A958 /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373320504687002931EA /* FSCalendarCollectionView.m */; };
-		136577C02140F1540045A958 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7121F1FC9AF00C0D63F /* APIUrls.swift */; };
-		136577C12140F1540045A958 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373720504687002931EA /* FSCalendarDelegationProxy.m */; };
-		136577C22140F1540045A958 /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40711F52F607000F62B8 /* CustomCalendarCell.swift */; };
-		136577C32140F1540045A958 /* TNPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D45BC1F545D930042727A /* TNPerson.swift */; };
-		136577C42140F1540045A958 /* TNGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6381F5098D4006F4D34 /* TNGallery.swift */; };
-		136577C52140F1540045A958 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C501F6AC6CF00599C36 /* Operation.swift */; };
-		136577C62140F1540045A958 /* StreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C541F6AC6CF00599C36 /* StreamOperation.swift */; };
-		136577C72140F1540045A958 /* TNCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343A203077B500A35086 /* TNCalendarEvent.swift */; };
-		136577C82140F1540045A958 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72E1F1FC9AF00C0D63F /* TPKeyboardAvoidingTableView.m */; };
-		136577C92140F1540045A958 /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71D1F1FC9AF00C0D63F /* DOAlertController.swift */; };
-		136577CA2140F1540045A958 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72C1F1FC9AF00C0D63F /* TPKeyboardAvoidingScrollView.m */; };
-		136577CB2140F1540045A958 /* CommunicateLandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */; };
-		136577CC2140F1540045A958 /* TSibling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E41F2E4DD700729AF8 /* TSibling.swift */; };
-		136577CD2140F1540045A958 /* FSCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374820504687002931EA /* FSCalendarExtensions.m */; };
-		136577CE2140F1540045A958 /* NoticeboardCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */; };
-		136577CF2140F1540045A958 /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374220504687002931EA /* FSCalendarCollectionViewLayout.m */; };
-		136577D02140F1540045A958 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71F1F1FC9AF00C0D63F /* Picker.swift */; };
-		136577D12140F1540045A958 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE11F2788AA00742127 /* Protocols.swift */; };
-		136577D22140F1540045A958 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7221F1FC9AF00C0D63F /* SkyFloatingLabelTextField.swift */; };
-		136577D32140F1540045A958 /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */; };
-		136577D42140F1540045A958 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D406F1F52F607000F62B8 /* CalendarController.swift */; };
-		136577D52140F1540045A958 /* FSCalendarScopeHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374320504687002931EA /* FSCalendarScopeHandle.m */; };
-		136577D62140F1540045A958 /* WriteStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C551F6AC6CF00599C36 /* WriteStreamOperation.swift */; };
-		136577D72140F1540045A958 /* RegisterPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */; };
-		136577D82140F1540045A958 /* jsonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7131F1FC9AF00C0D63F /* jsonKeys.swift */; };
-		136577D92140F1540045A958 /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375320504687002931EA /* FSCalendarAppearance.m */; };
-		136577DA2140F1540045A958 /* FileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4D1F6AC6CF00599C36 /* FileDownloadOperation.swift */; };
-		136577DB2140F1540045A958 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB481F23C7F10089E203 /* Reachability.swift */; };
-		136577DC2140F1540045A958 /* DBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DB1F2E14EF00729AF8 /* DBKeys.swift */; };
-		136577DD2140F1540045A958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB401F23C7730089E203 /* Constants.swift */; };
-		136577DE2140F1540045A958 /* TNAwarenessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A8D2045960D006A0848 /* TNAwarenessDetail.swift */; };
-		136577DF2140F1540045A958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45559BF41EBADB3B00F4E6FB /* AppDelegate.swift */; };
-		136577E02140F1540045A958 /* ReadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C639262053D2970099B85E /* ReadSelectViewController.swift */; };
-		136577E12140F1540045A958 /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373920504687002931EA /* FSCalendarDelegationFactory.m */; };
-		136577E22140F1540045A958 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */; };
-		136577E32140F1540045A958 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97F20F76B220071DF9E /* LinearProgressView.swift */; };
-		136577E42140F1540045A958 /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE31F278C3700742127 /* ComposeController.swift */; };
-		136577E52140F1540045A958 /* WeeklyPlanFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */; };
-		136577E62140F1540045A958 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */; };
-		136577E72140F1540045A958 /* NoticeBoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */; };
-		136577E82140F1540045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7301F1FC9AF00C0D63F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		136577E92140F1540045A958 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */; };
-		136577EA2140F1540045A958 /* FSCalendarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374B20504687002931EA /* FSCalendarConstants.m */; };
-		136577EB2140F1540045A958 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373F20504687002931EA /* FSCalendarCell.m */; };
-		136577EC2140F1540045A958 /* DigitalResourceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */; };
-		136577ED2140F1540045A958 /* TNMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4E68D31F6C347E00F95547 /* TNMenuItem.swift */; };
-		136577EE2140F1540045A958 /* FSCalendar+Deprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374A20504687002931EA /* FSCalendar+Deprecated.m */; };
-		136577EF2140F1540045A958 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB4A1F23CB450089E203 /* Extensions.swift */; };
-		136577F02140F1540045A958 /* TNDigitalResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7851F55ABA400A366AA /* TNDigitalResource.swift */; };
-		136577F12140F1540045A958 /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374020504687002931EA /* FSCalendarStickyHeader.m */; };
-		136577F22140F1540045A958 /* CommunicateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */; };
-		136577F32140F1540045A958 /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E9209B0C7700EB0F1D /* KSTokenField.swift */; };
-		136577F42140F1540045A958 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB421F23C7730089E203 /* UserDefaultManager.swift */; };
-		136577F52140F1540045A958 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C531F6AC6CF00599C36 /* Session.swift */; };
-		136577F62140F1540045A958 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72A1F1FC9AF00C0D63F /* TPKeyboardAvoidingCollectionView.m */; };
-		136577F72140F1540045A958 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */; };
-		136577F82140F1540045A958 /* SlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA591F24637D00BA82BE /* SlideController.swift */; };
-		136577F92140F1540045A958 /* AwarenessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8C083203B411A00C921DB /* AwarenessViewController.swift */; };
-		136577FA2140F1540045A958 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7271F1FC9AF00C0D63F /* SWRevealViewController.m */; };
-		136577FB2140F1540045A958 /* AwarenessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */; };
-		136577FC2140F1540045A958 /* DigitalResourceSecondListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */; };
-		136577FD2140F1540045A958 /* NotificationDetailListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */; };
-		136577FE2140F1540045A958 /* DigitalResourcesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */; };
-		136577FF2140F1540045A958 /* NoticeboardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */; };
-		136578002140F1540045A958 /* VideoDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FBEA8220810D3D0035AECD /* VideoDownload.swift */; };
-		136578012140F1540045A958 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40701F52F607000F62B8 /* CircleView.swift */; };
-		136578022140F1540045A958 /* FSCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374C20504687002931EA /* FSCalendarCalculator.m */; };
-		136578032140F1540045A958 /* ReadStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C511F6AC6CF00599C36 /* ReadStreamOperation.swift */; };
-		136578042140F1540045A958 /* DownLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */; };
-		136578052140F1540045A958 /* TNNoticeboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78D1F55E5A600A366AA /* TNNoticeboard.swift */; };
-		136578062140F1540045A958 /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374420504687002931EA /* FSCalendarWeekdayView.m */; };
-		136578072140F1540045A958 /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EA209B0C7800EB0F1D /* KSUtils.swift */; };
-		136578082140F1540045A958 /* GalleryCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */; };
-		136578092140F1540045A958 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5007E71F2638A10013AA07 /* MapController.swift */; };
-		1365780A2140F1540045A958 /* TNGalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6341F508561006F4D34 /* TNGalleryCategory.swift */; };
-		1365780B2140F1540045A958 /* GradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41937672050510A002931EA /* GradeViewController.swift */; };
-		1365780C2140F1540045A958 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB411F23C7730089E203 /* Global.swift */; };
-		1365780D2140F1540045A958 /* TNWeeklyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E72200C865500288C83 /* TNWeeklyPlan.swift */; };
-		1365780E2140F1540045A958 /* PaymentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE169EA0200687A00019685A /* PaymentDetailsController.swift */; };
-		1365780F2140F1540045A958 /* TNGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB148EF1F4F1D5E00444765 /* TNGroup.swift */; };
-		136578122140F1540045A958 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130DA5F520CA5AB40042838C /* GoogleToolboxForMac.framework */; };
-		136578132140F1540045A958 /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE630DB81F514D9200CE1022 /* MBCalendarKit.framework */; };
-		136578142140F1540045A958 /* Toast_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7B4CC31F378AA10009D393 /* Toast_Swift.framework */; };
-		136578152140F1540045A958 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
-		136578162140F1540045A958 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFFA5B1F24C97600BA82BE /* SkyFloatingLabelTextField.framework */; };
-		136578172140F1540045A958 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		1365781A2140F1540045A958 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
-		1365781B2140F1540045A958 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C4A1F6AC6CF00599C36 /* .swiftlint.yml */; };
-		1365781E2140F1540045A958 /* TestInapp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9D2101ECF6001B571E /* TestInapp.jpg */; };
-		1365781F2140F1540045A958 /* Picker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFBA7201F1FC9AF00C0D63F /* Picker.xib */; };
-		136578212140F1540045A958 /* ProgressViewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1376C97620F759730071DF9E /* ProgressViewBar.xib */; };
-		136578222140F1540045A958 /* TestPenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9B2101EB6B001B571E /* TestPenguin.png */; };
-		136578232140F1540045A958 /* SampleText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138C2A5620FDE98D00F8BE17 /* SampleText.txt */; };
-		136578242140F1540045A958 /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
-		136578252140F1540045A958 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
-		136578292140F1540045A958 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		136578342140F1600045A958 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		136578352140F1600045A958 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		136578362140F1600045A958 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -935,7 +803,6 @@
 		13CD023A2146774B008F307A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CD02212146774A008F307A /* GoogleService-Info.plist */; };
 		13CD024621467A04008F307A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CD024521467A02008F307A /* GoogleService-Info.plist */; };
 		13CD024821467B2B008F307A /* CredenceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD024721467B2A008F307A /* CredenceAssets.xcassets */; };
-		13CD025A21468634008F307A /* AlAlameerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD025921468633008F307A /* AlAlameerAssets.xcassets */; };
 		13CD025D2146880D008F307A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CD025C2146880B008F307A /* GoogleService-Info.plist */; };
 		13CD025F2146894C008F307A /* NewAcademy.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD025E2146894A008F307A /* NewAcademy.xcassets */; };
 		13DD10422148F10700CB24AD /* RAFAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD0253214681B8008F307A /* RAFAssets.xcassets */; };
@@ -1637,7 +1504,6 @@
 		4491440B252E0C9800EAF467 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44914409252E0C9800EAF467 /* GoogleService-Info.plist */; };
 		4491440D252E173200EAF467 /* PEPSV2Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4491440C252E173000EAF467 /* PEPSV2Assets.xcassets */; };
 		4493CD22253DB33800A92A46 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
-		4493CD24253DB33800A92A46 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
 		4493CD25253DB33800A92A46 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
 		4493CD27253DB33800A92A46 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
 		4493CD28253DB33800A92A46 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
@@ -2637,7 +2503,6 @@
 		44DC612625798523002E3917 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		44DC612825798523002E3917 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		44EC3B0023377EC800BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
-		44EC3B0323377EC800BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
 		44EC3B0423377EC800BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
 		44EC3B0723377EC900BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
 		44EC3B0823377EC900BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
@@ -2652,7 +2517,6 @@
 		44EC3B1423377EC900BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
 		44EC3B1523377EC900BFBEB7 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
 		44EF07DB231AD6DD00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
-		44EF07DE231AD6DF00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07DF231AD6E000524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07E2231AD6E100524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07E3231AD6E200524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
@@ -3522,7 +3386,6 @@
 		CD924390274C4406007B5C2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD92438F274C4405007B5C2B /* GoogleService-Info.plist */; };
 		CD924391274C44C9007B5C2B /* ICSAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD026D214697DE008F307A /* ICSAssets.xcassets */; };
 		CDB7C3D027480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
-		CDB7C3D227480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3D327480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3D527480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3D627480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
@@ -3554,7 +3417,6 @@
 		CDB7C3F227480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3F327480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3F527480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
-		CDB7C3F727480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
 		CDB7C3F827480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
 		CDB7C3FA27480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
 		CDB7C3FB27480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
@@ -3586,7 +3448,6 @@
 		CDB7C41727480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
 		CDB7C41827480F8E00FE5186 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
 		CDB7C41B2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
-		CDB7C41D2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C41E2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C4202748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C4212748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
@@ -3762,7 +3623,6 @@
 		CDE5DC672825591A00A979FA /* AlAlameerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD025921468633008F307A /* AlAlameerAssets.xcassets */; };
 		CDE5DC6828255BFA00A979FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
 		CDE8244B275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
-		CDE8244D275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE8244E275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE82450275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE82451275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
@@ -4759,7 +4619,6 @@
 		CE294CED21E8933300331820 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CE582E6521E89B4C00503A09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE294CEE21E8970700331820 /* GoogleService-Info.plist */; };
 		CE6818F5241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
-		CE6818F8241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
 		CE6818F9241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
 		CE6818FC241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
 		CE6818FD241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
@@ -5738,7 +5597,6 @@
 		CEE50AF026E7C4DC00D355C4 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		CEE50AF226E7C4DC00D355C4 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CEE50BFF26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
-		CEE50C0126E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C0226E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C0426E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C0526E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
@@ -5761,7 +5619,6 @@
 		CEE50C2026E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C2126E7CEE800D355C4 /* CrescentV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */; };
 		CEE50C4A26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
-		CEE50C4C26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C4D26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C4F26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C5026E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
@@ -5814,7 +5671,6 @@
 		135CA0EA209B0C7800EB0F1D /* KSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSUtils.swift; sourceTree = "<group>"; };
 		135CA0EB209B0C7900EB0F1D /* KSTokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSTokenView.swift; sourceTree = "<group>"; };
 		136575CF2140F0E90045A958 /* CredenceSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CredenceSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1365782F2140F1550045A958 /* AlameerSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlameerSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		136578C72140F1600045A958 /* NewAcademySchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewAcademySchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13657D872140F1CC0045A958 /* EFIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EFIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13657FE72140F1F10045A958 /* Amled School.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amled School.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6182,19 +6038,6 @@
 				136575B52140F0E90045A958 /* MapKit.framework in Frameworks */,
 				136575B62140F0E90045A958 /* SkyFloatingLabelTextField.framework in Frameworks */,
 				136575B72140F0E90045A958 /* DGActivityIndicatorView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		136578102140F1540045A958 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				136578122140F1540045A958 /* GoogleToolboxForMac.framework in Frameworks */,
-				136578132140F1540045A958 /* MBCalendarKit.framework in Frameworks */,
-				136578142140F1540045A958 /* Toast_Swift.framework in Frameworks */,
-				136578152140F1540045A958 /* MapKit.framework in Frameworks */,
-				136578162140F1540045A958 /* SkyFloatingLabelTextField.framework in Frameworks */,
-				136578172140F1540045A958 /* DGActivityIndicatorView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7196,7 +7039,6 @@
 			isa = PBXGroup;
 			children = (
 				136575CF2140F0E90045A958 /* CredenceSchool.app */,
-				1365782F2140F1550045A958 /* AlameerSchool.app */,
 				136578C72140F1600045A958 /* NewAcademySchool.app */,
 				13657D872140F1CC0045A958 /* EFIA.app */,
 				13657FE72140F1F10045A958 /* Amled School.app */,
@@ -7728,24 +7570,6 @@
 			name = CredenceSchool;
 			productName = "Ambassador Education";
 			productReference = 136575CF2140F0E90045A958 /* CredenceSchool.app */;
-			productType = "com.apple.product-type.application";
-		};
-		136577992140F1540045A958 /* AlameerSchool */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1365782C2140F1540045A958 /* Build configuration list for PBXNativeTarget "AlameerSchool" */;
-			buildPhases = (
-				1365779B2140F1540045A958 /* Sources */,
-				136578102140F1540045A958 /* Frameworks */,
-				136578192140F1540045A958 /* Resources */,
-				1365782B2140F1540045A958 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AlameerSchool;
-			productName = "Ambassador Education";
-			productReference = 1365782F2140F1550045A958 /* AlameerSchool.app */;
 			productType = "com.apple.product-type.application";
 		};
 		136578312140F1600045A958 /* NewAcademySchool */ = {
@@ -8460,10 +8284,6 @@
 						DevelopmentTeam = FP9BBFKB3C;
 						ProvisioningStyle = Automatic;
 					};
-					136577992140F1540045A958 = {
-						DevelopmentTeam = FP9BBFKB3C;
-						ProvisioningStyle = Automatic;
-					};
 					136578312140F1600045A958 = {
 						DevelopmentTeam = FP9BBFKB3C;
 						ProvisioningStyle = Manual;
@@ -8655,7 +8475,6 @@
 			projectRoot = "";
 			targets = (
 				136575392140F0E90045A958 /* CredenceSchool */,
-				136577992140F1540045A958 /* AlameerSchool */,
 				136578312140F1600045A958 /* NewAcademySchool */,
 				13657F512140F1F10045A958 /* Amled School */,
 				13657CF12140F1CC0045A958 /* EFIA */,
@@ -8736,27 +8555,6 @@
 				136575C42140F0E90045A958 /* sampleImage.png in Resources */,
 				136575C52140F0E90045A958 /* WeeklyPlanCell.xib in Resources */,
 				136575C92140F0E90045A958 /* CalendarSection.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		136578192140F1540045A958 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1365781A2140F1540045A958 /* WeeklyPlanTable.xib in Resources */,
-				1365781B2140F1540045A958 /* .swiftlint.yml in Resources */,
-				4493CD24253DB33800A92A46 /* Common.xcassets in Resources */,
-				1365781E2140F1540045A958 /* TestInapp.jpg in Resources */,
-				1365781F2140F1540045A958 /* Picker.xib in Resources */,
-				136578212140F1540045A958 /* ProgressViewBar.xib in Resources */,
-				13CD025A21468634008F307A /* AlAlameerAssets.xcassets in Resources */,
-				CEE50C4C26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
-				136578222140F1540045A958 /* TestPenguin.png in Resources */,
-				136578232140F1540045A958 /* SampleText.txt in Resources */,
-				CEE50C0126E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
-				136578242140F1540045A958 /* sampleImage.png in Resources */,
-				136578252140F1540045A958 /* WeeklyPlanCell.xib in Resources */,
-				136578292140F1540045A958 /* CalendarSection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9592,19 +9390,6 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		136575CB2140F0E90045A958 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		1365782B2140F1540045A958 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -10913,136 +10698,6 @@
 				136575AD2140F0E90045A958 /* TNWeeklyPlan.swift in Sources */,
 				136575AE2140F0E90045A958 /* PaymentDetailsController.swift in Sources */,
 				136575AF2140F0E90045A958 /* TNGroup.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1365779B2140F1540045A958 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1365779C2140F1540045A958 /* FSCalendarHeaderView.m in Sources */,
-				1365779D2140F1540045A958 /* ResourceListOperation.swift in Sources */,
-				1365779E2140F1540045A958 /* MessageDetailController.swift in Sources */,
-				1365779F2140F1540045A958 /* WeeklyPlanController.swift in Sources */,
-				136577A02140F1540045A958 /* TMyProfile.swift in Sources */,
-				136577A12140F1540045A958 /* TInboxMessage.swift in Sources */,
-				136577A22140F1540045A958 /* CalendarSection.swift in Sources */,
-				136577A32140F1540045A958 /* DirectoryCreationOperation.swift in Sources */,
-				136577A42140F1540045A958 /* TNGroupMember.swift in Sources */,
-				136577A52140F1540045A958 /* ViewController.swift in Sources */,
-				136577A62140F1540045A958 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
-				136577A72140F1540045A958 /* VerificationEmailViewController.swift in Sources */,
-				136577A82140F1540045A958 /* SweetAlert.swift in Sources */,
-				136577A92140F1540045A958 /* ModelManager.swift in Sources */,
-				44EF07DE231AD6DF00524BAE /* ResetPasswordVC.swift in Sources */,
-				136577AA2140F1540045A958 /* FileUploadOperation.swift in Sources */,
-				136577AB2140F1540045A958 /* UITextField+fixCaretPosition.swift in Sources */,
-				136577AC2140F1540045A958 /* WeeklyPlanCell.swift in Sources */,
-				136577AD2140F1540045A958 /* KSTokenView.swift in Sources */,
-				136577AE2140F1540045A958 /* TNotification.swift in Sources */,
-				136577AF2140F1540045A958 /* UploadFTP.swift in Sources */,
-				136577B02140F1540045A958 /* WebViewViewController.swift in Sources */,
-				136577B12140F1540045A958 /* ProgressViewBar.swift in Sources */,
-				136577B22140F1540045A958 /* WeeklyPlanTable.swift in Sources */,
-				136577B32140F1540045A958 /* GalleryListController.swift in Sources */,
-				136577B42140F1540045A958 /* TNPayment.swift in Sources */,
-				136577B52140F1540045A958 /* APIHelper.swift in Sources */,
-				CDB7C3D227480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */,
-				136577B62140F1540045A958 /* TNNoticeBoardDetail.swift in Sources */,
-				136577B72140F1540045A958 /* FTPUploadHelper.swift in Sources */,
-				136577B82140F1540045A958 /* MPGTextField.m in Sources */,
-				44EC3B0323377EC800BFBEB7 /* LoadMoreControl.swift in Sources */,
-				136577B92140F1540045A958 /* FSCalendar.m in Sources */,
-				136577BA2140F1540045A958 /* KSToken.swift in Sources */,
-				136577BB2140F1540045A958 /* HomeVC.swift in Sources */,
-				136577BC2140F1540045A958 /* TNAwarnessArticleDetail.swift in Sources */,
-				136577BD2140F1540045A958 /* PagerController.swift in Sources */,
-				136577BE2140F1540045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
-				136577BF2140F1540045A958 /* FSCalendarCollectionView.m in Sources */,
-				136577C02140F1540045A958 /* APIUrls.swift in Sources */,
-				136577C12140F1540045A958 /* FSCalendarDelegationProxy.m in Sources */,
-				136577C22140F1540045A958 /* CustomCalendarCell.swift in Sources */,
-				136577C32140F1540045A958 /* TNPerson.swift in Sources */,
-				136577C42140F1540045A958 /* TNGallery.swift in Sources */,
-				136577C52140F1540045A958 /* Operation.swift in Sources */,
-				136577C62140F1540045A958 /* StreamOperation.swift in Sources */,
-				136577C72140F1540045A958 /* TNCalendarEvent.swift in Sources */,
-				136577C82140F1540045A958 /* TPKeyboardAvoidingTableView.m in Sources */,
-				136577C92140F1540045A958 /* DOAlertController.swift in Sources */,
-				136577CA2140F1540045A958 /* TPKeyboardAvoidingScrollView.m in Sources */,
-				136577CB2140F1540045A958 /* CommunicateLandController.swift in Sources */,
-				136577CC2140F1540045A958 /* TSibling.swift in Sources */,
-				136577CD2140F1540045A958 /* FSCalendarExtensions.m in Sources */,
-				136577CE2140F1540045A958 /* NoticeboardCategoryController.swift in Sources */,
-				136577CF2140F1540045A958 /* FSCalendarCollectionViewLayout.m in Sources */,
-				136577D02140F1540045A958 /* Picker.swift in Sources */,
-				136577D12140F1540045A958 /* Protocols.swift in Sources */,
-				136577D22140F1540045A958 /* SkyFloatingLabelTextField.swift in Sources */,
-				136577D32140F1540045A958 /* MyProfileController.swift in Sources */,
-				CDB7C41D2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */,
-				136577D42140F1540045A958 /* CalendarController.swift in Sources */,
-				136577D52140F1540045A958 /* FSCalendarScopeHandle.m in Sources */,
-				136577D62140F1540045A958 /* WriteStreamOperation.swift in Sources */,
-				136577D72140F1540045A958 /* RegisterPopUpVc.swift in Sources */,
-				136577D82140F1540045A958 /* jsonKeys.swift in Sources */,
-				136577D92140F1540045A958 /* FSCalendarAppearance.m in Sources */,
-				136577DA2140F1540045A958 /* FileDownloadOperation.swift in Sources */,
-				136577DB2140F1540045A958 /* Reachability.swift in Sources */,
-				136577DC2140F1540045A958 /* DBKeys.swift in Sources */,
-				136577DD2140F1540045A958 /* Constants.swift in Sources */,
-				136577DE2140F1540045A958 /* TNAwarenessDetail.swift in Sources */,
-				136577DF2140F1540045A958 /* AppDelegate.swift in Sources */,
-				136577E02140F1540045A958 /* ReadSelectViewController.swift in Sources */,
-				136577E12140F1540045A958 /* FSCalendarDelegationFactory.m in Sources */,
-				136577E22140F1540045A958 /* ImagePreviewController.swift in Sources */,
-				136577E32140F1540045A958 /* LinearProgressView.swift in Sources */,
-				136577E42140F1540045A958 /* ComposeController.swift in Sources */,
-				136577E52140F1540045A958 /* WeeklyPlanFilterController.swift in Sources */,
-				136577E62140F1540045A958 /* ChangePasswordController.swift in Sources */,
-				136577E72140F1540045A958 /* NoticeBoardListController.swift in Sources */,
-				136577E82140F1540045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				CE6818F8241CD4A200997AF6 /* TNSubject.swift in Sources */,
-				136577E92140F1540045A958 /* ForgotPasswordController.swift in Sources */,
-				136577EA2140F1540045A958 /* FSCalendarConstants.m in Sources */,
-				136577EB2140F1540045A958 /* FSCalendarCell.m in Sources */,
-				136577EC2140F1540045A958 /* DigitalResourceDetailController.swift in Sources */,
-				136577ED2140F1540045A958 /* TNMenuItem.swift in Sources */,
-				CDE8244D275FC03D00BD4211 /* AddCommentVC.swift in Sources */,
-				136577EE2140F1540045A958 /* FSCalendar+Deprecated.m in Sources */,
-				136577EF2140F1540045A958 /* Extensions.swift in Sources */,
-				136577F02140F1540045A958 /* TNDigitalResource.swift in Sources */,
-				136577F12140F1540045A958 /* FSCalendarStickyHeader.m in Sources */,
-				136577F22140F1540045A958 /* CommunicateController.swift in Sources */,
-				136577F32140F1540045A958 /* KSTokenField.swift in Sources */,
-				136577F42140F1540045A958 /* UserDefaultManager.swift in Sources */,
-				136577F52140F1540045A958 /* Session.swift in Sources */,
-				CDB7C3F727480F8E00FE5186 /* VisualEffectView.swift in Sources */,
-				136577F62140F1540045A958 /* TPKeyboardAvoidingCollectionView.m in Sources */,
-				136577F72140F1540045A958 /* WebViewController.swift in Sources */,
-				136577F82140F1540045A958 /* SlideController.swift in Sources */,
-				136577F92140F1540045A958 /* AwarenessViewController.swift in Sources */,
-				136577FA2140F1540045A958 /* SWRevealViewController.m in Sources */,
-				136577FB2140F1540045A958 /* AwarenessDetailViewController.swift in Sources */,
-				136577FC2140F1540045A958 /* DigitalResourceSecondListController.swift in Sources */,
-				136577FD2140F1540045A958 /* NotificationDetailListController.swift in Sources */,
-				136577FE2140F1540045A958 /* DigitalResourcesListController.swift in Sources */,
-				136577FF2140F1540045A958 /* NoticeboardDetailController.swift in Sources */,
-				136578002140F1540045A958 /* VideoDownload.swift in Sources */,
-				136578012140F1540045A958 /* CircleView.swift in Sources */,
-				136578022140F1540045A958 /* FSCalendarCalculator.m in Sources */,
-				136578032140F1540045A958 /* ReadStreamOperation.swift in Sources */,
-				136578042140F1540045A958 /* DownLoadsViewController.swift in Sources */,
-				136578052140F1540045A958 /* TNNoticeboard.swift in Sources */,
-				136578062140F1540045A958 /* FSCalendarWeekdayView.m in Sources */,
-				136578072140F1540045A958 /* KSUtils.swift in Sources */,
-				136578082140F1540045A958 /* GalleryCategoryListController.swift in Sources */,
-				136578092140F1540045A958 /* MapController.swift in Sources */,
-				1365780A2140F1540045A958 /* TNGalleryCategory.swift in Sources */,
-				1365780B2140F1540045A958 /* GradeViewController.swift in Sources */,
-				1365780C2140F1540045A958 /* Global.swift in Sources */,
-				1365780D2140F1540045A958 /* TNWeeklyPlan.swift in Sources */,
-				1365780E2140F1540045A958 /* PaymentDetailsController.swift in Sources */,
-				1365780F2140F1540045A958 /* TNGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -16321,336 +15976,6 @@
 					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.credence;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		1365782D2140F1540045A958 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sibi  Mathews (FP9BBFKB3C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/AlameerSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"GGLCloudMessaging\"",
-					"-l\"GGLCore\"",
-					"-l\"GGLInstanceIDLib\"",
-					"-l\"GcmLib\"",
-					"-l\"c++\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AddressBook\"",
-					"-framework",
-					"\"AssetsLibrary\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"BIZPopupView\"",
-					"-framework",
-					"\"CCBottomRefreshControl\"",
-					"-framework",
-					"\"CoreBluetooth\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreMotion\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"DGActivityIndicatorView\"",
-					"-framework",
-					"\"DatePickerDialog\"",
-					"-framework",
-					"\"DropDown\"",
-					"-framework",
-					"\"EventKit\"",
-					"-framework",
-					"\"EventKitUI\"",
-					"-framework",
-					"\"FSCalendar\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
-					"\"FirebaseCoreDiagnostics\"",
-					"-framework",
-					"\"FirebaseInstanceID\"",
-					"-framework",
-					"\"FirebaseNanoPB\"",
-					"-framework",
-					"\"GoogleIPhoneUtilities\"",
-					"-framework",
-					"\"GoogleInterchangeUtilities\"",
-					"-framework",
-					"\"GoogleNetworkingUtilities\"",
-					"-framework",
-					"\"GoogleSymbolUtilities\"",
-					"-framework",
-					"\"GoogleToolboxForMac\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"HMSegmentedControl\"",
-					"-framework",
-					"\"MBCalendarKit\"",
-					"-framework",
-					"\"MXPagerView\"",
-					"-framework",
-					"\"MXParallaxHeader\"",
-					"-framework",
-					"\"MXSegmentedPager\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MessageUI\"",
-					"-framework",
-					"\"RichEditorView\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SkyFloatingLabelTextField\"",
-					"-framework",
-					"\"StoreKit\"",
-					"-framework",
-					"\"SwiftSoup\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TPKeyboardAvoiding\"",
-					"-framework",
-					"\"Toast_Swift\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"nanopb\"",
-					"-ObjC",
-					"-all_load",
-					"-ObjC",
-					"-all_load",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.alameer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1365782E2140F1540045A958 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sibi  Mathews (FP9BBFKB3C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/AlameerSchool-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_CFLAGS[arch=*]" = (
-					"$(inherited)",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/BIZPopupView/BIZPopupView.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog/DatePickerDialog.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown/DropDown.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar/FSCalendar.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/HMSegmentedControl/HMSegmentedControl.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBCalendarKit/MBCalendarKit.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXPagerView/MXPagerView.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXParallaxHeader/MXParallaxHeader.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXSegmentedPager/MXSegmentedPager.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/RichEditorView/RichEditorView.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers\"",
-					"-iquote",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
-					"-isystem",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"-isystem",
-					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
-					"-isystem",
-					"\"${PODS_ROOT}/Headers/Public/GGLInstanceID\"",
-					"-isystem",
-					"\"${PODS_ROOT}/Headers/Public/Google\"",
-					"-isystem",
-					"\"${PODS_ROOT}/Headers/Public/GoogleCloudMessaging\"",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"GGLCloudMessaging\"",
-					"-l\"GGLCore\"",
-					"-l\"GGLInstanceIDLib\"",
-					"-l\"GcmLib\"",
-					"-l\"c++\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AddressBook\"",
-					"-framework",
-					"\"AssetsLibrary\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"BIZPopupView\"",
-					"-framework",
-					"\"CCBottomRefreshControl\"",
-					"-framework",
-					"\"CoreBluetooth\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreMotion\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"DGActivityIndicatorView\"",
-					"-framework",
-					"\"DatePickerDialog\"",
-					"-framework",
-					"\"DropDown\"",
-					"-framework",
-					"\"EventKit\"",
-					"-framework",
-					"\"EventKitUI\"",
-					"-framework",
-					"\"FSCalendar\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
-					"\"FirebaseCoreDiagnostics\"",
-					"-framework",
-					"\"FirebaseInstanceID\"",
-					"-framework",
-					"\"FirebaseNanoPB\"",
-					"-framework",
-					"\"GoogleIPhoneUtilities\"",
-					"-framework",
-					"\"GoogleInterchangeUtilities\"",
-					"-framework",
-					"\"GoogleNetworkingUtilities\"",
-					"-framework",
-					"\"GoogleSymbolUtilities\"",
-					"-framework",
-					"\"GoogleToolboxForMac\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"HMSegmentedControl\"",
-					"-framework",
-					"\"MBCalendarKit\"",
-					"-framework",
-					"\"MXPagerView\"",
-					"-framework",
-					"\"MXParallaxHeader\"",
-					"-framework",
-					"\"MXSegmentedPager\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MessageUI\"",
-					"-framework",
-					"\"RichEditorView\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SkyFloatingLabelTextField\"",
-					"-framework",
-					"\"StoreKit\"",
-					"-framework",
-					"\"SwiftSoup\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TPKeyboardAvoiding\"",
-					"-framework",
-					"\"Toast_Swift\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"nanopb\"",
-					"-ObjC",
-					"-all_load",
-					"-ObjC",
-					"-all_load",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.alameer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -24942,7 +24267,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.27;
+				CURRENT_PROJECT_VERSION = 1.28;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24954,7 +24279,7 @@
 				INFOPLIST_FILE = "MSB-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.27;
+				MARKETING_VERSION = 5.28;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -25070,7 +24395,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.27;
+				CURRENT_PROJECT_VERSION = 1.28;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -25082,7 +24407,7 @@
 				INFOPLIST_FILE = "MSB-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.27;
+				MARKETING_VERSION = 5.28;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -29224,15 +28549,6 @@
 			buildConfigurations = (
 				136575CD2140F0E90045A958 /* Debug */,
 				136575CE2140F0E90045A958 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1365782C2140F1540045A958 /* Build configuration list for PBXNativeTarget "AlameerSchool" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1365782D2140F1540045A958 /* Debug */,
-				1365782E2140F1540045A958 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

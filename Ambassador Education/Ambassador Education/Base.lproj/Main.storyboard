@@ -1937,7 +1937,7 @@
                         <viewControllerLayoutGuide type="top" id="9ba-iV-Jk6"/>
                         <viewControllerLayoutGuide type="bottom" id="VtZ-vZ-scV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eex-Q6-W8q">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eex-Q6-W8q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1987,7 +1987,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageDetailSecondCell" rowHeight="500" id="cVQ-Lc-gz8" customClass="messageDetailSecondCell" customModule="Alameer_V2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cVQ-Lc-gz8" id="Tx7-l6-Dw2">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="cVQ-Lc-gz8" id="Tx7-l6-Dw2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -2016,7 +2016,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-S8-08C" customClass="RichEditorView" customModule="RichEditorView">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-S8-08C" customClass="RichEditorView" customModule="RichEditorView">
                                                     <rect key="frame" x="15" y="95.666666666666657" width="384" height="252.33333333333331"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -7700,7 +7700,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="kZn-is-Jar"/>
-        <segue reference="LfD-ZK-Stt"/>
+        <segue reference="v0U-Gf-XJf"/>
         <segue reference="jF7-Bc-YDF"/>
     </inferredMetricsTieBreakers>
     <resources>
