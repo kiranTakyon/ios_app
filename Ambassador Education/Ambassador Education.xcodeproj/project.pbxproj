@@ -3478,6 +3478,7 @@
 		CDB7C43C2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C43D2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C43E2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
+		CDD7AEF22894902F0006478E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
 		CDE5DBCB282551D400A979FA /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CDE5DBCC282551D400A979FA /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CDE5DBCD282551D400A979FA /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -8959,6 +8960,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD7AEF22894902F0006478E /* Main.storyboard in Resources */,
 				CD16692327DA9E0100F31356 /* RAKScholarsAssets.xcassets in Resources */,
 				CD16690927DA99C300F31356 /* LaunchScreen.storyboard in Resources */,
 				CD16690B27DA99C300F31356 /* WeeklyPlanTable.xib in Resources */,
@@ -22075,7 +22077,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Syamala Prasad (D36A7N2H7L)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Syamala Prasad (D36A7N2H7L)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.25;
+				CURRENT_PROJECT_VERSION = 1.31;
 				DEVELOPMENT_TEAM = D36A7N2H7L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -22087,7 +22089,7 @@
 				INFOPLIST_FILE = "RakScholars V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.25;
+				MARKETING_VERSION = 5.31;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -22203,7 +22205,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Syamala Prasad (D36A7N2H7L)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Syamala Prasad (D36A7N2H7L)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.25;
+				CURRENT_PROJECT_VERSION = 1.31;
 				DEVELOPMENT_TEAM = D36A7N2H7L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -22215,7 +22217,7 @@
 				INFOPLIST_FILE = "RakScholars V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.25;
+				MARKETING_VERSION = 5.31;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24267,7 +24269,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.28;
+				CURRENT_PROJECT_VERSION = 1.29;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24279,7 +24281,7 @@
 				INFOPLIST_FILE = "MSB-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.28;
+				MARKETING_VERSION = 5.29;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24395,7 +24397,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.28;
+				CURRENT_PROJECT_VERSION = 1.29;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -24407,7 +24409,7 @@
 				INFOPLIST_FILE = "MSB-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.28;
+				MARKETING_VERSION = 5.29;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",

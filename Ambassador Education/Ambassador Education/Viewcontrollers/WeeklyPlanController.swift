@@ -217,9 +217,10 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                // self.viewPager.segmentedControl.select(index: 0, animated: true)
                 self.setPagerView()
                 self.stopLoadingAnimation()
-                self.titles.removeAll()
-               // self.titlesnew.removeAll()
+               // self.titles.removeAll()
+                //self.titlesnew.removeAll()
                 self.viewPager.reloadData()
+                self.titles.removeAll()
             }
         }
         
@@ -250,7 +251,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 mainTitle = self.titles[0]
                 isEmpty = false
                 
-                //self.viewPager.isHidden = false
+               // self.viewPager.isHidden = false
             }
             else{
                 isEmpty = true
@@ -416,11 +417,11 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         viewPager.segmentedControl.selectionIndicatorColor = UIColor.white
         //viewPager.segmentedControl.indicatorColor = UIColor.white
         viewPager.segmentedControl.backgroundColor = UIColor.appOrangeColor()
-        //        viewPager.segmentedControl.tintColor = UIColor.white
+                viewPager.segmentedControl.tintColor = UIColor.white
         
         let attributeFontSaySomething : [String : Any] = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white,convertFromNSAttributedStringKey(NSAttributedString.Key.font) : UIFont.boldSystemFont(ofSize: 14.0)]
         //
-       // viewPager.segmentedControl.titleTextAttributes = attributeFontSaySomething
+       viewPager.segmentedControl.titleTextAttributes = attributeFontSaySomething
         
         
         

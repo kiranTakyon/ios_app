@@ -21,6 +21,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageTable: UITableView!
+   
     var text : String?
     var messageId : String?
     var typeMsg = Int()
@@ -417,7 +418,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
 
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+     /*   print("You tapped cell number \(indexPath.row).")
        
         let message = self.messageList[indexPath.row]
        
@@ -433,24 +434,13 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                 }
                }
             else if strU != "" {
-                UIApplication.shared.open(URL(string:strU)!)
+              //  UIApplication.shared.open(URL(string:strU)!)
             }
-            
-                
-        }
-        /*   NSString URLString = [bookmarks objectAtIndex:indexPath.row];
-        NSURL URL = [NSURL URLWithString: URLString];
-        NSURLRequest URLRequest = [NSURLRequest requestWithURL:URLRequest];
-        [webView loadURLRequest:URLRequest];*/
-    }
-    func showComments(itemid : String)
-    {
-        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
-        //detailVc.weeklyPlan = weeklyPlan
-        detailVc.WpID = itemid
-        self.navigationController?.pushViewController(detailVc, animated: true)
         
+                
+        }*/
     }
+    
     func getLinkFormHtml(strV : String)-> String {
         let types: NSTextCheckingResult.CheckingType = .link
         let detector = try? NSDataDetector(types: types.rawValue)
@@ -619,9 +609,27 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
        // cell.richEditorView.setFontSize(30)
         
       
-        cell.richEditorView.html  = string  //"Message Content";  //string
+        //cell.richEditorView.html  = string  //"Message Content";  //string
         getHeightOfRichEditorView(cell: cell, text: string.html2String )
         cell.richEditorView.isUserInteractionEnabled = true
+        cell.richEditorView.editingEnabled = false
+        
+        if string != "" {
+        if ((string.contains("weeklyplan?cat_id=")) != false || (string.contains("weeklyplan/?cat_id=")) != false){
+            cell.WPButton.frame = CGRect( x: 300, y: cell.richEditorHeight.constant+50, width: 100, height: 35 );
+            cell.WPButton.isHidden = false
+            self.itemId = string.components(separatedBy: "&message_id=")[1]
+            self.itemId = self.itemId?.components(separatedBy: "\">click here")[0]
+            let ID:Int? = Int(self.itemId ?? "0")
+            cell.WPButton.tag = ID ?? 0
+            let newString = string.replacingOccurrences(of: "<a[^>]*>(.*?)</a>", with: "Click on <strong>View</strong> button", options: .regularExpression, range: nil)
+            cell.richEditorView.html  = newString
+        }
+            else{
+                cell.richEditorView.html  = string
+            }
+        }
+       
     }
 
     /*
@@ -658,6 +666,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var dropDownButton: UIButton!
     
+    @IBOutlet weak var WPButton: UIButton!
     var navigationcontroller : UINavigationController! = nil
     var imageUrl : String = ""{
         
@@ -698,11 +707,26 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         self.navigationcontroller?.pushViewController(vc, animated: true)
     }
     @IBAction func replyAction(_ sender: UIButton) {
-        
+        print("reply tapped0")
         delegate?.getBackToTableView(value: sender.tag,tagValueInt : -1)
         
     }
     
+    @IBAction func wpAction(_ sender: UIButton) {
+        print("WP tapped0")
+        if(sender.tag != 0)
+        {
+                showComments(itemid: String(sender.tag))
+        }
+    }
+    func showComments(itemid : String)
+    {
+        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        //detailVc.weeklyPlan = weeklyPlan
+        detailVc.WpID = itemid
+        self.navigationcontroller?.pushViewController(detailVc, animated: true)
+        
+    }
     func setImage(){
         self.profileImage.layer.cornerRadius = 30.0
         self.profileImage.loadImageWithUrl(imageUrl)
