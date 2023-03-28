@@ -16,7 +16,7 @@ var logInResponseGloabl = NSMutableDictionary()
 var profileInfoGlobal = NSMutableDictionary()
 var useranameGlobal = ""
 var passwordGloal = ""
-
+var languagueGlobal = ""
 class UserDefaultsManager {
     
     static let manager = UserDefaultsManager()

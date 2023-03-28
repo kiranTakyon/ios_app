@@ -17,6 +17,7 @@ class DBKeys{
     static  let password = "passwdord"
     static  let FTPDetails = "FTPDetails"
     static  let userIdValue = "userIdValue"
+    static  let language = "language"
 
 }
 

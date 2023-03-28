@@ -5,7 +5,7 @@
 //  Created by    Kp on 23/07/17.
 //  Copyright © 2017 //. All rights reserved.
 //
-
+import StoreKit
 import UIKit
 
 var indexOfSelectedStudent = 0
@@ -507,45 +507,93 @@ class SlideController: UITableViewController,TaykonProtocol {
     
     
     func openBuzzApp(){
-        let appURLScheme = "Takyon360Buzz://"
+        let bundleID = Bundle.main.bundleIdentifier
+        var appURLScheme = ""
+        var applink = 0
+       // print(bundleID)
+        let details = logInResponseGloabl;
+        
+        //print(details["UMobile"])
+        if ((bundleID?.elementsEqual("com.reportz.habitatv2")) == false)
+        {
+            appURLScheme = "Takyon360Buzz://"
+            applink = 1375203859
+        }
+        else
+        {
+            if(details["CompanyId"]as! String=="94")
+            {
+                appURLScheme = "touchworldbybpro://"
+                applink = 1662188522
+
+            }
+            else
+            {
+                appURLScheme = "touchworldbyb://"
+                applink = 1642865230
+            }
+        }
         //Takyon360Buzz://www.example.com/screen1?key1=value1&key2=value2
         guard let appURL = URL(string: appURLScheme) else {
             return
         }
         
         if !UIApplication.shared.canOpenURL(appURL){
-            self.showAlertIfAppIsNotInstalled()
-        }else{
+            self.showAlertIfAppIsNotInstalled(appID:applink)
+        }
+       else{
             var dict  = [String : Any]()
             let md5Data = MD5(string:currentPassword)
             let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
             let md5Password = md5Hex
-            dict[LogInKeys().username] =  currentUserName
+            dict[LogInKeys().username] = currentUserName
             dict[LogInKeys().password] = md5Password
             dict[LogInKeys().language] = currentLanguage
             dict[LogInKeys().platform] = "ios"
             dict[LogInKeys().Package] = Bundle.main.bundleIdentifier
             var url = "\(appURL)"
-            url = url + "key1=" + currentUserName + "&key2=" + currentPassword
+            if ((bundleID?.elementsEqual("com.reportz.habitatv2")) == false)
+            {
+                url = url + "key1=" + currentUserName + "&key2=" + currentPassword
+            }
+            else
+            {
+                UMobile = details["UMobile"] as! String
+                url = url + "?un=" + UMobile + "&pass=" + UMobile
+            }
             let ns = URL(string : url)
-            if #available(iOS 10.0, *) {
+          //  SweetAlert().showAlert(kAppName, subTitle: "You need" + url, style:AlertStyle.warning)
+  
+           /* if #available(iOS 10.0, *) {
                 UIApplication.shared.open(ns!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(dict), completionHandler: nil)
             }
             else{
                 UIApplication.shared.open(ns!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(dict), completionHandler: nil)
             }
+            */
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(ns!)
+        }
+        else{
+            UIApplication.shared.openURL(ns!)
+        }
         }
     }
     
-    func showAlertIfAppIsNotInstalled(){
-        SweetAlert().showAlert(kAppName, subTitle: "You need to install Buss App", style: AlertStyle.warning, buttonTitle:alertCancel, buttonColor:UIColor.lightGray , otherButtonTitle: alertOk, otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+    func showAlertIfAppIsNotInstalled(appID:Int){
+        
+        SweetAlert().showAlert(kAppName, subTitle: "You need to install Bus App", style: AlertStyle.warning, buttonTitle:alertCancel, buttonColor:UIColor.lightGray , otherButtonTitle: alertOk, otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
             if isOtherButton == false {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(URL(string:"itms-apps://itunes.apple.com/app/id1375203859")!)
+               /* if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(URL(string:appUrl)!)
                 }
                 else{
-                    UIApplication.shared.openURL(URL(string:"itms-apps://itunes.apple.com/app/id1375203859")!)
-                }
+                    UIApplication.shared.openURL(URL(string:appUrl)!)
+                }*/
+                let vc = SKStoreProductViewController()
+                 vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier:NSNumber(value: appID)],completionBlock: nil)
+                self.present(vc,animated:true)
+               
             }
         }
     }

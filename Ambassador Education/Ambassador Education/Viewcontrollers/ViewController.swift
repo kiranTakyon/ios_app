@@ -20,6 +20,7 @@ let toHomeSegue = "toHome"
 var currentUserName = ""
 var currentPassword = ""
 var currentLanguage = ""
+var UMobile = ""
 class ViewController: UIViewController {
     @IBOutlet weak var countryPicker: Picker!
     @IBOutlet weak var passwordField: UITextField!
@@ -81,9 +82,11 @@ class ViewController: UIViewController {
         
         guard let username = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.username) as? String else {return}
         guard let password = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.password) as? String else {return}
-        
+        guard let language = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.language) as? String else {return}
+      
         self.usernameField.text = username
         self.passwordField.text = password
+        self.countryPicker.pickerTextField.text = language
         
         
         self.tickImage.image = tick
@@ -94,20 +97,21 @@ class ViewController: UIViewController {
         if tickImage.image == tick{
             let username = usernameField.text
             let password = passwordField.text
-            
+            let language = countryPicker.pickerTextField.text
             
             useranameGlobal = username!
             passwordGloal = password!
+            languagueGlobal = language!
 
             
             UserDefaultsManager.manager.insertUserDefaultValue(value: username ?? "", key: DBKeys.username)
             UserDefaultsManager.manager.insertUserDefaultValue(value:password ?? "", key: DBKeys.password)
-            
+            UserDefaultsManager.manager.insertUserDefaultValue(value:language ?? "", key: DBKeys.language)
         }
         else{
             UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.username)
             UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.password)
-
+            UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.language)
         }
         
     }

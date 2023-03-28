@@ -483,9 +483,12 @@ public class RichEditorWebView: WKWebView {
         // User is tapping on a link, so we should react accordingly
         if navigationAction.navigationType == .linkActivated {
             if let url = navigationAction.request.url {
-                if delegate?.richEditor?(self, shouldInteractWith: url) ?? false {
+                /*if delegate?.richEditor?(self, shouldInteractWith: url) ?? false {
                     return decisionHandler(WKNavigationActionPolicy.allow);
-                }
+                }*/
+                UIApplication.shared.open(navigationAction.request.url!)
+                            decisionHandler(.cancel)
+                return
             }
         }
         return decisionHandler(WKNavigationActionPolicy.allow);

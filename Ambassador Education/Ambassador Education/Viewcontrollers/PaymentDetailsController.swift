@@ -366,9 +366,18 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
 
                     if absentDetails.count > 0{
                         let item = absentDetails[indexPath.row]
-                        cell.receiptNumberLabel.text = "\(self.dayLabel): " + item.day.safeValue
-                        cell.dateLabel.text = "\(self.dateLabel): " + item.date.safeValue
-                        cell.amount.text = "\(self.typeLabel): " + item.type.safeValue
+                        if(item.day.safeValue == "0")
+                        {
+                            cell.receiptNumberLabel.text = "No Data to Display"
+                            cell.dateLabel.text = " "
+                            cell.amount.text = ""
+                        }
+                        else
+                        {
+                            cell.receiptNumberLabel.text = "\(self.dayLabel): " + item.day.safeValue
+                            cell.dateLabel.text = "\(self.dateLabel): " + item.date.safeValue
+                            cell.amount.text = "\(self.typeLabel): " + item.type.safeValue
+                        }
                     }
                   
                 commonCell = cell

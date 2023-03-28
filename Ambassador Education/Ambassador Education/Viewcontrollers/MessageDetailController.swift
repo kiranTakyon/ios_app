@@ -324,7 +324,18 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             return str
         }
         else{
-            return value
+            /*let start = value.startIndex
+            let end = value.index(value.endIndex, offsetBy: -4)
+            let substring = value[start..<end]
+            return String(substring)*/
+            if value.count>80
+            {
+                return String(value.prefix(80))+"..."
+            }
+            else
+            {
+                return String(value.prefix(80))
+            }
         }
     }
     
@@ -522,10 +533,10 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         
         composeViewC.selectedPersons = currentMessage.memebers//(self.personNames(message: currentMessage) as NSArray).componentsJoined(by: ",")
         
-        print("groupIdsAndNames : ", composeViewC.groupIds)
+/*        print("groupIdsAndNames : ", composeViewC.groupIds)
           print("seletedGroups : ", composeViewC.seletedGroups)
           print("selectedPersons : ",composeViewC.selectedPersons)
-        
+       */
         self.navigationController?.pushViewController(composeViewC, animated: true)
         }
         else{
@@ -588,7 +599,8 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     
-  
+    
+    @IBOutlet var bkimg: [UIImageView]!
     @IBAction func backAction(_ sender: Any) {
         if self.navigationController?.viewControllers.count == 1 {
             let vc = mainStoryBoard.instantiateViewController(withIdentifier: "CommunicateLandController") as! CommunicateLandController
