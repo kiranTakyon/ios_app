@@ -16,6 +16,7 @@ var sibling = false
 var siblingUserId = ""
 var siblingUname = ""
 var siblingPwd = ""
+var OpenBrowser = false
 class SlideController: UITableViewController,TaykonProtocol {
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
@@ -55,7 +56,8 @@ class SlideController: UITableViewController,TaykonProtocol {
                            "T0060":["EYFS Timetable","toGradeBook"],
                            "T0002":["Calender","toCalendarView"],
                            "T0010":["Locator & Navigator","Location"],
-                           "MyProlfeKey":["Profile","toProfileVc"]
+                           "MyProlfeKey":["Profile","toProfileVc"],
+                           "T0069":["Language","toGradeBook"],//Open in browser
        // "MyProlfeKey":["الملف الشخصي","toProfileVc"]
 
                            ]
@@ -79,13 +81,26 @@ class SlideController: UITableViewController,TaykonProtocol {
     //MARK: - NAvigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toGradeBook"{
-            let destinationVC = segue.destination as! UINavigationController
-            let vc = destinationVC.children[0] as? GradeViewController
-            if gradeBookLink != "" {
-                vc?.header  = (sender as? String)!
-                vc?.hashkey =  selectedHash ?? ""
-            }
+     if segue.identifier == "toGradeBook"{
+           if(OpenBrowser==true)
+           {
+           let ns = URL(string : gradeBookLink!)
+               if #available(iOS 10.0, *) {
+                   UIApplication.shared.open(ns!)
+               }
+               else{
+                   UIApplication.shared.openURL(ns!)
+               }
+           }
+           else
+           {
+               let destinationVC = segue.destination as! UINavigationController
+               let vc = destinationVC.children[0] as? GradeViewController
+               if gradeBookLink != "" {
+                   vc?.header  = (sender as? String)!
+                   vc?.hashkey =  selectedHash ?? ""
+               }
+           }
         }
         else if segue.identifier == "toMessageDetail"{
             let destinationVC = segue.destination as! UINavigationController
@@ -408,6 +423,10 @@ class SlideController: UITableViewController,TaykonProtocol {
             if let link = item.link {
                 if link != ""{
                     gradeBookLink = link
+                    if item.hashKey=="T0069" || item.hashKey=="T0012"
+                    {
+                        OpenBrowser = true
+                    }
                 }
             }
             if let hashValue = item.hashKey{
@@ -450,6 +469,10 @@ class SlideController: UITableViewController,TaykonProtocol {
             if link != ""{
                 titleValue = item.label!
                 gradeBookLink = link
+                if item.hashKey=="T0069" || item.hashKey=="T0012"
+                {
+                    OpenBrowser = true
+                }
             }
            }
         }
@@ -462,7 +485,9 @@ class SlideController: UITableViewController,TaykonProtocol {
            
             if cell.hashKey == "T0010" {
                 self.openBuzzApp()
-            } else {
+            }
+            else
+            {
                 if cell.hashKey == APIUrls().paymentDetails {
                     finance = 1
                 } else if cell.hashKey == APIUrls().feeDetails {
@@ -521,17 +546,17 @@ class SlideController: UITableViewController,TaykonProtocol {
         }
         else
         {
-            if(details["CompanyId"]as! String=="94")
-            {
+           // if(details["CompanyId"]as! String=="94")
+            //{
                 appURLScheme = "touchworldbybpro://"
                 applink = 1662188522
 
-            }
+          /*  }
             else
             {
                 appURLScheme = "touchworldbyb://"
                 applink = 1642865230
-            }
+            }*/
         }
         //Takyon360Buzz://www.example.com/screen1?key1=value1&key2=value2
         guard let appURL = URL(string: appURLScheme) else {

@@ -96,7 +96,7 @@ open class KSTokenView: UIView {
    //__________________________________________________________________________________
    //
    fileprivate var _tokenField: KSTokenField!
-   fileprivate var _searchTableView: UITableView = UITableView(frame: .zero, style: UITableView.Style.plain)
+    fileprivate var _searchTableView: UITableView = UITableView(frame: .zero, style: UITableView.Style.plain)
    fileprivate var _resultArray = [AnyObject]()
    fileprivate var _showingSearchResult = false
    fileprivate var _indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)

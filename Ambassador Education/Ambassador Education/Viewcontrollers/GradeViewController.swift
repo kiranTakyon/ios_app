@@ -109,6 +109,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
         webView.scrollView.bounces = true
         webView.scrollView.decelerationRate = UIScrollView.DecelerationRate.normal
         webView.uiDelegate = self
+        webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
   
         if let value = gradeBookLink{
             if value != ""{

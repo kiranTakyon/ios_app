@@ -75,6 +75,12 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     func setDateFormatter(){
         dateFormatter1.dateStyle = .long
         dateFormatter1.dateFormat = DateTypes.yyyyMMdd
+        let details = logInResponseGloabl;
+        if(details["CompanyId"]as! String=="330")//Don't display dates for Al Zuhour #53462
+        {
+            self.fromDateLabel.isHidden = true
+            self.toDateLabel.isHidden = true
+        }
     }
     func setDatesOnPicker(){
         var daycomponents = DateComponents(calendar: Calendar.current,weekday:  Calendar.current.firstWeekday)
