@@ -10,15 +10,15 @@ import UIKit
 
 class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryTable: UITableView!
     var categoryList = [TNNoticeboardCategory]()
+    @IBOutlet weak var topHeaderView: TopHeaderView!
 
     
-    @IBOutlet weak var menuButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
         setSlideMenuProporties()
         tableViewProporties()
         getCategoryList()
@@ -26,9 +26,10 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         // Do any additional setup after loading the view.
     }
     
-    func setSlideMenuProporties(){
+    func setSlideMenuProporties() {
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.setMenuOnLeftButton()
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
@@ -60,7 +61,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
             DispatchQueue.main.async {
-                self.headLabel.text = result["HeadLabel"] as? String
+                self.topHeaderView.title = result["HeadLabel"] as? String ?? ""
             guard let categryValues = result["Categories"] as? NSArray else{
                 self.stopLoadingAnimation()
                 SweetAlert().showAlert(kAppName, subTitle:  result["MSG"] as! String, style: AlertStyle.error)
@@ -173,4 +174,25 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     }
     */
 
+}
+
+
+extension NoticeboardCategoryController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+    }
+    
 }

@@ -22,7 +22,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var attachmentsTitleLabel: UILabel!
     @IBOutlet weak var tableViewAttachments: UITableView!
-    @IBOutlet weak var topTitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var richEditorViewHeight: NSLayoutConstraint!
@@ -31,6 +30,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     @IBOutlet weak var tableViewDataListBG: UITableView!
     @IBOutlet weak var constraintViewWebDataTableHeight: NSLayoutConstraint!
     @IBOutlet weak var attachViewTop: NSLayoutConstraint!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var weeklyPlan : WeeklyPlanList?
     let videoDownload  = VideoDownload()
@@ -49,6 +49,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         super.viewDidLoad()
 //        self.tableViewAttachments.register(DRDDownLoadCell.self, forCellReuseIdentifier: "DRDDownLoadCell")
 //        self.tableViewAttachments.register(UINib.init(nibName: "DRDAttechmentCell", bundle: nil), forCellReuseIdentifier: "DRDAttechmentCell")
+        topHeaderView.delegate = self
+        topHeaderView.title = "Weekly Plan Details"
         richEditorView1.editingEnabled = false
         richEditorView1.clipsToBounds = true
         setUI()
@@ -91,7 +93,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     }
     
     func setUiWithType(top : CGFloat,height : CGFloat,hide: Bool){
-        topConstraint.constant = top
         labelHeight.constant = height
         seperatorView.isHidden = hide
     }
@@ -120,7 +121,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
                 data.append(Attachment(values: (dict as? NSDictionary)!))
             }
             self.titleLabel.text = digital.title
-            self.topTitleLabel.text = digital.title
+            self.topHeaderView.title = digital.title ?? ""
             
             if let content = digital.content{
                 
@@ -146,11 +147,11 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             guard let user = UserDefaultsManager.manager.getUserType() as? String else{
             }
             
-            self.topTitleLabel.text = "Weekly Plan Details"
+            self.topHeaderView.title = "Weekly Plan Details"
             self.constraintViewWebDataTableHeight.constant = 100
             getAttachments(weeklyPlan: weeklyPlanValue)
             self.titleLabel.text = weeklyPlanValue.topic
-            self.topTitleLabel.text = mainTitle
+            self.topHeaderView.title = mainTitle
             let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
             //richEditorView.html = htmlDecode.safeValue
             richEditorView1.html = htmlDecode.safeValue
@@ -269,9 +270,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         self.showPopUpView()
     }
     
-    @IBAction func backAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -592,4 +591,18 @@ extension DigitalResourceDetailController : TaykonProtocol {
     }
     
     
+}
+
+extension DigitalResourceDetailController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func backButtonClicked(_ button: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

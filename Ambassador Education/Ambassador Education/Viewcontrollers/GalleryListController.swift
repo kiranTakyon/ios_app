@@ -22,44 +22,27 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
     var galleryItems = [TNGallery]()
     var loadMoreControl:LoadMoreControl!
     @IBOutlet weak var galleryCollectionView: UICollectionView!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUi()
         self.automaticallyAdjustsScrollViewInsets = false
         if let  _ = categoryName{
-            self.titleLabel.text = categoryName!
+            self.topHeaderView.title = categoryName!
         }
-        
+        topHeaderView.delegate = self
         getGalleryImages(searchTextValue: searchText)
         loadMoreControl = LoadMoreControl(scrollView: galleryCollectionView, spacingFromLastCell: 10, indicatorHeight: 60)
         loadMoreControl.delegate = self
+        topHeaderView.searchTextField.delegate = self
         
         // Do any additional setup after loading the view.
     }
     
-    func setUi(){
-        searchTextField.delegate = self
-        searchTextField.isHidden = true
-        titleLabel.isHidden = false
-        searchIcon.image = #imageLiteral(resourceName: "Search")
-    }
-    
-    
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTextField.frame.size.height - width, width:  searchTextField.frame.size.width , height: searchTextField.frame.size.height)
-        
-        border.borderWidth = width
-        searchTextField.layer.addSublayer(border)
-        searchTextField.layer.masksToBounds = true
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTextField.text != ""{
-            searchText = searchTextField.text!
-            searchTextField.resignFirstResponder()
+        if topHeaderView.searchTextField.text != ""{
+            searchText = topHeaderView.searchTextField.text!
+            topHeaderView.searchTextField.resignFirstResponder()
             getGalleryImages(searchTextValue: searchText)
         }
         return true
@@ -149,22 +132,6 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         return image
     }
     
-    @IBAction func searchButtonAction(_ sender: UIButton) {
-        if searchIcon.image == #imageLiteral(resourceName: "Search"){
-            setBorderAtBottom()
-            searchTextField.isHidden = false
-            titleLabel.isHidden = true
-            searchIcon.image = #imageLiteral(resourceName: "Close")
-        }
-        else if searchIcon.image == #imageLiteral(resourceName: "Close"){
-            searchTextField.isHidden = true
-            searchTextField.text = ""
-            titleLabel.isHidden = false
-            searchIcon.image = #imageLiteral(resourceName: "Search")
-            getGalleryImages(searchTextValue: "")
-        }
-    }
-    
     
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -252,7 +219,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         galleryDetail.imageUrl = url
         galleryDetail.pageTitle  = "Gallery"
         
-        galleryDetail.titleValue = title == "" ? self.titleLabel.text : title
+        galleryDetail.titleValue = title == "" ? self.topHeaderView.title : title
         galleryDetail.imageArr = imageArray
         galleryDetail.position = indexPath
         self.navigationController?.pushViewController(galleryDetail, animated: true)
@@ -303,4 +270,27 @@ extension GalleryListController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         loadMoreControl.didScroll()
     }
+}
+
+
+extension GalleryListController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            getGalleryImages(searchTextValue: "")
+        }
+    }
+    
 }

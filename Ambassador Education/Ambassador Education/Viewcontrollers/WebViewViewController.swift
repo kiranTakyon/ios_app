@@ -12,9 +12,8 @@ import QuickLook
 class WebViewViewController: UIViewController,WKUIDelegate,URLSessionDownloadDelegate {
 
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var downLoadLabel: UILabel!
-    @IBOutlet weak var downLoadButton: UIButton!
     @IBOutlet weak var progressBar: ProgressViewBar!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
 
     var downloadTask: URLSessionDownloadTask!
     var backgroundSession: URLSession!
@@ -29,6 +28,7 @@ class WebViewViewController: UIViewController,WKUIDelegate,URLSessionDownloadDel
         let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSessioWebView")
         backgroundSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
         videoDownload.delegate = self
+        topHeaderView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -52,12 +52,10 @@ class WebViewViewController: UIViewController,WKUIDelegate,URLSessionDownloadDel
             if let value = self.url as? String{
                 
                     if value.contains(".pdf"){
-                        downLoadLabel.isHidden = false
-                        downLoadButton.isHidden = false
+                        topHeaderView.shouldShowFirstRightButtons(true)
                     }
                     else{
-                        downLoadLabel.isHidden = true
-                        downLoadButton.isHidden = true
+                        topHeaderView.shouldShowFirstRightButtons(false)
                     }
                 if let urlValue = URL(string: value){
                     let loadRequest = NSURLRequest(url: urlValue)
@@ -122,15 +120,6 @@ class WebViewViewController: UIViewController,WKUIDelegate,URLSessionDownloadDel
             SweetAlert().showAlert(kAppName, subTitle:  "Error took place while downloading a file", style: AlertStyle.error)
         }
     }
-    
-    @IBAction func downloadButtonAction(_ sender: UIButton) {
-        if let urlValue  = url as? String{
-            loadPDFAndShare(url: urlValue, fileName: "")
-        }
-    }
-    @IBAction func backButtonAction(_ sender: UIButton) {
-         self.dismiss(animated: true, completion: nil)
-    }
 
 }
 
@@ -180,4 +169,22 @@ extension WebViewViewController : QLPreviewControllerDataSource ,QLPreviewContro
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         return fileURLs[index]
     }
+}
+
+
+extension WebViewViewController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        if let urlValue  = url as? String {
+            loadPDFAndShare(url: urlValue, fileName: "")
+        }
+    }
+    
+    func backButtonClicked(_ button: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

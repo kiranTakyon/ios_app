@@ -15,17 +15,18 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
     var listValues : [TNNoticeBoardDetail]?
     var tempValue : [TNNoticeBoardDetail]?
     var titleValue : String?
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var searchTF: UITextField!
-    @IBOutlet weak var logOutButton: UIButton!
-    @IBOutlet weak var searchIcon: UIImageView!
+
+    @IBOutlet weak var topHeaderView: TopHeaderView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewProporties()
         setTitle()
-        setUi()
         tempValue = listValues
+        topHeaderView.delegate = self
+        topHeaderView.searchTextField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -34,19 +35,20 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         self.listTableVIew.estimatedRowHeight = 60
         self.listTableVIew.rowHeight = UITableView.automaticDimension
         self.listTableVIew.tableFooterView = UIView()
+        navigationController?.navigationBar.isHidden = false
     }
     
     
     func setTitle(){
         if let  _ = titleValue{
-            self.titleLabel.text = titleValue!
+            self.topHeaderView.title = titleValue!
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTF.text != ""{
-            searchTF.resignFirstResponder()
-            getListSearch(text: searchTF.text!)
+        if topHeaderView.searchTextField.text != ""{
+            topHeaderView.searchTextField.resignFirstResponder()
+            getListSearch(text: topHeaderView.searchTextField.text!)
         }
         return true
     }
@@ -94,33 +96,11 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func setUi(){
-        searchTF.delegate = self
-        searchTF.isHidden = true
-        titleLabel.isHidden = false
-        searchIcon.image = #imageLiteral(resourceName: "Search")
-        logOutButton.isUserInteractionEnabled = true
-    }
+
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func searchButtonAction(_ sender: UIButton) {
-        if searchIcon.image == #imageLiteral(resourceName: "Search"){
-            searchTF.isHidden = false
-            setBorderAtBottom()
-            titleLabel.isHidden = true
-            searchIcon.image = #imageLiteral(resourceName: "Close")
-            logOutButton.isUserInteractionEnabled = true
-        }
-        else if searchIcon.image == #imageLiteral(resourceName: "Close"){
-            searchTF.isHidden = true
-            searchTF.text = ""
-            titleLabel.isHidden = false
-            searchIcon.image = #imageLiteral(resourceName: "Search")
-            getListSearch(text: "")
-        }
-    }
     
     func getListSearch(text : String){
         self.startLoadingAnimation()
@@ -148,16 +128,6 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         self.stopLoadingAnimation()
     }
 
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTF.frame.size.height - width, width:  searchTF.frame.size.width, height: searchTF.frame.size.height)
-        
-        border.borderWidth = width
-        searchTF.layer.addSublayer(border)
-        searchTF.layer.masksToBounds = true
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -183,4 +153,27 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         @IBOutlet weak var shortDesc: UILabel!
         @IBOutlet weak var titleLabel: UILabel!
         @IBOutlet weak var titleImageView: ImageLoader!
+}
+
+
+extension NoticeBoardListController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            getListSearch(text: "")
+        }
+    }
+    
 }

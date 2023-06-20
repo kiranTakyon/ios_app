@@ -281,28 +281,20 @@ open class PagerController: UIViewController, UIPageViewControllerDataSource, UI
 	}
 
 	func layoutSubViews() {
-		var topLayoutGuide: CGFloat = 0.0
-		if self.navigationController?.navigationBar.isTranslucent != false {
-			topLayoutGuide = UIApplication.shared.isStatusBarHidden ? 0.0 : 20.0
-
-			if let nav = self.navigationController {
-				topLayoutGuide += nav.navigationBar.frame.size.height
-			}
-		}
 
 		var frame: CGRect = self.tabsView!.frame
 		frame.origin.x = 0.0
-		frame.origin.y = (self.tabLocation == .top) ? topLayoutGuide + tabTopOffset: self.view.frame.height - self.tabHeight
+		frame.origin.y = (self.tabLocation == .top) ? topBarHeight() + tabTopOffset: self.view.frame.height - self.tabHeight
 		frame.size.width = self.view.frame.width
 		frame.size.height = self.tabHeight
 		self.tabsView!.frame = frame
 
 		frame = self.contentView.frame
 		frame.origin.x = 0.0
-		frame.origin.y = (self.tabLocation == .top) ? topLayoutGuide + self.tabsView!.frame.height + tabTopOffset: topLayoutGuide
+		frame.origin.y = (self.tabLocation == .top) ? topBarHeight() + self.tabsView!.frame.height + tabTopOffset: topBarHeight()
 		frame.size.width = self.view.frame.width
 
-		frame.size.height = self.view.frame.height - (topLayoutGuide + self.tabsView!.frame.height + tabTopOffset)
+		frame.size.height = self.view.frame.height - (topBarHeight() + self.tabsView!.frame.height + tabTopOffset)
 
 		if self.tabBarController != nil && self.tabBarController?.tabBar.isTranslucent == true {
 			frame.size.height -= self.tabBarController!.tabBar.frame.height

@@ -21,6 +21,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageTable: UITableView!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
    
     var text : String?
     var messageId : String?
@@ -39,6 +40,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        topHeaderView.delegate = self
         getMessageDetails()
         videoDownload.delegate = self
         quickLookController.dataSource = self
@@ -60,7 +62,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func getMessageDetails(){
-        titleLabel.text = text.safeValue
+        topHeaderView.title = text.safeValue
         self.startLoadingAnimation()
         
         var dictionary = [String: Any]()
@@ -82,7 +84,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                     self.messageList.append(contentsOf: list)
                     DispatchQueue.main.async {
                         if self.text.safeValue == "" && !list.isEmpty {
-                            self.titleLabel.text = "\(list.first!.subject!)"
+                            self.topHeaderView.title = "\(list.first!.subject!)"
                         }
                         self.messageTable.reloadData()
                         self.stopLoadingAnimation()
@@ -932,4 +934,16 @@ fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [Stri
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
 	return input.rawValue
+}
+
+
+extension MessageDetailController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
 }

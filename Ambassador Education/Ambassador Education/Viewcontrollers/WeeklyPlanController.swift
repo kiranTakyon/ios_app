@@ -15,11 +15,9 @@ import QuickLook
 var mainTitle = ""
 
 class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmentedPagerDataSource,TaykonProtocol {
-    
-    @IBOutlet weak var menuButton: UIButton!
-    
-    @IBOutlet weak var headLabel: UILabel!
+        
     @IBOutlet weak var viewPager: MXSegmentedPager!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     let videoDownload  = VideoDownload()
     var fileURLs = [NSURL]()
@@ -58,6 +56,9 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         videoDownload.delegate = self
         quickLookController.dataSource = self
         quickLookController.delegate = self
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
+        topHeaderView.shouldShowThirdRightButtons(true)
         
         //self.getWeeklyPlanDetails(fromDate: dateFormatter1.string(from: today as Date), toDate: getThe5thDayFromSelectedDate(date: today, value: 4), isSearch: 0, div: "")
         getWeeklyPlanAPI()
@@ -118,7 +119,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                     let weeklyPlanModels = ModelClassManager.sharedManager.createModelArray(data: [result], modelType: ModelType.TNWeeklyPlan) as! [TNWeeklyPlan]
                     
                     self.weeklyPlan = weeklyPlanModels[0]
-                    self.headLabel.text = self.weeklyPlan?.weelyPlanLabel.safeValue
+                    self.topHeaderView.title = self.weeklyPlan?.weelyPlanLabel.safeValue ?? ""
                     self.stopLoadingAnimation()
                 }
                 else{
@@ -447,7 +448,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     
     func setSlideMenuProporties(){
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
@@ -540,39 +541,10 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
     }
     
-    @IBAction func filterAction(_ sender: Any) {
-        showPopUpView()
-    }
-    
-    @IBAction func logOutButtonAction(_ sender: UIButton) {
-        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-            }
-            else {
-                isFirstTime = true
-                gradeBookLink = ""
-                showLoginPage()
-            }
-        }
-    }
+
     
     func getUploadedAttachments(isUpload : Bool) {
         
-    }
-    
-    @IBAction func downloadButtonAction(_ sender: UIButton) {
-        self.showAlertController(kAppName, message: "Please choose the file type you want to download.", cancelButton:alertCancel, otherButtons: [wordDownLoadType,pdfDownLoadType]) { (index) in
-            if index == 0{
-                self.dismiss(animated: true, completion: nil)
-                
-            }else if index == 1{
-                self.callDownLoadWeeklyPlanReport(type: "W")
-            }
-            else if index == 2{
-                self.callDownLoadWeeklyPlanReport(type: "P")
-            }
-        }
     }
     
     
@@ -734,4 +706,39 @@ extension WeeklyPlanController : QLPreviewControllerDataSource ,QLPreviewControl
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
     return input.rawValue
+}
+
+
+extension WeeklyPlanController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        showPopUpView()
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        self.showAlertController(kAppName, message: "Please choose the file type you want to download.", cancelButton:alertCancel, otherButtons: [wordDownLoadType,pdfDownLoadType]) { (index) in
+            if index == 0{
+                self.dismiss(animated: true, completion: nil)
+                
+            }else if index == 1{
+                self.callDownLoadWeeklyPlanReport(type: "W")
+            }
+            else if index == 2{
+                self.callDownLoadWeeklyPlanReport(type: "P")
+            }
+        }
+    }
+    
+    func thirdRightButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                showLoginPage()
+                gradeBookLink = ""
+            }
+        }
+    }
+    
 }

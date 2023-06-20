@@ -12,13 +12,15 @@ import MapKit
 class MapController: UIViewController,MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapNameButton: UIButton!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var latitude : Double?
     var longitude : Double?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        topHeaderView.title = "Set My Location"
+        topHeaderView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         if let lat = latitude{
             if let long = longitude{
@@ -181,4 +183,55 @@ class MapController: UIViewController,MKMapViewDelegate {
         self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+
+extension MapController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        self.startLoadingAnimation()
+        
+        var dictionary = [String: String]()
+        
+        let userId = UserDefaultsManager.manager.getUserId()
+        
+        dictionary[UserIdKey().id] = userId
+        dictionary[LocationUpdate().latitude] = "\(self.latitude!)"
+        dictionary[LocationUpdate().longitude] = "\(self.longitude!)"
+        dictionary[PasswordChange.client_ip] = getUdidOfDevide()
+        
+        let url = APIUrls().updateLocatoin
+        
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            DispatchQueue.main.async {
+                
+                if result["StatusCode"] as? Int == 1{
+                    
+                    
+                    self.stopLoadingAnimation()
+                    
+                    SweetAlert().showAlert(kAppName, subTitle: "Location Updated SuccessFully", style: .success, buttonTitle: alertOk, action: { (index) in
+                        if index {
+                            //   self.backAction(UIButton())
+                        }
+                        
+                    })
+                    
+                }
+                else{
+                    self.stopLoadingAnimation()
+                    if let msg = result["StatusMessage"] as? String{
+                        
+                        SweetAlert().showAlert(kAppName, subTitle: msg, style: .warning)
+                    }
+                    
+                }
+            }
+        }
+    }
+    
 }

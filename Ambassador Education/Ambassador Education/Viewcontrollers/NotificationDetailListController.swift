@@ -11,6 +11,7 @@ import UIKit
 
 class NotificationDetailListController: UIViewController {
     @IBOutlet weak var listTableVIew: UITableView!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     var catId = 0
     
     var digitalList = [TNDigitalResourceSubList]()
@@ -19,6 +20,8 @@ class NotificationDetailListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewProporties()
+        topHeaderView.delegate = self
+        topHeaderView.title = "Digital Resource List"
         self.getDigitalResources()
         
         // Do any additional setup after loading the view.
@@ -152,4 +155,18 @@ class NotificationDetailListController: UIViewController {
     }
     */
 
+}
+
+extension NotificationDetailListController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func backButtonClicked(_ button: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

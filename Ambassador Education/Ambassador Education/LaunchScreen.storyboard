@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="loginVC" id="BYZ-38-t0r" customClass="ViewController" customModule="Ambassador_Education" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="BYZ-38-t0r" customClass="ViewController" customModule="Ajman_Modern" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,7 +27,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LyU-DW-iLS" secondAttribute="trailing" id="OwQ-KY-Zhj"/>
                             <constraint firstItem="LyU-DW-iLS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xcj-vv-5b7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LyU-DW-iLS" secondAttribute="bottom" id="YGX-pZ-MBP"/>
+                            <constraint firstAttribute="bottom" secondItem="LyU-DW-iLS" secondAttribute="bottom" id="YGX-pZ-MBP"/>
                             <constraint firstItem="LyU-DW-iLS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jKP-am-A6s"/>
                         </constraints>
                     </view>
@@ -40,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Splash" width="720" height="1280"/>
+        <image name="Splash" width="360" height="640"/>
     </resources>
 </document>

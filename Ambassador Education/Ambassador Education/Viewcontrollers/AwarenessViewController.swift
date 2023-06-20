@@ -10,14 +10,9 @@ import UIKit
 
 class AwarenessViewController: UIViewController,UITableViewDataSource,UITableViewDelegate ,UITextFieldDelegate{
 
-    @IBOutlet weak var logoutImagWidth: NSLayoutConstraint!
-    @IBOutlet weak var logoutButtonWidth: NSLayoutConstraint!
+
     @IBOutlet weak var articleTableView: UITableView!
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var headLabel: UILabel!
-    @IBOutlet weak var searchTf: UITextField!
-    @IBOutlet weak var searchIcom: UIImageView!
-    @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     
     var articleList = [TNAwarnessArticleDetail]()
@@ -26,75 +21,37 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
+        topHeaderView.searchTextField.delegate = self
         setSlideMenuProporties()
         tableViewProporties()
-        self.setUi()
         getArticleList()
     
         // Do any additional setup after loading the view.
     }
 
-    func setUi(){
-        searchTf.returnKeyType = .search
-        logoutButtonWidth.constant = 50
-        logoutImagWidth.constant = 20
-        searchText = ""
-        searchTf.delegate = self
-        searchTf.isHidden = true
-        headLabel.isHidden = false
-        searchIcom.image = #imageLiteral(resourceName: "Search")
-        logOutButton.isUserInteractionEnabled = true
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTf.text != ""{
-            searchText = searchTf.text!
-            searchTf.resignFirstResponder()
+        if topHeaderView.searchTextField.text != ""{
+            searchText = topHeaderView.searchTextField.text!
+            topHeaderView.searchTextField.resignFirstResponder()
             getArticleList()
         }
         return true
     }
     
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTf.frame.size.height - width, width:  searchTf.frame.size.width + 50, height: searchTf.frame.size.height)
-        border.borderWidth = width
-        searchTf.layer.addSublayer(border)
-        searchTf.textColor = UIColor.white
-        searchTf.layer.masksToBounds = true
-    }
+
 
     
     func setSlideMenuProporties(){
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
     
-    @IBAction func searchTextFieldAction(_ sender: UIButton) {
-        if searchIcom.image == #imageLiteral(resourceName: "Search"){
-            searchTf.isHidden = false
-            headLabel.isHidden = true
-            searchIcom.image = #imageLiteral(resourceName: "Close")
-            logoutButtonWidth.constant = 0
-            logoutImagWidth.constant = 0
-            logOutButton.isUserInteractionEnabled = true
-            self.setBorderAtBottom()
-        }
-        else if searchIcom.image == #imageLiteral(resourceName: "Close"){
-            searchTf.isHidden = true
-            searchTf.text = ""
-            searchText = ""
-            logoutButtonWidth.constant = 50
-            logoutImagWidth.constant = 20
-            headLabel.isHidden = false
-            searchIcom.image = #imageLiteral(resourceName: "Search")
-            getArticleList()
-        }
-    }
+
     func tableViewProporties(){
       //  let listNib = UINib(nibName: "ArticleCategoryList", bundle: nil)
       //  self.articleTableView.register(listNib, forCellReuseIdentifier: "ArticleCategoryList")
@@ -133,7 +90,7 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
                 else{
                    self.articleList.removeAll()
                 }
-                self.headLabel.text = result["ArticleLabel"] as? String
+                self.topHeaderView.title = result["ArticleLabel"] as? String ?? ""
                 self.articleTableView.reloadData()
                 if self.articleList.count == 0{
                     self.articleTableView.isHidden = true
@@ -237,5 +194,40 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
 class ArticleCategoryList : UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageIconView: ImageLoader!
+    
+}
+
+
+extension AwarenessViewController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            topHeaderView.shouldShowSecondRightButton(false)
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            topHeaderView.shouldShowSecondRightButton(true)
+            getArticleList()
+        }
+    }
     
 }

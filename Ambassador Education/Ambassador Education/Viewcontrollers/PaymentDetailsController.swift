@@ -28,8 +28,8 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var secondSectionNameLabel: UILabel!
     @IBOutlet weak var thirdSectionNameLabel: UILabel!
 
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
+  
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     @IBOutlet weak var PayOptions: UISegmentedControl!
     let feeSummaryKeys = ["TotalFee","TotalPaid","TotalDue","CurrentDue"]
@@ -66,6 +66,8 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
       //  self.getWeeklyPlan()
         self.getWeeklyPlanView()
         self.setSlideMenuProporties()
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
     }
     
     func setUI(){
@@ -114,7 +116,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             
             //   menuButton.target(forAction: "revealToggle:", withSender: nil)
             
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             
             //  menuButton.target = self.revealViewController()
             //   menuButton.action =
@@ -238,7 +240,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             
 
             DispatchQueue.main.async {
-                self.titleLabel.text = self.headLabel
+                self.topHeaderView.title = self.headLabel
             }
             
             if finance == 3{
@@ -594,4 +596,25 @@ class TotalCell:UITableViewCell{
 class FeeDetailCell:UITableViewCell{
     @IBOutlet weak var titlePlaceHolder: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+}
+
+
+extension PaymentDetailsController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+    }
+    
 }

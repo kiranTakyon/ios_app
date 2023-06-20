@@ -34,7 +34,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
 
     @IBOutlet weak var editorView: RichEditorView!
     @IBOutlet weak var toolBar: RichEditorToolbar!
-    @IBOutlet weak var composeMailLabel: UILabel!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
  
 
     @IBOutlet weak var suggestionConstraint: NSLayoutConstraint!
@@ -63,6 +63,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
         setRichToolbarProporties()
         setTableViewProporties()
         getFTPDetails()
@@ -199,7 +200,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         attachmentTb.delegate = self
         attachmentTb.dataSource = self
         attachmentTb.tableFooterView = UIView()
-        composeMailLabel.text = titleText
+        topHeaderView.title = titleText
         setBorderColor()
     }
     
@@ -1168,4 +1169,59 @@ class SuggestionCell: UITableViewCell{
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+
+extension ComposeController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        self.view.endEditing(true)
+        groupView.resignFirstResponder()
+        subjectTextField.resignFirstResponder()
+        personView.resignFirstResponder()
+        bccView.resignFirstResponder()
+        editorView.resignFirstResponder()
+        self.resignFirstResponder()
+        var ftpUrls = [String]()
+        if checkFieldsEmpty().0 != true{
+
+            if attachmentItems.count > 0{
+                for each in attachmentItems{
+                   ftpUrls.append(each)
+                }
+            }
+         self.checkForStudAndParent(fileUrls : ftpUrls)
+        }else{
+            SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
+        }
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        if attachmentItems.count > 4 {
+            _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
+        } else {
+            let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
+            let galleryAction =  UIAlertAction(title: "Gallery", style: .default, handler: { (action) in
+                self.getImageFromImagPickerController()
+            })
+            let iCloudAction = UIAlertAction(title: "iCloud", style: .default, handler: { (action) in
+                self.getDocumentsFromiCloud()
+            })
+            let cancelAction =  UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(galleryAction)
+            alertController.addAction(iCloudAction)
+            alertController.addAction(cancelAction)
+            
+            if UI_USER_INTERFACE_IDIOM() == .pad {
+                if let currentPopoverPresentationController = alertController.popoverPresentationController {
+                    currentPopoverPresentationController.sourceView = button
+                    currentPopoverPresentationController.sourceRect = button.bounds
+                    currentPopoverPresentationController.permittedArrowDirections = .any
+                    present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }

@@ -10,10 +10,9 @@ import UIKit
 
 class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var articleTableView: UITableView!
-    @IBOutlet weak var sendImageView: UIImageView!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var searchText = ""
     var articleList = [TNAwarenessDetail]()
@@ -24,21 +23,17 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.searchTextField.delegate = self
         tableViewProporties()
-        titleLabel.text = titleName
+        topHeaderView.title = titleName ?? ""
         start = 0
-        self.setUi()
         articleList.removeAll()
         getArticleList(page: start, searchText: "")
         // Do any additional setup after loading the view.
     }
 
-    func setUi(){
-        searchTextField.delegate = self
-        searchTextField.isHidden = true
-        titleLabel.isHidden = false
-        sendImageView.image = #imageLiteral(resourceName: "Search")
-    }
+  
     
     
     func tableViewProporties(){
@@ -163,25 +158,16 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
         
     }
     
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTextField.frame.size.height - width, width:  searchTextField.frame.size.width , height: searchTextField.frame.size.height)
-        searchTextField.textColor = UIColor.white
-        border.borderWidth = width
-        searchTextField.layer.addSublayer(border)
-        searchTextField.layer.masksToBounds = true
-    }
+   
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTextField.text != ""{
+        if topHeaderView.searchTextField.text != ""{
             //setClaerButton()
-            searchText = searchTextField.text!
-            searchTextField.resignFirstResponder()
+            searchText = topHeaderView.searchTextField.text!
+            topHeaderView.searchTextField.resignFirstResponder()
             articleList.removeAll()
-            getArticleList(page: start, searchText: searchTextField.text!)
+            getArticleList(page: start, searchText: searchText)
         }
         return true
     }
@@ -200,24 +186,31 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
         }
     }
     
-    @IBAction func searchButtonAcrion(_ sender: UIButton) {
-        if sendImageView.image == #imageLiteral(resourceName: "Search"){
-            setBorderAtBottom()
-            searchTextField.isHidden = false
-            titleLabel.isHidden = true
-            sendImageView.image = #imageLiteral(resourceName: "Close")
-        }
-        else if sendImageView.image == #imageLiteral(resourceName: "Close"){
-            searchTextField.isHidden = true
-            searchTextField.text = ""
-            titleLabel.isHidden = false
-            sendImageView.image = #imageLiteral(resourceName: "Search")
-            articleList.removeAll()
-            getArticleList(page: start, searchText: "")
-        }
-    }
     @IBAction func backButtonAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+
+extension AwarenessDetailViewController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            getArticleList(page: start, searchText: "")
+        }
+    }
+    
 }

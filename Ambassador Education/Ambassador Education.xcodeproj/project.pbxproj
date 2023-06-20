@@ -1831,6 +1831,286 @@
 		44EF07EF231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07F0231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		593727052CF00DBFE3C2296B /* Pods_PEPS_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA09E24803B2D9F11DD6DA /* Pods_PEPS_V2.framework */; };
+		9841B35F2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3602A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3612A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3622A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3632A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3642A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3652A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3662A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3672A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3682A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3692A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B36A2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B36B2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B36C2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B36D2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B36E2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B36F2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3702A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3712A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3722A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3732A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3742A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3752A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3762A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3772A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3782A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3792A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B37A2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B37B2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B37C2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B37D2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B37E2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B37F2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3802A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3812A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3822A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3832A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3842A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3852A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B3862A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		9841B38A2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B38B2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B38C2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B38D2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B38E2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B38F2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3902A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3912A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3922A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3932A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3942A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3952A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3962A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3972A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3982A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3992A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B39A2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B39B2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B39C2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B39D2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B39E2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B39F2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A02A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A12A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A22A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A32A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A42A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A52A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A62A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A72A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A82A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3A92A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3AA2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3AB2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3AC2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3AD2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3AE2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3AF2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3B02A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9841B3B12A3DB90E00618BDE /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		9862F6102A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6112A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6122A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6132A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6142A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6152A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6162A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6172A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6182A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6192A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F61A2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F61B2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F61C2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F61D2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F61E2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F61F2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6202A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6212A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6222A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6232A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6242A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6252A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6262A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6272A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6282A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6292A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F62A2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F62B2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F62C2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F62D2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F62E2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F62F2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6302A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6312A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6322A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6332A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6342A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6352A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6362A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9862F6372A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		9865CD6A2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD6B2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD6C2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD6D2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD6E2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD6F2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD702A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD712A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD722A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD732A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD742A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD752A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD762A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD772A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD782A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD792A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD7A2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD7B2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD7C2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD7D2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD7E2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD7F2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD802A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD812A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD822A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD832A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD842A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD852A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD862A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD872A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD882A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD892A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD8A2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD8B2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD8C2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD8D2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD8E2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD8F2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD902A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		9865CD912A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		98B10CDB2A3C5C6200FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CDC2A3C5C6200FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10CDD2A3C642400FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CDE2A3C642400FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CDF2A3C642500FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE02A3C642500FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE12A3C642600FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE22A3C642600FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE42A3C642800FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE52A3C642900FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE62A3C642900FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE72A3C642A00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE82A3C642B00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CE92A3C642B00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CEA2A3C642C00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CEB2A3C642C00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CEC2A3C642D00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CED2A3C642D00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CEE2A3C642E00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CEF2A3C643000FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF02A3C643000FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF12A3C643100FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF32A3C643300FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF42A3C643300FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF52A3C643400FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF62A3C643600FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF72A3C643700FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF82A3C643800FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CF92A3C643900FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CFA2A3C643900FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CFB2A3C643A00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CFC2A3C643B00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CFD2A3C643C00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CFE2A3C643C00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10CFF2A3C643D00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D002A3C643E00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D012A3C643E00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D022A3C643F00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D032A3C643F00FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D042A3C644000FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D052A3C644100FE000E /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		98B10D062A3C646900FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D072A3C646A00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D082A3C646B00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D092A3C646B00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D0A2A3C646C00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D0B2A3C646C00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D0C2A3C646D00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D0D2A3C646E00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D0E2A3C646F00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D0F2A3C646F00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D102A3C647000FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D112A3C647000FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D122A3C647100FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D132A3C647200FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D142A3C647300FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D152A3C647300FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D162A3C647400FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D172A3C647400FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D182A3C647500FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D192A3C647600FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D1A2A3C647700FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D1B2A3C647700FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D1C2A3C647800FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D1D2A3C647800FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D1E2A3C647900FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D1F2A3C647A00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D202A3C647B00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D212A3C647C00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D222A3C647D00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D232A3C647E00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D242A3C647F00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D252A3C647F00FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D262A3C648000FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D272A3C648200FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D292A3C648400FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D2A2A3C648400FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D2B2A3C648500FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D2C2A3C648600FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D2D2A3C648600FE000E /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		98B10D2F2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D302A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D312A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D322A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D332A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D342A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D352A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D362A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D372A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D382A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D392A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D3A2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D3B2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D3C2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D3D2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D3E2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D3F2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D402A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D412A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D422A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D432A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D442A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D452A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D462A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D472A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D482A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D492A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D4A2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D4B2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D4C2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D4D2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D4E2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D4F2A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D502A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D512A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D522A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D532A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D542A3C654500FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D552A3C6DAA00FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		98B10D562A3C6DAB00FE000E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
 		B41C1AC621418FD600A9907B /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		B41C1AC721418FD600A9907B /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		B41C1AC821418FD600A9907B /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -5931,6 +6211,13 @@
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
 		8133FDCB67F7B3C9E8264C5C /* Pods-PEPS V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.debug.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.debug.xcconfig"; sourceTree = "<group>"; };
 		94BA09E24803B2D9F11DD6DA /* Pods_PEPS_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEPS_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helper.swift"; sourceTree = "<group>"; };
+		9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
+		9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
+		9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Helper.swift"; sourceTree = "<group>"; };
+		98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopHeaderView.swift; sourceTree = "<group>"; };
+		98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopHeaderView.xib; sourceTree = "<group>"; };
+		98B10D2E2A3C654500FE000E /* View+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Helper.swift"; sourceTree = "<group>"; };
 		9C2F6056C0D7C8F94FE71E8E /* Pods-PEPS V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.release.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.release.xcconfig"; sourceTree = "<group>"; };
 		AE169EA0200687A00019685A /* PaymentDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsController.swift; sourceTree = "<group>"; };
 		AE1D45BC1F545D930042727A /* TNPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPerson.swift; sourceTree = "<group>"; };
@@ -7257,6 +7544,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9862F60C2A3DBD7200203E96 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				98B10D2E2A3C654500FE000E /* View+Helper.swift */,
+				9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */,
+				9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */,
+				9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		98B10CD62A3C5C4800FE000E /* TopHeader */ = {
+			isa = PBXGroup;
+			children = (
+				98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */,
+				98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */,
+			);
+			name = TopHeader;
+			sourceTree = "<group>";
+		};
 		AE3171DD1F2E197900729AF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -7322,6 +7629,8 @@
 		AEFBA7111F1FC9AF00C0D63F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9862F60C2A3DBD7200203E96 /* Extension */,
+				98B10CD62A3C5C4800FE000E /* TopHeader */,
 				139F66A2213F946400411212 /* FTP Manager */,
 				B4FBEA8220810D3D0035AECD /* VideoDownload.swift */,
 				AEFBA7121F1FC9AF00C0D63F /* APIUrls.swift */,
@@ -7335,6 +7644,7 @@
 				AE3171DB1F2E14EF00729AF8 /* DBKeys.swift */,
 				AE32A45D1F6AC446008A4BC3 /* UploadFTP.swift */,
 				44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */,
+				9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -8706,6 +9016,7 @@
 				13CD024621467A04008F307A /* GoogleService-Info.plist in Resources */,
 				136575C32140F0E90045A958 /* SampleText.txt in Resources */,
 				CD42D6F827FBC137006FA37C /* Main.storyboard in Resources */,
+				98B10CDC2A3C5C6200FE000E /* TopHeaderView.xib in Resources */,
 				CEE50BFF26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
 				136575C42140F0E90045A958 /* sampleImage.png in Resources */,
 				136575C52140F0E90045A958 /* WeeklyPlanCell.xib in Resources */,
@@ -8726,6 +9037,7 @@
 				136578BA2140F1600045A958 /* TestPenguin.png in Resources */,
 				CEE50C4D26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				13CD025D2146880D008F307A /* GoogleService-Info.plist in Resources */,
+				98B10D2D2A3C648600FE000E /* TopHeaderView.xib in Resources */,
 				136578BB2140F1600045A958 /* SampleText.txt in Resources */,
 				136578BC2140F1600045A958 /* sampleImage.png in Resources */,
 				CEE50C0226E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -8748,6 +9060,7 @@
 				13657D7A2140F1CC0045A958 /* TestPenguin.png in Resources */,
 				CEE50C5026E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				13657D7B2140F1CC0045A958 /* SampleText.txt in Resources */,
+				98B10D2B2A3C648500FE000E /* TopHeaderView.xib in Resources */,
 				13657D7C2140F1CC0045A958 /* sampleImage.png in Resources */,
 				13657D7D2140F1CC0045A958 /* WeeklyPlanCell.xib in Resources */,
 				CEE50C0526E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -8770,6 +9083,7 @@
 				13657FD92140F1F10045A958 /* ProgressViewBar.xib in Resources */,
 				CEE50C4F26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				13657FDA2140F1F10045A958 /* TestPenguin.png in Resources */,
+				98B10D2C2A3C648600FE000E /* TopHeaderView.xib in Resources */,
 				13657FDB2140F1F10045A958 /* SampleText.txt in Resources */,
 				13657FDC2140F1F10045A958 /* sampleImage.png in Resources */,
 				CEE50C0426E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -8792,6 +9106,7 @@
 				136583692140F2260045A958 /* ProgressViewBar.xib in Resources */,
 				CEE50C5226E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				1365836A2140F2260045A958 /* TestPenguin.png in Resources */,
+				98B10D292A3C648400FE000E /* TopHeaderView.xib in Resources */,
 				1365836B2140F2260045A958 /* SampleText.txt in Resources */,
 				1365836C2140F2260045A958 /* sampleImage.png in Resources */,
 				CEE50C0726E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -8814,6 +9129,7 @@
 				136584992140F22F0045A958 /* ProgressViewBar.xib in Resources */,
 				CEE50C5426E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				1365849A2140F22F0045A958 /* TestPenguin.png in Resources */,
+				98B10D262A3C648000FE000E /* TopHeaderView.xib in Resources */,
 				1365849B2140F22F0045A958 /* SampleText.txt in Resources */,
 				1365849C2140F22F0045A958 /* sampleImage.png in Resources */,
 				CEE50C0926E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -8836,6 +9152,7 @@
 				440671DC252C5B67001B8C7B /* ProgressViewBar.xib in Resources */,
 				440671DD252C5B67001B8C7B /* TestPenguin.png in Resources */,
 				440671DE252C5B67001B8C7B /* SampleText.txt in Resources */,
+				98B10D1C2A3C647800FE000E /* TopHeaderView.xib in Resources */,
 				440671DF252C5B67001B8C7B /* sampleImage.png in Resources */,
 				4491440D252E173200EAF467 /* PEPSV2Assets.xcassets in Resources */,
 				4493CD3C253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -8857,6 +9174,7 @@
 				440B6BF6239A8925004A0894 /* Picker.xib in Resources */,
 				440B6BF7239A8925004A0894 /* ProgressViewBar.xib in Resources */,
 				440B6BF8239A8925004A0894 /* TestPenguin.png in Resources */,
+				98B10D1E2A3C647900FE000E /* TopHeaderView.xib in Resources */,
 				440B6BF9239A8925004A0894 /* SampleText.txt in Resources */,
 				440B6BFA239A8925004A0894 /* sampleImage.png in Resources */,
 				4493CD38253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -8880,6 +9198,7 @@
 				446D525E2539C33100D1026C /* TestInapp.jpg in Resources */,
 				446D525F2539C33100D1026C /* Picker.xib in Resources */,
 				446D52602539C33100D1026C /* ProgressViewBar.xib in Resources */,
+				98B10D1A2A3C647700FE000E /* TopHeaderView.xib in Resources */,
 				446D52612539C33100D1026C /* TestPenguin.png in Resources */,
 				446D52622539C33100D1026C /* SampleText.txt in Resources */,
 				4493CD41253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -8903,6 +9222,7 @@
 				4488325B237EA02B00E80665 /* TestInapp.jpg in Resources */,
 				4488325C237EA02B00E80665 /* Picker.xib in Resources */,
 				4488325D237EA02B00E80665 /* ProgressViewBar.xib in Resources */,
+				98B10D1F2A3C647A00FE000E /* TopHeaderView.xib in Resources */,
 				4488325E237EA02B00E80665 /* TestPenguin.png in Resources */,
 				4488325F237EA02B00E80665 /* SampleText.txt in Resources */,
 				4493CD35253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -8929,6 +9249,7 @@
 				44AD1BD725388E1000368235 /* TestPenguin.png in Resources */,
 				44AD1BD825388E1000368235 /* SampleText.txt in Resources */,
 				4493CD40253DB33900A92A46 /* Common.xcassets in Resources */,
+				98B10D1B2A3C647700FE000E /* TopHeaderView.xib in Resources */,
 				44AD1BD925388E1000368235 /* sampleImage.png in Resources */,
 				44AD1BDA25388E1000368235 /* WeeklyPlanCell.xib in Resources */,
 				44AD1BDC25388E1000368235 /* CalendarSection.xib in Resources */,
@@ -8947,6 +9268,7 @@
 				44DBADB1255286E9008DFE9E /* Picker.xib in Resources */,
 				44DBADB2255286E9008DFE9E /* ProgressViewBar.xib in Resources */,
 				44DBADB3255286E9008DFE9E /* TestPenguin.png in Resources */,
+				98B10D192A3C647600FE000E /* TopHeaderView.xib in Resources */,
 				443932B52559760B00E8C443 /* GoogleService-Info.plist in Resources */,
 				44DBADB4255286E9008DFE9E /* SampleText.txt in Resources */,
 				44DBADB5255286E9008DFE9E /* Common.xcassets in Resources */,
@@ -8970,6 +9292,7 @@
 				44DC611F25798523002E3917 /* Picker.xib in Resources */,
 				44DC612025798523002E3917 /* ProgressViewBar.xib in Resources */,
 				44DC612125798523002E3917 /* TestPenguin.png in Resources */,
+				98B10D182A3C647500FE000E /* TopHeaderView.xib in Resources */,
 				44DC612325798523002E3917 /* SampleText.txt in Resources */,
 				44DC612425798523002E3917 /* Common.xcassets in Resources */,
 				44A75D56257BE5A800AB6299 /* GoogleService-Info.plist in Resources */,
@@ -8994,6 +9317,7 @@
 				B41C1B4C21418FD600A9907B /* ProgressViewBar.xib in Resources */,
 				B41C1B4D21418FD600A9907B /* TestPenguin.png in Resources */,
 				B41C1B4E21418FD600A9907B /* SampleText.txt in Resources */,
+				98B10D272A3C648200FE000E /* TopHeaderView.xib in Resources */,
 				4493CD2B253DB33800A92A46 /* Common.xcassets in Resources */,
 				B41C1B4F21418FD600A9907B /* sampleImage.png in Resources */,
 				B41C1B5121418FD600A9907B /* WeeklyPlanCell.xib in Resources */,
@@ -9016,6 +9340,7 @@
 				CD110B46289C344B0050EF80 /* Main.storyboard in Resources */,
 				CD110B47289C344B0050EF80 /* Picker.xib in Resources */,
 				CD110B48289C344B0050EF80 /* ProgressViewBar.xib in Resources */,
+				98B10D0C2A3C646D00FE000E /* TopHeaderView.xib in Resources */,
 				CD110B49289C344B0050EF80 /* TestPenguin.png in Resources */,
 				CD110B4A289C344B0050EF80 /* SampleText.txt in Resources */,
 				CD110B4B289C344B0050EF80 /* sampleImage.png in Resources */,
@@ -9038,6 +9363,7 @@
 				CD110BE4289C3CCC0050EF80 /* Main.storyboard in Resources */,
 				CD110BE5289C3CCC0050EF80 /* Picker.xib in Resources */,
 				CD110BE6289C3CCC0050EF80 /* ProgressViewBar.xib in Resources */,
+				98B10D0B2A3C646C00FE000E /* TopHeaderView.xib in Resources */,
 				CD110BE7289C3CCC0050EF80 /* TestPenguin.png in Resources */,
 				CD110BE8289C3CCC0050EF80 /* SampleText.txt in Resources */,
 				CD110BE9289C3CCC0050EF80 /* sampleImage.png in Resources */,
@@ -9060,6 +9386,7 @@
 				CD110C82289C41700050EF80 /* Main.storyboard in Resources */,
 				CD110C83289C41700050EF80 /* Picker.xib in Resources */,
 				CD110C84289C41700050EF80 /* ProgressViewBar.xib in Resources */,
+				98B10D0A2A3C646C00FE000E /* TopHeaderView.xib in Resources */,
 				CD110C85289C41700050EF80 /* TestPenguin.png in Resources */,
 				CD110C86289C41700050EF80 /* SampleText.txt in Resources */,
 				CD110C87289C41700050EF80 /* sampleImage.png in Resources */,
@@ -9082,6 +9409,7 @@
 				CD110DC0289C4E4B0050EF80 /* Picker.xib in Resources */,
 				CD110DC1289C4E4B0050EF80 /* ProgressViewBar.xib in Resources */,
 				CD110DD2289C4F6F0050EF80 /* GoogleService-Info.plist in Resources */,
+				98B10D092A3C646B00FE000E /* TopHeaderView.xib in Resources */,
 				CD110DC2289C4E4B0050EF80 /* TestPenguin.png in Resources */,
 				CD110DC3289C4E4B0050EF80 /* SampleText.txt in Resources */,
 				CD110DC4289C4E4B0050EF80 /* sampleImage.png in Resources */,
@@ -9104,6 +9432,7 @@
 				CD14916529365C9400E6A56B /* Main.storyboard in Resources */,
 				CD14916629365C9400E6A56B /* Picker.xib in Resources */,
 				CD14916729365C9400E6A56B /* ProgressViewBar.xib in Resources */,
+				98B10D072A3C646A00FE000E /* TopHeaderView.xib in Resources */,
 				CD14916829365C9400E6A56B /* TestPenguin.png in Resources */,
 				CD14916929365C9400E6A56B /* SampleText.txt in Resources */,
 				CD14916A29365C9400E6A56B /* sampleImage.png in Resources */,
@@ -9126,6 +9455,7 @@
 				CD16690E27DA99C300F31356 /* Picker.xib in Resources */,
 				CD16690F27DA99C300F31356 /* ProgressViewBar.xib in Resources */,
 				CD16691027DA99C300F31356 /* TestPenguin.png in Resources */,
+				98B10D122A3C647100FE000E /* TopHeaderView.xib in Resources */,
 				CD16692227DA9BED00F31356 /* GoogleService-Info.plist in Resources */,
 				CD16691127DA99C300F31356 /* SampleText.txt in Resources */,
 				CD16691227DA99C300F31356 /* sampleImage.png in Resources */,
@@ -9148,6 +9478,7 @@
 				CD18CE2027DA5E10004D33BC /* TestInapp.jpg in Resources */,
 				CD18CE2127DA5E10004D33BC /* Picker.xib in Resources */,
 				CD18CE2227DA5E10004D33BC /* ProgressViewBar.xib in Resources */,
+				98B10D132A3C647200FE000E /* TopHeaderView.xib in Resources */,
 				CD18CE2327DA5E10004D33BC /* TestPenguin.png in Resources */,
 				CD18CE2427DA5E10004D33BC /* SampleText.txt in Resources */,
 				CD18CE2527DA5E10004D33BC /* sampleImage.png in Resources */,
@@ -9172,6 +9503,7 @@
 				CD3A90DF2765A2F500B9AA49 /* TestPenguin.png in Resources */,
 				CD3A90E12765A2F500B9AA49 /* SampleText.txt in Resources */,
 				CD3A90E22765A2F500B9AA49 /* Common.xcassets in Resources */,
+				98B10D162A3C647400FE000E /* TopHeaderView.xib in Resources */,
 				CD3A90E32765A2F500B9AA49 /* sampleImage.png in Resources */,
 				CD3A90E42765A2F500B9AA49 /* WeeklyPlanCell.xib in Resources */,
 				CD3A90E62765A2F500B9AA49 /* CalendarSection.xib in Resources */,
@@ -9191,6 +9523,7 @@
 				CD6FD28927E133CC00C1C11C /* TestInapp.jpg in Resources */,
 				CD6FD28A27E133CC00C1C11C /* Picker.xib in Resources */,
 				CD6FD28B27E133CC00C1C11C /* ProgressViewBar.xib in Resources */,
+				98B10D112A3C647000FE000E /* TopHeaderView.xib in Resources */,
 				CD6FD28C27E133CC00C1C11C /* TestPenguin.png in Resources */,
 				CD6FD28E27E133CC00C1C11C /* SampleText.txt in Resources */,
 				CD6FD28F27E133CC00C1C11C /* sampleImage.png in Resources */,
@@ -9212,6 +9545,7 @@
 				CD713F0E2900092500A16A3A /* Main.storyboard in Resources */,
 				CD713F2829004E3D00A16A3A /* GooglePlistSSI in Resources */,
 				CD713F0F2900092500A16A3A /* Picker.xib in Resources */,
+				98B10D082A3C646B00FE000E /* TopHeaderView.xib in Resources */,
 				CD713F102900092500A16A3A /* ProgressViewBar.xib in Resources */,
 				CD713F2229002E5300A16A3A /* GoogleService-Info.plist in Resources */,
 				CD713F112900092500A16A3A /* TestPenguin.png in Resources */,
@@ -9235,6 +9569,7 @@
 				CD76019F295B59FA00812F7B /* TestInapp.jpg in Resources */,
 				CD7601A0295B59FA00812F7B /* Main.storyboard in Resources */,
 				CD7601A1295B59FA00812F7B /* Picker.xib in Resources */,
+				98B10D062A3C646900FE000E /* TopHeaderView.xib in Resources */,
 				CD7601A2295B59FA00812F7B /* ProgressViewBar.xib in Resources */,
 				CD7601A3295B59FA00812F7B /* TestPenguin.png in Resources */,
 				CD7601A4295B59FA00812F7B /* SampleText.txt in Resources */,
@@ -9259,6 +9594,7 @@
 				CDD2366E289AD40100A7121D /* Main.storyboard in Resources */,
 				CDD2366F289AD40100A7121D /* Picker.xib in Resources */,
 				CDD23670289AD40100A7121D /* ProgressViewBar.xib in Resources */,
+				98B10D0F2A3C646F00FE000E /* TopHeaderView.xib in Resources */,
 				CDD23671289AD40100A7121D /* TestPenguin.png in Resources */,
 				CDD23672289AD40100A7121D /* SampleText.txt in Resources */,
 				CDD23673289AD40100A7121D /* sampleImage.png in Resources */,
@@ -9281,6 +9617,7 @@
 				CDD2370C289AD87000A7121D /* Main.storyboard in Resources */,
 				CDD2370D289AD87000A7121D /* Picker.xib in Resources */,
 				CDD2370E289AD87000A7121D /* ProgressViewBar.xib in Resources */,
+				98B10D0E2A3C646F00FE000E /* TopHeaderView.xib in Resources */,
 				CDD2370F289AD87000A7121D /* TestPenguin.png in Resources */,
 				CDD23710289AD87000A7121D /* SampleText.txt in Resources */,
 				CDD23711289AD87000A7121D /* sampleImage.png in Resources */,
@@ -9303,6 +9640,7 @@
 				CDD237AA289AE0D600A7121D /* Main.storyboard in Resources */,
 				CDD237AB289AE0D600A7121D /* Picker.xib in Resources */,
 				CDD237AC289AE0D600A7121D /* ProgressViewBar.xib in Resources */,
+				98B10D0D2A3C646E00FE000E /* TopHeaderView.xib in Resources */,
 				CDD237AD289AE0D600A7121D /* TestPenguin.png in Resources */,
 				CDD237AE289AE0D600A7121D /* SampleText.txt in Resources */,
 				CDD237AF289AE0D600A7121D /* sampleImage.png in Resources */,
@@ -9325,6 +9663,7 @@
 				CDE5DC6828255BFA00A979FA /* Main.storyboard in Resources */,
 				CDE5DC54282551D400A979FA /* Picker.xib in Resources */,
 				CDE5DC55282551D400A979FA /* ProgressViewBar.xib in Resources */,
+				98B10D102A3C647000FE000E /* TopHeaderView.xib in Resources */,
 				CDE5DC56282551D400A979FA /* TestPenguin.png in Resources */,
 				CDE5DC57282551D400A979FA /* SampleText.txt in Resources */,
 				CDE5DC58282551D400A979FA /* sampleImage.png in Resources */,
@@ -9347,6 +9686,7 @@
 				CDE84A1227BEB13F00F16EBE /* Picker.xib in Resources */,
 				CDE84A1327BEB13F00F16EBE /* ProgressViewBar.xib in Resources */,
 				CDE84A1427BEB13F00F16EBE /* TestPenguin.png in Resources */,
+				98B10D152A3C647300FE000E /* TopHeaderView.xib in Resources */,
 				CDE84A1527BEB13F00F16EBE /* SampleText.txt in Resources */,
 				CDE84A1627BEB13F00F16EBE /* sampleImage.png in Resources */,
 				CDE84A1827BEB13F00F16EBE /* Common.xcassets in Resources */,
@@ -9369,6 +9709,7 @@
 				CD42D6F927FBC137006FA37C /* Main.storyboard in Resources */,
 				CDFBBC2727BED72700FBB765 /* Picker.xib in Resources */,
 				CDFBBC2827BED72700FBB765 /* ProgressViewBar.xib in Resources */,
+				98B10D142A3C647300FE000E /* TopHeaderView.xib in Resources */,
 				CDFBBC2927BED72700FBB765 /* TestPenguin.png in Resources */,
 				CDFBBC2A27BED72700FBB765 /* SampleText.txt in Resources */,
 				CDFBBC2B27BED72700FBB765 /* sampleImage.png in Resources */,
@@ -9390,6 +9731,7 @@
 				CE0A601224375C8000568C23 /* TestInapp.jpg in Resources */,
 				CE0A601324375C8000568C23 /* Picker.xib in Resources */,
 				CE0A601424375C8000568C23 /* ProgressViewBar.xib in Resources */,
+				98B10D1D2A3C647800FE000E /* TopHeaderView.xib in Resources */,
 				CE0A601524375C8000568C23 /* TestPenguin.png in Resources */,
 				CE0A601624375C8000568C23 /* SampleText.txt in Resources */,
 				4493CD3A253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -9414,6 +9756,7 @@
 				CE0FBC6421F9D2CC00C6D924 /* Picker.xib in Resources */,
 				CEE50C5826E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE0FBC6521F9D2CC00C6D924 /* ProgressViewBar.xib in Resources */,
+				98B10D232A3C647E00FE000E /* TopHeaderView.xib in Resources */,
 				CE0FBC6621F9D2CC00C6D924 /* TestPenguin.png in Resources */,
 				CE0FBC6721F9D2CC00C6D924 /* SampleText.txt in Resources */,
 				CEE50C0D26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -9436,6 +9779,7 @@
 				CE10ED0C2201D45200F24DE4 /* Picker.xib in Resources */,
 				CEE50C5A26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE10ED0D2201D45200F24DE4 /* ProgressViewBar.xib in Resources */,
+				98B10D202A3C647B00FE000E /* TopHeaderView.xib in Resources */,
 				CE10ED0E2201D45200F24DE4 /* TestPenguin.png in Resources */,
 				CE10ED0F2201D45200F24DE4 /* SampleText.txt in Resources */,
 				CEE50C0F26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -9458,6 +9802,7 @@
 				CE11989521F82AB200D028D2 /* Picker.xib in Resources */,
 				CEE50C5726E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE11989621F82AB200D028D2 /* ProgressViewBar.xib in Resources */,
+				98B10D222A3C647D00FE000E /* TopHeaderView.xib in Resources */,
 				CE11989721F82AB200D028D2 /* TestPenguin.png in Resources */,
 				CE11989821F82AB200D028D2 /* SampleText.txt in Resources */,
 				CEE50C0C26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -9482,6 +9827,7 @@
 				CE15661521A96DB400DC758E /* TestPenguin.png in Resources */,
 				CE15661621A96DB400DC758E /* SampleText.txt in Resources */,
 				CEE50C0A26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
+				98B10D252A3C647F00FE000E /* TopHeaderView.xib in Resources */,
 				CE15661721A96DB400DC758E /* sampleImage.png in Resources */,
 				CE15661821A96DB400DC758E /* WeeklyPlanCell.xib in Resources */,
 				CE15661A21A96DB400DC758E /* CalendarSection.xib in Resources */,
@@ -9501,6 +9847,7 @@
 				CE7259B521ABF02A00B760AC /* Picker.xib in Resources */,
 				CEE50C5626E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE7259B621ABF02A00B760AC /* ProgressViewBar.xib in Resources */,
+				98B10D242A3C647F00FE000E /* TopHeaderView.xib in Resources */,
 				CE7259B721ABF02A00B760AC /* TestPenguin.png in Resources */,
 				CE7259B821ABF02A00B760AC /* SampleText.txt in Resources */,
 				CEE50C0B26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -9523,6 +9870,7 @@
 				CE88680A21FACE8C00FF0DE0 /* Picker.xib in Resources */,
 				CEE50C5126E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE88680B21FACE8C00FF0DE0 /* ProgressViewBar.xib in Resources */,
+				98B10D2A2A3C648400FE000E /* TopHeaderView.xib in Resources */,
 				CE88680C21FACE8C00FF0DE0 /* TestPenguin.png in Resources */,
 				CE88680D21FACE8C00FF0DE0 /* SampleText.txt in Resources */,
 				CEE50C0626E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -9545,6 +9893,7 @@
 				CE8868AB21FAEFFE00FF0DE0 /* Picker.xib in Resources */,
 				CEE50C5926E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE8868AC21FAEFFE00FF0DE0 /* ProgressViewBar.xib in Resources */,
+				98B10D212A3C647C00FE000E /* TopHeaderView.xib in Resources */,
 				CE8868AD21FAEFFE00FF0DE0 /* TestPenguin.png in Resources */,
 				CE8868AE21FAEFFE00FF0DE0 /* SampleText.txt in Resources */,
 				CEE50C0E26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
@@ -9569,6 +9918,7 @@
 				CEE50AED26E7C4DC00D355C4 /* Common.xcassets in Resources */,
 				CED2EA4E26E8FC33007C862E /* GoogleService-Info.plist in Resources */,
 				CEE50AEF26E7C4DC00D355C4 /* sampleImage.png in Resources */,
+				98B10D172A3C647400FE000E /* TopHeaderView.xib in Resources */,
 				CEE50AF026E7C4DC00D355C4 /* WeeklyPlanCell.xib in Resources */,
 				CEE50C6D26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CEE50AF226E7C4DC00D355C4 /* CalendarSection.xib in Resources */,
@@ -11761,12 +12111,14 @@
 				1365754D2140F0E90045A958 /* KSTokenView.swift in Sources */,
 				1365754E2140F0E90045A958 /* TNotification.swift in Sources */,
 				1365754F2140F0E90045A958 /* UploadFTP.swift in Sources */,
+				9841B38A2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				136575502140F0E90045A958 /* WebViewViewController.swift in Sources */,
 				136575512140F0E90045A958 /* ProgressViewBar.swift in Sources */,
 				136575522140F0E90045A958 /* WeeklyPlanTable.swift in Sources */,
 				136575532140F0E90045A958 /* GalleryListController.swift in Sources */,
 				136575542140F0E90045A958 /* TNPayment.swift in Sources */,
 				136575552140F0E90045A958 /* APIHelper.swift in Sources */,
+				9862F6102A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDB7C3D027480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				136575562140F0E90045A958 /* TNNoticeBoardDetail.swift in Sources */,
 				136575572140F0E90045A958 /* FTPUploadHelper.swift in Sources */,
@@ -11779,6 +12131,7 @@
 				1365755D2140F0E90045A958 /* PagerController.swift in Sources */,
 				1365755E2140F0E90045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
 				1365755F2140F0E90045A958 /* FSCalendarCollectionView.m in Sources */,
+				98B10D2F2A3C654500FE000E /* View+Helper.swift in Sources */,
 				136575602140F0E90045A958 /* APIUrls.swift in Sources */,
 				136575612140F0E90045A958 /* FSCalendarDelegationProxy.m in Sources */,
 				136575622140F0E90045A958 /* CustomCalendarCell.swift in Sources */,
@@ -11816,10 +12169,12 @@
 				136575812140F0E90045A958 /* FSCalendarDelegationFactory.m in Sources */,
 				136575822140F0E90045A958 /* ImagePreviewController.swift in Sources */,
 				136575832140F0E90045A958 /* LinearProgressView.swift in Sources */,
+				9865CD6A2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				136575842140F0E90045A958 /* ComposeController.swift in Sources */,
 				136575852140F0E90045A958 /* WeeklyPlanFilterController.swift in Sources */,
 				136575862140F0E90045A958 /* ChangePasswordController.swift in Sources */,
 				136575872140F0E90045A958 /* NoticeBoardListController.swift in Sources */,
+				9841B35F2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				136575882140F0E90045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE6818F5241CD4A200997AF6 /* TNSubject.swift in Sources */,
 				136575892140F0E90045A958 /* ForgotPasswordController.swift in Sources */,
@@ -11863,6 +12218,7 @@
 				136575AD2140F0E90045A958 /* TNWeeklyPlan.swift in Sources */,
 				136575AE2140F0E90045A958 /* PaymentDetailsController.swift in Sources */,
 				136575AF2140F0E90045A958 /* TNGroup.swift in Sources */,
+				98B10CDB2A3C5C6200FE000E /* TopHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11875,6 +12231,7 @@
 				136578362140F1600045A958 /* MessageDetailController.swift in Sources */,
 				136578372140F1600045A958 /* WeeklyPlanController.swift in Sources */,
 				136578382140F1600045A958 /* TMyProfile.swift in Sources */,
+				98B10CDD2A3C642400FE000E /* TopHeaderView.swift in Sources */,
 				136578392140F1600045A958 /* TInboxMessage.swift in Sources */,
 				1365783A2140F1600045A958 /* CalendarSection.swift in Sources */,
 				1365783B2140F1600045A958 /* DirectoryCreationOperation.swift in Sources */,
@@ -11890,12 +12247,14 @@
 				136578442140F1600045A958 /* WeeklyPlanCell.swift in Sources */,
 				136578452140F1600045A958 /* KSTokenView.swift in Sources */,
 				136578462140F1600045A958 /* TNotification.swift in Sources */,
+				9841B38B2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				136578472140F1600045A958 /* UploadFTP.swift in Sources */,
 				136578482140F1600045A958 /* WebViewViewController.swift in Sources */,
 				136578492140F1600045A958 /* ProgressViewBar.swift in Sources */,
 				1365784A2140F1600045A958 /* WeeklyPlanTable.swift in Sources */,
 				1365784B2140F1600045A958 /* GalleryListController.swift in Sources */,
 				1365784C2140F1600045A958 /* TNPayment.swift in Sources */,
+				9862F6112A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				1365784D2140F1600045A958 /* APIHelper.swift in Sources */,
 				CDB7C3D327480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				1365784E2140F1600045A958 /* TNNoticeBoardDetail.swift in Sources */,
@@ -11908,6 +12267,7 @@
 				136578542140F1600045A958 /* TNAwarnessArticleDetail.swift in Sources */,
 				136578552140F1600045A958 /* PagerController.swift in Sources */,
 				136578562140F1600045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D302A3C654500FE000E /* View+Helper.swift in Sources */,
 				136578572140F1600045A958 /* FSCalendarCollectionView.m in Sources */,
 				136578582140F1600045A958 /* APIUrls.swift in Sources */,
 				136578592140F1600045A958 /* FSCalendarDelegationProxy.m in Sources */,
@@ -11945,10 +12305,12 @@
 				136578782140F1600045A958 /* ReadSelectViewController.swift in Sources */,
 				136578792140F1600045A958 /* FSCalendarDelegationFactory.m in Sources */,
 				1365787A2140F1600045A958 /* ImagePreviewController.swift in Sources */,
+				9865CD6B2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				1365787B2140F1600045A958 /* LinearProgressView.swift in Sources */,
 				1365787C2140F1600045A958 /* ComposeController.swift in Sources */,
 				1365787D2140F1600045A958 /* WeeklyPlanFilterController.swift in Sources */,
 				1365787E2140F1600045A958 /* ChangePasswordController.swift in Sources */,
+				9841B3602A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				1365787F2140F1600045A958 /* NoticeBoardListController.swift in Sources */,
 				136578802140F1600045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE6818F9241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -12005,6 +12367,7 @@
 				13657CF62140F1CC0045A958 /* MessageDetailController.swift in Sources */,
 				13657CF72140F1CC0045A958 /* WeeklyPlanController.swift in Sources */,
 				13657CF82140F1CC0045A958 /* TMyProfile.swift in Sources */,
+				98B10CDF2A3C642500FE000E /* TopHeaderView.swift in Sources */,
 				13657CF92140F1CC0045A958 /* TInboxMessage.swift in Sources */,
 				13657CFA2140F1CC0045A958 /* CalendarSection.swift in Sources */,
 				13657CFB2140F1CC0045A958 /* DirectoryCreationOperation.swift in Sources */,
@@ -12020,12 +12383,14 @@
 				13657D042140F1CC0045A958 /* WeeklyPlanCell.swift in Sources */,
 				13657D052140F1CC0045A958 /* KSTokenView.swift in Sources */,
 				13657D062140F1CC0045A958 /* TNotification.swift in Sources */,
+				9841B38D2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				13657D072140F1CC0045A958 /* UploadFTP.swift in Sources */,
 				13657D082140F1CC0045A958 /* WebViewViewController.swift in Sources */,
 				13657D092140F1CC0045A958 /* ProgressViewBar.swift in Sources */,
 				13657D0A2140F1CC0045A958 /* WeeklyPlanTable.swift in Sources */,
 				13657D0B2140F1CC0045A958 /* GalleryListController.swift in Sources */,
 				13657D0C2140F1CC0045A958 /* TNPayment.swift in Sources */,
+				9862F6132A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				13657D0D2140F1CC0045A958 /* APIHelper.swift in Sources */,
 				CDB7C3D627480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				13657D0E2140F1CC0045A958 /* TNNoticeBoardDetail.swift in Sources */,
@@ -12038,6 +12403,7 @@
 				13657D142140F1CC0045A958 /* TNAwarnessArticleDetail.swift in Sources */,
 				13657D152140F1CC0045A958 /* PagerController.swift in Sources */,
 				13657D162140F1CC0045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D322A3C654500FE000E /* View+Helper.swift in Sources */,
 				13657D172140F1CC0045A958 /* FSCalendarCollectionView.m in Sources */,
 				13657D182140F1CC0045A958 /* APIUrls.swift in Sources */,
 				13657D192140F1CC0045A958 /* FSCalendarDelegationProxy.m in Sources */,
@@ -12075,10 +12441,12 @@
 				13657D382140F1CC0045A958 /* ReadSelectViewController.swift in Sources */,
 				13657D392140F1CC0045A958 /* FSCalendarDelegationFactory.m in Sources */,
 				13657D3A2140F1CC0045A958 /* ImagePreviewController.swift in Sources */,
+				9865CD6D2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				13657D3B2140F1CC0045A958 /* LinearProgressView.swift in Sources */,
 				13657D3C2140F1CC0045A958 /* ComposeController.swift in Sources */,
 				13657D3D2140F1CC0045A958 /* WeeklyPlanFilterController.swift in Sources */,
 				13657D3E2140F1CC0045A958 /* ChangePasswordController.swift in Sources */,
+				9841B3622A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				13657D3F2140F1CC0045A958 /* NoticeBoardListController.swift in Sources */,
 				13657D402140F1CC0045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE6818FD241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -12135,6 +12503,7 @@
 				13657F562140F1F10045A958 /* MessageDetailController.swift in Sources */,
 				13657F572140F1F10045A958 /* WeeklyPlanController.swift in Sources */,
 				13657F582140F1F10045A958 /* TMyProfile.swift in Sources */,
+				98B10CDE2A3C642400FE000E /* TopHeaderView.swift in Sources */,
 				13657F592140F1F10045A958 /* TInboxMessage.swift in Sources */,
 				13657F5A2140F1F10045A958 /* CalendarSection.swift in Sources */,
 				13657F5B2140F1F10045A958 /* DirectoryCreationOperation.swift in Sources */,
@@ -12150,12 +12519,14 @@
 				13657F642140F1F10045A958 /* WeeklyPlanCell.swift in Sources */,
 				13657F652140F1F10045A958 /* KSTokenView.swift in Sources */,
 				13657F662140F1F10045A958 /* TNotification.swift in Sources */,
+				9841B38C2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				13657F672140F1F10045A958 /* UploadFTP.swift in Sources */,
 				13657F682140F1F10045A958 /* WebViewViewController.swift in Sources */,
 				13657F692140F1F10045A958 /* ProgressViewBar.swift in Sources */,
 				13657F6A2140F1F10045A958 /* WeeklyPlanTable.swift in Sources */,
 				13657F6B2140F1F10045A958 /* GalleryListController.swift in Sources */,
 				13657F6C2140F1F10045A958 /* TNPayment.swift in Sources */,
+				9862F6122A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				13657F6D2140F1F10045A958 /* APIHelper.swift in Sources */,
 				CDB7C3D527480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				13657F6E2140F1F10045A958 /* TNNoticeBoardDetail.swift in Sources */,
@@ -12168,6 +12539,7 @@
 				13657F742140F1F10045A958 /* TNAwarnessArticleDetail.swift in Sources */,
 				13657F752140F1F10045A958 /* PagerController.swift in Sources */,
 				13657F762140F1F10045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D312A3C654500FE000E /* View+Helper.swift in Sources */,
 				13657F772140F1F10045A958 /* FSCalendarCollectionView.m in Sources */,
 				13657F782140F1F10045A958 /* APIUrls.swift in Sources */,
 				13657F792140F1F10045A958 /* FSCalendarDelegationProxy.m in Sources */,
@@ -12205,10 +12577,12 @@
 				13657F982140F1F10045A958 /* ReadSelectViewController.swift in Sources */,
 				13657F992140F1F10045A958 /* FSCalendarDelegationFactory.m in Sources */,
 				13657F9A2140F1F10045A958 /* ImagePreviewController.swift in Sources */,
+				9865CD6C2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				13657F9B2140F1F10045A958 /* LinearProgressView.swift in Sources */,
 				13657F9C2140F1F10045A958 /* ComposeController.swift in Sources */,
 				13657F9D2140F1F10045A958 /* WeeklyPlanFilterController.swift in Sources */,
 				13657F9E2140F1F10045A958 /* ChangePasswordController.swift in Sources */,
+				9841B3612A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				13657F9F2140F1F10045A958 /* NoticeBoardListController.swift in Sources */,
 				13657FA02140F1F10045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE6818FC241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -12265,6 +12639,7 @@
 				136582E62140F2260045A958 /* MessageDetailController.swift in Sources */,
 				136582E72140F2260045A958 /* WeeklyPlanController.swift in Sources */,
 				136582E82140F2260045A958 /* TMyProfile.swift in Sources */,
+				98B10CE12A3C642600FE000E /* TopHeaderView.swift in Sources */,
 				136582E92140F2260045A958 /* TInboxMessage.swift in Sources */,
 				136582EA2140F2260045A958 /* CalendarSection.swift in Sources */,
 				136582EB2140F2260045A958 /* DirectoryCreationOperation.swift in Sources */,
@@ -12280,12 +12655,14 @@
 				136582F42140F2260045A958 /* WeeklyPlanCell.swift in Sources */,
 				136582F52140F2260045A958 /* KSTokenView.swift in Sources */,
 				136582F62140F2260045A958 /* TNotification.swift in Sources */,
+				9841B38F2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				136582F72140F2260045A958 /* UploadFTP.swift in Sources */,
 				136582F82140F2260045A958 /* WebViewViewController.swift in Sources */,
 				136582F92140F2260045A958 /* ProgressViewBar.swift in Sources */,
 				136582FA2140F2260045A958 /* WeeklyPlanTable.swift in Sources */,
 				136582FB2140F2260045A958 /* GalleryListController.swift in Sources */,
 				136582FC2140F2260045A958 /* TNPayment.swift in Sources */,
+				9862F6152A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				136582FD2140F2260045A958 /* APIHelper.swift in Sources */,
 				CDB7C3D827480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				136582FE2140F2260045A958 /* TNNoticeBoardDetail.swift in Sources */,
@@ -12298,6 +12675,7 @@
 				136583042140F2260045A958 /* TNAwarnessArticleDetail.swift in Sources */,
 				136583052140F2260045A958 /* PagerController.swift in Sources */,
 				136583062140F2260045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D562A3C6DAB00FE000E /* View+Helper.swift in Sources */,
 				136583072140F2260045A958 /* FSCalendarCollectionView.m in Sources */,
 				136583082140F2260045A958 /* APIUrls.swift in Sources */,
 				136583092140F2260045A958 /* FSCalendarDelegationProxy.m in Sources */,
@@ -12335,10 +12713,12 @@
 				136583282140F2260045A958 /* ReadSelectViewController.swift in Sources */,
 				136583292140F2260045A958 /* FSCalendarDelegationFactory.m in Sources */,
 				1365832A2140F2260045A958 /* ImagePreviewController.swift in Sources */,
+				9865CD6F2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				1365832B2140F2260045A958 /* LinearProgressView.swift in Sources */,
 				1365832C2140F2260045A958 /* ComposeController.swift in Sources */,
 				1365832D2140F2260045A958 /* WeeklyPlanFilterController.swift in Sources */,
 				1365832E2140F2260045A958 /* ChangePasswordController.swift in Sources */,
+				9841B3642A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				1365832F2140F2260045A958 /* NoticeBoardListController.swift in Sources */,
 				136583302140F2260045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE6818FF241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -12395,6 +12775,7 @@
 				136584162140F22F0045A958 /* MessageDetailController.swift in Sources */,
 				136584172140F22F0045A958 /* WeeklyPlanController.swift in Sources */,
 				136584182140F22F0045A958 /* TMyProfile.swift in Sources */,
+				98B10CE42A3C642800FE000E /* TopHeaderView.swift in Sources */,
 				136584192140F22F0045A958 /* TInboxMessage.swift in Sources */,
 				1365841A2140F22F0045A958 /* CalendarSection.swift in Sources */,
 				1365841B2140F22F0045A958 /* DirectoryCreationOperation.swift in Sources */,
@@ -12410,12 +12791,14 @@
 				136584242140F22F0045A958 /* WeeklyPlanCell.swift in Sources */,
 				136584252140F22F0045A958 /* KSTokenView.swift in Sources */,
 				136584262140F22F0045A958 /* TNotification.swift in Sources */,
+				9841B3912A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				136584272140F22F0045A958 /* UploadFTP.swift in Sources */,
 				136584282140F22F0045A958 /* WebViewViewController.swift in Sources */,
 				136584292140F22F0045A958 /* ProgressViewBar.swift in Sources */,
 				1365842A2140F22F0045A958 /* WeeklyPlanTable.swift in Sources */,
 				1365842B2140F22F0045A958 /* GalleryListController.swift in Sources */,
 				1365842C2140F22F0045A958 /* TNPayment.swift in Sources */,
+				9862F6172A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				1365842D2140F22F0045A958 /* APIHelper.swift in Sources */,
 				CDB7C3DA27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				1365842E2140F22F0045A958 /* TNNoticeBoardDetail.swift in Sources */,
@@ -12428,6 +12811,7 @@
 				136584342140F22F0045A958 /* TNAwarnessArticleDetail.swift in Sources */,
 				136584352140F22F0045A958 /* PagerController.swift in Sources */,
 				136584362140F22F0045A958 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D342A3C654500FE000E /* View+Helper.swift in Sources */,
 				136584372140F22F0045A958 /* FSCalendarCollectionView.m in Sources */,
 				136584382140F22F0045A958 /* APIUrls.swift in Sources */,
 				136584392140F22F0045A958 /* FSCalendarDelegationProxy.m in Sources */,
@@ -12465,10 +12849,12 @@
 				136584582140F22F0045A958 /* ReadSelectViewController.swift in Sources */,
 				136584592140F22F0045A958 /* FSCalendarDelegationFactory.m in Sources */,
 				1365845A2140F22F0045A958 /* ImagePreviewController.swift in Sources */,
+				9865CD712A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				1365845B2140F22F0045A958 /* LinearProgressView.swift in Sources */,
 				1365845C2140F22F0045A958 /* ComposeController.swift in Sources */,
 				1365845D2140F22F0045A958 /* WeeklyPlanFilterController.swift in Sources */,
 				1365845E2140F22F0045A958 /* ChangePasswordController.swift in Sources */,
+				9841B3662A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				1365845F2140F22F0045A958 /* NoticeBoardListController.swift in Sources */,
 				136584602140F22F0045A958 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681900241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -12525,6 +12911,7 @@
 				44067156252C5B67001B8C7B /* MessageDetailController.swift in Sources */,
 				44067157252C5B67001B8C7B /* WeeklyPlanController.swift in Sources */,
 				44067158252C5B67001B8C7B /* TMyProfile.swift in Sources */,
+				98B10CEE2A3C642E00FE000E /* TopHeaderView.swift in Sources */,
 				44067159252C5B67001B8C7B /* TInboxMessage.swift in Sources */,
 				4406715A252C5B67001B8C7B /* CalendarSection.swift in Sources */,
 				4406715B252C5B67001B8C7B /* DirectoryCreationOperation.swift in Sources */,
@@ -12540,12 +12927,14 @@
 				44067165252C5B67001B8C7B /* WeeklyPlanCell.swift in Sources */,
 				44067166252C5B67001B8C7B /* KSTokenView.swift in Sources */,
 				44067167252C5B67001B8C7B /* TNotification.swift in Sources */,
+				9841B39B2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				44067168252C5B67001B8C7B /* UploadFTP.swift in Sources */,
 				44067169252C5B67001B8C7B /* WebViewViewController.swift in Sources */,
 				4406716A252C5B67001B8C7B /* ProgressViewBar.swift in Sources */,
 				4406716B252C5B67001B8C7B /* WeeklyPlanTable.swift in Sources */,
 				4406716C252C5B67001B8C7B /* GalleryListController.swift in Sources */,
 				4406716D252C5B67001B8C7B /* TNPayment.swift in Sources */,
+				9862F6212A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				4406716E252C5B67001B8C7B /* APIHelper.swift in Sources */,
 				CDB7C3E627480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				4406716F252C5B67001B8C7B /* TNNoticeBoardDetail.swift in Sources */,
@@ -12558,6 +12947,7 @@
 				44067176252C5B67001B8C7B /* TNAwarnessArticleDetail.swift in Sources */,
 				44067177252C5B67001B8C7B /* PagerController.swift in Sources */,
 				44067178252C5B67001B8C7B /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D3E2A3C654500FE000E /* View+Helper.swift in Sources */,
 				44067179252C5B67001B8C7B /* FSCalendarCollectionView.m in Sources */,
 				4406717A252C5B67001B8C7B /* APIUrls.swift in Sources */,
 				4406717B252C5B67001B8C7B /* FSCalendarDelegationProxy.m in Sources */,
@@ -12595,10 +12985,12 @@
 				4406719A252C5B67001B8C7B /* ReadSelectViewController.swift in Sources */,
 				4406719B252C5B67001B8C7B /* FSCalendarDelegationFactory.m in Sources */,
 				4406719C252C5B67001B8C7B /* ImagePreviewController.swift in Sources */,
+				9865CD7B2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				4406719D252C5B67001B8C7B /* LinearProgressView.swift in Sources */,
 				4406719E252C5B67001B8C7B /* ComposeController.swift in Sources */,
 				4406719F252C5B67001B8C7B /* WeeklyPlanFilterController.swift in Sources */,
 				440671A0252C5B67001B8C7B /* ChangePasswordController.swift in Sources */,
+				9841B3702A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				440671A1252C5B67001B8C7B /* NoticeBoardListController.swift in Sources */,
 				440671A2252C5B67001B8C7B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				440671A3252C5B67001B8C7B /* TNSubject.swift in Sources */,
@@ -12655,6 +13047,7 @@
 				440B6B72239A8925004A0894 /* MessageDetailController.swift in Sources */,
 				440B6B73239A8925004A0894 /* WeeklyPlanController.swift in Sources */,
 				440B6B74239A8925004A0894 /* TMyProfile.swift in Sources */,
+				98B10CEC2A3C642D00FE000E /* TopHeaderView.swift in Sources */,
 				440B6B75239A8925004A0894 /* TInboxMessage.swift in Sources */,
 				440B6B76239A8925004A0894 /* CalendarSection.swift in Sources */,
 				440B6B77239A8925004A0894 /* DirectoryCreationOperation.swift in Sources */,
@@ -12670,12 +13063,14 @@
 				440B6B81239A8925004A0894 /* WeeklyPlanCell.swift in Sources */,
 				440B6B82239A8925004A0894 /* KSTokenView.swift in Sources */,
 				440B6B83239A8925004A0894 /* TNotification.swift in Sources */,
+				9841B3992A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				440B6B84239A8925004A0894 /* UploadFTP.swift in Sources */,
 				440B6B85239A8925004A0894 /* WebViewViewController.swift in Sources */,
 				440B6B86239A8925004A0894 /* ProgressViewBar.swift in Sources */,
 				440B6B87239A8925004A0894 /* WeeklyPlanTable.swift in Sources */,
 				440B6B88239A8925004A0894 /* GalleryListController.swift in Sources */,
 				440B6B89239A8925004A0894 /* TNPayment.swift in Sources */,
+				9862F61F2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				440B6B8A239A8925004A0894 /* APIHelper.swift in Sources */,
 				CDB7C3E227480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				440B6B8B239A8925004A0894 /* TNNoticeBoardDetail.swift in Sources */,
@@ -12688,6 +13083,7 @@
 				440B6B92239A8925004A0894 /* TNAwarnessArticleDetail.swift in Sources */,
 				440B6B93239A8925004A0894 /* PagerController.swift in Sources */,
 				440B6B94239A8925004A0894 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D3C2A3C654500FE000E /* View+Helper.swift in Sources */,
 				440B6B95239A8925004A0894 /* FSCalendarCollectionView.m in Sources */,
 				440B6B96239A8925004A0894 /* APIUrls.swift in Sources */,
 				440B6B97239A8925004A0894 /* FSCalendarDelegationProxy.m in Sources */,
@@ -12725,10 +13121,12 @@
 				440B6BB6239A8925004A0894 /* ReadSelectViewController.swift in Sources */,
 				440B6BB7239A8925004A0894 /* FSCalendarDelegationFactory.m in Sources */,
 				440B6BB8239A8925004A0894 /* ImagePreviewController.swift in Sources */,
+				9865CD792A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				440B6BB9239A8925004A0894 /* LinearProgressView.swift in Sources */,
 				440B6BBA239A8925004A0894 /* ComposeController.swift in Sources */,
 				440B6BBB239A8925004A0894 /* WeeklyPlanFilterController.swift in Sources */,
 				440B6BBC239A8925004A0894 /* ChangePasswordController.swift in Sources */,
+				9841B36E2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				440B6BBD239A8925004A0894 /* NoticeBoardListController.swift in Sources */,
 				440B6BBE239A8925004A0894 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681914241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -12785,6 +13183,7 @@
 				446D51DA2539C33100D1026C /* MessageDetailController.swift in Sources */,
 				446D51DB2539C33100D1026C /* WeeklyPlanController.swift in Sources */,
 				446D51DC2539C33100D1026C /* TMyProfile.swift in Sources */,
+				98B10CF02A3C643000FE000E /* TopHeaderView.swift in Sources */,
 				446D51DD2539C33100D1026C /* TInboxMessage.swift in Sources */,
 				446D51DE2539C33100D1026C /* CalendarSection.swift in Sources */,
 				446D51DF2539C33100D1026C /* DirectoryCreationOperation.swift in Sources */,
@@ -12800,12 +13199,14 @@
 				446D51E92539C33100D1026C /* WeeklyPlanCell.swift in Sources */,
 				446D51EA2539C33100D1026C /* KSTokenView.swift in Sources */,
 				446D51EB2539C33100D1026C /* TNotification.swift in Sources */,
+				9841B39D2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				446D51EC2539C33100D1026C /* UploadFTP.swift in Sources */,
 				446D51ED2539C33100D1026C /* WebViewViewController.swift in Sources */,
 				446D51EE2539C33100D1026C /* ProgressViewBar.swift in Sources */,
 				446D51EF2539C33100D1026C /* WeeklyPlanTable.swift in Sources */,
 				446D51F02539C33100D1026C /* GalleryListController.swift in Sources */,
 				446D51F12539C33100D1026C /* TNPayment.swift in Sources */,
+				9862F6232A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				446D51F22539C33100D1026C /* APIHelper.swift in Sources */,
 				CDB7C3EB27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				446D51F32539C33100D1026C /* TNNoticeBoardDetail.swift in Sources */,
@@ -12818,6 +13219,7 @@
 				446D51FA2539C33100D1026C /* TNAwarnessArticleDetail.swift in Sources */,
 				446D51FB2539C33100D1026C /* PagerController.swift in Sources */,
 				446D51FC2539C33100D1026C /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D402A3C654500FE000E /* View+Helper.swift in Sources */,
 				446D51FD2539C33100D1026C /* FSCalendarCollectionView.m in Sources */,
 				446D51FE2539C33100D1026C /* APIUrls.swift in Sources */,
 				446D51FF2539C33100D1026C /* FSCalendarDelegationProxy.m in Sources */,
@@ -12855,10 +13257,12 @@
 				446D521E2539C33100D1026C /* ReadSelectViewController.swift in Sources */,
 				446D521F2539C33100D1026C /* FSCalendarDelegationFactory.m in Sources */,
 				446D52202539C33100D1026C /* ImagePreviewController.swift in Sources */,
+				9865CD7D2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				446D52212539C33100D1026C /* LinearProgressView.swift in Sources */,
 				446D52222539C33100D1026C /* ComposeController.swift in Sources */,
 				446D52232539C33100D1026C /* WeeklyPlanFilterController.swift in Sources */,
 				446D52242539C33100D1026C /* ChangePasswordController.swift in Sources */,
+				9841B3722A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				446D52252539C33100D1026C /* NoticeBoardListController.swift in Sources */,
 				446D52262539C33100D1026C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				446D52272539C33100D1026C /* TNSubject.swift in Sources */,
@@ -12915,6 +13319,7 @@
 				448831D8237EA02B00E80665 /* MessageDetailController.swift in Sources */,
 				448831D9237EA02B00E80665 /* WeeklyPlanController.swift in Sources */,
 				448831DA237EA02B00E80665 /* TMyProfile.swift in Sources */,
+				98B10CEB2A3C642C00FE000E /* TopHeaderView.swift in Sources */,
 				448831DB237EA02B00E80665 /* TInboxMessage.swift in Sources */,
 				448831DC237EA02B00E80665 /* CalendarSection.swift in Sources */,
 				448831DD237EA02B00E80665 /* DirectoryCreationOperation.swift in Sources */,
@@ -12930,12 +13335,14 @@
 				448831E7237EA02B00E80665 /* WeeklyPlanCell.swift in Sources */,
 				448831E8237EA02B00E80665 /* KSTokenView.swift in Sources */,
 				448831E9237EA02B00E80665 /* TNotification.swift in Sources */,
+				9841B3982A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				448831EA237EA02B00E80665 /* UploadFTP.swift in Sources */,
 				448831EB237EA02B00E80665 /* WebViewViewController.swift in Sources */,
 				448831EC237EA02B00E80665 /* ProgressViewBar.swift in Sources */,
 				448831ED237EA02B00E80665 /* WeeklyPlanTable.swift in Sources */,
 				448831EE237EA02B00E80665 /* GalleryListController.swift in Sources */,
 				448831EF237EA02B00E80665 /* TNPayment.swift in Sources */,
+				9862F61E2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				448831F0237EA02B00E80665 /* APIHelper.swift in Sources */,
 				CDB7C3E127480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				448831F1237EA02B00E80665 /* TNNoticeBoardDetail.swift in Sources */,
@@ -12948,6 +13355,7 @@
 				448831F8237EA02B00E80665 /* TNAwarnessArticleDetail.swift in Sources */,
 				448831F9237EA02B00E80665 /* PagerController.swift in Sources */,
 				448831FA237EA02B00E80665 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D3B2A3C654500FE000E /* View+Helper.swift in Sources */,
 				448831FB237EA02B00E80665 /* FSCalendarCollectionView.m in Sources */,
 				448831FC237EA02B00E80665 /* APIUrls.swift in Sources */,
 				448831FD237EA02B00E80665 /* FSCalendarDelegationProxy.m in Sources */,
@@ -12985,10 +13393,12 @@
 				4488321C237EA02B00E80665 /* ReadSelectViewController.swift in Sources */,
 				4488321D237EA02B00E80665 /* FSCalendarDelegationFactory.m in Sources */,
 				4488321E237EA02B00E80665 /* ImagePreviewController.swift in Sources */,
+				9865CD782A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				4488321F237EA02B00E80665 /* LinearProgressView.swift in Sources */,
 				44883220237EA02B00E80665 /* ComposeController.swift in Sources */,
 				44883221237EA02B00E80665 /* WeeklyPlanFilterController.swift in Sources */,
 				44883222237EA02B00E80665 /* ChangePasswordController.swift in Sources */,
+				9841B36D2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				44883223237EA02B00E80665 /* NoticeBoardListController.swift in Sources */,
 				44883224237EA02B00E80665 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE68190F241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -13045,6 +13455,7 @@
 				44AD1B5025388E1000368235 /* MessageDetailController.swift in Sources */,
 				44AD1B5125388E1000368235 /* WeeklyPlanController.swift in Sources */,
 				44AD1B5225388E1000368235 /* TMyProfile.swift in Sources */,
+				98B10CEF2A3C643000FE000E /* TopHeaderView.swift in Sources */,
 				44AD1B5325388E1000368235 /* TInboxMessage.swift in Sources */,
 				44AD1B5425388E1000368235 /* CalendarSection.swift in Sources */,
 				44AD1B5525388E1000368235 /* DirectoryCreationOperation.swift in Sources */,
@@ -13060,12 +13471,14 @@
 				44AD1B5F25388E1000368235 /* WeeklyPlanCell.swift in Sources */,
 				44AD1B6025388E1000368235 /* KSTokenView.swift in Sources */,
 				44AD1B6125388E1000368235 /* TNotification.swift in Sources */,
+				9841B39C2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				44AD1B6225388E1000368235 /* UploadFTP.swift in Sources */,
 				44AD1B6325388E1000368235 /* WebViewViewController.swift in Sources */,
 				44AD1B6425388E1000368235 /* ProgressViewBar.swift in Sources */,
 				44AD1B6525388E1000368235 /* WeeklyPlanTable.swift in Sources */,
 				44AD1B6625388E1000368235 /* GalleryListController.swift in Sources */,
 				44AD1B6725388E1000368235 /* TNPayment.swift in Sources */,
+				9862F6222A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				44AD1B6825388E1000368235 /* APIHelper.swift in Sources */,
 				CDB7C3EA27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				44AD1B6925388E1000368235 /* TNNoticeBoardDetail.swift in Sources */,
@@ -13078,6 +13491,7 @@
 				44AD1B7025388E1000368235 /* TNAwarnessArticleDetail.swift in Sources */,
 				44AD1B7125388E1000368235 /* PagerController.swift in Sources */,
 				44AD1B7225388E1000368235 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D3F2A3C654500FE000E /* View+Helper.swift in Sources */,
 				44AD1B7325388E1000368235 /* FSCalendarCollectionView.m in Sources */,
 				44AD1B7425388E1000368235 /* APIUrls.swift in Sources */,
 				44AD1B7525388E1000368235 /* FSCalendarDelegationProxy.m in Sources */,
@@ -13115,10 +13529,12 @@
 				44AD1B9425388E1000368235 /* ReadSelectViewController.swift in Sources */,
 				44AD1B9525388E1000368235 /* FSCalendarDelegationFactory.m in Sources */,
 				44AD1B9625388E1000368235 /* ImagePreviewController.swift in Sources */,
+				9865CD7C2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				44AD1B9725388E1000368235 /* LinearProgressView.swift in Sources */,
 				44AD1B9825388E1000368235 /* ComposeController.swift in Sources */,
 				44AD1B9925388E1000368235 /* WeeklyPlanFilterController.swift in Sources */,
 				44AD1B9A25388E1000368235 /* ChangePasswordController.swift in Sources */,
+				9841B3712A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				44AD1B9B25388E1000368235 /* NoticeBoardListController.swift in Sources */,
 				44AD1B9C25388E1000368235 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				44AD1B9D25388E1000368235 /* TNSubject.swift in Sources */,
@@ -13175,6 +13591,7 @@
 				44DBAD2C255286E9008DFE9E /* MessageDetailController.swift in Sources */,
 				44DBAD2D255286E9008DFE9E /* WeeklyPlanController.swift in Sources */,
 				44DBAD2E255286E9008DFE9E /* TMyProfile.swift in Sources */,
+				98B10CF12A3C643100FE000E /* TopHeaderView.swift in Sources */,
 				44DBAD2F255286E9008DFE9E /* TInboxMessage.swift in Sources */,
 				44DBAD30255286E9008DFE9E /* CalendarSection.swift in Sources */,
 				44DBAD31255286E9008DFE9E /* DirectoryCreationOperation.swift in Sources */,
@@ -13190,12 +13607,14 @@
 				44DBAD3B255286E9008DFE9E /* WeeklyPlanCell.swift in Sources */,
 				44DBAD3C255286E9008DFE9E /* KSTokenView.swift in Sources */,
 				44DBAD3D255286E9008DFE9E /* TNotification.swift in Sources */,
+				9841B39E2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				44DBAD3E255286E9008DFE9E /* UploadFTP.swift in Sources */,
 				44DBAD3F255286E9008DFE9E /* WebViewViewController.swift in Sources */,
 				44DBAD40255286E9008DFE9E /* ProgressViewBar.swift in Sources */,
 				44DBAD41255286E9008DFE9E /* WeeklyPlanTable.swift in Sources */,
 				44DBAD42255286E9008DFE9E /* GalleryListController.swift in Sources */,
 				44DBAD43255286E9008DFE9E /* TNPayment.swift in Sources */,
+				9862F6242A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				44DBAD44255286E9008DFE9E /* APIHelper.swift in Sources */,
 				CDB7C3EF27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				44DBAD45255286E9008DFE9E /* TNNoticeBoardDetail.swift in Sources */,
@@ -13208,6 +13627,7 @@
 				44DBAD4C255286E9008DFE9E /* TNAwarnessArticleDetail.swift in Sources */,
 				44DBAD4D255286E9008DFE9E /* PagerController.swift in Sources */,
 				44DBAD4E255286E9008DFE9E /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D412A3C654500FE000E /* View+Helper.swift in Sources */,
 				44DBAD4F255286E9008DFE9E /* FSCalendarCollectionView.m in Sources */,
 				44DBAD50255286E9008DFE9E /* APIUrls.swift in Sources */,
 				44DBAD51255286E9008DFE9E /* FSCalendarDelegationProxy.m in Sources */,
@@ -13245,10 +13665,12 @@
 				44DBAD70255286E9008DFE9E /* ReadSelectViewController.swift in Sources */,
 				44DBAD71255286E9008DFE9E /* FSCalendarDelegationFactory.m in Sources */,
 				44DBAD72255286E9008DFE9E /* ImagePreviewController.swift in Sources */,
+				9865CD7E2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				44DBAD73255286E9008DFE9E /* LinearProgressView.swift in Sources */,
 				44DBAD74255286E9008DFE9E /* ComposeController.swift in Sources */,
 				44DBAD75255286E9008DFE9E /* WeeklyPlanFilterController.swift in Sources */,
 				44DBAD76255286E9008DFE9E /* ChangePasswordController.swift in Sources */,
+				9841B3732A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				44DBAD77255286E9008DFE9E /* NoticeBoardListController.swift in Sources */,
 				44DBAD78255286E9008DFE9E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				44DBAD79255286E9008DFE9E /* TNSubject.swift in Sources */,
@@ -13305,6 +13727,7 @@
 				44DC609B25798523002E3917 /* MessageDetailController.swift in Sources */,
 				44DC609C25798523002E3917 /* WeeklyPlanController.swift in Sources */,
 				44DC609D25798523002E3917 /* TMyProfile.swift in Sources */,
+				98B10CF32A3C643300FE000E /* TopHeaderView.swift in Sources */,
 				44DC609E25798523002E3917 /* TInboxMessage.swift in Sources */,
 				44DC609F25798523002E3917 /* CalendarSection.swift in Sources */,
 				44DC60A025798523002E3917 /* DirectoryCreationOperation.swift in Sources */,
@@ -13320,12 +13743,14 @@
 				44DC60AA25798523002E3917 /* WeeklyPlanCell.swift in Sources */,
 				44DC60AB25798523002E3917 /* KSTokenView.swift in Sources */,
 				44DC60AC25798523002E3917 /* TNotification.swift in Sources */,
+				9841B39F2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				44DC60AD25798523002E3917 /* UploadFTP.swift in Sources */,
 				44DC60AE25798523002E3917 /* WebViewViewController.swift in Sources */,
 				44DC60AF25798523002E3917 /* ProgressViewBar.swift in Sources */,
 				44DC60B025798523002E3917 /* WeeklyPlanTable.swift in Sources */,
 				44DC60B125798523002E3917 /* GalleryListController.swift in Sources */,
 				44DC60B225798523002E3917 /* TNPayment.swift in Sources */,
+				9862F6252A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				44DC60B325798523002E3917 /* APIHelper.swift in Sources */,
 				CDB7C3F027480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				44DC60B425798523002E3917 /* TNNoticeBoardDetail.swift in Sources */,
@@ -13338,6 +13763,7 @@
 				44DC60BB25798523002E3917 /* TNAwarnessArticleDetail.swift in Sources */,
 				44DC60BC25798523002E3917 /* PagerController.swift in Sources */,
 				44DC60BD25798523002E3917 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D422A3C654500FE000E /* View+Helper.swift in Sources */,
 				44DC60BE25798523002E3917 /* FSCalendarCollectionView.m in Sources */,
 				44DC60BF25798523002E3917 /* APIUrls.swift in Sources */,
 				44DC60C025798523002E3917 /* FSCalendarDelegationProxy.m in Sources */,
@@ -13375,10 +13801,12 @@
 				44DC60DF25798523002E3917 /* ReadSelectViewController.swift in Sources */,
 				44DC60E025798523002E3917 /* FSCalendarDelegationFactory.m in Sources */,
 				44DC60E125798523002E3917 /* ImagePreviewController.swift in Sources */,
+				9865CD7F2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				44DC60E225798523002E3917 /* LinearProgressView.swift in Sources */,
 				44DC60E325798523002E3917 /* ComposeController.swift in Sources */,
 				44DC60E425798523002E3917 /* WeeklyPlanFilterController.swift in Sources */,
 				44DC60E525798523002E3917 /* ChangePasswordController.swift in Sources */,
+				9841B3742A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				44DC60E625798523002E3917 /* NoticeBoardListController.swift in Sources */,
 				44DC60E725798523002E3917 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				44DC60E825798523002E3917 /* TNSubject.swift in Sources */,
@@ -13435,6 +13863,7 @@
 				B41C1AC821418FD600A9907B /* MessageDetailController.swift in Sources */,
 				B41C1AC921418FD600A9907B /* WeeklyPlanController.swift in Sources */,
 				B41C1ACA21418FD600A9907B /* TMyProfile.swift in Sources */,
+				98B10CE22A3C642600FE000E /* TopHeaderView.swift in Sources */,
 				B41C1ACB21418FD600A9907B /* TInboxMessage.swift in Sources */,
 				B41C1ACC21418FD600A9907B /* CalendarSection.swift in Sources */,
 				B41C1ACD21418FD600A9907B /* DirectoryCreationOperation.swift in Sources */,
@@ -13450,12 +13879,14 @@
 				B41C1AD621418FD600A9907B /* WeeklyPlanCell.swift in Sources */,
 				B41C1AD721418FD600A9907B /* KSTokenView.swift in Sources */,
 				B41C1AD821418FD600A9907B /* TNotification.swift in Sources */,
+				9841B3902A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				B41C1AD921418FD600A9907B /* UploadFTP.swift in Sources */,
 				B41C1ADA21418FD600A9907B /* WebViewViewController.swift in Sources */,
 				B41C1ADB21418FD600A9907B /* ProgressViewBar.swift in Sources */,
 				B41C1ADC21418FD600A9907B /* WeeklyPlanTable.swift in Sources */,
 				B41C1ADD21418FD600A9907B /* GalleryListController.swift in Sources */,
 				B41C1ADE21418FD600A9907B /* TNPayment.swift in Sources */,
+				9862F6162A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				B41C1ADF21418FD600A9907B /* APIHelper.swift in Sources */,
 				CDB7C3D927480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				B41C1AE021418FD600A9907B /* TNNoticeBoardDetail.swift in Sources */,
@@ -13468,6 +13899,7 @@
 				B41C1AE621418FD600A9907B /* TNAwarnessArticleDetail.swift in Sources */,
 				B41C1AE721418FD600A9907B /* PagerController.swift in Sources */,
 				B41C1AE821418FD600A9907B /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D552A3C6DAA00FE000E /* View+Helper.swift in Sources */,
 				B41C1AE921418FD600A9907B /* FSCalendarCollectionView.m in Sources */,
 				B41C1AEA21418FD600A9907B /* APIUrls.swift in Sources */,
 				B41C1AEB21418FD600A9907B /* FSCalendarDelegationProxy.m in Sources */,
@@ -13505,10 +13937,12 @@
 				B41C1B0A21418FD600A9907B /* ReadSelectViewController.swift in Sources */,
 				B41C1B0B21418FD600A9907B /* FSCalendarDelegationFactory.m in Sources */,
 				B41C1B0C21418FD600A9907B /* ImagePreviewController.swift in Sources */,
+				9865CD702A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				B41C1B0D21418FD600A9907B /* LinearProgressView.swift in Sources */,
 				B41C1B0E21418FD600A9907B /* ComposeController.swift in Sources */,
 				B41C1B0F21418FD600A9907B /* WeeklyPlanFilterController.swift in Sources */,
 				B41C1B1021418FD600A9907B /* ChangePasswordController.swift in Sources */,
+				9841B3652A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				B41C1B1121418FD600A9907B /* NoticeBoardListController.swift in Sources */,
 				B41C1B1221418FD600A9907B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681903241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -13565,6 +13999,7 @@
 				CD110ABF289C344B0050EF80 /* MessageDetailController.swift in Sources */,
 				CD110AC0289C344B0050EF80 /* WeeklyPlanController.swift in Sources */,
 				CD110AC1289C344B0050EF80 /* TMyProfile.swift in Sources */,
+				98B10CFC2A3C643B00FE000E /* TopHeaderView.swift in Sources */,
 				CD110AC2289C344B0050EF80 /* TInboxMessage.swift in Sources */,
 				CD110AC3289C344B0050EF80 /* CalendarSection.swift in Sources */,
 				CD110AC4289C344B0050EF80 /* DirectoryCreationOperation.swift in Sources */,
@@ -13580,12 +14015,14 @@
 				CD110ACE289C344B0050EF80 /* WeeklyPlanCell.swift in Sources */,
 				CD110ACF289C344B0050EF80 /* KSTokenView.swift in Sources */,
 				CD110AD0289C344B0050EF80 /* TNotification.swift in Sources */,
+				9841B3AB2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD110AD1289C344B0050EF80 /* UploadFTP.swift in Sources */,
 				CD110AD2289C344B0050EF80 /* WebViewViewController.swift in Sources */,
 				CD110AD3289C344B0050EF80 /* ProgressViewBar.swift in Sources */,
 				CD110AD4289C344B0050EF80 /* WeeklyPlanTable.swift in Sources */,
 				CD110AD5289C344B0050EF80 /* GalleryListController.swift in Sources */,
 				CD110AD6289C344B0050EF80 /* TNPayment.swift in Sources */,
+				9862F6312A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD110AD7289C344B0050EF80 /* APIHelper.swift in Sources */,
 				CD110AD8289C344B0050EF80 /* UIViewController+PopUp.swift in Sources */,
 				CD110AD9289C344B0050EF80 /* TNNoticeBoardDetail.swift in Sources */,
@@ -13598,6 +14035,7 @@
 				CD110AE0289C344B0050EF80 /* TNAwarnessArticleDetail.swift in Sources */,
 				CD110AE1289C344B0050EF80 /* PagerController.swift in Sources */,
 				CD110AE2289C344B0050EF80 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D4E2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD110AE3289C344B0050EF80 /* FSCalendarCollectionView.m in Sources */,
 				CD110AE4289C344B0050EF80 /* APIUrls.swift in Sources */,
 				CD110AE5289C344B0050EF80 /* FSCalendarDelegationProxy.m in Sources */,
@@ -13635,10 +14073,12 @@
 				CD110B05289C344B0050EF80 /* ReadSelectViewController.swift in Sources */,
 				CD110B06289C344B0050EF80 /* FSCalendarDelegationFactory.m in Sources */,
 				CD110B07289C344B0050EF80 /* ImagePreviewController.swift in Sources */,
+				9865CD8B2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD110B08289C344B0050EF80 /* LinearProgressView.swift in Sources */,
 				CD110B09289C344B0050EF80 /* ComposeController.swift in Sources */,
 				CD110B0A289C344B0050EF80 /* WeeklyPlanFilterController.swift in Sources */,
 				CD110B0B289C344B0050EF80 /* ChangePasswordController.swift in Sources */,
+				9841B3802A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD110B0C289C344B0050EF80 /* NoticeBoardListController.swift in Sources */,
 				CD110B0D289C344B0050EF80 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD110B0E289C344B0050EF80 /* TNSubject.swift in Sources */,
@@ -13695,6 +14135,7 @@
 				CD110B5D289C3CCC0050EF80 /* MessageDetailController.swift in Sources */,
 				CD110B5E289C3CCC0050EF80 /* WeeklyPlanController.swift in Sources */,
 				CD110B5F289C3CCC0050EF80 /* TMyProfile.swift in Sources */,
+				98B10CFB2A3C643A00FE000E /* TopHeaderView.swift in Sources */,
 				CD110B60289C3CCC0050EF80 /* TInboxMessage.swift in Sources */,
 				CD110B61289C3CCC0050EF80 /* CalendarSection.swift in Sources */,
 				CD110B62289C3CCC0050EF80 /* DirectoryCreationOperation.swift in Sources */,
@@ -13710,12 +14151,14 @@
 				CD110B6C289C3CCC0050EF80 /* WeeklyPlanCell.swift in Sources */,
 				CD110B6D289C3CCC0050EF80 /* KSTokenView.swift in Sources */,
 				CD110B6E289C3CCC0050EF80 /* TNotification.swift in Sources */,
+				9841B3AC2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD110B6F289C3CCC0050EF80 /* UploadFTP.swift in Sources */,
 				CD110B70289C3CCC0050EF80 /* WebViewViewController.swift in Sources */,
 				CD110B71289C3CCC0050EF80 /* ProgressViewBar.swift in Sources */,
 				CD110B72289C3CCC0050EF80 /* WeeklyPlanTable.swift in Sources */,
 				CD110B73289C3CCC0050EF80 /* GalleryListController.swift in Sources */,
 				CD110B74289C3CCC0050EF80 /* TNPayment.swift in Sources */,
+				9862F6322A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD110B75289C3CCC0050EF80 /* APIHelper.swift in Sources */,
 				CD110B76289C3CCC0050EF80 /* UIViewController+PopUp.swift in Sources */,
 				CD110B77289C3CCC0050EF80 /* TNNoticeBoardDetail.swift in Sources */,
@@ -13728,6 +14171,7 @@
 				CD110B7E289C3CCC0050EF80 /* TNAwarnessArticleDetail.swift in Sources */,
 				CD110B7F289C3CCC0050EF80 /* PagerController.swift in Sources */,
 				CD110B80289C3CCC0050EF80 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D4F2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD110B81289C3CCC0050EF80 /* FSCalendarCollectionView.m in Sources */,
 				CD110B82289C3CCC0050EF80 /* APIUrls.swift in Sources */,
 				CD110B83289C3CCC0050EF80 /* FSCalendarDelegationProxy.m in Sources */,
@@ -13765,10 +14209,12 @@
 				CD110BA3289C3CCC0050EF80 /* ReadSelectViewController.swift in Sources */,
 				CD110BA4289C3CCC0050EF80 /* FSCalendarDelegationFactory.m in Sources */,
 				CD110BA5289C3CCC0050EF80 /* ImagePreviewController.swift in Sources */,
+				9865CD8C2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD110BA6289C3CCC0050EF80 /* LinearProgressView.swift in Sources */,
 				CD110BA7289C3CCC0050EF80 /* ComposeController.swift in Sources */,
 				CD110BA8289C3CCC0050EF80 /* WeeklyPlanFilterController.swift in Sources */,
 				CD110BA9289C3CCC0050EF80 /* ChangePasswordController.swift in Sources */,
+				9841B3812A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD110BAA289C3CCC0050EF80 /* NoticeBoardListController.swift in Sources */,
 				CD110BAB289C3CCC0050EF80 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD110BAC289C3CCC0050EF80 /* TNSubject.swift in Sources */,
@@ -13825,6 +14271,7 @@
 				CD110BFB289C41700050EF80 /* MessageDetailController.swift in Sources */,
 				CD110BFC289C41700050EF80 /* WeeklyPlanController.swift in Sources */,
 				CD110BFD289C41700050EF80 /* TMyProfile.swift in Sources */,
+				98B10CFA2A3C643900FE000E /* TopHeaderView.swift in Sources */,
 				CD110BFE289C41700050EF80 /* TInboxMessage.swift in Sources */,
 				CD110BFF289C41700050EF80 /* CalendarSection.swift in Sources */,
 				CD110C00289C41700050EF80 /* DirectoryCreationOperation.swift in Sources */,
@@ -13840,12 +14287,14 @@
 				CD110C0A289C41700050EF80 /* WeeklyPlanCell.swift in Sources */,
 				CD110C0B289C41700050EF80 /* KSTokenView.swift in Sources */,
 				CD110C0C289C41700050EF80 /* TNotification.swift in Sources */,
+				9841B3AD2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD110C0D289C41700050EF80 /* UploadFTP.swift in Sources */,
 				CD110C0E289C41700050EF80 /* WebViewViewController.swift in Sources */,
 				CD110C0F289C41700050EF80 /* ProgressViewBar.swift in Sources */,
 				CD110C10289C41700050EF80 /* WeeklyPlanTable.swift in Sources */,
 				CD110C11289C41700050EF80 /* GalleryListController.swift in Sources */,
 				CD110C12289C41700050EF80 /* TNPayment.swift in Sources */,
+				9862F6332A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD110C13289C41700050EF80 /* APIHelper.swift in Sources */,
 				CD110C14289C41700050EF80 /* UIViewController+PopUp.swift in Sources */,
 				CD110C15289C41700050EF80 /* TNNoticeBoardDetail.swift in Sources */,
@@ -13858,6 +14307,7 @@
 				CD110C1C289C41700050EF80 /* TNAwarnessArticleDetail.swift in Sources */,
 				CD110C1D289C41700050EF80 /* PagerController.swift in Sources */,
 				CD110C1E289C41700050EF80 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D502A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD110C1F289C41700050EF80 /* FSCalendarCollectionView.m in Sources */,
 				CD110C20289C41700050EF80 /* APIUrls.swift in Sources */,
 				CD110C21289C41700050EF80 /* FSCalendarDelegationProxy.m in Sources */,
@@ -13895,10 +14345,12 @@
 				CD110C41289C41700050EF80 /* ReadSelectViewController.swift in Sources */,
 				CD110C42289C41700050EF80 /* FSCalendarDelegationFactory.m in Sources */,
 				CD110C43289C41700050EF80 /* ImagePreviewController.swift in Sources */,
+				9865CD8D2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD110C44289C41700050EF80 /* LinearProgressView.swift in Sources */,
 				CD110C45289C41700050EF80 /* ComposeController.swift in Sources */,
 				CD110C46289C41700050EF80 /* WeeklyPlanFilterController.swift in Sources */,
 				CD110C47289C41700050EF80 /* ChangePasswordController.swift in Sources */,
+				9841B3822A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD110C48289C41700050EF80 /* NoticeBoardListController.swift in Sources */,
 				CD110C49289C41700050EF80 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD110C4A289C41700050EF80 /* TNSubject.swift in Sources */,
@@ -13955,6 +14407,7 @@
 				CD110D38289C4E4B0050EF80 /* MessageDetailController.swift in Sources */,
 				CD110D39289C4E4B0050EF80 /* WeeklyPlanController.swift in Sources */,
 				CD110D3A289C4E4B0050EF80 /* TMyProfile.swift in Sources */,
+				98B10CF92A3C643900FE000E /* TopHeaderView.swift in Sources */,
 				CD110D3B289C4E4B0050EF80 /* TInboxMessage.swift in Sources */,
 				CD110D3C289C4E4B0050EF80 /* CalendarSection.swift in Sources */,
 				CD110D3D289C4E4B0050EF80 /* DirectoryCreationOperation.swift in Sources */,
@@ -13970,12 +14423,14 @@
 				CD110D47289C4E4B0050EF80 /* WeeklyPlanCell.swift in Sources */,
 				CD110D48289C4E4B0050EF80 /* KSTokenView.swift in Sources */,
 				CD110D49289C4E4B0050EF80 /* TNotification.swift in Sources */,
+				9841B3AE2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD110D4A289C4E4B0050EF80 /* UploadFTP.swift in Sources */,
 				CD110D4B289C4E4B0050EF80 /* WebViewViewController.swift in Sources */,
 				CD110D4C289C4E4B0050EF80 /* ProgressViewBar.swift in Sources */,
 				CD110D4D289C4E4B0050EF80 /* WeeklyPlanTable.swift in Sources */,
 				CD110D4E289C4E4B0050EF80 /* GalleryListController.swift in Sources */,
 				CD110D4F289C4E4B0050EF80 /* TNPayment.swift in Sources */,
+				9862F6342A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD110D50289C4E4B0050EF80 /* APIHelper.swift in Sources */,
 				CD110D51289C4E4B0050EF80 /* UIViewController+PopUp.swift in Sources */,
 				CD110D52289C4E4B0050EF80 /* TNNoticeBoardDetail.swift in Sources */,
@@ -13988,6 +14443,7 @@
 				CD110D59289C4E4B0050EF80 /* TNAwarnessArticleDetail.swift in Sources */,
 				CD110D5A289C4E4B0050EF80 /* PagerController.swift in Sources */,
 				CD110D5B289C4E4B0050EF80 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D512A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD110D5C289C4E4B0050EF80 /* FSCalendarCollectionView.m in Sources */,
 				CD110D5D289C4E4B0050EF80 /* APIUrls.swift in Sources */,
 				CD110D5E289C4E4B0050EF80 /* FSCalendarDelegationProxy.m in Sources */,
@@ -14025,10 +14481,12 @@
 				CD110D7E289C4E4B0050EF80 /* ReadSelectViewController.swift in Sources */,
 				CD110D7F289C4E4B0050EF80 /* FSCalendarDelegationFactory.m in Sources */,
 				CD110D80289C4E4B0050EF80 /* ImagePreviewController.swift in Sources */,
+				9865CD8E2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD110D81289C4E4B0050EF80 /* LinearProgressView.swift in Sources */,
 				CD110D82289C4E4B0050EF80 /* ComposeController.swift in Sources */,
 				CD110D83289C4E4B0050EF80 /* WeeklyPlanFilterController.swift in Sources */,
 				CD110D84289C4E4B0050EF80 /* ChangePasswordController.swift in Sources */,
+				9841B3832A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD110D85289C4E4B0050EF80 /* NoticeBoardListController.swift in Sources */,
 				CD110D86289C4E4B0050EF80 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD110D87289C4E4B0050EF80 /* TNSubject.swift in Sources */,
@@ -14085,6 +14543,7 @@
 				CD1490DE29365C9400E6A56B /* MessageDetailController.swift in Sources */,
 				CD1490DF29365C9400E6A56B /* WeeklyPlanController.swift in Sources */,
 				CD1490E029365C9400E6A56B /* TMyProfile.swift in Sources */,
+				98B10CF72A3C643700FE000E /* TopHeaderView.swift in Sources */,
 				CD1490E129365C9400E6A56B /* TInboxMessage.swift in Sources */,
 				CD1490E229365C9400E6A56B /* CalendarSection.swift in Sources */,
 				CD1490E329365C9400E6A56B /* DirectoryCreationOperation.swift in Sources */,
@@ -14100,12 +14559,14 @@
 				CD1490ED29365C9400E6A56B /* WeeklyPlanCell.swift in Sources */,
 				CD1490EE29365C9400E6A56B /* KSTokenView.swift in Sources */,
 				CD1490EF29365C9400E6A56B /* TNotification.swift in Sources */,
+				9841B3B02A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD1490F029365C9400E6A56B /* UploadFTP.swift in Sources */,
 				CD1490F129365C9400E6A56B /* WebViewViewController.swift in Sources */,
 				CD1490F229365C9400E6A56B /* ProgressViewBar.swift in Sources */,
 				CD1490F329365C9400E6A56B /* WeeklyPlanTable.swift in Sources */,
 				CD1490F429365C9400E6A56B /* GalleryListController.swift in Sources */,
 				CD1490F529365C9400E6A56B /* TNPayment.swift in Sources */,
+				9862F6362A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD1490F629365C9400E6A56B /* APIHelper.swift in Sources */,
 				CD1490F729365C9400E6A56B /* UIViewController+PopUp.swift in Sources */,
 				CD1490F829365C9400E6A56B /* TNNoticeBoardDetail.swift in Sources */,
@@ -14118,6 +14579,7 @@
 				CD1490FF29365C9400E6A56B /* TNAwarnessArticleDetail.swift in Sources */,
 				CD14910029365C9400E6A56B /* PagerController.swift in Sources */,
 				CD14910129365C9400E6A56B /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D532A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD14910229365C9400E6A56B /* FSCalendarCollectionView.m in Sources */,
 				CD14910329365C9400E6A56B /* APIUrls.swift in Sources */,
 				CD14910429365C9400E6A56B /* FSCalendarDelegationProxy.m in Sources */,
@@ -14155,10 +14617,12 @@
 				CD14912429365C9400E6A56B /* ReadSelectViewController.swift in Sources */,
 				CD14912529365C9400E6A56B /* FSCalendarDelegationFactory.m in Sources */,
 				CD14912629365C9400E6A56B /* ImagePreviewController.swift in Sources */,
+				9865CD902A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD14912729365C9400E6A56B /* LinearProgressView.swift in Sources */,
 				CD14912829365C9400E6A56B /* ComposeController.swift in Sources */,
 				CD14912929365C9400E6A56B /* WeeklyPlanFilterController.swift in Sources */,
 				CD14912A29365C9400E6A56B /* ChangePasswordController.swift in Sources */,
+				9841B3852A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD14912B29365C9400E6A56B /* NoticeBoardListController.swift in Sources */,
 				CD14912C29365C9400E6A56B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD14912D29365C9400E6A56B /* TNSubject.swift in Sources */,
@@ -14215,6 +14679,7 @@
 				CD16688727DA99C300F31356 /* MessageDetailController.swift in Sources */,
 				CD16688827DA99C300F31356 /* WeeklyPlanController.swift in Sources */,
 				CD16688927DA99C300F31356 /* TMyProfile.swift in Sources */,
+				98B10D022A3C643F00FE000E /* TopHeaderView.swift in Sources */,
 				CD16688A27DA99C300F31356 /* TInboxMessage.swift in Sources */,
 				CD16688B27DA99C300F31356 /* CalendarSection.swift in Sources */,
 				CD16688C27DA99C300F31356 /* DirectoryCreationOperation.swift in Sources */,
@@ -14230,12 +14695,14 @@
 				CD16689627DA99C300F31356 /* WeeklyPlanCell.swift in Sources */,
 				CD16689727DA99C300F31356 /* KSTokenView.swift in Sources */,
 				CD16689827DA99C300F31356 /* TNotification.swift in Sources */,
+				9841B3A52A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD16689927DA99C300F31356 /* UploadFTP.swift in Sources */,
 				CD16689A27DA99C300F31356 /* WebViewViewController.swift in Sources */,
 				CD16689B27DA99C300F31356 /* ProgressViewBar.swift in Sources */,
 				CD16689C27DA99C300F31356 /* WeeklyPlanTable.swift in Sources */,
 				CD16689D27DA99C300F31356 /* GalleryListController.swift in Sources */,
 				CD16689E27DA99C300F31356 /* TNPayment.swift in Sources */,
+				9862F62B2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD16689F27DA99C300F31356 /* APIHelper.swift in Sources */,
 				CD1668A027DA99C300F31356 /* UIViewController+PopUp.swift in Sources */,
 				CD1668A127DA99C300F31356 /* TNNoticeBoardDetail.swift in Sources */,
@@ -14248,6 +14715,7 @@
 				CD1668A827DA99C300F31356 /* TNAwarnessArticleDetail.swift in Sources */,
 				CD1668A927DA99C300F31356 /* PagerController.swift in Sources */,
 				CD1668AA27DA99C300F31356 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D482A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD1668AB27DA99C300F31356 /* FSCalendarCollectionView.m in Sources */,
 				CD1668AC27DA99C300F31356 /* APIUrls.swift in Sources */,
 				CD1668AD27DA99C300F31356 /* FSCalendarDelegationProxy.m in Sources */,
@@ -14285,10 +14753,12 @@
 				CD1668CD27DA99C300F31356 /* ReadSelectViewController.swift in Sources */,
 				CD1668CE27DA99C300F31356 /* FSCalendarDelegationFactory.m in Sources */,
 				CD1668CF27DA99C300F31356 /* ImagePreviewController.swift in Sources */,
+				9865CD852A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD1668D027DA99C300F31356 /* LinearProgressView.swift in Sources */,
 				CD1668D127DA99C300F31356 /* ComposeController.swift in Sources */,
 				CD1668D227DA99C300F31356 /* WeeklyPlanFilterController.swift in Sources */,
 				CD1668D327DA99C300F31356 /* ChangePasswordController.swift in Sources */,
+				9841B37A2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD1668D427DA99C300F31356 /* NoticeBoardListController.swift in Sources */,
 				CD1668D527DA99C300F31356 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD1668D627DA99C300F31356 /* TNSubject.swift in Sources */,
@@ -14345,6 +14815,7 @@
 				CD18CD9A27DA5E10004D33BC /* MessageDetailController.swift in Sources */,
 				CD18CD9B27DA5E10004D33BC /* WeeklyPlanController.swift in Sources */,
 				CD18CD9C27DA5E10004D33BC /* TMyProfile.swift in Sources */,
+				98B10D032A3C643F00FE000E /* TopHeaderView.swift in Sources */,
 				CD18CD9D27DA5E10004D33BC /* TInboxMessage.swift in Sources */,
 				CD18CD9E27DA5E10004D33BC /* CalendarSection.swift in Sources */,
 				CD18CD9F27DA5E10004D33BC /* DirectoryCreationOperation.swift in Sources */,
@@ -14360,12 +14831,14 @@
 				CD18CDA927DA5E10004D33BC /* WeeklyPlanCell.swift in Sources */,
 				CD18CDAA27DA5E10004D33BC /* KSTokenView.swift in Sources */,
 				CD18CDAB27DA5E10004D33BC /* TNotification.swift in Sources */,
+				9841B3A42A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD18CDAC27DA5E10004D33BC /* UploadFTP.swift in Sources */,
 				CD18CDAD27DA5E10004D33BC /* WebViewViewController.swift in Sources */,
 				CD18CDAE27DA5E10004D33BC /* ProgressViewBar.swift in Sources */,
 				CD18CDAF27DA5E10004D33BC /* WeeklyPlanTable.swift in Sources */,
 				CD18CDB027DA5E10004D33BC /* GalleryListController.swift in Sources */,
 				CD18CDB127DA5E10004D33BC /* TNPayment.swift in Sources */,
+				9862F62A2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD18CDB227DA5E10004D33BC /* APIHelper.swift in Sources */,
 				CD18CDB327DA5E10004D33BC /* UIViewController+PopUp.swift in Sources */,
 				CD18CDB427DA5E10004D33BC /* TNNoticeBoardDetail.swift in Sources */,
@@ -14378,6 +14851,7 @@
 				CD18CDBB27DA5E10004D33BC /* TNAwarnessArticleDetail.swift in Sources */,
 				CD18CDBC27DA5E10004D33BC /* PagerController.swift in Sources */,
 				CD18CDBD27DA5E10004D33BC /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D472A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD18CDBE27DA5E10004D33BC /* FSCalendarCollectionView.m in Sources */,
 				CD18CDBF27DA5E10004D33BC /* APIUrls.swift in Sources */,
 				CD18CDC027DA5E10004D33BC /* FSCalendarDelegationProxy.m in Sources */,
@@ -14415,10 +14889,12 @@
 				CD18CDE027DA5E10004D33BC /* ReadSelectViewController.swift in Sources */,
 				CD18CDE127DA5E10004D33BC /* FSCalendarDelegationFactory.m in Sources */,
 				CD18CDE227DA5E10004D33BC /* ImagePreviewController.swift in Sources */,
+				9865CD842A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD18CDE327DA5E10004D33BC /* LinearProgressView.swift in Sources */,
 				CD18CDE427DA5E10004D33BC /* ComposeController.swift in Sources */,
 				CD18CDE527DA5E10004D33BC /* WeeklyPlanFilterController.swift in Sources */,
 				CD18CDE627DA5E10004D33BC /* ChangePasswordController.swift in Sources */,
+				9841B3792A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD18CDE727DA5E10004D33BC /* NoticeBoardListController.swift in Sources */,
 				CD18CDE827DA5E10004D33BC /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD18CDE927DA5E10004D33BC /* TNSubject.swift in Sources */,
@@ -14475,6 +14951,7 @@
 				CD3A90552765A2F500B9AA49 /* MessageDetailController.swift in Sources */,
 				CD3A90562765A2F500B9AA49 /* WeeklyPlanController.swift in Sources */,
 				CD3A90572765A2F500B9AA49 /* TMyProfile.swift in Sources */,
+				98B10CF52A3C643400FE000E /* TopHeaderView.swift in Sources */,
 				CD3A90582765A2F500B9AA49 /* TInboxMessage.swift in Sources */,
 				CD3A90592765A2F500B9AA49 /* CalendarSection.swift in Sources */,
 				CD3A905A2765A2F500B9AA49 /* DirectoryCreationOperation.swift in Sources */,
@@ -14490,12 +14967,14 @@
 				CD3A90642765A2F500B9AA49 /* WeeklyPlanCell.swift in Sources */,
 				CD3A90652765A2F500B9AA49 /* KSTokenView.swift in Sources */,
 				CD3A90662765A2F500B9AA49 /* TNotification.swift in Sources */,
+				9841B3A12A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD3A90672765A2F500B9AA49 /* UploadFTP.swift in Sources */,
 				CD3A90682765A2F500B9AA49 /* WebViewViewController.swift in Sources */,
 				CD3A90692765A2F500B9AA49 /* ProgressViewBar.swift in Sources */,
 				CD3A906A2765A2F500B9AA49 /* WeeklyPlanTable.swift in Sources */,
 				CD3A906B2765A2F500B9AA49 /* GalleryListController.swift in Sources */,
 				CD3A906C2765A2F500B9AA49 /* TNPayment.swift in Sources */,
+				9862F6272A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD3A906D2765A2F500B9AA49 /* APIHelper.swift in Sources */,
 				CD3A906E2765A2F500B9AA49 /* UIViewController+PopUp.swift in Sources */,
 				CD3A906F2765A2F500B9AA49 /* TNNoticeBoardDetail.swift in Sources */,
@@ -14508,6 +14987,7 @@
 				CD3A90762765A2F500B9AA49 /* TNAwarnessArticleDetail.swift in Sources */,
 				CD3A90772765A2F500B9AA49 /* PagerController.swift in Sources */,
 				CD3A90782765A2F500B9AA49 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D442A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD3A90792765A2F500B9AA49 /* FSCalendarCollectionView.m in Sources */,
 				CD3A907A2765A2F500B9AA49 /* APIUrls.swift in Sources */,
 				CD3A907B2765A2F500B9AA49 /* FSCalendarDelegationProxy.m in Sources */,
@@ -14545,10 +15025,12 @@
 				CD3A909B2765A2F500B9AA49 /* ReadSelectViewController.swift in Sources */,
 				CD3A909C2765A2F500B9AA49 /* FSCalendarDelegationFactory.m in Sources */,
 				CD3A909D2765A2F500B9AA49 /* ImagePreviewController.swift in Sources */,
+				9865CD812A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD3A909E2765A2F500B9AA49 /* LinearProgressView.swift in Sources */,
 				CD3A909F2765A2F500B9AA49 /* ComposeController.swift in Sources */,
 				CD3A90A02765A2F500B9AA49 /* WeeklyPlanFilterController.swift in Sources */,
 				CD3A90A12765A2F500B9AA49 /* ChangePasswordController.swift in Sources */,
+				9841B3762A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD3A90A22765A2F500B9AA49 /* NoticeBoardListController.swift in Sources */,
 				CD3A90A32765A2F500B9AA49 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD3A90A42765A2F500B9AA49 /* TNSubject.swift in Sources */,
@@ -14605,6 +15087,7 @@
 				CD6FD20427E133CC00C1C11C /* MessageDetailController.swift in Sources */,
 				CD6FD20527E133CC00C1C11C /* WeeklyPlanController.swift in Sources */,
 				CD6FD20627E133CC00C1C11C /* TMyProfile.swift in Sources */,
+				98B10D012A3C643E00FE000E /* TopHeaderView.swift in Sources */,
 				CD6FD20727E133CC00C1C11C /* TInboxMessage.swift in Sources */,
 				CD6FD20827E133CC00C1C11C /* CalendarSection.swift in Sources */,
 				CD6FD20927E133CC00C1C11C /* DirectoryCreationOperation.swift in Sources */,
@@ -14620,12 +15103,14 @@
 				CD6FD21327E133CC00C1C11C /* WeeklyPlanCell.swift in Sources */,
 				CD6FD21427E133CC00C1C11C /* KSTokenView.swift in Sources */,
 				CD6FD21527E133CC00C1C11C /* TNotification.swift in Sources */,
+				9841B3A62A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD6FD21627E133CC00C1C11C /* UploadFTP.swift in Sources */,
 				CD6FD21727E133CC00C1C11C /* WebViewViewController.swift in Sources */,
 				CD6FD21827E133CC00C1C11C /* ProgressViewBar.swift in Sources */,
 				CD6FD21927E133CC00C1C11C /* WeeklyPlanTable.swift in Sources */,
 				CD6FD21A27E133CC00C1C11C /* GalleryListController.swift in Sources */,
 				CD6FD21B27E133CC00C1C11C /* TNPayment.swift in Sources */,
+				9862F62C2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD6FD21C27E133CC00C1C11C /* APIHelper.swift in Sources */,
 				CD6FD21D27E133CC00C1C11C /* UIViewController+PopUp.swift in Sources */,
 				CD6FD21E27E133CC00C1C11C /* TNNoticeBoardDetail.swift in Sources */,
@@ -14638,6 +15123,7 @@
 				CD6FD22527E133CC00C1C11C /* TNAwarnessArticleDetail.swift in Sources */,
 				CD6FD22627E133CC00C1C11C /* PagerController.swift in Sources */,
 				CD6FD22727E133CC00C1C11C /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D492A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD6FD22827E133CC00C1C11C /* FSCalendarCollectionView.m in Sources */,
 				CD6FD22927E133CC00C1C11C /* APIUrls.swift in Sources */,
 				CD6FD22A27E133CC00C1C11C /* FSCalendarDelegationProxy.m in Sources */,
@@ -14675,10 +15161,12 @@
 				CD6FD24A27E133CC00C1C11C /* ReadSelectViewController.swift in Sources */,
 				CD6FD24B27E133CC00C1C11C /* FSCalendarDelegationFactory.m in Sources */,
 				CD6FD24C27E133CC00C1C11C /* ImagePreviewController.swift in Sources */,
+				9865CD862A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD6FD24D27E133CC00C1C11C /* LinearProgressView.swift in Sources */,
 				CD6FD24E27E133CC00C1C11C /* ComposeController.swift in Sources */,
 				CD6FD24F27E133CC00C1C11C /* WeeklyPlanFilterController.swift in Sources */,
 				CD6FD25027E133CC00C1C11C /* ChangePasswordController.swift in Sources */,
+				9841B37B2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD6FD25127E133CC00C1C11C /* NoticeBoardListController.swift in Sources */,
 				CD6FD25227E133CC00C1C11C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD6FD25327E133CC00C1C11C /* TNSubject.swift in Sources */,
@@ -14735,6 +15223,7 @@
 				CD713E872900092500A16A3A /* MessageDetailController.swift in Sources */,
 				CD713E882900092500A16A3A /* WeeklyPlanController.swift in Sources */,
 				CD713E892900092500A16A3A /* TMyProfile.swift in Sources */,
+				98B10CF82A3C643800FE000E /* TopHeaderView.swift in Sources */,
 				CD713E8A2900092500A16A3A /* TInboxMessage.swift in Sources */,
 				CD713E8B2900092500A16A3A /* CalendarSection.swift in Sources */,
 				CD713E8C2900092500A16A3A /* DirectoryCreationOperation.swift in Sources */,
@@ -14750,12 +15239,14 @@
 				CD713E962900092500A16A3A /* WeeklyPlanCell.swift in Sources */,
 				CD713E972900092500A16A3A /* KSTokenView.swift in Sources */,
 				CD713E982900092500A16A3A /* TNotification.swift in Sources */,
+				9841B3AF2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD713E992900092500A16A3A /* UploadFTP.swift in Sources */,
 				CD713E9A2900092500A16A3A /* WebViewViewController.swift in Sources */,
 				CD713E9B2900092500A16A3A /* ProgressViewBar.swift in Sources */,
 				CD713E9C2900092500A16A3A /* WeeklyPlanTable.swift in Sources */,
 				CD713E9D2900092500A16A3A /* GalleryListController.swift in Sources */,
 				CD713E9E2900092500A16A3A /* TNPayment.swift in Sources */,
+				9862F6352A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD713E9F2900092500A16A3A /* APIHelper.swift in Sources */,
 				CD713EA02900092500A16A3A /* UIViewController+PopUp.swift in Sources */,
 				CD713EA12900092500A16A3A /* TNNoticeBoardDetail.swift in Sources */,
@@ -14768,6 +15259,7 @@
 				CD713EA82900092500A16A3A /* TNAwarnessArticleDetail.swift in Sources */,
 				CD713EA92900092500A16A3A /* PagerController.swift in Sources */,
 				CD713EAA2900092500A16A3A /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D522A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD713EAB2900092500A16A3A /* FSCalendarCollectionView.m in Sources */,
 				CD713EAC2900092500A16A3A /* APIUrls.swift in Sources */,
 				CD713EAD2900092500A16A3A /* FSCalendarDelegationProxy.m in Sources */,
@@ -14805,10 +15297,12 @@
 				CD713ECD2900092500A16A3A /* ReadSelectViewController.swift in Sources */,
 				CD713ECE2900092500A16A3A /* FSCalendarDelegationFactory.m in Sources */,
 				CD713ECF2900092500A16A3A /* ImagePreviewController.swift in Sources */,
+				9865CD8F2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD713ED02900092500A16A3A /* LinearProgressView.swift in Sources */,
 				CD713ED12900092500A16A3A /* ComposeController.swift in Sources */,
 				CD713ED22900092500A16A3A /* WeeklyPlanFilterController.swift in Sources */,
 				CD713ED32900092500A16A3A /* ChangePasswordController.swift in Sources */,
+				9841B3842A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD713ED42900092500A16A3A /* NoticeBoardListController.swift in Sources */,
 				CD713ED52900092500A16A3A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD713ED62900092500A16A3A /* TNSubject.swift in Sources */,
@@ -14865,6 +15359,7 @@
 				CD760119295B59FA00812F7B /* MessageDetailController.swift in Sources */,
 				CD76011A295B59FA00812F7B /* WeeklyPlanController.swift in Sources */,
 				CD76011B295B59FA00812F7B /* TMyProfile.swift in Sources */,
+				98B10CF62A3C643600FE000E /* TopHeaderView.swift in Sources */,
 				CD76011C295B59FA00812F7B /* TInboxMessage.swift in Sources */,
 				CD76011D295B59FA00812F7B /* CalendarSection.swift in Sources */,
 				CD76011E295B59FA00812F7B /* DirectoryCreationOperation.swift in Sources */,
@@ -14880,12 +15375,14 @@
 				CD760128295B59FA00812F7B /* WeeklyPlanCell.swift in Sources */,
 				CD760129295B59FA00812F7B /* KSTokenView.swift in Sources */,
 				CD76012A295B59FA00812F7B /* TNotification.swift in Sources */,
+				9841B3B12A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CD76012B295B59FA00812F7B /* UploadFTP.swift in Sources */,
 				CD76012C295B59FA00812F7B /* WebViewViewController.swift in Sources */,
 				CD76012D295B59FA00812F7B /* ProgressViewBar.swift in Sources */,
 				CD76012E295B59FA00812F7B /* WeeklyPlanTable.swift in Sources */,
 				CD76012F295B59FA00812F7B /* GalleryListController.swift in Sources */,
 				CD760130295B59FA00812F7B /* TNPayment.swift in Sources */,
+				9862F6372A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CD760131295B59FA00812F7B /* APIHelper.swift in Sources */,
 				CD760132295B59FA00812F7B /* UIViewController+PopUp.swift in Sources */,
 				CD760133295B59FA00812F7B /* TNNoticeBoardDetail.swift in Sources */,
@@ -14898,6 +15395,7 @@
 				CD76013A295B59FA00812F7B /* TNAwarnessArticleDetail.swift in Sources */,
 				CD76013B295B59FA00812F7B /* PagerController.swift in Sources */,
 				CD76013C295B59FA00812F7B /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D542A3C654500FE000E /* View+Helper.swift in Sources */,
 				CD76013D295B59FA00812F7B /* FSCalendarCollectionView.m in Sources */,
 				CD76013E295B59FA00812F7B /* APIUrls.swift in Sources */,
 				CD76013F295B59FA00812F7B /* FSCalendarDelegationProxy.m in Sources */,
@@ -14935,10 +15433,12 @@
 				CD76015F295B59FA00812F7B /* ReadSelectViewController.swift in Sources */,
 				CD760160295B59FA00812F7B /* FSCalendarDelegationFactory.m in Sources */,
 				CD760161295B59FA00812F7B /* ImagePreviewController.swift in Sources */,
+				9865CD912A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CD760162295B59FA00812F7B /* LinearProgressView.swift in Sources */,
 				CD760163295B59FA00812F7B /* ComposeController.swift in Sources */,
 				CD760164295B59FA00812F7B /* WeeklyPlanFilterController.swift in Sources */,
 				CD760165295B59FA00812F7B /* ChangePasswordController.swift in Sources */,
+				9841B3862A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CD760166295B59FA00812F7B /* NoticeBoardListController.swift in Sources */,
 				CD760167295B59FA00812F7B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CD760168295B59FA00812F7B /* TNSubject.swift in Sources */,
@@ -14995,6 +15495,7 @@
 				CDD235E7289AD40100A7121D /* MessageDetailController.swift in Sources */,
 				CDD235E8289AD40100A7121D /* WeeklyPlanController.swift in Sources */,
 				CDD235E9289AD40100A7121D /* TMyProfile.swift in Sources */,
+				98B10CFF2A3C643D00FE000E /* TopHeaderView.swift in Sources */,
 				CDD235EA289AD40100A7121D /* TInboxMessage.swift in Sources */,
 				CDD235EB289AD40100A7121D /* CalendarSection.swift in Sources */,
 				CDD235EC289AD40100A7121D /* DirectoryCreationOperation.swift in Sources */,
@@ -15010,12 +15511,14 @@
 				CDD235F6289AD40100A7121D /* WeeklyPlanCell.swift in Sources */,
 				CDD235F7289AD40100A7121D /* KSTokenView.swift in Sources */,
 				CDD235F8289AD40100A7121D /* TNotification.swift in Sources */,
+				9841B3A82A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CDD235F9289AD40100A7121D /* UploadFTP.swift in Sources */,
 				CDD235FA289AD40100A7121D /* WebViewViewController.swift in Sources */,
 				CDD235FB289AD40100A7121D /* ProgressViewBar.swift in Sources */,
 				CDD235FC289AD40100A7121D /* WeeklyPlanTable.swift in Sources */,
 				CDD235FD289AD40100A7121D /* GalleryListController.swift in Sources */,
 				CDD235FE289AD40100A7121D /* TNPayment.swift in Sources */,
+				9862F62E2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDD235FF289AD40100A7121D /* APIHelper.swift in Sources */,
 				CDD23600289AD40100A7121D /* UIViewController+PopUp.swift in Sources */,
 				CDD23601289AD40100A7121D /* TNNoticeBoardDetail.swift in Sources */,
@@ -15028,6 +15531,7 @@
 				CDD23608289AD40100A7121D /* TNAwarnessArticleDetail.swift in Sources */,
 				CDD23609289AD40100A7121D /* PagerController.swift in Sources */,
 				CDD2360A289AD40100A7121D /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D4B2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CDD2360B289AD40100A7121D /* FSCalendarCollectionView.m in Sources */,
 				CDD2360C289AD40100A7121D /* APIUrls.swift in Sources */,
 				CDD2360D289AD40100A7121D /* FSCalendarDelegationProxy.m in Sources */,
@@ -15065,10 +15569,12 @@
 				CDD2362D289AD40100A7121D /* ReadSelectViewController.swift in Sources */,
 				CDD2362E289AD40100A7121D /* FSCalendarDelegationFactory.m in Sources */,
 				CDD2362F289AD40100A7121D /* ImagePreviewController.swift in Sources */,
+				9865CD882A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CDD23630289AD40100A7121D /* LinearProgressView.swift in Sources */,
 				CDD23631289AD40100A7121D /* ComposeController.swift in Sources */,
 				CDD23632289AD40100A7121D /* WeeklyPlanFilterController.swift in Sources */,
 				CDD23633289AD40100A7121D /* ChangePasswordController.swift in Sources */,
+				9841B37D2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CDD23634289AD40100A7121D /* NoticeBoardListController.swift in Sources */,
 				CDD23635289AD40100A7121D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDD23636289AD40100A7121D /* TNSubject.swift in Sources */,
@@ -15125,6 +15631,7 @@
 				CDD23685289AD87000A7121D /* MessageDetailController.swift in Sources */,
 				CDD23686289AD87000A7121D /* WeeklyPlanController.swift in Sources */,
 				CDD23687289AD87000A7121D /* TMyProfile.swift in Sources */,
+				98B10CFE2A3C643C00FE000E /* TopHeaderView.swift in Sources */,
 				CDD23688289AD87000A7121D /* TInboxMessage.swift in Sources */,
 				CDD23689289AD87000A7121D /* CalendarSection.swift in Sources */,
 				CDD2368A289AD87000A7121D /* DirectoryCreationOperation.swift in Sources */,
@@ -15140,12 +15647,14 @@
 				CDD23694289AD87000A7121D /* WeeklyPlanCell.swift in Sources */,
 				CDD23695289AD87000A7121D /* KSTokenView.swift in Sources */,
 				CDD23696289AD87000A7121D /* TNotification.swift in Sources */,
+				9841B3A92A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CDD23697289AD87000A7121D /* UploadFTP.swift in Sources */,
 				CDD23698289AD87000A7121D /* WebViewViewController.swift in Sources */,
 				CDD23699289AD87000A7121D /* ProgressViewBar.swift in Sources */,
 				CDD2369A289AD87000A7121D /* WeeklyPlanTable.swift in Sources */,
 				CDD2369B289AD87000A7121D /* GalleryListController.swift in Sources */,
 				CDD2369C289AD87000A7121D /* TNPayment.swift in Sources */,
+				9862F62F2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDD2369D289AD87000A7121D /* APIHelper.swift in Sources */,
 				CDD2369E289AD87000A7121D /* UIViewController+PopUp.swift in Sources */,
 				CDD2369F289AD87000A7121D /* TNNoticeBoardDetail.swift in Sources */,
@@ -15158,6 +15667,7 @@
 				CDD236A6289AD87000A7121D /* TNAwarnessArticleDetail.swift in Sources */,
 				CDD236A7289AD87000A7121D /* PagerController.swift in Sources */,
 				CDD236A8289AD87000A7121D /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D4C2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CDD236A9289AD87000A7121D /* FSCalendarCollectionView.m in Sources */,
 				CDD236AA289AD87000A7121D /* APIUrls.swift in Sources */,
 				CDD236AB289AD87000A7121D /* FSCalendarDelegationProxy.m in Sources */,
@@ -15195,10 +15705,12 @@
 				CDD236CB289AD87000A7121D /* ReadSelectViewController.swift in Sources */,
 				CDD236CC289AD87000A7121D /* FSCalendarDelegationFactory.m in Sources */,
 				CDD236CD289AD87000A7121D /* ImagePreviewController.swift in Sources */,
+				9865CD892A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CDD236CE289AD87000A7121D /* LinearProgressView.swift in Sources */,
 				CDD236CF289AD87000A7121D /* ComposeController.swift in Sources */,
 				CDD236D0289AD87000A7121D /* WeeklyPlanFilterController.swift in Sources */,
 				CDD236D1289AD87000A7121D /* ChangePasswordController.swift in Sources */,
+				9841B37E2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CDD236D2289AD87000A7121D /* NoticeBoardListController.swift in Sources */,
 				CDD236D3289AD87000A7121D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDD236D4289AD87000A7121D /* TNSubject.swift in Sources */,
@@ -15255,6 +15767,7 @@
 				CDD23723289AE0D600A7121D /* MessageDetailController.swift in Sources */,
 				CDD23724289AE0D600A7121D /* WeeklyPlanController.swift in Sources */,
 				CDD23725289AE0D600A7121D /* TMyProfile.swift in Sources */,
+				98B10CFD2A3C643C00FE000E /* TopHeaderView.swift in Sources */,
 				CDD23726289AE0D600A7121D /* TInboxMessage.swift in Sources */,
 				CDD23727289AE0D600A7121D /* CalendarSection.swift in Sources */,
 				CDD23728289AE0D600A7121D /* DirectoryCreationOperation.swift in Sources */,
@@ -15270,12 +15783,14 @@
 				CDD23732289AE0D600A7121D /* WeeklyPlanCell.swift in Sources */,
 				CDD23733289AE0D600A7121D /* KSTokenView.swift in Sources */,
 				CDD23734289AE0D600A7121D /* TNotification.swift in Sources */,
+				9841B3AA2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CDD23735289AE0D600A7121D /* UploadFTP.swift in Sources */,
 				CDD23736289AE0D600A7121D /* WebViewViewController.swift in Sources */,
 				CDD23737289AE0D600A7121D /* ProgressViewBar.swift in Sources */,
 				CDD23738289AE0D600A7121D /* WeeklyPlanTable.swift in Sources */,
 				CDD23739289AE0D600A7121D /* GalleryListController.swift in Sources */,
 				CDD2373A289AE0D600A7121D /* TNPayment.swift in Sources */,
+				9862F6302A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDD2373B289AE0D600A7121D /* APIHelper.swift in Sources */,
 				CDD2373C289AE0D600A7121D /* UIViewController+PopUp.swift in Sources */,
 				CDD2373D289AE0D600A7121D /* TNNoticeBoardDetail.swift in Sources */,
@@ -15288,6 +15803,7 @@
 				CDD23744289AE0D600A7121D /* TNAwarnessArticleDetail.swift in Sources */,
 				CDD23745289AE0D600A7121D /* PagerController.swift in Sources */,
 				CDD23746289AE0D600A7121D /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D4D2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CDD23747289AE0D600A7121D /* FSCalendarCollectionView.m in Sources */,
 				CDD23748289AE0D600A7121D /* APIUrls.swift in Sources */,
 				CDD23749289AE0D600A7121D /* FSCalendarDelegationProxy.m in Sources */,
@@ -15325,10 +15841,12 @@
 				CDD23769289AE0D600A7121D /* ReadSelectViewController.swift in Sources */,
 				CDD2376A289AE0D600A7121D /* FSCalendarDelegationFactory.m in Sources */,
 				CDD2376B289AE0D600A7121D /* ImagePreviewController.swift in Sources */,
+				9865CD8A2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CDD2376C289AE0D600A7121D /* LinearProgressView.swift in Sources */,
 				CDD2376D289AE0D600A7121D /* ComposeController.swift in Sources */,
 				CDD2376E289AE0D600A7121D /* WeeklyPlanFilterController.swift in Sources */,
 				CDD2376F289AE0D600A7121D /* ChangePasswordController.swift in Sources */,
+				9841B37F2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CDD23770289AE0D600A7121D /* NoticeBoardListController.swift in Sources */,
 				CDD23771289AE0D600A7121D /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDD23772289AE0D600A7121D /* TNSubject.swift in Sources */,
@@ -15385,6 +15903,7 @@
 				CDE5DBCD282551D400A979FA /* MessageDetailController.swift in Sources */,
 				CDE5DBCE282551D400A979FA /* WeeklyPlanController.swift in Sources */,
 				CDE5DBCF282551D400A979FA /* TMyProfile.swift in Sources */,
+				98B10D002A3C643E00FE000E /* TopHeaderView.swift in Sources */,
 				CDE5DBD0282551D400A979FA /* TInboxMessage.swift in Sources */,
 				CDE5DBD1282551D400A979FA /* CalendarSection.swift in Sources */,
 				CDE5DBD2282551D400A979FA /* DirectoryCreationOperation.swift in Sources */,
@@ -15400,12 +15919,14 @@
 				CDE5DBDC282551D400A979FA /* WeeklyPlanCell.swift in Sources */,
 				CDE5DBDD282551D400A979FA /* KSTokenView.swift in Sources */,
 				CDE5DBDE282551D400A979FA /* TNotification.swift in Sources */,
+				9841B3A72A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CDE5DBDF282551D400A979FA /* UploadFTP.swift in Sources */,
 				CDE5DBE0282551D400A979FA /* WebViewViewController.swift in Sources */,
 				CDE5DBE1282551D400A979FA /* ProgressViewBar.swift in Sources */,
 				CDE5DBE2282551D400A979FA /* WeeklyPlanTable.swift in Sources */,
 				CDE5DBE3282551D400A979FA /* GalleryListController.swift in Sources */,
 				CDE5DBE4282551D400A979FA /* TNPayment.swift in Sources */,
+				9862F62D2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDE5DBE5282551D400A979FA /* APIHelper.swift in Sources */,
 				CDE5DBE6282551D400A979FA /* UIViewController+PopUp.swift in Sources */,
 				CDE5DBE7282551D400A979FA /* TNNoticeBoardDetail.swift in Sources */,
@@ -15418,6 +15939,7 @@
 				CDE5DBEE282551D400A979FA /* TNAwarnessArticleDetail.swift in Sources */,
 				CDE5DBEF282551D400A979FA /* PagerController.swift in Sources */,
 				CDE5DBF0282551D400A979FA /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D4A2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CDE5DBF1282551D400A979FA /* FSCalendarCollectionView.m in Sources */,
 				CDE5DBF2282551D400A979FA /* APIUrls.swift in Sources */,
 				CDE5DBF3282551D400A979FA /* FSCalendarDelegationProxy.m in Sources */,
@@ -15455,10 +15977,12 @@
 				CDE5DC13282551D400A979FA /* ReadSelectViewController.swift in Sources */,
 				CDE5DC14282551D400A979FA /* FSCalendarDelegationFactory.m in Sources */,
 				CDE5DC15282551D400A979FA /* ImagePreviewController.swift in Sources */,
+				9865CD872A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CDE5DC16282551D400A979FA /* LinearProgressView.swift in Sources */,
 				CDE5DC17282551D400A979FA /* ComposeController.swift in Sources */,
 				CDE5DC18282551D400A979FA /* WeeklyPlanFilterController.swift in Sources */,
 				CDE5DC19282551D400A979FA /* ChangePasswordController.swift in Sources */,
+				9841B37C2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CDE5DC1A282551D400A979FA /* NoticeBoardListController.swift in Sources */,
 				CDE5DC1B282551D400A979FA /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDE5DC1C282551D400A979FA /* TNSubject.swift in Sources */,
@@ -15515,6 +16039,7 @@
 				CDE8498D27BEB13F00F16EBE /* MessageDetailController.swift in Sources */,
 				CDE8498E27BEB13F00F16EBE /* WeeklyPlanController.swift in Sources */,
 				CDE8498F27BEB13F00F16EBE /* TMyProfile.swift in Sources */,
+				98B10D052A3C644100FE000E /* TopHeaderView.swift in Sources */,
 				CDE8499027BEB13F00F16EBE /* TInboxMessage.swift in Sources */,
 				CDE8499127BEB13F00F16EBE /* CalendarSection.swift in Sources */,
 				CDE8499227BEB13F00F16EBE /* DirectoryCreationOperation.swift in Sources */,
@@ -15530,12 +16055,14 @@
 				CDE8499C27BEB13F00F16EBE /* WeeklyPlanCell.swift in Sources */,
 				CDE8499D27BEB13F00F16EBE /* KSTokenView.swift in Sources */,
 				CDE8499E27BEB13F00F16EBE /* TNotification.swift in Sources */,
+				9841B3A22A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CDE8499F27BEB13F00F16EBE /* UploadFTP.swift in Sources */,
 				CDE849A027BEB13F00F16EBE /* WebViewViewController.swift in Sources */,
 				CDE849A127BEB13F00F16EBE /* ProgressViewBar.swift in Sources */,
 				CDE849A227BEB13F00F16EBE /* WeeklyPlanTable.swift in Sources */,
 				CDE849A327BEB13F00F16EBE /* GalleryListController.swift in Sources */,
 				CDE849A427BEB13F00F16EBE /* TNPayment.swift in Sources */,
+				9862F6282A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDE849A527BEB13F00F16EBE /* APIHelper.swift in Sources */,
 				CDE849A627BEB13F00F16EBE /* UIViewController+PopUp.swift in Sources */,
 				CDE849A727BEB13F00F16EBE /* TNNoticeBoardDetail.swift in Sources */,
@@ -15548,6 +16075,7 @@
 				CDE849AE27BEB13F00F16EBE /* TNAwarnessArticleDetail.swift in Sources */,
 				CDE849AF27BEB13F00F16EBE /* PagerController.swift in Sources */,
 				CDE849B027BEB13F00F16EBE /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D452A3C654500FE000E /* View+Helper.swift in Sources */,
 				CDE849B127BEB13F00F16EBE /* FSCalendarCollectionView.m in Sources */,
 				CDE849B227BEB13F00F16EBE /* APIUrls.swift in Sources */,
 				CDE849B327BEB13F00F16EBE /* FSCalendarDelegationProxy.m in Sources */,
@@ -15585,10 +16113,12 @@
 				CDE849D327BEB13F00F16EBE /* ReadSelectViewController.swift in Sources */,
 				CDE849D427BEB13F00F16EBE /* FSCalendarDelegationFactory.m in Sources */,
 				CDE849D527BEB13F00F16EBE /* ImagePreviewController.swift in Sources */,
+				9865CD822A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CDE849D627BEB13F00F16EBE /* LinearProgressView.swift in Sources */,
 				CDE849D727BEB13F00F16EBE /* ComposeController.swift in Sources */,
 				CDE849D827BEB13F00F16EBE /* WeeklyPlanFilterController.swift in Sources */,
 				CDE849D927BEB13F00F16EBE /* ChangePasswordController.swift in Sources */,
+				9841B3772A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CDE849DA27BEB13F00F16EBE /* NoticeBoardListController.swift in Sources */,
 				CDE849DB27BEB13F00F16EBE /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDE849DC27BEB13F00F16EBE /* TNSubject.swift in Sources */,
@@ -15645,6 +16175,7 @@
 				CDFBBBA227BED72700FBB765 /* MessageDetailController.swift in Sources */,
 				CDFBBBA327BED72700FBB765 /* WeeklyPlanController.swift in Sources */,
 				CDFBBBA427BED72700FBB765 /* TMyProfile.swift in Sources */,
+				98B10D042A3C644000FE000E /* TopHeaderView.swift in Sources */,
 				CDFBBBA527BED72700FBB765 /* TInboxMessage.swift in Sources */,
 				CDFBBBA627BED72700FBB765 /* CalendarSection.swift in Sources */,
 				CDFBBBA727BED72700FBB765 /* DirectoryCreationOperation.swift in Sources */,
@@ -15660,12 +16191,14 @@
 				CDFBBBB127BED72700FBB765 /* WeeklyPlanCell.swift in Sources */,
 				CDFBBBB227BED72700FBB765 /* KSTokenView.swift in Sources */,
 				CDFBBBB327BED72700FBB765 /* TNotification.swift in Sources */,
+				9841B3A32A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CDFBBBB427BED72700FBB765 /* UploadFTP.swift in Sources */,
 				CDFBBBB527BED72700FBB765 /* WebViewViewController.swift in Sources */,
 				CDFBBBB627BED72700FBB765 /* ProgressViewBar.swift in Sources */,
 				CDFBBBB727BED72700FBB765 /* WeeklyPlanTable.swift in Sources */,
 				CDFBBBB827BED72700FBB765 /* GalleryListController.swift in Sources */,
 				CDFBBBB927BED72700FBB765 /* TNPayment.swift in Sources */,
+				9862F6292A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CDFBBBBA27BED72700FBB765 /* APIHelper.swift in Sources */,
 				CDFBBBBB27BED72700FBB765 /* UIViewController+PopUp.swift in Sources */,
 				CDFBBBBC27BED72700FBB765 /* TNNoticeBoardDetail.swift in Sources */,
@@ -15678,6 +16211,7 @@
 				CDFBBBC327BED72700FBB765 /* TNAwarnessArticleDetail.swift in Sources */,
 				CDFBBBC427BED72700FBB765 /* PagerController.swift in Sources */,
 				CDFBBBC527BED72700FBB765 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D462A3C654500FE000E /* View+Helper.swift in Sources */,
 				CDFBBBC627BED72700FBB765 /* FSCalendarCollectionView.m in Sources */,
 				CDFBBBC727BED72700FBB765 /* APIUrls.swift in Sources */,
 				CDFBBBC827BED72700FBB765 /* FSCalendarDelegationProxy.m in Sources */,
@@ -15715,10 +16249,12 @@
 				CDFBBBE827BED72700FBB765 /* ReadSelectViewController.swift in Sources */,
 				CDFBBBE927BED72700FBB765 /* FSCalendarDelegationFactory.m in Sources */,
 				CDFBBBEA27BED72700FBB765 /* ImagePreviewController.swift in Sources */,
+				9865CD832A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CDFBBBEB27BED72700FBB765 /* LinearProgressView.swift in Sources */,
 				CDFBBBEC27BED72700FBB765 /* ComposeController.swift in Sources */,
 				CDFBBBED27BED72700FBB765 /* WeeklyPlanFilterController.swift in Sources */,
 				CDFBBBEE27BED72700FBB765 /* ChangePasswordController.swift in Sources */,
+				9841B3782A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CDFBBBEF27BED72700FBB765 /* NoticeBoardListController.swift in Sources */,
 				CDFBBBF027BED72700FBB765 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CDFBBBF127BED72700FBB765 /* TNSubject.swift in Sources */,
@@ -15775,6 +16311,7 @@
 				CE0A5F8F24375C8000568C23 /* MessageDetailController.swift in Sources */,
 				CE0A5F9024375C8000568C23 /* WeeklyPlanController.swift in Sources */,
 				CE0A5F9124375C8000568C23 /* TMyProfile.swift in Sources */,
+				98B10CED2A3C642D00FE000E /* TopHeaderView.swift in Sources */,
 				CE0A5F9224375C8000568C23 /* TInboxMessage.swift in Sources */,
 				CE0A5F9324375C8000568C23 /* CalendarSection.swift in Sources */,
 				CE0A5F9424375C8000568C23 /* DirectoryCreationOperation.swift in Sources */,
@@ -15790,12 +16327,14 @@
 				CE0A5F9E24375C8000568C23 /* WeeklyPlanCell.swift in Sources */,
 				CE0A5F9F24375C8000568C23 /* KSTokenView.swift in Sources */,
 				CE0A5FA024375C8000568C23 /* TNotification.swift in Sources */,
+				9841B39A2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE0A5FA124375C8000568C23 /* UploadFTP.swift in Sources */,
 				CE0A5FA224375C8000568C23 /* WebViewViewController.swift in Sources */,
 				CE0A5FA324375C8000568C23 /* ProgressViewBar.swift in Sources */,
 				CE0A5FA424375C8000568C23 /* WeeklyPlanTable.swift in Sources */,
 				CE0A5FA524375C8000568C23 /* GalleryListController.swift in Sources */,
 				CE0A5FA624375C8000568C23 /* TNPayment.swift in Sources */,
+				9862F6202A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE0A5FA724375C8000568C23 /* APIHelper.swift in Sources */,
 				CDB7C3E427480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE0A5FA824375C8000568C23 /* TNNoticeBoardDetail.swift in Sources */,
@@ -15808,6 +16347,7 @@
 				CE0A5FAF24375C8000568C23 /* TNAwarnessArticleDetail.swift in Sources */,
 				CE0A5FB024375C8000568C23 /* PagerController.swift in Sources */,
 				CE0A5FB124375C8000568C23 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D3D2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE0A5FB224375C8000568C23 /* FSCalendarCollectionView.m in Sources */,
 				CE0A5FB324375C8000568C23 /* APIUrls.swift in Sources */,
 				CE0A5FB424375C8000568C23 /* FSCalendarDelegationProxy.m in Sources */,
@@ -15845,10 +16385,12 @@
 				CE0A5FD324375C8000568C23 /* ReadSelectViewController.swift in Sources */,
 				CE0A5FD424375C8000568C23 /* FSCalendarDelegationFactory.m in Sources */,
 				CE0A5FD524375C8000568C23 /* ImagePreviewController.swift in Sources */,
+				9865CD7A2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE0A5FD624375C8000568C23 /* LinearProgressView.swift in Sources */,
 				CE0A5FD724375C8000568C23 /* ComposeController.swift in Sources */,
 				CE0A5FD824375C8000568C23 /* WeeklyPlanFilterController.swift in Sources */,
 				CE0A5FD924375C8000568C23 /* ChangePasswordController.swift in Sources */,
+				9841B36F2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE0A5FDA24375C8000568C23 /* NoticeBoardListController.swift in Sources */,
 				CE0A5FDB24375C8000568C23 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE0A5FDC24375C8000568C23 /* TNSubject.swift in Sources */,
@@ -15905,6 +16447,7 @@
 				CE0FBBE121F9D2CC00C6D924 /* MessageDetailController.swift in Sources */,
 				CE0FBBE221F9D2CC00C6D924 /* WeeklyPlanController.swift in Sources */,
 				CE0FBBE321F9D2CC00C6D924 /* TMyProfile.swift in Sources */,
+				98B10CE82A3C642B00FE000E /* TopHeaderView.swift in Sources */,
 				CE0FBBE421F9D2CC00C6D924 /* TInboxMessage.swift in Sources */,
 				CE0FBBE521F9D2CC00C6D924 /* CalendarSection.swift in Sources */,
 				CE0FBBE621F9D2CC00C6D924 /* DirectoryCreationOperation.swift in Sources */,
@@ -15920,12 +16463,14 @@
 				CE0FBBEF21F9D2CC00C6D924 /* WeeklyPlanCell.swift in Sources */,
 				CE0FBBF021F9D2CC00C6D924 /* KSTokenView.swift in Sources */,
 				CE0FBBF121F9D2CC00C6D924 /* TNotification.swift in Sources */,
+				9841B3952A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE0FBBF221F9D2CC00C6D924 /* UploadFTP.swift in Sources */,
 				CE0FBBF321F9D2CC00C6D924 /* WebViewViewController.swift in Sources */,
 				CE0FBBF421F9D2CC00C6D924 /* ProgressViewBar.swift in Sources */,
 				CE0FBBF521F9D2CC00C6D924 /* WeeklyPlanTable.swift in Sources */,
 				CE0FBBF621F9D2CC00C6D924 /* GalleryListController.swift in Sources */,
 				CE0FBBF721F9D2CC00C6D924 /* TNPayment.swift in Sources */,
+				9862F61B2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE0FBBF821F9D2CC00C6D924 /* APIHelper.swift in Sources */,
 				CDB7C3DE27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE0FBBF921F9D2CC00C6D924 /* TNNoticeBoardDetail.swift in Sources */,
@@ -15938,6 +16483,7 @@
 				CE0FBBFF21F9D2CC00C6D924 /* TNAwarnessArticleDetail.swift in Sources */,
 				CE0FBC0021F9D2CC00C6D924 /* PagerController.swift in Sources */,
 				CE0FBC0121F9D2CC00C6D924 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D382A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE0FBC0221F9D2CC00C6D924 /* FSCalendarCollectionView.m in Sources */,
 				CE0FBC0321F9D2CC00C6D924 /* APIUrls.swift in Sources */,
 				CE0FBC0421F9D2CC00C6D924 /* FSCalendarDelegationProxy.m in Sources */,
@@ -15975,10 +16521,12 @@
 				CE0FBC2321F9D2CC00C6D924 /* ReadSelectViewController.swift in Sources */,
 				CE0FBC2421F9D2CC00C6D924 /* FSCalendarDelegationFactory.m in Sources */,
 				CE0FBC2521F9D2CC00C6D924 /* ImagePreviewController.swift in Sources */,
+				9865CD752A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE0FBC2621F9D2CC00C6D924 /* LinearProgressView.swift in Sources */,
 				CE0FBC2721F9D2CC00C6D924 /* ComposeController.swift in Sources */,
 				CE0FBC2821F9D2CC00C6D924 /* WeeklyPlanFilterController.swift in Sources */,
 				CE0FBC2921F9D2CC00C6D924 /* ChangePasswordController.swift in Sources */,
+				9841B36A2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE0FBC2A21F9D2CC00C6D924 /* NoticeBoardListController.swift in Sources */,
 				CE0FBC2B21F9D2CC00C6D924 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681907241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16035,6 +16583,7 @@
 				CE10EC8A2201D45200F24DE4 /* MessageDetailController.swift in Sources */,
 				CE10EC8B2201D45200F24DE4 /* WeeklyPlanController.swift in Sources */,
 				CE10EC8C2201D45200F24DE4 /* TMyProfile.swift in Sources */,
+				98B10CEA2A3C642C00FE000E /* TopHeaderView.swift in Sources */,
 				CE10EC8D2201D45200F24DE4 /* TInboxMessage.swift in Sources */,
 				CE10EC8E2201D45200F24DE4 /* CalendarSection.swift in Sources */,
 				CE10EC8F2201D45200F24DE4 /* DirectoryCreationOperation.swift in Sources */,
@@ -16050,12 +16599,14 @@
 				CE10EC982201D45200F24DE4 /* WeeklyPlanCell.swift in Sources */,
 				CE10EC992201D45200F24DE4 /* KSTokenView.swift in Sources */,
 				CE10EC9A2201D45200F24DE4 /* TNotification.swift in Sources */,
+				9841B3972A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE10EC9B2201D45200F24DE4 /* UploadFTP.swift in Sources */,
 				CE10EC9C2201D45200F24DE4 /* WebViewViewController.swift in Sources */,
 				CE10EC9D2201D45200F24DE4 /* ProgressViewBar.swift in Sources */,
 				CE10EC9E2201D45200F24DE4 /* WeeklyPlanTable.swift in Sources */,
 				CE10EC9F2201D45200F24DE4 /* GalleryListController.swift in Sources */,
 				CE10ECA02201D45200F24DE4 /* TNPayment.swift in Sources */,
+				9862F61D2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE10ECA12201D45200F24DE4 /* APIHelper.swift in Sources */,
 				CDB7C3E027480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE10ECA22201D45200F24DE4 /* TNNoticeBoardDetail.swift in Sources */,
@@ -16068,6 +16619,7 @@
 				CE10ECA82201D45200F24DE4 /* TNAwarnessArticleDetail.swift in Sources */,
 				CE10ECA92201D45200F24DE4 /* PagerController.swift in Sources */,
 				CE10ECAA2201D45200F24DE4 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D3A2A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE10ECAB2201D45200F24DE4 /* FSCalendarCollectionView.m in Sources */,
 				CE10ECAC2201D45200F24DE4 /* APIUrls.swift in Sources */,
 				CE10ECAD2201D45200F24DE4 /* FSCalendarDelegationProxy.m in Sources */,
@@ -16105,10 +16657,12 @@
 				CE10ECCC2201D45200F24DE4 /* ReadSelectViewController.swift in Sources */,
 				CE10ECCD2201D45200F24DE4 /* FSCalendarDelegationFactory.m in Sources */,
 				CE10ECCE2201D45200F24DE4 /* ImagePreviewController.swift in Sources */,
+				9865CD772A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE10ECCF2201D45200F24DE4 /* LinearProgressView.swift in Sources */,
 				CE10ECD02201D45200F24DE4 /* ComposeController.swift in Sources */,
 				CE10ECD12201D45200F24DE4 /* WeeklyPlanFilterController.swift in Sources */,
 				CE10ECD22201D45200F24DE4 /* ChangePasswordController.swift in Sources */,
+				9841B36C2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE10ECD32201D45200F24DE4 /* NoticeBoardListController.swift in Sources */,
 				CE10ECD42201D45200F24DE4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE68190A241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16165,6 +16719,7 @@
 				CE11981221F82AB200D028D2 /* MessageDetailController.swift in Sources */,
 				CE11981321F82AB200D028D2 /* WeeklyPlanController.swift in Sources */,
 				CE11981421F82AB200D028D2 /* TMyProfile.swift in Sources */,
+				98B10CE72A3C642A00FE000E /* TopHeaderView.swift in Sources */,
 				CE11981521F82AB200D028D2 /* TInboxMessage.swift in Sources */,
 				CE11981621F82AB200D028D2 /* CalendarSection.swift in Sources */,
 				CE11981721F82AB200D028D2 /* DirectoryCreationOperation.swift in Sources */,
@@ -16180,12 +16735,14 @@
 				CE11982021F82AB200D028D2 /* WeeklyPlanCell.swift in Sources */,
 				CE11982121F82AB200D028D2 /* KSTokenView.swift in Sources */,
 				CE11982221F82AB200D028D2 /* TNotification.swift in Sources */,
+				9841B3942A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE11982321F82AB200D028D2 /* UploadFTP.swift in Sources */,
 				CE11982421F82AB200D028D2 /* WebViewViewController.swift in Sources */,
 				CE11982521F82AB200D028D2 /* ProgressViewBar.swift in Sources */,
 				CE11982621F82AB200D028D2 /* WeeklyPlanTable.swift in Sources */,
 				CE11982721F82AB200D028D2 /* GalleryListController.swift in Sources */,
 				CE11982821F82AB200D028D2 /* TNPayment.swift in Sources */,
+				9862F61A2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE11982921F82AB200D028D2 /* APIHelper.swift in Sources */,
 				CDB7C3DD27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE11982A21F82AB200D028D2 /* TNNoticeBoardDetail.swift in Sources */,
@@ -16198,6 +16755,7 @@
 				CE11983021F82AB200D028D2 /* TNAwarnessArticleDetail.swift in Sources */,
 				CE11983121F82AB200D028D2 /* PagerController.swift in Sources */,
 				CE11983221F82AB200D028D2 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D372A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE11983321F82AB200D028D2 /* FSCalendarCollectionView.m in Sources */,
 				CE11983421F82AB200D028D2 /* APIUrls.swift in Sources */,
 				CE11983521F82AB200D028D2 /* FSCalendarDelegationProxy.m in Sources */,
@@ -16235,10 +16793,12 @@
 				CE11985421F82AB200D028D2 /* ReadSelectViewController.swift in Sources */,
 				CE11985521F82AB200D028D2 /* FSCalendarDelegationFactory.m in Sources */,
 				CE11985621F82AB200D028D2 /* ImagePreviewController.swift in Sources */,
+				9865CD742A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE11985721F82AB200D028D2 /* LinearProgressView.swift in Sources */,
 				CE11985821F82AB200D028D2 /* ComposeController.swift in Sources */,
 				CE11985921F82AB200D028D2 /* WeeklyPlanFilterController.swift in Sources */,
 				CE11985A21F82AB200D028D2 /* ChangePasswordController.swift in Sources */,
+				9841B3692A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE11985B21F82AB200D028D2 /* NoticeBoardListController.swift in Sources */,
 				CE11985C21F82AB200D028D2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681906241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16295,6 +16855,7 @@
 				CE15659221A96DB400DC758E /* MessageDetailController.swift in Sources */,
 				CE15659321A96DB400DC758E /* WeeklyPlanController.swift in Sources */,
 				CE15659421A96DB400DC758E /* TMyProfile.swift in Sources */,
+				98B10CE52A3C642900FE000E /* TopHeaderView.swift in Sources */,
 				CE15659521A96DB400DC758E /* TInboxMessage.swift in Sources */,
 				CE15659621A96DB400DC758E /* CalendarSection.swift in Sources */,
 				CE15659721A96DB400DC758E /* DirectoryCreationOperation.swift in Sources */,
@@ -16310,12 +16871,14 @@
 				CE1565A021A96DB400DC758E /* WeeklyPlanCell.swift in Sources */,
 				CE1565A121A96DB400DC758E /* KSTokenView.swift in Sources */,
 				CE1565A221A96DB400DC758E /* TNotification.swift in Sources */,
+				9841B3922A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE1565A321A96DB400DC758E /* UploadFTP.swift in Sources */,
 				CE1565A421A96DB400DC758E /* WebViewViewController.swift in Sources */,
 				CE1565A521A96DB400DC758E /* ProgressViewBar.swift in Sources */,
 				CE1565A621A96DB400DC758E /* WeeklyPlanTable.swift in Sources */,
 				CE1565A721A96DB400DC758E /* GalleryListController.swift in Sources */,
 				CE1565A821A96DB400DC758E /* TNPayment.swift in Sources */,
+				9862F6182A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE1565A921A96DB400DC758E /* APIHelper.swift in Sources */,
 				CDB7C3DB27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE1565AA21A96DB400DC758E /* TNNoticeBoardDetail.swift in Sources */,
@@ -16328,6 +16891,7 @@
 				CE1565B021A96DB400DC758E /* TNAwarnessArticleDetail.swift in Sources */,
 				CE1565B121A96DB400DC758E /* PagerController.swift in Sources */,
 				CE1565B221A96DB400DC758E /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D352A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE1565B321A96DB400DC758E /* FSCalendarCollectionView.m in Sources */,
 				CE1565B421A96DB400DC758E /* APIUrls.swift in Sources */,
 				CE1565B521A96DB400DC758E /* FSCalendarDelegationProxy.m in Sources */,
@@ -16365,10 +16929,12 @@
 				CE1565D421A96DB400DC758E /* ReadSelectViewController.swift in Sources */,
 				CE1565D521A96DB400DC758E /* FSCalendarDelegationFactory.m in Sources */,
 				CE1565D621A96DB400DC758E /* ImagePreviewController.swift in Sources */,
+				9865CD722A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE1565D721A96DB400DC758E /* LinearProgressView.swift in Sources */,
 				CE1565D821A96DB400DC758E /* ComposeController.swift in Sources */,
 				CE1565D921A96DB400DC758E /* WeeklyPlanFilterController.swift in Sources */,
 				CE1565DA21A96DB400DC758E /* ChangePasswordController.swift in Sources */,
+				9841B3672A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE1565DB21A96DB400DC758E /* NoticeBoardListController.swift in Sources */,
 				CE1565DC21A96DB400DC758E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681904241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16425,6 +16991,7 @@
 				CE72593421ABF02A00B760AC /* MessageDetailController.swift in Sources */,
 				CE72593521ABF02A00B760AC /* WeeklyPlanController.swift in Sources */,
 				CE72593621ABF02A00B760AC /* TMyProfile.swift in Sources */,
+				98B10CE62A3C642900FE000E /* TopHeaderView.swift in Sources */,
 				CE72593721ABF02A00B760AC /* TInboxMessage.swift in Sources */,
 				CE72593821ABF02A00B760AC /* CalendarSection.swift in Sources */,
 				CE72593921ABF02A00B760AC /* DirectoryCreationOperation.swift in Sources */,
@@ -16440,12 +17007,14 @@
 				CE72594221ABF02A00B760AC /* WeeklyPlanCell.swift in Sources */,
 				CE72594321ABF02A00B760AC /* KSTokenView.swift in Sources */,
 				CE72594421ABF02A00B760AC /* TNotification.swift in Sources */,
+				9841B3932A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE72594521ABF02A00B760AC /* UploadFTP.swift in Sources */,
 				CE72594621ABF02A00B760AC /* WebViewViewController.swift in Sources */,
 				CE72594721ABF02A00B760AC /* ProgressViewBar.swift in Sources */,
 				CE72594821ABF02A00B760AC /* WeeklyPlanTable.swift in Sources */,
 				CE72594921ABF02A00B760AC /* GalleryListController.swift in Sources */,
 				CE72594A21ABF02A00B760AC /* TNPayment.swift in Sources */,
+				9862F6192A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE72594B21ABF02A00B760AC /* APIHelper.swift in Sources */,
 				CDB7C3DC27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE72594C21ABF02A00B760AC /* TNNoticeBoardDetail.swift in Sources */,
@@ -16458,6 +17027,7 @@
 				CE72595221ABF02A00B760AC /* TNAwarnessArticleDetail.swift in Sources */,
 				CE72595321ABF02A00B760AC /* PagerController.swift in Sources */,
 				CE72595421ABF02A00B760AC /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D362A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE72595521ABF02A00B760AC /* FSCalendarCollectionView.m in Sources */,
 				CE72595621ABF02A00B760AC /* APIUrls.swift in Sources */,
 				CE72595721ABF02A00B760AC /* FSCalendarDelegationProxy.m in Sources */,
@@ -16495,10 +17065,12 @@
 				CE72597621ABF02A00B760AC /* ReadSelectViewController.swift in Sources */,
 				CE72597721ABF02A00B760AC /* FSCalendarDelegationFactory.m in Sources */,
 				CE72597821ABF02A00B760AC /* ImagePreviewController.swift in Sources */,
+				9865CD732A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE72597921ABF02A00B760AC /* LinearProgressView.swift in Sources */,
 				CE72597A21ABF02A00B760AC /* ComposeController.swift in Sources */,
 				CE72597B21ABF02A00B760AC /* WeeklyPlanFilterController.swift in Sources */,
 				CE72597C21ABF02A00B760AC /* ChangePasswordController.swift in Sources */,
+				9841B3682A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE72597D21ABF02A00B760AC /* NoticeBoardListController.swift in Sources */,
 				CE72597E21ABF02A00B760AC /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681905241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16555,6 +17127,7 @@
 				CE88678721FACE8C00FF0DE0 /* MessageDetailController.swift in Sources */,
 				CE88678821FACE8C00FF0DE0 /* WeeklyPlanController.swift in Sources */,
 				CE88678921FACE8C00FF0DE0 /* TMyProfile.swift in Sources */,
+				98B10CE02A3C642500FE000E /* TopHeaderView.swift in Sources */,
 				CE88678A21FACE8C00FF0DE0 /* TInboxMessage.swift in Sources */,
 				CE88678B21FACE8C00FF0DE0 /* CalendarSection.swift in Sources */,
 				CE88678C21FACE8C00FF0DE0 /* DirectoryCreationOperation.swift in Sources */,
@@ -16570,12 +17143,14 @@
 				CE88679521FACE8C00FF0DE0 /* WeeklyPlanCell.swift in Sources */,
 				CE88679621FACE8C00FF0DE0 /* KSTokenView.swift in Sources */,
 				CE88679721FACE8C00FF0DE0 /* TNotification.swift in Sources */,
+				9841B38E2A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE88679821FACE8C00FF0DE0 /* UploadFTP.swift in Sources */,
 				CE88679921FACE8C00FF0DE0 /* WebViewViewController.swift in Sources */,
 				CE88679A21FACE8C00FF0DE0 /* ProgressViewBar.swift in Sources */,
 				CE88679B21FACE8C00FF0DE0 /* WeeklyPlanTable.swift in Sources */,
 				CE88679C21FACE8C00FF0DE0 /* GalleryListController.swift in Sources */,
 				CE88679D21FACE8C00FF0DE0 /* TNPayment.swift in Sources */,
+				9862F6142A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE88679E21FACE8C00FF0DE0 /* APIHelper.swift in Sources */,
 				CDB7C3D727480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE88679F21FACE8C00FF0DE0 /* TNNoticeBoardDetail.swift in Sources */,
@@ -16588,6 +17163,7 @@
 				CE8867A521FACE8C00FF0DE0 /* TNAwarnessArticleDetail.swift in Sources */,
 				CE8867A621FACE8C00FF0DE0 /* PagerController.swift in Sources */,
 				CE8867A721FACE8C00FF0DE0 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D332A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE8867A821FACE8C00FF0DE0 /* FSCalendarCollectionView.m in Sources */,
 				CE8867A921FACE8C00FF0DE0 /* APIUrls.swift in Sources */,
 				CE8867AA21FACE8C00FF0DE0 /* FSCalendarDelegationProxy.m in Sources */,
@@ -16625,10 +17201,12 @@
 				CE8867C921FACE8C00FF0DE0 /* ReadSelectViewController.swift in Sources */,
 				CE8867CA21FACE8C00FF0DE0 /* FSCalendarDelegationFactory.m in Sources */,
 				CE8867CB21FACE8C00FF0DE0 /* ImagePreviewController.swift in Sources */,
+				9865CD6E2A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE8867CC21FACE8C00FF0DE0 /* LinearProgressView.swift in Sources */,
 				CE8867CD21FACE8C00FF0DE0 /* ComposeController.swift in Sources */,
 				CE8867CE21FACE8C00FF0DE0 /* WeeklyPlanFilterController.swift in Sources */,
 				CE8867CF21FACE8C00FF0DE0 /* ChangePasswordController.swift in Sources */,
+				9841B3632A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE8867D021FACE8C00FF0DE0 /* NoticeBoardListController.swift in Sources */,
 				CE8867D121FACE8C00FF0DE0 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681908241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16685,6 +17263,7 @@
 				CE88682821FAEFFE00FF0DE0 /* MessageDetailController.swift in Sources */,
 				CE88682921FAEFFE00FF0DE0 /* WeeklyPlanController.swift in Sources */,
 				CE88682A21FAEFFE00FF0DE0 /* TMyProfile.swift in Sources */,
+				98B10CE92A3C642B00FE000E /* TopHeaderView.swift in Sources */,
 				CE88682B21FAEFFE00FF0DE0 /* TInboxMessage.swift in Sources */,
 				CE88682C21FAEFFE00FF0DE0 /* CalendarSection.swift in Sources */,
 				CE88682D21FAEFFE00FF0DE0 /* DirectoryCreationOperation.swift in Sources */,
@@ -16700,12 +17279,14 @@
 				CE88683621FAEFFE00FF0DE0 /* WeeklyPlanCell.swift in Sources */,
 				CE88683721FAEFFE00FF0DE0 /* KSTokenView.swift in Sources */,
 				CE88683821FAEFFE00FF0DE0 /* TNotification.swift in Sources */,
+				9841B3962A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CE88683921FAEFFE00FF0DE0 /* UploadFTP.swift in Sources */,
 				CE88683A21FAEFFE00FF0DE0 /* WebViewViewController.swift in Sources */,
 				CE88683B21FAEFFE00FF0DE0 /* ProgressViewBar.swift in Sources */,
 				CE88683C21FAEFFE00FF0DE0 /* WeeklyPlanTable.swift in Sources */,
 				CE88683D21FAEFFE00FF0DE0 /* GalleryListController.swift in Sources */,
 				CE88683E21FAEFFE00FF0DE0 /* TNPayment.swift in Sources */,
+				9862F61C2A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CE88683F21FAEFFE00FF0DE0 /* APIHelper.swift in Sources */,
 				CDB7C3DF27480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CE88684021FAEFFE00FF0DE0 /* TNNoticeBoardDetail.swift in Sources */,
@@ -16718,6 +17299,7 @@
 				CE88684621FAEFFE00FF0DE0 /* TNAwarnessArticleDetail.swift in Sources */,
 				CE88684721FAEFFE00FF0DE0 /* PagerController.swift in Sources */,
 				CE88684821FAEFFE00FF0DE0 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D392A3C654500FE000E /* View+Helper.swift in Sources */,
 				CE88684921FAEFFE00FF0DE0 /* FSCalendarCollectionView.m in Sources */,
 				CE88684A21FAEFFE00FF0DE0 /* APIUrls.swift in Sources */,
 				CE88684B21FAEFFE00FF0DE0 /* FSCalendarDelegationProxy.m in Sources */,
@@ -16755,10 +17337,12 @@
 				CE88686A21FAEFFE00FF0DE0 /* ReadSelectViewController.swift in Sources */,
 				CE88686B21FAEFFE00FF0DE0 /* FSCalendarDelegationFactory.m in Sources */,
 				CE88686C21FAEFFE00FF0DE0 /* ImagePreviewController.swift in Sources */,
+				9865CD762A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CE88686D21FAEFFE00FF0DE0 /* LinearProgressView.swift in Sources */,
 				CE88686E21FAEFFE00FF0DE0 /* ComposeController.swift in Sources */,
 				CE88686F21FAEFFE00FF0DE0 /* WeeklyPlanFilterController.swift in Sources */,
 				CE88687021FAEFFE00FF0DE0 /* ChangePasswordController.swift in Sources */,
+				9841B36B2A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CE88687121FAEFFE00FF0DE0 /* NoticeBoardListController.swift in Sources */,
 				CE88687221FAEFFE00FF0DE0 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CE681909241CD4A200997AF6 /* TNSubject.swift in Sources */,
@@ -16815,6 +17399,7 @@
 				CEE50A6526E7C4DC00D355C4 /* MessageDetailController.swift in Sources */,
 				CEE50A6626E7C4DC00D355C4 /* WeeklyPlanController.swift in Sources */,
 				CEE50A6726E7C4DC00D355C4 /* TMyProfile.swift in Sources */,
+				98B10CF42A3C643300FE000E /* TopHeaderView.swift in Sources */,
 				CEE50A6826E7C4DC00D355C4 /* TInboxMessage.swift in Sources */,
 				CEE50A6926E7C4DC00D355C4 /* CalendarSection.swift in Sources */,
 				CEE50A6A26E7C4DC00D355C4 /* DirectoryCreationOperation.swift in Sources */,
@@ -16830,12 +17415,14 @@
 				CEE50A7426E7C4DC00D355C4 /* WeeklyPlanCell.swift in Sources */,
 				CEE50A7526E7C4DC00D355C4 /* KSTokenView.swift in Sources */,
 				CEE50A7626E7C4DC00D355C4 /* TNotification.swift in Sources */,
+				9841B3A02A3DB90E00618BDE /* UIButton+Helper.swift in Sources */,
 				CEE50A7726E7C4DC00D355C4 /* UploadFTP.swift in Sources */,
 				CEE50A7826E7C4DC00D355C4 /* WebViewViewController.swift in Sources */,
 				CEE50A7926E7C4DC00D355C4 /* ProgressViewBar.swift in Sources */,
 				CEE50A7A26E7C4DC00D355C4 /* WeeklyPlanTable.swift in Sources */,
 				CEE50A7B26E7C4DC00D355C4 /* GalleryListController.swift in Sources */,
 				CEE50A7C26E7C4DC00D355C4 /* TNPayment.swift in Sources */,
+				9862F6262A3DDBBB00203E96 /* UIViewController+Helper.swift in Sources */,
 				CEE50A7D26E7C4DC00D355C4 /* APIHelper.swift in Sources */,
 				CDB7C3F227480F8E00FE5186 /* UIViewController+PopUp.swift in Sources */,
 				CEE50A7E26E7C4DC00D355C4 /* TNNoticeBoardDetail.swift in Sources */,
@@ -16848,6 +17435,7 @@
 				CEE50A8526E7C4DC00D355C4 /* TNAwarnessArticleDetail.swift in Sources */,
 				CEE50A8626E7C4DC00D355C4 /* PagerController.swift in Sources */,
 				CEE50A8726E7C4DC00D355C4 /* FSCalendarTransitionCoordinator.m in Sources */,
+				98B10D432A3C654500FE000E /* View+Helper.swift in Sources */,
 				CEE50A8826E7C4DC00D355C4 /* FSCalendarCollectionView.m in Sources */,
 				CEE50A8926E7C4DC00D355C4 /* APIUrls.swift in Sources */,
 				CEE50A8A26E7C4DC00D355C4 /* FSCalendarDelegationProxy.m in Sources */,
@@ -16885,10 +17473,12 @@
 				CEE50AA926E7C4DC00D355C4 /* ReadSelectViewController.swift in Sources */,
 				CEE50AAA26E7C4DC00D355C4 /* FSCalendarDelegationFactory.m in Sources */,
 				CEE50AAB26E7C4DC00D355C4 /* ImagePreviewController.swift in Sources */,
+				9865CD802A3C8630006C8F6E /* UIDevice+Helper.swift in Sources */,
 				CEE50AAC26E7C4DC00D355C4 /* LinearProgressView.swift in Sources */,
 				CEE50AAD26E7C4DC00D355C4 /* ComposeController.swift in Sources */,
 				CEE50AAE26E7C4DC00D355C4 /* WeeklyPlanFilterController.swift in Sources */,
 				CEE50AAF26E7C4DC00D355C4 /* ChangePasswordController.swift in Sources */,
+				9841B3752A3DB8DE00618BDE /* NSObject+Helper.swift in Sources */,
 				CEE50AB026E7C4DC00D355C4 /* NoticeBoardListController.swift in Sources */,
 				CEE50AB126E7C4DC00D355C4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				CEE50AB226E7C4DC00D355C4 /* TNSubject.swift in Sources */,

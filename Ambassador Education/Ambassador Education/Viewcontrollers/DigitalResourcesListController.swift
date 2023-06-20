@@ -11,30 +11,27 @@ import UIKit
 class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
     @IBOutlet weak var categoryTable: UITableView!
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var searchTf: UITextField!
-    @IBOutlet weak var widthConstraintLogout: NSLayoutConstraint! //50
-    @IBOutlet weak var logOutImgWidth: NSLayoutConstraint! //20
-    @IBOutlet weak var searchIcon: UIImageView!
-    @IBOutlet weak var logOutButton: UIButton!
-    @IBOutlet weak var tiitleLabel: UILabel!
+
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var categoryList = [TNDigitalResourceCategory]()
     var searchText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.searchTextField.delegate = self
+        topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
         tableViewProporties()
-        self.setUi()
         self.getCategoryList()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTf.text != ""{
+        if topHeaderView.searchTextField.text != ""{
             //setClaerButton()
-            searchText = searchTf.text!
-            searchTf.resignFirstResponder()
+            searchText = topHeaderView.searchTextField.text!
+            topHeaderView.searchTextField.resignFirstResponder()
             self.getCategoryList()
         }
         return true
@@ -42,7 +39,7 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
     
     func setSlideMenuProporties(){
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
@@ -53,28 +50,6 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
         self.categoryTable.rowHeight = UITableView.automaticDimension
     }
    
-    func setUi(){
-        searchTf.returnKeyType = .search
-        widthConstraintLogout.constant = 50
-        logOutImgWidth.constant = 20
-        searchText = ""
-        searchTf.delegate = self
-        searchTf.isHidden = true
-        tiitleLabel.isHidden = false
-        searchIcon.image = #imageLiteral(resourceName: "Search")
-        logOutButton.isUserInteractionEnabled = true
-    }
-    
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTf.frame.size.height - width, width:  searchTf.frame.size.width + 50, height: searchTf.frame.size.height)
-        border.borderWidth = width
-        searchTf.layer.addSublayer(border)
-        searchTf.textColor = UIColor.white
-        searchTf.layer.masksToBounds = true
-    }
     
     func getCategoryList(){
         
@@ -95,7 +70,7 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
             guard let categryValues = result["DigitalCategories"] as? NSArray else{return}
              guard let title = result["DigitalResourcesLabel"] as? String else{return}
             DispatchQueue.main.async {
-                self.tiitleLabel.text = title
+                self.topHeaderView.title = title
             }
             
             print("digita categories ",categryValues)
@@ -184,28 +159,7 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func seaqrchButtonAction(_ sender: UIButton) {
-        if searchIcon.image == #imageLiteral(resourceName: "Search"){
-            searchTf.isHidden = false
-            tiitleLabel.isHidden = true
-            searchIcon.image = #imageLiteral(resourceName: "Close")
-            widthConstraintLogout.constant = 0
-            logOutImgWidth.constant = 0
-            logOutButton.isUserInteractionEnabled = true
-            self.setBorderAtBottom()
-        }
-        else if searchIcon.image == #imageLiteral(resourceName: "Close"){
-            searchTf.isHidden = true
-            searchTf.text = ""
-            searchText = ""
-            widthConstraintLogout.constant = 50
-            logOutImgWidth.constant = 20
-            tiitleLabel.isHidden = false
-            searchIcon.image = #imageLiteral(resourceName: "Search")
-            getCategoryList()
-            
-        }
-    }
+
     @IBAction func logOutButtonAction(_ sender: UIButton) {
         SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
             if isOtherButton == true {
@@ -229,4 +183,38 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
     }
     */
 
+}
+
+
+extension DigitalResourcesListController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                showLoginPage()
+                gradeBookLink = ""
+            }
+        }
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+            topHeaderView.shouldShowSecondRightButton(false)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            topHeaderView.shouldShowSecondRightButton(true)
+            getCategoryList()
+        }
+    }
+    
 }

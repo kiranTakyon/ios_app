@@ -31,14 +31,13 @@ var notificationObject : TNotification = TNotification(values: NSDictionary())
 class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWRevealViewControllerDelegate {
     var popUpViewVc : BIZPopupViewController?
     
-    @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var studentImageView: ImageLoader!
     @IBOutlet weak var studentSecondLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var studentNameLabel: UILabel!
-    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var alertTable: UITableView!
     @IBOutlet weak var classLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var notificationList = [TNotification]()
     override func viewDidLoad() {
@@ -48,7 +47,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         getTokenValueForMobileNotification()
         setSlideMenuProporties()
         addObserverToNotification()
-
+        topHeaderView.delegate = self
     }
     
     func setAllTextFieldsEmpty(){
@@ -99,8 +98,9 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     }
     
     func setSlideMenuProporties(){
+        topHeaderView.setMenuOnLeftButton()
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
@@ -276,7 +276,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     
         
     func tableViewProporties(){
-        self.headLabel.text = "Dashboard"
+        self.topHeaderView.title = "Dashboard"
         self.alertTable.estimatedRowHeight = 60
         self.alertTable.rowHeight = UITableView.automaticDimension
     }
@@ -514,3 +514,22 @@ class CardView: UIView {
     
 }
 
+extension HomeVC: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+    }
+    
+}

@@ -11,10 +11,8 @@ import UIKit
 class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol ,UITextFieldDelegate,PagerDelegate{
     
     
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var headLabel: UILabel!
-    @IBOutlet weak var searchIcon: UIImageView!
-    @IBOutlet weak var searchTextField: UITextField!
+  
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var inBoxVC = CommunicateController()
     var sentBoxVC = CommunicateController()
@@ -24,36 +22,31 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
+        topHeaderView.searchTextField.delegate = self
         self.dataSource = self
         self.delegate = self
         self.customizeTab()
-        setUi()
         self.getInboxMessages(searchTextValue : "")
         setSlideMenuProporties()
         // Do any additional setup after loading the view.
     }
     
-    func setUi(){
-        searchTextField.returnKeyType = .search
-        searchTextField.delegate = self
-        searchTextField.isHidden = true
-        searchTextField.textColor = UIColor.white
-        headLabel.isHidden = false
-        searchIcon.image = #imageLiteral(resourceName: "Search")
-    }
     
     func setSlideMenuProporties(){
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
     
     func didChangeTabToIndex(_ pager: PagerController, index: Int) {
-        searchTextField.isHidden = true
-        searchTextField.text = ""
-        headLabel.isHidden = false
-        searchIcon.image = #imageLiteral(resourceName: "Search")
+        topHeaderView.titleLabel.isHidden = false
+        topHeaderView.searchTextField.isHidden = true
+        topHeaderView.setFirstRightButtonImage = #imageLiteral(resourceName: "Search")
+        topHeaderView.searchTextField.text = ""
+        topHeaderView.shouldShowSecondRightButton(true)
     }
     
     func customizeTab() {
@@ -66,6 +59,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         tabLocation = PagerTabLocation.top
         tabHeight = 49
         tabOffset = 36
+        tabTopOffset = topHeaderView.height - topBarHeight()
         tabWidth = self.view.frame.size.width/2
         fixFormerTabsPositions = false
         fixLaterTabsPosition = false
@@ -119,7 +113,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
                     let list = MessageModel(values: result)
                     
                     self.removeNoDataLabel()
-                    self.headLabel.text = list.communicateLabel.safeValue
+                    self.topHeaderView.title = list.communicateLabel.safeValue
                     self.setUpPager(list: list)
                     self.stopLoadingAnimation()
                 }else{
@@ -161,57 +155,14 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
             
         }
     }
-    @IBAction func logoutButtonAction(_ sender: UIButton) {
-        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-            }
-            else {
-                isFirstTime = true
-                gradeBookLink = ""
-                showLoginPage()
-            }
-        }
         
-    }
-    
-    @IBAction func serachButtonAction(_ sender: UIButton) {
-        if searchIcon.image == #imageLiteral(resourceName: "Search"){
-            setBorderAtBottom()
-            searchTextField.isHidden = false
-            headLabel.isHidden = true
-            searchIcon.image = #imageLiteral(resourceName: "Close")
-            
-        }
-        else if searchIcon.image == #imageLiteral(resourceName: "Close"){
-            searchTextField.isHidden = true
-            searchTextField.text = ""
-            headLabel.isHidden = false
-            searchIcon.image = #imageLiteral(resourceName: "Search")
-            let obj = ["text" : searchTextField.text.safeValue,"type": typeValue] as [String : Any]
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "searchAction"), object: obj)
-            //  self.delegates?.getSearchWithCommunicate(searchTxt : searchTextField.text.safeValue,type: typeValue)
-        }
-    }
-    
-    
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTextField.frame.size.height - width, width:  searchTextField.frame.size.width ,  height: searchTextField.frame.size.height)
-        
-        border.borderWidth = width
-        searchTextField.layer.addSublayer(border)
-        searchTextField.layer.masksToBounds = true
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTextField.text != ""{
-            searchText = searchTextField.text!
-            searchTextField.resignFirstResponder()
+        if topHeaderView.searchTextField.text != ""{
+            searchText = topHeaderView.searchTextField.text!
+            topHeaderView.searchTextField.resignFirstResponder()
             if searchText != ""{
-                let obj = ["text" : searchTextField.text.safeValue,"type": typeValue] as [String : Any]
+                let obj = ["text" : topHeaderView.searchTextField.text.safeValue,"type": typeValue] as [String : Any]
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "searchAction"), object: obj)
             }
         }
@@ -258,5 +209,40 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+extension CommunicateLandController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            topHeaderView.shouldShowSecondRightButton(false)
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            topHeaderView.shouldShowSecondRightButton(true)
+            let obj = ["text" : topHeaderView.searchTextField.text.safeValue,"type": typeValue] as [String : Any]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "searchAction"), object: obj)
+        }
+    }
     
 }

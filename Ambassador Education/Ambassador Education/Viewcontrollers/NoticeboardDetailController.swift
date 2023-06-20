@@ -12,10 +12,9 @@ import SwiftSoup
 import QuickLook
 
 class NoticeboardDetailController: UIViewController {
-    @IBOutlet weak var downLoadButton: UIButton!
     @IBOutlet weak var richView: RichEditorView!
-    @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var progressBar: ProgressViewBar!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     let quickLookController = QLPreviewController()
     var fileURLs = [NSURL]()
@@ -28,6 +27,8 @@ class NoticeboardDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.shouldShowFirstRightButtons(false)
        self.setVideoDownload()
         self.setTitle()
         if(NbID != "")
@@ -63,11 +64,11 @@ class NoticeboardDetailController: UIViewController {
     func setTitle(){
         richView.delegate = self
         if let desc = detail?.title{
-        self.mainTitle.text = desc
+            self.topHeaderView.title = desc
         }
         else{
             if let descValue = awarnessPlan?.name{
-                self.mainTitle.text = descValue
+                self.topHeaderView.title = descValue
             }
         }
     }
@@ -85,7 +86,7 @@ class NoticeboardDetailController: UIViewController {
     
     func getHrefLink(string : String){
         if string.contains("http"){
-            downLoadButton.isHidden = false
+            topHeaderView.shouldShowFirstRightButtons(true)
         do {
             let doc: Document = try! SwiftSoup.parse(string)
             if let link: Element = try! doc.select("a").first(){
@@ -96,15 +97,15 @@ class NoticeboardDetailController: UIViewController {
             }
             }
             else{
-                 downLoadButton.isHidden = true
+                topHeaderView.shouldShowFirstRightButtons(false)
             }
         }
       catch {
-             downLoadButton.isHidden = true
+          topHeaderView.shouldShowFirstRightButtons(false)
         }
         }
         else{
-                downLoadButton.isHidden = true
+            topHeaderView.shouldShowFirstRightButtons(false)
         }
     }
     
@@ -142,7 +143,7 @@ class NoticeboardDetailController: UIViewController {
             if let desc = awarnessPlan?.description{
                 let htmlDecode = desc.replacingHTMLEntities
                 richView.html = htmlDecode!
-                downLoadButton.isHidden = true
+                topHeaderView.shouldShowFirstRightButtons(false)
                 //getHrefLink(string: htmlDecode.safeValue)
             }
         }
@@ -182,25 +183,6 @@ class NoticeboardDetailController: UIViewController {
     }
 
     
-//    func setActionOnAttributedText(desc : String){
-//        print(desc.replacingHTMLEntities)
-//        let test = String(desc.filter { !" \n\t\r".contains($0) })
-//        print(test)
-//        if test != ""{
-//            if test.contains("http"){
-//                let link = test.components(separatedBy: "http")
-//                if link.count > 0{
-//                    for each in link{
-//                        if each.contains("s://") || each.contains("://") {
-//                            pdfUrl = "http" + each
-//                        }
-//                    }
-//                }
-//
-//            }
-//        }
-//    }
-    
     
     @IBAction func backAction(_ sender: Any) {
        // self.navigationController?.popViewController(animated: true)
@@ -214,21 +196,6 @@ class NoticeboardDetailController: UIViewController {
         
     }
 
-//    @IBAction func openLinkButtonAction(_ sender: UIButton) {
-//        if let url = pdfUrl{
-//           print(url.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
-//
-//            print(url.replacingHTMLEntities)
-//            if url != ""{
-//                var webView =  mainStoryBoard.instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
-//                webView.url = url
-//                self.navigationController?.present(webView, animated: true, completion: nil)
-//            }
-//        }
-//        else{
-//        }
-//
-//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -309,3 +276,20 @@ extension NoticeboardDetailController: RichEditorDelegate{
     }
    
 
+
+extension NoticeboardDetailController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        if downLoadLink != ""{
+            addBlurEffectToTableView(inputView: self.view, hide: false)
+            progressBar.isHidden = false
+            progressBar.progressBar.setProgress(1.0, animated: true)
+            progressBar.titleText = "Downloading,Please wait"
+            videoDownload.startDownloadingUrls(urlToDowload:[downLoadLink],type:"", fileName: "")
+        }
+    }
+    
+}

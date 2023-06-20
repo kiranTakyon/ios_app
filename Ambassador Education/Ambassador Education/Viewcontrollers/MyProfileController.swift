@@ -19,10 +19,9 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet weak var verifyEmailButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var verifyEmailButton: UIButton!
     @IBOutlet weak var verifyEmailButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var saveImageView: UIImageView!
     @IBOutlet weak var profileImageView: ImageLoader!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
-    @IBOutlet weak var headLabel: UILabel!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var profileImageUrl : String?
     var icons = ["User","User","User","Email","Mobile","LocationGray","Email"]
@@ -39,9 +38,10 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet weak var profileTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
         isEditClicked = false
-        setProfileSaveButtonImage(image: #imageLiteral(resourceName: "Edit"))
         // Do any additional setup after loading the view.
     }
     
@@ -58,9 +58,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         isFromCamera = false
     }
     
-    func setProfileSaveButtonImage(image : UIImage){
-        saveImageView.image = image
-    }
+   
     
     func deleteTheSelectedAttachment(index: Int) {
         
@@ -82,7 +80,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
             
             //   menuButton.target(forAction: "revealToggle:", withSender: nil)
             
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             
             //  menuButton.target = self.revealViewController()
             //   menuButton.action =
@@ -214,7 +212,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
             if result["StatusCode"] as? Int == 1{
                 profileInfoGlobal.removeAllObjects()
                 profileInfoGlobal = NSMutableDictionary(dictionary : result)
-                    self.headLabel.text = result["ProfileLabel"] as? String
+                self.topHeaderView.title = result["ProfileLabel"] as? String ?? ""
                     self.verifyEmailButton.setTitle((result["VerifiedEmailLabel"] as? String)?.uppercased(), for: .normal)
                     self.setMyLocationButton.setTitle((result["SetMyLocationLabel"] as? String)?.uppercased(), for: .normal)
                     self.changePasswordLabel.setTitle((result["ChangePasswordLabel"] as? String)?.uppercased(), for: .normal)
@@ -598,18 +596,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         return true
     }
     
-    @IBAction func logoutButtonAction(_ sender: UIButton) {
-        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-            }
-            else {
-                isFirstTime = true
-                gradeBookLink = ""
-                showLoginPage()
-            }
-        }
-    }
     @IBAction func verifyEmailButtonAction(_ sender: UIButton) {
         let appearance = SCLAlertView.SCLAppearance(
             kTextFieldHeight: 60,
@@ -644,22 +630,21 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     
     
     
-    @IBAction func profileSaveAction(_ sender: UIButton) {
-        if saveImageView.image == #imageLiteral(resourceName: "Edit"){
-            saveImageView.image = #imageLiteral(resourceName: "Save")
-            isEditClicked = true
-            profileTable.reloadData()
-        }
-        else if saveImageView.image == #imageLiteral(resourceName: "Save"){
-            profileTable.reloadData()
-            isEditClicked = true
-            callProfileEdit()
-        }
-    }
+//    @IBAction func profileSaveAction(_ sender: UIButton) {
+//        if saveImageView.image == #imageLiteral(resourceName: "Edit"){
+//            saveImageView.image = #imageLiteral(resourceName: "Save")
+//            isEditClicked = true
+//            profileTable.reloadData()
+//        }
+//        else if saveImageView.image == #imageLiteral(resourceName: "Save"){
+//            profileTable.reloadData()
+//            isEditClicked = true
+//            callProfileEdit()
+//        }
+//    }
     
     func callProfileEdit(){
         if checkValidation(){
-            saveImageView.image = #imageLiteral(resourceName: "Edit")
             saveProfile()
         }
         else{
@@ -763,4 +748,34 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
+}
+
+
+extension MyProfileController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            isEditClicked = true
+            profileTable.reloadData()
+            button.setImage(#imageLiteral(resourceName: "Save"), for: .normal)
+        } else {
+            profileTable.reloadData()
+            isEditClicked = true
+            button.setImage(#imageLiteral(resourceName: "Edit"), for: .normal)
+            callProfileEdit()
+        }
+    }
 }

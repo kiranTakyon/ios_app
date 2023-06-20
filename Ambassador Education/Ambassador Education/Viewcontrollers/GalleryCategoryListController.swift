@@ -14,20 +14,21 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
     var categoryList = [TNGalleryCategory]()
     var gallaryModel : GalleryItems?
     
-    @IBOutlet weak var headLabel: UILabel!
-    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getCategoryList()
         self.setSlideMenuProporties()
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
         // Do any additional setup after loading the view.
     }
     
     func setSlideMenuProporties(){
         if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
@@ -56,7 +57,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             self.gallaryModel = GalleryItems(values: result)
             DispatchQueue.main.async {
-                self.headLabel.text = result["HeadLabel"] as? String
+                self.topHeaderView.title = result["HeadLabel"] as? String ?? ""
             }
             
             guard let categryValues = result["Categories"] as? NSArray else{return}
@@ -200,19 +201,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
         self.navigationController?.pushViewController(galleryListVc, animated: true)
 
     }
-    @IBAction func logOutAction(_ sender: UIButton) {
-        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-            }
-            else {
-                isFirstTime = true
-                showLoginPage()
-                gradeBookLink = ""
-            }
-        }
-    }
-    
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -236,5 +225,26 @@ class GalleryCategoryList : UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryImageLoder: ImageLoader!
     
+    
+}
+
+
+extension GalleryCategoryListController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                showLoginPage()
+                gradeBookLink = ""
+            }
+        }
+    }
     
 }

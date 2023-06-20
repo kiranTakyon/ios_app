@@ -11,13 +11,11 @@ import QuickLook
 
 class GradeViewController: UIViewController,WKUIDelegate {
 
-    @IBOutlet weak var headerLabel: UILabel!
-    @IBOutlet weak var menuButton: UIButton!
+    
     @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var dwnLoadButton: UIButton!
-    @IBOutlet weak var dwnLoadButtonWidth: NSLayoutConstraint!
+   
     @IBOutlet weak var progressBar: ProgressViewBar!
-    @IBOutlet weak var menuImageView: UIImageView!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var header = String()
     var hashkey = String()
@@ -27,20 +25,22 @@ class GradeViewController: UIViewController,WKUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
         setNavigationBar()
         loadUrlToWebView()
-        headerLabel.text = header
+        topHeaderView.title = header
         setDelegates()
         // Do any additional setup after loading the view.
     }
 
     func setNavigationBar(){
         if hashkey == "T0052"{
-        menuImageView.image = #imageLiteral(resourceName: "Back2")
-        menuButton.addTarget(self, action: #selector(self.backAction), for: UIControl.Event.touchUpInside)
+            topHeaderView.setLeftButtonImage = #imageLiteral(resourceName: "Back2")
+            topHeaderView.backButton.addTarget(self, action: #selector(self.backAction), for: UIControl.Event.touchUpInside)
         }
         else{
-            menuImageView.image = #imageLiteral(resourceName: "Menu")
+            topHeaderView.setLeftButtonImage = #imageLiteral(resourceName: "Menu")
              setSlideMenuProporties()
        }
     }
@@ -63,12 +63,10 @@ class GradeViewController: UIViewController,WKUIDelegate {
     
     func changeTheVisibilityOfDownLoadButton(){
         if hashkey == "T0012" {
-                dwnLoadButton.isHidden = false
-                dwnLoadButtonWidth.constant  = 38
+            topHeaderView.shouldShowFirstRightButtons(true)
         }
         else{
-            dwnLoadButton.isHidden = true
-            dwnLoadButtonWidth.constant  = 0
+            topHeaderView.shouldShowFirstRightButtons(false)
         }
     }
     override func didReceiveMemoryWarning() {
@@ -140,7 +138,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
     
     func setSlideMenuProporties(){
      if self.revealViewController() != nil {
-            menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+         topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
       }
     }
@@ -242,3 +240,32 @@ extension GradeViewController:VideoDownloadDelegate{
     
 }
 
+extension GradeViewController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+        }
+        
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        if hashkey == "T0012" {
+            if let value = gradeBookLink{
+                if value != ""{
+                    //                   let currentURL = webView.request?.url?.absoluteString
+                    let currentURL = webView.url?.absoluteString
+                    let fileName=""
+                    downloadPdf(attachmentUrl: currentURL ?? value, fileName: fileName)
+                }
+            }
+        }
+    }
+    
+}

@@ -13,10 +13,7 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     @IBOutlet weak var listTableVIew: UITableView!
     var catId = ""
     var searchText = ""
-    @IBOutlet weak var logOutButton: UIButton!
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var searchIcon: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     var titleValue : String?
     var digitalList = [TNDigitalResourceSubList]()
     var pageNumber = 1
@@ -25,21 +22,16 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topHeaderView.delegate = self
+        topHeaderView.searchTextField.delegate = self
         self.tableViewProporties()
         self.getDigitalResources(searcText : searchText)
         self.setTitle()
-        self.setUi()
         self.setRefreshControll()
         // Do any additional setup after loading the view.
     }
     
-    func setUi(){
-        searchTextField.delegate = self
-        searchTextField.isHidden = true
-        titleLabel.isHidden = false
-        searchIcon.image = #imageLiteral(resourceName: "Search")
-        logOutButton.isUserInteractionEnabled = true
-    }
+    
     
     func tableViewProporties(){
         self.listTableVIew.estimatedRowHeight = 60
@@ -50,38 +42,18 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     
     func setTitle(){
         if let  _ = titleValue{
-            self.titleLabel.text = titleValue!
+            self.topHeaderView.title = titleValue!
         }
     }
 
     
-    func setBorderAtBottom(){
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.white.cgColor
-        border.frame = CGRect(x: 0, y: searchTextField.frame.size.height - width, width:  searchTextField.frame.size.width, height: searchTextField.frame.size.height)
-        
-        border.borderWidth = width
-        searchTextField.layer.addSublayer(border)
-        searchTextField.layer.masksToBounds = true
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if searchTextField.text != ""{
-            searchText = searchTextField.text!
-            searchTextField.resignFirstResponder()
+        if topHeaderView.searchTextField.text != ""{
+            searchText = topHeaderView.searchTextField.text!
+            topHeaderView.searchTextField.resignFirstResponder()
             getDigitalResources(searcText: searchText)
         }
         return true
-    }
-    
-    func setClaerButton(){
-        var clearButton = UIButton(type: .custom)
-        clearButton.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
-        clearButton.frame = searchTextField.frame
-        clearButton.addTarget(self, action: #selector(DigitalResourceSecondListController.clearTextField), for: .touchUpInside)
-        searchTextField.rightViewMode = .always
-        searchTextField.rightView = clearButton
     }
     
     
@@ -231,22 +203,6 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func searchButtonAction(_ sender: UIButton) {
-        if searchIcon.image == #imageLiteral(resourceName: "Search"){
-            self.setBorderAtBottom()
-        searchTextField.isHidden = false
-        titleLabel.isHidden = true
-        searchIcon.image = #imageLiteral(resourceName: "Close")
-        logOutButton.isUserInteractionEnabled = true
-        }
-        else if searchIcon.image == #imageLiteral(resourceName: "Close"){
-            searchTextField.isHidden = true
-            searchTextField.text = ""
-            titleLabel.isHidden = false
-            searchIcon.image = #imageLiteral(resourceName: "Search")
-            getDigitalResources(searcText: "")
-        }
-    }
     
     /*
     // MARK: - Navigation
@@ -258,4 +214,27 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     }
     */
 
+}
+
+
+extension DigitalResourceSecondListController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        if button.isSelected {
+            topHeaderView.titleLabel.isHidden = true
+            topHeaderView.searchTextField.isHidden = false
+            button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
+        } else {
+            topHeaderView.titleLabel.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
+            topHeaderView.searchTextField.text = ""
+            getDigitalResources(searcText: "")
+        }
+    }
+    
 }

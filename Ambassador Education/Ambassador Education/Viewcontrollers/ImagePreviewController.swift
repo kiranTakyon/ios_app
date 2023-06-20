@@ -19,18 +19,18 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var rightArrow: UIImageView!
     @IBOutlet weak var leftArrow: UIImageView!
-    @IBOutlet weak var pageTitleLbel: UILabel!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: ImageLoader!
     @IBOutlet weak var scrollViewImage: UIScrollView!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         setScrollView()
         setData()
         print(imageArr)
+        topHeaderView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -51,10 +51,10 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     }
     func setData(){
         if pageTitle != "Gallery"{
-            pageTitleLbel.text = pageTitle
+            topHeaderView.title = pageTitle ?? ""
         }
         else{
-            pageTitleLbel.text = ""
+            topHeaderView.title = ""
         }
         if pageTitle == ""{
             setStatesToUIElements(isHide: true)
@@ -71,9 +71,9 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         if let value = titleValue{
             if value.contains("&quot") || value.contains(";"){
                 let htmlDecode = value.replacingHTMLEntities
-                self.titleLabel.attributedText = htmlDecode?.htmlToAttributedString           }
+                self.topHeaderView.titleLabel.attributedText = htmlDecode?.htmlToAttributedString           }
             else{
-                self.titleLabel.text = value
+                self.topHeaderView.title = value
             }
         }
         
@@ -88,17 +88,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-    @IBAction func downloadButtonAction(_ sender: Any) {
-        guard let imagestring = imageUrl else  {return}
-        
-        if let url = URL(string: imagestring),
-            let data = try? Data(contentsOf: url),
-            let image = UIImage(data: data) {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-            self.showAlertController("Success", message: "Image saved to photos", cancelButton: "Done", isTextFiled: false, otherButtons: [], handler: nil)
-        }
-        
-    }
+   
     
     @IBAction func backButtonAction(_ sender: Any) {
         //self.navigationController?.popViewController(animated: true)
@@ -162,5 +152,22 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+extension ImagePreviewController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        guard let imagestring = imageUrl else  {return}
+        
+        if let url = URL(string: imagestring),
+            let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            self.showAlertController("Success", message: "Image saved to photos", cancelButton: "Done", isTextFiled: false, otherButtons: [], handler: nil)
+        }    }
     
 }
