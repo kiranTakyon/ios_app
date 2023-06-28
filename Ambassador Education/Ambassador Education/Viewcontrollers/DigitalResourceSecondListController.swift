@@ -8,9 +8,16 @@
 
 import UIKit
 
-class DigitalResourceSecondListController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate{
+struct CategoryAndItem {
+    var id : String?
+    var title : String?
+    var date : String?
+    var isItem : Bool?
+}
 
-    @IBOutlet weak var listTableVIew: UITableView!
+class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate {
+
+    @IBOutlet weak var collectionView: UICollectionView!
     var catId = ""
     var searchText = ""
     @IBOutlet weak var topHeaderView: TopHeaderView!
@@ -18,13 +25,14 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     var digitalList = [TNDigitalResourceSubList]()
     var pageNumber = 1
     let refreshControl = UIRefreshControl()
+    var arrCatgoryAndItem: [CategoryAndItem] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
-        self.tableViewProporties()
+        setUpCollectionView()
         self.getDigitalResources(searcText : searchText)
         self.setTitle()
         self.setRefreshControll()
@@ -32,13 +40,10 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     }
     
     
-    
-    func tableViewProporties(){
-        self.listTableVIew.estimatedRowHeight = 60
-        self.listTableVIew.rowHeight = UITableView.automaticDimension
-        self.listTableVIew.tableFooterView = UIView()
+    func setUpCollectionView() {
+        let nib = UINib(nibName: "DigitalResourceCategoryCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "DigitalResourceCategoryCell")
     }
-    
     
     func setTitle(){
         if let  _ = titleValue{
@@ -81,20 +86,24 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
             guard let categryValues = result["CategoryItems"] as? NSArray else{ return }
             let cetgories = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNDigitalResourceSubList) as! [TNDigitalResourceSubList]
             
+            guard let digitalCategory = result["DigitalCategories"] as? NSArray else{return}
+            let digitalCategories = ModelClassManager.sharedManager.createModelArray(data: digitalCategory, modelType: ModelType.TNDigitalResource) as! [TNDigitalResourceCategory]
+            
             self.digitalList = cetgories
+            self.mergeCategoryAndItem(categories: digitalCategories, items: cetgories)
             
             DispatchQueue.main.async {
                 self.removeNoDataLabel()
                 self.checkAndStopBounce(count: cetgories.count)
                 self.stopLoadingAnimation()
-                if self.digitalList.count == 0{
-                    self.listTableVIew.isHidden = true
+                if self.digitalList.count == 0 {
+                    self.collectionView.isHidden = true
                     self.addNoDataFoundLabel()
                 }
-                else{
+                else {
                     self.removeNoDataLabel()
-                    self.listTableVIew.isHidden = false
-                    self.listTableVIew.reloadData()
+                    self.collectionView.isHidden = false
+                    self.collectionView.reloadData()
                     self.removeNoDataLabel()
 
                 }
@@ -107,7 +116,17 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
     func checkAndStopBounce(count:Int){
         
         if count == 0{
-            self.listTableVIew.bounces = false
+            self.collectionView.bounces = false
+        }
+        
+    }
+    
+    func mergeCategoryAndItem(categories: [TNDigitalResourceCategory], items: [TNDigitalResourceSubList] ) {
+        for item in items {
+            arrCatgoryAndItem.append(CategoryAndItem(title: item.title, date: item.date, isItem: true))
+        }
+        for category in categories {
+            arrCatgoryAndItem.append(CategoryAndItem(id: category.categoryId,title: category.caetgory,isItem: false))
         }
         
     }
@@ -116,7 +135,7 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
         
         refreshControl.attributedTitle = NSAttributedString(string: "")
         refreshControl.addTarget(self, action: #selector(DigitalResourceSecondListController.refresh(sender:)), for: UIControl.Event.valueChanged)
-        self.listTableVIew.bottomRefreshControl = refreshControl // not required when using UITableV
+        self.collectionView.bottomRefreshControl = refreshControl // not required when using UITableV
     }
     
     @objc func refresh(sender:AnyObject) {
@@ -126,58 +145,6 @@ class DigitalResourceSecondListController: UIViewController,UITableViewDataSourc
         self.getDigitalResources(searcText : searchText)
     }
 
-    
-    //MARK:- TableView Delegates and Datasources
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return digitalList.count
-    }
-    
-    // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunicateCell", for: indexPath) as! CommunicateCell
-        
-         let item = digitalList[indexPath.row]
-        
-        
-        if let title = item.title{
-            cell.firstLabel.text = title
-        }
-        
-        if let date = item.date{
-            cell.secondLabel.text = date
-        }
-        
-        if let contenttype = item.contentType{
-            cell.thirdLabel.text = contenttype
-        }
-        
-        if let url = item.attachment{
-            cell.cImageView.loadImageWithUrl(url)
-        }
-        
-        
-        
-        cell.selectionStyle = .none
-        
-        // create a new cell if needed or reuse an old one
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
-        //        guard let cell = tableView.cellForRow(at: indexPath) as? GalleryCategoryList else { return }
-        //
-        //        self.navigateToGallery(catId: cell.tag)
-        
-        let item = digitalList[indexPath.row]
-        
-        self.navigateToDetail(digitalResource: item)
-        
-    }
     
     
     func navigateToDetail(digitalResource:TNDigitalResourceSubList){
@@ -237,4 +204,62 @@ extension DigitalResourceSecondListController: TopHeaderDelegate {
         }
     }
     
+}
+
+
+// MARK: -UICollectionViewDataSource, UICollectionViewDelegate-
+
+extension DigitalResourceSecondListController: UICollectionViewDataSource,UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrCatgoryAndItem.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DigitalResourceCategoryCell", for: indexPath) as? DigitalResourceCategoryCell else { return UICollectionViewCell() }
+        let catgoryAndItem = arrCatgoryAndItem[indexPath.row]
+        if catgoryAndItem.isItem ?? false {
+            cell.labelDate.isHidden = false
+            cell.labelDate.text = catgoryAndItem.date
+            cell.imageViewFolder.image = UIImage(named: "fileFolder_icon")
+        } else {
+            cell.labelDate.isHidden = true
+            cell.imageViewFolder.image = UIImage(named: "folder_icon")
+        }
+        cell.labelTitle.text = catgoryAndItem.title
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let catgoryAndItem = arrCatgoryAndItem[indexPath.row]
+        if catgoryAndItem.isItem ?? false {
+            let item = digitalList[indexPath.row]
+            self.navigateToDetail(digitalResource: item)
+        } else {
+            arrCatgoryAndItem.removeAll()
+            catId = catgoryAndItem.id ?? ""
+            getDigitalResources(searcText: "")
+        }
+
+    }
+    
+}
+
+
+extension DigitalResourceSecondListController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let availableWidth = view.frame.width - 30
+        let widthPerItem = availableWidth / 2
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+       return 10
+    }
 }

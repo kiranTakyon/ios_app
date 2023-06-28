@@ -114,6 +114,7 @@ class GalleryCategory{
     static let searchText = "SearchText"
     static let paginationNumber = "PaginationNumber"
     static let categoryId = "CategoryId"
+    static let module = "module"
 }
 
 

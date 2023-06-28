@@ -26,7 +26,7 @@ class APIUrls{
     let getGallery      = "T0003"
     let getGroupMembers = "T0027"
     let getFTPUrls      = "T0051"
-    let getDigitalResource = "T0021"
+    let getDigitalResource = "T0221"
     let getDigitalResourceDetails = "T0022"
     let getNoticeboard  = "T0011"
     let sendMail        = "T0029"

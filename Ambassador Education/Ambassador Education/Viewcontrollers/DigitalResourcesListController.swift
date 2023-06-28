@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var categoryTable: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
@@ -23,7 +23,8 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
         topHeaderView.searchTextField.delegate = self
         topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
-        tableViewProporties()
+       // tableViewProporties()
+        setUpCollectionView()
         self.getCategoryList()
     }
     
@@ -43,13 +44,12 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-    
-    func tableViewProporties(){
-        
-        self.categoryTable.estimatedRowHeight = 60
-        self.categoryTable.rowHeight = UITableView.automaticDimension
-    }
    
+    
+    func setUpCollectionView() {
+        let nib = UINib(nibName: "DigitalResourceCategoryCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "DigitalResourceCategoryCell")
+    }
     
     func getCategoryList(){
         
@@ -63,6 +63,7 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
         
         dictionary[UserIdKey().id] = userId
         dictionary[GalleryCategory.searchText] = searchText
+        dictionary[GalleryCategory.module] = 20
         
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
@@ -80,7 +81,7 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
             self.categoryList = cetgories
             
             DispatchQueue.main.async {
-                self.categoryTable.reloadData()
+                self.collectionView.reloadData()
                 self.stopLoadingAnimation()
                 if self.categoryList.count == 0{
                     self.addNoDataFoundLabel()
@@ -90,55 +91,6 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
                 }
             }
         }
-        
-    }
-    
-   
-
-    
-    //MARK:- TableView Delegates and Datasources
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList.count
-    }
-    
-    // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GalleryCategoryList", for: indexPath) as! GalleryCategoryList
-        
-        let category = categoryList[indexPath.row]
-        
-        
-        if let title = category.caetgory{
-            cell.titleLabel.text = title
-        }
-        
-//        if let catId = category.categoryId{
-//            cell.tag = catId
-//        }
-        
-        cell.selectionStyle = .none
-        
-        // create a new cell if needed or reuse an old one
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
-//        guard let cell = tableView.cellForRow(at: indexPath) as? GalleryCategoryList else { return }
-//        
-//        self.navigateToGallery(catId: cell.tag)
-        
-        
-        
-        
-         let cat = categoryList[indexPath.row]
-        
-        
-        self.navigateTodigitalResourceDetail(category: cat)
         
     }
     
@@ -185,6 +137,48 @@ class DigitalResourcesListController: UIViewController,UITableViewDelegate,UITab
 
 }
 
+// MARK: -UICollectionViewDataSource, UICollectionViewDelegate-
+
+extension DigitalResourcesListController: UICollectionViewDataSource,UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DigitalResourceCategoryCell", for: indexPath) as? DigitalResourceCategoryCell else { return UICollectionViewCell() }
+        let category = categoryList[indexPath.row]
+        if let title = category.caetgory {
+            cell.labelTitle.text = title
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cat = categoryList[indexPath.row]
+       self.navigateTodigitalResourceDetail(category: cat)
+    }
+    
+}
+
+
+extension DigitalResourcesListController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let availableWidth = view.frame.width - 30
+        let widthPerItem = availableWidth / 2
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+       return 10
+    }
+}
 
 extension DigitalResourcesListController: TopHeaderDelegate {
     func secondRightButtonClicked(_ button: UIButton) {
