@@ -4064,6 +4064,7 @@
 		CD9093F92A4E37F2008F39D0 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CD9094022A4E386A008F39D0 /* VIS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9093582A4E3663008F39D0 /* VIS.xcassets */; };
 		CD9094082A4E3942008F39D0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD9094072A4E3942008F39D0 /* GoogleService-Info.plist */; };
+		CD90940A2A4E3B8B008F39D0 /* Salmiya.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9094092A4E3B8A008F39D0 /* Salmiya.xcassets */; };
 		CDB7C3D027480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3D327480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
 		CDB7C3D527480F8D00FE5186 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
@@ -5562,7 +5563,6 @@
 		CE11989A21F82AB200D028D2 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		CE11989C21F82AB200D028D2 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CE1198A921F8330300D028D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1198A721F832B300D028D2 /* GoogleService-Info.plist */; };
-		CE1198AE21F8345C00D028D2 /* Salmiya.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1198AC21F833B600D028D2 /* Salmiya.xcassets */; };
 		CE155E1F2203301B009D1994 /* DarAlUloomAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE10ED1B2201D7B200F24DE4 /* DarAlUloomAssets.xcassets */; };
 		CE15659021A96DB400DC758E /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CE15659121A96DB400DC758E /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
@@ -6633,6 +6633,7 @@
 		CD9093FF2A4E37F2008F39D0 /* VIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9094012A4E3835008F39D0 /* Virginia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Virginia-Info.plist"; sourceTree = "<group>"; };
 		CD9094072A4E3942008F39D0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD9094092A4E3B8A008F39D0 /* Salmiya.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Salmiya.xcassets; sourceTree = "<group>"; };
 		CD92438F274C4405007B5C2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDA901E427B8D5B50040FF1A /* HMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA901E627B8D62F0040FF1A /* HMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6664,14 +6665,12 @@
 		CE0FBC7121F9D2CC00C6D924 /* BIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0FBC7421F9D2CD00C6D924 /* BIS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BIS-Info.plist"; path = "/T360/takyon360ios_new/Ambassador Education/BIS-Info.plist"; sourceTree = "<absolute>"; };
 		CE0FBC7621F9D2CD00C6D924 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CE0FBC7A21F9D2CD00C6D924 /* Salmiya.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Salmiya.xcassets; sourceTree = "<group>"; };
 		CE0FBC7D21F9D2DA00C6D924 /* BISAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BISAssets.xcassets; sourceTree = "<group>"; };
 		CE10ED192201D45200F24DE4 /* Dar Al Uloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dar Al Uloom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE10ED1A2201D45400F24DE4 /* DarAlUloom-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DarAlUloom-Info.plist"; path = "/T360/takyon360ios_new/Ambassador Education/DarAlUloom-Info.plist"; sourceTree = "<absolute>"; };
 		CE10ED1B2201D7B200F24DE4 /* DarAlUloomAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DarAlUloomAssets.xcassets; sourceTree = "<group>"; };
 		CE1198A221F82AB200D028D2 /* Salmiya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salmiya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1198A721F832B300D028D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CE1198AC21F833B600D028D2 /* Salmiya.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Salmiya.xcassets; sourceTree = "<group>"; };
 		CE15662021A96DB400DC758E /* Renaissance School.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Renaissance School.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE294CEC21E8933300331820 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CE294CEE21E8970700331820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -7304,6 +7303,7 @@
 		13C7D1DD21410DC80053D5DA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CD9094092A4E3B8A008F39D0 /* Salmiya.xcassets */,
 				CD9093582A4E3663008F39D0 /* VIS.xcassets */,
 				CD7601B2295B64B400812F7B /* PEAAssets.xcassets */,
 				CDE84A2927BEB6D100F16EBE /* Athena.xcassets */,
@@ -7328,8 +7328,6 @@
 				CE8868BA21FAF05D00FF0DE0 /* PEAAssets.xcassets */,
 				CE88681B21FACF8F00FF0DE0 /* ABCAssets.xcassets */,
 				CE0FBC7D21F9D2DA00C6D924 /* BISAssets.xcassets */,
-				CE1198AC21F833B600D028D2 /* Salmiya.xcassets */,
-				CE0FBC7A21F9D2CD00C6D924 /* Salmiya.xcassets */,
 				13CC1571214A17F100FDE9CA /* RAKScholarsAssets.xcassets */,
 				13DD1052214930D100CB24AD /* SAMAAssets.xcassets */,
 				13DD10502149229600CB24AD /* PEPSAssets.xcassets */,
@@ -10144,7 +10142,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1198AE21F8345C00D028D2 /* Salmiya.xcassets in Resources */,
 				988EE3682A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
 				CE1198A921F8330300D028D2 /* GoogleService-Info.plist in Resources */,
 				4493CD30253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -10154,6 +10151,7 @@
 				CE11989521F82AB200D028D2 /* Picker.xib in Resources */,
 				CEE50C5726E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				CE11989621F82AB200D028D2 /* ProgressViewBar.xib in Resources */,
+				CD90940A2A4E3B8B008F39D0 /* Salmiya.xcassets in Resources */,
 				98B10D222A3C647D00FE000E /* TopHeaderView.xib in Resources */,
 				CE11989721F82AB200D028D2 /* TestPenguin.png in Resources */,
 				CE11989821F82AB200D028D2 /* SampleText.txt in Resources */,
