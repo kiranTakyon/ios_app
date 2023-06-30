@@ -23,7 +23,6 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         topHeaderView.searchTextField.delegate = self
         topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
-       // tableViewProporties()
         setUpCollectionView()
         self.getCategoryList()
     }

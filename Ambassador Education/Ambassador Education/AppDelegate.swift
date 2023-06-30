@@ -13,6 +13,7 @@ import FirebaseCore
 import FirebaseMessaging
 import Messages
 import SwiftSoup
+import Updates
 //import Google
 
 @UIApplicationMain
@@ -39,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         setFireBase(application : application)
     //    FirebaseApp.configure()
         UIApplication.shared.applicationIconBadgeNumber = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {  /// Showing dealy for update popup on top view
+            self.showUpdateAppAlert()
+        }
         return true
     }
     // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
@@ -295,4 +299,18 @@ extension AppDelegate: MessagingDelegate {
   }
 
   // [END refresh_token]
+}
+
+
+extension AppDelegate {
+    
+    func showUpdateAppAlert() {
+        Updates.updatingMode = .automatically
+        Updates.notifying = .always
+        Updates.checkForUpdates { result in
+            if let topVc = UIApplication.getTopViewController() {
+                UpdatesUI.promptToUpdate(result, presentingViewController: topVc)
+            }
+        }
+    }
 }

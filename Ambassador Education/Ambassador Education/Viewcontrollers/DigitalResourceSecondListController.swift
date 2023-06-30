@@ -23,6 +23,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     @IBOutlet weak var topHeaderView: TopHeaderView!
     var titleValue : String?
     var digitalList = [TNDigitalResourceSubList]()
+    var categoryList = [TNDigitalResourceCategory]()
     var pageNumber = 1
     let refreshControl = UIRefreshControl()
     var arrCatgoryAndItem: [CategoryAndItem] = []
@@ -88,7 +89,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
             
             guard let digitalCategory = result["DigitalCategories"] as? NSArray else{return}
             let digitalCategories = ModelClassManager.sharedManager.createModelArray(data: digitalCategory, modelType: ModelType.TNDigitalResource) as! [TNDigitalResourceCategory]
-            
+            self.categoryList = digitalCategories
             self.digitalList = cetgories
             self.mergeCategoryAndItem(categories: digitalCategories, items: cetgories)
             
@@ -96,7 +97,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
                 self.removeNoDataLabel()
                 self.checkAndStopBounce(count: cetgories.count)
                 self.stopLoadingAnimation()
-                if self.digitalList.count == 0 {
+                if self.digitalList.count == 0 && self.categoryList.count == 0 {
                     self.collectionView.isHidden = true
                     self.addNoDataFoundLabel()
                 }
@@ -115,7 +116,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     
     func checkAndStopBounce(count:Int){
         
-        if count == 0{
+        if count == 0 {
             self.collectionView.bounces = false
         }
         
