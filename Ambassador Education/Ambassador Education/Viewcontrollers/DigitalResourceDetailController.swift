@@ -562,7 +562,7 @@ extension DigitalResourceDetailController : TaykonProtocol {
         
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         print(value)
     }
     
@@ -586,7 +586,7 @@ extension DigitalResourceDetailController : TaykonProtocol {
         
     }
     
-    func getUploadedAttachments(isUpload: Bool) {
+    func getUploadedAttachments(isUpload: Bool, isForDraft: Bool) {
         
     }
     

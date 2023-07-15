@@ -17,6 +17,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     var inBoxVC = CommunicateController()
     var sentBoxVC = CommunicateController()
     var WPBoxVC = CommunicateController()
+    var draftVC = CommunicateController()
     var searchText = ""
     var delegates : TaykonProtocol?
     
@@ -80,7 +81,11 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         WPBoxVC.type = CommunicationType.WP
         WPBoxVC.delegate = self
         
-        self.setupPager(tabNames: [(list?.inboxLabel.safeValue.uppercased()).safeValue,(list?.sentItemsLabel.safeValue.uppercased()).safeValue,(list?.WPItemsLabel.safeValue.uppercased()).safeValue], tabControllers: [self.inBoxVC,self.sentBoxVC,self.WPBoxVC])
+        draftVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
+        draftVC.type = CommunicationType.draft
+        draftVC.delegate = self
+        
+        self.setupPager(tabNames: [(list?.inboxLabel.safeValue.uppercased()).safeValue,(list?.sentItemsLabel.safeValue.uppercased()).safeValue,(list?.WPItemsLabel.safeValue.uppercased()).safeValue,(list?.DraftItemsLabel.safeValue.uppercased()).safeValue], tabControllers: [self.inBoxVC,self.sentBoxVC,self.WPBoxVC, self.draftVC])
         self.reloadData()
         
     }
@@ -134,25 +139,28 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     func deleteTheSelectedAttachment(index: Int) {
         
     }
-    func getBackToParentView(value: Any?,titleValue : String?) {
+    
+    func getBackToParentView(value: Any?,titleValue : String?, isForDraft: Bool,message: TinboxMessage) {
         
         let valueReal = value as? String
         
-        if  valueReal != "compose" {
-            
+        if isForDraft {
+            let composeViewC = mainStoryBoard.instantiateViewController(withIdentifier: "composeVc") as! ComposeController
+            composeViewC.titleText = "Draft"
+            composeViewC.obj = message
+            composeViewC.parentMessageId = Int(message.id.safeValue).safeValueOfInt
+            composeViewC.commDraftId = Int(message.id.safeValue).safeValueOfInt
+            self.navigationController?.pushViewController(composeViewC, animated: true)
+        } else if  valueReal != "compose" {
             let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "MessageDetailController") as! MessageDetailController
             detailVc.messageId = valueReal
             detailVc.typeMsg  = typeValue
             detailVc.text = titleValue
             self.navigationController?.pushViewController(detailVc, animated: true)
-            
-            
-        } else{
-            
+        } else {
             let composeViewC = mainStoryBoard.instantiateViewController(withIdentifier: "composeVc") as! ComposeController
             composeViewC.titleText = "Compose New Mail"
             self.navigationController?.pushViewController(composeViewC, animated: true)
-            
         }
     }
         
@@ -181,7 +189,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     func selectedPickerRow(selctedRow: Int) {
         
     }
-    func getUploadedAttachments(isUpload : Bool) {
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
         
     }
     

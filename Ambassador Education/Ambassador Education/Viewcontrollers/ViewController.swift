@@ -429,7 +429,7 @@ extension ViewController : TaykonProtocol {
         
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     
@@ -454,7 +454,7 @@ extension ViewController : TaykonProtocol {
         
     }
     
-    func getUploadedAttachments(isUpload: Bool) {
+    func getUploadedAttachments(isUpload: Bool, isForDraft: Bool) {
         
     }
     

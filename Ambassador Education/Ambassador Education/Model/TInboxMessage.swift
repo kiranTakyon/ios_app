@@ -9,7 +9,7 @@
 import Foundation
 
 
-class TinboxMessage{
+class TinboxMessage {
     
     var id : String?
     var subject : String?
@@ -20,6 +20,7 @@ class TinboxMessage{
     var userProfileImage : String?
     var isRead : String?
     var attachIcon : Int?
+    var ApprovedStatus: Bool?
     var markAsUnReadLabel : String?
     var markAsReadLabel : String?
     var sender : String?
@@ -122,6 +123,15 @@ class TinboxMessage{
                 }
             
             }
+        
+        if let status = values["ApprovedStatus"] as? Int {
+            if status == 1 {
+                self.ApprovedStatus = true
+            } else {
+                self.ApprovedStatus = false
+            }
+        }
+        
     }
     
     
@@ -141,6 +151,8 @@ class MessageModel {
     var deleteMailLabel : String?
     var filterLabel : String?
     var forwardLabel : String?
+    var ApproveLabel: String?
+    var DraftItemsLabel: String?
     var groupLabel : String?
     var inboxLabel : String?
     var markAsReadLabel : String?
@@ -174,6 +186,8 @@ class MessageModel {
         self.communicateLabel = values?["CommunicateLabel"] as? String
         self.composeHeadLabel = values?["ComposeHeadLabel"] as? String
         self.composeLabel = values?["ComposeLabel"] as? String
+        self.ApproveLabel = values?["ApproveLabel"] as? String
+        self.DraftItemsLabel = values?["DraftItemsLabel"] as? String
         
         if let delete = values?["DeleteMailLabel"] as? String{
             self.deleteMailLabel = delete

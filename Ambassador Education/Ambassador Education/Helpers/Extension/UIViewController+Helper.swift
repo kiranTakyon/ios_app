@@ -24,6 +24,10 @@ extension UIViewController {
         return topLayoutGuide
     }
     
+    func getUdid() -> String{
+        return  UIDevice.current.identifierForVendor!.uuidString
+    }
+    
 }
 
 

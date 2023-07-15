@@ -354,7 +354,7 @@ class WeeklyPlanFilterController: UIViewController,UITextFieldDelegate{
         if selectClassField.text != "" && selectSubject.text != "" && startingDateField.text != "" && endingDateField.text != ""{
             isSearch = 0
             let fullTime = (startTimeString,endTimeString,isSearch,divId,subjectID )
-            delegate?.getBackToParentView(value: fullTime, titleValue: nil)
+            delegate?.getBackToParentView(value: fullTime, titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
             dismissPopUpViewController()
         }
         else{
@@ -365,7 +365,7 @@ class WeeklyPlanFilterController: UIViewController,UITextFieldDelegate{
     @IBAction func viewLatestAction(_ sender: Any) {
         isSearch = 1
         let fullTime = (startTimeString,endTimeString,isSearch,divId,subjectID)
-        delegate?.getBackToParentView(value: fullTime, titleValue: nil)
+        delegate?.getBackToParentView(value: fullTime, titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
         dismissPopUpViewController()
     }
     

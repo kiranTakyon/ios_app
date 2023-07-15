@@ -18,7 +18,7 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
         
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     
@@ -42,7 +42,7 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
         
     }
     
-    func getUploadedAttachments(isUpload: Bool) {
+    func getUploadedAttachments(isUpload: Bool, isForDraft: Bool) {
         
     }
     

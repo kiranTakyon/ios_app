@@ -663,7 +663,7 @@ class SlideController: UITableViewController,TaykonProtocol {
         
     }
     
-    func getUploadedAttachments(isUpload : Bool) {
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
         
     }
     
@@ -672,7 +672,7 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         if let siblings = value as? TSibling{
         let imageUrlVal = siblings.proileImage
             sibling = true
@@ -755,7 +755,7 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
             UserDefaultsManager.manager.saveUserId(id: userId)
         }
         self.studentDetailLabel.text = "Class Name - " + selectedSibling.classValue.safeValue
-        self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "")
+        self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
        
     }
     

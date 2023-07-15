@@ -36,6 +36,8 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     let quickLookController = QLPreviewController()
     
     var itemId : String?
+    var id: String = ""
+    var isApprove: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +63,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
 //        self.performSegue(withIdentifier: "toMessageDetail", sender: self)
     }
     
-    func getMessageDetails(){
+    func getMessageDetails() {
         topHeaderView.title = text.safeValue
         self.startLoadingAnimation()
         
@@ -94,14 +96,13 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                     }
                 }
             }
-            else{
+            else {
                 DispatchQueue.main.async {
                     self.stopLoadingAnimation()
                     SweetAlert().showAlert(kAppName, subTitle: "Not able to get the message details", style: .warning)
                 }
             }
         }
-
     }
     
     
@@ -122,15 +123,17 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                 
                 if user == UserType.parent.rawValue || user == UserType.student.rawValue{
 
-                    colorVC.options = [(resultValue?.forwardLabel.safeValue).safeValue,(resultValue?.deleteMailLabel.safeValue).safeValue,(resultValue?.markAsReadLabel.safeValue).safeValue,(resultValue?.markAsUnReadLabel.safeValue).safeValue,"Cancel"]
+                    colorVC.options = [(resultValue?.forwardLabel.safeValue).safeValue,(resultValue?.deleteMailLabel.safeValue).safeValue,(resultValue?.markAsReadLabel.safeValue).safeValue,(resultValue?.markAsUnReadLabel.safeValue).safeValue,(resultValue?.ApproveLabel.safeValue).safeValue,"Cancel"]
 
                 }
                 else{
 
-                    colorVC.options = [(resultValue?.forwardLabel.safeValue).safeValue,(resultValue?.replyAllLabel.safeValue).safeValue,(resultValue?.deleteMailLabel.safeValue).safeValue,(resultValue?.markAsReadLabel.safeValue).safeValue,(resultValue?.markAsUnReadLabel.safeValue).safeValue,"Cancel"]
+                    colorVC.options = [(resultValue?.forwardLabel.safeValue).safeValue,(resultValue?.replyAllLabel.safeValue).safeValue,(resultValue?.deleteMailLabel.safeValue).safeValue,(resultValue?.markAsReadLabel.safeValue).safeValue,(resultValue?.markAsUnReadLabel.safeValue).safeValue,(resultValue?.ApproveLabel.safeValue).safeValue,"Cancel"]
 
                 }
         }
+            colorVC.isApproved = isApprove
+            colorVC.msgObj = messageList[tag]
             colorVC.delegate = self
             colorVC.typeval = typeMsg
             colorVC.tag = tag
@@ -140,6 +143,10 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             let popupVC = PopupViewController(contentController: colorVC, popupWidth: 300, popupHeight: 300)
             self.present(popupVC, animated: true)
         }}
+    
+    func didCheckApproveState(isApprove : Bool) {
+        self.isApprove = isApprove
+    }
     
     
     func moveToComposeController(titleTxt : String,index : Int,tag: Int){
@@ -495,7 +502,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     
-    func getUploadedAttachments(isUpload : Bool){
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool){
         
     }
     
@@ -525,7 +532,6 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             
         let currentMessage = self.messageList[tagValue]
         composeViewC.obj = currentMessage
-            
         composeViewC.selectedPersonItems = currentMessage.persons!
         composeViewC.parentMessageId = Int(currentMessage.id.safeValue).safeValueOfInt
 
@@ -588,7 +594,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     

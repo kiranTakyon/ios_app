@@ -16,6 +16,7 @@ enum CommunicationType : String{
     case inbox = "INBOX"
     case sent  = "SENT"
     case WP = "WEEKLYPLAN"
+    case draft = "Draft"
 }
 
 class CommunicateController: UIViewController,UITableViewDataSource, UITableViewDelegate,TaykonProtocol {
@@ -32,6 +33,8 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
     
     let refreshControl = UIRefreshControl()
     var searchText = ""
+    var isForDraft: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -85,11 +88,15 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
             typeValue = 2
             url = APIUrls().getInBox
          }
-        else if type == CommunicationType.WP{
+        else if type == CommunicationType.WP {
             typeValue = 3
             url = APIUrls().WPCommentList
+        } else if type == CommunicationType.draft {
+            typeValue = 4
+            url = APIUrls().getDrafts
+            isForDraft = true
         }
-        else{
+        else {
             typeValue = 1
             url = APIUrls().getSentBox
         }
@@ -105,6 +112,10 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
         if(typeValue == 3)
         {
             dictionary[Communicate().ModuleCode] = "weeklyplan"
+        }
+        
+        if typeValue == 4 {
+            dictionary["comm_id"] = ""
         }
         
         
@@ -281,7 +292,7 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
         let messageSub = message.subject.safeValue
         let messageId = message.id.safeValue
 
-        delegate?.getBackToParentView(value: messageId,titleValue :messageSub)
+            delegate?.getBackToParentView(value: messageId,titleValue :messageSub, isForDraft: isForDraft, message: message)
         }
     }
     
@@ -290,7 +301,7 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
     }
 
     @IBAction func composeAction(_ sender: Any) {
-        self.delegate?.getBackToParentView(value: "compose", titleValue: nil)
+        self.delegate?.getBackToParentView(value: "compose", titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
     }
 
     override func didReceiveMemoryWarning() {
@@ -303,7 +314,7 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
         
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     
@@ -311,7 +322,7 @@ class CommunicateController: UIViewController,UITableViewDataSource, UITableView
         
     }
     
-    func getUploadedAttachments(isUpload : Bool) {
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
         
     }
     
