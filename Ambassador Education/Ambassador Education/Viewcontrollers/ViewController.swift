@@ -10,6 +10,7 @@ import UIKit
 import BIZPopupView
 import SCLAlertView
 import EzPopup
+import Nantes
 
 let kAlert = "Orison"
 let fillFields = "All fields are mandatory"
@@ -28,12 +29,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tickImage: UIImageView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var appLbael: UILabel!
+    @IBOutlet weak var viewEmail: UIView!
+    @IBOutlet weak var viewPassword: UIView!
+    @IBOutlet weak var viewLanguge: UIView!
     
+    @IBOutlet weak var labelDontHaveAnAccount: NantesLabel!
     let tick = UIImage(named:"Tick")
     let unTick = UIImage(named:"UnTick")
 //    var  popUpViewVc : BIZPopupViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpLabelDontHaveAnAccount()
+        addBorderToEmailView()
         setCountryPicker()
         setVersion()
         getDashboardWhenAlreadyLogin()
@@ -459,4 +466,49 @@ extension ViewController : TaykonProtocol {
     }
     
     
+}
+
+
+extension ViewController: NantesLabelDelegate {
+    
+    func setUpLabelDontHaveAnAccount() {
+        labelDontHaveAnAccount.delegate = self
+        let text = "Don't have an account? Sign up"
+        
+        let myString = NSMutableAttributedString(string: text)
+        myString.addAttribute(.link, value: URL(string: "Signup")!, range:(text as NSString).range(of: "Sign up"))
+        myString.addAttribute(.foregroundColor, value: UIColor.gray, range:(text as NSString).range(of: "Sign up"))
+        myString.addAttribute(.font, value: UIFont.systemFont(ofSize: 15), range: NSRange(location: 0, length: text.count))
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        myString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: 29))
+        labelDontHaveAnAccount.attributedText = myString
+    }
+    
+    func attributedLabel(_ label: NantesLabel, didSelectLink link: URL) {
+        
+        if link == URL(string: "Signup")! {
+            print("signup")
+        }
+    }
+    
+}
+
+
+extension ViewController {
+    
+    func addBorderToEmailView() {
+        let thickness: CGFloat = 2.0
+           let topBorder = CALayer()
+           let tralingBorder = CALayer()
+           topBorder.frame = CGRect(x: self.viewEmail.frame.size.width/2, y: 0.0, width: self.viewEmail.frame.size.width/2 - 25 , height: thickness)
+           topBorder.backgroundColor = UIColor.gray.cgColor
+        tralingBorder.frame = CGRect(x: self.viewEmail.frame.size.width - 25 , y: 0.0, width: 2.0, height: self.viewEmail.frame.size.height)
+        tralingBorder.backgroundColor = UIColor.gray.cgColor
+//        viewEmail.layer.cornerRadius = 25
+//        viewEmail.layer.masksToBounds = true
+        viewEmail.layer.addSublayer(topBorder)
+        viewEmail.layer.addSublayer(tralingBorder)
+    }
 }
