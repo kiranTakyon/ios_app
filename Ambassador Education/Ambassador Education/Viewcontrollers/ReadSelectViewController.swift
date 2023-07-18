@@ -18,6 +18,7 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
     var options = [String]()
     var msgId = [String]()
     var delegate : TaykonProtocol?
+    var isApproved: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        self.automaticallyAdjustsScrollViewInsets = false
+        checkApprove()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
@@ -50,57 +52,35 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
         cell?.titleLabel.text = options[indexPath.row]
         }
         cell?.selectionStyle = .none
+        
+        if isApproved && options[indexPath.row] == "Approve" {
+            cell?.titleLabel.textColor = .gray
+        } else {
+            cell?.titleLabel.textColor = .black
+        }
+        
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let user = UserDefaultsManager.manager.getUserType() as? String{
-
-            if user == UserType.parent.rawValue || user == UserType.student.rawValue{
-                switch indexPath.row{
-                case 0:
-                    moveToComposeView(type: indexPath.row,tag : tag)
-                     
-                case 1:
-                    deleteMyMail()
-                    
-                case 2:
-                    callApi(markType: 1)
-                    
-                case 3:
-                    callApi(markType: 0)
-                    
-                case 4:
-                    self.dismiss(animated: true, completion: nil)
-                    
-                default : break;
-            }
-            }
-            else{
-                 switch indexPath.row {
-                    
-                 case 0,1: //forward,reply
-                    moveToComposeView(type: indexPath.row, tag: tag)
-                    
-                 case 2://delete
-                    deleteMyMail()
-                 case 3://read
-                    callApi(markType: 1)
-
-                 case 4://unread
-                    callApi(markType: 0)
-
-                 case 5://cancel
-                    self.dismiss(animated: true, completion: nil)
-
-                    
-                 default : break;
-                    
-                }
-            }
-       
-            
+    
+        switch options[indexPath.row] {
+        case "Forward Email":
+            moveToComposeView(type: indexPath.row,tag : tag)
+        case "Reply All":
+            moveToComposeView(type: indexPath.row,tag : tag)
+        case "Delete":
+            deleteMyMail()
+        case "Mark As Read":
+            callApi(markType: 1)
+        case "Mark As UnRead":
+            callApi(markType: 0)
+        case "Approve":
+            getApprove()
+        case "Cancel":
+            self.dismiss(animated: true, completion: nil)
+        default:
+            self.dismiss(animated: true, completion: nil)
         }
         
     }
@@ -198,6 +178,50 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
             
     }
     }
+    
+    func checkApprove() {
+        if !(msgObj?.ApprovedStatus ?? false) {
+            if let index = options.firstIndex(of: "Approve") {
+                options.remove(at: index)
+            }
+        }
+    }
+    
+    func getApprove() {
+        
+        guard !isApproved else { return }
+        self.startLoadingAnimation()
+        
+        var dictionary = [String: Any]()
+        
+        let userId = UserDefaultsManager.manager.getUserId()
+        dictionary[UserIdKey().id] = userId
+        dictionary[Communicate().messageId] = msgId[tag]
+        dictionary[Communicate().isMobile] = 0
+        dictionary["client_ip"] =  getUdid()
+        
+        let url = APIUrls().messageApprove
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [self] (result) in
+            DispatchQueue.main.async {
+            if let StatusMessage = result["StatusMessage"] as? String {
+                if StatusMessage == "Success" {
+                    self.delegate?.didCheckApproveState(isApprove: true)
+                    SweetAlert().showAlert(kAppName, subTitle: "Approve", style: .success)
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.delegate?.didCheckApproveState(isApprove: false)
+                    SweetAlert().showAlert(kAppName, subTitle: result["StatusMessage"] as? String, style: .success)
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+                self.dismiss(animated: true, completion: nil)
+                self.stopLoadingAnimation()
+            }
+        }
+        
+    }
+    
 }
 
 class ReadCell : UITableViewCell{

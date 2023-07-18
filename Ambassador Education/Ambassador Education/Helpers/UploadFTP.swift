@@ -18,7 +18,7 @@ class FTPUpload {
     var delegate : TaykonProtocol?
     var dataObj = NSMutableDictionary()
 
-    func upload(attachments : [String]) {
+    func upload(attachments : [String], isForDraft: Bool = false) {
         resultPaths.removeAll()
         if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary {
             if attachments.count > 0 {
@@ -37,7 +37,7 @@ class FTPUpload {
                     dataRequest(urlweb: each, str: fileName, detail: ftpDetails, attach: attachments, completion: { (success) in
                         if success {
                             if self.dataObj.count == attachments.count {
-                                self.uploadAttachmentsData(detail:  ftpDetails)
+                                self.uploadAttachmentsData(detail:  ftpDetails,isForDraft: isForDraft)
                             }
                         }
                         else {
@@ -48,7 +48,7 @@ class FTPUpload {
             }
         }
         else{
-            self.delegate?.getUploadedAttachments(isUpload: false)
+            self.delegate?.getUploadedAttachments(isUpload: false, isForDraft: isForDraft)
         }
     }
 
@@ -97,20 +97,20 @@ class FTPUpload {
     
     
 
-    func uploadAttachmentsData(detail : NSDictionary){
+    func uploadAttachmentsData(detail : NSDictionary, isForDraft: Bool = false){
         if  let username = detail["UserName"] as? String{
             let password = detail["Password"] as? String
             let serverHost = detail["Server"] as? String
             let serverPath = detail["ServerPath"] as? String
             
             let pass =  (password?.base64Decoded().safeValue).safeValue
-            checkValues(credentials : detail)
+            checkValues(credentials : detail,isForDraft: isForDraft)
         } else {
-            self.delegate?.getUploadedAttachments(isUpload: false)
+            self.delegate?.getUploadedAttachments(isUpload: false, isForDraft: isForDraft)
         }
     }
     
-    func checkValues(credentials : NSDictionary){
+    func checkValues(credentials : NSDictionary, isForDraft: Bool = false){
         
         if  let username = credentials["UserName"] as? String{
             let password = credentials["Password"] as? String
@@ -130,11 +130,11 @@ class FTPUpload {
                                 resultPaths.append(path )
                                 if resultPaths.count == self.dataObj.count {
                                     self.dataObj.removeAllObjects()
-                                    self.delegate?.getUploadedAttachments(isUpload : true)
+                                    self.delegate?.getUploadedAttachments(isUpload : true, isForDraft: isForDraft)
                                 }
                             }
                             else{
-                                self.delegate?.getUploadedAttachments(isUpload : false)
+                                self.delegate?.getUploadedAttachments(isUpload : false, isForDraft: isForDraft)
                             }
                         }
                         
@@ -143,7 +143,7 @@ class FTPUpload {
             }
 
         else{
-            self.delegate?.getUploadedAttachments(isUpload : true)
+            self.delegate?.getUploadedAttachments(isUpload : true, isForDraft: isForDraft)
         }
     }
     }

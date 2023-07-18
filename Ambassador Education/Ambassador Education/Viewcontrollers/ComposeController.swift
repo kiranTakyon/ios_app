@@ -60,6 +60,8 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     var attachments = [String]()
     var currentSelectedTag = 0
     var session: Session!
+    var draftMessageList = [TinboxMessage]()
+    var commDraftId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,11 +84,13 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         if method.contains("Forward") ||  method.contains("إلى الأمام") {
             editorView.html =  "<br display: block; margin: 800px; height: 1500;> </br> <br display: block; margin: 800px; height: 1500;> </br> <p>---------Forwarded Message--------- </p> <p> From: \(obj!.sender.safeValue) </p> <p>Date : \(obj!.date.safeValue) </p> <p>Subject : \(obj!.subject.safeValue) </p>  <p>\(string) </p>"
         }
-            
+        
         else if titleText == "Reply" || titleText ==  "الرد" || titleText == "Reply All" || titleText == "الرد على الجميع"{
             editorView.html =  "<br display: block; margin: 800px; height: 1500;> </br> <br display: block; margin: 800px; height: 1500;> </br> <p>---------Reply Message--------- </p> <p>\(string) </p>"
+        } else if titleText == "Draft" {
+            editorView.html =  "<br display: block; margin: 100px; height: 100;> </br> <p>\(string) </p>"
         }
-        }
+    }
     
     
     func getTheIncluded(){
@@ -108,6 +112,15 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         forwardMsgIdValue = (obj?.id.safeValue).safeValue
         isReplyMail = true
         subjectTextField.text = "Re: " + (obj?.subject.safeValue).safeValue
+        stringFromHtml(string: (obj?.message).safeValue, method: titleText)
+        seperateNameWithCommas(string: seletedGroups, view: groupView)
+        groupView.searchResultHeight = 0.0
+        groupView.minimumCharactersToSearch = 100
+        groupView.placeholder = "Select Person"
+    }
+    
+    func setDraft() {
+        subjectTextField.text = (obj?.subject.safeValue).safeValue
         stringFromHtml(string: (obj?.message).safeValue, method: titleText)
         seperateNameWithCommas(string: seletedGroups, view: groupView)
         groupView.searchResultHeight = 0.0
@@ -148,8 +161,16 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             groupView.searchResultHeight = 500
             groupView.minimumCharactersToSearch = 0
             setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
-        }
-        else{
+      } else if titleText == "Draft" {
+          setDraft()
+          isReplyMail = false
+          groupView.placeholder = "Select Group"
+          groupView.searchResultHeight = 500
+          groupView.minimumCharactersToSearch = 0
+          //heightConstraint.constant = 100
+          setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
+          //seperateNameWithCommas(string: selectedPersons, view: personView)
+      } else{
             isReplyMail = false
             groupView.placeholder = "Select Group"
             groupView.searchResultHeight = 500
@@ -485,10 +506,10 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         editorView.resignFirstResponder()
         self.resignFirstResponder()
         var ftpUrls = [String]()
-        if checkFieldsEmpty().0 != true{
+        if checkFieldsEmpty().0 != true {
 
-            if attachmentItems.count > 0{
-                for each in attachmentItems{
+            if attachmentItems.count > 0 {
+                for each in attachmentItems {
                    ftpUrls.append(each)
                 }
             }
@@ -498,15 +519,16 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         }
     }
     
-    func getUploadedAttachments(isUpload : Bool){
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool){
         
         if !isUpload {
             var msg = "Error in uploading attachments , Please try again later"
             self.stopLoadingAnimation()
             showAlert(message: msg)
-        }
-        else{
-       sendMail()
+        } else if isForDraft {
+            saveMessageToDraft()
+        } else {
+            sendMail()
         }
     }
     
@@ -561,7 +583,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     }
     
     
-    func checkForStudAndParent(fileUrls: [String]){
+    func checkForStudAndParent(fileUrls: [String], isForDraft:Bool = false) {
         
         guard (UserDefaultsManager.manager.getUserType() as? String) != nil else { return }
         
@@ -570,8 +592,10 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             } else {
                 self.startLoadingAnimation()
                 if attachmentItems.count > 0 {
-                    connectFtp(list : fileUrls)
-                } else {
+                    connectFtp(list : fileUrls,isForDraft: isForDraft)
+                } else if isForDraft {
+                    saveMessageToDraft()
+                } else  {
                     sendMail()
                 }
             }
@@ -601,7 +625,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         return ""
     }
     
-    func getSendDictionary(isReply : Bool) -> [String:Any] {
+    func getSendDictionary(isReply : Bool, isForMessageDraft: Bool = false) -> [String:Any] {
         var dictionary = [String: Any]()
         let userId  = UserDefaultsManager.manager.getUserId()
         let subjectValue = subjectTextField.text
@@ -636,6 +660,14 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         dictionary["ParentMsgId"] = parentMessageId
         dictionary["IsMobile"] = 1
         dictionary["frwdMsgId"] = forwardMsgIdValue
+        
+        if isForMessageDraft {
+            dictionary["is_draft"] = 1
+        } else {
+            if let draftid = commDraftId {
+                dictionary["comm_draft_id"] = draftid
+            }
+        }
 
         print(dictionary)
         
@@ -1007,7 +1039,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         
     }
         
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     
@@ -1036,6 +1068,19 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     func getSearchWithCommunicate(searchTxt: String, type: Int) {
     }
     
+    func saveMessageToDraft() {
+        
+        let sendDict = self.getSendDictionary(isReply: isReplyMail,isForMessageDraft: true)
+        print("sending dictionary is :-",sendDict)
+        let url = APIUrls().messageSaveToDraft
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "",typingCountVal:typingCount, requestParameters: sendDict, completion: { (result) in
+            
+            print(result)
+            
+        })
+    }
+        
 }
 
 extension ComposeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -1147,10 +1192,10 @@ class toEmailCell : UITableViewCell,UITextFieldDelegate{
 }
 
 extension ComposeController{
-    func connectFtp(list : [String]){
+    func connectFtp(list : [String], isForDraft: Bool = false){
         if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary{
             fileUpload.delegate = self
-            fileUpload.upload(attachments: list )
+            fileUpload.upload(attachments: list, isForDraft: isForDraft )
     }
     }
 
@@ -1173,26 +1218,18 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 
 
 extension ComposeController: TopHeaderDelegate {
+    
+    func backButtonClicked(_ button: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+        if titleText == "Compose New Mail" || titleText == "Draft" {
+            sendEmailOrDraft(isForDraft: true)
+        }
+        
+    }
+    
     func secondRightButtonClicked(_ button: UIButton) {
         self.view.endEditing(true)
-        groupView.resignFirstResponder()
-        subjectTextField.resignFirstResponder()
-        personView.resignFirstResponder()
-        bccView.resignFirstResponder()
-        editorView.resignFirstResponder()
-        self.resignFirstResponder()
-        var ftpUrls = [String]()
-        if checkFieldsEmpty().0 != true{
-
-            if attachmentItems.count > 0{
-                for each in attachmentItems{
-                   ftpUrls.append(each)
-                }
-            }
-         self.checkForStudAndParent(fileUrls : ftpUrls)
-        }else{
-            SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
-        }
+        sendEmailOrDraft()
     }
     
     func searchButtonClicked(_ button: UIButton) {
@@ -1221,6 +1258,27 @@ extension ComposeController: TopHeaderDelegate {
             } else {
                 present(alertController, animated: true, completion: nil)
             }
+        }
+    }
+    
+    func sendEmailOrDraft(isForDraft: Bool = false) {
+        groupView.resignFirstResponder()
+        subjectTextField.resignFirstResponder()
+        personView.resignFirstResponder()
+        bccView.resignFirstResponder()
+        editorView.resignFirstResponder()
+        self.resignFirstResponder()
+        var ftpUrls = [String]()
+        if checkFieldsEmpty().0 != true{
+
+            if attachmentItems.count > 0 {
+                for each in attachmentItems{
+                   ftpUrls.append(each)
+                }
+            }
+         self.checkForStudAndParent(fileUrls : ftpUrls, isForDraft: isForDraft)
+        }else{
+            SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
         }
     }
     

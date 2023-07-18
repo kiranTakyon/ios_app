@@ -251,11 +251,11 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         
     }
     
-    func getUploadedAttachments(isUpload : Bool) {
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
         
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     

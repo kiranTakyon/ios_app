@@ -14,12 +14,22 @@ import Foundation
     
     func deleteTheSelectedAttachment(index : Int)
     func downloadPdfButtonAction(url: String,fileName : String?)
-    func getBackToParentView(value:Any?,titleValue : String?)
+    func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage)
     func getBackToTableView(value:Any?,tagValueInt : Int)
     func selectedPickerRow(selctedRow:Int)
     func popUpDismiss()
     func moveToComposeController(titleTxt : String,index : Int,tag : Int)
     func getSearchWithCommunicate(searchTxt : String,type: Int)
-    func getUploadedAttachments(isUpload : Bool)
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool)
+    func didCheckApproveState(isApprove : Bool)
 
+}
+
+extension TaykonProtocol {
+    func didCheckApproveState(isApprove : Bool) {
+        
+    }
+    func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage) {
+        
+    }
 }

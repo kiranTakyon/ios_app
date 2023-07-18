@@ -543,7 +543,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     
 
     
-    func getUploadedAttachments(isUpload : Bool) {
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
         
     }
     
@@ -573,7 +573,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
          presentPopUpViewController(popvc)
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         if let values = value as? (String,String,Int,String,String){
             
             let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
