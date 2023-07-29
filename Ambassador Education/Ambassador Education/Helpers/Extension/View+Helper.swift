@@ -22,6 +22,16 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|", options: [], metrics: nil, views: ["view": view]))
         return view
     }
+    
+    static func fromNib() -> Self {
+        let nibName = String(describing: Self.self)
+        let views: [UIView] = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil) as? [UIView] ?? []
+
+        guard let view = views.first as? Self else {
+            fatalError("Unable to load nib named \(nibName)")
+        }
+        return view
+    }
 }
 
 

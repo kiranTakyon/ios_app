@@ -19,6 +19,7 @@ class TNNoticeBoardDetail{
     var image : String?
     var thumbnail : String?
     var readStatus : String?
+    var category: String?
     init(values:NSDictionary) {
         
         
@@ -31,6 +32,7 @@ class TNNoticeBoardDetail{
         self.thumbnail = values["thumbnail"] as? String
         self.readStatus = values["ReadStatus"] as? String
         self.description = values["Description"] as? String
+        self.category = values["Category"] as? String
 
         
     }

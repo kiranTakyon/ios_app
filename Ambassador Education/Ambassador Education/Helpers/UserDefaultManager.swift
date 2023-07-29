@@ -83,6 +83,18 @@ class UserDefaultsManager {
         
         return userType
     }
+    
+    func setNotifications(isShow: Bool) {
+        UserDefaults.standard.set(isShow, forKey: DBKeys.isNotifications)
+    }
+    
+    func getNotifications() -> Bool {
+        if let value = UserDefaults.standard.value(forKey: DBKeys.isNotifications) as? Bool {
+            return value
+        } else {
+            return false
+        }
+    }
 
     
 }

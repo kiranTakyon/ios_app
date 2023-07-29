@@ -34,7 +34,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         loadMoreControl = LoadMoreControl(scrollView: galleryCollectionView, spacingFromLastCell: 10, indicatorHeight: 60)
         loadMoreControl.delegate = self
         topHeaderView.searchTextField.delegate = self
-        
+        self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     

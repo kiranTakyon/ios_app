@@ -28,32 +28,43 @@ var selectedAlertType : alertType = .gallery
 var notificationObject : TNotification = TNotification(values: NSDictionary())
 
 
-class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWRevealViewControllerDelegate {
+class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     var popUpViewVc : BIZPopupViewController?
     
     @IBOutlet weak var studentImageView: ImageLoader!
     @IBOutlet weak var studentSecondLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var studentNameLabel: UILabel!
-    @IBOutlet weak var alertTable: UITableView!
+    @IBOutlet weak var buttonRightArrow: UIButton!
     @IBOutlet weak var classLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var buttonSideArrow: UIButton!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var notificationList = [TNotification]()
+    var moduleList = [TModule]()
+    var NoticeBoardItems = [TNNoticeBoardDetail]()
+    var buttonOrigin : CGPoint = CGPoint(x: 0, y: 0)
+    let dashboardView: DashboardView = DashboardView.fromNib()
+    let notificationsView: NotificationsView = NotificationsView.fromNib()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         setAllTextFieldsEmpty()
-        self.tableViewProporties()
         getTokenValueForMobileNotification()
         setSlideMenuProporties()
         addObserverToNotification()
         topHeaderView.delegate = self
+        addGestureOnButton()
     }
     
     func setAllTextFieldsEmpty(){
         studentNameLabel.text = ""
         studentSecondLabel.text = ""
-        classLabel.text = ""
+        classLabel.text = "Class"
     }
     
     func getTokenValueForMobileNotification(){
@@ -105,6 +116,63 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         }
     }
     
+    func addGestureOnButton() {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(leftArrowGesture(_ :)))
+        gesture.minimumNumberOfTouches = 1
+        buttonSideArrow.addGestureRecognizer(gesture)
+        
+        let rigtGesture = UIPanGestureRecognizer(target: self, action: #selector(rightArrowGesture(_ :)))
+        rigtGesture.minimumNumberOfTouches = 1
+        buttonRightArrow.addGestureRecognizer(rigtGesture)
+    }
+    
+    
+    @objc func leftArrowGesture(_ gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: view)
+        switch gesture.state {
+        case .changed:
+            if location.x <= 100 {
+                buttonSideArrow.frame.origin = CGPoint(x: location.x, y: buttonSideArrow.frame.origin.y)
+                buttonOrigin = CGPoint(x: location.x, y: buttonSideArrow.frame.origin.y)
+            } else {
+                buttonSideArrow.frame.origin = CGPoint(x: 100, y: buttonSideArrow.frame.origin.y)
+                buttonOrigin = CGPoint(x: 100, y: buttonSideArrow.frame.origin.y)
+            }
+        case .possible:
+            break
+        case .began:
+            break
+        case .ended,.cancelled,.failed:
+            buttonSideArrow.frame.origin = self.buttonOrigin
+            addNotificationsView()
+        @unknown default:
+            break
+        }
+    }
+    
+    @objc func rightArrowGesture(_ gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: view)
+        switch gesture.state {
+        case .changed:
+            if location.x >= view.frame.width - 100 {
+                buttonRightArrow.frame.origin = CGPoint(x: location.x, y: buttonSideArrow.frame.origin.y)
+                buttonOrigin = CGPoint(x: location.x, y: buttonSideArrow.frame.origin.y)
+            } else {
+                buttonRightArrow.frame.origin = CGPoint(x: view.frame.width - 100, y: buttonSideArrow.frame.origin.y)
+                buttonOrigin = CGPoint(x:view.frame.width - 100, y: buttonSideArrow.frame.origin.y)
+            }
+        case .possible:
+            break
+        case .began:
+            break
+        case .ended,.cancelled,.failed:
+            buttonRightArrow.frame.origin = self.buttonOrigin
+            addDashboardView()
+        @unknown default:
+            break
+        }
+    }
+    
     
     func setProfileImageToRound(){
         studentImageView.contentMode = .scaleAspectFill
@@ -144,12 +212,6 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
             if let studentClass = studentDetail["Class"] as? String{
                 if studentClass != ""{
                 classLabel.text = "Class - " + studentClass
-                    classLabel.isHidden = false
-                    classLabelHeight.constant = 17.5
-                }
-                else{
-                   classLabelHeight.constant = 0.0
-                   classLabel.isHidden = true
                 }
             }
             if let proImage = studentDetail["ProfileImage"] as? String{
@@ -167,7 +229,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         return dateString
     }
     
-   @objc func notified(notification: Notification) {
+    @objc func notified(notification: Notification) {
     
         if let dict = notification.object as? NSDictionary {
            // self.studentImageView.loadImageWithUrl((dict["img"] as? String).safeValue)
@@ -229,7 +291,6 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                     guard let nototificationsArray = logInResponseGloabl["Notification"] as? NSArray else{return}
                     let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
                     self.notificationList.append(contentsOf: notifications)
-                self.alertTable.reloadData()
                 self.setStudentDetailsOnView(studentDetail: logInResponseGloabl)
                     if self.notificationList.count == 0{
                         self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
@@ -237,24 +298,39 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                     else{
                         self.removeNoDataLabel()
                 }
-                    self.alertTable.reloadData()
             }
     
 
     
     func setNotitificationList(id :String){
 
-        let url = APIUrls().notification
+        let url = APIUrls().getDashboard
         var dictionary = [String:Any]()
         
         dictionary[UserIdKey().id] =  id
+        dictionary["DashBoardType"] = 1
+        dictionary["Platform"] = "ios"
+        self.startLoadingAnimation()
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
                 self.stopLoadingAnimation()
                     self.notificationList.removeAll()
+                    self.moduleList.removeAll()
+                    self.NoticeBoardItems.removeAll()
                     guard let nototificationsArray = result["Notification"] as? NSArray else{return}
                     let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
                     self.notificationList.append(contentsOf: notifications)
+                
+                if let moduleArray = result["ModuleCount"] as? NSArray {
+                    let module = ModelClassManager.sharedManager.createModelArray(data: moduleArray, modelType: ModelType.TModule) as! [TModule]
+                    self.moduleList.append(contentsOf: module)
+                }
+                
+                if let noticeBoardArray = result["NoticeBoardItems"] as? NSArray {
+                    let noticeBoard = ModelClassManager.sharedManager.createModelArray(data: noticeBoardArray, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
+                    self.NoticeBoardItems.append(contentsOf: noticeBoard)
+                }
+                
 
                     if let notifications = logInResponseGloabl.value(forKey: "Notification") as? NSArray
                     {
@@ -267,72 +343,49 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                 if self.notificationList.count == 0{
                     self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
                 }
-                
-                self.alertTable.reloadData()
+                if UserDefaultsManager.manager.getNotifications() {
+                    self.addNotificationsView()
+                } else {
+                    self.addDashboardView()
+                }
             }
         }
      
     }
     
-        
-    func tableViewProporties(){
-        self.topHeaderView.title = "Dashboard"
-        self.alertTable.estimatedRowHeight = 60
-        self.alertTable.rowHeight = UITableView.automaticDimension
+    func addDashboardView() {
+        UserDefaultsManager.manager.setNotifications(isShow: false)
+        buttonOrigin = CGPoint(x: 0, y: 0)
+        showRightArrowButton(false)
+        topHeaderView.title = "Dashboard"
+        notificationsView.removeFromSuperview()
+        dashboardView.notificationList = notificationList
+        dashboardView.moduleList = moduleList
+        dashboardView.NoticeBoardItems = NoticeBoardItems
+        dashboardView.tableView.reloadData()
+        dashboardView.frame = containerView.bounds
+        containerView.addSubview(dashboardView)
     }
     
-    //MARK:- TableView Delegates and Datasources
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notificationList.count
+    func addNotificationsView() {
+        UserDefaultsManager.manager.setNotifications(isShow: true)
+        buttonOrigin = CGPoint(x: 0, y: 0)
+        showRightArrowButton(true)
+        topHeaderView.title = "Notifications"
+        dashboardView.removeFromSuperview()
+        notificationsView.notificationList = notificationList
+        notificationsView.tableView.reloadData()
+        notificationsView.delegate = self
+        notificationsView.frame = containerView.bounds
+        containerView.addSubview(notificationsView)
     }
     
-    // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // create a new cell if needed or reuse an old one
-        
-       let cell = tableView.dequeueReusableCell(withIdentifier: "HomeListViewCell", for: indexPath) as! HomeListViewCell
-        
-        let notification = notificationList[indexPath.row]
-        
-        if let titel = notification.title{
-            cell.alertTitle.numberOfLines = 0
-            cell.alertTitle.text = titel
-        }
-        
-        if let date = notification.date{
-            cell.alertDate.text = setDateFormatter(string: date)
-
-        }
-        
-        if let msgType = notification.type{
-            switch msgType {
-            case msgTypes.communicate.rawValue:
-                cell.typeImageView.image = #imageLiteral(resourceName: "Message")
-                
-            case msgTypes.noticeboard.rawValue,msgTypes.bus.rawValue,msgTypes.weeklyPlan.rawValue:
-                cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
-                
-            case msgTypes.htmlType.rawValue:
-                cell.typeImageView.image =  #imageLiteral(resourceName: "html")
-                
-            case msgTypes.gallery.rawValue:
-                cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
-                
-            default:
-                cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
-
-            }
-        }
-        
-        print("type value is :- ",notification.type)
-        
-        cell.selectionStyle = .none
-
-        
-        return cell
+    func showRightArrowButton(_ isShow: Bool) {
+        buttonSideArrow.isHidden = isShow
+        buttonRightArrow.isHidden = !isShow
     }
+    
+    //MARK: - TableView Delegates and Datasources -
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -367,7 +420,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                 if result["StatusCode"] as? Int == 1{
                     print(index.row)
                     self.notificationList.remove(at: index.row)
-                    self.alertTable.deleteRows(at: [index], with: .right)
+                    //self.alertTable.deleteRows(at: [index], with: .right)
                     self.navigateToSpecificPage(typeValue: selectedAlertType)
                 }
             }
@@ -412,63 +465,6 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         
         self.show(viewController!, sender: self)
     }
-    
-    
-    
-    @IBAction func logOutAction(_ sender: Any) {
-        
-        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
-            if isOtherButton == true {
-                
-            }
-            else {
-                isFirstTime = true
-                gradeBookLink = ""
-                showLoginPage()
-            }
-        }
-        
-    }
-    
-    
-   /* func setWebViewProperties(){
-        self.automaticallyAdjustsScrollViewInsets = false
-        webView.delegate = self
-        webView.scrollView.bounces = false
-    }
-
-    func loadWebView(){
-        
-        showWebUrl = "www.apple.com"
-        if let webUrl = showWebUrl{
-            if let url = URL (string: webUrl){
-                let requestObj = URLRequest(url:url)
-                self.webView.loadRequest(requestObj)
-            }
-        }
-    }
-
-    
-    func showPopUpView(){
-        
-        let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let heightVal = UIScreen.main.bounds.size.height - 80
-        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "registerPopUpVc") as! RegisterPopUpVc
-        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width: self.view.frame.size.width - 40,height: CGFloat(heightVal)))
-        self.present(popUpViewVc!, animated: true, completion: nil)
-        
-    }
-    
-    //MARK:- 
-    
-    
-    func webViewDidFinishLoad(_ webView: WKWebView) {
-        
-        print("webview loaded")
-        self.stopLoadingAnimation()
-    } */
-
-
 }
 
 enum msgTypes : String{
@@ -532,4 +528,14 @@ extension HomeVC: TopHeaderDelegate {
         }
     }
     
+}
+
+
+extension HomeVC: NotificationsViewDelegate {
+    func notificationsView(_ view: NotificationsView, didTapOnGallery id: String) {
+        guard let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryListController") as? GalleryListController else { return }
+        viewController.categoryId = id
+        viewController.categoryName = "Gallery"
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
