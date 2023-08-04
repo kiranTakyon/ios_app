@@ -16,12 +16,12 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var changePasswordLabel: UIButton!
     @IBOutlet weak var setMyLocationButton: UIButton!
-    @IBOutlet weak var verifyEmailButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var verifyEmailButton: UIButton!
-    @IBOutlet weak var verifyEmailButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var profileImageView: ImageLoader!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var topHeaderView: TopHeaderView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var labelName: UILabel!
     
     var profileImageUrl : String?
     var icons = ["User","User","User","Email","Mobile","LocationGray","Email"]
@@ -42,6 +42,8 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
         isEditClicked = false
+        containerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        profileTable.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
         // Do any additional setup after loading the view.
     }
     
@@ -63,15 +65,15 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     func deleteTheSelectedAttachment(index: Int) {
         
     }
-    func setUIUserInteractionDisabledAndAble(cell :ProfileCell,color: UIColor,interactionStatus: Bool){
-        if (cell.icon.image == #imageLiteral(resourceName: "User") && cell.titleTextField.placeholder == "User Name") ||   (cell.icon.image ==  #imageLiteral(resourceName: "Email") && cell.titleTextField.placeholder == "Verified Email") || (cell.icon.image == #imageLiteral(resourceName: "User") && cell.titleTextField.placeholder == "Parent Code")  {
-            cell.titleTextField.isUserInteractionEnabled = false
-            cell.titleTextField.textColor =  UIColor.lightGray
+    func setUIUserInteractionDisabledAndAble(cell :ProfileTableViewCell,color: UIColor,interactionStatus: Bool){
+        if (cell.headingImageView.image == #imageLiteral(resourceName: "User") && cell.labelHeading.text == "User Name") ||   (cell.headingImageView.image ==  #imageLiteral(resourceName: "Email") && cell.labelHeading.text == "Verified Email") || (cell.headingImageView.image == #imageLiteral(resourceName: "User") && cell.labelHeading.text == "Parent Code")  {
+            cell.textField.isUserInteractionEnabled = false
+            cell.textField.textColor =  UIColor.lightGray
         }
   
         else{
-        cell.titleTextField.textColor =  color
-        cell.titleTextField.isUserInteractionEnabled = interactionStatus
+        cell.textField.textColor =  color
+        cell.textField.isUserInteractionEnabled = interactionStatus
         }
     }
     
@@ -168,14 +170,15 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
             titles = [namae,userN,mail,mobile,location,verifyMail]
         }
        // titles = [parentCde,namae,userN,mail,mobile,location,verifyMail]
+        labelName.text = name
 
         self.profileTable.reloadData()
     }
     
     func setVerifyEmailButtonVisibility(isHide :Bool,constraint: CGFloat,constriantTop: CGFloat){
         verifyEmailButton.isHidden = isHide
-        verifyEmailButtonHeight.constant = constraint
-        verifyEmailButtonTopConstraint.constant = constriantTop
+//        verifyEmailButtonHeight.constant = constraint
+//        verifyEmailButtonTopConstraint.constant = constriantTop
     }
     
     func filterTheCoreespondingSibling(idValue: String) -> String{
@@ -213,9 +216,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
                 profileInfoGlobal.removeAllObjects()
                 profileInfoGlobal = NSMutableDictionary(dictionary : result)
                 self.topHeaderView.title = result["ProfileLabel"] as? String ?? ""
-                    self.verifyEmailButton.setTitle((result["VerifiedEmailLabel"] as? String)?.uppercased(), for: .normal)
-                    self.setMyLocationButton.setTitle((result["SetMyLocationLabel"] as? String)?.uppercased(), for: .normal)
-                    self.changePasswordLabel.setTitle((result["ChangePasswordLabel"] as? String)?.uppercased(), for: .normal)
                 
                 guard let NameLabel = result["NameLabel"] as? String else {return}
                 guard let UserNameLabel = result["UserNameLabel"] as? String else {return}
@@ -282,7 +282,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat{
         
-        return 60;
+        return 80;
     }
     
     
@@ -296,17 +296,17 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         // create a new cell if needed or reuse an old one
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         let iconVal = icons[indexPath.row]
-        cell.icon.image = UIImage(named:iconVal)
-        cell.titleTextField.placeholder = placeHolders[indexPath.row]
+        cell.headingImageView.image = UIImage(named:iconVal)
+        cell.labelHeading.text = placeHolders[indexPath.row]
         self.tableHeight.constant = profileTable.contentSize.height
+        cell.textField.text = titles[indexPath.row]
         if !isEditClicked!{
             setUIUserInteractionDisabledAndAble(cell: cell, color: UIColor.lightGray, interactionStatus: false)
-             cell.titleTextField.text = titles[indexPath.row]
-        }
-        else{
+        } else {
             setUIUserInteractionDisabledAndAble(cell: cell, color: UIColor.black, interactionStatus: true)
+            
         }
         cell.selectionStyle = .none
         return cell
@@ -431,7 +431,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
                         self.stopLoadingAnimation()
                         SweetAlert().showAlert(kAppName, subTitle:  "Profile updated successfully", style: AlertStyle.success)
                         self.getMyProfile()
-                       // self.profileTable.reloadData()
+                        //self.profileTable.reloadData()
                     }
                     
                 }
@@ -457,25 +457,25 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
             dictionary[UserIdKey().profileImage] = profileDict
         }
 
-        if let visibleCells = profileTable.visibleCells as? [ProfileCell]{
+        if let visibleCells = profileTable.visibleCells as? [ProfileTableViewCell]{
             if visibleCells.count != 0{
                 for each in visibleCells{
-                    if let image = each.icon.image{
+                    if let image = each.headingImageView.image {
                         
                         switch image {
                         case #imageLiteral(resourceName: "User"):
-                            if each.titleTextField.placeholder == "Name"{
-                            dictionary[UserIdKey().name] = each.titleTextField.text
+                            if each.labelHeading.text == "Name"{
+                            dictionary[UserIdKey().name] = each.textField.text
                             }
 
                         case #imageLiteral(resourceName: "Email"):
-                            dictionary[UserIdKey().email] = each.titleTextField.text
+                            dictionary[UserIdKey().email] = each.textField.text
                             
                         case #imageLiteral(resourceName: "Mobile"):
-                            dictionary[UserIdKey().contactNumber] = each.titleTextField.text
+                            dictionary[UserIdKey().contactNumber] = each.textField.text
 
                         case #imageLiteral(resourceName: "LocationGray"):
-                            dictionary[UserIdKey().contact] = each.titleTextField.text
+                            dictionary[UserIdKey().contact] = each.textField.text
 
                         
                         default:
@@ -509,10 +509,10 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     
     func getAllVisibleCellsFromTableView() -> (Bool,String){
         
-        if let visibleCells = profileTable.visibleCells as? [ProfileCell]{
+        if let visibleCells = profileTable.visibleCells as? [ProfileTableViewCell]{
             if visibleCells.count != 0{
                 for each in visibleCells{
-                    if let text = each.titleTextField.text{
+                    if let text = each.textField.text{
                         if text.contains(".com"){
                             
                             return (true,text)
@@ -580,12 +580,12 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func checkValidation() -> Bool{
-    if let visibleCells = profileTable.visibleCells as? [ProfileCell] {
+    if let visibleCells = profileTable.visibleCells as? [ProfileTableViewCell] {
         if visibleCells.count != 0{
             for each in visibleCells{
-                print(each.titleTextField.text)
-                if each.titleTextField.placeholder == "Name"{
-                    if each.titleTextField.text == "" && each.titleTextField.text?.count == 0{
+                print(each.textField.text)
+                if each.labelHeading.text == "Name"{
+                    if each.textField.text == "" && each.textField.text?.count == 0{
                     return false
                 }
             
@@ -733,12 +733,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     }
 }
 
-class ProfileCell : UITableViewCell{
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var titleTextField: SkyFloatingLabelTextField!
-    
- 
-}
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
@@ -772,7 +766,6 @@ extension MyProfileController: TopHeaderDelegate {
             profileTable.reloadData()
             button.setImage(#imageLiteral(resourceName: "Save"), for: .normal)
         } else {
-            profileTable.reloadData()
             isEditClicked = true
             button.setImage(#imageLiteral(resourceName: "Edit"), for: .normal)
             callProfileEdit()

@@ -150,6 +150,7 @@ class SlideController: UITableViewController,TaykonProtocol {
         
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.backgroundColor = UIColor().hexStringToUIColor(hex: "F99899")
     }
     
     func deleteTheSelectedAttachment(index: Int) {
@@ -363,12 +364,14 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        
-        if indexPath.row == 8 || indexPath.row == 12{
-            return 40
-        }else if indexPath.row == 0{
-            return 170
-        }else{
+        switch indexPath.row {
+        case 12:
+            return 45
+        case 0:
+            return 180
+        case 1:
+            return 90
+        default:
             return 60
         }
     }
@@ -417,7 +420,7 @@ class SlideController: UITableViewController,TaykonProtocol {
             guard let tempCell = tableView.dequeueReusableCell(withIdentifier: "slidemenuCell", for: indexPath) as? slidemenuCell else {
                 return UITableViewCell()
             }
-            
+            tempCell.index = indexPath.row
             let item = menuListItems[indexPath.row - 1]
             print(item.label ?? "")
             if let link = item.link {
@@ -451,7 +454,15 @@ class SlideController: UITableViewController,TaykonProtocol {
              tempCell.hashKey = "MyProlfeKey"
                 tempCell.iconImage.image = #imageLiteral(resourceName: "toProfileVc")
             }
-            
+            if indexPath.row == 1 {
+                tempCell.containerView.layer.cornerRadius = 10
+                tempCell.containerView.layer.maskedCorners = [.layerMaxXMinYCorner]
+                tempCell.containerView.layer.masksToBounds = true
+                tempCell.topSepratorHeight.constant = 15
+            } else {
+                tempCell.topSepratorHeight.constant = 10
+                tempCell.containerView.layer.cornerRadius = 0
+            }
             tempCell.selectionStyle = .default
             
             setTableCellColor(indexPath: indexPath, cell: tempCell)
@@ -708,6 +719,7 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
     
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var schoolNameLabel: UILabel!
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var profileImage: ImageLoader!
     @IBOutlet weak var studentPicker: Picker!
     var delegate : TaykonProtocol?
@@ -730,8 +742,10 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.borderWidth = 1
         self.profileImage.layer.borderColor = UIColor.red.cgColor
-        self.studentPicker.pickerTextField.textAlignment = .left
-        self.studentPicker.pickerTextField.textColor = UIColor.white
+        self.studentPicker.pickerTextField.textAlignment = .center
+        self.studentPicker.pickerTextField.textColor = UIColor.black
+        outerView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMaxXMaxYCorner]
+        studentPicker.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMaxXMaxYCorner]
     }
     
     func setImage(){
@@ -766,10 +780,13 @@ class slidemenuCell : UITableViewCell{
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
-    @IBOutlet weak var titleLabelContainerLeading: NSLayoutConstraint!
-    @IBOutlet weak var titleToImageView: NSLayoutConstraint!
+    @IBOutlet weak var containerView: UIView!
     var hashKey = String()
+    @IBOutlet weak var topSepratorHeight: NSLayoutConstraint!
     @IBOutlet weak var topSeperationView: UIView!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
+    
+    var index: Int = -1
     var isSection : Bool = false{
         didSet{
             setSectionHeader()
@@ -779,20 +796,21 @@ class slidemenuCell : UITableViewCell{
     
     func setSectionHeader(){
         
-        if isSection{
-            self.titleLabelContainerLeading.priority = UILayoutPriority(rawValue: 999)
-            self.titleToImageView.priority = UILayoutPriority(rawValue: 500)
-            self.titleLabel.textColor = UIColor.lightGray
+        if isSection || index == 1 {
+            if index != 1 {
+                self.imageWidthConstraint.constant = 0
+                self.titleLabel.textColor = UIColor.darkText
+            } else {
+                self.titleLabel.textColor = UIColor.darkText.withAlphaComponent(0.6)
+                self.imageWidthConstraint.constant = 20
+            }
             self.topSeperationView.isHidden = false
-        }else{
-            self.titleLabelContainerLeading.priority = UILayoutPriority(rawValue: 500)
-            self.titleToImageView.priority = UILayoutPriority(rawValue: 999)
-            self.titleLabel.textColor = UIColor.darkText
+        } else {
+            self.titleLabel.textColor = UIColor.darkText.withAlphaComponent(0.6)
+            self.imageWidthConstraint.constant = 20
             self.topSeperationView.isHidden = true
-            
-            
+            self.topSepratorHeight.constant = 0
         }
-        
         self.layoutIfNeeded()
     }
     
