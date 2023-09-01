@@ -24,7 +24,7 @@ class NoticeboardDetailController: UIViewController {
     var downLoadLink = ""
     var pdfUrl : String?
     var NbID = ""
-    
+    var isFromDashboardNotification = false
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
@@ -39,13 +39,23 @@ class NoticeboardDetailController: UIViewController {
         {
             self.setHtml()
         }
-  
+        if isFromDashboardNotification {
+            setSlideMenuProporties()
+        }
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         progressBar.isHidden = true
         addBlurEffectToTableView(inputView: self.view, hide: true)
+    }
+    
+    func setSlideMenuProporties() {
+        topHeaderView.setMenuOnLeftButton()
+        if self.revealViewController() != nil {
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     func setVideoDownload(){

@@ -23,6 +23,8 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet weak var messageTable: UITableView!
     @IBOutlet weak var topHeaderView: TopHeaderView!
    
+    var isFromDashboardNotification = false
+    
     var text : String?
     var messageId : String?
     var typeMsg = Int()
@@ -50,6 +52,9 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         quickLookController.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem()
         messageTable.tableFooterView = UIView()
      
+        if isFromDashboardNotification {
+            setSlideMenuProporties()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -59,10 +64,19 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         progressBar.isHidden = true
         addBlurEffectToTableView(inputView: self.view, hide: true)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
 //        self.performSegue(withIdentifier: "toMessageDetail", sender: self)
     }
     
+    func setSlideMenuProporties() {
+        topHeaderView.setMenuOnLeftButton()
+        if self.revealViewController() != nil {
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+
     func getMessageDetails() {
         topHeaderView.title = text.safeValue
         self.startLoadingAnimation()

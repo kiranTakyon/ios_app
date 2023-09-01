@@ -24,6 +24,9 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var imageView: ImageLoader!
     @IBOutlet weak var scrollViewImage: UIScrollView!
     @IBOutlet weak var topHeaderView: TopHeaderView!
+    
+    var isFromDashboardNotification = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -31,7 +34,18 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         setData()
         print(imageArr)
         topHeaderView.delegate = self
-        // Do any additional setup after loading the view.
+        
+        if isFromDashboardNotification {
+            setSlideMenuProporties()
+        }
+    }
+    
+    func setSlideMenuProporties() {
+        topHeaderView.setMenuOnLeftButton()
+        if self.revealViewController() != nil {
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     func setScrollView(){

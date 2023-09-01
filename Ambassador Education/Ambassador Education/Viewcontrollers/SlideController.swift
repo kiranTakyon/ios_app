@@ -21,7 +21,6 @@ class SlideController: UITableViewController,TaykonProtocol {
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
     var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
-    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail","toImagePreview","toImagePreview"]
     
     var selectionTitles = [String]()
     var selectionIds = [Int]()
@@ -103,26 +102,32 @@ class SlideController: UITableViewController,TaykonProtocol {
            }
         }
         else if segue.identifier == "toMessageDetail"{
-            let destinationVC = segue.destination as! UINavigationController
-            let vc = destinationVC.children[0] as! MessageDetailController
-            vc.messageId = notificationObject.id
-            vc.typeMsg = typeValue
+            if let destinationVC = segue.destination as? UINavigationController,
+               let vc = destinationVC.children[0] as? MessageDetailController {
+                vc.messageId = notificationObject.id
+                vc.typeMsg = typeValue
+                vc.isFromDashboardNotification = true
+            }
 //            vc.text = notificationObject.title
         }
-        else if segue.identifier == "toImagePreview"{
-            let destinationVC = segue.destination as! UINavigationController
-            let vc = destinationVC.children[0] as! ImagePreviewController
-            var url = notificationObject.catid ?? ""
-            vc.imageUrl = url
-            vc.imageArr = Array([url])
-            vc.pageTitle = notificationObject.title
-            vc.position = 0
+        else if segue.identifier == "toImagePreview" {
+            if let destinationVC = segue.destination as? UINavigationController,
+               let vc = destinationVC.children[0] as? ImagePreviewController {
+                var url = notificationObject.catid ?? ""
+                vc.imageUrl = url
+                vc.isFromDashboardNotification = true
+                vc.imageArr = Array([url])
+                vc.pageTitle = notificationObject.title
+                vc.position = 0
+            }
         }
-        else if segue.identifier == "toNBDetails"{
-            let destinationVC = segue.destination as! UINavigationController
-            let vc = destinationVC.children[0] as! NoticeboardDetailController
-            vc.NbID = notificationObject.processid ?? ""
-        }
+        else if segue.identifier == "toNBDetails" {
+            if let destinationVC = segue.destination as? UINavigationController,
+               let vc = destinationVC.children[0] as? NoticeboardDetailController {
+                vc.NbID = notificationObject.processid ?? ""
+                vc.isFromDashboardNotification = true
+            }
+        }  
     }
 
     //MARK: - Other Helpers
@@ -132,18 +137,14 @@ class SlideController: UITableViewController,TaykonProtocol {
             if selectedAlertType == .gallery{
                 self.performSegue(withIdentifier: "toImagePreview", sender: nil)
             }else if selectedAlertType == .communicate{
-//                self.performSegue(withIdentifier: "toCommunicate", sender: nil)
                 self.performSegue(withIdentifier: "toMessageDetail", sender: self)
-            }else if selectedAlertType == .html{
+            } else if selectedAlertType == .html {
                 self.performSegue(withIdentifier: "toDigitalReource", sender: nil)
-                
-            }else if selectedAlertType == .noticeboard{
+            } else if selectedAlertType == .noticeboard {
                 self.performSegue(withIdentifier: "toNBDetails", sender: nil)
-            }else if selectedAlertType == .weeklyPlan{
+            } else if selectedAlertType == .weeklyPlan {
                 self.performSegue(withIdentifier: "toWeeklyPlan", sender: nil)
-
             }
-        
     }
     
     func tableViewProporties(){
