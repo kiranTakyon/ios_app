@@ -1067,12 +1067,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXR-mN-2hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="1021"/>
+            <point key="canvasLocation" x="238" y="1048"/>
         </scene>
         <!--My Profile Controller-->
         <scene sceneID="fOq-Dh-4f0">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="TXO-cA-fxL" customClass="MyProfileController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileController" modalPresentationStyle="fullScreen" id="TXO-cA-fxL" customClass="MyProfileController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hIR-Ga-cZs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1563,13 +1563,14 @@
                             <constraint firstItem="KdE-MU-UaJ" firstAttribute="bottom" secondItem="grr-WG-p6j" secondAttribute="bottom" constant="30" id="dJy-OP-6cg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VVj-gp-0GP"/>
                     <connections>
                         <outlet property="communicateTable" destination="pcF-3N-WI7" id="8YZ-Wx-bKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nC-XM-rLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7171.0144927536239" y="1592.9347826086957"/>
+            <point key="canvasLocation" x="-662" y="1479"/>
         </scene>
         <!--Read Select View Controller-->
         <scene sceneID="DqG-mx-PIj">
@@ -3571,7 +3572,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-Ab-EIP">
-                                <rect key="frame" x="-4" y="79" width="413" height="653"/>
+                                <rect key="frame" x="-4" y="79" width="413" height="651"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -3685,7 +3686,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drh-Ws-hdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6757.5" y="2426.4084507042253"/>
+            <point key="canvasLocation" x="6768" y="2468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VBC-4D-qgB">
@@ -4628,12 +4629,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkU-74-QPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7488.4057971014499" y="2425.271739130435"/>
+            <point key="canvasLocation" x="7516" y="2468"/>
         </scene>
         <!--Weekly Plan Controller-->
         <scene sceneID="XMA-6A-vlj">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="CKi-hb-qrE" customClass="WeeklyPlanController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeeklyPlanController" modalPresentationStyle="fullScreen" id="CKi-hb-qrE" customClass="WeeklyPlanController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NkC-NG-SIE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5980,7 +5981,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4XZ-Cx-iP5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QRy-xw-2tt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ImagPreviewNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="QRy-xw-2tt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9Z-YE-t0a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -6033,8 +6034,8 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="kZn-is-Jar"/>
-        <segue reference="v0U-Gf-XJf"/>
-        <segue reference="nkd-ku-cUy"/>
+        <segue reference="LfD-ZK-Stt"/>
+        <segue reference="jF7-Bc-YDF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AddCC" width="128" height="128"/>

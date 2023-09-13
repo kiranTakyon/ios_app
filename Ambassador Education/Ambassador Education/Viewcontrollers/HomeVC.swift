@@ -50,16 +50,14 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         topHeaderView.delegate = self
     }
     
-    func setAllTextFieldsEmpty(){
+    func setAllTextFieldsEmpty() {
         studentNameLabel.text = ""
         studentSecondLabel.text = ""
         classLabel.text = ""
     }
     
-    func getTokenValueForMobileNotification(){
-        
+    func getTokenValueForMobileNotification() {
         let url = APIUrls().mobileNotification
-        
         var dictionary = [String:Any]()
         if let token = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.gcmToken) as? String{
         let userId = UserDefaultsManager.manager.getUserId()
@@ -266,6 +264,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
 
                 if self.notificationList.count == 0{
                     self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
+                    
                 }
                 
                 self.alertTable.reloadData()
@@ -322,14 +321,12 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
                 
             default:
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
-
             }
         }
         
         print("type value is :- ",notification.type)
         
         cell.selectionStyle = .none
-
         
         return cell
     }

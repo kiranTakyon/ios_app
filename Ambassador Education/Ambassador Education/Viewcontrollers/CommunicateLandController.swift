@@ -31,6 +31,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         self.customizeTab()
         self.getInboxMessages(searchTextValue : "")
         setSlideMenuProporties()
+        self.topHeaderView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -68,7 +69,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         selectedTabTextColor = .white
     }
     
-    func setUpPager(list : MessageModel?){
+    func setUpPager(list : MessageModel?) {
         
         inBoxVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
         inBoxVC.type = CommunicationType.inbox
@@ -92,7 +93,7 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     
     
     
-    func getInboxMessages(searchTextValue : String){
+    func getInboxMessages(searchTextValue : String) {
         
         self.startLoadingAnimation()
         var url  = APIUrls().getInBox

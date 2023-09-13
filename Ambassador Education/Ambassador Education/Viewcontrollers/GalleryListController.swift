@@ -218,7 +218,6 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         let galleryDetail = mainStoryBoard.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
         galleryDetail.imageUrl = url
         galleryDetail.pageTitle  = "Gallery"
-        
         galleryDetail.titleValue = title == "" ? self.topHeaderView.title : title
         galleryDetail.imageArr = imageArray
         galleryDetail.position = indexPath

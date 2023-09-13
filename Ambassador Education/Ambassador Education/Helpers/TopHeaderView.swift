@@ -26,6 +26,14 @@ extension TopHeaderDelegate where Self: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+//    func backButtonClicked(_ button: UIButton) {
+//        if let navigationController = navigationController {
+//            navigationController.popViewController(animated: true)
+//        } else {
+//            self.dismiss(animated: true, completion: nil)
+//        }
+//    }
+    
     func thirdRightButtonClicked(_ button: UIButton) {
         
     }
