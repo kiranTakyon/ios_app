@@ -250,9 +250,16 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                         self.payLink = link
                     }
                     self.payTF.text = self.CurrentDue
+                    
                     if(self.compid == "216" || self.compid == "262")
                     {
+                        
                         self.PayOptions.setEnabled(false, forSegmentAt: 2);
+                    }
+                    if(self.payLink == "-1")
+                    {
+                        self.payView.isHidden = true
+                        self.PayOptions.isHidden = true
                     }
                     self.paymentDetailTable.reloadData()
                     self.StudentDetailTableView.reloadData()
