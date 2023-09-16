@@ -27,6 +27,7 @@ class NoticeboardDetailController: UIViewController {
     var isFromDashboardNotification = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         topHeaderView.delegate = self
         topHeaderView.shouldShowFirstRightButtons(false)
        self.setVideoDownload()
