@@ -152,7 +152,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             getAttachments(weeklyPlan: weeklyPlanValue)
             self.titleLabel.text = weeklyPlanValue.topic
             self.topHeaderView.title = mainTitle
-            let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
+            //let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
+            let htmlDecode = weeklyPlanValue.description
             //richEditorView.html = htmlDecode.safeValue
             richEditorView1.html = htmlDecode.safeValue
             
