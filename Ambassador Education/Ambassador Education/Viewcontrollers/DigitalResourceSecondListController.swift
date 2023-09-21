@@ -27,6 +27,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     var pageNumber = 1
     let refreshControl = UIRefreshControl()
     var arrCatgoryAndItem: [CategoryAndItem] = []
+    var isRefrshing: Bool = true
 
     
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     }
     
     func setTitle(){
-        if let  _ = titleValue{
+        if let  _ = titleValue {
             self.topHeaderView.title = titleValue!
         }
     }
@@ -92,6 +93,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
             self.categoryList = digitalCategories
             self.digitalList = cetgories
             self.mergeCategoryAndItem(categories: digitalCategories, items: cetgories)
+            self.isRefrshing = self.arrCatgoryAndItem.count == 0
             
             DispatchQueue.main.async {
                 self.removeNoDataLabel()
@@ -100,8 +102,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
                 if self.digitalList.count == 0 && self.categoryList.count == 0 {
                     self.collectionView.isHidden = true
                     self.addNoDataFoundLabel()
-                }
-                else {
+                } else {
                     self.removeNoDataLabel()
                     self.collectionView.isHidden = false
                     self.collectionView.reloadData()
@@ -142,20 +143,21 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         print("pull to Refresh")
-        self.pageNumber += 1
-        self.getDigitalResources(searcText : searchText)
+        if isRefrshing {
+            self.pageNumber += 1
+            self.getDigitalResources(searcText : searchText)
+        } else {
+            self.refreshControl.endRefreshing()
+        }
+        
     }
 
     
     
-    func navigateToDetail(digitalResource:TNDigitalResourceSubList){
-        
+    func navigateToDetail(digitalResource:TNDigitalResourceSubList) {
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
-        
         detailVc.digitalResource = digitalResource
-        
         self.navigationController?.pushViewController(detailVc, animated: true)
-        
     }
     
     
@@ -241,7 +243,6 @@ extension DigitalResourceSecondListController: UICollectionViewDataSource,UIColl
             catId = catgoryAndItem.id ?? ""
             getDigitalResources(searcText: "")
         }
-
     }
     
 }

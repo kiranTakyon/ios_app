@@ -90,20 +90,14 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
                 }
             }
         }
-        
     }
     
     func navigateTodigitalResourceDetail(category:TNDigitalResourceCategory){
-        
         let digitalVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceSecondListController") as! DigitalResourceSecondListController
         digitalVc.catId = category.categoryId!
         digitalVc.titleValue = category.caetgory
-
               self.navigationController?.pushViewController(digitalVc, animated: true)
     }
-
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -31,7 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     let subscriptionTopic = "/topics/global"
     
     let gcmMessageIDKey = "gcm.message_id"
+    var appId = ""
     
+
+//#if ORISONSCHOOLV2
+//    let value = 1
+//#elseif TARGET_B
+//    let value = 2
+//#elseif TARGET_C
+//    let value = 3
+//// Add more targets and values as needed
+//#else
+//    let value = 0 // Default value if no target-specific macro is defined
+//#endif
 
     func application(_ application: UIApplication,didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -304,9 +316,95 @@ extension AppDelegate: MessagingDelegate {
 
 extension AppDelegate {
     
-    func showUpdateAppAlert() {
+func showUpdateAppAlert() {
+#if CREDENCESCHOOL
+let appStoreId = ""
+#elseif NEWACADEMYSCHOOL
+let appStoreId = ""
+#elseif AMLEDSCHOOL
+let appStoreId = ""
+#elseif EFIA
+let appStoreId = ""
+#elseif ABC
+let appStoreId = ""
+#elseif SAMA
+let appStoreId = ""
+#elseif ASIANINTERNATIONAL
+let appStoreId = ""
+#elseif RAK_ACADEMY
+let appStoreId = ""
+#elseif RENAISSANCE_SCHOOL
+let appStoreId = ""
+#elseif QUALITY_EDUCATION
+let appStoreId = ""
+#elseif SALMIYA
+let appStoreId = ""
+#elseif BIS
+let appStoreId = ""
+#elseif PEA
+let appStoreId = ""
+#elseif DAR_AL_ULOOM
+let appStoreId = ""
+#elseif SMS
+let appStoreId = ""
+#elseif SAHODAYSCHOOL
+let appStoreId = ""
+#elseif AJMAN_MODERN
+let appStoreId = ""
+#elseif PEPS_V2
+let appStoreId = ""
+#elseif ALMAWAHIB
+let appStoreId = ""
+#elseif AJMANMODERN
+let appStoreId = ""
+#elseif CITY_V2
+let appStoreId = ""
+#elseif ALANSAR
+let appStoreId = ""
+#elseif LPS
+let appStoreId = ""
+#elseif OUROWN
+let appStoreId = ""
+#elseif ATHENA_EDUCATION
+let appStoreId = ""
+#elseif RAKSCHOLARS_V2
+let appStoreId = ""
+#elseif ICS
+let appStoreId = ""
+#elseif ALAMEER_V2
+let appStoreId = ""
+#elseif ORISONSCHOOL_V2
+let appStoreId = "1487457408"
+#elseif AJYAL
+let appStoreId = ""
+#elseif T360
+let appStoreId = ""
+#elseif CRESENT
+let appStoreId = ""
+#elseif SSI
+let appStoreId = ""
+#elseif HABITAT
+let appStoreId = ""
+#elseif PEA_V2
+let appStoreId = ""
+#elseif VIS
+let appStoreId = ""
+#elseif AMANA
+let appStoreId = ""
+#elseif MBS
+let appStoreId = ""
+#elseif TARYAM
+let appStoreId = ""
+#elseif FUTURE_LEADERS
+let appStoreId = ""
+#elseif AMBASSADOR
+let appStoreId = ""
+#else
+let appStoreId = ""
+#endif
         Updates.updatingMode = .automatically
         Updates.notifying = .always
+        Updates.appStoreId = appStoreId
         Updates.checkForUpdates { result in
             if let topVc = UIApplication.getTopViewController() {
                 UpdatesUI.promptToUpdate(result, presentingViewController: topVc)
