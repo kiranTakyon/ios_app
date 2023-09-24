@@ -362,21 +362,21 @@ let appStoreId = ""
 #elseif ALANSAR
 let appStoreId = ""
 #elseif LPS
-let appStoreId = ""
+let appStoreId = "1584985565"
 #elseif OUROWN
 let appStoreId = ""
 #elseif ATHENA_EDUCATION
-let appStoreId = ""
+let appStoreId = "1610359345"
 #elseif RAKSCHOLARS_V2
 let appStoreId = ""
 #elseif ICS
-let appStoreId = ""
+let appStoreId = "1596812393"
 #elseif ALAMEER_V2
 let appStoreId = ""
 #elseif ORISONSCHOOL_V2
 let appStoreId = "1487457408"
 #elseif AJYAL
-let appStoreId = ""
+let appStoreId = "1489710536"
 #elseif T360
 let appStoreId = ""
 #elseif CRESENT
@@ -391,14 +391,14 @@ let appStoreId = ""
 let appStoreId = ""
 #elseif AMANA
 let appStoreId = ""
-#elseif MBS
-let appStoreId = ""
+#elseif MSB
+let appStoreId = "1487692610"
 #elseif TARYAM
-let appStoreId = ""
+let appStoreId = "1490576039"
 #elseif FUTURE_LEADERS
-let appStoreId = ""
+let appStoreId = "1484489965"
 #elseif AMBASSADOR
-let appStoreId = ""
+let appStoreId = "1487778928"
 #else
 let appStoreId = ""
 #endif
