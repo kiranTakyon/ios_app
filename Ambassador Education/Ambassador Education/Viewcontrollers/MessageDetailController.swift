@@ -758,6 +758,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
         //detailVc.weeklyPlan = weeklyPlan
         detailVc.WpID = itemid
+        detailVc.isFromNotification = false
         self.navigationcontroller?.pushViewController(detailVc, animated: true)
         
     }

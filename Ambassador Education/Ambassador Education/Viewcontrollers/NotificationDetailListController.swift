@@ -126,7 +126,7 @@ class NotificationDetailListController: UIViewController {
     func navigateToDetail(digitalResource:TNDigitalResourceSubList){
         
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
-        
+        detailVc.isFromNotification = false
         detailVc.digitalResource = digitalResource
         
         self.navigationController?.pushViewController(detailVc, animated: true)

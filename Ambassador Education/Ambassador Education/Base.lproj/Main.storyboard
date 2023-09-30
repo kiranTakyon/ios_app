@@ -559,6 +559,7 @@
                             <outlet property="delegate" destination="F0J-cP-zRj" id="Kxb-JN-OIO"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="J31-zY-bng"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="fF5-au-stH" kind="custom" identifier="toProfileVc" customClass="SWRevealViewControllerSeguePushController" id="kc8-53-gcK"/>
@@ -3572,7 +3573,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-Ab-EIP">
-                                <rect key="frame" x="-4" y="79" width="413" height="651"/>
+                                <rect key="frame" x="-5" y="78" width="414" height="652"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -3903,7 +3904,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFB-at-GBu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3935" y="3125"/>
+            <point key="canvasLocation" x="3781" y="3198"/>
         </scene>
         <!--Notification Detail List Controller-->
         <scene sceneID="fSB-L9-Wnj">
@@ -4630,6 +4631,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkU-74-QPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7516" y="2468"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yYw-aB-aH1">
+            <objects>
+                <navigationController id="iYC-dt-9CX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1EB-XB-phd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HEA-II-HZL" kind="relationship" relationship="rootViewController" id="YOL-ba-J1G"/>
+                        <segue destination="F0J-cP-zRj" kind="custom" identifier="toDigitalResourceDetail" id="iPp-ga-3fP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iT-SF-nqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7664" y="3272"/>
         </scene>
         <!--Weekly Plan Controller-->
         <scene sceneID="XMA-6A-vlj">
@@ -5625,6 +5643,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="roh-Wx-ols"/>
                     <connections>
                         <outlet property="attachViewTop" destination="oVD-hZ-maL" id="MMF-yl-gsX"/>
                         <outlet property="attachmentsTitleLabel" destination="pL6-cS-akA" id="Wx2-up-xH7"/>
@@ -6036,6 +6055,7 @@
         <segue reference="kZn-is-Jar"/>
         <segue reference="LfD-ZK-Stt"/>
         <segue reference="jF7-Bc-YDF"/>
+        <segue reference="iPp-ga-3fP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AddCC" width="128" height="128"/>

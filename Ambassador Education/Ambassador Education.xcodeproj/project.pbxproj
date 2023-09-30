@@ -1828,7 +1828,7 @@
 		44EF07EF231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07F0231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		47FD590D0952779FD9B581ED /* Pods_PEPS_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD235DE289ACFC800A7121D /* Pods_PEPS_V2.framework */; };
-		593727052CF00DBFE3C2296B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		593727052CF00DBFE3C2296B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		9818D1592A4EFC0900F71FCC /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
 		9818D15A2A4EFC0900F71FCC /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
 		9818D15B2A4EFC0900F71FCC /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
@@ -2275,6 +2275,7 @@
 		B41C1B5421418FD600A9907B /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		B41C1B62214194C900A9907B /* AsianAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C1B61214194C800A9907B /* AsianAssets.xcassets */; };
 		B43023FA2141611300C3E787 /* EFIAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43023F92141611300C3E787 /* EFIAAssets.xcassets */; };
+		B6CB8E90F436F19AF636C7A9 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CD110BF9289C41700050EF80 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CD110BFA289C41700050EF80 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CD110BFB289C41700050EF80 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -3415,7 +3416,6 @@
 		CD8A96CD2ABCB0A500BAF7CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CD8A96CE2ABCB0A500BAF7CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CD8A96CF2ABCB0A500BAF7CD /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CD8A96D02ABCB0A500BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CD8A96D32ABCB0A500BAF7CD /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CD8A96D52ABCB0A500BAF7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CD8A96D62ABCB0A500BAF7CD /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -3569,7 +3569,6 @@
 		CD8A97752ABCDFE400BAF7CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CD8A97762ABCDFE400BAF7CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CD8A97772ABCDFE400BAF7CD /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CD8A97782ABCDFE400BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CD8A977B2ABCDFE400BAF7CD /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CD8A977D2ABCDFE400BAF7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CD8A977E2ABCDFE400BAF7CD /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -3723,7 +3722,6 @@
 		CD8A981D2ABCEE1900BAF7CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CD8A981E2ABCEE1900BAF7CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CD8A981F2ABCEE1900BAF7CD /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CD8A98202ABCEE1900BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CD8A98232ABCEE1900BAF7CD /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CD8A98252ABCEE1900BAF7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CD8A98262ABCEE1900BAF7CD /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -3877,7 +3875,6 @@
 		CD8A98C52ABCF36500BAF7CD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CD8A98C62ABCF36500BAF7CD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CD8A98C72ABCF36500BAF7CD /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CD8A98C82ABCF36500BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CD8A98CB2ABCF36500BAF7CD /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CD8A98CD2ABCF36500BAF7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CD8A98CE2ABCF36500BAF7CD /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -4250,7 +4247,6 @@
 		CDCACE5A2A533ABD006BA1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CDCACE5B2A533ABD006BA1A1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CDCACE5C2A533ABD006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CDCACE5D2A533ABD006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CDCACE602A533ABD006BA1A1 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CDCACE622A533ABD006BA1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CDCACE632A533ABD006BA1A1 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -4404,7 +4400,6 @@
 		CDCACF022A5353F7006BA1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CDCACF032A5353F7006BA1A1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CDCACF042A5353F7006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CDCACF052A5353F7006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CDCACF082A5353F7006BA1A1 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CDCACF0A2A5353F7006BA1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CDCACF0B2A5353F7006BA1A1 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -4558,7 +4553,6 @@
 		CDCACFAA2A54C114006BA1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CDCACFAB2A54C114006BA1A1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CDCACFAC2A54C114006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CDCACFAD2A54C114006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CDCACFB02A54C114006BA1A1 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CDCACFB22A54C114006BA1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CDCACFB32A54C114006BA1A1 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -4712,7 +4706,6 @@
 		CDCAD0522A54C425006BA1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CDCAD0532A54C425006BA1A1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CDCAD0542A54C425006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CDCAD0552A54C425006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CDCAD0582A54C425006BA1A1 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CDCAD05A2A54C425006BA1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CDCAD05B2A54C425006BA1A1 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -4866,7 +4859,6 @@
 		CDCAD0FA2A54CD5A006BA1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
 		CDCAD0FB2A54CD5A006BA1A1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
 		CDCAD0FC2A54CD5A006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
-		CDCAD0FD2A54CD5A006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CDCAD1002A54CD5A006BA1A1 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
 		CDCAD1022A54CD5A006BA1A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CDCAD1032A54CD5A006BA1A1 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
@@ -6408,8 +6400,7 @@
 		13DD10572149430700CB24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.debug.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.debug.xcconfig"; sourceTree = "<group>"; };
 		35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrisonSchool_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.debug.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.debug.xcconfig"; sourceTree = "<group>"; };
-		42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.release.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.release.xcconfig"; sourceTree = "<group>"; };
+		3CB22982A54F1DC89C064313 /* Pods-OrisonSchool V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.release.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.release.xcconfig"; sourceTree = "<group>"; };
 		4405BCEF239E15E1007992F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		440671E8252C5B67001B8C7B /* PEPS V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PEPS V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440671EB252C5B97001B8C7B /* PEPSV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PEPSV2-Info.plist"; path = "/Users/jayesh/Desktop/t360-ios/Ambassador Education/PEPSV2-Info.plist"; sourceTree = "<absolute>"; };
@@ -6480,6 +6471,7 @@
 		98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopHeaderView.swift; sourceTree = "<group>"; };
 		98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopHeaderView.xib; sourceTree = "<group>"; };
 		98B10D2E2A3C654500FE000E /* View+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Helper.swift"; sourceTree = "<group>"; };
+		A1932691FAD31A2D51815EB1 /* Pods-OrisonSchool V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.debug.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.debug.xcconfig"; sourceTree = "<group>"; };
 		AE169EA0200687A00019685A /* PaymentDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsController.swift; sourceTree = "<group>"; };
 		AE1D45BC1F545D930042727A /* TNPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPerson.swift; sourceTree = "<group>"; };
 		AE21DBDF1F2783B500742127 /* MessageDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailController.swift; sourceTree = "<group>"; };
@@ -6809,7 +6801,7 @@
 				440671CF252C5B67001B8C7B /* MapKit.framework in Frameworks */,
 				440671D1252C5B67001B8C7B /* CloudKit.framework in Frameworks */,
 				440671D2252C5B67001B8C7B /* DGActivityIndicatorView.framework in Frameworks */,
-				593727052CF00DBFE3C2296B /* (null) in Frameworks */,
+				593727052CF00DBFE3C2296B /* BuildFile in Frameworks */,
 				47FD590D0952779FD9B581ED /* Pods_PEPS_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -7006,7 +6998,6 @@
 				CD8A96CD2ABCB0A500BAF7CD /* MapKit.framework in Frameworks */,
 				CD8A96CE2ABCB0A500BAF7CD /* CloudKit.framework in Frameworks */,
 				CD8A96CF2ABCB0A500BAF7CD /* DGActivityIndicatorView.framework in Frameworks */,
-				CD8A96D02ABCB0A500BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7019,7 +7010,6 @@
 				CD8A97752ABCDFE400BAF7CD /* MapKit.framework in Frameworks */,
 				CD8A97762ABCDFE400BAF7CD /* CloudKit.framework in Frameworks */,
 				CD8A97772ABCDFE400BAF7CD /* DGActivityIndicatorView.framework in Frameworks */,
-				CD8A97782ABCDFE400BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7032,7 +7022,6 @@
 				CD8A981D2ABCEE1900BAF7CD /* MapKit.framework in Frameworks */,
 				CD8A981E2ABCEE1900BAF7CD /* CloudKit.framework in Frameworks */,
 				CD8A981F2ABCEE1900BAF7CD /* DGActivityIndicatorView.framework in Frameworks */,
-				CD8A98202ABCEE1900BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7045,7 +7034,6 @@
 				CD8A98C52ABCF36500BAF7CD /* MapKit.framework in Frameworks */,
 				CD8A98C62ABCF36500BAF7CD /* CloudKit.framework in Frameworks */,
 				CD8A98C72ABCF36500BAF7CD /* DGActivityIndicatorView.framework in Frameworks */,
-				CD8A98C82ABCF36500BAF7CD /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7070,7 +7058,6 @@
 				CDCACE5A2A533ABD006BA1A1 /* MapKit.framework in Frameworks */,
 				CDCACE5B2A533ABD006BA1A1 /* CloudKit.framework in Frameworks */,
 				CDCACE5C2A533ABD006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */,
-				CDCACE5D2A533ABD006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7083,7 +7070,6 @@
 				CDCACF022A5353F7006BA1A1 /* MapKit.framework in Frameworks */,
 				CDCACF032A5353F7006BA1A1 /* CloudKit.framework in Frameworks */,
 				CDCACF042A5353F7006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */,
-				CDCACF052A5353F7006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7096,7 +7082,6 @@
 				CDCACFAA2A54C114006BA1A1 /* MapKit.framework in Frameworks */,
 				CDCACFAB2A54C114006BA1A1 /* CloudKit.framework in Frameworks */,
 				CDCACFAC2A54C114006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */,
-				CDCACFAD2A54C114006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7109,7 +7094,6 @@
 				CDCAD0522A54C425006BA1A1 /* MapKit.framework in Frameworks */,
 				CDCAD0532A54C425006BA1A1 /* CloudKit.framework in Frameworks */,
 				CDCAD0542A54C425006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */,
-				CDCAD0552A54C425006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7122,7 +7106,6 @@
 				CDCAD0FA2A54CD5A006BA1A1 /* MapKit.framework in Frameworks */,
 				CDCAD0FB2A54CD5A006BA1A1 /* CloudKit.framework in Frameworks */,
 				CDCAD0FC2A54CD5A006BA1A1 /* DGActivityIndicatorView.framework in Frameworks */,
-				CDCAD0FD2A54CD5A006BA1A1 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7136,6 +7119,7 @@
 				CDD23664289AD40100A7121D /* CloudKit.framework in Frameworks */,
 				CDD23665289AD40100A7121D /* DGActivityIndicatorView.framework in Frameworks */,
 				B033ECED518E21B7F533E843 /* Pods_OrisonSchool_V2.framework in Frameworks */,
+				B6CB8E90F436F19AF636C7A9 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7802,10 +7786,10 @@
 		6745CAFF68722B930D28F3A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */,
-				42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */,
 				247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */,
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
+				A1932691FAD31A2D51815EB1 /* Pods-OrisonSchool V2.debug.xcconfig */,
+				3CB22982A54F1DC89C064313 /* Pods-OrisonSchool V2.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -8686,20 +8670,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A96E52ABCB0A500BAF7CD /* Build configuration list for PBXNativeTarget "Athena Education" */;
 			buildPhases = (
-				CD8A96452ABCB0A500BAF7CD /* [CP] Check Pods Manifest.lock */,
 				CD8A96462ABCB0A500BAF7CD /* Sources */,
 				CD8A96CA2ABCB0A500BAF7CD /* Frameworks */,
 				CD8A96D12ABCB0A500BAF7CD /* Resources */,
 				CD8A96E32ABCB0A500BAF7CD /* ShellScript */,
-				CD8A96E42ABCB0A500BAF7CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Athena Education";
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CD8A96E82ABCB0A500BAF7CD /* Athena Education.app */;
 			productType = "com.apple.product-type.application";
@@ -8708,20 +8688,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A978D2ABCDFE400BAF7CD /* Build configuration list for PBXNativeTarget "Ajyal" */;
 			buildPhases = (
-				CD8A96ED2ABCDFE400BAF7CD /* [CP] Check Pods Manifest.lock */,
 				CD8A96EE2ABCDFE400BAF7CD /* Sources */,
 				CD8A97722ABCDFE400BAF7CD /* Frameworks */,
 				CD8A97792ABCDFE400BAF7CD /* Resources */,
 				CD8A978B2ABCDFE400BAF7CD /* ShellScript */,
-				CD8A978C2ABCDFE400BAF7CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Ajyal;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CD8A97902ABCDFE400BAF7CD /* Ajyal.app */;
 			productType = "com.apple.product-type.application";
@@ -8730,20 +8706,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A98352ABCEE1900BAF7CD /* Build configuration list for PBXNativeTarget "LPS" */;
 			buildPhases = (
-				CD8A97952ABCEE1900BAF7CD /* [CP] Check Pods Manifest.lock */,
 				CD8A97962ABCEE1900BAF7CD /* Sources */,
 				CD8A981A2ABCEE1900BAF7CD /* Frameworks */,
 				CD8A98212ABCEE1900BAF7CD /* Resources */,
 				CD8A98332ABCEE1900BAF7CD /* ShellScript */,
-				CD8A98342ABCEE1900BAF7CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = LPS;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CD8A98382ABCEE1900BAF7CD /* LPS.app */;
 			productType = "com.apple.product-type.application";
@@ -8752,20 +8724,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A98DD2ABCF36500BAF7CD /* Build configuration list for PBXNativeTarget "ICS" */;
 			buildPhases = (
-				CD8A983D2ABCF36500BAF7CD /* [CP] Check Pods Manifest.lock */,
 				CD8A983E2ABCF36500BAF7CD /* Sources */,
 				CD8A98C22ABCF36500BAF7CD /* Frameworks */,
 				CD8A98C92ABCF36500BAF7CD /* Resources */,
 				CD8A98DB2ABCF36500BAF7CD /* ShellScript */,
-				CD8A98DC2ABCF36500BAF7CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ICS;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CD8A98E02ABCF36500BAF7CD /* ICS.app */;
 			productType = "com.apple.product-type.application";
@@ -8792,20 +8760,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDCACE722A533ABD006BA1A1 /* Build configuration list for PBXNativeTarget "Amana" */;
 			buildPhases = (
-				CDCACDD22A533ABD006BA1A1 /* [CP] Check Pods Manifest.lock */,
 				CDCACDD32A533ABD006BA1A1 /* Sources */,
 				CDCACE572A533ABD006BA1A1 /* Frameworks */,
 				CDCACE5E2A533ABD006BA1A1 /* Resources */,
 				CDCACE702A533ABD006BA1A1 /* ShellScript */,
-				CDCACE712A533ABD006BA1A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Amana;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CDCACE752A533ABD006BA1A1 /* Amana.app */;
 			productType = "com.apple.product-type.application";
@@ -8814,20 +8778,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDCACF1A2A5353F7006BA1A1 /* Build configuration list for PBXNativeTarget "MSB" */;
 			buildPhases = (
-				CDCACE7A2A5353F7006BA1A1 /* [CP] Check Pods Manifest.lock */,
 				CDCACE7B2A5353F7006BA1A1 /* Sources */,
 				CDCACEFF2A5353F7006BA1A1 /* Frameworks */,
 				CDCACF062A5353F7006BA1A1 /* Resources */,
 				CDCACF182A5353F7006BA1A1 /* ShellScript */,
-				CDCACF192A5353F7006BA1A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MSB;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CDCACF1D2A5353F7006BA1A1 /* MSB.app */;
 			productType = "com.apple.product-type.application";
@@ -8836,20 +8796,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDCACFC22A54C114006BA1A1 /* Build configuration list for PBXNativeTarget "Taryam" */;
 			buildPhases = (
-				CDCACF222A54C114006BA1A1 /* [CP] Check Pods Manifest.lock */,
 				CDCACF232A54C114006BA1A1 /* Sources */,
 				CDCACFA72A54C114006BA1A1 /* Frameworks */,
 				CDCACFAE2A54C114006BA1A1 /* Resources */,
 				CDCACFC02A54C114006BA1A1 /* ShellScript */,
-				CDCACFC12A54C114006BA1A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Taryam;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CDCACFC52A54C114006BA1A1 /* Taryam.app */;
 			productType = "com.apple.product-type.application";
@@ -8858,20 +8814,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDCAD06A2A54C425006BA1A1 /* Build configuration list for PBXNativeTarget "Future Leaders" */;
 			buildPhases = (
-				CDCACFCA2A54C425006BA1A1 /* [CP] Check Pods Manifest.lock */,
 				CDCACFCB2A54C425006BA1A1 /* Sources */,
 				CDCAD04F2A54C425006BA1A1 /* Frameworks */,
 				CDCAD0562A54C425006BA1A1 /* Resources */,
 				CDCAD0682A54C425006BA1A1 /* ShellScript */,
-				CDCAD0692A54C425006BA1A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Future Leaders";
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CDCAD06D2A54C425006BA1A1 /* Future Leaders.app */;
 			productType = "com.apple.product-type.application";
@@ -8880,20 +8832,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDCAD1122A54CD5A006BA1A1 /* Build configuration list for PBXNativeTarget "Ambassador" */;
 			buildPhases = (
-				CDCAD0722A54CD5A006BA1A1 /* [CP] Check Pods Manifest.lock */,
 				CDCAD0732A54CD5A006BA1A1 /* Sources */,
 				CDCAD0F72A54CD5A006BA1A1 /* Frameworks */,
 				CDCAD0FE2A54CD5A006BA1A1 /* Resources */,
 				CDCAD1102A54CD5A006BA1A1 /* ShellScript */,
-				CDCAD1112A54CD5A006BA1A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Ambassador;
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CDCAD1152A54CD5A006BA1A1 /* Ambassador.app */;
 			productType = "com.apple.product-type.application";
@@ -8914,8 +8862,6 @@
 			dependencies = (
 			);
 			name = "OrisonSchool V2";
-			packageProductDependencies = (
-			);
 			productName = "Ambassador Education";
 			productReference = CDD2367C289AD40100A7121D /* OrisonSchool V2.app */;
 			productType = "com.apple.product-type.application";
@@ -9283,8 +9229,6 @@
 				Base,
 			);
 			mainGroup = 45559BE81EBADB3B00F4E6FB;
-			packageReferences = (
-			);
 			productRefGroup = 45559BF21EBADB3B00F4E6FB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -10717,28 +10661,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
-		CD8A96452ABCB0A500BAF7CD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CD8A96E32ABCB0A500BAF7CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -10751,104 +10673,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
-		};
-		CD8A96E42ABCB0A500BAF7CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD8A96ED2ABCDFE400BAF7CD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CD8A978B2ABCDFE400BAF7CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -10863,104 +10687,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
-		CD8A978C2ABCDFE400BAF7CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD8A97952ABCEE1900BAF7CD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CD8A98332ABCEE1900BAF7CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -10973,104 +10699,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
-		};
-		CD8A98342ABCEE1900BAF7CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD8A983D2ABCF36500BAF7CD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CD8A98DB2ABCF36500BAF7CD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -11085,82 +10713,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
-		CD8A98DC2ABCF36500BAF7CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CD9093FA2A4E37F2008F39D0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11173,28 +10725,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
-		};
-		CDCACDD22A533ABD006BA1A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CDCACE702A533ABD006BA1A1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -11209,104 +10739,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
-		CDCACE712A533ABD006BA1A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CDCACE7A2A5353F7006BA1A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDCACF182A5353F7006BA1A1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11319,104 +10751,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
-		};
-		CDCACF192A5353F7006BA1A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CDCACF222A54C114006BA1A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CDCACFC02A54C114006BA1A1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -11431,104 +10765,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
-		CDCACFC12A54C114006BA1A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CDCACFCA2A54C425006BA1A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDCAD0682A54C425006BA1A1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11542,104 +10778,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
-		CDCAD0692A54C425006BA1A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CDCAD0722A54CD5A006BA1A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDCAD1102A54CD5A006BA1A1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11652,82 +10790,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
-		};
-		CDCAD1112A54CD5A006BA1A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CDD235E3289AD40100A7121D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -24576,7 +23638,6 @@
 		};
 		CD8A96E62ABCB0A500BAF7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -24709,7 +23770,6 @@
 		};
 		CD8A96E72ABCB0A500BAF7CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -24890,7 +23950,6 @@
 		};
 		CD8A978E2ABCDFE400BAF7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25023,7 +24082,6 @@
 		};
 		CD8A978F2ABCDFE400BAF7CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25204,7 +24262,6 @@
 		};
 		CD8A98362ABCEE1900BAF7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25337,7 +24394,6 @@
 		};
 		CD8A98372ABCEE1900BAF7CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25518,7 +24574,6 @@
 		};
 		CD8A98DE2ABCF36500BAF7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25651,7 +24706,6 @@
 		};
 		CD8A98DF2ABCF36500BAF7CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26140,7 +25194,6 @@
 		};
 		CDCACE732A533ABD006BA1A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26273,7 +25326,6 @@
 		};
 		CDCACE742A533ABD006BA1A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26454,7 +25506,6 @@
 		};
 		CDCACF1B2A5353F7006BA1A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26587,7 +25638,6 @@
 		};
 		CDCACF1C2A5353F7006BA1A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26768,7 +25818,6 @@
 		};
 		CDCACFC32A54C114006BA1A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26901,7 +25950,6 @@
 		};
 		CDCACFC42A54C114006BA1A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27082,7 +26130,6 @@
 		};
 		CDCAD06B2A54C425006BA1A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27215,7 +26262,6 @@
 		};
 		CDCAD06C2A54C425006BA1A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27396,7 +26442,6 @@
 		};
 		CDCAD1132A54CD5A006BA1A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27529,7 +26574,6 @@
 		};
 		CDCAD1142A54CD5A006BA1A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27710,7 +26754,7 @@
 		};
 		CDD2367A289AD40100A7121D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4256D847069475BDAF749BC1 /* Pods-OrisonSchool V2.debug.xcconfig */;
+			baseConfigurationReference = A1932691FAD31A2D51815EB1 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27843,7 +26887,7 @@
 		};
 		CDD2367B289AD40100A7121D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42CCD9B5C2E8E9B59A6D2695 /* Pods-OrisonSchool V2.release.xcconfig */;
+			baseConfigurationReference = 3CB22982A54F1DC89C064313 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

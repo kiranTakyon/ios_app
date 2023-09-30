@@ -27,6 +27,8 @@ class ForgotPasswordController: UIViewController {
     func intialStUp(){
         usernameField.placeholder = "User Name"
         passwordField.placeholder = "Verified Email Address"
+        usernameField.delegate = self
+        passwordField.delegate = self
     }
     
     func createSendDictionary() ->[String: Any]? {
@@ -113,4 +115,13 @@ class ForgotPasswordController: UIViewController {
      }
      */
     
+}
+
+extension ForgotPasswordController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+        {
+            passwordField.resignFirstResponder()
+            usernameField.resignFirstResponder()
+            return true;
+        }
 }
