@@ -631,6 +631,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
         detailVc.weeklyPlan = weeklyPlan
         detailVc.divId = self.divId
+        detailVc.isFromNotification = false
         self.navigationController?.pushViewController(detailVc, animated: true)
         
     }

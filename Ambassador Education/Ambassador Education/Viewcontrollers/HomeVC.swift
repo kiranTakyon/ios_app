@@ -60,16 +60,16 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         let url = APIUrls().mobileNotification
         var dictionary = [String:Any]()
         if let token = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.gcmToken) as? String{
-        let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] = userId
-        dictionary["RegId"] = token
-        dictionary["PhoneType"] = 1
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            DispatchQueue.main.async {
-                self.stopLoadingAnimation()
+            let userId = UserDefaultsManager.manager.getUserId()
+            dictionary[UserIdKey().id] = userId
+            dictionary["RegId"] = token
+            dictionary["PhoneType"] = 1
+            
+            APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+                DispatchQueue.main.async {
+                    self.stopLoadingAnimation()
+                }
             }
-        }
         }
     }
     
@@ -223,20 +223,20 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     
     
     func getNotification(user: String){//user : String,student : String ,classVal : String){
-            notificationList.removeAll()
-                    guard let nototificationsArray = logInResponseGloabl["Notification"] as? NSArray else{return}
-                    let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
-                    self.notificationList.append(contentsOf: notifications)
-                self.alertTable.reloadData()
-                self.setStudentDetailsOnView(studentDetail: logInResponseGloabl)
-                    if self.notificationList.count == 0{
-                        self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
-                    }
-                    else{
-                        self.removeNoDataLabel()
-                }
-                    self.alertTable.reloadData()
-            }
+        notificationList.removeAll()
+        guard let nototificationsArray = logInResponseGloabl["Notification"] as? NSArray else{return}
+        let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
+        self.notificationList.append(contentsOf: notifications)
+        self.alertTable.reloadData()
+        self.setStudentDetailsOnView(studentDetail: logInResponseGloabl)
+        if self.notificationList.count == 0{
+            self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
+        }
+        else{
+            self.removeNoDataLabel()
+        }
+        self.alertTable.reloadData()
+    }
     
 
     

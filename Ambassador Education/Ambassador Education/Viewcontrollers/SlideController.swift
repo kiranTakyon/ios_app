@@ -58,7 +58,7 @@ class SlideController: UITableViewController,TaykonProtocol {
                            "MyProlfeKey":["Profile","toProfileVc"],
                            "T0069":["Language","toGradeBook"],//Open in browser
        // "MyProlfeKey":["الملف الشخصي","toProfileVc"]
-
+                           "T0062":["ToDigitalResourceDetail"],
                            ]
     
     //MARK: - View Life Cycle
@@ -139,7 +139,7 @@ class SlideController: UITableViewController,TaykonProtocol {
             }else if selectedAlertType == .communicate{
                 self.performSegue(withIdentifier: "toMessageDetail", sender: self)
             } else if selectedAlertType == .html {
-                self.performSegue(withIdentifier: "toDigitalReource", sender: nil)
+                self.performSegue(withIdentifier: "toDigitalResourceDetail", sender: nil)
             } else if selectedAlertType == .noticeboard {
                 self.performSegue(withIdentifier: "toNBDetails", sender: nil)
             } else if selectedAlertType == .weeklyPlan {

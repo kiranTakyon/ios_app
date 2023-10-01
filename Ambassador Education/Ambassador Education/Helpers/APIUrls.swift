@@ -55,7 +55,7 @@ class APIUrls{
     let WPCommentList = "T0250"
     let WPbyID = "T0206"
     let getNBDetails = "T0072"
-
+    let getNotification = "T0062"
 }
 
 

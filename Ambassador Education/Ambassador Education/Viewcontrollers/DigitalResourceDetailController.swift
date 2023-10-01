@@ -43,6 +43,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     var divId = ""
     var msgId = ""
     var WpID = ""
+    var isFromNotification: Bool = true
 
   
     override func viewDidLoad() {
@@ -55,21 +56,29 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         richEditorView1.clipsToBounds = true
         setUI()
         videoDownload.delegate = self
-        if(WpID != "")
-        {
-            getWPDetailsbyID()
-        }
-        else
-        {
-        setData()
-        }
+        
 
+        if isFromNotification {
+            getDataFromNotificationApi()
+            setData()
+        } else {
+            if(WpID != "") {
+                getWPDetailsbyID()
+            } else {
+                setData()
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         addBlurEffectToTableView(inputView: self.view, hide: true)
        // progressBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        isFromNotification = true
     }
     
     func setUI(){
@@ -320,6 +329,31 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     
 }
 
+extension DigitalResourceDetailController {
+    
+    func getDataFromNotificationApi() {
+        
+        self.startLoadingAnimation()
+        let url = APIUrls().getNotification
+        
+        let userId = UserDefaultsManager.manager.getUserId()
+        
+        var dictionary = [String: Any]()
+        
+        //{"UserId":"98189","SearchText":""}
+        dictionary[UserIdKey().id] = userId
+        dictionary[GalleryCategory.searchText] = ""
+        dictionary["item_id"] = "1111"
+        dictionary[GalleryCategory.paginationNumber] = 1
+        
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+       
+            
+            self.stopLoadingAnimation()
+        }
+    }
+}
 
 extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDelegate,MessageDownLoadDelegate{
     func downLoadMylink(index: Int) {
