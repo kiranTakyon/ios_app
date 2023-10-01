@@ -92,7 +92,8 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
     func navigateToDetails(item:TNNoticeBoardDetail){
         
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardDetailController") as! NoticeboardDetailController
-        vc.detail = item
+        //vc.detail = item
+        vc.NbID = item.id ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
