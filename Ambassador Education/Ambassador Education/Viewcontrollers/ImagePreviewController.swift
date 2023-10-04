@@ -32,7 +32,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         self.navigationController?.isNavigationBarHidden = true
         setScrollView()
         setData()
-        print(imageArr)
+       // print(imageArr)
         topHeaderView.delegate = self
         
         if isFromDashboardNotification {
@@ -175,8 +175,10 @@ extension ImagePreviewController: TopHeaderDelegate {
     }
     
     func searchButtonClicked(_ button: UIButton) {
-        guard let imagestring = imageUrl else  {return}
-        
+       // guard let imagestring = imageUrl else  {return}
+       
+        guard let imagestring =  self.imageView.imageURLString else  {return}
+       // print(imagestring)
         if let url = URL(string: imagestring),
             let data = try? Data(contentsOf: url),
             let image = UIImage(data: data) {
