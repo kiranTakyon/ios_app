@@ -136,9 +136,7 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
         cell?.titleImageView.image = #imageLiteral(resourceName: "Default")
         cell?.dateLabel.isHidden = true
         cell?.selectionStyle = .none
-        
         // create a new cell if needed or reuse an old one
-        
         return cell!
     }
     
@@ -147,15 +145,8 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
         //        guard let cell = tableView.cellForRow(at: indexPath) as? GalleryCategoryList else { return }
         //
         //        self.navigateToGallery(catId: cell.tag)
-        
-        
-        
-        
          let cat = articleList[indexPath.row]
-        
-        
         self.navigateTodigitalResourceDetail(category: cat)
-        
     }
     
    

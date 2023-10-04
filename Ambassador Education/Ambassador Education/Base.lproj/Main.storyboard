@@ -578,6 +578,7 @@
                         <segue destination="P7n-HN-FjU" kind="custom" identifier="toMessageDetail" customClass="SWRevealViewControllerSeguePushController" id="meb-yj-RnV"/>
                         <segue destination="QRy-xw-2tt" kind="custom" identifier="toImagePreview" customClass="SWRevealViewControllerSeguePushController" id="8LJ-xZ-DOC"/>
                         <segue destination="AaG-aW-wHW" kind="custom" identifier="toNBDetails" customClass="SWRevealViewControllerSeguePushController" id="0oY-Xl-4Lv"/>
+                        <segue destination="5aq-17-iEW" kind="show" identifier="toDigitalResourceDetail" customClass="SWRevealViewControllerSeguePushController" id="U0g-2g-V7E"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKC-U7-1eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2059,7 +2060,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" id="Dno-AN-zns" userLabel="GroupView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="105" width="371" height="45"/>
+                                                <rect key="frame" x="33" y="105" width="374" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -2067,15 +2068,15 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" id="DR2-vs-Brj" userLabel="PersonView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="55" width="371" height="45"/>
+                                                <rect key="frame" x="33" y="55" width="374" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="EEk-jH-pBu"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" id="1jO-EW-tMs" userLabel="GroupView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="5" width="371" height="45"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" id="1jO-EW-tMs" userLabel="GroupView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
+                                                <rect key="frame" x="33" y="5" width="374" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -3573,7 +3574,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-Ab-EIP">
-                                <rect key="frame" x="-5" y="78" width="414" height="652"/>
+                                <rect key="frame" x="-8" y="74" width="415" height="649"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -3762,7 +3763,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Urg-Ms-pWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9204" y="2418"/>
+            <point key="canvasLocation" x="11023.188405797102" y="2458.6956521739135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iIq-0I-KX1">
@@ -4631,23 +4632,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkU-74-QPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7516" y="2468"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yYw-aB-aH1">
-            <objects>
-                <navigationController id="iYC-dt-9CX" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1EB-XB-phd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="HEA-II-HZL" kind="relationship" relationship="rootViewController" id="YOL-ba-J1G"/>
-                        <segue destination="F0J-cP-zRj" kind="custom" identifier="toDigitalResourceDetail" id="iPp-ga-3fP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5iT-SF-nqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7664" y="3272"/>
         </scene>
         <!--Weekly Plan Controller-->
         <scene sceneID="XMA-6A-vlj">
@@ -5665,7 +5649,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJC-ak-Mqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8265" y="2468"/>
+            <point key="canvasLocation" x="9225" y="2468"/>
         </scene>
         <!--Verification Email Login View Controller-->
         <scene sceneID="Bl8-cU-BCB">
@@ -6015,6 +5999,25 @@
             </objects>
             <point key="canvasLocation" x="4028.985507246377" y="1691.576086956522"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cBv-2C-x1a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5aq-17-iEW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZPY-xB-A6o"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B9t-tq-tye">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HEA-II-HZL" kind="relationship" relationship="rootViewController" id="bYc-FH-m5m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7IS-fk-yRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8320" y="2468"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="1RO-2M-5PZ">
@@ -6055,7 +6058,6 @@
         <segue reference="kZn-is-Jar"/>
         <segue reference="LfD-ZK-Stt"/>
         <segue reference="jF7-Bc-YDF"/>
-        <segue reference="iPp-ga-3fP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AddCC" width="128" height="128"/>
