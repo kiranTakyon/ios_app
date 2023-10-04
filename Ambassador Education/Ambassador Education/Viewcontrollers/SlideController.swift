@@ -58,7 +58,7 @@ class SlideController: UITableViewController,TaykonProtocol {
                            "MyProlfeKey":["Profile","toProfileVc"],
                            "T0069":["Language","toGradeBook"],//Open in browser
        // "MyProlfeKey":["الملف الشخصي","toProfileVc"]
-                           "T0062":["ToDigitalResourceDetail"],
+                           "T0062":["","toDigitalResourceDetail"],
                            ]
     
     //MARK: - View Life Cycle
@@ -127,7 +127,15 @@ class SlideController: UITableViewController,TaykonProtocol {
                 vc.NbID = notificationObject.processid ?? ""
                 vc.isFromDashboardNotification = true
             }
-        }  
+        }
+        else if segue.identifier == "toDigitalResourceDetail" {
+            if let destinationVC = segue.destination as? UINavigationController,
+               let vc = destinationVC.children[0] as? DigitalResourceDetailController {
+                vc.NbID = notificationObject.processid ?? ""
+                vc.isFromNotification = true
+            }
+        }
+        
     }
 
     //MARK: - Other Helpers
@@ -175,14 +183,10 @@ class SlideController: UITableViewController,TaykonProtocol {
                         selectionIds.append(intValue)
 
                     }
-                    
                 }
-                
             }
-            
             studentDetails = siblings
         }
-        
     }
     
     

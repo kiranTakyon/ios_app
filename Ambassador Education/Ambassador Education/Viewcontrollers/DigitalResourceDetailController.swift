@@ -43,8 +43,8 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     var divId = ""
     var msgId = ""
     var WpID = ""
-    var isFromNotification: Bool = true
-
+    var NbID = ""
+    var isFromNotification: Bool = false
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +59,12 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         
 
         if isFromNotification {
-            getDataFromNotificationApi()
-            setData()
+            setSlideMenuProporties()
+            if(NbID != "") {
+                getDataFromNotificationApi()
+            } else {
+                setData()
+            }
         } else {
             if(WpID != "") {
                 getWPDetailsbyID()
@@ -68,20 +72,31 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
                 setData()
             }
         }
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         addBlurEffectToTableView(inputView: self.view, hide: true)
+        self.navigationController?.navigationBar.isHidden = true
        // progressBar.isHidden = true
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        isFromNotification = true
+       // isFromNotification = true
     }
     
-    func setUI(){
+    func setSlideMenuProporties() {
+        topHeaderView.setMenuOnLeftButton()
+        if self.revealViewController() != nil {
+            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+    
+    func setUI() {
         quickLookController.dataSource = self
         quickLookController.delegate = self
         self.tableViewAttachments.delegate = self
@@ -107,7 +122,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     }
     
     func setData(){
-        if let digital = digitalResource{
+        if let digital = digitalResource {
             setUiWithType(top: 0, height: 0, hide: true)
             if let attachment = digital.attachments as? [Attachment]{
                 data = attachment
@@ -211,6 +226,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
          popUpEffectType = .flipDown
          presentPopUpViewController(popvc)
     }
+    
     func rectForText(text: String, font: UIFont, maxSize: CGSize) -> CGSize {
         let attrString = NSAttributedString.init(string: text, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font):font]))
         let rect = attrString.boundingRect(with: maxSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
@@ -332,25 +348,36 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
 extension DigitalResourceDetailController {
     
     func getDataFromNotificationApi() {
-        
-        self.startLoadingAnimation()
+        startLoadingAnimation()
         let url = APIUrls().getNotification
-        
         let userId = UserDefaultsManager.manager.getUserId()
-        
         var dictionary = [String: Any]()
-        
         //{"UserId":"98189","SearchText":""}
         dictionary[UserIdKey().id] = userId
         dictionary[GalleryCategory.searchText] = ""
-        dictionary["item_id"] = "1111"
+        dictionary[DetailsKeys2().itemId] = NbID
         dictionary[GalleryCategory.paginationNumber] = 1
         
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-       
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [self] (result) in
             
-            self.stopLoadingAnimation()
+            DispatchQueue.main.async {
+                print("...........")
+                print(result)
+                if result["StatusCode"] as? Int == 1 {
+                    guard let digitalResource = result["item"] as? NSDictionary else {
+                        print("Error: Item is nil or cannot be cast to NSDictionary")
+                        return
+                    }
+                    self.digitalResource = TNDigitalResourceSubList(values: digitalResource)
+                    self.setData()
+                    self.stopLoadingAnimation()
+                    
+                } else {
+                    self.stopLoadingAnimation()
+                    SweetAlert().showAlert(kAppName, subTitle: "Not able to get the digital resource details", style: .warning)
+                    print("Error")
+                }
+            }
         }
     }
 }
@@ -436,7 +463,12 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
         if tableView == self.tableViewDataListBG {
             let cell : DigitalResourceDataListCell = (tableView.dequeueReusableCell(withIdentifier: "DigitalResourceDataListCell", for: indexPath) as? DigitalResourceDataListCell)!
 //               self.constraintViewWebDataTableHeight.constant = self.constraintViewWebDataTableHeight.constant + CGFloat(((self.arrDataList.count-1) * 300)  + 0)
-            cell.richEditorViewBG.load(URLRequest.init(url: URL.init(string: "\(self.arrDataList[indexPath.row])")!))
+            if arrDataList.count > indexPath.row,
+               let url = URL(string: "\(self.arrDataList[indexPath.row])") {
+                cell.richEditorViewBG.load(URLRequest(url: url))
+            }
+           
+
 
             self.attachViewTop.constant = self.constraintViewWebDataTableHeight.constant + 10
             return cell
@@ -459,6 +491,9 @@ extension DigitalResourceDetailController : UITableViewDataSource,UITableViewDel
         }
         return UITableViewCell()
     }
+    
+
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
@@ -584,7 +619,7 @@ fileprivate func convertFromNSAttributedStringDocumentType(_ input: NSAttributed
 }
 
 
-class DigitalResourceDataListCell: UITableViewCell{
+class DigitalResourceDataListCell: UITableViewCell {
     @IBOutlet weak var richEditorViewBG: RichEditorWebView!
 }
 extension DigitalResourceDetailController : TaykonProtocol {

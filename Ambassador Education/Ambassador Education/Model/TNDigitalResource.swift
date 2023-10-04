@@ -59,10 +59,8 @@ class TNDigitalResourceSubList{
                 }
                 self.attachments = attachment
             }
-            
         }
         self.date = values["Date"] as? String
-
 
     }
 }
