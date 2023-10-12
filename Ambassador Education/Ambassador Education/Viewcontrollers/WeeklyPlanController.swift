@@ -24,6 +24,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     let quickLookController = QLPreviewController()
     var divId = ""
     var subId = ""
+    var comment_needed = "1"
     
     var completeListDetails : NSDictionary?
     var backgroundSession: URLSession!
@@ -138,7 +139,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                         }
                     }
                 }
-               
                 if self.weeklyPlan != nil{
                     if let div = self.weeklyPlan?.divisions,let sub = self.weeklyPlan?.subjects{
                         if div.count > 0{
@@ -217,6 +217,9 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                     }
                     if let end = details["ToDate"] as? String{
                         self.toDateLabel.text = "To : " + end
+                    }
+                    if let comm_n = details["WPComments"] as? String {
+                        self.comment_needed = comm_n
                     }
                 }
                 
@@ -580,7 +583,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
             let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
             divId = values.3
             subId = values.4
-            print("hh4",formatedStart)
             self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
         }
         
@@ -631,6 +633,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
         detailVc.weeklyPlan = weeklyPlan
         detailVc.divId = self.divId
+        detailVc.comment_needed = self.comment_needed
         self.navigationController?.pushViewController(detailVc, animated: true)
         
     }
