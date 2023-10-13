@@ -50,7 +50,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     
     func setScrollView(){
         scrollViewImage.minimumZoomScale = 1.0
-        scrollViewImage.maximumZoomScale = 10.0
+        scrollViewImage.maximumZoomScale = 5.0
         scrollViewImage.flashScrollIndicators()
         scrollViewImage.delegate = self
         imageView.isUserInteractionEnabled = true
