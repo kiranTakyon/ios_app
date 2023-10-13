@@ -44,6 +44,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     var msgId = ""
     var WpID = ""
     var NbID = ""
+    var comment_needed = "1"
     var isFromNotification: Bool = false
   
     override func viewDidLoad() {
@@ -57,7 +58,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         setUI()
         videoDownload.delegate = self
         
-
         if isFromNotification {
             setSlideMenuProporties()
             if(NbID != "") {
@@ -180,8 +180,12 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let htmlDecode = weeklyPlanValue.description
             //richEditorView.html = htmlDecode.safeValue
             richEditorView1.html = htmlDecode.safeValue
-            
-            if user == UserType.parent.rawValue || user == UserType.student.rawValue{
+            if(comment_needed=="0")
+            {
+                btnAddComment.isHidden = true
+                btnViewComment.isHidden = true
+            }
+            else if user == UserType.parent.rawValue || user == UserType.student.rawValue{
                 if(weeklyPlanValue.CommentStatus == 1)
                 {
                     btnViewComment.isHidden = false

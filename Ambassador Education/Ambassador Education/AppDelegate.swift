@@ -388,7 +388,7 @@ let appStoreId = ""
 #elseif PEA_V2
 let appStoreId = ""
 #elseif VIS
-let appStoreId = ""
+let appStoreId = "6448665301"
 #elseif AMANA
 let appStoreId = ""
 #elseif MSB
