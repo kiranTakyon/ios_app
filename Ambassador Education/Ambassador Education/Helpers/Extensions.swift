@@ -193,12 +193,9 @@ class ImageLoader : UIImageView {
         imageURLString = urlString
         
         if let url = URL(string: urlString!) {
-            
             image = nil
             activityIndicator.startAnimating()
-            
             if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
-                
                 self.image = imageFromCache
                 activityIndicator.stopAnimating()
                 return
@@ -210,7 +207,7 @@ class ImageLoader : UIImageView {
                     print(error as Any)
                     DispatchQueue.main.async(execute: {
                         self.activityIndicator.stopAnimating()
-                         self.image = UIImage(named:"Default")
+                        self.image = UIImage(named:"Default")
                     })
                     return
                 }
@@ -218,23 +215,18 @@ class ImageLoader : UIImageView {
                 DispatchQueue.main.async(execute: {
                     
                     if let imgaeToCache = UIImage(data: data!){
-                        
                         if self.imageURLString == urlString {
                             self.image = imgaeToCache
                         }
-                        
                         self.activityIndicator.stopAnimating()
                         imageCache.setObject(imgaeToCache, forKey: urlString as AnyObject)
-                    }else{
+                    } else {
                         self.image = UIImage(named:"UserDefault")
                         self.activityIndicator.stopAnimating()
-
-
                     }
                 })
             }) .resume()
-        }else{
-            
+        } else {
             self.image = UIImage(named:"Default")
         }
     }
