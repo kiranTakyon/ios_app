@@ -48,7 +48,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         }
     }
     
-    func setScrollView(){
+    func setScrollView() {
         scrollViewImage.minimumZoomScale = 1.0
         scrollViewImage.maximumZoomScale = 5.0
         scrollViewImage.flashScrollIndicators()
@@ -56,37 +56,36 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         imageView.isUserInteractionEnabled = true
     }
     
-    
-    func setStatesToUIElements(isHide : Bool){
+    func setStatesToUIElements(isHide : Bool) {
         rightArrow.isHidden = isHide
         leftArrow.isHidden = isHide
         leftButton.isHidden = isHide
         rightButton.isHidden = isHide
     }
-    func setData(){
-        if pageTitle != "Gallery"{
+    
+    func setData() {
+        if pageTitle != "Gallery" {
             topHeaderView.title = pageTitle ?? ""
-        }
-        else{
+        } else {
             topHeaderView.title = ""
         }
-        if pageTitle == ""{
+        if pageTitle == "" {
             setStatesToUIElements(isHide: true)
-        }else{
+        } else {
             setStatesToUIElements(isHide: false)
         }
         if let imageArrays = imageArr as? [String]{
             
-            if imageArrays.count != 0{
+            if imageArrays.count != 0 {
                 self.imageView.loadImageWithUrl(imageArrays[position])
             }
         }
         
-        if let value = titleValue{
-            if value.contains("&quot") || value.contains(";"){
+        if let value = titleValue {
+            if value.contains("&quot") || value.contains(";") {
                 let htmlDecode = value.replacingHTMLEntities
-                self.topHeaderView.titleLabel.attributedText = htmlDecode?.htmlToAttributedString           }
-            else{
+                self.topHeaderView.titleLabel.attributedText = htmlDecode?.htmlToAttributedString
+            } else {
                 self.topHeaderView.title = value
             }
         }
@@ -118,15 +117,14 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         
     }
     @IBAction func leftButtonScrollAction(_ sender: UIButton) {
-        if let imageArrays = imageArr as? [String]{
+        if let imageArrays = imageArr as? [String] {
             
-            if position >= 0{
-                if position != 0{
+            if position >= 0 {
+                if position != 0 {
                     position -= 1
-                    self.imageView.loadImageWithUrl(imageArrays[position])
-                    
-                }
-                else{
+                    scrollViewImage.setZoomScale(1.0, animated: false)
+                    imageView.loadImageWithUrl(imageArrays[position])
+                } else {
                     SweetAlert().showAlert(kAppName, subTitle: "This is the last image", style: .warning)
                 }
             }
@@ -135,18 +133,16 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     }
     
     @IBAction func rightButtonScrollAction(_ sender: UIButton) {
-        if let imageArrays = imageArr as? [String]{
+        if let imageArrays = imageArr as? [String] {
             
             if position < imageArr.count{
                 if position != imageArrays.count - 1{
                     position += 1
-                    self.imageView.loadImageWithUrl(imageArrays[position])
-                    
-                }
-                else{
+                    scrollViewImage.setZoomScale(1.0, animated: false)
+                    imageView.loadImageWithUrl(imageArrays[position])
+                } else {
                     SweetAlert().showAlert(kAppName, subTitle: "This is the last image", style: .warning)
                 }
-                
             }
         }
     }
@@ -175,15 +171,16 @@ extension ImagePreviewController: TopHeaderDelegate {
     }
     
     func searchButtonClicked(_ button: UIButton) {
-       // guard let imagestring = imageUrl else  {return}
-       
+        // guard let imagestring = imageUrl else  {return}
+        
         guard let imagestring =  self.imageView.imageURLString else  {return}
-       // print(imagestring)
+        // print(imagestring)
         if let url = URL(string: imagestring),
-            let data = try? Data(contentsOf: url),
-            let image = UIImage(data: data) {
+           let data = try? Data(contentsOf: url),
+           let image = UIImage(data: data) {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             self.showAlertController("Success", message: "Image saved to photos", cancelButton: "Done", isTextFiled: false, otherButtons: [], handler: nil)
-        }    }
+        }
+    }
     
 }
