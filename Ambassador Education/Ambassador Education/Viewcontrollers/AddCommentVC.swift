@@ -10,6 +10,10 @@ import UIKit
 import MobileCoreServices
 
 class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDocumentPickerDelegate {
+    func getBackToTableViewS(value: Any?, tagValueInt: Int) {
+    
+    }
+    
     func deleteTheSelectedAttachment(index: Int) {
         
     }

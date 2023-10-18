@@ -20,6 +20,10 @@ enum CommunicationType : String{
 }
 
 class CommunicateController: UIViewController,UITableViewDataSource, UITableViewDelegate,TaykonProtocol {
+    func getBackToTableViewS(value: Any?, tagValueInt: Int) {
+        
+    }
+    
 
 
     @IBOutlet weak var communicateTable: UITableView!

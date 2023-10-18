@@ -58,6 +58,7 @@ class WebViewViewController: UIViewController,WKUIDelegate,URLSessionDownloadDel
                         topHeaderView.shouldShowFirstRightButtons(false)
                     }
                 if let urlValue = URL(string: value){
+                    print("loading= \(urlValue)" )
                     let loadRequest = NSURLRequest(url: urlValue)
                     self.webView.load(loadRequest as URLRequest)
                 }

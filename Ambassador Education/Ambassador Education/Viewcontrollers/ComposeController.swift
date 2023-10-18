@@ -15,6 +15,10 @@ var typingCount = 0
 
 
 class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtocol,UITextFieldDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate ,KSTokenViewDelegate {
+    func getBackToTableViewS(value: Any?, tagValueInt: Int) {
+        
+    }
+    
 
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var attachmentTb: UITableView!

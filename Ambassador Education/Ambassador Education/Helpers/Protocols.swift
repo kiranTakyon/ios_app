@@ -16,6 +16,7 @@ import Foundation
     func downloadPdfButtonAction(url: String,fileName : String?)
     func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage)
     func getBackToTableView(value:Any?,tagValueInt : Int)
+    func getBackToParentViewS(value:Any?,titleValue : String?)
     func selectedPickerRow(selctedRow:Int)
     func popUpDismiss()
     func moveToComposeController(titleTxt : String,index : Int,tag : Int)
@@ -30,6 +31,9 @@ extension TaykonProtocol {
         
     }
     func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage) {
+        
+    }
+    func getBackToParentViewS(value:Any?,titleValue : String?) {
         
     }
 }

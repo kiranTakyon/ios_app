@@ -677,7 +677,7 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
     
-    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
+    func getBackToParentViewS(value: Any?, titleValue: String?) {
         if let siblings = value as? TSibling{
         let imageUrlVal = siblings.proileImage
             sibling = true
@@ -760,8 +760,8 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
             UserDefaultsManager.manager.saveUserId(id: userId)
         }
         self.studentDetailLabel.text = "Class Name - " + selectedSibling.classValue.safeValue
-        self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
-       
+        //self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
+        self.delegate?.getBackToParentViewS(value: selectedSibling, titleValue: "")
     }
     
 

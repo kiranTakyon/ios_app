@@ -127,6 +127,8 @@ class GradeViewController: UIViewController,WKUIDelegate {
                 }
                 gradeBookLink = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
                 if let urlValue = URL(string: gradeBookLink!)?.absoluteURL{
+                    print("loading= \(urlValue)" )
+
                 let loadRequest = NSURLRequest(url: urlValue)
                     self.webView.load(loadRequest as URLRequest)
             }

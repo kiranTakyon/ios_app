@@ -42,6 +42,7 @@ class WebViewController: UIViewController,WKNavigationDelegate {
         }
         else {
                 if let url = URL (string: strU){
+                    print("loading= \(url)" )
                     let requestObj = URLRequest(url:url)
                     self.webView.load(requestObj)
                 }
