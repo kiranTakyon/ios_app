@@ -78,10 +78,10 @@ class VideoDownload {
             }
             let destinationUrl = createDirectory(folderName: folderName).appendingPathComponent(urlLastComponenet)
             print("Destination url = \(destinationUrl.path)")
-            if FileManager().fileExists(atPath: destinationUrl.path) {
+           /* if FileManager().fileExists(atPath: destinationUrl.path) {
                 print("The file \"\(destinationUrl.deletingPathExtension().lastPathComponent )\" already exists at path.")
                 checkAndStopDownload(fileUrl:url!,fileName:urlLastComponenet)
-            } else {
+            } else {*/
                 print(Date())
                 print("Started downloading \"\(originalSubtitleURLStr.deletingPathExtension?.lastPathComponent ?? "default")\".")
                 getSrtDataFromUrl(srtUrl: originalSubtitleURLStr) { data in
@@ -96,7 +96,7 @@ class VideoDownload {
                             self.checkAndStopDownload(fileUrl:self.spaceRemovedURL,fileName:urlLastComponenet)
                         }
                     }
-                }
+                //}
             }
         }
     }
