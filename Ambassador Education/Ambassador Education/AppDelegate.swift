@@ -352,7 +352,7 @@ let appStoreId = ""
 #elseif AJMAN_MODERN
 let appStoreId = ""
 #elseif PEPS_V2
-let appStoreId = ""
+let appStoreId = "1534894835"
 #elseif ALMAWAHIB
 let appStoreId = ""
 #elseif AJMANMODERN

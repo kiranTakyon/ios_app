@@ -77,12 +77,8 @@ class UserDefaultsManager {
         
          let details = logInResponseGloabl//self.getUserDefaultValue(key: DBKeys.logInDetails) as? NSDictionary else{return ""}
         
-        
-        
         guard let userType = details["UserType"] as? String else {return ""}
         
         return userType
     }
-
-    
 }

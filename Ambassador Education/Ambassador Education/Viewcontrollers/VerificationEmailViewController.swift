@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerificationEmailViewController: UIViewController {
+class VerificationEmailViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var verificationNotificationLabel: UILabel!
     @IBOutlet weak var verificationCodeTextField: UITextField!
@@ -29,6 +29,7 @@ class VerificationEmailViewController: UIViewController {
 
     func setEmailNotificationMsgInLabel(){
         verificationNotificationLabel.text = "Thank you for verifying your email id.A message with a confirmation code was sent to \(email).To complete the verification process,enter the verification code above."
+        verificationCodeTextField.delegate = self
     }
     
     func setEmailVerification(key : String){
@@ -48,19 +49,16 @@ class VerificationEmailViewController: UIViewController {
                             SweetAlert().showAlert(kAppName, subTitle: message, style: .success, buttonTitle: alertOk, action: { (index) in
                                 if index{
                                     self.delegate?.popUpDismiss()
-
-                                }
+                                    self.dismiss(animated: true, completion: nil)
+                                    self.setVerifiedUser()                                }
                             })
                        }
                     }
                     else{
                         if let mesaage = result["StatusMessage"] as? String{
-                            
-                            
                             SweetAlert().showAlert(kAppName, subTitle: mesaage, style: .error, buttonTitle: alertOk, action: { (index) in
                                 if index{
                                     self.dismiss(animated: true, completion: nil)
-                                    
                                 }
                             })
 
@@ -83,6 +81,11 @@ class VerificationEmailViewController: UIViewController {
             showAlertController(kAppName, message: "All fields are required", cancelButton: alertOk, otherButtons: [], handler: nil)
         }
     }
+    func setVerifiedUser(){
+        if let globalDict = logInResponseGloabl as? NSMutableDictionary{
+            globalDict["VerifiedUser"]="1"
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -94,3 +97,10 @@ class VerificationEmailViewController: UIViewController {
     */
 
 }
+extension VerificationEmailViewController:UITextViewDelegate {
+ func textFieldShouldReturn(_ textField: UITextField) -> Bool
+ {
+     verificationCodeTextField.resignFirstResponder()
+     return true
+ }
+ }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ChangePasswordController: UIViewController {
+class ChangePasswordController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var confirmPassword: SkyFloatingLabelTextField!
     @IBOutlet weak var newPassword: SkyFloatingLabelTextField!
@@ -32,6 +32,9 @@ class ChangePasswordController: UIViewController {
         confirmPassword.isSecureTextEntry = true
         newPassword.isSecureTextEntry = true
         currentPassword.isSecureTextEntry = true
+        confirmPassword.delegate = self
+        newPassword.delegate = self
+        currentPassword.delegate = self
     }
     
     func getUdidOfDevide() -> String{
@@ -130,3 +133,12 @@ class ChangePasswordController: UIViewController {
     */
 
 }
+extension ChangePasswordController:UITextViewDelegate {
+ func textFieldShouldReturn(_ textField: UITextField) -> Bool
+ {
+     currentPassword.resignFirstResponder()
+     newPassword.resignFirstResponder()
+     confirmPassword.resignFirstResponder()
+     return true
+ }
+ }
