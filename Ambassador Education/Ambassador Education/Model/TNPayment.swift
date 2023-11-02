@@ -15,7 +15,9 @@ class TNPayment{
     var date : String?
     var receiptNo : String?
     var fee : String?
-    
+    var balance : String?
+    var paid : String?
+    var Desc : String?
     
     init(values:NSDictionary) {
         
@@ -27,6 +29,30 @@ class TNPayment{
 
         }else{
             self.fee = values["Fee"] as? String
+        }
+        if let _ = values["Balance"] as? String{
+            self.balance = values["Balance"] as? String
+
+        }else{
+            self.balance = ""
+        }
+        if let _ = values["Fee"] as? String{
+            self.fee = values["Fee"] as? String
+
+        }else{
+            self.fee = "0"
+        }
+        if let _ = values["FeeDescription"] as? String{
+            self.Desc = values["FeeDescription"] as? String
+
+        }else{
+            self.Desc = ""
+        }
+        if let _ = values["Paid"] as? String{
+            self.paid = values["Paid"] as? String
+
+        }else{
+            self.paid = ""
         }
     }
 }

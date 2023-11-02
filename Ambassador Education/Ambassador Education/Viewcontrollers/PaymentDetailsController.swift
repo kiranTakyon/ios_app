@@ -28,7 +28,8 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var secondSectionNameLabel: UILabel!
     @IBOutlet weak var thirdSectionNameLabel: UILabel!
 
-  
+
+    
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
     @IBOutlet weak var PayOptions: UISegmentedControl!
@@ -55,6 +56,14 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     var accountDetailsLabel =  ""
     var payLabel =  ""
     var FeeLabel =  ""
+    var BalanceLabel = ""
+    var PaidLabel = ""
+    var FeeDescLabel = ""
+    var PrevBalanceLabel=""
+    var PrevBalance = ""
+    var CDueLabel = ""
+    var TDueLabel = ""
+    var OtherLabel = ""
 
     var CurrentDue = "0.00"
     var TotalDue = "0.00"
@@ -74,7 +83,9 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         payTF.delegate = self
         payTF.keyboardType = .numbersAndPunctuation
         payTF.isUserInteractionEnabled = false
-        self.paymentDetailTable.estimatedRowHeight = 88.0
+  
+        self.paymentDetailTable.estimatedRowHeight = 118.0
+        
         self.paymentDetailTable.rowHeight = UITableView.automaticDimension
         if finance == 2{
 //            titleLabel.text = "Fee Details"
@@ -196,6 +207,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         payView.isHidden = true
         PayOptions.isHidden = true
         payViewHeightConstraint.constant = 0
+        
         if finance == 1{
              url = APIUrls().paymentDetails
         }else if finance == 2{
@@ -204,6 +216,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         }else  if finance == 3 {
             payView.isHidden = false
             PayOptions.isHidden = false
+            
 //            payViewHeightConstraint.constant = 70
             payViewHeightConstraint.constant = 138
             url = APIUrls().feeSummary
@@ -237,10 +250,20 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             self.TotalDue = result["TotalDue"] as? String ?? "0.00"
             self.classValue = result["Division"] as? String ?? ""
             self.compid = result["comp_id"] as? String ?? "0"
+            self.BalanceLabel=result["BalanceLabel"] as? String ?? "Balance"
+            self.FeeDescLabel=result["FeeDescriptionLabel"] as? String ?? "Fee Description"
+            self.PaidLabel=result["PaidLabel"] as? String ?? "Paid"
+            self.PrevBalanceLabel = result["PrevBalanceLabel"] as? String ?? "Prev Balance"
+            self.PrevBalance = result["prev_bal"] as? String ?? "0"
+            self.CDueLabel = result["CurrentDueLabel"] as? String ?? "Current Due"
+            self.TDueLabel = result["DueAmountLabel"] as? String ?? "Total Due"
+            self.OtherLabel = result["OtherLabel"] as? String ?? "Other"
             
-
             DispatchQueue.main.async {
                 self.topHeaderView.title = self.headLabel
+                self.PayOptions.setTitle(self.CDueLabel, forSegmentAt: 0)
+                self.PayOptions.setTitle(self.TDueLabel, forSegmentAt: 1)
+                self.PayOptions.setTitle(self.OtherLabel, forSegmentAt: 2)
             }
             
             if finance == 3{
@@ -260,6 +283,11 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     {
                         self.payView.isHidden = true
                         self.PayOptions.isHidden = true
+                    }
+                    else
+                    {
+                        self.payView.isHidden = false
+                        self.PayOptions.isHidden = false
                     }
                     self.paymentDetailTable.reloadData()
                     self.StudentDetailTableView.reloadData()
@@ -282,7 +310,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                 
             }else{
                 if let transaction = result["Transactions"] as? NSArray{
-                    
+                   
                     let transactions = ModelClassManager.sharedManager.createModelArray(data: transaction, modelType: ModelType.TNPayment) as! [TNPayment]
                     
                     self.payemntDetails.append(contentsOf: transactions)
@@ -313,8 +341,14 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
 
             }
             else{
-                return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 1) : 0
-
+                if(compid=="348" && finance==2)
+                {
+                    return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 2) : 0
+                }
+                else
+                {
+                    return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 1) : 0
+                }
             }
             
         }
@@ -341,8 +375,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     cell.titlePlaceHolder.text = self.classLabel
                // }
             }
-            
-            
             commonCell = cell
             
         }else{
@@ -393,54 +425,102 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             }
             else{
                 
-                if self.payemntDetails.count <= indexPath.row{
-                    
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
-                    if finance == 2{
-                        cell.totalTitleLabel.text = "\(self.totalLabel):" + " " +  String(self.totalEstimateOfFee())
-                        cell.totalLabel.text = "\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaid())//
+                if self.payemntDetails.count == indexPath.row{
+                    print(self.payemntDetails.count)
+                    print(indexPath.row)
+                    if(compid=="348" && finance == 2)
+                    {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+                        cell.totalTitleLabel.text = "\(self.FeeLabel):" + " " +  String(self.totalEstimateOfFee())
+                        cell.TotalPaidlbl.text = "\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaidNew())//
+                        //cell.TotalPaidlbl.text = String(self.totalEstimateOfPaidNew())//
+                        cell.totalLabel.text = "\(self.BalanceLabel):" + " " +  String(self.totalEstimateOfBalance())//
+                        commonCell = cell
                     }
-                    else{
-                    cell.totalLabel.text = String(self.totalEstimate())//totalEstimateOfPaid
-
-                    }
-                    commonCell = cell
-                    
-                    
-                }else{
-                    
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentDetailCell", for: indexPath) as! PaymentDetailCell
-                    
-                    let paymentDetail = self.payemntDetails[indexPath.row]
-                    
-                    if let receiptNo = paymentDetail.receiptNo{
-                        cell.receiptNumberLabel.text = "\(self.receiptLabel) : \(receiptNo)"
-                    }else if let fee = paymentDetail.fee{
-                        cell.receiptNumberLabel.text = "\(self.FeeLabel) : \(fee)"
-                    }
-                    
-                    if let date = paymentDetail.date{
+                    else
+                    {
+                        
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
                         if finance == 2{
-                        cell.dateLabel.text = "\(self.dateLabel) : \(date)"
+                            cell.totalTitleLabel.text = "\(self.totalLabel):" + " " +  String(self.totalEstimateOfFee())
+                            cell.totalLabel.text = "\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaid())//
                         }
-                        else if finance == 1{
-                            cell.dateLabel.text = "\(self.dateLabel): \(date)"
+                        else{
+                            cell.totalLabel.text = String(self.totalEstimate())//totalEstimateOfPaid
+                            
                         }
+                        commonCell = cell
                     }
-                    
-                    if let amount = paymentDetail.amount{
-                        if finance == 2{
-                            cell.amount.text = "\(self.amountLabel):  \(amount)"
-                        }
-                        else if finance == 1{
-                            cell.amount.text = "\(amount)"
-                        }
-                    }
-                    
-                    commonCell = cell
-                    
                 }
-
+                else if self.payemntDetails.count < indexPath.row{
+                    print(self.payemntDetails.count)
+                    print(indexPath.row)
+                    if(compid=="348" && finance == 2)
+                    {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+                        cell.totalTitleLabel.text = "\(self.PrevBalanceLabel):"
+                        cell.TotalPaidlbl.text=""
+                        cell.totalLabel.text = self.PrevBalance
+                        commonCell = cell
+                    }
+                }
+                else{
+                    
+                    if(compid=="348" && finance == 2)
+                    {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentDetailCell2", for: indexPath) as! PaymentDetailCell2
+                        
+                        let paymentDetail = self.payemntDetails[indexPath.row]
+                        
+                        if let date = paymentDetail.date{
+                            cell.DateLabel.text = "\(self.dateLabel) : \(date)"
+                        }
+                        if let fee = paymentDetail.fee{
+                            cell.feeLbl.text = "\(self.FeeLabel) : \(fee)"
+                        }
+                        if let feeDesc = paymentDetail.Desc{
+                            cell.DescLabel.text = "\(self.FeeDescLabel) : \(feeDesc)"
+                        }
+                        if let paid = paymentDetail.paid{
+                            cell.paidLbl.text = "\(self.PaidLabel) : \(paid)"
+                        }
+                        if let balance = paymentDetail.balance{
+                            cell.BalanceLbl.text = "\(self.BalanceLabel) : \(balance)"
+                        }
+                        commonCell = cell
+                    }
+                    else
+                    {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentDetailCell", for: indexPath) as! PaymentDetailCell
+                        
+                        let paymentDetail = self.payemntDetails[indexPath.row]
+                        
+                        if let receiptNo = paymentDetail.receiptNo{
+                            cell.receiptNumberLabel.text = "\(self.receiptLabel) : \(receiptNo)"
+                        }else if let fee = paymentDetail.fee{
+                            cell.receiptNumberLabel.text = "\(self.FeeLabel) : \(fee)"
+                        }
+                        
+                        if let date = paymentDetail.date{
+                            if finance == 2{
+                                cell.dateLabel.text = "\(self.dateLabel) : \(date)"
+                            }
+                            else if finance == 1{
+                                cell.dateLabel.text = "\(self.dateLabel): \(date)"
+                            }
+                        }
+                        
+                        if let amount = paymentDetail.amount{
+                            if finance == 2{
+                                cell.amount.text = "\(self.amountLabel):  \(amount)"
+                            }
+                            else if finance == 1{
+                                cell.amount.text = "\(amount)"
+                            }
+                        }
+                        commonCell = cell
+                    }
+                }
             }
             paymentDetailTBHeight.constant = tableView.contentSize.height
         }
@@ -516,7 +596,36 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         return sum
         
     }
-    
+    func totalEstimateOfBalance() -> Double{
+        
+        var sum : Double = 0.0
+        
+        for value in self.payemntDetails{
+            
+            let doublevalue = Double(value.balance!)
+            if doublevalue != nil{
+                sum += doublevalue!
+            }
+        }
+        
+        return sum
+        
+    }
+    func totalEstimateOfPaidNew() -> Double{
+        
+        var sum : Double = 0.0
+        
+        for value in self.payemntDetails{
+            
+            let doublevalue = Double(value.paid!)
+            if doublevalue != nil{
+                sum += doublevalue!
+            }
+        }
+        
+        return sum
+        
+    }
     func navigateToWebView(){
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: "GradeViewController") as? GradeViewController
         if payLink != "" {
@@ -588,16 +697,24 @@ class StudentDetailCell:UITableViewCell{
 }
 
 class PaymentDetailCell:UITableViewCell{
-    
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var receiptNumberLabel: UILabel!
+   
     @IBOutlet weak var dateLabel: UILabel!
 }
 
+class PaymentDetailCell2:UITableViewCell{
+    @IBOutlet weak var DescLabel: UILabel!
+    @IBOutlet weak var paidLbl: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var BalanceLbl: UILabel!
+    @IBOutlet weak var feeLbl: UILabel!
+}
 class TotalCell:UITableViewCell{
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
     
+    @IBOutlet weak var TotalPaidlbl: UILabel!
 }
 
 class FeeDetailCell:UITableViewCell{
