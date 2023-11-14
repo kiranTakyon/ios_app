@@ -81,4 +81,12 @@ class UserDefaultsManager {
         
         return userType
     }
+    func getfeeurltype() -> String{
+        
+         let details = logInResponseGloabl//self.getUserDefaultValue(key: DBKeys.logInDetails) as? NSDictionary else{return ""}
+        
+        guard let feeurlType = details["fee_url_type"] as? String else {return "0"}
+        
+        return feeurlType
+    }
 }

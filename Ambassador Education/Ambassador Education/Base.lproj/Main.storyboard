@@ -2060,7 +2060,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" id="Dno-AN-zns" userLabel="GroupView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
-                                                <rect key="frame" x="33" y="105" width="353" height="45"/>
+                                                <rect key="frame" x="32" y="105" width="354" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -2068,7 +2068,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" id="DR2-vs-Brj" userLabel="PersonView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
-                                                <rect key="frame" x="33" y="55" width="353" height="45"/>
+                                                <rect key="frame" x="32" y="55" width="354" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -2076,7 +2076,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" id="1jO-EW-tMs" userLabel="GroupView" customClass="KSTokenView" customModule="Ajyal" customModuleProvider="target">
-                                                <rect key="frame" x="33" y="5" width="353" height="45"/>
+                                                <rect key="frame" x="32" y="5" width="354" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
@@ -3305,18 +3305,24 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YR-El-cso" userLabel="DescLabel">
-                                                                                    <rect key="frame" x="0.0" y="25.333333333333336" width="358" height="18.333333333333336"/>
+                                                                                    <rect key="frame" x="0.0" y="25.333333333333332" width="358" height="13.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIR-8F-TAt" userLabel="Fee">
-                                                                                    <rect key="frame" x="0.0" y="48.666666666666664" width="358" height="0.0"/>
+                                                                                    <rect key="frame" x="0.0" y="43.666666666666664" width="358" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBg-C5-ON4" userLabel="Paid">
+                                                                                    <rect key="frame" x="0.0" y="48.666666666666664" width="358" height="0.0"/>
+                                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWq-4w-1DH" userLabel="Recpt">
                                                                                     <rect key="frame" x="0.0" y="53.666666666666671" width="358" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                                                     <nil key="textColor"/>
@@ -3353,6 +3359,7 @@
                                                             <outlet property="BalanceLbl" destination="8Ou-m8-Cno" id="Y7n-3r-5Xi"/>
                                                             <outlet property="DateLabel" destination="BUM-Rs-LAv" id="ijz-hl-Rr3"/>
                                                             <outlet property="DescLabel" destination="0YR-El-cso" id="B9G-mQ-Oly"/>
+                                                            <outlet property="RecptLbl" destination="IWq-4w-1DH" id="pBk-eR-uka"/>
                                                             <outlet property="feeLbl" destination="OIR-8F-TAt" id="t9z-By-UwH"/>
                                                             <outlet property="paidLbl" destination="YBg-C5-ON4" id="fDr-6o-ats"/>
                                                         </connections>
@@ -3657,7 +3664,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-Ab-EIP">
-                                <rect key="frame" x="-8" y="72" width="390" height="764"/>
+                                <rect key="frame" x="-8" y="72" width="390" height="762"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>

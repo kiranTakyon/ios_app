@@ -384,7 +384,7 @@ let appStoreId = ""
 #elseif SSI
 let appStoreId = ""
 #elseif HABITAT
-let appStoreId = ""
+let appStoreId = "1488104801"
 #elseif PEA_V2
 let appStoreId = ""
 #elseif VIS

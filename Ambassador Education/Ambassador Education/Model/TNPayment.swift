@@ -18,6 +18,7 @@ class TNPayment{
     var balance : String?
     var paid : String?
     var Desc : String?
+    var receiptAmount : String?
     
     init(values:NSDictionary) {
         
@@ -53,6 +54,12 @@ class TNPayment{
 
         }else{
             self.paid = ""
+        }
+        if let _ = values["receipt_amt"] as? String{
+            self.receiptAmount = values["receipt_amt"] as? String
+
+        }else{
+            self.receiptAmount = "0"
         }
     }
 }
