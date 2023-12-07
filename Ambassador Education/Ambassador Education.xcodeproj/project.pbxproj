@@ -1658,6 +1658,161 @@
 		B41C1B62214194C900A9907B /* AsianAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C1B61214194C800A9907B /* AsianAssets.xcassets */; };
 		B43023FA2141611300C3E787 /* EFIAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43023F92141611300C3E787 /* EFIAAssets.xcassets */; };
 		B6CB8E90F436F19AF636C7A9 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
+		CD0E11812B170A9600EE599B /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
+		CD0E11822B170A9600EE599B /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
+		CD0E11832B170A9600EE599B /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
+		CD0E11842B170A9600EE599B /* WeeklyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */; };
+		CD0E11852B170A9600EE599B /* TMyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E21F2E270300729AF8 /* TMyProfile.swift */; };
+		CD0E11862B170A9600EE599B /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		CD0E11872B170A9600EE599B /* TInboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B87561F2F87FD00B15818 /* TInboxMessage.swift */; };
+		CD0E11882B170A9600EE599B /* CalendarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45218A8320808FCF004CF24C /* CalendarSection.swift */; };
+		CD0E11892B170A9600EE599B /* DirectoryCreationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4C1F6AC6CF00599C36 /* DirectoryCreationOperation.swift */; };
+		CD0E118A2B170A9600EE599B /* TNGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40751F533FCA000F62B8 /* TNGroupMember.swift */; };
+		CD0E118B2B170A9600EE599B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */; };
+		CD0E118C2B170A9600EE599B /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7231F1FC9AF00C0D63F /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		CD0E118D2B170A9600EE599B /* VerificationEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */; };
+		CD0E118E2B170A9600EE599B /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436F429204DA0D40076A3D4 /* SweetAlert.swift */; };
+		CD0E118F2B170A9600EE599B /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E01F2E1A6900729AF8 /* ModelManager.swift */; };
+		CD0E11902B170A9600EE599B /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
+		CD0E11912B170A9600EE599B /* FileUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4E1F6AC6CF00599C36 /* FileUploadOperation.swift */; };
+		CD0E11922B170A9600EE599B /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7241F1FC9AF00C0D63F /* UITextField+fixCaretPosition.swift */; };
+		CD0E11932B170A9600EE599B /* WeeklyPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6E200C766A00288C83 /* WeeklyPlanCell.swift */; };
+		CD0E11942B170A9600EE599B /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EB209B0C7900EB0F1D /* KSTokenView.swift */; };
+		CD0E11952B170A9600EE599B /* TNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DE1F2E199700729AF8 /* TNotification.swift */; };
+		CD0E11962B170A9600EE599B /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		CD0E11972B170A9600EE599B /* UploadFTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32A45D1F6AC446008A4BC3 /* UploadFTP.swift */; };
+		CD0E11982B170A9600EE599B /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F6092044534700515F74 /* WebViewViewController.swift */; };
+		CD0E11992B170A9600EE599B /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
+		CD0E119A2B170A9600EE599B /* ProgressViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97520F759730071DF9E /* ProgressViewBar.swift */; };
+		CD0E119B2B170A9600EE599B /* WeeklyPlanTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6A200C763F00288C83 /* WeeklyPlanTable.swift */; };
+		CD0E119C2B170A9600EE599B /* GalleryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6361F5094A3006F4D34 /* GalleryListController.swift */; };
+		CD0E119D2B170A9600EE599B /* TNPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890CE02007C8EC00991BF7 /* TNPayment.swift */; };
+		CD0E119E2B170A9600EE599B /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		CD0E119F2B170A9600EE599B /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB3F1F23C7730089E203 /* APIHelper.swift */; };
+		CD0E11A02B170A9600EE599B /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
+		CD0E11A12B170A9600EE599B /* TNNoticeBoardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34402030A0C600A35086 /* TNNoticeBoardDetail.swift */; };
+		CD0E11A22B170A9600EE599B /* FTPUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F66A3213F946400411212 /* FTPUploadHelper.swift */; };
+		CD0E11A32B170A9600EE599B /* MPGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB148F31F4F1F9800444765 /* MPGTextField.m */; };
+		CD0E11A42B170A9600EE599B /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
+		CD0E11A52B170A9600EE599B /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374120504687002931EA /* FSCalendar.m */; };
+		CD0E11A62B170A9600EE599B /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E8209B0C7600EB0F1D /* KSToken.swift */; };
+		CD0E11A72B170A9600EE599B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7321F1FC9AF00C0D63F /* HomeVC.swift */; };
+		CD0E11A82B170A9600EE599B /* TNAwarnessArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */; };
+		CD0E11A92B170A9600EE599B /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA641F24E8A700BA82BE /* PagerController.swift */; };
+		CD0E11AA2B170A9600EE599B /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375120504687002931EA /* FSCalendarTransitionCoordinator.m */; };
+		CD0E11AB2B170A9600EE599B /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		CD0E11AC2B170A9600EE599B /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373320504687002931EA /* FSCalendarCollectionView.m */; };
+		CD0E11AD2B170A9600EE599B /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7121F1FC9AF00C0D63F /* APIUrls.swift */; };
+		CD0E11AE2B170A9600EE599B /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373720504687002931EA /* FSCalendarDelegationProxy.m */; };
+		CD0E11AF2B170A9600EE599B /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40711F52F607000F62B8 /* CustomCalendarCell.swift */; };
+		CD0E11B02B170A9600EE599B /* TNPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D45BC1F545D930042727A /* TNPerson.swift */; };
+		CD0E11B12B170A9600EE599B /* TNGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6381F5098D4006F4D34 /* TNGallery.swift */; };
+		CD0E11B22B170A9600EE599B /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C501F6AC6CF00599C36 /* Operation.swift */; };
+		CD0E11B32B170A9600EE599B /* StreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C541F6AC6CF00599C36 /* StreamOperation.swift */; };
+		CD0E11B42B170A9600EE599B /* TNCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343A203077B500A35086 /* TNCalendarEvent.swift */; };
+		CD0E11B52B170A9600EE599B /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72E1F1FC9AF00C0D63F /* TPKeyboardAvoidingTableView.m */; };
+		CD0E11B62B170A9600EE599B /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71D1F1FC9AF00C0D63F /* DOAlertController.swift */; };
+		CD0E11B72B170A9600EE599B /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72C1F1FC9AF00C0D63F /* TPKeyboardAvoidingScrollView.m */; };
+		CD0E11B82B170A9600EE599B /* DigitalResourceCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EE3342A4C16F800888512 /* DigitalResourceCategoryCell.swift */; };
+		CD0E11B92B170A9600EE599B /* CommunicateLandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */; };
+		CD0E11BA2B170A9600EE599B /* TSibling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E41F2E4DD700729AF8 /* TSibling.swift */; };
+		CD0E11BB2B170A9600EE599B /* FSCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374820504687002931EA /* FSCalendarExtensions.m */; };
+		CD0E11BC2B170A9600EE599B /* NoticeboardCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */; };
+		CD0E11BD2B170A9600EE599B /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374220504687002931EA /* FSCalendarCollectionViewLayout.m */; };
+		CD0E11BE2B170A9600EE599B /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71F1F1FC9AF00C0D63F /* Picker.swift */; };
+		CD0E11BF2B170A9600EE599B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE11F2788AA00742127 /* Protocols.swift */; };
+		CD0E11C02B170A9600EE599B /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7221F1FC9AF00C0D63F /* SkyFloatingLabelTextField.swift */; };
+		CD0E11C12B170A9600EE599B /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */; };
+		CD0E11C22B170A9600EE599B /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
+		CD0E11C32B170A9600EE599B /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D406F1F52F607000F62B8 /* CalendarController.swift */; };
+		CD0E11C42B170A9600EE599B /* FSCalendarScopeHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374320504687002931EA /* FSCalendarScopeHandle.m */; };
+		CD0E11C52B170A9600EE599B /* WriteStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C551F6AC6CF00599C36 /* WriteStreamOperation.swift */; };
+		CD0E11C62B170A9600EE599B /* RegisterPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */; };
+		CD0E11C72B170A9600EE599B /* jsonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7131F1FC9AF00C0D63F /* jsonKeys.swift */; };
+		CD0E11C82B170A9600EE599B /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375320504687002931EA /* FSCalendarAppearance.m */; };
+		CD0E11C92B170A9600EE599B /* FileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4D1F6AC6CF00599C36 /* FileDownloadOperation.swift */; };
+		CD0E11CA2B170A9600EE599B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB481F23C7F10089E203 /* Reachability.swift */; };
+		CD0E11CB2B170A9600EE599B /* DBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DB1F2E14EF00729AF8 /* DBKeys.swift */; };
+		CD0E11CC2B170A9600EE599B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB401F23C7730089E203 /* Constants.swift */; };
+		CD0E11CD2B170A9600EE599B /* TNAwarenessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A8D2045960D006A0848 /* TNAwarenessDetail.swift */; };
+		CD0E11CE2B170A9600EE599B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45559BF41EBADB3B00F4E6FB /* AppDelegate.swift */; };
+		CD0E11CF2B170A9600EE599B /* ReadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C639262053D2970099B85E /* ReadSelectViewController.swift */; };
+		CD0E11D02B170A9600EE599B /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373920504687002931EA /* FSCalendarDelegationFactory.m */; };
+		CD0E11D12B170A9600EE599B /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */; };
+		CD0E11D22B170A9600EE599B /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		CD0E11D32B170A9600EE599B /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97F20F76B220071DF9E /* LinearProgressView.swift */; };
+		CD0E11D42B170A9600EE599B /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE31F278C3700742127 /* ComposeController.swift */; };
+		CD0E11D52B170A9600EE599B /* WeeklyPlanFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */; };
+		CD0E11D62B170A9600EE599B /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */; };
+		CD0E11D72B170A9600EE599B /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		CD0E11D82B170A9600EE599B /* NoticeBoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */; };
+		CD0E11D92B170A9600EE599B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7301F1FC9AF00C0D63F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		CD0E11DA2B170A9600EE599B /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
+		CD0E11DB2B170A9600EE599B /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */; };
+		CD0E11DC2B170A9600EE599B /* FSCalendarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374B20504687002931EA /* FSCalendarConstants.m */; };
+		CD0E11DD2B170A9600EE599B /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373F20504687002931EA /* FSCalendarCell.m */; };
+		CD0E11DE2B170A9600EE599B /* DigitalResourceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */; };
+		CD0E11DF2B170A9600EE599B /* TNMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4E68D31F6C347E00F95547 /* TNMenuItem.swift */; };
+		CD0E11E02B170A9600EE599B /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
+		CD0E11E12B170A9600EE599B /* FSCalendar+Deprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374A20504687002931EA /* FSCalendar+Deprecated.m */; };
+		CD0E11E22B170A9600EE599B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB4A1F23CB450089E203 /* Extensions.swift */; };
+		CD0E11E32B170A9600EE599B /* TNDigitalResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7851F55ABA400A366AA /* TNDigitalResource.swift */; };
+		CD0E11E42B170A9600EE599B /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374020504687002931EA /* FSCalendarStickyHeader.m */; };
+		CD0E11E52B170A9600EE599B /* CommunicateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */; };
+		CD0E11E62B170A9600EE599B /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E9209B0C7700EB0F1D /* KSTokenField.swift */; };
+		CD0E11E72B170A9600EE599B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB421F23C7730089E203 /* UserDefaultManager.swift */; };
+		CD0E11E82B170A9600EE599B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C531F6AC6CF00599C36 /* Session.swift */; };
+		CD0E11E92B170A9600EE599B /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
+		CD0E11EA2B170A9600EE599B /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72A1F1FC9AF00C0D63F /* TPKeyboardAvoidingCollectionView.m */; };
+		CD0E11EB2B170A9600EE599B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */; };
+		CD0E11EC2B170A9600EE599B /* SlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA591F24637D00BA82BE /* SlideController.swift */; };
+		CD0E11ED2B170A9600EE599B /* AwarenessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8C083203B411A00C921DB /* AwarenessViewController.swift */; };
+		CD0E11EE2B170A9600EE599B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7271F1FC9AF00C0D63F /* SWRevealViewController.m */; };
+		CD0E11EF2B170A9600EE599B /* AwarenessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */; };
+		CD0E11F02B170A9600EE599B /* DigitalResourceSecondListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */; };
+		CD0E11F12B170A9600EE599B /* NotificationDetailListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */; };
+		CD0E11F22B170A9600EE599B /* DigitalResourcesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */; };
+		CD0E11F32B170A9600EE599B /* NoticeboardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */; };
+		CD0E11F42B170A9600EE599B /* VideoDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FBEA8220810D3D0035AECD /* VideoDownload.swift */; };
+		CD0E11F52B170A9600EE599B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40701F52F607000F62B8 /* CircleView.swift */; };
+		CD0E11F62B170A9600EE599B /* FSCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374C20504687002931EA /* FSCalendarCalculator.m */; };
+		CD0E11F72B170A9600EE599B /* ReadStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C511F6AC6CF00599C36 /* ReadStreamOperation.swift */; };
+		CD0E11F82B170A9600EE599B /* DownLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */; };
+		CD0E11F92B170A9600EE599B /* TNNoticeboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78D1F55E5A600A366AA /* TNNoticeboard.swift */; };
+		CD0E11FA2B170A9600EE599B /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374420504687002931EA /* FSCalendarWeekdayView.m */; };
+		CD0E11FB2B170A9600EE599B /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EA209B0C7800EB0F1D /* KSUtils.swift */; };
+		CD0E11FC2B170A9600EE599B /* GalleryCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */; };
+		CD0E11FD2B170A9600EE599B /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5007E71F2638A10013AA07 /* MapController.swift */; };
+		CD0E11FE2B170A9600EE599B /* TNGalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6341F508561006F4D34 /* TNGalleryCategory.swift */; };
+		CD0E11FF2B170A9600EE599B /* GradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41937672050510A002931EA /* GradeViewController.swift */; };
+		CD0E12002B170A9600EE599B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB411F23C7730089E203 /* Global.swift */; };
+		CD0E12012B170A9600EE599B /* TNWeeklyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E72200C865500288C83 /* TNWeeklyPlan.swift */; };
+		CD0E12022B170A9600EE599B /* PaymentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE169EA0200687A00019685A /* PaymentDetailsController.swift */; };
+		CD0E12032B170A9600EE599B /* TNGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB148EF1F4F1D5E00444765 /* TNGroup.swift */; };
+		CD0E12052B170A9600EE599B /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE630DB81F514D9200CE1022 /* MBCalendarKit.framework */; };
+		CD0E12062B170A9600EE599B /* Toast_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7B4CC31F378AA10009D393 /* Toast_Swift.framework */; };
+		CD0E12072B170A9600EE599B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
+		CD0E12082B170A9600EE599B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
+		CD0E12092B170A9600EE599B /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
+		CD0E120A2B170A9600EE599B /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
+		CD0E120B2B170A9600EE599B /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
+		CD0E120D2B170A9600EE599B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1562379DA4A005148EE /* GoogleService-Info.plist */; };
+		CD0E120E2B170A9600EE599B /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
+		CD0E120F2B170A9600EE599B /* OrisonSchoolV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1582379DAE3005148EE /* OrisonSchoolV2.xcassets */; };
+		CD0E12102B170A9600EE599B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
+		CD0E12112B170A9600EE599B /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
+		CD0E12122B170A9600EE599B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C4A1F6AC6CF00599C36 /* .swiftlint.yml */; };
+		CD0E12132B170A9600EE599B /* TestInapp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9D2101ECF6001B571E /* TestInapp.jpg */; };
+		CD0E12142B170A9600EE599B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
+		CD0E12152B170A9600EE599B /* Picker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFBA7201F1FC9AF00C0D63F /* Picker.xib */; };
+		CD0E12162B170A9600EE599B /* ProgressViewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1376C97620F759730071DF9E /* ProgressViewBar.xib */; };
+		CD0E12172B170A9600EE599B /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		CD0E12182B170A9600EE599B /* TestPenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9B2101EB6B001B571E /* TestPenguin.png */; };
+		CD0E12192B170A9600EE599B /* SampleText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138C2A5620FDE98D00F8BE17 /* SampleText.txt */; };
+		CD0E121A2B170A9600EE599B /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
+		CD0E121B2B170A9600EE599B /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
+		CD0E121C2B170A9600EE599B /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
+		CD0E121D2B170A9600EE599B /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CD110BF9289C41700050EF80 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CD110BFA289C41700050EF80 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CD110BFB289C41700050EF80 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -6009,6 +6164,8 @@
 		B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNAwarnessArticleDetail.swift; sourceTree = "<group>"; };
 		B4FBEA8220810D3D0035AECD /* VideoDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownload.swift; sourceTree = "<group>"; };
 		CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD0E12232B170A9600EE599B /* Woodlem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woodlem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0E12242B170A9700EE599B /* Woodlem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Woodlem-Info.plist"; path = "/Users/takyon/ios_new/Ambassador Education/Woodlem-Info.plist"; sourceTree = "<absolute>"; };
 		CD110C90289C41700050EF80 /* T360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD110C91289C41710050EF80 /* T360-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "T360-Info.plist"; path = "/Users/takyon/ios_new/Ambassador Education/T360-Info.plist"; sourceTree = "<absolute>"; };
 		CD110DCD289C4E4B0050EF80 /* Crescent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crescent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6238,6 +6395,20 @@
 				B41C1B3F21418FD600A9907B /* MapKit.framework in Frameworks */,
 				B41C1B4021418FD600A9907B /* SkyFloatingLabelTextField.framework in Frameworks */,
 				B41C1B4121418FD600A9907B /* DGActivityIndicatorView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0E12042B170A9600EE599B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0E12052B170A9600EE599B /* MBCalendarKit.framework in Frameworks */,
+				CD0E12062B170A9600EE599B /* Toast_Swift.framework in Frameworks */,
+				CD0E12072B170A9600EE599B /* MapKit.framework in Frameworks */,
+				CD0E12082B170A9600EE599B /* CloudKit.framework in Frameworks */,
+				CD0E12092B170A9600EE599B /* DGActivityIndicatorView.framework in Frameworks */,
+				CD0E120A2B170A9600EE599B /* Pods_OrisonSchool_V2.framework in Frameworks */,
+				CD0E120B2B170A9600EE599B /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7062,6 +7233,7 @@
 				CD7DE0AB2AE058F5000D0EB4 /* Athena-Info.plist */,
 				CD7343532AF0136600693B8E /* FutureLeaders-Info.plist */,
 				CD1AE5CE2B0438780000F294 /* HBT-Info.plist */,
+				CD0E12242B170A9700EE599B /* Woodlem-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -7105,6 +7277,7 @@
 				CD7DE3F22AE0A6A5000D0EB4 /* PEPS.app */,
 				CD7343522AF0136600693B8E /* FutureLeaders.app */,
 				CD1AE5CD2B0438780000F294 /* Habitat.app */,
+				CD0E12232B170A9600EE599B /* Woodlem.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -7816,6 +7989,26 @@
 			productReference = B41C1B5A21418FD600A9907B /* AsianInternational.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CD0E117E2B170A9600EE599B /* Woodlem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD0E12202B170A9600EE599B /* Build configuration list for PBXNativeTarget "Woodlem" */;
+			buildPhases = (
+				CD0E117F2B170A9600EE599B /* [CP] Check Pods Manifest.lock */,
+				CD0E11802B170A9600EE599B /* Sources */,
+				CD0E12042B170A9600EE599B /* Frameworks */,
+				CD0E120C2B170A9600EE599B /* Resources */,
+				CD0E121E2B170A9600EE599B /* ShellScript */,
+				CD0E121F2B170A9600EE599B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Woodlem;
+			productName = "Ambassador Education";
+			productReference = CD0E12232B170A9600EE599B /* Woodlem.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CD110BF6289C41700050EF80 /* T360 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD110C8D289C41700050EF80 /* Build configuration list for PBXNativeTarget "T360" */;
@@ -8384,6 +8577,10 @@
 							};
 						};
 					};
+					CD0E117E2B170A9600EE599B = {
+						DevelopmentTeam = 5VXG48XRVV;
+						ProvisioningStyle = Manual;
+					};
 					CD110BF6289C41700050EF80 = {
 						DevelopmentTeam = R7KAQWL2B2;
 						ProvisioningStyle = Manual;
@@ -8551,6 +8748,7 @@
 				CD7DE34D2AE0A6A5000D0EB4 /* PEPS */,
 				CD7342AD2AF0136600693B8E /* FutureLeaders */,
 				CD1AE5282B0438780000F294 /* Habitat */,
+				CD0E117E2B170A9600EE599B /* Woodlem */,
 			);
 		};
 /* End PBXProject section */
@@ -8812,6 +9010,30 @@
 				CEE50C0826E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
 				CEE50C5326E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				B41C1B5421418FD600A9907B /* CalendarSection.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0E120C2B170A9600EE599B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0E120D2B170A9600EE599B /* GoogleService-Info.plist in Resources */,
+				CD0E120E2B170A9600EE599B /* DigitalResourceCategoryCell.xib in Resources */,
+				CD0E120F2B170A9600EE599B /* OrisonSchoolV2.xcassets in Resources */,
+				CD0E12102B170A9600EE599B /* LaunchScreen.storyboard in Resources */,
+				CD0E12112B170A9600EE599B /* WeeklyPlanTable.xib in Resources */,
+				CD0E12122B170A9600EE599B /* .swiftlint.yml in Resources */,
+				CD0E12132B170A9600EE599B /* TestInapp.jpg in Resources */,
+				CD0E12142B170A9600EE599B /* Main.storyboard in Resources */,
+				CD0E12152B170A9600EE599B /* Picker.xib in Resources */,
+				CD0E12162B170A9600EE599B /* ProgressViewBar.xib in Resources */,
+				CD0E12172B170A9600EE599B /* TopHeaderView.xib in Resources */,
+				CD0E12182B170A9600EE599B /* TestPenguin.png in Resources */,
+				CD0E12192B170A9600EE599B /* SampleText.txt in Resources */,
+				CD0E121A2B170A9600EE599B /* sampleImage.png in Resources */,
+				CD0E121B2B170A9600EE599B /* Common.xcassets in Resources */,
+				CD0E121C2B170A9600EE599B /* WeeklyPlanCell.xib in Resources */,
+				CD0E121D2B170A9600EE599B /* CalendarSection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9594,6 +9816,117 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		CD0E117F2B170A9600EE599B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD0E121E2B170A9600EE599B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
+		};
+		CD0E121F2B170A9600EE599B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		CD110C8B289C41700050EF80 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -10611,7 +10944,7 @@
 		};
 		CD8A99882ACCA02400BAF7CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -12404,6 +12737,144 @@
 				B41C1B3721418FD600A9907B /* TNWeeklyPlan.swift in Sources */,
 				B41C1B3821418FD600A9907B /* PaymentDetailsController.swift in Sources */,
 				B41C1B3921418FD600A9907B /* TNGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD0E11802B170A9600EE599B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0E11812B170A9600EE599B /* FSCalendarHeaderView.m in Sources */,
+				CD0E11822B170A9600EE599B /* ResourceListOperation.swift in Sources */,
+				CD0E11832B170A9600EE599B /* MessageDetailController.swift in Sources */,
+				CD0E11842B170A9600EE599B /* WeeklyPlanController.swift in Sources */,
+				CD0E11852B170A9600EE599B /* TMyProfile.swift in Sources */,
+				CD0E11862B170A9600EE599B /* TopHeaderView.swift in Sources */,
+				CD0E11872B170A9600EE599B /* TInboxMessage.swift in Sources */,
+				CD0E11882B170A9600EE599B /* CalendarSection.swift in Sources */,
+				CD0E11892B170A9600EE599B /* DirectoryCreationOperation.swift in Sources */,
+				CD0E118A2B170A9600EE599B /* TNGroupMember.swift in Sources */,
+				CD0E118B2B170A9600EE599B /* ViewController.swift in Sources */,
+				CD0E118C2B170A9600EE599B /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				CD0E118D2B170A9600EE599B /* VerificationEmailViewController.swift in Sources */,
+				CD0E118E2B170A9600EE599B /* SweetAlert.swift in Sources */,
+				CD0E118F2B170A9600EE599B /* ModelManager.swift in Sources */,
+				CD0E11902B170A9600EE599B /* ResetPasswordVC.swift in Sources */,
+				CD0E11912B170A9600EE599B /* FileUploadOperation.swift in Sources */,
+				CD0E11922B170A9600EE599B /* UITextField+fixCaretPosition.swift in Sources */,
+				CD0E11932B170A9600EE599B /* WeeklyPlanCell.swift in Sources */,
+				CD0E11942B170A9600EE599B /* KSTokenView.swift in Sources */,
+				CD0E11952B170A9600EE599B /* TNotification.swift in Sources */,
+				CD0E11962B170A9600EE599B /* UIButton+Helper.swift in Sources */,
+				CD0E11972B170A9600EE599B /* UploadFTP.swift in Sources */,
+				CD0E11982B170A9600EE599B /* WebViewViewController.swift in Sources */,
+				CD0E11992B170A9600EE599B /* UIApplication+Helper.swift in Sources */,
+				CD0E119A2B170A9600EE599B /* ProgressViewBar.swift in Sources */,
+				CD0E119B2B170A9600EE599B /* WeeklyPlanTable.swift in Sources */,
+				CD0E119C2B170A9600EE599B /* GalleryListController.swift in Sources */,
+				CD0E119D2B170A9600EE599B /* TNPayment.swift in Sources */,
+				CD0E119E2B170A9600EE599B /* UIViewController+Helper.swift in Sources */,
+				CD0E119F2B170A9600EE599B /* APIHelper.swift in Sources */,
+				CD0E11A02B170A9600EE599B /* UIViewController+PopUp.swift in Sources */,
+				CD0E11A12B170A9600EE599B /* TNNoticeBoardDetail.swift in Sources */,
+				CD0E11A22B170A9600EE599B /* FTPUploadHelper.swift in Sources */,
+				CD0E11A32B170A9600EE599B /* MPGTextField.m in Sources */,
+				CD0E11A42B170A9600EE599B /* LoadMoreControl.swift in Sources */,
+				CD0E11A52B170A9600EE599B /* FSCalendar.m in Sources */,
+				CD0E11A62B170A9600EE599B /* KSToken.swift in Sources */,
+				CD0E11A72B170A9600EE599B /* HomeVC.swift in Sources */,
+				CD0E11A82B170A9600EE599B /* TNAwarnessArticleDetail.swift in Sources */,
+				CD0E11A92B170A9600EE599B /* PagerController.swift in Sources */,
+				CD0E11AA2B170A9600EE599B /* FSCalendarTransitionCoordinator.m in Sources */,
+				CD0E11AB2B170A9600EE599B /* View+Helper.swift in Sources */,
+				CD0E11AC2B170A9600EE599B /* FSCalendarCollectionView.m in Sources */,
+				CD0E11AD2B170A9600EE599B /* APIUrls.swift in Sources */,
+				CD0E11AE2B170A9600EE599B /* FSCalendarDelegationProxy.m in Sources */,
+				CD0E11AF2B170A9600EE599B /* CustomCalendarCell.swift in Sources */,
+				CD0E11B02B170A9600EE599B /* TNPerson.swift in Sources */,
+				CD0E11B12B170A9600EE599B /* TNGallery.swift in Sources */,
+				CD0E11B22B170A9600EE599B /* Operation.swift in Sources */,
+				CD0E11B32B170A9600EE599B /* StreamOperation.swift in Sources */,
+				CD0E11B42B170A9600EE599B /* TNCalendarEvent.swift in Sources */,
+				CD0E11B52B170A9600EE599B /* TPKeyboardAvoidingTableView.m in Sources */,
+				CD0E11B62B170A9600EE599B /* DOAlertController.swift in Sources */,
+				CD0E11B72B170A9600EE599B /* TPKeyboardAvoidingScrollView.m in Sources */,
+				CD0E11B82B170A9600EE599B /* DigitalResourceCategoryCell.swift in Sources */,
+				CD0E11B92B170A9600EE599B /* CommunicateLandController.swift in Sources */,
+				CD0E11BA2B170A9600EE599B /* TSibling.swift in Sources */,
+				CD0E11BB2B170A9600EE599B /* FSCalendarExtensions.m in Sources */,
+				CD0E11BC2B170A9600EE599B /* NoticeboardCategoryController.swift in Sources */,
+				CD0E11BD2B170A9600EE599B /* FSCalendarCollectionViewLayout.m in Sources */,
+				CD0E11BE2B170A9600EE599B /* Picker.swift in Sources */,
+				CD0E11BF2B170A9600EE599B /* Protocols.swift in Sources */,
+				CD0E11C02B170A9600EE599B /* SkyFloatingLabelTextField.swift in Sources */,
+				CD0E11C12B170A9600EE599B /* MyProfileController.swift in Sources */,
+				CD0E11C22B170A9600EE599B /* DRDAttechmentCell.swift in Sources */,
+				CD0E11C32B170A9600EE599B /* CalendarController.swift in Sources */,
+				CD0E11C42B170A9600EE599B /* FSCalendarScopeHandle.m in Sources */,
+				CD0E11C52B170A9600EE599B /* WriteStreamOperation.swift in Sources */,
+				CD0E11C62B170A9600EE599B /* RegisterPopUpVc.swift in Sources */,
+				CD0E11C72B170A9600EE599B /* jsonKeys.swift in Sources */,
+				CD0E11C82B170A9600EE599B /* FSCalendarAppearance.m in Sources */,
+				CD0E11C92B170A9600EE599B /* FileDownloadOperation.swift in Sources */,
+				CD0E11CA2B170A9600EE599B /* Reachability.swift in Sources */,
+				CD0E11CB2B170A9600EE599B /* DBKeys.swift in Sources */,
+				CD0E11CC2B170A9600EE599B /* Constants.swift in Sources */,
+				CD0E11CD2B170A9600EE599B /* TNAwarenessDetail.swift in Sources */,
+				CD0E11CE2B170A9600EE599B /* AppDelegate.swift in Sources */,
+				CD0E11CF2B170A9600EE599B /* ReadSelectViewController.swift in Sources */,
+				CD0E11D02B170A9600EE599B /* FSCalendarDelegationFactory.m in Sources */,
+				CD0E11D12B170A9600EE599B /* ImagePreviewController.swift in Sources */,
+				CD0E11D22B170A9600EE599B /* UIDevice+Helper.swift in Sources */,
+				CD0E11D32B170A9600EE599B /* LinearProgressView.swift in Sources */,
+				CD0E11D42B170A9600EE599B /* ComposeController.swift in Sources */,
+				CD0E11D52B170A9600EE599B /* WeeklyPlanFilterController.swift in Sources */,
+				CD0E11D62B170A9600EE599B /* ChangePasswordController.swift in Sources */,
+				CD0E11D72B170A9600EE599B /* NSObject+Helper.swift in Sources */,
+				CD0E11D82B170A9600EE599B /* NoticeBoardListController.swift in Sources */,
+				CD0E11D92B170A9600EE599B /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				CD0E11DA2B170A9600EE599B /* TNSubject.swift in Sources */,
+				CD0E11DB2B170A9600EE599B /* ForgotPasswordController.swift in Sources */,
+				CD0E11DC2B170A9600EE599B /* FSCalendarConstants.m in Sources */,
+				CD0E11DD2B170A9600EE599B /* FSCalendarCell.m in Sources */,
+				CD0E11DE2B170A9600EE599B /* DigitalResourceDetailController.swift in Sources */,
+				CD0E11DF2B170A9600EE599B /* TNMenuItem.swift in Sources */,
+				CD0E11E02B170A9600EE599B /* AddCommentVC.swift in Sources */,
+				CD0E11E12B170A9600EE599B /* FSCalendar+Deprecated.m in Sources */,
+				CD0E11E22B170A9600EE599B /* Extensions.swift in Sources */,
+				CD0E11E32B170A9600EE599B /* TNDigitalResource.swift in Sources */,
+				CD0E11E42B170A9600EE599B /* FSCalendarStickyHeader.m in Sources */,
+				CD0E11E52B170A9600EE599B /* CommunicateController.swift in Sources */,
+				CD0E11E62B170A9600EE599B /* KSTokenField.swift in Sources */,
+				CD0E11E72B170A9600EE599B /* UserDefaultManager.swift in Sources */,
+				CD0E11E82B170A9600EE599B /* Session.swift in Sources */,
+				CD0E11E92B170A9600EE599B /* VisualEffectView.swift in Sources */,
+				CD0E11EA2B170A9600EE599B /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				CD0E11EB2B170A9600EE599B /* WebViewController.swift in Sources */,
+				CD0E11EC2B170A9600EE599B /* SlideController.swift in Sources */,
+				CD0E11ED2B170A9600EE599B /* AwarenessViewController.swift in Sources */,
+				CD0E11EE2B170A9600EE599B /* SWRevealViewController.m in Sources */,
+				CD0E11EF2B170A9600EE599B /* AwarenessDetailViewController.swift in Sources */,
+				CD0E11F02B170A9600EE599B /* DigitalResourceSecondListController.swift in Sources */,
+				CD0E11F12B170A9600EE599B /* NotificationDetailListController.swift in Sources */,
+				CD0E11F22B170A9600EE599B /* DigitalResourcesListController.swift in Sources */,
+				CD0E11F32B170A9600EE599B /* NoticeboardDetailController.swift in Sources */,
+				CD0E11F42B170A9600EE599B /* VideoDownload.swift in Sources */,
+				CD0E11F52B170A9600EE599B /* CircleView.swift in Sources */,
+				CD0E11F62B170A9600EE599B /* FSCalendarCalculator.m in Sources */,
+				CD0E11F72B170A9600EE599B /* ReadStreamOperation.swift in Sources */,
+				CD0E11F82B170A9600EE599B /* DownLoadsViewController.swift in Sources */,
+				CD0E11F92B170A9600EE599B /* TNNoticeboard.swift in Sources */,
+				CD0E11FA2B170A9600EE599B /* FSCalendarWeekdayView.m in Sources */,
+				CD0E11FB2B170A9600EE599B /* KSUtils.swift in Sources */,
+				CD0E11FC2B170A9600EE599B /* GalleryCategoryListController.swift in Sources */,
+				CD0E11FD2B170A9600EE599B /* MapController.swift in Sources */,
+				CD0E11FE2B170A9600EE599B /* TNGalleryCategory.swift in Sources */,
+				CD0E11FF2B170A9600EE599B /* GradeViewController.swift in Sources */,
+				CD0E12002B170A9600EE599B /* Global.swift in Sources */,
+				CD0E12012B170A9600EE599B /* TNWeeklyPlan.swift in Sources */,
+				CD0E12022B170A9600EE599B /* PaymentDetailsController.swift in Sources */,
+				CD0E12032B170A9600EE599B /* TNGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -18488,7 +18959,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: asma Al (THXKMRPY45)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: asma Al (THXKMRPY45)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.18;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = THXKMRPY45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -18500,7 +18971,7 @@
 				INFOPLIST_FILE = "AlMawahib-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.18;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -18632,7 +19103,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: asma Al (THXKMRPY45)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: asma Al (THXKMRPY45)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.18;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = THXKMRPY45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -18644,7 +19115,7 @@
 				INFOPLIST_FILE = "AlMawahib-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.18;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -19605,6 +20076,320 @@
 			};
 			name = Release;
 		};
+		CD0E12212B170A9600EE599B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1932691FAD31A2D51815EB1 /* Pods-OrisonSchool V2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.59;
+				DEVELOPMENT_TEAM = 5VXG48XRVV;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5VXG48XRVV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "OrisonSchool V2 copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orison School";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.59;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D ORISONSCHOOL_V2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.orisonv2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "Orison V2.";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Orison V2.";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD0E12222B170A9600EE599B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CB22982A54F1DC89C064313 /* Pods-OrisonSchool V2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.59;
+				DEVELOPMENT_TEAM = 5VXG48XRVV;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5VXG48XRVV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "OrisonSchool V2 copy-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orison School";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.59;
+				"OTHER_CFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BIZPopupView/BIZPopupView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog/DatePickerDialog.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown/DropDown.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar/FSCalendar.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HMSegmentedControl/HMSegmentedControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBCalendarKit/MBCalendarKit.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXPagerView/MXPagerView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXParallaxHeader/MXParallaxHeader.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXSegmentedPager/MXSegmentedPager.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RichEditorView/RichEditorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GGLInstanceID\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleCloudMessaging\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D ORISONSCHOOL_V2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.orisonv2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "Orison V2.";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Orison V2.";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CD110C8E289C41700050EF80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -20527,7 +21312,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.58;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = H37Q68Q3SD;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H37Q68Q3SD;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -20542,7 +21327,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.58;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -20660,7 +21445,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jomet Jose (H37Q68Q3SD)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.58;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = H37Q68Q3SD;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = H37Q68Q3SD;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -20675,7 +21460,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.58;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -21483,7 +22268,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.57;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = A98Q7Q46A7;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A98Q7Q46A7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -21498,7 +22283,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.57;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -21616,7 +22401,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (A98Q7Q46A7)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.57;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = A98Q7Q46A7;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A98Q7Q46A7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -21631,7 +22416,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.57;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -22109,7 +22894,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = GB8Q5JTUBQ;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = GB8Q5JTUBQ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -22124,7 +22909,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -22242,7 +23027,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (GB8Q5JTUBQ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = GB8Q5JTUBQ;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = GB8Q5JTUBQ;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -22257,7 +23042,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -22737,7 +23522,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.54;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = N78PMQ93HN;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N78PMQ93HN;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -22752,7 +23537,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.541;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -22870,7 +23655,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.54;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = N78PMQ93HN;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N78PMQ93HN;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -22885,7 +23670,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.541;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -23365,7 +24150,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: sudheesh surendran (Q5FT99PW8R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: sudheesh surendran (Q5FT99PW8R)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = Q5FT99PW8R;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Q5FT99PW8R;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -23380,7 +24165,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -23498,7 +24283,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: sudheesh surendran (Q5FT99PW8R)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: sudheesh surendran (Q5FT99PW8R)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = Q5FT99PW8R;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Q5FT99PW8R;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -23513,7 +24298,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -23679,7 +24464,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.54;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = 55G8CBG289;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 55G8CBG289;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -23694,7 +24479,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.54;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -23812,7 +24597,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zia Sheikh (55G8CBG289)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.54;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = 55G8CBG289;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 55G8CBG289;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -23827,7 +24612,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.54;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -23992,7 +24777,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.48;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = B78NL2Q5JM;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = B78NL2Q5JM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24007,7 +24792,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.48;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24124,7 +24909,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (B78NL2Q5JM)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.48;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = B78NL2Q5JM;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = B78NL2Q5JM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24139,7 +24924,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.48;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24305,7 +25090,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.60;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7RT5A45LT9;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24320,7 +25105,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.60;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24438,7 +25223,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.60;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7RT5A45LT9;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24453,7 +25238,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.60;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24619,7 +25404,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = 69LA48AR43;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 69LA48AR43;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24634,7 +25419,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24752,7 +25537,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.56;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = 69LA48AR43;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 69LA48AR43;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24767,7 +25552,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.56;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24932,7 +25717,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Fahad Saydammadakath Layinchira Pura Muhammed Kunhi (N4GAY335VT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Fahad Saydammadakath Layinchira Pura Muhammed Kunhi (N4GAY335VT)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.43;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = N4GAY335VT;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N4GAY335VT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24947,7 +25732,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.43;
+				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -25064,7 +25849,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Fahad Saydammadakath Layinchira Pura Muhammed Kunhi (N4GAY335VT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Fahad Saydammadakath Layinchira Pura Muhammed Kunhi (N4GAY335VT)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.43;
+				CURRENT_PROJECT_VERSION = 1.59;
 				DEVELOPMENT_TEAM = N4GAY335VT;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N4GAY335VT;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -25079,7 +25864,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.43;
+				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -28279,6 +29064,15 @@
 			buildConfigurations = (
 				B41C1B5821418FD600A9907B /* Debug */,
 				B41C1B5921418FD600A9907B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD0E12202B170A9600EE599B /* Build configuration list for PBXNativeTarget "Woodlem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD0E12212B170A9600EE599B /* Debug */,
+				CD0E12222B170A9600EE599B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

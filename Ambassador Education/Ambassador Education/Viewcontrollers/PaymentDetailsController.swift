@@ -511,9 +511,10 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                         if let balance = paymentDetail.balance{
                             cell.BalanceLbl.text = "\(self.BalanceLabel) : \(balance)"
                         }
+                        cell.RecptLbl.isHidden = true
                         commonCell = cell
                     }
-                    if(fee_url_type=="1" && finance == 2)
+                   else if(fee_url_type=="1" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentDetailCell2", for: indexPath) as! PaymentDetailCell2
                         
