@@ -347,12 +347,13 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             else{
                 if(fee_url_type=="2" && finance==2)
                 {
-                    return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 2) : 0
+                    return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 3) : 0
                 }
                 else if(fee_url_type=="1" && finance==2)
                 {
                     return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 2) : 0
-                }              else
+                }             
+                else
                 {
                     return self.payemntDetails.count > 0 ? (self.payemntDetails.count + 1) : 0
                 }
@@ -396,8 +397,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     cell.titlePlaceHolder.text = keyValue
 
                 }
-                
-                
                 let key = self.feeSummaryKeys[indexPath.row]
                 
                 if let value  = self.feesummaryDictionary[key] as? String{
@@ -406,7 +405,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                 }
                 
                  commonCell = cell
-                
             }
                 
             else if finance == 5{
@@ -431,31 +429,51 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                 commonCell = cell
             }
             else{
-                
-                if self.payemntDetails.count == indexPath.row{
-                    print(self.payemntDetails.count)
-                    print(indexPath.row)
+               if self.payemntDetails.count == indexPath.row{
+                   print(self.payemntDetails.count)
+                   print(indexPath.row)
+                   print("eq")
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
-                        cell.totalTitleLabel.text = "\(self.FeeLabel):" + " " +  String(self.totalEstimateOfFee())
-                        cell.TotalPaidlbl.text = "\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaidNew())//
-                        //cell.TotalPaidlbl.text = String(self.totalEstimateOfPaidNew())//
-                        cell.totalLabel.text = "\(self.BalanceLabel):" + " " +  String(self.totalEstimateOfBalance())//
+                        cell.totalTitleLabel.text = "\(self.totalLabel)" + " "+"\(self.FeeLabel):" + " " +  String(self.totalEstimateOfFee())
+                        cell.totalLabel.text = "\(self.totalLabel)" + " "+"\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaidNew())//
+                        //cell.totalLabel.text = "\(self.BalanceLabel):" + " " +  String(self.totalEstimateOfBalance())//
+                        commonCell = cell
+                    }
+                   else
+                   {
+                      /* let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+                       commonCell = cell
+                       commonCell?.contentView.isHidden=true*/
+                       let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+                       
+                           cell.totalLabel.text = String(self.totalEstimate())//totalEstimateOfPaid
+                       
+                       commonCell = cell
+                   }
+                }
+                else if self.payemntDetails.count+1 == indexPath.row{
+                    print(self.payemntDetails.count)
+                    print(indexPath.row)
+                    print("+1")
+ 
+                    if(fee_url_type=="2" && finance == 2)
+                    {
+                        let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+                        cell.totalTitleLabel.text = "\(self.BalanceLabel):" + " " +  String(self.totalEstimateOfBalance())
+                        cell.totalLabel.text = ""
                         commonCell = cell
                     }
                     else if(fee_url_type=="1" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
                         cell.totalTitleLabel.text = "\(self.FeeLabel):" + " " +  String(self.totalEstimateOfFee())
-                        //cell.TotalPaidlbl.text = "\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaidNew())//
-                        //cell.TotalPaidlbl.text = String(self.totalEstimateOfPaidNew())//
                         cell.totalLabel.text = "\(self.totalPaidLabel):" + " " +  String(self.totalEstimateOfPaidNew())//
                         commonCell = cell
                     }
                      else
                     {
-                        
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
                         if finance == 2{
                             cell.totalTitleLabel.text = "\(self.totalLabel):" + " " +  String(self.totalEstimateOfFee())
@@ -463,7 +481,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                         }
                         else{
                             cell.totalLabel.text = String(self.totalEstimate())//totalEstimateOfPaid
-                            
                         }
                         commonCell = cell
                     }
@@ -471,6 +488,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                 else if self.payemntDetails.count < indexPath.row{
                     print(self.payemntDetails.count)
                     print(indexPath.row)
+                    print("dddd")
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
@@ -489,7 +507,9 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                       }
                 }
                 else{
-                    
+                    print(self.payemntDetails.count)
+                    print(indexPath.row)
+                    print("cc")
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentDetailCell2", for: indexPath) as! PaymentDetailCell2
@@ -608,7 +628,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             
             let doublevalue = Double(value.amount!)
             if doublevalue != nil{
-            sum += doublevalue!
+                sum += doublevalue!
             }
         }
         
