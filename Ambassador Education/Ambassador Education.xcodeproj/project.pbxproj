@@ -1828,8 +1828,9 @@
 		44EF07EF231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07F0231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		47FD590D0952779FD9B581ED /* Pods_PEPS_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD235DE289ACFC800A7121D /* Pods_PEPS_V2.framework */; };
-		593727052CF00DBFE3C2296B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		593727052CF00DBFE3C2296B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		63D9AD5AFF7C5EC0EE833338 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
+		719502A1F40B088EC2D1B9EB /* Pods_PEA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E569D92FF7931955FA5ABF3 /* Pods_PEA.framework */; };
 		980A63562A78DBA9004BDFAD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980A63552A78DBA9004BDFAD /* UIColor+Extension.swift */; };
 		980A63572A78DBA9004BDFAD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980A63552A78DBA9004BDFAD /* UIColor+Extension.swift */; };
 		980A63582A78DBA9004BDFAD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980A63552A78DBA9004BDFAD /* UIColor+Extension.swift */; };
@@ -7529,6 +7530,8 @@
 		45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/DGActivityIndicatorView/DGActivityIndicatorView.framework"; sourceTree = "<group>"; };
 		772EB36621EF21C000620F0E /* Quality Education-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quality Education-Info.plist"; sourceTree = "<group>"; };
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
+		7F63B5029C9B30427D577575 /* Pods-PEA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEA.debug.xcconfig"; path = "Target Support Files/Pods-PEA/Pods-PEA.debug.xcconfig"; sourceTree = "<group>"; };
+		8E569D92FF7931955FA5ABF3 /* Pods_PEA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980A63552A78DBA9004BDFAD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		98166BD62A6E52BA0094228C /* NotificationMailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMailTableViewCell.swift; sourceTree = "<group>"; };
 		98166BD72A6E52BA0094228C /* NotificationMailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationMailTableViewCell.xib; sourceTree = "<group>"; };
@@ -7565,6 +7568,7 @@
 		98C331A92A6AA0C700EA3BAD /* NoticeBoardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeBoardCollectionViewCell.xib; sourceTree = "<group>"; };
 		98C331FC2A6AA0EA00EA3BAD /* NoticeBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardTableViewCell.swift; sourceTree = "<group>"; };
 		98C331FD2A6AA0EA00EA3BAD /* NoticeBoardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeBoardTableViewCell.xib; sourceTree = "<group>"; };
+		A335037EEE33855F132FBBD3 /* Pods-PEA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEA.release.xcconfig"; path = "Target Support Files/Pods-PEA/Pods-PEA.release.xcconfig"; sourceTree = "<group>"; };
 		AE169EA0200687A00019685A /* PaymentDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsController.swift; sourceTree = "<group>"; };
 		AE1D45BC1F545D930042727A /* TNPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPerson.swift; sourceTree = "<group>"; };
 		AE21DBDF1F2783B500742127 /* MessageDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailController.swift; sourceTree = "<group>"; };
@@ -7894,7 +7898,7 @@
 				440671CF252C5B67001B8C7B /* MapKit.framework in Frameworks */,
 				440671D1252C5B67001B8C7B /* CloudKit.framework in Frameworks */,
 				440671D2252C5B67001B8C7B /* DGActivityIndicatorView.framework in Frameworks */,
-				593727052CF00DBFE3C2296B /* (null) in Frameworks */,
+				593727052CF00DBFE3C2296B /* BuildFile in Frameworks */,
 				47FD590D0952779FD9B581ED /* Pods_PEPS_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -8324,6 +8328,7 @@
 				CE88689F21FAEFFE00FF0DE0 /* SkyFloatingLabelTextField.framework in Frameworks */,
 				CE8868A021FAEFFE00FF0DE0 /* CloudKit.framework in Frameworks */,
 				CE8868A121FAEFFE00FF0DE0 /* DGActivityIndicatorView.framework in Frameworks */,
+				719502A1F40B088EC2D1B9EB /* Pods_PEA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8885,6 +8890,8 @@
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
 				28FFBEC613F07AEAD454CFC8 /* Pods-OrisonSchool V2.debug.xcconfig */,
 				041E729B906DC2100DA255D0 /* Pods-OrisonSchool V2.release.xcconfig */,
+				7F63B5029C9B30427D577575 /* Pods-PEA.debug.xcconfig */,
+				A335037EEE33855F132FBBD3 /* Pods-PEA.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -9408,6 +9415,7 @@
 				45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */,
 				455DEE911EBC33DD002D6CEF /* Alamofire.framework */,
 				35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */,
+				8E569D92FF7931955FA5ABF3 /* Pods_PEA.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -10125,10 +10133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE8868B521FAEFFE00FF0DE0 /* Build configuration list for PBXNativeTarget "PEA" */;
 			buildPhases = (
+				203BFBA761B662A10DD5DE10 /* [CP] Check Pods Manifest.lock */,
 				CE88682521FAEFFE00FF0DE0 /* Sources */,
 				CE88689A21FAEFFE00FF0DE0 /* Frameworks */,
 				CE8868A321FAEFFE00FF0DE0 /* Resources */,
 				CE8868B421FAEFFE00FF0DE0 /* ShellScript */,
+				038B3485CAB027BA35BC40E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -11869,6 +11879,86 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		038B3485CAB027BA35BC40E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PEA/Pods-PEA-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IQPullToRefresh/IQPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
+				"${BUILT_PRODUCTS_DIR}/Nantes/Nantes.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nantes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PEA/Pods-PEA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		136575CB2140F0E90045A958 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11946,6 +12036,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		203BFBA761B662A10DD5DE10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PEA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		343783E1AE5AD9525DC3AE32 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -31470,6 +31582,7 @@
 		};
 		CE8868B621FAEFFE00FF0DE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F63B5029C9B30427D577575 /* Pods-PEA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -31611,6 +31724,7 @@
 		};
 		CE8868B721FAEFFE00FF0DE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A335037EEE33855F132FBBD3 /* Pods-PEA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
