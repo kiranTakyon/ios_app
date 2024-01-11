@@ -1561,7 +1561,6 @@
 		98D0F5B82B50207A00F4A148 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5942B50207900F4A148 /* VideoPlayerView.swift */; };
 		98D0F5B92B50207A00F4A148 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5942B50207900F4A148 /* VideoPlayerView.swift */; };
 		98D0F5BA2B50207A00F4A148 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5942B50207900F4A148 /* VideoPlayerView.swift */; };
-		98D0F5BD2B50238C00F4A148 /* OrisonSplashVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 98D0F5BC2B50238C00F4A148 /* OrisonSplashVideo.mp4 */; };
 		98D0F5BE2B50266800F4A148 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
 		98D0F5BF2B50266900F4A148 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
 		98D0F5C02B50266B00F4A148 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
@@ -4962,6 +4961,7 @@
 		CDE82465275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE82466275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
 		CDE8246B275FC03D00BD4211 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
+		CDF16A052B50954100CF8E8F /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = CDF16A042B50954100CF8E8F /* Resource */; };
 		CE0A5F8D24375C8000568C23 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CE0A5F8E24375C8000568C23 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CE0A5F8F24375C8000568C23 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -6098,7 +6098,6 @@
 		98B10D2E2A3C654500FE000E /* View+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Helper.swift"; sourceTree = "<group>"; };
 		98D0F5922B501EC400F4A148 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		98D0F5942B50207900F4A148 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		98D0F5BC2B50238C00F4A148 /* OrisonSplashVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = OrisonSplashVideo.mp4; sourceTree = "<group>"; };
 		A1932691FAD31A2D51815EB1 /* Pods-OrisonSchool V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.debug.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.debug.xcconfig"; sourceTree = "<group>"; };
 		AE169EA0200687A00019685A /* PaymentDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsController.swift; sourceTree = "<group>"; };
 		AE1D45BC1F545D930042727A /* TNPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPerson.swift; sourceTree = "<group>"; };
@@ -6311,6 +6310,7 @@
 		CDE82449275FC03D00BD4211 /* AddCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentVC.swift; sourceTree = "<group>"; };
 		CDE84A2927BEB6D100F16EBE /* Athena.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Athena.xcassets; sourceTree = "<group>"; };
 		CDE84A2B27BED6A600F16EBE /* Pods_PEPS_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PEPS_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDF16A042B50954100CF8E8F /* Resource */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Resource; sourceTree = SOURCE_ROOT; };
 		CDFBBC3B27BEDA4800FBB765 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE0A602124375C8000568C23 /* Ajman Modern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ajman Modern.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0A602424375C8600568C23 /* AjmanModern-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AjmanModern-Info.plist"; path = "/Users/takyonsystems/Desktop/tachyon247-takyon360 Dynamic Menu/Ambassador Education/AjmanModern-Info.plist"; sourceTree = "<absolute>"; };
@@ -7274,7 +7274,6 @@
 				AE3171DA1F2E10E700729AF8 /* Ambassador Education-Bridging-Header.h */,
 				45559BF31EBADB3B00F4E6FB /* Ambassador Education */,
 				45559BF21EBADB3B00F4E6FB /* Products */,
-				98D0F5BB2B50233D00F4A148 /* Resource */,
 				FDFC1A61C50C9BB8FC2DED24 /* Frameworks */,
 				B41C1B5C214192E900A9907B /* AsianInternational-Info.plist */,
 				136585452140F30B0045A958 /* CredenceSchool-Info.plist */,
@@ -7370,6 +7369,7 @@
 		45559BF31EBADB3B00F4E6FB /* Ambassador Education */ = {
 			isa = PBXGroup;
 			children = (
+				CDF16A042B50954100CF8E8F /* Resource */,
 				CD713F2529004E3D00A16A3A /* GooglePlistSSI */,
 				CD42D6F427FBC137006FA37C /* Main.storyboard */,
 				CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */,
@@ -7438,14 +7438,6 @@
 				98D0F5922B501EC400F4A148 /* SplashViewController.swift */,
 			);
 			path = Splash;
-			sourceTree = "<group>";
-		};
-		98D0F5BB2B50233D00F4A148 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				98D0F5BC2B50238C00F4A148 /* OrisonSplashVideo.mp4 */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		AE3171DD1F2E197900729AF8 /* Model */ = {
@@ -9590,13 +9582,13 @@
 				CDD2366A289AD40100A7121D /* LaunchScreen.storyboard in Resources */,
 				CDD2366B289AD40100A7121D /* WeeklyPlanTable.xib in Resources */,
 				CDD2366C289AD40100A7121D /* .swiftlint.yml in Resources */,
+				CDF16A052B50954100CF8E8F /* Resource in Resources */,
 				CDD2366D289AD40100A7121D /* TestInapp.jpg in Resources */,
 				CDD2366E289AD40100A7121D /* Main.storyboard in Resources */,
 				CDD2366F289AD40100A7121D /* Picker.xib in Resources */,
 				CDD23670289AD40100A7121D /* ProgressViewBar.xib in Resources */,
 				98B10D0F2A3C646F00FE000E /* TopHeaderView.xib in Resources */,
 				CDD23671289AD40100A7121D /* TestPenguin.png in Resources */,
-				98D0F5BD2B50238C00F4A148 /* OrisonSplashVideo.mp4 in Resources */,
 				CDD23672289AD40100A7121D /* SampleText.txt in Resources */,
 				CDD23673289AD40100A7121D /* sampleImage.png in Resources */,
 				CDD23674289AD40100A7121D /* Common.xcassets in Resources */,

@@ -51,7 +51,7 @@ class SplashViewController: UIViewController {
     }
     
     func playSplashVideo(_with url: String ) {
-        if let filePath = Bundle.main.path(forResource: url, ofType: "mp4") {
+        if let filePath = Bundle.main.path(forResource: url, ofType: "mp4", inDirectory: "/Resource") {
             videoView.setupToPlay(videoPath: filePath)
         }
     }
