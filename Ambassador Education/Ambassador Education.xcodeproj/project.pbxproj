@@ -1658,6 +1658,8 @@
 		B41C1B62214194C900A9907B /* AsianAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C1B61214194C800A9907B /* AsianAssets.xcassets */; };
 		B43023FA2141611300C3E787 /* EFIAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43023F92141611300C3E787 /* EFIAAssets.xcassets */; };
 		B6CB8E90F436F19AF636C7A9 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
+		CD0ADAF02B30930C001F1858 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */; };
+		CD0ADAF22B309435001F1858 /* WoodlemAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */; };
 		CD0E11812B170A9600EE599B /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CD0E11822B170A9600EE599B /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CD0E11832B170A9600EE599B /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -1796,9 +1798,7 @@
 		CD0E12092B170A9600EE599B /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
 		CD0E120A2B170A9600EE599B /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		CD0E120B2B170A9600EE599B /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
-		CD0E120D2B170A9600EE599B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1562379DA4A005148EE /* GoogleService-Info.plist */; };
 		CD0E120E2B170A9600EE599B /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
-		CD0E120F2B170A9600EE599B /* OrisonSchoolV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1582379DAE3005148EE /* OrisonSchoolV2.xcassets */; };
 		CD0E12102B170A9600EE599B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
 		CD0E12112B170A9600EE599B /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
 		CD0E12122B170A9600EE599B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C4A1F6AC6CF00599C36 /* .swiftlint.yml */; };
@@ -6164,6 +6164,8 @@
 		B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNAwarnessArticleDetail.swift; sourceTree = "<group>"; };
 		B4FBEA8220810D3D0035AECD /* VideoDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownload.swift; sourceTree = "<group>"; };
 		CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = WoodlemAssets.xcassets; path = "../../../Ambassador Education Target1/Ambassador Education/Assets/WoodlemAssets.xcassets"; sourceTree = "<group>"; };
 		CD0E12232B170A9600EE599B /* Woodlem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Woodlem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0E12242B170A9700EE599B /* Woodlem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Woodlem-Info.plist"; path = "/Users/takyon/ios_new/Ambassador Education/Woodlem-Info.plist"; sourceTree = "<absolute>"; };
 		CD110C90289C41700050EF80 /* T360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T360.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6832,6 +6834,7 @@
 		13C7D1DD21410DC80053D5DA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */,
 				CD9094092A4E3B8A008F39D0 /* Salmiya.xcassets */,
 				CD9093582A4E3663008F39D0 /* VIS.xcassets */,
 				CD7601B2295B64B400812F7B /* PEAAssets.xcassets */,
@@ -6876,6 +6879,7 @@
 		13CD021721467749008F307A /* GooglePlists */ = {
 			isa = PBXGroup;
 			children = (
+				CD0ADAEE2B3092C5001F1858 /* GooglePlistWPS */,
 				CD9094062A4E390F008F39D0 /* GooglePlistVIS */,
 				CD7601B4295B670400812F7B /* GooglePlistPEA */,
 				CD713F2029002DB000A16A3A /* GooglePlistSSI */,
@@ -7640,6 +7644,14 @@
 				CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */,
 			);
 			path = GooglePlistAmana;
+			sourceTree = "<group>";
+		};
+		CD0ADAEE2B3092C5001F1858 /* GooglePlistWPS */ = {
+			isa = PBXGroup;
+			children = (
+				CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */,
+			);
+			path = GooglePlistWPS;
 			sourceTree = "<group>";
 		};
 		CD16692027DA9BCB00F31356 /* GooglePlistRakScholar */ = {
@@ -8578,7 +8590,7 @@
 						};
 					};
 					CD0E117E2B170A9600EE599B = {
-						DevelopmentTeam = 5VXG48XRVV;
+						DevelopmentTeam = 4FZ5TJ46T5;
 						ProvisioningStyle = Manual;
 					};
 					CD110BF6289C41700050EF80 = {
@@ -9017,9 +9029,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD0E120D2B170A9600EE599B /* GoogleService-Info.plist in Resources */,
+				CD0ADAF22B309435001F1858 /* WoodlemAssets.xcassets in Resources */,
 				CD0E120E2B170A9600EE599B /* DigitalResourceCategoryCell.xib in Resources */,
-				CD0E120F2B170A9600EE599B /* OrisonSchoolV2.xcassets in Resources */,
 				CD0E12102B170A9600EE599B /* LaunchScreen.storyboard in Resources */,
 				CD0E12112B170A9600EE599B /* WeeklyPlanTable.xib in Resources */,
 				CD0E12122B170A9600EE599B /* .swiftlint.yml in Resources */,
@@ -9028,6 +9039,7 @@
 				CD0E12152B170A9600EE599B /* Picker.xib in Resources */,
 				CD0E12162B170A9600EE599B /* ProgressViewBar.xib in Resources */,
 				CD0E12172B170A9600EE599B /* TopHeaderView.xib in Resources */,
+				CD0ADAF02B30930C001F1858 /* GoogleService-Info.plist in Resources */,
 				CD0E12182B170A9600EE599B /* TestPenguin.png in Resources */,
 				CD0E12192B170A9600EE599B /* SampleText.txt in Resources */,
 				CD0E121A2B170A9600EE599B /* sampleImage.png in Resources */,
@@ -20083,12 +20095,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.59;
-				DEVELOPMENT_TEAM = 5VXG48XRVV;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5VXG48XRVV;
+				CURRENT_PROJECT_VERSION = 1.60;
+				DEVELOPMENT_TEAM = 4FZ5TJ46T5;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4FZ5TJ46T5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -20096,12 +20108,12 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
-				INFOPLIST_FILE = "OrisonSchool V2 copy-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Orison School";
+				INFOPLIST_FILE = "Woodlem-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WoodlemPark School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.59;
+				MARKETING_VERSION = 5.60;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -20196,12 +20208,12 @@
 					"-ObjC",
 					"-all_load",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D ORISONSCHOOL_V2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.orisonv2;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D WPS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.woodlemV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
-				PROVISIONING_PROFILE_SPECIFIER = "Orison V2.";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Orison V2.";
+				PROVISIONING_PROFILE_SPECIFIER = "Woodlem Ajman";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Woodlem Ajman";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -20216,12 +20228,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.59;
-				DEVELOPMENT_TEAM = 5VXG48XRVV;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5VXG48XRVV;
+				CURRENT_PROJECT_VERSION = 1.60;
+				DEVELOPMENT_TEAM = 4FZ5TJ46T5;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4FZ5TJ46T5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -20229,12 +20241,12 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
-				INFOPLIST_FILE = "OrisonSchool V2 copy-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Orison School";
+				INFOPLIST_FILE = "Woodlem-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WoodlemPark School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.59;
+				MARKETING_VERSION = 5.60;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -20378,12 +20390,12 @@
 					"-ObjC",
 					"-all_load",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D ORISONSCHOOL_V2";
-				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.orisonv2;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D WPS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.woodlemV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
-				PROVISIONING_PROFILE_SPECIFIER = "Orison V2.";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Orison V2.";
+				PROVISIONING_PROFILE_SPECIFIER = "Woodlem Ajman";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Woodlem Ajman";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
