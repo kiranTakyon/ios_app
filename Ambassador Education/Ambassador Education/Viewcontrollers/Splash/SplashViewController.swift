@@ -32,10 +32,11 @@ class SplashViewController: UIViewController {
         var dealy = 1.0
         if isPlayVideo {
             playSplashVideo(_with: videoUrl)
-            dealy = 5.5   /// current video is 5.5 sec
+            dealy = 6.0   /// current video is 6.0 sec
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + dealy) {
+            self.videoView.stopPlayer()
             self.performSegue(withIdentifier: "toLogin", sender: nil)
         }
         
