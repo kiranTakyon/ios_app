@@ -21,10 +21,9 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
         setUpCollectionView()
-        self.getCategoryList()
+        getCategoryList()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -37,10 +36,10 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         return true
     }
     
-    func setSlideMenuProporties(){
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
    
@@ -92,11 +91,11 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    func navigateTodigitalResourceDetail(category:TNDigitalResourceCategory){
+    func navigateTodigitalResourceDetail(category:TNDigitalResourceCategory) {
         let digitalVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceSecondListController") as! DigitalResourceSecondListController
         digitalVc.catId = category.categoryId!
         digitalVc.titleValue = category.caetgory
-              self.navigationController?.pushViewController(digitalVc, animated: true)
+        self.navigationController?.pushViewController(digitalVc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

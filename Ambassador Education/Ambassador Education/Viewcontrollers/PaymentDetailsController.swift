@@ -76,10 +76,9 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
         setUI()
       //  self.getWeeklyPlan()
-        self.getWeeklyPlanView()
-        self.setSlideMenuProporties()
+        getWeeklyPlanView()
+        setSlideMenuProporties()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
     }
     
     func setUI(){
@@ -90,7 +89,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         self.paymentDetailTable.estimatedRowHeight = 118.0
         
         self.paymentDetailTable.rowHeight = UITableView.automaticDimension
-        if finance == 2{
+        if finance == 2 {
 //            titleLabel.text = "Fee Details"
             self.secondSectionNameLabel.text = self.headLabel
         }
@@ -126,24 +125,16 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func setSlideMenuProporties(){
-        if self.revealViewController() != nil {
-            
-            //   menuButton.target(forAction: "revealToggle:", withSender: nil)
-            
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            
-            //  menuButton.target = self.revealViewController()
-            //   menuButton.action =
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
-    func setSectionHeader(){
-        
-        if finance == 1{
-          
-        }else{
-            self.secondSectionNameLabel.text = accountDetailsLabel
+    func setSectionHeader() {
+        if finance == 1 {
+        } else {
+            secondSectionNameLabel.text = accountDetailsLabel
         }
     }
 

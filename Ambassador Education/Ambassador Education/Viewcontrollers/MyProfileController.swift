@@ -43,7 +43,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         setSlideMenuProporties()
         isEditClicked = false
         // Do any additional setup after loading the view.
@@ -79,16 +78,10 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         }
     }
     
-    func setSlideMenuProporties(){
-        if self.revealViewController() != nil {
-            
-            //   menuButton.target(forAction: "revealToggle:", withSender: nil)
-            
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            
-            //  menuButton.target = self.revealViewController()
-            //   menuButton.action =
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     

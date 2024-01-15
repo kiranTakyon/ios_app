@@ -22,18 +22,15 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         topHeaderView.searchTextField.delegate = self
         setSlideMenuProporties()
         tableViewProporties()
         getArticleList()
-    
-        // Do any additional setup after loading the view.
     }
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != ""{
+        if topHeaderView.searchTextField.text != "" {
             searchText = topHeaderView.searchTextField.text!
             topHeaderView.searchTextField.resignFirstResponder()
             getArticleList()
@@ -41,18 +38,15 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
         return true
     }
     
-
-
-    
-    func setSlideMenuProporties(){
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
 
-    func tableViewProporties(){
+    func tableViewProporties() {
       //  let listNib = UINib(nibName: "ArticleCategoryList", bundle: nil)
       //  self.articleTableView.register(listNib, forCellReuseIdentifier: "ArticleCategoryList")
         self.articleTableView.tableFooterView = UIView()

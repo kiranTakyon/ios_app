@@ -26,36 +26,35 @@ class GradeViewController: UIViewController,WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         setNavigationBar()
         loadUrlToWebView()
         topHeaderView.title = header
         setDelegates()
-        // Do any additional setup after loading the view.
     }
 
-    func setNavigationBar(){
-        if hashkey == "T0052"{
+    func setNavigationBar() {
+        if hashkey == "T0052" {
             topHeaderView.setLeftButtonImage = #imageLiteral(resourceName: "Back2")
             topHeaderView.backButton.addTarget(self, action: #selector(self.backAction), for: UIControl.Event.touchUpInside)
-        }
-        else{
+        } else {
             topHeaderView.setLeftButtonImage = #imageLiteral(resourceName: "Menu")
-             setSlideMenuProporties()
+            setSlideMenuProporties()
        }
     }
     
-    @objc func backAction(){
+    @objc func backAction() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func setDelegates(){
+    func setDelegates() {
         videoDownload.delegate = self
         quickLookController.dataSource = self
         quickLookController.delegate = self
         quickLookController.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         changeTheVisibilityOfDownLoadButton()
         progressBar.isHidden = true
         addBlurEffectToTableView(inputView: self.view, hide: true)
@@ -64,8 +63,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
     func changeTheVisibilityOfDownLoadButton(){
         if hashkey == "T0012" {
             topHeaderView.shouldShowFirstRightButtons(true)
-        }
-        else{
+        } else {
             topHeaderView.shouldShowFirstRightButtons(false)
         }
     }
@@ -76,7 +74,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
  
     private func webView(_ webView: WKWebView, shouldStartLoadWith request: URLRequest, navigationType: WKNavigationType) -> Bool {
         print("request: \(request.description)")
-        if request.description == "http://exitme/"{
+        if request.description == "http://exitme/" {
             //do close window magic here!!
             print("url matches...")
             stopLoading()
@@ -101,7 +99,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
     }
     
 
-    func loadUrlToWebView(){
+    func loadUrlToWebView() {
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.scrollView.bounces = true
@@ -109,8 +107,8 @@ class GradeViewController: UIViewController,WKUIDelegate {
         webView.uiDelegate = self
         webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
   
-        if let value = gradeBookLink{
-            if value != ""{
+        if let value = gradeBookLink {
+            if value != "" {
                 var str = ""
                 if hashkey == "T0039" || hashkey == "T0058" {
                     let md5Data = MD5(string:currentPassword)
@@ -138,19 +136,18 @@ class GradeViewController: UIViewController,WKUIDelegate {
     }
     
     
-    func setSlideMenuProporties(){
-     if self.revealViewController() != nil {
-         topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-      }
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
+        }
     }
     
     @IBAction func logoutButtonAction(_ sender: UIButton) {
         SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
             if isOtherButton == true {
                 
-            }
-            else {
+            } else {
                 isFirstTime = true
                 gradeBookLink = ""
                 showLoginPage()

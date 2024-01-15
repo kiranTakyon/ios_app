@@ -43,11 +43,11 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     override func viewDidLoad() {
         super.viewDidLoad()
         setAllTextFieldsEmpty()
-        self.tableViewProporties()
+        tableViewProporties()
         getTokenValueForMobileNotification()
+        topHeaderView.delegate = self
         setSlideMenuProporties()
         addObserverToNotification()
-        topHeaderView.delegate = self
     }
     
     func setAllTextFieldsEmpty() {
@@ -85,35 +85,32 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
             isFirstTime = false
         }
 
-        if sibling{
+        if sibling {
             postLogIn(id: siblingUserId)
-        }
-        else{
+        } else {
             let userId = UserDefaultsManager.manager.getUserId()
             setNotitificationList(id : userId)
         }
-        
     }
     
-    func setSlideMenuProporties(){
-        topHeaderView.setMenuOnLeftButton()
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
     
-    func setProfileImageToRound(){
+    func setProfileImageToRound() {
         studentImageView.contentMode = .scaleAspectFill
         studentImageView.layer.cornerRadius = 42
         studentImageView.clipsToBounds = true
-        self.studentImageView.layer.borderWidth = 1
-        self.studentImageView.layer.borderColor = UIColor.white.cgColor
+        studentImageView.layer.borderWidth = 1
+        studentImageView.layer.borderColor = UIColor.white.cgColor
     }
     
     func setStudentDetailsOnView(studentDetail: NSDictionary){
-        if studentDetail != nil{
+        if studentDetail != nil {
             
             guard let user = UserDefaultsManager.manager.getUserType() as? String else{
                 

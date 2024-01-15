@@ -89,10 +89,9 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     }
     
     func setSlideMenuProporties() {
-        topHeaderView.setMenuOnLeftButton()
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
@@ -126,10 +125,9 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             setUiWithType(top: 0, height: 0, hide: true)
             if let attachment = digital.attachments as? [Attachment]{
                 data = attachment
-                if data.count == 0{
+                if data.count == 0 {
                     attachmentsTitleLabel.text = "No Attachments"
-                }
-                else{
+                } else {
                     attachmentsTitleLabel.text = "Attachments"
                 }
             }

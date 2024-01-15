@@ -165,11 +165,13 @@ class TopHeaderView: UIView {
         thirdRightButton.isHidden = !show
     }
     
-    func setMenuOnLeftButton() {
+    func setMenuOnLeftButton(reveal: SWRevealViewController? = nil) {
         backButton.setImage(image: UIImage(named: "Menu"), inSize: CGSize(width: 20, height: 15), forState: .normal)
+        backButton.removeTarget(nil, action: nil, for: .allEvents)
+        backButton.addTarget(reveal, action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
     }
     
-    func setBorderAtBottom(){
+    func setBorderAtBottom() {
         let border = CALayer()
         let width = CGFloat(2.0)
         border.borderColor = UIColor.white.cgColor
@@ -179,13 +181,11 @@ class TopHeaderView: UIView {
         searchTextField.layer.addSublayer(border)
         searchTextField.layer.masksToBounds = true
     }
-
     
     //MARK: - Actions
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         delegate?.backButtonClicked(sender)
-        
     }
     
     @IBAction func searchButtonAction(_ sender: UIButton) {

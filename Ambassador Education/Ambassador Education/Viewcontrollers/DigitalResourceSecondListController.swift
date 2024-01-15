@@ -27,35 +27,31 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     var pageNumber = 1
     let refreshControl = UIRefreshControl()
     var arrCatgoryAndItem: [CategoryAndItem] = []
-    var isRefrshing: Bool = true
+    var shouldEnableLoadMore: Bool = true
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
         setUpCollectionView()
-        self.getDigitalResources(searcText : searchText)
-        self.setTitle()
-        self.setRefreshControll()
-        // Do any additional setup after loading the view.
+        getDigitalResources(searcText : searchText)
+        setTitle()
     }
-    
     
     func setUpCollectionView() {
         let nib = UINib(nibName: "DigitalResourceCategoryCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "DigitalResourceCategoryCell")
+        setRefreshControll()
     }
     
-    func setTitle(){
-        if let  _ = titleValue {
-            self.topHeaderView.title = titleValue!
+    func setTitle() {
+        if let title = titleValue {
+            topHeaderView.title = title
         }
     }
 
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != ""{
+        if topHeaderView.searchTextField.text != "" {
             searchText = topHeaderView.searchTextField.text!
             topHeaderView.searchTextField.resignFirstResponder()
             getDigitalResources(searcText: searchText)
@@ -64,11 +60,11 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     }
     
     
-    @objc func clearTextField(){
+    @objc func clearTextField() {
        getDigitalResources(searcText: "")
     }
     
-    func getDigitalResources(searcText : String){
+    func getDigitalResources(searcText : String) {
         
         self.startLoadingAnimation()
         
@@ -93,13 +89,15 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
             self.categoryList = digitalCategories
             self.digitalList = cetgories
             self.mergeCategoryAndItem(categories: digitalCategories, items: cetgories)
-            self.isRefrshing = self.arrCatgoryAndItem.count == 0
+            if let totalAvailablePages = result["PaginationTotalNumber"] as? Int {
+                self.shouldEnableLoadMore = totalAvailablePages != self.pageNumber
+            }
             
             DispatchQueue.main.async {
                 self.removeNoDataLabel()
-                self.checkAndStopBounce(count: cetgories.count)
+                self.checkAndStopBounce()
                 self.stopLoadingAnimation()
-                if self.digitalList.count == 0 && self.categoryList.count == 0 {
+                if self.arrCatgoryAndItem.count == 0 {
                     self.collectionView.isHidden = true
                     self.addNoDataFoundLabel()
                 } else {
@@ -107,7 +105,6 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
                     self.collectionView.isHidden = false
                     self.collectionView.reloadData()
                     self.removeNoDataLabel()
-
                 }
                 self.refreshControl.endRefreshing()
             }
@@ -115,12 +112,8 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
 
     }
     
-    func checkAndStopBounce(count:Int){
-        
-        if count == 0 {
-            self.collectionView.bounces = false
-        }
-        
+    func checkAndStopBounce() {
+        collectionView.bounces = shouldEnableLoadMore
     }
     
     func mergeCategoryAndItem(categories: [TNDigitalResourceCategory], items: [TNDigitalResourceSubList] ) {
@@ -128,62 +121,30 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
             arrCatgoryAndItem.append(CategoryAndItem(title: item.title, date: item.date, isItem: true))
         }
         for category in categories {
-            arrCatgoryAndItem.append(CategoryAndItem(id: category.categoryId,title: category.caetgory,isItem: false))
+            arrCatgoryAndItem.append(CategoryAndItem(id: category.categoryId, title: category.caetgory, isItem: false))
         }
-        
     }
     
-    func setRefreshControll(){
-        
+    func setRefreshControll() {
         refreshControl.attributedTitle = NSAttributedString(string: "")
-        refreshControl.addTarget(self, action: #selector(DigitalResourceSecondListController.refresh(sender:)), for: UIControl.Event.valueChanged)
-        self.collectionView.bottomRefreshControl = refreshControl // not required when using UITableV
+        refreshControl.addTarget(self, action: #selector(DigitalResourceSecondListController.loadMore(sender:)), for: UIControl.Event.valueChanged)
+        collectionView.bottomRefreshControl = refreshControl // not required when using UITableV
     }
     
-    @objc func refresh(sender:AnyObject) {
-        // Code to refresh table view
-        print("pull to Refresh")
-        if isRefrshing {
-            self.pageNumber += 1
-            self.getDigitalResources(searcText : searchText)
-        } else {
-            self.refreshControl.endRefreshing()
-        }
-        
+    @objc func loadMore(sender: AnyObject) {
+        pageNumber += 1
+        getDigitalResources(searcText : searchText)
     }
 
-    
-    
     func navigateToDetail(digitalResource:TNDigitalResourceSubList) {
         let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
         detailVc.digitalResource = digitalResource
-        self.navigationController?.pushViewController(detailVc, animated: true)
+        navigationController?.pushViewController(detailVc, animated: true)
     }
-    
-    
-    
-    @IBAction func backButtonAction(_ sender: Any) {
         
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func backButtonAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -237,7 +198,7 @@ extension DigitalResourceSecondListController: UICollectionViewDataSource,UIColl
         let catgoryAndItem = arrCatgoryAndItem[indexPath.row]
         if catgoryAndItem.isItem ?? false {
             let item = digitalList[indexPath.row]
-            self.navigateToDetail(digitalResource: item)
+            navigateToDetail(digitalResource: item)
         } else {
             arrCatgoryAndItem.removeAll()
             catId = catgoryAndItem.id ?? ""
