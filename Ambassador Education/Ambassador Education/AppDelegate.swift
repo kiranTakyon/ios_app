@@ -401,6 +401,8 @@ let appStoreId = "1484489965"
 let appStoreId = "1487778928"
 #elseif WPS
 let appStoreId = "6474555846"
+#elseif AIQN
+let appStoreId = "6476014314"
 #else
 let appStoreId = ""
 #endif

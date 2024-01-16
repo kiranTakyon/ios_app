@@ -43,7 +43,7 @@ class SplashViewController: UIViewController {
     }
     
     func checkTarget() {
-#if ORISONSCHOOL_V2
+#if AIQN
         isPlayVideo = true
         videoUrl = "OrisonSplashVideo"
 #else

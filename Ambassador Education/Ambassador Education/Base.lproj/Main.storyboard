@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLC-tw-idV">
-                                <rect key="frame" x="80" y="240" width="160" height="40"/>
+                                <rect key="frame" x="80" y="206" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.91333633660000002" green="0.31356501580000001" blue="0.22956043479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2kz-N9-3Cc"/>
@@ -479,9 +479,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="qik-Ql-fdw"/>
                                             <exclude reference="8UA-W1-D0M"/>
                                             <exclude reference="fFZ-CZ-UAC"/>
-                                            <exclude reference="qik-Ql-fdw"/>
                                             <exclude reference="vJf-na-ESb"/>
                                             <exclude reference="wei-RD-Pds"/>
                                         </mask>
@@ -540,8 +540,8 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="3kU-sm-XET"/>
                                             <exclude reference="RqS-hY-r1a"/>
+                                            <exclude reference="3kU-sm-XET"/>
                                             <exclude reference="dD0-CV-ykj"/>
                                         </mask>
                                     </variation>
@@ -947,8 +947,8 @@
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="aWo-oM-2is"/>
                                                             <exclude reference="gEw-rw-rPu"/>
+                                                            <exclude reference="aWo-oM-2is"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -2824,15 +2824,15 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="C0G-mc-sxx"/>
+                                                <exclude reference="l43-yj-sjU"/>
+                                                <exclude reference="sVz-Zq-FTw"/>
                                                 <exclude reference="CdL-5C-rQC"/>
                                                 <exclude reference="K6s-sz-Gz7"/>
-                                                <exclude reference="Tu1-b3-PcD"/>
-                                                <exclude reference="l43-yj-sjU"/>
                                                 <exclude reference="lim-3Q-bOp"/>
-                                                <exclude reference="pre-52-1em"/>
-                                                <exclude reference="sVz-Zq-FTw"/>
                                                 <exclude reference="uwn-ae-zoT"/>
+                                                <exclude reference="C0G-mc-sxx"/>
+                                                <exclude reference="Tu1-b3-PcD"/>
+                                                <exclude reference="pre-52-1em"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -3041,8 +3041,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="e6T-jd-sYe"/>
-                                                            <exclude reference="Ruw-CG-buk"/>
                                                             <exclude reference="yb9-S6-SYE"/>
+                                                            <exclude reference="Ruw-CG-buk"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -3472,10 +3472,10 @@
                                                                     <exclude reference="Phl-7j-lOf"/>
                                                                     <exclude reference="Vxm-Oh-26B"/>
                                                                     <exclude reference="4I8-dr-Wai"/>
-                                                                    <exclude reference="TQI-th-8Bg"/>
-                                                                    <exclude reference="VTZ-lp-sYU"/>
                                                                     <exclude reference="fwW-Yv-GRV"/>
+                                                                    <exclude reference="VTZ-lp-sYU"/>
                                                                     <exclude reference="lgQ-sW-AWd"/>
+                                                                    <exclude reference="TQI-th-8Bg"/>
                                                                 </mask>
                                                             </variation>
                                                         </tableViewCellContentView>
@@ -4316,8 +4316,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="2u9-Qk-tGf"/>
-                                                            <exclude reference="V3n-7e-Phy"/>
                                                             <exclude reference="m0R-NI-BoV"/>
+                                                            <exclude reference="V3n-7e-Phy"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -4454,8 +4454,8 @@
                                                             <exclude reference="KW5-mO-fBW"/>
                                                             <exclude reference="aFe-Ly-xCv"/>
                                                             <exclude reference="scz-Kk-Gji"/>
-                                                            <exclude reference="1UF-j7-Prf"/>
                                                             <exclude reference="CXb-Sx-rOA"/>
+                                                            <exclude reference="1UF-j7-Prf"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -4589,7 +4589,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I9-9w-R81">
-                                <rect key="frame" x="80" y="240" width="160" height="40"/>
+                                <rect key="frame" x="80" y="206" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.91333633660000002" green="0.31356501580000001" blue="0.22956043479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hxg-8F-hsi"/>
@@ -4980,7 +4980,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jC-E6-94I">
-                                <rect key="frame" x="26" y="465" width="128" height="40"/>
+                                <rect key="frame" x="26" y="431" width="128" height="40"/>
                                 <color key="backgroundColor" red="0.91333633660000002" green="0.31356501580000001" blue="0.22956043479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9E9-bI-Hqn"/>
@@ -4994,7 +4994,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j01-ec-cad">
-                                <rect key="frame" x="166" y="465" width="128" height="40"/>
+                                <rect key="frame" x="166" y="431" width="128" height="40"/>
                                 <color key="backgroundColor" red="0.91333633660000002" green="0.31356501580000001" blue="0.22956043479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ocf-Rq-bsl"/>
@@ -5178,7 +5178,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HX-ki-yDk">
-                                <rect key="frame" x="26" y="295" width="284" height="40"/>
+                                <rect key="frame" x="26" y="261" width="284" height="40"/>
                                 <color key="backgroundColor" red="0.91333633660000002" green="0.31356501580000001" blue="0.22956043479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JIw-EK-ys3"/>
@@ -6067,12 +6067,12 @@
         <!--Splash View Controller-->
         <scene sceneID="MiL-yN-dRP">
             <objects>
-                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fz7-oI-KVr" customClass="SplashViewController" customModule="OrisonSchool_V2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fz7-oI-KVr" customClass="SplashViewController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2sE-GH-ikD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KH-re-X6t" customClass="VideoPlayerView" customModule="OrisonSchool_V2" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KH-re-X6t" customClass="VideoPlayerView" customModule="Ajyal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -6203,7 +6203,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
             <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
