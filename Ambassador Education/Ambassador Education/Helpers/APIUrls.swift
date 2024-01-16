@@ -56,6 +56,7 @@ class APIUrls{
     let WPbyID = "T0206"
     let getNBDetails = "T0072"
     let getNotification = "T0062"
+    let getDashboard = "T0001"
 }
 
 

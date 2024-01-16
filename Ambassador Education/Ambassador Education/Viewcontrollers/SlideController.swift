@@ -21,6 +21,7 @@ class SlideController: UITableViewController,TaykonProtocol {
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
     var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
+    let segueIdentifiers = ["","toHomeVc","toProfileVc","","toGallery","toCommunicate","toNoticeboard","toCalendarView","","","toFeeDetails","","","","toDigitalReource","toMessageDetail","toImagePreview","toImagePreview"]
     
     var selectionTitles = [String]()
     var selectionIds = [Int]()
@@ -58,7 +59,7 @@ class SlideController: UITableViewController,TaykonProtocol {
                            "MyProlfeKey":["Profile","toProfileVc"],
                            "T0069":["Language","toGradeBook"],//Open in browser
        // "MyProlfeKey":["الملف الشخصي","toProfileVc"]
-                           "T0062":["","toDigitalResourceDetail"],
+
                            ]
     
     //MARK: - View Life Cycle
@@ -102,40 +103,26 @@ class SlideController: UITableViewController,TaykonProtocol {
            }
         }
         else if segue.identifier == "toMessageDetail"{
-            if let destinationVC = segue.destination as? UINavigationController,
-               let vc = destinationVC.children[0] as? MessageDetailController {
-                vc.messageId = notificationObject.id
-                vc.typeMsg = typeValue
-                vc.isFromDashboardNotification = true
-            }
+            let destinationVC = segue.destination as! UINavigationController
+            let vc = destinationVC.children[0] as! MessageDetailController
+            vc.messageId = notificationObject.id
+            vc.typeMsg = typeValue
 //            vc.text = notificationObject.title
         }
-        else if segue.identifier == "toImagePreview" {
-            if let destinationVC = segue.destination as? UINavigationController,
-               let vc = destinationVC.children[0] as? ImagePreviewController {
-                var url = notificationObject.catid ?? ""
-                vc.imageUrl = url
-                vc.isFromDashboardNotification = true
-                vc.imageArr = Array([url])
-                vc.pageTitle = notificationObject.title
-                vc.position = 0
-            }
+        else if segue.identifier == "toImagePreview"{
+            let destinationVC = segue.destination as! UINavigationController
+            let vc = destinationVC.children[0] as! ImagePreviewController
+            var url = notificationObject.catid ?? ""
+            vc.imageUrl = url
+            vc.imageArr = Array([url])
+            vc.pageTitle = notificationObject.title
+            vc.position = 0
         }
-        else if segue.identifier == "toNBDetails" {
-            if let destinationVC = segue.destination as? UINavigationController,
-               let vc = destinationVC.children[0] as? NoticeboardDetailController {
-                vc.NbID = notificationObject.processid ?? ""
-                vc.isFromDashboardNotification = true
-            }
+        else if segue.identifier == "toNBDetails"{
+            let destinationVC = segue.destination as! UINavigationController
+            let vc = destinationVC.children[0] as! NoticeboardDetailController
+            vc.NbID = notificationObject.processid ?? ""
         }
-        else if segue.identifier == "toDigitalResourceDetail" {
-            if let destinationVC = segue.destination as? UINavigationController,
-               let vc = destinationVC.children[0] as? DigitalResourceDetailController {
-                vc.NbID = notificationObject.processid ?? ""
-                vc.isFromNotification = true
-            }
-        }
-        
     }
 
     //MARK: - Other Helpers
@@ -145,20 +132,25 @@ class SlideController: UITableViewController,TaykonProtocol {
             if selectedAlertType == .gallery{
                 self.performSegue(withIdentifier: "toImagePreview", sender: nil)
             }else if selectedAlertType == .communicate{
+//                self.performSegue(withIdentifier: "toCommunicate", sender: nil)
                 self.performSegue(withIdentifier: "toMessageDetail", sender: self)
-            } else if selectedAlertType == .html {
-                self.performSegue(withIdentifier: "toDigitalResourceDetail", sender: nil)
-            } else if selectedAlertType == .noticeboard {
+            }else if selectedAlertType == .html{
+                self.performSegue(withIdentifier: "toDigitalReource", sender: nil)
+                
+            }else if selectedAlertType == .noticeboard{
                 self.performSegue(withIdentifier: "toNBDetails", sender: nil)
-            } else if selectedAlertType == .weeklyPlan {
+            }else if selectedAlertType == .weeklyPlan{
                 self.performSegue(withIdentifier: "toWeeklyPlan", sender: nil)
+
             }
+        
     }
     
     func tableViewProporties(){
         
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.backgroundColor = UIColor().hexStringToUIColor(hex: "F99899")
     }
     
     func deleteTheSelectedAttachment(index: Int) {
@@ -183,10 +175,14 @@ class SlideController: UITableViewController,TaykonProtocol {
                         selectionIds.append(intValue)
 
                     }
+                    
                 }
+                
             }
+            
             studentDetails = siblings
         }
+        
     }
     
     
@@ -368,12 +364,14 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        
-        if indexPath.row == 8 || indexPath.row == 12{
-            return 40
-        }else if indexPath.row == 0{
-            return 170
-        }else{
+        switch indexPath.row {
+        case 12:
+            return 45
+        case 0:
+            return 180
+        case 1:
+            return 90
+        default:
             return 60
         }
     }
@@ -422,7 +420,7 @@ class SlideController: UITableViewController,TaykonProtocol {
             guard let tempCell = tableView.dequeueReusableCell(withIdentifier: "slidemenuCell", for: indexPath) as? slidemenuCell else {
                 return UITableViewCell()
             }
-            
+            tempCell.index = indexPath.row
             let item = menuListItems[indexPath.row - 1]
             print(item.label ?? "")
             if let link = item.link {
@@ -456,7 +454,15 @@ class SlideController: UITableViewController,TaykonProtocol {
              tempCell.hashKey = "MyProlfeKey"
                 tempCell.iconImage.image = #imageLiteral(resourceName: "toProfileVc")
             }
-            
+            if indexPath.row == 1 {
+                tempCell.containerView.layer.cornerRadius = 10
+                tempCell.containerView.layer.maskedCorners = [.layerMaxXMinYCorner]
+                tempCell.containerView.layer.masksToBounds = true
+                tempCell.topSepratorHeight.constant = 15
+            } else {
+                tempCell.topSepratorHeight.constant = 10
+                tempCell.containerView.layer.cornerRadius = 0
+            }
             tempCell.selectionStyle = .default
             
             setTableCellColor(indexPath: indexPath, cell: tempCell)
@@ -677,7 +683,7 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
     
-    func getBackToParentViewS(value: Any?, titleValue: String?) {
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         if let siblings = value as? TSibling{
         let imageUrlVal = siblings.proileImage
             sibling = true
@@ -713,6 +719,7 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
     
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var schoolNameLabel: UILabel!
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var profileImage: ImageLoader!
     @IBOutlet weak var studentPicker: Picker!
     var delegate : TaykonProtocol?
@@ -735,8 +742,10 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.borderWidth = 1
         self.profileImage.layer.borderColor = UIColor.red.cgColor
-        self.studentPicker.pickerTextField.textAlignment = .left
-        self.studentPicker.pickerTextField.textColor = UIColor.white
+        self.studentPicker.pickerTextField.textAlignment = .center
+        self.studentPicker.pickerTextField.textColor = UIColor.black
+        outerView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMaxXMaxYCorner]
+        studentPicker.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMaxXMaxYCorner]
     }
     
     func setImage(){
@@ -760,8 +769,8 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
             UserDefaultsManager.manager.saveUserId(id: userId)
         }
         self.studentDetailLabel.text = "Class Name - " + selectedSibling.classValue.safeValue
-        //self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
-        self.delegate?.getBackToParentViewS(value: selectedSibling, titleValue: "")
+        self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
+       
     }
     
 
@@ -771,10 +780,13 @@ class slidemenuCell : UITableViewCell{
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
-    @IBOutlet weak var titleLabelContainerLeading: NSLayoutConstraint!
-    @IBOutlet weak var titleToImageView: NSLayoutConstraint!
+    @IBOutlet weak var containerView: UIView!
     var hashKey = String()
+    @IBOutlet weak var topSepratorHeight: NSLayoutConstraint!
     @IBOutlet weak var topSeperationView: UIView!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
+    
+    var index: Int = -1
     var isSection : Bool = false{
         didSet{
             setSectionHeader()
@@ -784,20 +796,21 @@ class slidemenuCell : UITableViewCell{
     
     func setSectionHeader(){
         
-        if isSection{
-            self.titleLabelContainerLeading.priority = UILayoutPriority(rawValue: 999)
-            self.titleToImageView.priority = UILayoutPriority(rawValue: 500)
-            self.titleLabel.textColor = UIColor.lightGray
+        if isSection || index == 1 {
+            if index != 1 {
+                self.imageWidthConstraint.constant = 0
+                self.titleLabel.textColor = UIColor.darkText
+            } else {
+                self.titleLabel.textColor = UIColor.darkText.withAlphaComponent(0.6)
+                self.imageWidthConstraint.constant = 20
+            }
             self.topSeperationView.isHidden = false
-        }else{
-            self.titleLabelContainerLeading.priority = UILayoutPriority(rawValue: 500)
-            self.titleToImageView.priority = UILayoutPriority(rawValue: 999)
-            self.titleLabel.textColor = UIColor.darkText
+        } else {
+            self.titleLabel.textColor = UIColor.darkText.withAlphaComponent(0.6)
+            self.imageWidthConstraint.constant = 20
             self.topSeperationView.isHidden = true
-            
-            
+            self.topSepratorHeight.constant = 0
         }
-        
         self.layoutIfNeeded()
     }
     
@@ -805,5 +818,5 @@ class slidemenuCell : UITableViewCell{
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

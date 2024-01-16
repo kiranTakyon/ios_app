@@ -8,28 +8,24 @@
 
 import UIKit
 
-class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol ,UITextFieldDelegate,PagerDelegate{
+class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDelegate{
     
     
-  
+    @IBOutlet weak var containerView: UIView!
+    
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
-    var inBoxVC = CommunicateController()
-    var sentBoxVC = CommunicateController()
-    var WPBoxVC = CommunicateController()
-    var draftVC = CommunicateController()
     var searchText = ""
     var delegates : TaykonProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
+        topHeaderView.setMenuOnLeftButton()
         topHeaderView.searchTextField.delegate = self
+        self.getInboxMessages(searchTextValue : "")
         setSlideMenuProporties()
-        dataSource = self
-        delegate = self
-        customizeTab()
-        getInboxMessages(searchTextValue : "")
+        // Do any additional setup after loading the view.
     }
     
     
@@ -48,52 +44,20 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         topHeaderView.shouldShowSecondRightButton(true)
     }
     
-    func customizeTab() {
-        indicatorColor = UIColor.white
-        tabsViewBackgroundColor = UIColor.appOrangeColor()
-        contentViewBackgroundColor = UIColor.gray.withAlphaComponent(0.32)
-        startFromSecondTab = false
-        centerCurrentTab = true
-        fixFormerTabsPositions = true
-        tabLocation = PagerTabLocation.top
-        tabHeight = 49
-        tabOffset = 36
-        tabTopOffset = topHeaderView.height - topBarHeight()
-        tabWidth = self.view.frame.size.width/2
-        fixFormerTabsPositions = false
-        fixLaterTabsPosition = false
-        animation = PagerAnimation.during
-        selectedTabTextColor = .white
+    func setUpContainer() {
+        guard let communicationVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? CommunicateController else { return }
+        communicationVC.type = CommunicationType.inbox
+        communicationVC.delegate = self
+        communicationVC.view.frame = containerView.bounds
+        communicationVC.view.removeFromSuperview()
+        self.addChild(communicationVC)
+        containerView.addSubview(communicationVC.view)
     }
     
-    func setUpPager(list : MessageModel?) {
-        
-        inBoxVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
-        inBoxVC.type = CommunicationType.inbox
-        inBoxVC.delegate = self
-        sentBoxVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
-        sentBoxVC.type = CommunicationType.sent
-        sentBoxVC.delegate = self
-        
-        WPBoxVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
-        WPBoxVC.type = CommunicationType.WP
-        WPBoxVC.delegate = self
-        
-        draftVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as! CommunicateController
-        draftVC.type = CommunicationType.draft
-        draftVC.delegate = self
-        
-        self.setupPager(tabNames: [(list?.inboxLabel.safeValue.uppercased()).safeValue,(list?.sentItemsLabel.safeValue.uppercased()).safeValue,(list?.WPItemsLabel.safeValue.uppercased()).safeValue,(list?.DraftItemsLabel.safeValue.uppercased()).safeValue], tabControllers: [self.inBoxVC,self.sentBoxVC,self.WPBoxVC, self.draftVC])
-        self.reloadData()
-        
-    }
-    
-    
-    
-    func getInboxMessages(searchTextValue : String) {
+    func getInboxMessages(searchTextValue : String){
         
         self.startLoadingAnimation()
-        var url  = APIUrls().getInBox
+        let url  = APIUrls().getInBox
         typeValue = 2
         
         
@@ -114,23 +78,17 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
                 if let messageList = result["MessageList"] as? NSArray{
                     
                     let list = MessageModel(values: result)
-                    
                     self.removeNoDataLabel()
                     self.topHeaderView.title = list.communicateLabel.safeValue
-                    self.setUpPager(list: list)
                     self.stopLoadingAnimation()
+                    self.setUpContainer()
+                    
                 }else{
                     self.stopLoadingAnimation()
                     self.removeNoDataLabel()
                     SweetAlert().showAlert(kAppName, subTitle: "Some error occured,Please try again later", style: .error)
                 }
             }
-            //            }else{
-            //                DispatchQueue.main.async {
-            //                    self.stopLoadingAnimation()
-            //                    self.removeNoDataLabel()
-            //                    SweetAlert().showAlert(kAppName, subTitle: "Some error occured,Please try again later", style: .error)
-            //                }
         }
     }
     
@@ -237,7 +195,7 @@ extension CommunicateLandController: TopHeaderDelegate {
         button.isSelected = !button.isSelected
         if button.isSelected {
             topHeaderView.titleLabel.isHidden = true
-            topHeaderView.searchTextField.isHidden = false
+            topHeaderView.searchTextField.isHidden = true
             topHeaderView.shouldShowSecondRightButton(false)
             button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
         } else {

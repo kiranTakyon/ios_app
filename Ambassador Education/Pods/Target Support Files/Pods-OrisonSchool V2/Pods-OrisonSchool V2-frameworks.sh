@@ -41,8 +41,7 @@ install_framework()
 
   if [ -L "${source}" ]; then
     echo "Symlinked..."
-    source="$(readlink -f "${source}")"
-    #source="$(readlink "${source}")"
+    source="$(readlink "${source}")"
   fi
 
   if [ -d "${source}/${BCSYMBOLMAP_DIR}" ]; then
@@ -193,10 +192,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQPullToRefresh/IQPullToRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nantes/Nantes.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
@@ -225,10 +226,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/IQPullToRefresh/IQPullToRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Nantes/Nantes.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"

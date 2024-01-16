@@ -67,6 +67,20 @@ class TopHeaderView: UIView {
     }
     
     @IBInspectable
+    var titleTextColor: UIColor = .white {
+        didSet {
+            titleLabel.textColor = titleTextColor
+        }
+    }
+    
+    @IBInspectable
+    var backButtonTintColor: UIColor = .white {
+        didSet {
+            backButton.tintColor = backButtonTintColor
+        }
+    }
+    
+    @IBInspectable
     var shouldShowBackButton: Bool = false {
         didSet {
             backButton.isHidden = !shouldShowBackButton

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotificationsView" customModule="ABC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Id7-NR-XVY">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stogo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eDk-1a-Dd4">
+                    <rect key="frame" x="343" y="558" width="50" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="DO8-g3-811"/>
+                        <constraint firstAttribute="width" constant="50" id="MCv-Vg-XMR"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Id7-NR-XVY" secondAttribute="trailing" id="0Ac-rt-QMi"/>
+                <constraint firstItem="Id7-NR-XVY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6JI-GS-4AN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eDk-1a-Dd4" secondAttribute="trailing" id="EK3-Sl-bzY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eDk-1a-Dd4" secondAttribute="bottom" constant="10" id="MWS-qe-sAR"/>
+                <constraint firstItem="Id7-NR-XVY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OaM-KH-01x"/>
+                <constraint firstAttribute="bottom" secondItem="Id7-NR-XVY" secondAttribute="bottom" id="qD9-Oz-hOT"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="Id7-NR-XVY" id="0aE-Ml-Al9"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="-32"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="stogo_icon" width="36.333332061767578" height="167.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
