@@ -58,7 +58,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         quickLookController.dataSource = self
         quickLookController.delegate = self
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         topHeaderView.shouldShowThirdRightButtons(true)
         
         //self.getWeeklyPlanDetails(fromDate: dateFormatter1.string(from: today as Date), toDate: getThe5thDayFromSelectedDate(date: today, value: 4), isSearch: 0, div: "")
@@ -67,14 +66,16 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         addBlurEffectToTableView(inputView: self.view, hide: true)
         progressBar.isHidden = true
     }
+    
     func deleteTheSelectedAttachment(index: Int) {
         
     }
     
-    func setDateFormatter(){
+    func setDateFormatter() {
         dateFormatter1.dateStyle = .long
         dateFormatter1.dateFormat = DateTypes.yyyyMMdd
         let details = logInResponseGloabl;
@@ -450,9 +451,9 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     }
     
     func setSlideMenuProporties(){
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     

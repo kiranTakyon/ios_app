@@ -27,23 +27,18 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     }
     
     func setSlideMenuProporties() {
-        if self.revealViewController() != nil {
-            topHeaderView.setMenuOnLeftButton()
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
-    func tableViewProporties(){
-        
-        self.categoryTable.estimatedRowHeight = 60
-        self.categoryTable.rowHeight = UITableView.automaticDimension
+    func tableViewProporties() {
+        categoryTable.estimatedRowHeight = 60
+        categoryTable.rowHeight = UITableView.automaticDimension
     }
     
-    
-    
-    
-    func getCategoryList(){
+    func getCategoryList() {
         
         self.startLoadingAnimation()
         let url = APIUrls().getNoticeboard

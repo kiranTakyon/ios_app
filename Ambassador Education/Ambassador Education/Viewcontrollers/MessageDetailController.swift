@@ -74,10 +74,9 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func setSlideMenuProporties() {
-        topHeaderView.setMenuOnLeftButton()
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
 

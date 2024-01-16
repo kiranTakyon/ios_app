@@ -9,7 +9,7 @@
 import Foundation
 
 
-class TNDigitalResourceCategory{
+class TNDigitalResourceCategory {
     
     var categoryId : String?
     var caetgory : String?
@@ -28,7 +28,7 @@ class TNDigitalResourceCategory{
     }
 }
 
-class TNDigitalResourceSubList{
+class TNDigitalResourceSubList {
     
     var id : Int?
     var title : String?
@@ -51,10 +51,10 @@ class TNDigitalResourceSubList{
         self.attachment = values["Attachment"] as? String
         self.docLinks = values["DocLinks"] as? [String]
         
-        if let attachmentValues = values["MultipleAttachment"] as? NSArray{
+        if let attachmentValues = values["MultipleAttachment"] as? NSArray {
             var attachment = [Attachment]()
-            if attachmentValues.count > 0{
-                for each in attachmentValues{
+            if attachmentValues.count > 0 {
+                for each in attachmentValues {
                     attachment.append(Attachment(values: (each as? NSDictionary)!))
                 }
                 self.attachments = attachment

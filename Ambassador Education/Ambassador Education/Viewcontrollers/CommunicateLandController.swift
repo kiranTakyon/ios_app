@@ -24,22 +24,19 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         topHeaderView.searchTextField.delegate = self
-        self.dataSource = self
-        self.delegate = self
-        self.customizeTab()
-        self.getInboxMessages(searchTextValue : "")
         setSlideMenuProporties()
-        self.topHeaderView.delegate = self
-        // Do any additional setup after loading the view.
+        dataSource = self
+        delegate = self
+        customizeTab()
+        getInboxMessages(searchTextValue : "")
     }
     
     
-    func setSlideMenuProporties(){
-        if self.revealViewController() != nil {
-            topHeaderView.backButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     

@@ -36,7 +36,7 @@ enum ModelType:String {
 }
 
 
-class ModelClassManager{
+class ModelClassManager {
 
     static let sharedManager = ModelClassManager()
     
