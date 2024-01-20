@@ -1,4 +1,10 @@
 PODS:
+  - AppAuth (1.6.2):
+    - AppAuth/Core (= 1.6.2)
+    - AppAuth/ExternalUserAgent (= 1.6.2)
+  - AppAuth/Core (1.6.2)
+  - AppAuth/ExternalUserAgent (1.6.2):
+    - AppAuth/Core
   - BIZPopupView (1.0.0):
     - TPKeyboardAvoiding
   - CCBottomRefreshControl (0.5.2)
@@ -58,6 +64,10 @@ PODS:
     - nanopb (~> 2.30906.0)
   - GoogleDataTransport (8.1.0):
     - nanopb (~> 2.30906.0)
+  - GoogleSignIn (7.0.0):
+    - AppAuth (~> 1.5)
+    - GTMAppAuth (< 3.0, >= 1.3)
+    - GTMSessionFetcher/Core (< 4.0, >= 1.1)
   - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -77,6 +87,10 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.7.0):
     - GoogleUtilities/Logger
+  - GTMAppAuth (2.0.0):
+    - AppAuth/Core (~> 1.6)
+    - GTMSessionFetcher/Core (< 4.0, >= 1.5)
+  - GTMSessionFetcher/Core (3.2.0)
   - HMSegmentedControl (1.5.3)
   - IQPullToRefresh (2.1.9)
   - leveldb-library (1.22.1)
@@ -116,6 +130,7 @@ DEPENDENCIES:
   - FirebaseMessaging
   - FSCalendar
   - GGLInstanceID
+  - GoogleSignIn
   - IQPullToRefresh
   - MBCalendarKit (~> 5.0.0)
   - MXSegmentedPager
@@ -129,6 +144,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AppAuth
     - BIZPopupView
     - CCBottomRefreshControl
     - Crashlytics
@@ -148,7 +164,10 @@ SPEC REPOS:
     - GGLInstanceID
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
+    - GTMAppAuth
+    - GTMSessionFetcher
     - HMSegmentedControl
     - IQPullToRefresh
     - leveldb-library
@@ -168,6 +187,7 @@ SPEC REPOS:
     - Updates
 
 SPEC CHECKSUMS:
+  AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
   BIZPopupView: 2f16ecbc852baa16e1ef20b67abaa831909ec994
   CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
@@ -187,7 +207,10 @@ SPEC CHECKSUMS:
   GGLInstanceID: 4a317044f744281b82cd03015f379899f277cad3
   GoogleAppMeasurement: 7790ef975d1d463c8614cd949a847e612edf087a
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
+  GoogleSignIn: b232380cf495a429b8095d3178a8d5855b42e842
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  GTMAppAuth: 99fb010047ba3973b7026e45393f51f27ab965ae
+  GTMSessionFetcher: 41b9ef0b4c08a6db4b7eb51a21ae5183ec99a2c8
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
   IQPullToRefresh: 316ef0ac1468afb6ee9ff6ee76d877e842746893
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
@@ -206,6 +229,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: d55b3ea7b362540af8fcf36aa3ed2e87bf210cc6
   Updates: 2a35686c1d7c10dcf8bed98a9c194f8d305f7bb6
 
-PODFILE CHECKSUM: e70fb35fb7e6dea7fc7de2468330864165cfa510
+PODFILE CHECKSUM: 1cbacb2daca1d617571f5289b93ae85ade532305
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3

@@ -11,6 +11,7 @@ import BIZPopupView
 import SCLAlertView
 import EzPopup
 import Nantes
+import GoogleSignIn
 
 let kAlert = "Orison"
 let fillFields = "All fields are mandatory"
@@ -82,6 +83,30 @@ class ViewController: UIViewController {
 
         }
         
+    }
+    
+    
+    @IBAction func loginWithGoogle(_ sender: Any) {
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+          guard error == nil else {
+              print(error?.localizedDescription ?? "")
+              return
+          }
+
+            guard let user = result?.user,let idToken = user.idToken else {
+              return
+          }
+            print(idToken.tokenString)
+            print(user.profile?.email ?? "")
+           
+            let email = user.profile?.email ?? ""
+            
+            self.startLoadingAnimation()
+            postLogIn(email:email)
+            
+        }
+      
     }
     
     func showSavedCredentials(){
@@ -157,7 +182,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func postLogIn(){
+    func postLogIn(email:String? = nil){
         var dictionary = [String: String]()
         
         
@@ -165,8 +190,15 @@ class ViewController: UIViewController {
         let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
         let md5Password = md5Hex
         
-        dictionary[LogInKeys().username] =  usernameField.text!
-        dictionary[LogInKeys().password] = md5Password
+        if let email = email{
+            dictionary[LogInKeys().username] = email
+            dictionary[LogInKeys().password] = email
+            dictionary[LogInKeys().isGlogin] = "glogin"
+        }
+        else{
+            dictionary[LogInKeys().username] =  usernameField.text!
+            dictionary[LogInKeys().password] = md5Password
+        }
         dictionary[LogInKeys().language] = self.getLanguageCodes(textValue:countryPicker.pickerTextField.text! )
         currentLanguage = self.getLanguageCodes(textValue:countryPicker.pickerTextField.text! )
         dictionary[LogInKeys().platform] = "ios"

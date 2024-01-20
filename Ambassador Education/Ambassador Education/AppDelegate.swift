@@ -14,6 +14,7 @@ import FirebaseMessaging
 import Messages
 import SwiftSoup
 import Updates
+import GoogleSignIn
 //import Google
 
 @UIApplicationMain
@@ -51,9 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //FirebaseApp.configure()
         setFireBase(application : application)
     //    FirebaseApp.configure()
+        googleSignInConfiguration()
         UIApplication.shared.applicationIconBadgeNumber = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {  /// Showing dealy for update popup on top view
-            self.showUpdateAppAlert()
+//            self.showUpdateAppAlert()
         }
         return true
     }
@@ -311,6 +313,25 @@ extension AppDelegate: MessagingDelegate {
   }
 
   // [END refresh_token]
+}
+
+//Google Sign in
+extension AppDelegate {
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+    func googleSignInConfiguration() {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        print(clientID)
+        
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+    }
 }
 
 
