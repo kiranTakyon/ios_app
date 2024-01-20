@@ -29,12 +29,14 @@ def shared_pods
   pod 'FirebaseMessaging'
   pod 'EzPopup'
   pod "Updates"
+  pod 'GoogleSignIn'
+  
 end
 
 
-target 'PEPS V2' do
-  shared_pods
-end
+#target 'PEPS V2' do
+#  shared_pods
+#end
 
 target 'OrisonSchool V2' do
   shared_pods
