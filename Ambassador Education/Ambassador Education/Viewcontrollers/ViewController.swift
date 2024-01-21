@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var appLbael: UILabel!
     
     @IBOutlet weak var signInButton: GIDSignInButton!
+
     
     let tick = UIImage(named:"Tick")
     let unTick = UIImage(named:"UnTick")
@@ -93,8 +94,8 @@ class ViewController: UIViewController {
             guard let user = result?.user,let idToken = user.idToken else {
               return
           }
-            print(idToken.tokenString)
-            print(user.profile?.email ?? "")
+           // print(idToken.tokenString)
+           // print(user.profile?.email ?? "")
 
             let email = user.profile?.email ?? ""
             
