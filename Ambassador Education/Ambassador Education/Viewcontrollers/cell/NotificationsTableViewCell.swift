@@ -22,6 +22,7 @@ class NotificationsTableViewCell: UITableViewCell {
     @IBOutlet weak var alertDate: UILabel!
     @IBOutlet weak var typeImageView: UIImageView!
     @IBOutlet weak var buttonArrow: UIButton!
+    @IBOutlet weak var typeImageV: UIImageView!
     
     
     weak var delegate: NotificationsTableViewCellDelegate?

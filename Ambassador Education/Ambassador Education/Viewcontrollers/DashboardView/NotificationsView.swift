@@ -76,21 +76,27 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
         if let msgType = notification.type{
             switch msgType {
             case msgTypes.communicate.rawValue:
+                cell.typeImageV.image = UIImage(named: "emailImage")
                 cell.typeImageView.image = #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
+                
             case msgTypes.noticeboard.rawValue,msgTypes.bus.rawValue,msgTypes.weeklyPlan.rawValue:
+                cell.typeImageV.image = UIImage(named: "NoticeImage")
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "weekly Plan"
                 
             case msgTypes.htmlType.rawValue:
+                cell.typeImageV.image = UIImage(named: "emailImage")
                 cell.typeImageView.image =  #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
                 
             case msgTypes.gallery.rawValue:
+                cell.typeImageV.image = UIImage(named: "photoGalleryImage")
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
                 cell.labelTitle.text = "Gallery"
                 
             default:
+                cell.typeImageV.image = UIImage(named: "NoticeImage")
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "Notice"
                 
@@ -156,6 +162,7 @@ extension NotificationsView {
         dictionary["paginationNumber"] =  pageNumber
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            print(result)
             DispatchQueue.main.async {
                 complition()
                 guard let nototificationsArray = result["Notification"] as? NSArray else{return}
