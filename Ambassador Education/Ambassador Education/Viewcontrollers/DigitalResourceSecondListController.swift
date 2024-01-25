@@ -19,6 +19,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
 
     @IBOutlet weak var collectionView: UICollectionView!
     var catId = ""
+    var prevcatId = ""
     var searchText = ""
     @IBOutlet weak var topHeaderView: TopHeaderView!
     var titleValue : String?
@@ -76,8 +77,14 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
         
         dictionary[UserIdKey().id] = userId
         dictionary[GalleryCategory.searchText] = searcText
+        if(prevcatId != catId)
+        {
+            pageNumber = 1
+            prevcatId = catId
+        }
         dictionary[GalleryCategory.paginationNumber] = pageNumber
         dictionary["CategoryId"] = Int(catId)
+        
 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
