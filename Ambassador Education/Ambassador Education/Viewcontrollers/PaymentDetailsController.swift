@@ -421,9 +421,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             }
             else{
                if self.payemntDetails.count == indexPath.row{
-                   print(self.payemntDetails.count)
-                   print(indexPath.row)
-                   print("eq")
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
@@ -445,10 +442,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                    }
                 }
                 else if self.payemntDetails.count+1 == indexPath.row{
-                    print(self.payemntDetails.count)
-                    print(indexPath.row)
-                    print("+1")
- 
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
@@ -477,9 +470,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     }
                 }
                 else if self.payemntDetails.count < indexPath.row{
-                    print(self.payemntDetails.count)
-                    print(indexPath.row)
-                    print("dddd")
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
@@ -498,9 +488,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                       }
                 }
                 else{
-                    print(self.payemntDetails.count)
-                    print(indexPath.row)
-                    print("cc")
                     if(fee_url_type=="2" && finance == 2)
                     {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentDetailCell2", for: indexPath) as! PaymentDetailCell2
@@ -616,14 +603,13 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         var sum : Double = 0.0
         
         for value in self.payemntDetails{
-            
             let doublevalue = Double(value.amount!)
             if doublevalue != nil{
                 sum += doublevalue!
             }
         }
         
-        return sum
+        return round(sum * 100) / 100.0
         
     }
     
@@ -632,14 +618,13 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         var sum : Double = 0.0
         
         for value in self.payemntDetails{
-            
             let doublevalue = Double(value.fee!)
             if doublevalue != nil{
             sum += doublevalue!
             }
         }
         
-        return sum
+        return round(sum * 100) / 100.0
         
     }
     
@@ -648,14 +633,13 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         var sum : Double = 0.0
         
         for value in self.payemntDetails{
-            
             let doublevalue = Double(value.amount!)
             if doublevalue != nil{
                 sum += doublevalue!
             }
         }
         
-        return sum
+        return round(sum * 100) / 100.0
         
     }
     func totalEstimateOfBalance() -> Double{
@@ -670,7 +654,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         
-        return sum
+        return round(sum * 100) / 100.0
         
     }
     func totalEstimateOfPaidNew() -> Double{
@@ -678,14 +662,13 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         var sum : Double = 0.0
         
         for value in self.payemntDetails{
-            
             let doublevalue = Double(value.paid!)
             if doublevalue != nil{
                 sum += doublevalue!
             }
         }
         
-        return sum
+        return round(sum * 100) / 100.0
         
     }
     func totalEstimateOfRecptAmount() -> Double{
@@ -700,7 +683,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         
-        return sum
+        return round(sum * 100) / 100.0
         
     }
     func navigateToWebView(){
