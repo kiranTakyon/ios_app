@@ -403,7 +403,7 @@ extension AppDelegate {
 #elseif T360
         let appStoreId = ""
 #elseif CRESENT
-        let appStoreId = ""
+        let appStoreId = "1584652255"
 #elseif SSI
         let appStoreId = ""
 #elseif HABITAT
