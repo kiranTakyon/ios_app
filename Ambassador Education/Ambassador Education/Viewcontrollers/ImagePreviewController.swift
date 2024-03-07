@@ -13,7 +13,8 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     
     var imageUrl : String?
     var titleValue : String?
-    var imageArr = [String]()
+    //var imageArr = [String]()
+    var imageArr: [[String: String]] = []
     var position = Int()
     var pageTitle : String?
     
@@ -73,13 +74,23 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         } else {
             setStatesToUIElements(isHide: false)
         }
-        if let imageArrays = imageArr as? [String]{
+      /*  if let imageArrays = imageArr as? [String]{
             
             if imageArrays.count != 0 {
                 self.imageView.loadImageWithUrl(imageArrays[position])
             }
         }
-        
+        */
+        if let imageArrays = imageArr as? [[String: String]] {
+            if imageArrays.count != 0 {
+                let imageUrl = imageArrays[position]["imageUrl"]
+                let imageTitle = imageArrays[position]["imageTitle"]
+                
+                // Now you can use imageUrl and imageTitle as needed
+                self.imageView.loadImageWithUrl(imageUrl!)
+            }
+        }
+
         if let value = titleValue {
             if value.contains("&quot") || value.contains(";") {
                 let htmlDecode = value.replacingHTMLEntities
@@ -116,7 +127,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         
     }
     @IBAction func leftButtonScrollAction(_ sender: UIButton) {
-        if let imageArrays = imageArr as? [String] {
+       /* if let imageArrays = imageArr as? [String] {
             
             if position >= 0 {
                 if position != 0 {
@@ -128,11 +139,36 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
                 }
             }
         }
-        
+        */
+        if let imageArrays = imageArr as? [[String: String]] {
+            if position >= 0 {
+                if position != 0 {
+                    position -= 1
+                    scrollViewImage.setZoomScale(1.0, animated: false)
+                    
+                    if let imageUrl = imageArrays[position]["imageUrl"] {
+                        imageView.loadImageWithUrl(imageUrl)
+                        if let value = imageArrays[position]["imageTitle"] {
+                            if value.contains("&quot") || value.contains(";") {
+                                let htmlDecode = value.replacingHTMLEntities
+                                self.topHeaderView.titleLabel.attributedText = htmlDecode?.htmlToAttributedString
+                            } else {
+                                self.topHeaderView.title = value
+                            }
+                        }
+                    } else {
+                        // Handle the case where imageUrl is nil
+                    }
+                } else {
+                    SweetAlert().showAlert(kAppName, subTitle: "This is the last image", style: .warning)
+                }
+            }
+        }
+
     }
     
     @IBAction func rightButtonScrollAction(_ sender: UIButton) {
-        if let imageArrays = imageArr as? [String] {
+       /* if let imageArrays = imageArr as? [String] {
             
             if position < imageArr.count{
                 if position != imageArrays.count - 1{
@@ -144,6 +180,32 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
                 }
             }
         }
+        */
+        if let imageArrays = imageArr as? [[String: String]] {
+            if position < imageArrays.count {
+                if position != imageArrays.count - 1 {
+                    position += 1
+                    scrollViewImage.setZoomScale(1.0, animated: false)
+
+                    if let imageUrl = imageArrays[position]["imageUrl"] {
+                        imageView.loadImageWithUrl(imageUrl)
+                        if let value = imageArrays[position]["imageTitle"] {
+                            if value.contains("&quot") || value.contains(";") {
+                                let htmlDecode = value.replacingHTMLEntities
+                                self.topHeaderView.titleLabel.attributedText = htmlDecode?.htmlToAttributedString
+                            } else {
+                                self.topHeaderView.title = value
+                            }
+                        }
+                    } else {
+                        // Handle the case where imageUrl is nil
+                    }
+                } else {
+                    SweetAlert().showAlert(kAppName, subTitle: "This is the last image", style: .warning)
+                }
+            }
+        }
+
     }
     
     override func didReceiveMemoryWarning() {

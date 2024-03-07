@@ -654,7 +654,10 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         galleryDetail.imageUrl = url
         galleryDetail.pageTitle  = ""
         galleryDetail.titleValue = title
-        galleryDetail.imageArr = [url]
+        //galleryDetail.imageArr = [url]
+        let imageInfo = ["imageUrl": url, "imageTitle": title]
+        let imageArray = [imageInfo]
+        galleryDetail.imageArr = imageArray
         galleryDetail.position = indexPath
         self.navigationController?.pushViewController(galleryDetail, animated: true)
         }

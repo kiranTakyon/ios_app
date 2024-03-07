@@ -12,7 +12,9 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
     
     var categoryId : String?
     var categoryName:String?
-    var imageArray = [String]()
+    //var imageArray = [String]()
+    var imageArray: [[String: String]] = []
+
     var paginationNumber = 0
     var searchText = ""
     
@@ -108,7 +110,8 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    func fetchAllImageUrls(array : [TNGallery]) -> [String]{
+    /*
+     func fetchAllImageUrls_Old(array : [TNGallery]) -> [String]{
         if array.count != 0{
             for each in array{
                 if let imageUrl = each.thumbnail as? String{
@@ -118,8 +121,22 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         }
         return imageArray
     }
+     */
     
-    
+    func fetchAllImageUrls(array: [TNGallery]) -> [[String: String]] {
+       // var imageArray: [[String: String]] = []
+
+        if array.count != 0 {
+            for each in array {
+                if let imageUrl = each.thumbnail as? String,
+                   let imageTitle = each.galleryTitle as? String {
+                    let imageInfo = ["imageUrl": imageUrl, "imageTitle": imageTitle]
+                    imageArray.append(imageInfo)
+                }
+            }
+        }
+        return imageArray
+    }
     func downloadImage(url: URL) -> UIImage{
         var image  = UIImage()
         print("Download Started")
@@ -206,7 +223,6 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
-        
         
         let item = galleryItems[indexPath.row]
         

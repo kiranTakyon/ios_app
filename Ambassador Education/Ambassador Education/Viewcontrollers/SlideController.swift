@@ -116,7 +116,11 @@ class SlideController: UITableViewController,TaykonProtocol {
                 var url = notificationObject.catid ?? ""
                 vc.imageUrl = url
                 vc.isFromDashboardNotification = true
-                vc.imageArr = Array([url])
+                //vc.imageArr = Array([url])
+                let imageInfo = ["imageUrl": url, "imageTitle": ""]
+                let vcImageArr = [imageInfo]
+                vc.imageArr = vcImageArr
+
                 vc.pageTitle = notificationObject.title
                 vc.position = 0
             }
