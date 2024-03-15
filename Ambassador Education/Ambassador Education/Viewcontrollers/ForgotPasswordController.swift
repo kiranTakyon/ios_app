@@ -11,8 +11,8 @@ import DGActivityIndicatorView
 import BIZPopupView
 import EzPopup
 
-class ForgotPasswordController: UIViewController {
-    
+class ForgotPasswordViewController: UIViewController {
+
     @IBOutlet weak var passwordField: SkyFloatingLabelTextField!
     @IBOutlet weak var usernameField: SkyFloatingLabelTextField!
     
@@ -117,7 +117,7 @@ class ForgotPasswordController: UIViewController {
     
 }
 
-extension ForgotPasswordController: UITextFieldDelegate {
+extension ForgotPasswordViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
         {
             passwordField.resignFirstResponder()

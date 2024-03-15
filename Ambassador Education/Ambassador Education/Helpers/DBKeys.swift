@@ -18,6 +18,6 @@ class DBKeys{
     static  let FTPDetails = "FTPDetails"
     static  let userIdValue = "userIdValue"
     static  let language = "language"
-
+    static let shouldShowBirthdayWish = "shouldShowBirthdayWish"
 }
 

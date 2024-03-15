@@ -216,18 +216,18 @@ class ViewController: UIViewController {
 
                     let currentDateComponents = Calendar.current.dateComponents([.month, .day], from: Date())
 
-                    let dobString: String = resultDict["dob"] as! String
-                    if let dobDate = dateFormatter.date(from: dobString) {
+                    if let dobString: String = resultDict["dob"] as? String,
+                       let dobDate = dateFormatter.date(from: dobString) {
                         let dobComponents = Calendar.current.dateComponents([.month, .day], from: dobDate)
                         if currentDateComponents.month == dobComponents.month && currentDateComponents.day == dobComponents.day {
                             print("Match")
-                            UserDefaults.standard.set(true, forKey: "shoudShowBirthdayWish")
+                            UserDefaults.standard.set(true, forKey: DBKeys.shouldShowBirthdayWish)
                         } else {
                             print("Not Match")
-                            UserDefaults.standard.set(false, forKey: "shoudShowBirthdayWish")
+                            UserDefaults.standard.set(false, forKey: DBKeys.shouldShowBirthdayWish)
                         }
                     } else {
-                        UserDefaults.standard.set(false, forKey: "shoudShowBirthdayWish")
+                        UserDefaults.standard.set(false, forKey: DBKeys.shouldShowBirthdayWish)
                     }
                     
                     let VUser : Int = Int(resultDict["VerifiedUser"] as! String)!
@@ -235,7 +235,7 @@ class ViewController: UIViewController {
 
                     //(resultDict["Verify"] as! String) ?? resultDict["Email"] as! String
                     let pass_updt_period : Int = Int(resultDict["pass_updt_period"]as! String)!
-                   // let pass_updt_period : Int = 1
+                    // let pass_updt_period : Int = 1
 
                     DispatchQueue.main.async {
                         self.saveCredentials()
@@ -426,7 +426,7 @@ class ViewController: UIViewController {
     func showPopUpView(){
         
         let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "forgottPasswordVc") as! ForgotPasswordController
+        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
 //         var popUpViewVc : BIZPopupViewController?
 //        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))
 //        self.present(popUpViewVc!, animated: true, completion: nil)

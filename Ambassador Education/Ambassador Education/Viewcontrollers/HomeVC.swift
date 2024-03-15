@@ -8,20 +8,18 @@
 
 import UIKit
 import BIZPopupView
+import EzPopup
 
 var isFirstTime = true
 
 
 enum alertType:String{
-    
     case gallery        = "GAL"
     case html           = "HTML"
     case communicate    = "INTM"
     case noticeboard    = "NWS"
     case weeklyPlan     = "HMW"
     case bus            = "BUS"
-
-
 }
 
 var selectedAlertType : alertType = .gallery
@@ -49,14 +47,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         setSlideMenuProporties()
         addObserverToNotification()
 
-        let shoudShowBirthdayWish = UserDefaults.standard.bool(forKey: "shoudShowBirthdayWish")
-        if shoudShowBirthdayWish {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "BirthdayViewController") as! BirthdayViewController
-            self.present(vc, animated: true, completion: nil)
-        } else {
-            print("condition false")
-        }
+
     }
     
     func setAllTextFieldsEmpty() {
@@ -92,6 +83,15 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         if isFirstTime{
             self.revealViewController().revealToggle(self)
             isFirstTime = false
+
+            let shoudShowBirthdayWish = UserDefaults.standard.bool(forKey: DBKeys.shouldShowBirthdayWish)
+            if shoudShowBirthdayWish {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "BirthdayViewController") as! BirthdayViewController
+
+                let popupVC = PopupViewController(contentController: vc, popupWidth: 300, popupHeight: 500)
+                self.present(popupVC, animated: true)
+            }
         }
 
         if sibling {
@@ -270,9 +270,8 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
 
                 if self.notificationList.count == 0{
                     self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
-                    
+
                 }
-                
                 self.alertTable.reloadData()
             }
         }
@@ -484,7 +483,6 @@ enum msgTypes : String{
     case bus = "BUS"
 
 }
-
 
 class HomeListViewCell : UITableViewCell{
     
