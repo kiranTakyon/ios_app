@@ -48,6 +48,15 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         topHeaderView.delegate = self
         setSlideMenuProporties()
         addObserverToNotification()
+
+        let shoudShowBirthdayWish = UserDefaults.standard.bool(forKey: "shoudShowBirthdayWish")
+        if shoudShowBirthdayWish {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "BirthdayViewController") as! BirthdayViewController
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            print("condition false")
+        }
     }
     
     func setAllTextFieldsEmpty() {

@@ -79,7 +79,6 @@ class ViewController: UIViewController {
             SweetAlert().showAlert(kAppName, subTitle: fillFields, style: AlertStyle.error)
 
         }
-        
     }
     
     
@@ -108,7 +107,6 @@ class ViewController: UIViewController {
     
     
     func showSavedCredentials(){
-        
         guard let username = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.username) as? String else {return}
         guard let password = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.password) as? String else {return}
         guard let language = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.language) as? String else {return}
@@ -116,8 +114,6 @@ class ViewController: UIViewController {
         self.usernameField.text = username
         self.passwordField.text = password
         self.countryPicker.pickerTextField.text = language
-        
-        
         self.tickImage.image = tick
     }
     
@@ -217,25 +213,38 @@ class ViewController: UIViewController {
                     dateFormatter.dateFormat = "yyyy-MM-dd"
                     let dateLast : Date = dateFormatter.date(from: "\(resultDict["last_pswd_updt"]!)") ?? Date()
                     let dateNext : Date = Calendar.current.date(byAdding: .day, value: Int(resultDict["pass_updt_period"]as! String)!, to: dateLast) ?? Date()
-                    let datec1 : String = dateFormatter.string(from: Date())
-                    let dateToday : Date = dateFormatter.date(from: datec1) ?? Date()
+
+                    let currentDateComponents = Calendar.current.dateComponents([.month, .day], from: Date())
+
+                    let dobString: String = resultDict["dob"] as! String
+                    if let dobDate = dateFormatter.date(from: dobString) {
+                        let dobComponents = Calendar.current.dateComponents([.month, .day], from: dobDate)
+                        if currentDateComponents.month == dobComponents.month && currentDateComponents.day == dobComponents.day {
+                            print("Match")
+                            UserDefaults.standard.set(true, forKey: "shoudShowBirthdayWish")
+                        } else {
+                            print("Not Match")
+                            UserDefaults.standard.set(false, forKey: "shoudShowBirthdayWish")
+                        }
+                    } else {
+                        UserDefaults.standard.set(false, forKey: "shoudShowBirthdayWish")
+                    }
                     
                     let VUser : Int = Int(resultDict["VerifiedUser"] as! String)!
                     let Vemail : String = resultDict["Email"] as! String
+
                     //(resultDict["Verify"] as! String) ?? resultDict["Email"] as! String
                     let pass_updt_period : Int = Int(resultDict["pass_updt_period"]as! String)!
                    // let pass_updt_period : Int = 1
+
                     DispatchQueue.main.async {
                         self.saveCredentials()
                         UserDefaultsManager.manager.saveUserId(id:  (resultDict.value(forKey: "UserId") as? String).safeValue)
-                        if (dateNext < dateToday && pass_updt_period != 0) {
-                           
-                            if(VUser==1)
-                            {
+                        if (dateNext < Date() && pass_updt_period != 0) {
+
+                            if(VUser==1) {
                                 self.popUpVc()
-                            }
-                            else
-                            {
+                            } else {
                                 self.popVerify(email: Vemail)
                             }
                             return
@@ -246,37 +255,30 @@ class ViewController: UIViewController {
                         self.stopLoadingAnimation()
                         self.setCurrentCredentials(userName: self.usernameField.text!, password: self.passwordField.text!)
                         self.performSegue(withIdentifier: toHomeSegue, sender: nil)
-
                     }
-
-                }else{
-                    
+                } else {
                     if let errorMessage = resultDict["StatusMessage"] as? String{
                         DispatchQueue.main.async {
                             self.stopLoadingAnimation()
                             let msg = "Please check your credentials"
                             SweetAlert().showAlert(kAppName, subTitle: msg, style: AlertStyle.error)
-
                         }
-                    }
-                    else{
+                    } else {
                         DispatchQueue.main.async {
                             self.stopLoadingAnimation()
                              if let errorMessage = resultDict["MSG"] as? String{
                                 SweetAlert().showAlert(kAppName, subTitle: errorMessage, style: AlertStyle.error)
                             }
-                            
                         }
                     }
                 }
             }
-            
             print("result value is ",result)
             
         }
     }
-    func popVerify(email : String)
-    {
+    
+    func popVerify(email : String) {
         let appearance = SCLAlertView.SCLAppearance(
             kTextFieldHeight: 60,
             showCloseButton: false
@@ -284,7 +286,7 @@ class ViewController: UIViewController {
         let alert = SCLAlertView(appearance: appearance)
       
         let txt = alert.addTextField("Enter your new email id")
-        if(email != ""){
+        if(email != "") {
             txt.text = email
         }
         _ = alert.addButton("Send OTP") {
@@ -297,30 +299,28 @@ class ViewController: UIViewController {
                     alert.hideView()
                     self.errormsg(email: txt.text.safeValue,msg: "Please enter a valid email",isconfirm: false)
                 }
-            }
-            else{
+            } else {
             alert.hideView()
                 self.errormsg(email: txt.text.safeValue, msg: "Please enter a valid email", isconfirm: false)
             }
         }
         _ = alert.showEdit("Verify Email", subTitle:"Your password has expired. Please verify your email and change password to proceed.")
     }
-    func errormsg(email : String,msg : String, isconfirm : Bool)
-    {
+    
+    func errormsg(email : String,msg : String, isconfirm : Bool) {
           SweetAlert().showAlert("", subTitle:  msg, style: .warning,buttonTitle:"OK"){(isOtherButton) -> Void in
               if isOtherButton == true {
                   print(isconfirm)
-                  if(isconfirm == true)
-                  {
+                  if(isconfirm == true) {
                       self.popUpVcToEmailVerification(email: email)
-                  }
-                  else{
+                  } else {
                       self.popVerify(email: email)
                   }
               }
           }
     }
-    func callEmailVerificationApi(email: String){
+    
+    func callEmailVerificationApi(email: String) {
         self.startLoadingAnimation()
         let url = APIUrls().emailVerificationCode
         var dictionary = [String: String]()
@@ -330,11 +330,10 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.stopLoadingAnimation()
-                if result["StatusCode"] as? Int == 1{
+                if result["StatusCode"] as? Int == 1 {
                     self.popUpVcToEmailVerification(email: email)
-                }
-                else{
-                    if let mesaage = result["StatusMessage"] as? String{
+                } else {
+                    if let mesaage = result["StatusMessage"] as? String {
                         SweetAlert().showAlert(kAppName, subTitle:  mesaage, style: AlertStyle.error)
                     }
                 }
