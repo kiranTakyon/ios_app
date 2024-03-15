@@ -8,6 +8,7 @@
 
 import UIKit
 import BIZPopupView
+import EzPopup
 
 var isFirstTime = true
 
@@ -96,16 +97,25 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         if isFirstTime {
             self.revealViewController().revealToggle(self)
             isFirstTime = false
+
+            let shoudShowBirthdayWish = UserDefaults.standard.bool(forKey: DBKeys.shouldShowBirthdayWish)
+            if shoudShowBirthdayWish {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "BirthdayViewController") as! BirthdayViewController
+
+                let popupVC = PopupViewController(contentController: vc, popupWidth: 300, popupHeight: 500)
+                self.present(popupVC, animated: true)
+            } else {
+                print("condition false")
+            }
         }
 
         if sibling {
             postLogIn(id: siblingUserId)
-        }
-        else {
+        } else {
             let userId = UserDefaultsManager.manager.getUserId()
             setNotitificationList(id : userId)
         }
-        
     }
     
     func setSlideMenuProporties(){

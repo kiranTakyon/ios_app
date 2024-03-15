@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Forgot Password Controller-->
         <scene sceneID="pcN-YW-5aj">
             <objects>
-                <viewController storyboardIdentifier="forgottPasswordVc" id="E3b-Sn-fn1" customClass="ForgotPasswordController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordController" id="E3b-Sn-fn1" customClass="ForgotPasswordController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GH4-RZ-rQK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1985,15 +1985,15 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="C0G-mc-sxx"/>
+                                                <exclude reference="l43-yj-sjU"/>
+                                                <exclude reference="sVz-Zq-FTw"/>
                                                 <exclude reference="CdL-5C-rQC"/>
                                                 <exclude reference="K6s-sz-Gz7"/>
-                                                <exclude reference="Tu1-b3-PcD"/>
-                                                <exclude reference="l43-yj-sjU"/>
                                                 <exclude reference="lim-3Q-bOp"/>
-                                                <exclude reference="pre-52-1em"/>
-                                                <exclude reference="sVz-Zq-FTw"/>
                                                 <exclude reference="uwn-ae-zoT"/>
+                                                <exclude reference="C0G-mc-sxx"/>
+                                                <exclude reference="Tu1-b3-PcD"/>
+                                                <exclude reference="pre-52-1em"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -2202,8 +2202,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="e6T-jd-sYe"/>
-                                                            <exclude reference="Ruw-CG-buk"/>
                                                             <exclude reference="yb9-S6-SYE"/>
+                                                            <exclude reference="Ruw-CG-buk"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -2633,10 +2633,10 @@
                                                                     <exclude reference="Phl-7j-lOf"/>
                                                                     <exclude reference="Vxm-Oh-26B"/>
                                                                     <exclude reference="4I8-dr-Wai"/>
-                                                                    <exclude reference="TQI-th-8Bg"/>
-                                                                    <exclude reference="VTZ-lp-sYU"/>
                                                                     <exclude reference="fwW-Yv-GRV"/>
+                                                                    <exclude reference="VTZ-lp-sYU"/>
                                                                     <exclude reference="lgQ-sW-AWd"/>
+                                                                    <exclude reference="TQI-th-8Bg"/>
                                                                 </mask>
                                                             </variation>
                                                         </tableViewCellContentView>
@@ -3014,7 +3014,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Urg-Ms-pWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11023.188405797102" y="2458.6956521739135"/>
+            <point key="canvasLocation" x="10715" y="2458"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iIq-0I-KX1">
@@ -3477,8 +3477,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="2u9-Qk-tGf"/>
-                                                            <exclude reference="V3n-7e-Phy"/>
                                                             <exclude reference="m0R-NI-BoV"/>
+                                                            <exclude reference="V3n-7e-Phy"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -3615,8 +3615,8 @@
                                                             <exclude reference="KW5-mO-fBW"/>
                                                             <exclude reference="aFe-Ly-xCv"/>
                                                             <exclude reference="scz-Kk-Gji"/>
-                                                            <exclude reference="1UF-j7-Prf"/>
                                                             <exclude reference="CXb-Sx-rOA"/>
+                                                            <exclude reference="1UF-j7-Prf"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -6310,6 +6310,33 @@
             </objects>
             <point key="canvasLocation" x="7679" y="977"/>
         </scene>
+        <!--Birthday View Controller-->
+        <scene sceneID="aW4-UB-IHr">
+            <objects>
+                <viewController storyboardIdentifier="BirthdayViewController" id="Ajb-Ep-rpg" customClass="BirthdayViewController" customModule="Ajyal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D89-0r-rSn">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BirthdayImage" translatesAutoresizingMaskIntoConstraints="NO" id="cff-R9-9Dy">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="soe-1n-q7B"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cff-R9-9Dy" firstAttribute="leading" secondItem="soe-1n-q7B" secondAttribute="leading" id="Cl9-xY-S1q"/>
+                            <constraint firstAttribute="bottom" secondItem="cff-R9-9Dy" secondAttribute="bottom" id="VWr-Cb-X2I"/>
+                            <constraint firstItem="cff-R9-9Dy" firstAttribute="top" secondItem="D89-0r-rSn" secondAttribute="top" id="W0h-D9-U2B"/>
+                            <constraint firstItem="soe-1n-q7B" firstAttribute="trailing" secondItem="cff-R9-9Dy" secondAttribute="trailing" id="klx-ZQ-mGK"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="300" height="500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yh4-tK-Pbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11561" y="2458"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="1RO-2M-5PZ">
@@ -6347,7 +6374,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="2lM-61-uze"/>
+        <segue reference="9sU-wh-kmE"/>
         <segue reference="kZn-is-Jar"/>
         <segue reference="LfD-ZK-Stt"/>
     </inferredMetricsTieBreakers>
@@ -6358,6 +6385,7 @@
         <image name="Attachments" width="128" height="128"/>
         <image name="Back" width="128" height="128"/>
         <image name="Back2" width="25" height="25"/>
+        <image name="BirthdayImage" width="189" height="267"/>
         <image name="ChangePassword" width="25" height="25"/>
         <image name="CloseBlack" width="13" height="13"/>
         <image name="Compose" width="82.5" height="82.5"/>
@@ -6386,7 +6414,7 @@
         <image name="TakyonLogo" width="256" height="256"/>
         <image name="UnTick" width="15" height="15"/>
         <image name="User" width="256" height="256"/>
-        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="eye" catalog="system" width="32" height="32"/>
         <image name="g&amp;b" width="685" height="285"/>
         <image name="g&amp;b_bg" width="685.25225830078125" height="580.84967041015625"/>
         <image name="generalmenu" width="512" height="512"/>
@@ -6398,7 +6426,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
             <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -19,6 +19,6 @@ class DBKeys{
     static  let userIdValue = "userIdValue"
     static  let language = "language"
     static  let isNotifications = "isNotifications"
-
+    static  let shouldShowBirthdayWish = "shouldShowBirthdayWish"
 }
 
