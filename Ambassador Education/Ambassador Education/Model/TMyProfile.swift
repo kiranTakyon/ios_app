@@ -38,6 +38,7 @@ class TMyProfile{
     var userType : String?
     var isEmailVerified: String?
     var parentCode: String?
+    var EnableChangePassword: Int?
     
     init(values:NSDictionary) {
         self.isEmailVerified = values["VerifiedEmailLabel"] as? String
@@ -51,6 +52,6 @@ class TMyProfile{
         self.longitude = values["Longitude"] as? String
         self.userType = values["UserType"] as? String
         self.parentCode = values["parent_code"] as? String
+        self.EnableChangePassword = values["EnableChangePassword"] as? Int
     }
-
 }
