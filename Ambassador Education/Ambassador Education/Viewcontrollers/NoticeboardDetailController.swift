@@ -15,6 +15,7 @@ class NoticeboardDetailController: UIViewController {
     @IBOutlet weak var richView: RichEditorView!
     @IBOutlet weak var progressBar: ProgressViewBar!
     @IBOutlet weak var topHeaderView: TopHeaderView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let quickLookController = QLPreviewController()
     var fileURLs = [NSURL]()
@@ -30,20 +31,18 @@ class NoticeboardDetailController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         topHeaderView.delegate = self
         topHeaderView.shouldShowFirstRightButtons(false)
-       self.setVideoDownload()
-        self.setTitle()
-        if(NbID != "")
-        {
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 10.0
+        setVideoDownload()
+        setTitle()
+        if(NbID != "") {
             getDetailsbyID()
-        }
-        else
-        {
-            self.setHtml()
+        } else {
+            setHtml()
         }
         if isFromDashboardNotification {
             setSlideMenuProporties()
         }
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,34 +57,33 @@ class NoticeboardDetailController: UIViewController {
         }
     }
     
-    func setVideoDownload(){
+    func setVideoDownload() {
         videoDownload.delegate = self
         quickLookController.dataSource = self
         quickLookController.delegate = self
         quickLookController.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem()
     }
     
-    func adjustUITextViewHeight(arg : UITextView)
-    {
+    func adjustUITextViewHeight(arg : UITextView) {
         arg.translatesAutoresizingMaskIntoConstraints = true
         arg.sizeToFit()
         arg.isScrollEnabled = true
     }
-    func setTitle(){
+    
+    func setTitle() {
         richView.delegate = self
-        if let desc = detail?.title{
+        if let desc = detail?.title {
             self.topHeaderView.title = desc
-        }
-        else{
-            if let descValue = awarnessPlan?.name{
+        } else {
+            if let descValue = awarnessPlan?.name {
                 self.topHeaderView.title = descValue
             }
         }
     }
     
-  
+    
     @IBAction func downLoadButtonAction(_ sender: UIButton) {
-        if downLoadLink != ""{
+        if downLoadLink != "" {
             addBlurEffectToTableView(inputView: self.view, hide: false)
             progressBar.isHidden = false
             progressBar.progressBar.setProgress(1.0, animated: true)
@@ -94,36 +92,34 @@ class NoticeboardDetailController: UIViewController {
         }
     }
     
-    func getHrefLink(string : String){
-        if string.contains("http"){
+    func getHrefLink(string : String) {
+        if string.contains("http") {
             topHeaderView.shouldShowFirstRightButtons(true)
-        do {
-            let doc: Document = try! SwiftSoup.parse(string)
-            if let link: Element = try! doc.select("a").first(){
-            let linkHref: String = try! link.attr("href");
-            let correctLink = getLink(urlString: linkHref)
-            if verifyUrl(urlString:  correctLink){
-            downLoadLink = correctLink
+            do {
+                let doc: Document = try SwiftSoup.parse(string)
+                if let link: Element = try! doc.select("a").first() {
+                    let linkHref: String = try! link.attr("href");
+                    let correctLink = getLink(urlString: linkHref)
+                    if verifyUrl(urlString:  correctLink) {
+                        downLoadLink = correctLink
+                    }
+                } else {
+                    topHeaderView.shouldShowFirstRightButtons(false)
+                }
             }
-            }
-            else{
+            catch {
                 topHeaderView.shouldShowFirstRightButtons(false)
             }
-        }
-      catch {
-          topHeaderView.shouldShowFirstRightButtons(false)
-        }
-        }
-        else{
+        } else {
             topHeaderView.shouldShowFirstRightButtons(false)
         }
     }
     
     
     func getLink(urlString : String) -> String{
-        if urlString.contains("../"){
-            if let components = urlString.components(separatedBy: "../") as? [String]{
-                if components.count > 0{
+        if urlString.contains("../") {
+            if let components = urlString.components(separatedBy: "../") as? [String] {
+                if components.count > 0 {
                     return components[1]
                 }
             }
@@ -131,26 +127,25 @@ class NoticeboardDetailController: UIViewController {
         return urlString
     }
     
-        func verifyUrl(urlString: String?) -> (Bool){
-            var url : URL?
-            url = URL(string: urlString.safeValue)
-            return UIApplication.shared.canOpenURL(url!)
-        }
+    func verifyUrl(urlString: String?) -> (Bool) {
+        var url : URL?
+        url = URL(string: urlString.safeValue)
+        return UIApplication.shared.canOpenURL(url!)
+    }
     
-    func setHtml(){
+    func setHtml() {
         richView.editingEnabled = false
         //richView.isEditingEnabled = false
-
+        
         if let _ = detail{
-        if let desc = detail?.description{
-             let htmlDecode = desc.replacingHTMLEntities
-            richView.html = htmlDecode.safeValue
-            getHrefLink(string: htmlDecode.safeValue)
-//            print(richView.selectedHref)
+            if let desc = detail?.description {
+                let htmlDecode = desc.replacingHTMLEntities
+                richView.html = htmlDecode.safeValue
+                getHrefLink(string: htmlDecode.safeValue)
+                //            print(richView.selectedHref)
             }
-       }
-        else if let _ = awarnessPlan {
-            if let desc = awarnessPlan?.description{
+        } else if let _ = awarnessPlan {
+            if let desc = awarnessPlan?.description {
                 let htmlDecode = desc.replacingHTMLEntities
                 richView.html = htmlDecode!
                 topHeaderView.shouldShowFirstRightButtons(false)
@@ -158,8 +153,9 @@ class NoticeboardDetailController: UIViewController {
             }
         }
     }
-    func getDetailsbyID(){
-       // startLoadingAnimation()
+    
+    func getDetailsbyID() {
+        // startLoadingAnimation()
         let url = APIUrls().getNBDetails
         let userId = UserDefaultsManager.manager.getUserId()
         var dictionary = [String: Any]()
@@ -167,69 +163,48 @@ class NoticeboardDetailController: UIViewController {
         dictionary[DetailsKeys2().itemId] = NbID
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [self] (result) in
-     //   APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            //   APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
                 print(result)
-                if result["StatusCode"] as? Int == 1{
+                if result["StatusCode"] as? Int == 1 {
                     self.detail = TNNoticeBoardDetail(values: result["item"] as! NSDictionary)
-                   // if let messages = result["item"] as? NSArray{
-                   // if let messages = result["item"] as? NSArray{
-                       // let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
-                  //  print("hh1",messages)
-                //let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
-                   // print("hh2",list[0])
-                   // self.detail = list[0]
+                    // if let messages = result["item"] as? NSArray{
+                    // if let messages = result["item"] as? NSArray{
+                    // let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
+                    //  print("hh1",messages)
+                    //let list = ModelClassManager.sharedManager.createModelArray(data: messages, modelType: ModelType.TNNoticeBoardDetail) as! [TNNoticeBoardDetail]
+                    // print("hh2",list[0])
+                    // self.detail = list[0]
                     self.setHtml()
                     self.setTitle()
-               // }
-                self.stopLoadingAnimation()
-                }
-            else{
+                    // }
                     self.stopLoadingAnimation()
-                    SweetAlert().showAlert(kAppName, subTitle: "Not able to get the details", style: .warning)
+                } else {
+                    self.stopLoadingAnimation()
+                    _ = SweetAlert().showAlert(kAppName, subTitle: "Not able to get the details", style: .warning)
                 }
             }
         }
     }
 
-    
-    
     @IBAction func backAction(_ sender: Any) {
-       // self.navigationController?.popViewController(animated: true)
+        // self.navigationController?.popViewController(animated: true)
         if self.navigationController?.viewControllers.count == 1 {
             let vc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardCategoryController") as! CommunicateLandController
             self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else {
+        } else {
             self.navigationController!.popViewController(animated: true)
         }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
-extension NoticeboardDetailController:VideoDownloadDelegate{
+extension NoticeboardDetailController:VideoDownloadDelegate {
     
-    func loadingStarted(){
+    func loadingStarted() {
     }
     
-    func loadingEnded(){
+    func loadingEnded() {
         addBlurEffectToTableView(inputView: self.view, hide: true)
         progressBar.isHidden = true
     }
@@ -252,14 +227,14 @@ extension NoticeboardDetailController:VideoDownloadDelegate{
     
 }
 
-extension NoticeboardDetailController : QLPreviewControllerDataSource ,QLPreviewControllerDelegate{
+extension NoticeboardDetailController : QLPreviewControllerDataSource, QLPreviewControllerDelegate {
     
     func previewControllerWillDismiss(_ controller: QLPreviewController) {
         //
     }
     
     func previewControllerDidDismiss(_ controller: QLPreviewController) {
-        self.stopLoadingAnimation()
+        stopLoadingAnimation()
     }
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
@@ -270,21 +245,19 @@ extension NoticeboardDetailController : QLPreviewControllerDataSource ,QLPreview
     }
 }
 
-extension NoticeboardDetailController: RichEditorDelegate{
-
-   
+extension NoticeboardDetailController: RichEditorDelegate {
+    
     func richEditor(_ editor: RichEditorView, shouldInteractWith url: URL) -> Bool {
-            if url != nil{
-                self.stopLoadingAnimation()
-                return true
-            }
-            else{
-                self.stopLoadingAnimation()
-                return false
-            }
+        if url != nil {
+            self.stopLoadingAnimation()
+            return true
+        } else {
+            self.stopLoadingAnimation()
+            return false
         }
     }
-   
+}
+
 
 
 extension NoticeboardDetailController: TopHeaderDelegate {
@@ -293,7 +266,7 @@ extension NoticeboardDetailController: TopHeaderDelegate {
     }
     
     func searchButtonClicked(_ button: UIButton) {
-        if downLoadLink != ""{
+        if downLoadLink != "" {
             addBlurEffectToTableView(inputView: self.view, hide: false)
             progressBar.isHidden = false
             progressBar.progressBar.setProgress(1.0, animated: true)
@@ -302,4 +275,11 @@ extension NoticeboardDetailController: TopHeaderDelegate {
         }
     }
     
+}
+
+extension NoticeboardDetailController: UIScrollViewDelegate {
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return richView
+    }
 }

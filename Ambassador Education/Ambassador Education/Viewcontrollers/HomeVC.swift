@@ -80,7 +80,7 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     override func viewWillAppear(_ animated: Bool) {
         setProfileImageToRound()
 
-        if isFirstTime{
+        if isFirstTime {
             self.revealViewController().revealToggle(self)
             isFirstTime = false
 
