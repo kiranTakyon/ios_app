@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -3117,6 +3117,9 @@
                                     <constraint firstItem="mnR-5w-qk8" firstAttribute="height" secondItem="mk6-1f-s0U" secondAttribute="height" priority="750" id="jeS-5h-zDN"/>
                                     <constraint firstItem="mnR-5w-qk8" firstAttribute="leading" secondItem="mk6-1f-s0U" secondAttribute="leading" id="kBL-Yl-Xwf"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Mp1-2X-wYh" id="8Y9-1s-FOh"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3W2-HO-LFL"/>
@@ -3135,6 +3138,7 @@
                     <connections>
                         <outlet property="progressBar" destination="lnK-R6-Xfj" id="qfG-tb-wkg"/>
                         <outlet property="richView" destination="WtE-lE-dZZ" id="Vhw-RR-Wb7"/>
+                        <outlet property="scrollView" destination="mk6-1f-s0U" id="k0l-Q4-vAO"/>
                         <outlet property="topHeaderView" destination="mn5-5B-AFP" id="FDW-oW-PWh"/>
                     </connections>
                 </viewController>
@@ -6414,7 +6418,7 @@
         <image name="TakyonLogo" width="256" height="256"/>
         <image name="UnTick" width="15" height="15"/>
         <image name="User" width="256" height="256"/>
-        <image name="eye" catalog="system" width="32" height="32"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="g&amp;b" width="685" height="285"/>
         <image name="g&amp;b_bg" width="685.25225830078125" height="580.84967041015625"/>
         <image name="generalmenu" width="512" height="512"/>
