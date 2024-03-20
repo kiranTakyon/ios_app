@@ -114,7 +114,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         var verifiedEmail = ""
         var userType=""
         var parentCode = ""
-       // var EnableChangePassword = 0
         if let nameValue = profileInfo?.name{
             name = nameValue
         }
@@ -154,9 +153,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         //var titles = ["","","","","","",""]
         
         userType = getUserType().lowercased()
-        
-        print(profileInfo?.EnableChangePassword);
-        
+                
         if(userType=="parent" || userType == "student" || profileInfo?.EnableChangePassword == 1)
         {
             changePasswordLabel.isHidden=false
