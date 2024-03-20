@@ -17,7 +17,7 @@ class FTPUpload {
     
     var delegate : TaykonProtocol?
     var dataObj = NSMutableDictionary()
-
+    
     func upload(attachments : [String], isForDraft: Bool = false) {
         resultPaths.removeAll()
         if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary {
@@ -37,32 +37,29 @@ class FTPUpload {
                     dataRequest(urlweb: each, str: fileName, detail: ftpDetails, attach: attachments, completion: { (success) in
                         if success {
                             if self.dataObj.count == attachments.count {
-                                self.uploadAttachmentsData(detail:  ftpDetails,isForDraft: isForDraft)
+                                self.uploadAttachmentsData(detail:  ftpDetails, isForDraft: isForDraft)
                             }
-                        }
-                        else {
+                        } else {
                             
                         }
                     })
                 }
             }
-        }
-        else{
+        } else {
             self.delegate?.getUploadedAttachments(isUpload: false, isForDraft: isForDraft)
         }
     }
-
-    func convertDataFromImage(image : UIImage) -> Data{
-        if image != nil{
-            let data = image.jpegData(compressionQuality: 0.1)
-            return data!
+    
+    func convertDataFromImage(image : UIImage) -> Data {
+        if let data = image.jpegData(compressionQuality: 0.1) {
+            return data
         }
         return Data()
     }
     
     func dataRequest(urlweb: String, str : String, detail: NSDictionary, attach : [String], completion: @escaping (_ success: Bool) -> Void) {
         
-        switch str.lastWord{
+        switch str.lastWord {
         case "jpg","jpeg","png","JPG","JPEG","PNG":
             let url = URL(string : urlweb)
             let data = NSData(contentsOf: url!)
@@ -91,12 +88,8 @@ class FTPUpload {
             }
             task.resume()
         }
-        
-        
-    }
-    
-    
-
+     }
+ 
     func uploadAttachmentsData(detail : NSDictionary, isForDraft: Bool = false){
         if  let username = detail["UserName"] as? String{
             let password = detail["Password"] as? String
@@ -112,16 +105,16 @@ class FTPUpload {
     
     func checkValues(credentials : NSDictionary, isForDraft: Bool = false){
         
-        if  let username = credentials["UserName"] as? String{
+        if  let username = credentials["UserName"] as? String {
             let password = credentials["Password"] as? String
             let serverHost = credentials["Server"] as? String
             let serverPath = credentials["ServerPath"] as? String
             
             let pass =  (password?.base64Decoded().safeValue).safeValue
             let uploadManager = FTPUploadHelper(baseUrl: serverHost.safeValue, userName: username, password: pass, directoryPath: "")
-
-              if dataObj.count > 0{
-                for each in dataObj{
+            
+            if dataObj.count > 0 {
+                for each in dataObj {
                     uploadManager.send(data: each.value as! Data, with: each.key as! String) { (success) in
                         DispatchQueue.main.async {
                             if success{
@@ -132,23 +125,22 @@ class FTPUpload {
                                     self.dataObj.removeAllObjects()
                                     self.delegate?.getUploadedAttachments(isUpload : true, isForDraft: isForDraft)
                                 }
-                            }
-                            else{
+                            } else {
                                 self.delegate?.getUploadedAttachments(isUpload : false, isForDraft: isForDraft)
                             }
                         }
                         
                     }
+                }
             }
+            
+            else{
+                self.delegate?.getUploadedAttachments(isUpload : true, isForDraft: isForDraft)
             }
-
-        else{
-            self.delegate?.getUploadedAttachments(isUpload : true, isForDraft: isForDraft)
         }
     }
-    }
-
-    }
+    
+}
 
 
 

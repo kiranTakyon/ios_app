@@ -14,7 +14,8 @@ import MobileCoreServices
 var typingCount = 0
 
 
-class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtocol,UITextFieldDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate ,KSTokenViewDelegate {
+class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProtocol, UITextFieldDelegate, UIDocumentPickerDelegate, KSTokenViewDelegate {
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }
@@ -400,7 +401,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         }
     }
     
-    func getDocumentsFromiCloud(){
+    func getDocumentsFromiCloud() {
         let types = [kUTTypeText,
                      kUTTypePlainText,
                      kUTTypeUTF8PlainText,
@@ -429,45 +430,36 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
                      kUTTypeRawImage,
                      kUTTypeScalableVectorGraphics,
                      //kUTTypeLivePhoto,
-            kUTTypeAudiovisualContent,
-            kUTTypeMovie,
-            kUTTypeVideo,
-            kUTTypeAudio,
-            kUTTypeQuickTimeMovie,
-            kUTTypeMPEG,
-            kUTTypeMPEG2Video,
-            kUTTypeMPEG2TransportStream,
-            kUTTypeMP3,
-            kUTTypeMPEG4,
-            kUTTypeMPEG4Audio,
-            kUTTypeAppleProtectedMPEG4Audio,
-            kUTTypeAppleProtectedMPEG4Video,
-            kUTTypeAVIMovie,
-            kUTTypeAudioInterchangeFileFormat,
-            kUTTypeWaveformAudio,
-            kUTTypeMIDIAudio,
-            kUTTypeSpreadsheet,
-            kUTTypePresentation,
-            kUTTypeDatabase,
-            kUTTypeInkText,
-            kUTTypeFont,
-            kUTTypeBookmark,
-            kUTType3DContent,
-            kUTTypePKCS12]
+                     kUTTypeAudiovisualContent,
+                     kUTTypeMovie,
+                     kUTTypeVideo,
+                     kUTTypeAudio,
+                     kUTTypeQuickTimeMovie,
+                     kUTTypeMPEG,
+                     kUTTypeMPEG2Video,
+                     kUTTypeMPEG2TransportStream,
+                     kUTTypeMP3,
+                     kUTTypeMPEG4,
+                     kUTTypeMPEG4Audio,
+                     kUTTypeAppleProtectedMPEG4Audio,
+                     kUTTypeAppleProtectedMPEG4Video,
+                     kUTTypeAVIMovie,
+                     kUTTypeAudioInterchangeFileFormat,
+                     kUTTypeWaveformAudio,
+                     kUTTypeMIDIAudio,
+                     kUTTypeSpreadsheet,
+                     kUTTypePresentation,
+                     kUTTypeDatabase,
+                     kUTTypeInkText,
+                     kUTTypeFont,
+                     kUTTypeBookmark,
+                     kUTType3DContent,
+                     kUTTypePKCS12]
         
-        let importMenu = UIDocumentMenuViewController(documentTypes: types as [String], in: UIDocumentPickerMode.import)
+        let importMenu = UIDocumentPickerViewController(documentTypes: types as [String], in: UIDocumentPickerMode.import)
         importMenu.delegate = self
         present(importMenu, animated: true, completion: nil)
     }
-    
-    func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController)
-    {
-        print("document selected \(documentPicker)")
-        
-        documentPicker.delegate = self
-        present(documentPicker, animated: true, completion: nil)
-    }
-
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         for each in urls {
@@ -507,7 +499,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         subjectTextField.resignFirstResponder()
         personView.resignFirstResponder()
         bccView.resignFirstResponder()
-        editorView.resignFirstResponder()
+        _ = editorView.resignFirstResponder()
         self.resignFirstResponder()
         var ftpUrls = [String]()
         if checkFieldsEmpty().0 != true {
@@ -596,7 +588,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             } else {
                 self.startLoadingAnimation()
                 if attachmentItems.count > 0 {
-                    connectFtp(list : fileUrls,isForDraft: isForDraft)
+                    connectFtp(list : fileUrls, isForDraft: isForDraft)
                 } else if isForDraft {
                     saveMessageToDraft()
                 } else  {
@@ -1094,8 +1086,8 @@ extension ComposeController: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 	
         if let imageURL = info["UIImagePickerControllerImageURL"] as? URL {
             attachmentItems.append(imageURL.absoluteString)
@@ -1281,7 +1273,7 @@ extension ComposeController: TopHeaderDelegate {
                 }
             }
          self.checkForStudAndParent(fileUrls : ftpUrls, isForDraft: isForDraft)
-        }else{
+        } else {
             SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
         }
     }
