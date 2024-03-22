@@ -59,7 +59,7 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
     var strSubject : String = ""
     var strID : String = ""
     var strDId : String = ""
-    var attachmentItems = [String]()
+    var attachmentTypes: [AttachmentType] = []
     var weeklyPlan : WeeklyPlanList?
     var fileUpload = FTPUpload()
  
@@ -100,7 +100,7 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
         dictionary["weeklyplandate"] = self.weeklyPlan?.date
         //        "weeklyplandate":"Tuesday October 27th 2020",
         dictionary["weeklyplandesc"] = ""
-        dictionary["AttachIcon"] = attachmentItems.count > 0 ? 1 : 0
+        dictionary["AttachIcon"] = attachmentTypes.count > 0 ? 1 : 0
         dictionary["Comments"] = bodyText
         dictionary["divisionId"] = strDId
         dictionary["fdate"] = self.weeklyPlan?.date
@@ -116,10 +116,10 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
         
         var tempattachments = [[String : String]]()
         var tempAttachmnt = [String : String]()
-        if attachmentItems.count > 0 {
-            for each in attachmentItems {
-                tempAttachmnt["LinkName"] = returnFileName(file: each)
-                tempAttachmnt["Link"] = each
+        if attachmentTypes.count > 0 {
+            for each in attachmentTypes {
+                tempAttachmnt["LinkName"] = returnFileName(file: each.attachmentItem)
+                tempAttachmnt["Link"] = each.attachmentItem
                 tempattachments.append(tempAttachmnt)
             }
         }
@@ -212,12 +212,21 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         for each in urls {
-            attachmentItems.append(each.absoluteString)
+            addItemIfUnique(type: "iCloud", attachmentItem: each.absoluteString)
         }
-        let tempArr = attachmentItems
-        attachmentItems = removeDuplicates(array: tempArr)
-        self.lblChooseFile.text = "\(attachmentItems.count) file is attached"
+        self.lblChooseFile.text = "\(attachmentTypes.count) file is attached"
 //        attachmentTb.reloadData()
+    }
+    
+    func addItemIfUnique(type: String, attachmentItem: String) {
+        let newAttachment = AttachmentType(type: type, attachmentItem: attachmentItem)
+        
+        // Check if the attachmentItem already exists in the array
+        if !attachmentTypes.contains(where: { $0.attachmentItem == attachmentItem }) {
+            attachmentTypes.append(newAttachment)
+        } else {
+            print("Attachment item \(attachmentItem) already exists.")
+        }
     }
     
     func removeDuplicates(array: [String]) -> [String] {
@@ -239,7 +248,7 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
     
     @IBAction func btnSelectFile(_ sender: UIButton) {
         self.txtViewComment.resignFirstResponder()
-        if attachmentItems.count > 4 {
+        if attachmentTypes.count > 4 {
             _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
         } else {
             let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
@@ -273,12 +282,12 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
             return
         }
         var ftpUrls = [String]()
-        if attachmentItems.count > 0{
-            for each in attachmentItems{
-               ftpUrls.append(each)
+        if attachmentTypes.count > 0 {
+            for each in attachmentTypes {
+                ftpUrls.append(each.attachmentItem)
             }
         }
-        if attachmentItems.count > 0 {
+        if attachmentTypes.count > 0 {
             connectFtp(list : ftpUrls)
         } 
         let sendDict = self.getSendDictionary()
@@ -314,7 +323,7 @@ class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDoc
     func connectFtp(list : [String]){
         if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary{
             fileUpload.delegate = self
-            fileUpload.upload(attachments: list )
+            fileUpload.upload(attachments: attachmentTypes )
     }
     }
 }
@@ -329,12 +338,11 @@ extension AddCommentVC: UIImagePickerControllerDelegate, UINavigationControllerD
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
         if let imageURL = info["UIImagePickerControllerImageURL"] as? URL {
-            attachmentItems.append(imageURL.absoluteString)
+            addItemIfUnique(type: "Gallery", attachmentItem: imageURL.absoluteString)
         }
-        let tempArr = attachmentItems
-        attachmentItems = removeDuplicates(array: tempArr)
+
 //        attachmentTb.reloadData()
-        self.lblChooseFile.text = "\(attachmentItems.count) file is atteched"
+        self.lblChooseFile.text = "\(attachmentTypes.count) file is atteched"
         picker.dismiss(animated: true, completion: nil)
     }
     fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
