@@ -14,12 +14,18 @@ import MobileCoreServices
 var typingCount = 0
 
 
-class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtocol,UITextFieldDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate ,KSTokenViewDelegate {
+struct AttachmentType {
+    let type: String
+    let attachmentItem: String
+}
+
+class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProtocol, UITextFieldDelegate, UIDocumentPickerDelegate, KSTokenViewDelegate {
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }
     
-
+    
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var attachmentTb: UITableView!
     @IBOutlet weak var attachmenyTBHeight: NSLayoutConstraint!
@@ -29,25 +35,25 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     @IBOutlet weak var groupViewHeight: NSLayoutConstraint!
     @IBOutlet weak var personViewHeight: NSLayoutConstraint!
     
-
+    
     @IBOutlet weak var groupView: KSTokenView!
     @IBOutlet weak var personView: KSTokenView!
     @IBOutlet weak var bccView: KSTokenView!
     @IBOutlet weak var subjectTextField: UITextField!
     
-
+    
     @IBOutlet weak var editorView: RichEditorView!
     @IBOutlet weak var toolBar: RichEditorToolbar!
     @IBOutlet weak var topHeaderView: TopHeaderView!
- 
-
+    
+    
     @IBOutlet weak var suggestionConstraint: NSLayoutConstraint!
     
     var forwardMsgIdValue = String()
     //var fileUpload = UploadFTP()
     var fileUpload = FTPUpload()
     var isReplyMail = false
-    var attachmentItems = [String]()
+    var attachmentTypes: [AttachmentType] = []
     var titleText = String()
     var seletedGroups = ""
     var selectedPersons = ""
@@ -66,7 +72,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     var session: Session!
     var draftMessageList = [TinboxMessage]()
     var commDraftId: Int?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
@@ -98,7 +104,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     
     
     func getTheIncluded(){
-       
+        
     }
     func seperateNameWithCommas(string : String,view:KSTokenView ){
         if string != ""{
@@ -141,7 +147,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             dict.setValue(obj?.senderId.safeValue, forKey: "UserId")
             dict.setValue(obj?.sender.safeValue, forKey: "name")
             if groupIds.count > 0{
-              dict.setValue("\(groupIds[0])", forKey: "GroupId")
+                dict.setValue("\(groupIds[0])", forKey: "GroupId")
             }
             else{
                 dict.setValue("0", forKey: "GroupId")
@@ -149,32 +155,32 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             dict.setValue("0", forKey: "RecipientType")
             selectedPersonItems = [TNPerson(values : dict)]
         }
-           else if titleText == "Reply All" || titleText == "الرد على الجميع"{
-             setReplyCommonFunctions()
-             setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
-             seperateNameWithCommas(string: selectedPersons, view: personView)
-             seperateNameWithCommas(string: selectedPersonCC, view: bccView)
-            }
-       
-      else  if titleText.contains("Forward") ||  titleText.contains("إلى الأمام")  {
+        else if titleText == "Reply All" || titleText == "الرد على الجميع"{
+            setReplyCommonFunctions()
+            setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
+            seperateNameWithCommas(string: selectedPersons, view: personView)
+            seperateNameWithCommas(string: selectedPersonCC, view: bccView)
+        }
+        
+        else  if titleText.contains("Forward") ||  titleText.contains("إلى الأمام")  {
             isReplyMail = false
             subjectTextField.text = "Fwd: " + (obj?.subject.safeValue).safeValue
             stringFromHtml(string: (obj?.message).safeValue, method: titleText)
-
+            
             groupView.placeholder = "Select Group"
             groupView.searchResultHeight = 500
             groupView.minimumCharactersToSearch = 0
             setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
-      } else if titleText == "Draft" {
-          setDraft()
-          isReplyMail = false
-          groupView.placeholder = "Select Group"
-          groupView.searchResultHeight = 500
-          groupView.minimumCharactersToSearch = 0
-          //heightConstraint.constant = 100
-          setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
-          //seperateNameWithCommas(string: selectedPersons, view: personView)
-      } else{
+        } else if titleText == "Draft" {
+            setDraft()
+            isReplyMail = false
+            groupView.placeholder = "Select Group"
+            groupView.searchResultHeight = 500
+            groupView.minimumCharactersToSearch = 0
+            //heightConstraint.constant = 100
+            setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
+            //seperateNameWithCommas(string: selectedPersons, view: personView)
+        } else {
             isReplyMail = false
             groupView.placeholder = "Select Group"
             groupView.searchResultHeight = 500
@@ -194,21 +200,21 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     }
     
     func getTokenView(tokenView : KSTokenView,placeHolder : String){
-                tokenView.delegate = self
-                tokenView.placeholder = placeHolder
-                tokenView.shouldHideSearchResultsOnSelect = true
-                tokenView.shouldSortResultsAlphabatically = false
-                tokenView.shouldDisplayAlreadyTokenized = true
-                tokenView.shouldDeleteTokenOnBackspace = true
-                tokenView.minimumCharactersToSearch = 0
-                tokenView.searchResultHeight = 500
-                tokenView.activityIndicatorColor = UIColor.lightGray
-                tokenView.cursorColor = UIColor.gray
-                tokenView.direction = .horizontal
-                tokenView.style = .rounded
+        tokenView.delegate = self
+        tokenView.placeholder = placeHolder
+        tokenView.shouldHideSearchResultsOnSelect = true
+        tokenView.shouldSortResultsAlphabatically = false
+        tokenView.shouldDisplayAlreadyTokenized = true
+        tokenView.shouldDeleteTokenOnBackspace = true
+        tokenView.minimumCharactersToSearch = 0
+        tokenView.searchResultHeight = 500
+        tokenView.activityIndicatorColor = UIColor.lightGray
+        tokenView.cursorColor = UIColor.gray
+        tokenView.direction = .horizontal
+        tokenView.style = .rounded
     }
     
-
+    
     func setRichToolbarProporties(){
         toolBar.tintColor = UIColor.white
         toolBar.barTintColor = UIColor.black.withAlphaComponent(0.3)
@@ -229,7 +235,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         setBorderColor()
     }
     
-
+    
     //Did selction method of suggestion Table
     
     
@@ -237,102 +243,102 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         
         if currentSelectedTag == 0{
             if groupItems.count > 0{
-
-            let item = groupItems[selectedIndex]
-            if !groupIds.contains((Int(String(describing: item.id.safeValue)).safeValueOfInt)){
-                isIncluded = false
-
-                item.setRecipieValues(type: 0)
-                seletedGroups.append("\(item.name.safeValue),")
-                groupIds.append((Int(String(describing: item.id.safeValue)).safeValueOfInt))
+                
+                let item = groupItems[selectedIndex]
+                if !groupIds.contains((Int(String(describing: item.id.safeValue)).safeValueOfInt)){
+                    isIncluded = false
+                    
+                    item.setRecipieValues(type: 0)
+                    seletedGroups.append("\(item.name.safeValue),")
+                    groupIds.append((Int(String(describing: item.id.safeValue)).safeValueOfInt))
+                }
+                else{
+                    isIncluded = true
+                }
             }
-            else{
-                isIncluded = true
-            }
-        }
         }else if currentSelectedTag == 1 {
             if personItems.count > 0{
-            if let item = personItems[selectedIndex] as? TNPerson{
-            if !personsIds.contains(item.id.safeValue){
-                isIncluded = false
-
-            let nameVal = item.name.safeValue
-            item.setRecipieValues(type: 0)
-        
-            selectedPersonItems.append(item)
-            
-            let word = nameVal
-            if let lowerBound = word.range(of: "(")?.lowerBound {
-                
-                let cutWord = word.substring(to: lowerBound)
-                selectedPersons.append("\(cutWord),")
-                
-            }
-            else{
-                selectedPersons.append(word + ",")
-            }
-            
-            personsIds.append(item.id.safeValue)
-            }
-            else{
-                isIncluded = true
-            }
-        }
-        }
-        }else if currentSelectedTag == 2{
-            if personItems.count > 0{
-
-            if let item = personItems[selectedIndex] as? TNPerson{
-            
-            let nameVal = item.name.safeValue
-            if selectedPersonItems.count > 0{
-                for each in selectedPersonItems{
-                    if each.id == item.id{
-                        isIncluded = true
-                    }
-                    else{
+                if let item = personItems[selectedIndex] as? TNPerson{
+                    if !personsIds.contains(item.id.safeValue){
                         isIncluded = false
-                        item.setRecipieValues(type: 1)
+                        
+                        let nameVal = item.name.safeValue
+                        item.setRecipieValues(type: 0)
                         
                         selectedPersonItems.append(item)
-                        
                         
                         let word = nameVal
                         if let lowerBound = word.range(of: "(")?.lowerBound {
                             
                             let cutWord = word.substring(to: lowerBound)
-                            selectedPersonCC.append("\(cutWord),")
+                            selectedPersons.append("\(cutWord),")
                             
+                        }
+                        else{
+                            selectedPersons.append(word + ",")
+                        }
+                        
+                        personsIds.append(item.id.safeValue)
+                    }
+                    else{
+                        isIncluded = true
+                    }
+                }
+            }
+        }else if currentSelectedTag == 2{
+            if personItems.count > 0{
+                
+                if let item = personItems[selectedIndex] as? TNPerson{
+                    
+                    let nameVal = item.name.safeValue
+                    if selectedPersonItems.count > 0{
+                        for each in selectedPersonItems{
+                            if each.id == item.id{
+                                isIncluded = true
+                            }
+                            else{
+                                isIncluded = false
+                                item.setRecipieValues(type: 1)
+                                
+                                selectedPersonItems.append(item)
+                                
+                                
+                                let word = nameVal
+                                if let lowerBound = word.range(of: "(")?.lowerBound {
+                                    
+                                    let cutWord = word.substring(to: lowerBound)
+                                    selectedPersonCC.append("\(cutWord),")
+                                    
+                                }
+                            }
                         }
                     }
                 }
             }
-            }
         }
-        }
-            else{
+        else{
             if personItems.count > 0{
-
-            if let item = personItems[selectedIndex] as? TNPerson{
-
-                isIncluded = false
-                item.setRecipieValues(type: 1)
                 
-                selectedPersonItems.append(item)
-                
-                let nameVal = item.name.safeValue
-
-                let word = nameVal
-                if let lowerBound = word.range(of: "(")?.lowerBound {
+                if let item = personItems[selectedIndex] as? TNPerson{
                     
-                    let cutWord = word.substring(to: lowerBound)
-                    selectedPersonCC.append("\(cutWord),")
+                    isIncluded = false
+                    item.setRecipieValues(type: 1)
                     
+                    selectedPersonItems.append(item)
+                    
+                    let nameVal = item.name.safeValue
+                    
+                    let word = nameVal
+                    if let lowerBound = word.range(of: "(")?.lowerBound {
+                        
+                        let cutWord = word.substring(to: lowerBound)
+                        selectedPersonCC.append("\(cutWord),")
+                        
+                    }
                 }
             }
         }
     }
-        }
     
     
     func checkFieldsEmpty() -> (Bool,String,Int){
@@ -341,29 +347,29 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             if groupView.placeholder == "Select Person"{
                 groupView.searchResultHeight = 0.0
                 groupView.minimumCharactersToSearch = 500
-
-             return (true,"Sorry, Please select a person to reply.",0)
+                
+                return (true,"Sorry, Please select a person to reply.",0)
             }
             return (true,"Sorry, Please select a Group to send.",0)
         }
         else if personView.text == ""{
             if !personView.isHidden{
-            guard let user = UserDefaultsManager.manager.getUserType() as? String else{
+                guard let user = UserDefaultsManager.manager.getUserType() as? String else{
+                    
+                }
+                
+                if user == UserType.parent.rawValue || user == UserType.student.rawValue{
+                    return (true,"Sorry, Please select a group or a person",1)
+                }
                 
             }
-            
-            if user == UserType.parent.rawValue || user == UserType.student.rawValue{
-                return (true,"Sorry, Please select a group or a person",1)
-            }
-   
         }
-        }
-   
+        
         return (false,"",0)
     }
-
+    
     @IBAction func attachmentAction(_ sender: UIButton) {
-        if attachmentItems.count > 4 {
+        if attachmentTypes.count > 4 {
             _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
         } else {
             let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
@@ -400,7 +406,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         }
     }
     
-    func getDocumentsFromiCloud(){
+    func getDocumentsFromiCloud() {
         let types = [kUTTypeText,
                      kUTTypePlainText,
                      kUTTypeUTF8PlainText,
@@ -429,54 +435,54 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
                      kUTTypeRawImage,
                      kUTTypeScalableVectorGraphics,
                      //kUTTypeLivePhoto,
-            kUTTypeAudiovisualContent,
-            kUTTypeMovie,
-            kUTTypeVideo,
-            kUTTypeAudio,
-            kUTTypeQuickTimeMovie,
-            kUTTypeMPEG,
-            kUTTypeMPEG2Video,
-            kUTTypeMPEG2TransportStream,
-            kUTTypeMP3,
-            kUTTypeMPEG4,
-            kUTTypeMPEG4Audio,
-            kUTTypeAppleProtectedMPEG4Audio,
-            kUTTypeAppleProtectedMPEG4Video,
-            kUTTypeAVIMovie,
-            kUTTypeAudioInterchangeFileFormat,
-            kUTTypeWaveformAudio,
-            kUTTypeMIDIAudio,
-            kUTTypeSpreadsheet,
-            kUTTypePresentation,
-            kUTTypeDatabase,
-            kUTTypeInkText,
-            kUTTypeFont,
-            kUTTypeBookmark,
-            kUTType3DContent,
-            kUTTypePKCS12]
+                     kUTTypeAudiovisualContent,
+                     kUTTypeMovie,
+                     kUTTypeVideo,
+                     kUTTypeAudio,
+                     kUTTypeQuickTimeMovie,
+                     kUTTypeMPEG,
+                     kUTTypeMPEG2Video,
+                     kUTTypeMPEG2TransportStream,
+                     kUTTypeMP3,
+                     kUTTypeMPEG4,
+                     kUTTypeMPEG4Audio,
+                     kUTTypeAppleProtectedMPEG4Audio,
+                     kUTTypeAppleProtectedMPEG4Video,
+                     kUTTypeAVIMovie,
+                     kUTTypeAudioInterchangeFileFormat,
+                     kUTTypeWaveformAudio,
+                     kUTTypeMIDIAudio,
+                     kUTTypeSpreadsheet,
+                     kUTTypePresentation,
+                     kUTTypeDatabase,
+                     kUTTypeInkText,
+                     kUTTypeFont,
+                     kUTTypeBookmark,
+                     kUTType3DContent,
+                     kUTTypePKCS12]
         
-        let importMenu = UIDocumentMenuViewController(documentTypes: types as [String], in: UIDocumentPickerMode.import)
+        let importMenu = UIDocumentPickerViewController(documentTypes: types as [String], in: UIDocumentPickerMode.import)
         importMenu.delegate = self
         present(importMenu, animated: true, completion: nil)
     }
     
-    func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController)
-    {
-        print("document selected \(documentPicker)")
-        
-        documentPicker.delegate = self
-        present(documentPicker, animated: true, completion: nil)
-    }
-
-    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         for each in urls {
-            attachmentItems.append(each.absoluteString)
+            addItemIfUnique(type: "iCloud", attachmentItem: each.absoluteString)
         }
-        let tempArr = attachmentItems
-        attachmentItems = removeDuplicates(array: tempArr)
-        
         attachmentTb.reloadData()
+    }
+    
+    
+    func addItemIfUnique(type: String, attachmentItem: String) {
+        let newAttachment = AttachmentType(type: type, attachmentItem: attachmentItem)
+        
+        // Check if the attachmentItem already exists in the array
+        if !attachmentTypes.contains(where: { $0.attachmentItem == attachmentItem }) {
+            attachmentTypes.append(newAttachment)
+        } else {
+            print("Attachment item \(attachmentItem) already exists.")
+        }
     }
     
     func removeDuplicates(array: [String]) -> [String] {
@@ -501,23 +507,23 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     }
     
     @IBAction func sendMailAction(_ sender: Any) {
-       
+        
         self.view.endEditing(true)
         groupView.resignFirstResponder()
         subjectTextField.resignFirstResponder()
         personView.resignFirstResponder()
         bccView.resignFirstResponder()
-        editorView.resignFirstResponder()
+        _ = editorView.resignFirstResponder()
         self.resignFirstResponder()
         var ftpUrls = [String]()
         if checkFieldsEmpty().0 != true {
-
-            if attachmentItems.count > 0 {
-                for each in attachmentItems {
-                   ftpUrls.append(each)
+            
+            if attachmentTypes.count > 0 {
+                for each in attachmentTypes {
+                    ftpUrls.append(each.attachmentItem)
                 }
             }
-         self.checkForStudAndParent(fileUrls : ftpUrls)
+            self.checkForStudAndParent(fileUrls : ftpUrls)
         }else{
             SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
         }
@@ -545,7 +551,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             if let statusCode = result["StatusCode"] as? Int {
                 DispatchQueue.main.async {
                     if statusCode == 1 {
-                        self.attachmentItems.removeAll()
+                        self.attachmentTypes.removeAll()
                         self.groupView.text = ""
                         resultPaths.removeAll()
                         self.selectedPersonItems.removeAll()
@@ -591,19 +597,19 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         
         guard (UserDefaultsManager.manager.getUserType() as? String) != nil else { return }
         
-       // if user == UserType.parent.rawValue || user == UserType.student.rawValue {
-            if self.checkFieldsEmpty().2 == 1 {
-            } else {
-                self.startLoadingAnimation()
-                if attachmentItems.count > 0 {
-                    connectFtp(list : fileUrls,isForDraft: isForDraft)
-                } else if isForDraft {
-                    saveMessageToDraft()
-                } else  {
-                    sendMail()
-                }
+        // if user == UserType.parent.rawValue || user == UserType.student.rawValue {
+        if self.checkFieldsEmpty().2 == 1 {
+        } else {
+            self.startLoadingAnimation()
+            if attachmentTypes.count > 0 {
+                connectFtp(list : fileUrls, isForDraft: isForDraft)
+            } else if isForDraft {
+                saveMessageToDraft()
+            } else  {
+                sendMail()
             }
         }
+    }
     
     func checkUserTypeAndDoNeedful(){
         let _ = UserDefaultsManager.manager.getUserType()
@@ -636,27 +642,27 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         let bodyText = self.editorView.contentHTML
         dictionary["client_ip"] =  getUdidOfDevide()
         dictionary["UserId"] = userId
-      //  if !isReply{
-            dictionary["Recipients"] = self.getRecipients()
-       // }
-//        else{
-//            var recipients = [[String: Any]]()
-//            var recipient = [String:Any]()
-//            recipient["UserId"] = obj?.senderId
-//            recipient["Name"] = obj?.sender
-//            recipient["RecipientType"] = 0
-//            recipient["GroupId"] = findMyGroupId(name: (obj?.senderId.safeValue).safeValue)
-//            recipients.append(recipient)
-//            dictionary["Recipients"] = recipients
-//        }
-//         if titleText == "Reply"{
-//            dictionary["GroupId"] = [findMyGroupId(name: (obj?.senderId.safeValue).safeValue)]
-//        }
-       //  else{
-            let groups = groupIds
-            dictionary["GroupId"] = groups
-       // }
-
+        //  if !isReply{
+        dictionary["Recipients"] = self.getRecipients()
+        // }
+        //        else{
+        //            var recipients = [[String: Any]]()
+        //            var recipient = [String:Any]()
+        //            recipient["UserId"] = obj?.senderId
+        //            recipient["Name"] = obj?.sender
+        //            recipient["RecipientType"] = 0
+        //            recipient["GroupId"] = findMyGroupId(name: (obj?.senderId.safeValue).safeValue)
+        //            recipients.append(recipient)
+        //            dictionary["Recipients"] = recipients
+        //        }
+        //         if titleText == "Reply"{
+        //            dictionary["GroupId"] = [findMyGroupId(name: (obj?.senderId.safeValue).safeValue)]
+        //        }
+        //  else{
+        let groups = groupIds
+        dictionary["GroupId"] = groups
+        // }
+        
         dictionary["Subject"] = subjectValue
         dictionary["Message"] = bodyText.base64Encoded()
         dictionary["AttachIcon"] = attachments.count > 0 ? 1 : 0
@@ -672,7 +678,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
                 dictionary["comm_draft_id"] = draftid
             }
         }
-
+        
         print(dictionary)
         
         return dictionary
@@ -682,20 +688,20 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     func getRecipients() -> [[String: Any]] {
         
         var recipients = [[String: Any]]()
-
-       // if !isReplyMail{
+        
+        // if !isReplyMail{
         for item in selectedPersonItems {
             var recipient = [String:Any]()
-
+            
             recipient["UserId"] = Int(item.id.safeValue)
             recipient["Name"] = item.name.safeValue
             recipient["RecipientType"] = item.recipieType.safeValueOfInt
             recipient["GroupId"] =  Int(item.groupId.safeValue)
             print("recipient :- ",recipient)
             recipients.append(recipient)
-
-            }
-      //  }
+            
+        }
+        //  }
         
         return recipients
         
@@ -739,22 +745,22 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             return ""
         }
     }
-//        let arr = file.components(separatedBy: "rptzfileup/") as! [String]
-//        if arr.count > 0{
-//            for eachValue in arr{
-//                if eachValue.contains(".pdf") ||  eachValue.contains(".docx") || eachValue.contains(".doc")||eachValue.contains(".jpeg") || eachValue.contains(".png") || eachValue.contains(".jpg") || eachValue.contains(".PDF") ||  eachValue.contains(".DOCX") || eachValue.contains(".DOC")||eachValue.contains(".JPEG") || eachValue.contains(".PNG") || eachValue.contains(".JPG") {
-//                    return eachValue
-//                }
-//            }
-//        }
-//        }
-//        return ""
-//    }
+    //        let arr = file.components(separatedBy: "rptzfileup/") as! [String]
+    //        if arr.count > 0{
+    //            for eachValue in arr{
+    //                if eachValue.contains(".pdf") ||  eachValue.contains(".docx") || eachValue.contains(".doc")||eachValue.contains(".jpeg") || eachValue.contains(".png") || eachValue.contains(".jpg") || eachValue.contains(".PDF") ||  eachValue.contains(".DOCX") || eachValue.contains(".DOC")||eachValue.contains(".JPEG") || eachValue.contains(".PNG") || eachValue.contains(".JPG") {
+    //                    return eachValue
+    //                }
+    //            }
+    //        }
+    //        }
+    //        return ""
+    //    }
     
     
     //GetFtpLocation Credebtilas
     
-    func getFTPDetails() {		
+    func getFTPDetails() {
         let url = APIUrls().getFTPUrls
         let userId  = UserDefaultsManager.manager.getUserId()
         var dictionary = [String: Any]()
@@ -817,7 +823,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     
     func getGroupmembers(text:String, completion: @escaping (_ result: [TNPerson]) -> Void) {
         var data: Array<AnyObject> = []
-
+        
         let userId = UserDefaultsManager.manager.getUserId()
         
         let searchtext = text
@@ -843,26 +849,26 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             if let members = result["Members"] as? NSArray{
                 
                 if members.count > 0{
-                let membersValues = ModelClassManager.sharedManager.createModelArray(data: members, modelType: ModelType.TNPerson) as! [TNPerson]
-                
-                self.personItems = membersValues
-                
-                DispatchQueue.main.async {
-                  
-                    if self.personItems.count > 0{
-                        completion(self.personItems)
+                    let membersValues = ModelClassManager.sharedManager.createModelArray(data: members, modelType: ModelType.TNPerson) as! [TNPerson]
+                    
+                    self.personItems = membersValues
+                    
+                    DispatchQueue.main.async {
+                        
+                        if self.personItems.count > 0{
+                            completion(self.personItems)
                         }
                     }
                     self.stopLoadingAnimation()
-                
+                    
                 }
                 else{
-                DispatchQueue.main.async {
-                    self.personItems.removeAll()
-                    self.stopLoadingAnimation()
-                    completion(self.personItems)
-
-                }
+                    DispatchQueue.main.async {
+                        self.personItems.removeAll()
+                        self.stopLoadingAnimation()
+                        completion(self.personItems)
+                        
+                    }
                 }
             }
             else{
@@ -870,10 +876,10 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
                     self.personItems.removeAll()
                     self.stopLoadingAnimation()
                     completion(self.personItems)
-
+                    
                 }
             }
-      
+            
         }
     }
     
@@ -912,9 +918,9 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     
     func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar) {
         // Can only add links to selected text, so make sure there is a range selection first
-//        if toolbar.editor?.hasRangeSelection == true {
-//            //     toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
-//        }
+        //        if toolbar.editor?.hasRangeSelection == true {
+        //            //     toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
+        //        }
     }
     
     func setBorderColor(){
@@ -949,11 +955,11 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         self.navigationController?.popViewController(animated: true)
     }
     
- 
-    func tokenView(_ tokenView: KSTokenView, willDeleteToken token: KSToken) {
     
+    func tokenView(_ tokenView: KSTokenView, willDeleteToken token: KSToken) {
+        
         if token != nil{
-          var deletedId =  deleteTheUser(tokenValue: token, tokenView: tokenView)
+            var deletedId =  deleteTheUser(tokenValue: token, tokenView: tokenView)
             if deletedId != ""{
                 print(Int(deletedId))
                 if groupIds.count > 0{
@@ -978,38 +984,38 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         }
     }
     
-        func tokenView(_ tokenView: KSTokenView, performSearchWithString string: String, completion: ((Array<AnyObject>) -> Void)?) {
-            if tokenView == groupView{
-                currentSelectedTag = 0
-                getGroups(text: string, completion: { (groups) in
-                    DispatchQueue.main.async {
-                        var data: Array<String> = []
-                        
-                        for each in groups{
-                            data.append(each.name.safeValue)
-                        }
-                        if data.count == 0{
-                            tokenView.searchResultHeight = 0.0
-                        }
-                        else{
-                            tokenView.searchResultHeight = 300.0
-                        }
-                        completion!(data as Array<AnyObject>)
-                    }
-                   
-            })
-            }
-                
-            else  if tokenView == personView || tokenView == bccView{
-                currentSelectedTag = 1
-                if tokenView == bccView{
-                    currentSelectedTag = 2
-                }
-                getGroupmembers(text: string, completion: { (persons) in
-                    DispatchQueue.main.async {
-
+    func tokenView(_ tokenView: KSTokenView, performSearchWithString string: String, completion: ((Array<AnyObject>) -> Void)?) {
+        if tokenView == groupView{
+            currentSelectedTag = 0
+            getGroups(text: string, completion: { (groups) in
+                DispatchQueue.main.async {
                     var data: Array<String> = []
-
+                    
+                    for each in groups{
+                        data.append(each.name.safeValue)
+                    }
+                    if data.count == 0{
+                        tokenView.searchResultHeight = 0.0
+                    }
+                    else{
+                        tokenView.searchResultHeight = 300.0
+                    }
+                    completion!(data as Array<AnyObject>)
+                }
+                
+            })
+        }
+        
+        else  if tokenView == personView || tokenView == bccView{
+            currentSelectedTag = 1
+            if tokenView == bccView{
+                currentSelectedTag = 2
+            }
+            getGroupmembers(text: string, completion: { (persons) in
+                DispatchQueue.main.async {
+                    
+                    var data: Array<String> = []
+                    
                     for each in persons{
                         data.append(each.name.safeValue)
                     }
@@ -1020,20 +1026,20 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
                         tokenView.searchResultHeight = 300.0
                     }
                     completion!(data as Array<AnyObject>)
-                    }
-                })
-            }
-         
+                }
+            })
         }
+        
+    }
     
     func tokenView(_ tokenView: KSTokenView, displayTitleForObject object: AnyObject) -> String? {
-            if !isIncluded {
-                return object as? String
-            } else {
-              isIncluded  = false
-              return nil
-            }
+        if !isIncluded {
+            return object as? String
+        } else {
+            isIncluded  = false
+            return nil
         }
+    }
     
     func tokenView(_ tokenView: KSTokenView, didSelectRowAtIndexPath indexPath: IndexPath) {
         didSelelectItem(selectedIndex: indexPath.row)
@@ -1042,14 +1048,14 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     func downloadPdfButtonAction(url: String, fileName: String?) {
         
     }
-        
+    
     func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         
     }
     
     func deleteTheSelectedAttachment(index: Int) {
-        if let item = attachmentItems[index] as? String{
-            attachmentItems.remove(at: index)
+        if let item = attachmentTypes[index].attachmentItem as? String{
+            attachmentTypes.remove(at: index)
             attachmentTb.reloadData()
         }
     }
@@ -1084,7 +1090,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             
         })
     }
-        
+    
 }
 
 extension ComposeController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -1094,34 +1100,32 @@ extension ComposeController: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-	
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         if let imageURL = info["UIImagePickerControllerImageURL"] as? URL {
-            attachmentItems.append(imageURL.absoluteString)
+            addItemIfUnique(type: "Gallery", attachmentItem: imageURL.absoluteString)
         }
-        let tempArr = attachmentItems
-        attachmentItems = removeDuplicates(array: tempArr)
         attachmentTb.reloadData()
         picker.dismiss(animated: true, completion: nil)
     }
 }
 
-extension ComposeController: UITableViewDelegate,UITableViewDataSource{
+extension ComposeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if attachmentItems.count > 0{
-            return attachmentItems.count
+        if attachmentTypes.count > 0 {
+            return attachmentTypes.count
         }
         return 0
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttachCell", for: indexPath) as? AttachCell
-        if attachmentItems.count > 0 {
-            if let eachAttachmnt = attachmentItems[indexPath.row] as? String {
+        if attachmentTypes.count > 0 {
+            if let eachAttachmnt = attachmentTypes[indexPath.row].attachmentItem as? String {
                 let arr = eachAttachmnt.components(separatedBy: "Inbox/")
                 if arr.count > 1 {
                     cell?.attachLabel.text = arr[1]
@@ -1157,16 +1161,16 @@ class AttachCell: UITableViewCell{
 }
 
 class toEmailCell : UITableViewCell,UITextFieldDelegate{
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var icon: UIImageView!
-  //  @IBOutlet weak var textFieldView: KSTokenView!
+    //  @IBOutlet weak var textFieldView: KSTokenView!
     
     var delegate : TaykonProtocol?
     var typeString = ""
     var currentText  = ""
     var groupList = [TNGroup]()
-
+    
     override func awakeFromNib() {
         textField.delegate = self
     }
@@ -1176,21 +1180,21 @@ class toEmailCell : UITableViewCell,UITextFieldDelegate{
         typingCount += 1
     }
     
-
     
-
-
+    
+    
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-   
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     @IBAction func editingChangedAction(_ sender: Any) {
-
+        
     }
     
 }
@@ -1199,13 +1203,13 @@ extension ComposeController{
     func connectFtp(list : [String], isForDraft: Bool = false){
         if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary{
             fileUpload.delegate = self
-            fileUpload.upload(attachments: list, isForDraft: isForDraft )
+            fileUpload.upload(attachments: attachmentTypes, isForDraft: isForDraft )
+        }
     }
-    }
-
     
-
-
+    
+    
+    
 }
 class SuggestionCell: UITableViewCell{
     @IBOutlet weak var ttitleLabel: UILabel!
@@ -1217,7 +1221,7 @@ class SuggestionCell: UITableViewCell{
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 
@@ -1237,7 +1241,7 @@ extension ComposeController: TopHeaderDelegate {
     }
     
     func searchButtonClicked(_ button: UIButton) {
-        if attachmentItems.count > 4 {
+        if attachmentTypes.count > 4 {
             _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
         } else {
             let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
@@ -1274,14 +1278,14 @@ extension ComposeController: TopHeaderDelegate {
         self.resignFirstResponder()
         var ftpUrls = [String]()
         if checkFieldsEmpty().0 != true{
-
-            if attachmentItems.count > 0 {
-                for each in attachmentItems{
-                   ftpUrls.append(each)
+            
+            if attachmentTypes.count > 0 {
+                for each in attachmentTypes {
+                    ftpUrls.append(each.attachmentItem)
                 }
             }
-         self.checkForStudAndParent(fileUrls : ftpUrls, isForDraft: isForDraft)
-        }else{
+            self.checkForStudAndParent(fileUrls : ftpUrls, isForDraft: isForDraft)
+        } else {
             SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
         }
     }
