@@ -14,7 +14,13 @@ import MobileCoreServices
 var typingCount = 0
 
 
-class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtocol,UITextFieldDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate ,KSTokenViewDelegate {
+struct AttachmentType {
+    let type: String
+    let attachmentItem: String
+}
+
+class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProtocol, UITextFieldDelegate, UIDocumentPickerDelegate, KSTokenViewDelegate {
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }
@@ -47,7 +53,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     //var fileUpload = UploadFTP()
     var fileUpload = FTPUpload()
     var isReplyMail = false
-    var attachmentItems = [String]()
+    var attachmentTypes: [AttachmentType] = []
     var titleText = String()
     var seletedGroups = ""
     var selectedPersons = ""
@@ -174,7 +180,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
           //heightConstraint.constant = 100
           setConstraints(addPersonWidthValue: 20.0, addCcHeightValue: 20.0, groupViewHeightValue: 45.0, personViewHeightValue: 45.0, hide: false)
           //seperateNameWithCommas(string: selectedPersons, view: personView)
-      } else{
+      } else {
             isReplyMail = false
             groupView.placeholder = "Select Group"
             groupView.searchResultHeight = 500
@@ -363,7 +369,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     }
 
     @IBAction func attachmentAction(_ sender: UIButton) {
-        if attachmentItems.count > 4 {
+        if attachmentTypes.count > 4 {
             _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
         } else {
             let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
@@ -400,7 +406,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         }
     }
     
-    func getDocumentsFromiCloud(){
+    func getDocumentsFromiCloud() {
         let types = [kUTTypeText,
                      kUTTypePlainText,
                      kUTTypeUTF8PlainText,
@@ -429,54 +435,54 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
                      kUTTypeRawImage,
                      kUTTypeScalableVectorGraphics,
                      //kUTTypeLivePhoto,
-            kUTTypeAudiovisualContent,
-            kUTTypeMovie,
-            kUTTypeVideo,
-            kUTTypeAudio,
-            kUTTypeQuickTimeMovie,
-            kUTTypeMPEG,
-            kUTTypeMPEG2Video,
-            kUTTypeMPEG2TransportStream,
-            kUTTypeMP3,
-            kUTTypeMPEG4,
-            kUTTypeMPEG4Audio,
-            kUTTypeAppleProtectedMPEG4Audio,
-            kUTTypeAppleProtectedMPEG4Video,
-            kUTTypeAVIMovie,
-            kUTTypeAudioInterchangeFileFormat,
-            kUTTypeWaveformAudio,
-            kUTTypeMIDIAudio,
-            kUTTypeSpreadsheet,
-            kUTTypePresentation,
-            kUTTypeDatabase,
-            kUTTypeInkText,
-            kUTTypeFont,
-            kUTTypeBookmark,
-            kUTType3DContent,
-            kUTTypePKCS12]
+                     kUTTypeAudiovisualContent,
+                     kUTTypeMovie,
+                     kUTTypeVideo,
+                     kUTTypeAudio,
+                     kUTTypeQuickTimeMovie,
+                     kUTTypeMPEG,
+                     kUTTypeMPEG2Video,
+                     kUTTypeMPEG2TransportStream,
+                     kUTTypeMP3,
+                     kUTTypeMPEG4,
+                     kUTTypeMPEG4Audio,
+                     kUTTypeAppleProtectedMPEG4Audio,
+                     kUTTypeAppleProtectedMPEG4Video,
+                     kUTTypeAVIMovie,
+                     kUTTypeAudioInterchangeFileFormat,
+                     kUTTypeWaveformAudio,
+                     kUTTypeMIDIAudio,
+                     kUTTypeSpreadsheet,
+                     kUTTypePresentation,
+                     kUTTypeDatabase,
+                     kUTTypeInkText,
+                     kUTTypeFont,
+                     kUTTypeBookmark,
+                     kUTType3DContent,
+                     kUTTypePKCS12]
         
-        let importMenu = UIDocumentMenuViewController(documentTypes: types as [String], in: UIDocumentPickerMode.import)
+        let importMenu = UIDocumentPickerViewController(documentTypes: types as [String], in: UIDocumentPickerMode.import)
         importMenu.delegate = self
         present(importMenu, animated: true, completion: nil)
     }
     
-    func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController)
-    {
-        print("document selected \(documentPicker)")
-        
-        documentPicker.delegate = self
-        present(documentPicker, animated: true, completion: nil)
-    }
-
-    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         for each in urls {
-            attachmentItems.append(each.absoluteString)
+            addItemIfUnique(type: "iCloud", attachmentItem: each.absoluteString)
         }
-        let tempArr = attachmentItems
-        attachmentItems = removeDuplicates(array: tempArr)
-        
         attachmentTb.reloadData()
+    }
+    
+    
+    func addItemIfUnique(type: String, attachmentItem: String) {
+        let newAttachment = AttachmentType(type: type, attachmentItem: attachmentItem)
+        
+        // Check if the attachmentItem already exists in the array
+        if !attachmentTypes.contains(where: { $0.attachmentItem == attachmentItem }) {
+            attachmentTypes.append(newAttachment)
+        } else {
+            print("Attachment item \(attachmentItem) already exists.")
+        }
     }
     
     func removeDuplicates(array: [String]) -> [String] {
@@ -507,14 +513,14 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
         subjectTextField.resignFirstResponder()
         personView.resignFirstResponder()
         bccView.resignFirstResponder()
-        editorView.resignFirstResponder()
+        _ = editorView.resignFirstResponder()
         self.resignFirstResponder()
         var ftpUrls = [String]()
         if checkFieldsEmpty().0 != true {
 
-            if attachmentItems.count > 0 {
-                for each in attachmentItems {
-                   ftpUrls.append(each)
+            if attachmentTypes.count > 0 {
+                for each in attachmentTypes {
+                    ftpUrls.append(each.attachmentItem)
                 }
             }
          self.checkForStudAndParent(fileUrls : ftpUrls)
@@ -545,7 +551,7 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             if let statusCode = result["StatusCode"] as? Int {
                 DispatchQueue.main.async {
                     if statusCode == 1 {
-                        self.attachmentItems.removeAll()
+                        self.attachmentTypes.removeAll()
                         self.groupView.text = ""
                         resultPaths.removeAll()
                         self.selectedPersonItems.removeAll()
@@ -595,8 +601,8 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
             if self.checkFieldsEmpty().2 == 1 {
             } else {
                 self.startLoadingAnimation()
-                if attachmentItems.count > 0 {
-                    connectFtp(list : fileUrls,isForDraft: isForDraft)
+                if attachmentTypes.count > 0 {
+                    connectFtp(list : fileUrls, isForDraft: isForDraft)
                 } else if isForDraft {
                     saveMessageToDraft()
                 } else  {
@@ -1048,8 +1054,8 @@ class ComposeController: UIViewController,RichEditorToolbarDelegate,TaykonProtoc
     }
     
     func deleteTheSelectedAttachment(index: Int) {
-        if let item = attachmentItems[index] as? String{
-            attachmentItems.remove(at: index)
+        if let item = attachmentTypes[index].attachmentItem as? String{
+            attachmentTypes.remove(at: index)
             attachmentTb.reloadData()
         }
     }
@@ -1094,24 +1100,22 @@ extension ComposeController: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 	
         if let imageURL = info["UIImagePickerControllerImageURL"] as? URL {
-            attachmentItems.append(imageURL.absoluteString)
+            addItemIfUnique(type: "Gallery", attachmentItem: imageURL.absoluteString)
         }
-        let tempArr = attachmentItems
-        attachmentItems = removeDuplicates(array: tempArr)
         attachmentTb.reloadData()
         picker.dismiss(animated: true, completion: nil)
     }
 }
 
-extension ComposeController: UITableViewDelegate,UITableViewDataSource{
+extension ComposeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if attachmentItems.count > 0{
-            return attachmentItems.count
+        if attachmentTypes.count > 0 {
+            return attachmentTypes.count
         }
         return 0
     }
@@ -1120,8 +1124,8 @@ extension ComposeController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttachCell", for: indexPath) as? AttachCell
-        if attachmentItems.count > 0 {
-            if let eachAttachmnt = attachmentItems[indexPath.row] as? String {
+        if attachmentTypes.count > 0 {
+            if let eachAttachmnt = attachmentTypes[indexPath.row].attachmentItem as? String {
                 let arr = eachAttachmnt.components(separatedBy: "Inbox/")
                 if arr.count > 1 {
                     cell?.attachLabel.text = arr[1]
@@ -1199,8 +1203,8 @@ extension ComposeController{
     func connectFtp(list : [String], isForDraft: Bool = false){
         if let ftpDetails = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.FTPDetails) as? NSDictionary{
             fileUpload.delegate = self
-            fileUpload.upload(attachments: list, isForDraft: isForDraft )
-    }
+            fileUpload.upload(attachments: attachmentTypes, isForDraft: isForDraft )
+        }
     }
 
     
@@ -1237,7 +1241,7 @@ extension ComposeController: TopHeaderDelegate {
     }
     
     func searchButtonClicked(_ button: UIButton) {
-        if attachmentItems.count > 4 {
+        if attachmentTypes.count > 4 {
             _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
         } else {
             let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
@@ -1275,13 +1279,13 @@ extension ComposeController: TopHeaderDelegate {
         var ftpUrls = [String]()
         if checkFieldsEmpty().0 != true{
 
-            if attachmentItems.count > 0 {
-                for each in attachmentItems{
-                   ftpUrls.append(each)
+            if attachmentTypes.count > 0 {
+                for each in attachmentTypes {
+                    ftpUrls.append(each.attachmentItem)
                 }
             }
          self.checkForStudAndParent(fileUrls : ftpUrls, isForDraft: isForDraft)
-        }else{
+        } else {
             SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
         }
     }
