@@ -269,7 +269,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                     }
                     self.payTF.text = self.CurrentDue
                     
-                    if(self.compid == "216" || self.compid == "262")
+                    if(self.compid == "216" || self.compid == "262" || self.compid == "96")
                     {
                         
                         self.PayOptions.setEnabled(false, forSegmentAt: 2);
