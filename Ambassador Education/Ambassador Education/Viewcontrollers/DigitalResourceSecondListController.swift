@@ -203,8 +203,10 @@ extension DigitalResourceSecondListController: UICollectionViewDataSource,UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let catgoryAndItem = arrCatgoryAndItem[indexPath.row]
+        print("here " , indexPath.row)
+        print("here1", self.pageNumber)
         if catgoryAndItem.isItem ?? false {
-            let item = digitalList[indexPath.row]
+            let item = digitalList[indexPath.row-((self.pageNumber-1)*12)]
             navigateToDetail(digitalResource: item)
         } else {
             arrCatgoryAndItem.removeAll()

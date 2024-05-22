@@ -231,7 +231,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                // self.titles.removeAll()
                 //self.titlesnew.removeAll()
                 self.viewPager.reloadData()
-                self.titles.removeAll()
+                //self.titles.removeAll()
             }
         }
         
@@ -686,7 +686,6 @@ extension WeeklyPlanController:VideoDownloadDelegate{
             present(quickLookController, animated: true, completion: nil)
         }
     }
-    
 }
 
 extension WeeklyPlanController : QLPreviewControllerDataSource ,QLPreviewControllerDelegate{
