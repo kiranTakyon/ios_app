@@ -8,7 +8,9 @@
 
 import UIKit
 
-
+protocol NotificationTableViewCellDelegate: AnyObject {
+    func notificationTableViewCell(_ cell: UITableViewCell, didTapOnNotification notification: TNotification)
+}
 
 class NotificationTableViewCell: UITableViewCell {
 
@@ -16,6 +18,8 @@ class NotificationTableViewCell: UITableViewCell {
     
     var notificationList = [TNotification]()
     var selectedIndexes: [Int] = []
+    weak var delegate: NotificationTableViewCellDelegate?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -99,6 +103,10 @@ extension NotificationTableViewCell: UITableViewDelegate, UITableViewDataSource 
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.notificationTableViewCell(self, didTapOnNotification: notificationList[indexPath.row])
+    }
+    
 }
 
 
@@ -111,6 +119,11 @@ extension NotificationTableViewCell: NotificationMailTableViewCellDelegate {
             selectedIndexes.append(index)
         }
         tableView.reloadData()
+        delegate?.notificationTableViewCell(self, didTapOnNotification: notificationList[index])
+    }
+    
+    func notificationMailTableViewCell(_ cell: NotificationMailTableViewCell, didTapCell button: UIButton, index: Int) {
+        delegate?.notificationTableViewCell(self, didTapOnNotification: notificationList[index])
     }
     
 }

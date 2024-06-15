@@ -36,6 +36,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     var resultValue  : MessageModel?
 
     var messageList = [TinboxMessage]()
+    var isPresent: Bool = false
 //    var popUpViewVc = BIZPopupViewController()
     let videoDownload  = VideoDownload()
     var fileURLs = [NSURL]()
@@ -961,6 +962,15 @@ fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Ke
 
 
 extension MessageDetailController: TopHeaderDelegate {
+    
+    func backButtonClicked(_ button: UIButton) {
+        if isPresent {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     func secondRightButtonClicked(_ button: UIButton) {
         print("")
     }

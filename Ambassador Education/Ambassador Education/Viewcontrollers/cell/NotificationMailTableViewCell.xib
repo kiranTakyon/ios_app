@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -66,6 +66,13 @@
                                     <action selector="buttonArrowDidTap:" destination="Mb0-ML-IIY" eventType="touchUpInside" id="gIf-EL-0Hx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1j-DM-qBv">
+                                <rect key="frame" x="0.0" y="0.0" width="406" height="59"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="buttonCellDidTap:" destination="Mb0-ML-IIY" eventType="touchUpInside" id="7cu-6o-Blx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -74,15 +81,19 @@
                             <constraint firstItem="5yK-kk-p1w" firstAttribute="leading" secondItem="uau-6z-iGX" secondAttribute="leading" constant="15" id="7wn-KH-EcJ"/>
                             <constraint firstAttribute="trailing" secondItem="ac8-Q7-bpJ" secondAttribute="trailing" constant="20" id="G6s-qt-VJA"/>
                             <constraint firstItem="ac8-Q7-bpJ" firstAttribute="centerY" secondItem="qxF-Qq-T5z" secondAttribute="centerY" id="JuH-Lh-3Cj"/>
+                            <constraint firstItem="b1j-DM-qBv" firstAttribute="top" secondItem="uau-6z-iGX" secondAttribute="top" id="OEv-3p-Irv"/>
                             <constraint firstItem="Owl-Hz-4DI" firstAttribute="leading" secondItem="5yK-kk-p1w" secondAttribute="trailing" constant="5" id="XhJ-lX-L83"/>
+                            <constraint firstItem="b1j-DM-qBv" firstAttribute="leading" secondItem="uau-6z-iGX" secondAttribute="leading" id="Z6E-kp-Vth"/>
                             <constraint firstAttribute="bottom" secondItem="ivI-WH-gMS" secondAttribute="bottom" constant="10" id="aPv-C1-OFl"/>
                             <constraint firstAttribute="trailing" secondItem="ivI-WH-gMS" secondAttribute="trailing" constant="30" id="bag-dJ-MZI"/>
                             <constraint firstItem="qxF-Qq-T5z" firstAttribute="centerY" secondItem="fyn-al-JV6" secondAttribute="centerY" id="dOG-Ly-Ett"/>
                             <constraint firstItem="fyn-al-JV6" firstAttribute="leading" secondItem="Owl-Hz-4DI" secondAttribute="trailing" constant="30" id="grn-KK-e9K"/>
                             <constraint firstItem="Owl-Hz-4DI" firstAttribute="centerY" secondItem="5yK-kk-p1w" secondAttribute="centerY" id="ibH-bW-Bqx"/>
                             <constraint firstItem="ivI-WH-gMS" firstAttribute="leading" secondItem="Owl-Hz-4DI" secondAttribute="leading" id="mNd-uJ-WkU"/>
+                            <constraint firstAttribute="trailing" secondItem="b1j-DM-qBv" secondAttribute="trailing" id="ncg-OV-CJ0"/>
                             <constraint firstItem="ivI-WH-gMS" firstAttribute="centerX" secondItem="uau-6z-iGX" secondAttribute="centerX" id="nzL-FL-gJB"/>
                             <constraint firstItem="5yK-kk-p1w" firstAttribute="top" secondItem="uau-6z-iGX" secondAttribute="top" constant="8" id="oeY-tL-vqX"/>
+                            <constraint firstAttribute="bottom" secondItem="b1j-DM-qBv" secondAttribute="bottom" id="of7-2N-wLg"/>
                             <constraint firstItem="ivI-WH-gMS" firstAttribute="top" secondItem="Owl-Hz-4DI" secondAttribute="bottom" constant="5" id="ygT-KD-ENm"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

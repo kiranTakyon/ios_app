@@ -10,6 +10,7 @@ import UIKit
 
 protocol NotificationMailTableViewCellDelegate: AnyObject {
     func notificationMailTableViewCell(_ cell: NotificationMailTableViewCell, didTapOnArrow button: UIButton, index: Int)
+    func notificationMailTableViewCell(_ cell: NotificationMailTableViewCell, didTapCell button: UIButton, index: Int)
 }
 
 class NotificationMailTableViewCell: UITableViewCell {
@@ -36,5 +37,9 @@ class NotificationMailTableViewCell: UITableViewCell {
     
     @IBAction func buttonArrowDidTap(_ sender: UIButton) {
         delegate?.notificationMailTableViewCell(self, didTapOnArrow: sender, index: index)
+    }
+    
+    @IBAction func buttonCellDidTap(_ sender: UIButton) {
+        delegate?.notificationMailTableViewCell(self, didTapCell: sender, index: index)
     }
 }

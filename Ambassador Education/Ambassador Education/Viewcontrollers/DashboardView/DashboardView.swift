@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+protocol DashboardViewDelegate: AnyObject {
+    func dashboardView(_ view: DashboardView, didTapOnNotification notification: TNotification)
+}
 
 class DashboardView: UIView {
     
@@ -17,6 +20,7 @@ class DashboardView: UIView {
     var notificationList = [TNotification]()
     var moduleList = [TModule]()
     var NoticeBoardItems = [TNNoticeBoardDetail]()
+    weak var delegate: DashboardViewDelegate?
     
     
     override func awakeFromNib() {
@@ -69,6 +73,7 @@ extension DashboardView: UITableViewDelegate, UITableViewDataSource {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell", for: indexPath) as? NotificationTableViewCell else { return UITableViewCell()}
             cell.notificationList = notificationList
+            cell.delegate = self
             cell.tableView.reloadData()
             cell.selectionStyle = .none
             
@@ -84,6 +89,14 @@ extension DashboardView: UITableViewDelegate, UITableViewDataSource {
         } else {
             return 330
         }
+    }
+    
+}
+
+
+extension DashboardView: NotificationTableViewCellDelegate {
+    func notificationTableViewCell(_ cell: UITableViewCell, didTapOnNotification notification: TNotification) {
+        delegate?.dashboardView(self, didTapOnNotification: notification)
     }
     
 }

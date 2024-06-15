@@ -371,6 +371,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         dashboardView.notificationList = notificationList
         dashboardView.moduleList = moduleList
         dashboardView.NoticeBoardItems = NoticeBoardItems
+        dashboardView.delegate = self
         dashboardView.tableView.reloadData()
         dashboardView.frame = containerView.bounds
         containerView.addSubview(dashboardView)
@@ -547,4 +548,42 @@ extension HomeVC: NotificationsViewDelegate {
         viewController.categoryName = "Gallery"
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+}
+
+extension HomeVC: DashboardViewDelegate {
+    func dashboardView(_ view: DashboardView, didTapOnNotification notification: TNotification) {
+        if let typeVal = alertType(rawValue: notification.type ?? ""){
+            
+            switch typeVal {
+            case .gallery:
+                break
+            case .html:
+                break
+            case .communicate:
+                presentPopUp(notification: notification)
+            case .noticeboard:
+                break
+            case .weeklyPlan:
+                break
+            case .bus:
+                break
+            }
+        }
+    }
+    
+    
+    func presentPopUp(notification: TNotification) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let navVC = storyBoard.instantiateViewController(withIdentifier: "MessageDetailsNavigationController") as! UINavigationController
+        let vc = navVC.children[0] as! MessageDetailController
+        vc.messageId = notification.id
+        vc.typeMsg = typeValue
+        vc.isPresent = true
+
+        let height = UIScreen.main.bounds.height - 150
+        let width = UIScreen.main.bounds.width - 60
+        let popupVC = PopupViewController(contentController: navVC, popupWidth: width, popupHeight: height)
+        self.present(popupVC, animated: true)
+    }
+    
 }

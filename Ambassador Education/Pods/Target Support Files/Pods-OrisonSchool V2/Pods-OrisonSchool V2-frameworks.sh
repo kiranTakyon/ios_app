@@ -210,6 +210,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Updates/Updates.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
@@ -248,6 +249,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Updates/Updates.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
 fi
