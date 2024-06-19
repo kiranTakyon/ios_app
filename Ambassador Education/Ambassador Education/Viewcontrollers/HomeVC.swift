@@ -317,7 +317,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         var dictionary = [String:Any]()
         
         dictionary[UserIdKey().id] =  id
-        dictionary["DashBoardType"] = 1
+        dictionary["DashBoardType"] = 0
         dictionary["Platform"] = "ios"
         self.startLoadingAnimation()
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
