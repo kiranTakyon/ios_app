@@ -319,7 +319,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         var dictionary = [String:Any]()
         
         dictionary[UserIdKey().id] =  id
-        dictionary["DashBoardType"] = 1
+        dictionary["DashBoardType"] = 0
         dictionary["Platform"] = "ios"
         
         // Load from cache
