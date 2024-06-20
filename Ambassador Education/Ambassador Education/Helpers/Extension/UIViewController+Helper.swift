@@ -11,7 +11,7 @@ import UIKit
 
 
 extension UIViewController {
-       
+    
     func topBarHeight() -> CGFloat {
         let application = UIApplication.shared
         let safeAreaInset = application.keyWindow?.safeAreaInsets
@@ -30,5 +30,29 @@ extension UIViewController {
     
 }
 
+
+
+extension UIViewController: CustomTopViewDelegate {
+    
+    func addCustomTopView() {
+        let customTopView = CustomTopView()
+        customTopView.delegate = self
+        customTopView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(customTopView)
+        
+        NSLayoutConstraint.activate([
+            customTopView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            customTopView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customTopView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customTopView.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+    }
+    
+    func didTapCloseButton() {
+        self.dismiss(animated: true)
+    }
+}
 
 

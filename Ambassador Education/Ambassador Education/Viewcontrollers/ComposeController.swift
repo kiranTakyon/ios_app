@@ -217,7 +217,7 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     
     func setRichToolbarProporties(){
         toolBar.tintColor = UIColor.white
-        toolBar.barTintColor = UIColor.black.withAlphaComponent(0.3)
+        toolBar.barTintColor = UIColor(named: "lightPink")
         toolBar.options = RichEditorDefaultOption.all
         toolBar.delegate = self
         toolBar.editor = self.editorView
@@ -1226,6 +1226,14 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 
 
 extension ComposeController: TopHeaderDelegate {
+    func searchButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
     
     func backButtonClicked(_ button: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -1235,39 +1243,6 @@ extension ComposeController: TopHeaderDelegate {
         
     }
     
-    func secondRightButtonClicked(_ button: UIButton) {
-        self.view.endEditing(true)
-        sendEmailOrDraft()
-    }
-    
-    func searchButtonClicked(_ button: UIButton) {
-        if attachmentTypes.count > 4 {
-            _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
-        } else {
-            let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
-            let galleryAction =  UIAlertAction(title: "Gallery", style: .default, handler: { (action) in
-                self.getImageFromImagPickerController()
-            })
-            let iCloudAction = UIAlertAction(title: "iCloud", style: .default, handler: { (action) in
-                self.getDocumentsFromiCloud()
-            })
-            let cancelAction =  UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alertController.addAction(galleryAction)
-            alertController.addAction(iCloudAction)
-            alertController.addAction(cancelAction)
-            
-            if UI_USER_INTERFACE_IDIOM() == .pad {
-                if let currentPopoverPresentationController = alertController.popoverPresentationController {
-                    currentPopoverPresentationController.sourceView = button
-                    currentPopoverPresentationController.sourceRect = button.bounds
-                    currentPopoverPresentationController.permittedArrowDirections = .any
-                    present(alertController, animated: true, completion: nil)
-                }
-            } else {
-                present(alertController, animated: true, completion: nil)
-            }
-        }
-    }
     
     func sendEmailOrDraft(isForDraft: Bool = false) {
         groupView.resignFirstResponder()
@@ -1288,6 +1263,49 @@ extension ComposeController: TopHeaderDelegate {
         } else {
             SweetAlert().showAlert(kAppName, subTitle: checkFieldsEmpty().1, style: AlertStyle.error)
         }
+    }
+    
+}
+
+
+extension ComposeController {
+    
+    @IBAction func didTapOnSent(_ sender: UIButton) {
+        self.view.endEditing(true)
+        sendEmailOrDraft()
+        
+    }
+    @IBAction func didTapOnAttachment(_ sender: UIButton) {
+        if attachmentTypes.count > 4 {
+            _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
+        } else {
+            let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
+            let galleryAction =  UIAlertAction(title: "Gallery", style: .default, handler: { (action) in
+                self.getImageFromImagPickerController()
+            })
+            let iCloudAction = UIAlertAction(title: "iCloud", style: .default, handler: { (action) in
+                self.getDocumentsFromiCloud()
+            })
+            let cancelAction =  UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(galleryAction)
+            alertController.addAction(iCloudAction)
+            alertController.addAction(cancelAction)
+            
+            if UI_USER_INTERFACE_IDIOM() == .pad {
+                if let currentPopoverPresentationController = alertController.popoverPresentationController {
+                    currentPopoverPresentationController.sourceView = sender
+                    currentPopoverPresentationController.sourceRect = sender.bounds
+                    currentPopoverPresentationController.permittedArrowDirections = .any
+                    present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                present(alertController, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    @IBAction func didTapOndelete(_ sender: UIButton) {
+        
     }
     
 }

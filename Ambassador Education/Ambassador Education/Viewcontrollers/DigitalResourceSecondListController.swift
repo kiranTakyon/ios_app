@@ -28,6 +28,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     let refreshControl = UIRefreshControl()
     var arrCatgoryAndItem: [CategoryAndItem] = []
     var shouldEnableLoadMore: Bool = true
+    var isPresent: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -213,7 +214,8 @@ extension DigitalResourceSecondListController: UICollectionViewDelegateFlowLayou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let availableWidth = view.frame.width - 30
         let widthPerItem = availableWidth / 2
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        let height = isPresent ? widthPerItem + 15 : widthPerItem
+        return CGSize(width: widthPerItem, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

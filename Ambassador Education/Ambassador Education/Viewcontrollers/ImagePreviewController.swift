@@ -16,6 +16,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     var imageArr = [String]()
     var position = Int()
     var pageTitle : String?
+    var isPresent: Bool = false
     
     @IBOutlet weak var rightArrow: UIImageView!
     @IBOutlet weak var leftArrow: UIImageView!
@@ -37,6 +38,12 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         
         if isFromDashboardNotification {
             setSlideMenuProporties()
+        }
+        
+        if isPresent {
+            topHeaderView.isHidden = true
+            topHeaderView.viewHeightConstraint.constant = 40
+            addCustomTopView()
         }
     }
     

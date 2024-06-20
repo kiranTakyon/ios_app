@@ -14,6 +14,10 @@ import QuickLook
 
 var mainTitle = ""
 
+protocol WeeklyPlanControllerDelegate: AnyObject {
+    func weeklyPlanController(_ view: UIViewController, didtapOnCellForPopupWith comment: String, divId: String, weeklyPlan: WeeklyPlanList)
+}
+
 class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmentedPagerDataSource,TaykonProtocol {
         
     @IBOutlet weak var viewPager: MXSegmentedPager!
@@ -26,8 +30,10 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     var subId = ""
     var comment_needed = "1"
     
+    var isPresent: Bool = false
     var completeListDetails : NSDictionary?
     var backgroundSession: URLSession!
+    weak var delegate: WeeklyPlanControllerDelegate?
     
     @IBOutlet weak var fromDateLabel: UILabel!
     @IBOutlet weak var toDateLabel: UILabel!
@@ -59,6 +65,11 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         quickLookController.delegate = self
         topHeaderView.delegate = self
         topHeaderView.shouldShowThirdRightButtons(true)
+        if isPresent {
+            topHeaderView.isHidden = true
+            topHeaderView.viewHeightConstraint.constant = 40
+            addCustomTopView()
+        }
         
         //self.getWeeklyPlanDetails(fromDate: dateFormatter1.string(from: today as Date), toDate: getThe5thDayFromSelectedDate(date: today, value: 4), isSearch: 0, div: "")
         getWeeklyPlanAPI()
@@ -597,7 +608,12 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         if let values = value as? WeeklyPlanList{
             
-            self.navigateToDetail(weeklyPlan:values)
+            if isPresent {
+                self.dismiss(animated: true)
+                delegate?.weeklyPlanController(self, didtapOnCellForPopupWith: comment_needed, divId: divId, weeklyPlan: values)
+            } else {
+                self.navigateToDetail(weeklyPlan:values)
+            }
             
         }
         

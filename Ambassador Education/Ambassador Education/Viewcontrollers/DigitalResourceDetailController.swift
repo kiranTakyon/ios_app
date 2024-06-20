@@ -46,11 +46,22 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     var NbID = ""
     var comment_needed = "1"
     var isFromNotification: Bool = false
+    var isPresent: Bool = false
+    var isForWeeklyPlanPresent: Bool = false
+    var notification: TNotification?
   
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.tableViewAttachments.register(DRDDownLoadCell.self, forCellReuseIdentifier: "DRDDownLoadCell")
 //        self.tableViewAttachments.register(UINib.init(nibName: "DRDAttechmentCell", bundle: nil), forCellReuseIdentifier: "DRDAttechmentCell")
+        if let notification = notification, isPresent {
+            if !isForWeeklyPlanPresent {
+                getDigitalResources(notification: notification)
+            }
+            topHeaderView.isHidden = true
+            topHeaderView.viewHeightConstraint.constant = 40
+            addCustomTopView()
+        }
         topHeaderView.delegate = self
         topHeaderView.title = "Weekly Plan Details"
         richEditorView1.editingEnabled = false
@@ -163,7 +174,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let lHeight : CGFloat = (self.titleLabel.text?.height(withConstrainedWidth: self.titleLabel.frame.width, font: UIFont(name: "HelveticaNeue-Medium", size: 18.0)!))!
             setUiWithType(top: 20, height: lHeight, hide: !(lHeight > 0))
             
-        }else if let weeklyPlanValue = weeklyPlan{
+        } else if let weeklyPlanValue = weeklyPlan {
             setUiWithType(top: 20, height: 21, hide: false)
             
             guard let user = UserDefaultsManager.manager.getUserType() as? String else{
@@ -681,4 +692,37 @@ extension DigitalResourceDetailController: TopHeaderDelegate {
     func backButtonClicked(_ button: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+}
+
+
+extension DigitalResourceDetailController {
+    
+    func getDigitalResources(notification: TNotification) {
+        
+        self.startLoadingAnimation()
+        
+        let url = APIUrls().getDigitalResourceDetails
+        
+        let userId = UserDefaultsManager.manager.getUserId()
+        
+        var dictionary = [String: Any]()
+        
+        dictionary[UserIdKey().id] = userId
+        dictionary[GalleryCategory.searchText] = ""
+        dictionary[GalleryCategory.paginationNumber] = 1
+        dictionary["CategoryId"] = Int(notification.catid ?? "")
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            
+            guard let categryValues = result["CategoryItems"] as? NSArray else{ return }
+            let cetgories = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNDigitalResourceSubList) as! [TNDigitalResourceSubList]
+            
+            DispatchQueue.main.async {
+                self.stopLoadingAnimation()
+                self.digitalResource = cetgories.first
+            }
+            
+        }
+    }
+    
 }

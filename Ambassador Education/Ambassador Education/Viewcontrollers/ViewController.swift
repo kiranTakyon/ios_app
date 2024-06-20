@@ -222,8 +222,7 @@ class ViewController: UIViewController {
 
                     let currentDateComponents = Calendar.current.dateComponents([.month, .day], from: Date())
 
-                    let dobString: String = resultDict["dob"] as! String
-                    if let dobDate = dateFormatter.date(from: dobString) {
+                    if let dobString: String = resultDict["dob"] as? String, let dobDate = dateFormatter.date(from: dobString) {
                         let dobComponents = Calendar.current.dateComponents([.month, .day], from: dobDate)
                         if currentDateComponents.month == dobComponents.month && currentDateComponents.day == dobComponents.day {
                             print("Match")

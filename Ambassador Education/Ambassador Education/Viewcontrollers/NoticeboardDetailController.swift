@@ -26,9 +26,15 @@ class NoticeboardDetailController: UIViewController {
     var pdfUrl : String?
     var NbID = ""
     var isFromDashboardNotification = false
+    var isPresent: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        if isPresent {
+            topHeaderView.isHidden = true
+            topHeaderView.viewHeightConstraint.constant = 40
+            addCustomTopView()
+        }
         topHeaderView.delegate = self
         topHeaderView.shouldShowFirstRightButtons(false)
         scrollView.minimumZoomScale = 1.0
@@ -262,6 +268,15 @@ extension NoticeboardDetailController: RichEditorDelegate{
 
 
 extension NoticeboardDetailController: TopHeaderDelegate {
+    
+    func backButtonClicked(_ button: UIButton) {
+        if isPresent {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     func secondRightButtonClicked(_ button: UIButton) {
         print("")
     }

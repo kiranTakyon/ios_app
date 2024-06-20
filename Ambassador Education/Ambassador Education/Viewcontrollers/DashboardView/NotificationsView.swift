@@ -11,7 +11,7 @@ import UIKit
 import IQPullToRefresh
 
 protocol NotificationsViewDelegate: AnyObject {
-    func notificationsView(_ view: NotificationsView, didTapOnGallery id: String)
+    func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification)
 }
 
 class NotificationsView: UIView {
@@ -115,20 +115,16 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
 // MARK: - NotificationsTableViewCellDelegate -
 
 extension NotificationsView: NotificationsTableViewCellDelegate {
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int) {
+        delegate?.notificationsView(self, didTapOnNotification: notificationList [index])
+    }
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapOnArrow button: UIButton, index: Int) {
         if let index = selectedIndexes.firstIndex(of: index) {
             selectedIndexes.remove(at: index)
         } else {
             selectedIndexes.append(index)
-            let notification = notificationList [index]
-            
-            if let msgTypes = notification.type {
-                if msgTypes == "GAL" {
-                    delegate?.notificationsView(self, didTapOnGallery: notification.id ?? "0")
-                }
-            }
         }
-        
+        delegate?.notificationsView(self, didTapOnNotification: notificationList [index])
         tableView.reloadData()
     }
 }

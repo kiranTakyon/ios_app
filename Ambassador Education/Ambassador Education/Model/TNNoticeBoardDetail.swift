@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TNNoticeBoardDetail {
+class TNNoticeBoardDetail: Codable {
     
     var id : String?
     var title : String?

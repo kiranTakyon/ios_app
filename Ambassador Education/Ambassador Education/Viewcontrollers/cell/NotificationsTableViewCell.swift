@@ -10,6 +10,7 @@ import UIKit
 
 protocol NotificationsTableViewCellDelegate: AnyObject {
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapOnArrow button: UIButton, index: Int)
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int)
 }
 
 class NotificationsTableViewCell: UITableViewCell {
@@ -28,20 +29,24 @@ class NotificationsTableViewCell: UITableViewCell {
     weak var delegate: NotificationsTableViewCellDelegate?
     var index: Int = -1
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
     @IBAction func buttonArrowDidTap(_ sender: UIButton) {
         delegate?.notificationsTableViewCell(self, didTapOnArrow: sender, index: index)
+    }
+    
+    @IBAction func buttonCellDidTap(_ sender: UIButton) {
+        delegate?.notificationsTableViewCell(self, didTapCell: sender, index: index)
     }
     
 }

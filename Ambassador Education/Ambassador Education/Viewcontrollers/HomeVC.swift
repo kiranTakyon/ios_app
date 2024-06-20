@@ -21,8 +21,8 @@ enum alertType:String{
     case noticeboard    = "NWS"
     case weeklyPlan     = "HMW"
     case bus            = "BUS"
-
-
+    
+    
 }
 
 var selectedAlertType : alertType = .gallery
@@ -49,6 +49,8 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     let dashboardView: DashboardView = DashboardView.fromNib()
     let notificationsView: NotificationsView = NotificationsView.fromNib()
     
+    let popUpHeight = UIScreen.main.bounds.height - 150
+    let popUpWidth = UIScreen.main.bounds.width - 60
     
     
     override func viewDidLoad() {
@@ -74,16 +76,16 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         
         var dictionary = [String:Any]()
         if let token = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.gcmToken) as? String{
-        let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] = userId
-        dictionary["RegId"] = token
-        dictionary["PhoneType"] = 1
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            DispatchQueue.main.async {
-                self.stopLoadingAnimation()
+            let userId = UserDefaultsManager.manager.getUserId()
+            dictionary[UserIdKey().id] = userId
+            dictionary["RegId"] = token
+            dictionary["PhoneType"] = 1
+            
+            APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+                DispatchQueue.main.async {
+                    self.stopLoadingAnimation()
+                }
             }
-        }
         }
     }
     
@@ -93,23 +95,23 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         setProfileImageToRound()
-
+        
         if isFirstTime {
             self.revealViewController().revealToggle(self)
             isFirstTime = false
-
+            
             let shoudShowBirthdayWish = UserDefaults.standard.bool(forKey: DBKeys.shouldShowBirthdayWish)
             if shoudShowBirthdayWish {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: "BirthdayViewController") as! BirthdayViewController
-
+                
                 let popupVC = PopupViewController(contentController: vc, popupWidth: 300, popupHeight: 500)
                 self.present(popupVC, animated: true)
             } else {
                 print("condition false")
             }
         }
-
+        
         if sibling {
             postLogIn(id: siblingUserId)
         } else {
@@ -120,8 +122,8 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     
     func setSlideMenuProporties(){
         if let revealVC = revealViewController() {
-                   topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-                   view.addGestureRecognizer(revealVC.panGestureRecognizer())
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
@@ -217,15 +219,15 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
                     }
                 }
             }
-       
+            
             if let studentClass = studentDetail["Class"] as? String{
                 if studentClass != ""{
-                classLabel.text = "Class - " + studentClass
+                    classLabel.text = "Class - " + studentClass
                 }
             }
             if let proImage = studentDetail["ProfileImage"] as? String{
                 self.studentImageView.loadImageWithUrl(proImage)
-
+                
             }
         }
     }
@@ -239,16 +241,16 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     }
     
     @objc func notified(notification: Notification) {
-    
+        
         if let dict = notification.object as? NSDictionary {
-           // self.studentImageView.loadImageWithUrl((dict["img"] as? String).safeValue)
+            // self.studentImageView.loadImageWithUrl((dict["img"] as? String).safeValue)
             postLogIn(id : (dict["userId"] as? String).safeValue)
         }
     }
     
     func postLogIn(id: String){
         var dictionary = [String: String]()
-    
+        
         dictionary["UserId"] =  id
         dictionary[LogInKeys().platform] = "ios"
         dictionary[LogInKeys().Package] = Bundle.main.bundleIdentifier
@@ -261,74 +263,90 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
-
-            if let resultDict = result as? NSDictionary {
-
-                if resultDict["StatusCode"] as? Int == 1 {
+                
+                if let resultDict = result as? NSDictionary {
                     
-                    logInResponseGloabl = NSMutableDictionary(dictionary: resultDict)//resultDict as NSMutableDictionary
-                    // Post Notification so that Side Menu updates its items on Sibling Login...
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateSideMenuItems"), object: nil)
-                    UserDefaultsManager.manager.saveUserId(id:  (logInResponseGloabl.value(forKey: "UserId") as? String).safeValue)
-                    self.setNotitificationList(id : id)
-                    self.stopLoadingAnimation()
-                    
-                } else {
-                    self.stopLoadingAnimation()
-                    self.notificationList.removeAll()
+                    if resultDict["StatusCode"] as? Int == 1 {
+                        
+                        logInResponseGloabl = NSMutableDictionary(dictionary: resultDict)//resultDict as NSMutableDictionary
+                        // Post Notification so that Side Menu updates its items on Sibling Login...
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateSideMenuItems"), object: nil)
+                        UserDefaultsManager.manager.saveUserId(id:  (logInResponseGloabl.value(forKey: "UserId") as? String).safeValue)
+                        self.setNotitificationList(id : id)
+                        self.stopLoadingAnimation()
+                        
+                    } else {
+                        self.stopLoadingAnimation()
+                        self.notificationList.removeAll()
+                    }
                 }
-            }
-            
-            else{
-                self.stopLoadingAnimation()
-            }
+                
+                else{
+                    self.stopLoadingAnimation()
+                }
                 
                 if self.notificationList.count == 0{
-                  //  self.addNoDataFoundLabel()
+                    //  self.addNoDataFoundLabel()
                 }
                 else{
-                 //   self.removeNoDataLabel()
+                    //   self.removeNoDataLabel()
                 }
+            }
         }
-        }
-   
+        
     }
     
     
     func getNotification(user: String){//user : String,student : String ,classVal : String){
-            notificationList.removeAll()
-                    guard let nototificationsArray = logInResponseGloabl["Notification"] as? NSArray else{return}
-                    let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
-                    self.notificationList.append(contentsOf: notifications)
-                self.setStudentDetailsOnView(studentDetail: logInResponseGloabl)
-                    if self.notificationList.count == 0{
-                        self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
-                    }
-                    else{
-                        self.removeNoDataLabel()
-                }
-            }
+        notificationList.removeAll()
+        guard let nototificationsArray = logInResponseGloabl["Notification"] as? NSArray else{return}
+        let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
+        self.notificationList.append(contentsOf: notifications)
+        self.setStudentDetailsOnView(studentDetail: logInResponseGloabl)
+        if self.notificationList.count == 0{
+            self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
+        }
+        else{
+            self.removeNoDataLabel()
+        }
+    }
     
-
+    
     
     func setNotitificationList(id :String){
-
+        
         let url = APIUrls().getDashboard
         var dictionary = [String:Any]()
         
         dictionary[UserIdKey().id] =  id
         dictionary["DashBoardType"] = 1
         dictionary["Platform"] = "ios"
-        self.startLoadingAnimation()
+        
+        // Load from cache
+        let cacheManager = CacheManager()
+        
+        if let cachedNotifications: [TNotification] = cacheManager.loadFromCache(key: "notificationsCache"),
+           let cachedModules: [TModule] = cacheManager.loadFromCache(key: "modulesCache"),
+           let cachedNoticeBoardItems: [TNNoticeBoardDetail] = cacheManager.loadFromCache(key: "noticeBoardCache") {
+            
+            self.notificationList = cachedNotifications
+            self.moduleList = cachedModules
+            self.NoticeBoardItems = cachedNoticeBoardItems
+            
+            self.updateUI()
+        } else {
+            self.startLoadingAnimation()
+        }
+        
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
                 self.stopLoadingAnimation()
-                    self.notificationList.removeAll()
-                    self.moduleList.removeAll()
-                    self.NoticeBoardItems.removeAll()
-                    guard let nototificationsArray = result["Notification"] as? NSArray else{return}
-                    let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
-                    self.notificationList.append(contentsOf: notifications)
+                self.notificationList.removeAll()
+                self.moduleList.removeAll()
+                self.NoticeBoardItems.removeAll()
+                guard let nototificationsArray = result["Notification"] as? NSArray else{return}
+                let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
+                self.notificationList.append(contentsOf: notifications)
                 
                 if let moduleArray = result["ModuleCount"] as? NSArray {
                     let module = ModelClassManager.sharedManager.createModelArray(data: moduleArray, modelType: ModelType.TModule) as! [TModule]
@@ -340,26 +358,36 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
                     self.NoticeBoardItems.append(contentsOf: noticeBoard)
                 }
                 
-
-                    if let notifications = logInResponseGloabl.value(forKey: "Notification") as? NSArray
-                    {
-                        logInResponseGloabl.removeObject(forKey: Notification.self)
-                        logInResponseGloabl.setValue(nototificationsArray, forKey: "Notification")
-                    }
-                    let completeDict = logInResponseGloabl
-                    self.setStudentDetailsOnView(studentDetail: completeDict)
-
-                if self.notificationList.count == 0{
-                    self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
+                
+                if let notifications = logInResponseGloabl.value(forKey: "Notification") as? NSArray
+                {
+                    logInResponseGloabl.removeObject(forKey: Notification.self)
+                    logInResponseGloabl.setValue(nototificationsArray, forKey: "Notification")
                 }
-                if UserDefaultsManager.manager.getNotifications() {
-                    self.addNotificationsView()
-                } else {
-                    self.addDashboardView()
-                }
+
+                
+                cacheManager.saveToCache(data: self.notificationList, key: "notificationsCache")
+                cacheManager.saveToCache(data: self.moduleList, key: "modulesCache")
+                cacheManager.saveToCache(data: self.NoticeBoardItems, key: "noticeBoardCache")
+                self.updateUI()
             }
         }
-     
+        
+    }
+    
+    func updateUI() {
+        let completeDict = logInResponseGloabl
+        self.setStudentDetailsOnView(studentDetail: completeDict)
+        
+        if self.notificationList.count == 0 {
+            self.addNoDataFoundLabel(textValue: "Hurray all your notifications are attended!!")
+        }
+        
+        if UserDefaultsManager.manager.getNotifications() {
+            self.addNotificationsView()
+        } else {
+            self.addDashboardView()
+        }
     }
     
     func addDashboardView() {
@@ -411,7 +439,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
             }
         }
     }
-
+    
     func readNotification(notiId:String,type:String,index: IndexPath){
         
         let url = APIUrls().readNotificatoin
@@ -448,22 +476,22 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         
         
         var viewController : UINavigationController?
-           if typeValue == .gallery{
+        if typeValue == .gallery{
             
             self.performSegue(withIdentifier: "toGallery", sender: self)
-//           viewController = mainStoryBoard.instantiateViewController(withIdentifier: "galleryrootVc") as? UINavigationController
-
+            //           viewController = mainStoryBoard.instantiateViewController(withIdentifier: "galleryrootVc") as? UINavigationController
+            
         }
         else if typeValue == .communicate{
-           viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
-          
+            viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
+            
         }else if typeValue == .html{
             
-           viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
+            viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
             
         }else if typeValue == .noticeboard{
             
-           viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
+            viewController = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? UINavigationController
             
         }else if typeValue == .weeklyPlan{
             
@@ -471,7 +499,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
             
         }
         
-//        guard let _ = viewController else {return}
+        //        guard let _ = viewController else {return}
         
         self.show(viewController!, sender: self)
     }
@@ -485,7 +513,7 @@ enum msgTypes : String{
     case noticeboard    = "NWS"
     case weeklyPlan     = "HWM"
     case bus = "BUS"
-
+    
 }
 
 
@@ -542,6 +570,10 @@ extension HomeVC: TopHeaderDelegate {
 
 
 extension HomeVC: NotificationsViewDelegate {
+    func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification) {
+        didTapOnNotification(notification: notification)
+    }
+    
     func notificationsView(_ view: NotificationsView, didTapOnGallery id: String) {
         guard let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryListController") as? GalleryListController else { return }
         viewController.categoryId = id
@@ -552,18 +584,28 @@ extension HomeVC: NotificationsViewDelegate {
 
 extension HomeVC: DashboardViewDelegate {
     func dashboardView(_ view: DashboardView, didTapOnNotification notification: TNotification) {
+        didTapOnNotification(notification: notification)
+    }
+    
+    
+    
+    func didTapOnNotification(notification: TNotification)  {
         if let typeVal = alertType(rawValue: notification.type ?? ""){
             
             switch typeVal {
             case .gallery:
+                presentGalleryPopUp(notification: notification)
                 break
             case .html:
+                presentHtmlPopUp(notification: notification)
                 break
             case .communicate:
-                presentPopUp(notification: notification)
+                presentCommunicatePopUp(notification: notification)
             case .noticeboard:
+                presentNoticeboardPopUp(notification: notification)
                 break
             case .weeklyPlan:
+                presentWeeklyPopUp(notification: notification)
                 break
             case .bus:
                 break
@@ -571,19 +613,75 @@ extension HomeVC: DashboardViewDelegate {
         }
     }
     
-    
-    func presentPopUp(notification: TNotification) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let navVC = storyBoard.instantiateViewController(withIdentifier: "MessageDetailsNavigationController") as! UINavigationController
+    func presentCommunicatePopUp(notification: TNotification) {
+        let navVC = mainStoryBoard.instantiateViewController(withIdentifier: "MessageDetailsNavigationController") as! UINavigationController
         let vc = navVC.children[0] as! MessageDetailController
         vc.messageId = notification.id
         vc.typeMsg = typeValue
         vc.isPresent = true
-
-        let height = UIScreen.main.bounds.height - 150
-        let width = UIScreen.main.bounds.width - 60
-        let popupVC = PopupViewController(contentController: navVC, popupWidth: width, popupHeight: height)
+        
+        let popupVC = PopupViewController(contentController: navVC, popupWidth: popUpWidth, popupHeight: popUpHeight)
+        popupVC.cornerRadius = 25
+        self.present(popupVC, animated: true)
+        
+    }
+    
+    func presentGalleryPopUp(notification: TNotification) {
+        let navVC = mainStoryBoard.instantiateViewController(withIdentifier: "ImagPreviewNavigationController") as! UINavigationController
+        let vc = navVC.children[0] as! ImagePreviewController
+        let url = notification.catid ?? ""
+        vc.imageUrl = url
+        vc.imageArr = Array([url])
+        vc.pageTitle = notification.title
+        vc.position = 0
+        vc.isPresent = true
+        
+        let popupVC = PopupViewController(contentController: navVC, popupWidth: popUpWidth, popupHeight: popUpHeight)
+        popupVC.cornerRadius = 25
         self.present(popupVC, animated: true)
     }
+    
+    func presentHtmlPopUp(notification: TNotification) {
+        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        
+        detailVc.isPresent = true
+        detailVc.notification = notification
+        let popupVC = PopupViewController(contentController: detailVc, popupWidth: popUpWidth, popupHeight: popUpHeight)
+        popupVC.cornerRadius = 25
+        self.present(popupVC, animated: true)
+    }
+    
+    func presentNoticeboardPopUp(notification: TNotification) {
+        let navVC = mainStoryBoard.instantiateViewController(withIdentifier: "NBNavigationController") as! UINavigationController
+        let vc = navVC.children[0] as! NoticeboardDetailController
+        vc.NbID = notification.processid ?? ""
+        vc.isPresent = true
+        
+        let popupVC = PopupViewController(contentController: navVC, popupWidth: popUpWidth, popupHeight: popUpHeight)
+        popupVC.cornerRadius = 25
+        self.present(popupVC, animated: true)
+    }
+    
+    func presentWeeklyPopUp(notification: TNotification) {
+        let navVC = mainStoryBoard.instantiateViewController(withIdentifier: "WeeklyNavigationController") as! UINavigationController
+        let vc = navVC.children[0] as! WeeklyPlanController
+        vc.delegate = self
+        vc.isPresent = true
+        let popupVC = PopupViewController(contentController: navVC, popupWidth: popUpWidth, popupHeight: popUpHeight)
+        popupVC.cornerRadius = 25
+        self.present(popupVC, animated: true)
+    }
+}
+
+
+extension HomeVC: WeeklyPlanControllerDelegate {
+    func weeklyPlanController(_ view: UIViewController, didtapOnCellForPopupWith comment: String, divId: String, weeklyPlan: WeeklyPlanList) {
+        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        detailVc.weeklyPlan = weeklyPlan
+        detailVc.divId = divId
+        detailVc.comment_needed = comment
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
+    
     
 }

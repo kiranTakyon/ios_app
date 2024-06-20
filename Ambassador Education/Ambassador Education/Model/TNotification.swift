@@ -10,7 +10,7 @@ import Foundation
 import  UIKit
 import WebKit
 
-class TNotification{
+class TNotification: Codable {
     
     var id : String?
     var title : String?

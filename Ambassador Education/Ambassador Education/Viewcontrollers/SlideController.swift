@@ -134,7 +134,7 @@ class SlideController: UITableViewController,TaykonProtocol {
             }else if selectedAlertType == .communicate{
 //                self.performSegue(withIdentifier: "toCommunicate", sender: nil)
                 self.performSegue(withIdentifier: "toMessageDetail", sender: self)
-            }else if selectedAlertType == .html{
+            } else if selectedAlertType == .html {
                 self.performSegue(withIdentifier: "toDigitalReource", sender: nil)
                 
             }else if selectedAlertType == .noticeboard{

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,6 +84,13 @@
                                     <constraint firstAttribute="height" constant="180" id="uDU-sI-SLN"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-zk-jLG">
+                                <rect key="frame" x="0.0" y="0.0" width="501" height="268"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="buttonCellDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="16j-Qy-Z6E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -92,10 +99,13 @@
                             <constraint firstAttribute="trailing" secondItem="Nh5-t4-rJd" secondAttribute="trailing" constant="10" id="1wT-bA-0X9"/>
                             <constraint firstItem="4c0-a8-yUT" firstAttribute="top" secondItem="M8S-oo-Wcz" secondAttribute="top" constant="10" id="6fL-5G-hzo"/>
                             <constraint firstItem="ftn-w4-INZ" firstAttribute="centerY" secondItem="QFJ-p0-4zM" secondAttribute="centerY" id="7GX-Kc-hZy"/>
+                            <constraint firstAttribute="trailing" secondItem="oDR-zk-jLG" secondAttribute="trailing" id="APQ-RT-LVn"/>
                             <constraint firstAttribute="bottom" secondItem="6Ij-6Q-KbI" secondAttribute="bottom" constant="20" id="ART-2q-ftn"/>
                             <constraint firstItem="QFJ-p0-4zM" firstAttribute="leading" secondItem="a0A-dC-9xk" secondAttribute="trailing" constant="5" id="Aws-j8-4g1"/>
+                            <constraint firstItem="oDR-zk-jLG" firstAttribute="top" secondItem="M8S-oo-Wcz" secondAttribute="top" id="CU0-tM-SZl"/>
                             <constraint firstItem="4c0-a8-yUT" firstAttribute="leading" secondItem="M8S-oo-Wcz" secondAttribute="leading" constant="20" id="E8Z-UL-SCF"/>
                             <constraint firstItem="6Ij-6Q-KbI" firstAttribute="top" secondItem="Nh5-t4-rJd" secondAttribute="bottom" constant="20" id="Inx-dK-mxG"/>
+                            <constraint firstItem="oDR-zk-jLG" firstAttribute="leading" secondItem="M8S-oo-Wcz" secondAttribute="leading" id="Jip-WI-GbC"/>
                             <constraint firstItem="Nh5-t4-rJd" firstAttribute="leading" secondItem="ALf-XA-AOe" secondAttribute="leading" id="Lkc-T9-9gR"/>
                             <constraint firstItem="cSe-S9-20b" firstAttribute="leading" secondItem="ALf-XA-AOe" secondAttribute="trailing" id="NKe-h6-n6W"/>
                             <constraint firstAttribute="bottom" secondItem="Nh5-t4-rJd" secondAttribute="bottom" constant="50" id="VfL-xQ-4Tu"/>
@@ -107,6 +117,7 @@
                             <constraint firstItem="6Ij-6Q-KbI" firstAttribute="width" secondItem="M8S-oo-Wcz" secondAttribute="width" multiplier="0.75" id="pRh-dM-dbg"/>
                             <constraint firstItem="a0A-dC-9xk" firstAttribute="leading" secondItem="pEX-yp-moZ" secondAttribute="trailing" constant="5" id="sA7-fS-ySS"/>
                             <constraint firstItem="QFJ-p0-4zM" firstAttribute="centerY" secondItem="a0A-dC-9xk" secondAttribute="centerY" id="sFq-kp-O71"/>
+                            <constraint firstAttribute="bottom" secondItem="oDR-zk-jLG" secondAttribute="bottom" id="uRE-hb-H7j"/>
                             <constraint firstItem="pEX-yp-moZ" firstAttribute="centerY" secondItem="cSe-S9-20b" secondAttribute="centerY" id="ylo-Pi-Ruv"/>
                             <constraint firstItem="6Ij-6Q-KbI" firstAttribute="centerX" secondItem="M8S-oo-Wcz" secondAttribute="centerX" id="zbl-38-AMF"/>
                         </constraints>
@@ -152,7 +163,7 @@
     <resources>
         <image name="DownArrowGrey" width="23.5" height="13.5"/>
         <image name="clock" width="9.6666669845581055" height="7.6666665077209473"/>
-        <image name="emailImage" width="246" height="180"/>
+        <image name="emailImage" width="82" height="60"/>
         <image name="upArrow" width="15.666666984558105" height="9"/>
     </resources>
 </document>

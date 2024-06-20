@@ -10,7 +10,7 @@ import Foundation
 import  UIKit
 import WebKit
 
-class TModule {
+class TModule: Codable {
     
     var module : String?
     var data_count : String?

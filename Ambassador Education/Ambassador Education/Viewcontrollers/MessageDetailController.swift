@@ -60,6 +60,12 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         if isFromDashboardNotification {
             setSlideMenuProporties()
         }
+        if isPresent {
+            topHeaderView.isHidden = true
+            topHeaderView.viewHeightConstraint.constant = 40
+            addCustomTopView()
+        }
+        
         // Do any additional setup after loading the view.
     }
     
