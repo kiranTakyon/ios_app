@@ -38,6 +38,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     @IBOutlet weak var fromDateLabel: UILabel!
     @IBOutlet weak var toDateLabel: UILabel!
     @IBOutlet weak var progressBar: ProgressViewBar!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var weeklyPlan : TNWeeklyPlan?
     var titles = [String]()
@@ -70,6 +71,10 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
             topHeaderView.viewHeightConstraint.constant = 40
             addCustomTopView()
         }
+        
+        collectionView.register(UINib(nibName: "WeeklyPlanCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WeeklyPlanCollectionViewCell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         //self.getWeeklyPlanDetails(fromDate: dateFormatter1.string(from: today as Date), toDate: getThe5thDayFromSelectedDate(date: today, value: 4), isSearch: 0, div: "")
         getWeeklyPlanAPI()
@@ -238,11 +243,14 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 self.viewPager.segmentedControl.selectedSegmentIndex = 0
                // self.viewPager.segmentedControl.select(index: 0, animated: true)
                 self.setPagerView()
+                self.collectionView.reloadData()
                 self.stopLoadingAnimation()
                // self.titles.removeAll()
                 //self.titlesnew.removeAll()
                 self.viewPager.reloadData()
-                self.titles.removeAll()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.titles.removeAll()
+                }
             }
         }
         
@@ -281,6 +289,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 titles.append("")
             }
             self.viewPager.reloadData()
+            self.collectionView.reloadData()
             
         }
     }
@@ -761,4 +770,44 @@ extension WeeklyPlanController: TopHeaderDelegate {
         }
     }
     
+}
+
+
+//MARK: - UICollectionViewDelegate,UICollectionViewDataSource -
+
+extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if !isEmpty{
+            titles = titles.filter { $0 != "" }
+        }
+        if titles.count > 0{
+            return titles.count
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeeklyPlanCollectionViewCell", for: indexPath) as? WeeklyPlanCollectionViewCell else { return UICollectionViewCell() }
+        cell.titleLabel.text = titles[indexPath.row]
+        
+        return cell
+    }
+    
+    
+}
+
+extension WeeklyPlanController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 85, height: 110)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+       return 10
+    }
 }
