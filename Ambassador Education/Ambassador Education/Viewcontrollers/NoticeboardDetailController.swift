@@ -16,6 +16,9 @@ class NoticeboardDetailController: UIViewController {
     @IBOutlet weak var progressBar: ProgressViewBar!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageUserProfile: ImageLoader!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelDate: UILabel!
     
     let quickLookController = QLPreviewController()
     var fileURLs = [NSURL]()
@@ -84,6 +87,14 @@ class NoticeboardDetailController: UIViewController {
         else {
             if let descValue = awarnessPlan?.name{
                 self.topHeaderView.title = descValue
+            }
+        }
+        
+        if let detail = detail {
+            labelTitle.text = detail.title ?? ""
+            labelDate.text = detail.date ?? ""
+            if let image = detail.thumbnail{
+                imageUserProfile.loadImageWithUrl(image)
             }
         }
     }

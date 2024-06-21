@@ -14,7 +14,10 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var categoryTable: UITableView!
     var categoryList = [TNNoticeboardCategory]()
     @IBOutlet weak var topHeaderView: TopHeaderView!
+    @IBOutlet weak var searchTextField: UITextField!
 
+    var selectedIndexes: [Int] = []
+    var searchText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     }
     
     func tableViewProporties() {
+        categoryTable.register(UINib(nibName: "NoticeboardCategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticeboardCategoryTableViewCell")
         categoryTable.estimatedRowHeight = 60
         categoryTable.rowHeight = UITableView.automaticDimension
     }
@@ -49,7 +53,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         
         //{"UserId":"98189","SearchText":""}
         dictionary[UserIdKey().id] = userId
-        dictionary[GalleryCategory.searchText] = ""
+        dictionary[GalleryCategory.searchText] = searchText
         //   dictionary[GalleryCategory.paginationNumber] = 1
         
         
@@ -70,7 +74,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
             
                 self.categoryTable.reloadData()
                 self.stopLoadingAnimation()
-                if self.categoryList.count == 0{
+                if self.categoryList.count == 0 {
                     self.addNoDataFoundLabel()
                 }
             }
@@ -88,22 +92,22 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GalleryCategoryList", for: indexPath) as! GalleryCategoryList
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeboardCategoryTableViewCell", for: indexPath) as! NoticeboardCategoryTableViewCell
         
         let category = categoryList[indexPath.row]
         
+        cell.index = indexPath.row
+        cell.delegate = self
+        cell.setUpCell(category: category)
         
-        if let title = category.category{
-            cell.titleLabel.text = title
-        }
-        if let item = category.Items as? [TNNoticeBoardDetail]{
-            if item.count > 0 {
-                if let img  = item[0].image{
-                cell.categoryImageLoder.loadImageWithUrl(img)
-                }
-            }
-        }
-       // cell.categoryImageLoder.image = #imageLiteral(resourceName: "Gallary")
+        let isSelected = selectedIndexes.contains(indexPath.row)
+        cell.tableViewHeight.constant = isSelected ? 150 : 0
+        cell.tableView.isHidden = !isSelected
+        cell.labelDate.isHidden = !isSelected
+        cell.dateView.isHidden = isSelected
+        cell.moreButton.isHidden = !isSelected
+        let image = isSelected ? "upArrow" : "down_arrow"
+        cell.arrowButton.setImage(UIImage(named: image), for: .normal)
         
         cell.selectionStyle = .none
         
@@ -112,16 +116,16 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
-    
-        let item = categoryList[indexPath.row]
-        if let cell = tableView.cellForRow(at: indexPath) as? GalleryCategoryList{
-            self.navigateToDetail(item: item.Items!, text: getTitleOfCell(cell: cell))
-
-     }
-        
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+//        
+//    
+//        let item = categoryList[indexPath.row]
+//        if let cell = tableView.cellForRow(at: indexPath) as? GalleryCategoryList{
+//            self.navigateToDetail(item: item.Items!, text: getTitleOfCell(cell: cell))
+//
+//     }
+//        
+//    }
     
     func getTitleOfCell(cell :GalleryCategoryList) -> String{
         if let text = cell.titleLabel.text{
@@ -158,6 +162,11 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapOnSearchButton(_ sender: UIButton) {
+        searchText = searchTextField.text ?? ""
+        getCategoryList()
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -188,6 +197,28 @@ extension NoticeboardCategoryController: TopHeaderDelegate {
                 showLoginPage()
             }
         }
+    }
+    
+}
+
+
+extension NoticeboardCategoryController: NoticeboardCategoryTableViewCellDelegate {
+    func noticeboardCategoryTableViewCell(_ cell: NoticeboardCategoryTableViewCell, didSelectCellwithIndex index: Int, item: TNNoticeBoardDetail) {
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardDetailController") as! NoticeboardDetailController
+        vc.detail = item
+        vc.NbID = item.id ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+       
+    func noticeboardCategoryTableViewCell(_ cell: NoticeboardCategoryTableViewCell, didTapOnArrowButton button: UIButton, withIndex index: Int) {
+        if let index = selectedIndexes.firstIndex(of: index) {
+            selectedIndexes.remove(at: index)
+        } else {
+            selectedIndexes.append(index)
+        }
+        
+        categoryTable.reloadData()
     }
     
 }
