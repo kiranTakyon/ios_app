@@ -11,6 +11,7 @@ import MXSegmentedPager
 import DatePickerDialog
 import BIZPopupView
 import QuickLook
+import DropDown
 
 var mainTitle = ""
 
@@ -18,22 +19,50 @@ protocol WeeklyPlanControllerDelegate: AnyObject {
     func weeklyPlanController(_ view: UIViewController, didtapOnCellForPopupWith comment: String, divId: String, weeklyPlan: WeeklyPlanList)
 }
 
-class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmentedPagerDataSource,TaykonProtocol {
+class WeeklyPlanController: UIViewController,TaykonProtocol {
         
     @IBOutlet weak var viewPager: MXSegmentedPager!
     @IBOutlet weak var topHeaderView: TopHeaderView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var labelSubject: UILabel!
+    @IBOutlet weak var buttonSubjectDropDown: UIButton!
+    @IBOutlet weak var endingDateField: UITextField!
+    @IBOutlet weak var startingDateField: UITextField!
+    
+    var selectedIndexes: [Int] = []
     
     let videoDownload  = VideoDownload()
     var fileURLs = [NSURL]()
     let quickLookController = QLPreviewController()
     var divId = ""
+    var filterDivId = ""
+    var dropDown : DropDown?
     var subId = ""
     var comment_needed = "1"
+    var viewColors: [String] = ["5CB0D7","685AEB","E47763"]
+    var subjectsnew = [TNSubject]()
+    var subjectID:String = ""
+    var savedTime : String?
     
     var isPresent: Bool = false
     var completeListDetails : NSDictionary?
     var backgroundSession: URLSession!
     weak var delegate: WeeklyPlanControllerDelegate?
+    var subjectDropDown : DropDown?
+    var datePicker : UIDatePicker!
+    var startTimeString = ""
+    var endTimeString = ""
+    var startTime = Date()
+    var endTime = Date()
+    var isSearch = Int()
+    
+    var dataArray : [WeeklyPlanList] = [WeeklyPlanList](){
+        
+        didSet {
+            self.setDataArray()
+        }
+    }
     
     @IBOutlet weak var fromDateLabel: UILabel!
     @IBOutlet weak var toDateLabel: UILabel!
@@ -57,7 +86,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         super.viewDidLoad()
         isEmpty = false
 //        self.showPopUpView()
-        setPagerProporties()
         setDateFormatter()
         setSlideMenuProporties()
         setDatesOnPicker()
@@ -75,8 +103,11 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         collectionView.register(UINib(nibName: "WeeklyPlanCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WeeklyPlanCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        //self.getWeeklyPlanDetails(fromDate: dateFormatter1.string(from: today as Date), toDate: getThe5thDayFromSelectedDate(date: today, value: 4), isSearch: 0, div: "")
+        tableView.register(UINib(nibName: "WPTableViewCell", bundle: nil), forCellReuseIdentifier: "WPTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.endingDateField.delegate = self 
+        self.startingDateField.delegate = self
         getWeeklyPlanAPI()
         // Do any additional setup after loading the view.
     }
@@ -239,17 +270,16 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                         self.comment_needed = comm_n
                     }
                 }
-                
-                self.viewPager.segmentedControl.selectedSegmentIndex = 0
-               // self.viewPager.segmentedControl.select(index: 0, animated: true)
+
                 self.setPagerView()
                 self.collectionView.reloadData()
-                self.stopLoadingAnimation()
-               // self.titles.removeAll()
-                //self.titlesnew.removeAll()
-                self.viewPager.reloadData()
+                self.setDropDown()
+                self.setDate()
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.setUpInitialData()
                     self.titles.removeAll()
+                    self.stopLoadingAnimation()
                 }
             }
         }
@@ -277,18 +307,15 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 }
             }
             
-            if self.titles.count > 0{
+            if self.titles.count > 0 {
                 mainTitle = self.titles[0]
                 isEmpty = false
-                
-               // self.viewPager.isHidden = false
-            }
-            else{
+            } else {
                 isEmpty = true
                 titles.removeAll()
                 titles.append("")
             }
-            self.viewPager.reloadData()
+            
             self.collectionView.reloadData()
             
         }
@@ -440,23 +467,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         
     
-    func setPagerProporties(){
-        
-        viewPager.delegate = self
-        viewPager.dataSource = self
-        viewPager.segmentedControl.selectionIndicatorLocation =  HMSegmentedControlSelectionIndicatorLocation.down//HMSegmentedControlSelectionIndicatorLocationDown
-        viewPager.segmentedControl.selectionIndicatorColor = UIColor.white
-        //viewPager.segmentedControl.indicatorColor = UIColor.white
-        viewPager.segmentedControl.backgroundColor = UIColor.appOrangeColor()
-                viewPager.segmentedControl.tintColor = UIColor.white
-        
-        let attributeFontSaySomething : [String : Any] = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white,convertFromNSAttributedStringKey(NSAttributedString.Key.font) : UIFont.boldSystemFont(ofSize: 14.0)]
-        //
-       viewPager.segmentedControl.titleTextAttributes = attributeFontSaySomething
-        
-        
-        
-    }
     
     
     func loadPDFAndShare(url: String,formatString: String,fileName: String){
@@ -477,82 +487,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         }
     }
     
-    //MARK:- MXPagerViewDelegate & MXPagerViewDataSource
-    
-    func numberOfPages(in segmentedPager: MXSegmentedPager) -> Int {
-        if !isEmpty{
-            titles = titles.filter { $0 != "" }
-        }
-        if titles.count > 0{
-            return titles.count
-        }
-        return 1
-    }
-    
-    
-    func segmentedPager(_ segmentedPager: MXSegmentedPager, titleForSectionAt index: Int) -> String {
-        if titles.count > 0{
-            return titles[index]
-        }
-        return ""
-    }
-    
-    
-    func segmentedPager(_ segmentedPager: MXSegmentedPager, didSelectViewWith index: Int) {
-        
-        print("index value :- ",index)
-        if titles.count > 0{
-            if let value = self.titles[index] as? String{
-                mainTitle  = value
-            }
-        }
-    }
-    
-    func segmentedPager(_ segmentedPager: MXSegmentedPager, viewForPageAt index: Int) -> UIView {
-        
-        let tableView = WeeklyPlanTable(frame: CGRect(x: 0, y: 0, width: segmentedPager.frame.size.width, height: segmentedPager.frame.size.height))
-        
-        tableView.delegate = self
-        var titleType = String()
-        if index < titlesnew.count{
-            var titless = self.titlesnew[index]
-            if titless.contains("ASSESSMENT") ||  titless.contains("ASSESSMENTS"){
-                titless = "ASSESSMENT"
-            }
-            else if titless.contains("CLASSWORK") ||  titless.contains("CLASSWORKS"){
-                titless = "CLASSWORK"
-            }
-            switch titless {
-            case "HOMEWORK":
-                titleType = "HomeWork"
-            case "ASSESSMENT":
-                titleType = "Assessments"
-            case "CLASSWORK":
-                titleType = "ClassWork"
-            case "QUIZES":
-                titleType = "Quizes/Project/Research"
-                
-            default:
-                break
-            }
-            
-            if  let list = self.completeListDetails?[titleType] as? NSArray{
-                
-                
-                let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
-                
-                
-                
-                tableView.dataArray = arrayObjs
-            }
-            else{
-                tableView.dataArray = [WeeklyPlanList]()
-            }
-        }
-        
-        return tableView
-        
-    }
     
     @IBAction func FromdatePickerAction(_ sender: Any) {
         self.fromDatePickerTapped()
@@ -577,7 +511,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
         let popvc = MainStoyboard.instantiateViewController(withIdentifier: "WeeklyPlanFilterController") as! WeeklyPlanFilterController
         popvc.delegate = self
-        if let _ = weeklyPlan?.divisions{
+        if let _ = weeklyPlan?.divisions {
             popvc.divisions = weeklyPlan?.divisions
         }
         if let details = self.completeListDetails{
@@ -611,6 +545,16 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
     }
     
+    func refreshParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
+        if let values = value as? (String,String,Int,String,String){
+            
+            let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
+            let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
+            divId = values.3
+            subId = values.4
+            self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
+        }
+    }
     
     func getBackToTableView(value: Any?,tagValueInt : Int) {
         
@@ -777,10 +721,10 @@ extension WeeklyPlanController: TopHeaderDelegate {
 
 extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !isEmpty{
+        if !isEmpty {
             titles = titles.filter { $0 != "" }
         }
-        if titles.count > 0{
+        if titles.count > 0 {
             return titles.count
         }
         return 0
@@ -788,11 +732,61 @@ extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeeklyPlanCollectionViewCell", for: indexPath) as? WeeklyPlanCollectionViewCell else { return UICollectionViewCell() }
+        let colorIndex = indexPath.row % viewColors.count
+        let hexString = viewColors[colorIndex]
+        
+        cell.bgView.backgroundColor = UIColor(named: hexString)
         cell.titleLabel.text = titles[indexPath.row]
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if titles.count > 0{
+            if let value = self.titles[indexPath.item] as? String{
+                mainTitle  = value
+            }
+        }
+        self.startLoadingAnimation()
+        var titleType = String()
+        if indexPath.item < titlesnew.count{
+            var titless = self.titlesnew[indexPath.item]
+            if titless.contains("ASSESSMENT") ||  titless.contains("ASSESSMENTS"){
+                titless = "ASSESSMENT"
+            }
+            else if titless.contains("CLASSWORK") ||  titless.contains("CLASSWORKS"){
+                titless = "CLASSWORK"
+            }
+            switch titless {
+            case "HOMEWORK":
+                titleType = "HomeWork"
+            case "ASSESSMENT":
+                titleType = "Assessments"
+            case "CLASSWORK":
+                titleType = "ClassWork"
+            case "QUIZES":
+                titleType = "Quizes/Project/Research"
+                
+            default:
+                break
+            }
+            
+            if  let list = self.completeListDetails?[titleType] as? NSArray {
+                
+                
+                let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
+                
+                
+                
+                dataArray = arrayObjs
+            } else {
+                dataArray = [WeeklyPlanList]()
+            }
+            self.stopLoadingAnimation()
+        }
+        
+        
+    }
     
 }
 
@@ -810,4 +804,105 @@ extension WeeklyPlanController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
        return 10
     }
+}
+
+
+extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WPTableViewCell", for: indexPath) as? WPTableViewCell else { return UITableViewCell() }
+        cell.index = indexPath.row
+        cell.delegate = self
+        if selectedIndexes.contains(indexPath.row) {
+            cell.labelDescription.numberOfLines = 0
+            cell.buttonArrow.isSelected = true
+        } else {
+            cell.buttonArrow.isSelected = false
+        }
+        
+        let weeklyplan = self.dataArray[indexPath.row]
+        if let count = weeklyplan.attachIconCount as? Int {
+            cell.attachmntButtn.isHidden = !(count > 0)
+        }
+        if let topic = weeklyplan.topic {
+            cell.labelTitle.text = topic
+        }
+        
+        if let desc = weeklyplan.description {
+            let htmlDecode = desc.replacingHTMLEntities
+            cell.labelDescription.attributedText = htmlDecode?.htmlToAttributedString
+        }
+        
+        if let date = weeklyplan.date {
+            cell.labelDate.text = date
+        }
+        
+        
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let values = self.dataArray[indexPath.row]
+        self.navigateToDetail(weeklyPlan:values)
+    }
+    
+    func wPTableViewCell(_ cell: WPTableViewCell, didTapOnArrow button: UIButton, index: Int) {
+        if let index = selectedIndexes.firstIndex(of: index) {
+            selectedIndexes.remove(at: index)
+        } else {
+            selectedIndexes.append(index)
+        }
+        tableView.reloadData()
+    }
+    
+    func setDataArray() {
+        
+        if dataArray.count == 0 {
+            noDataLabel.isHidden = false
+            tableView.isHidden = true
+        } else {
+            noDataLabel.isHidden = true
+            tableView.isHidden = false
+            tableView.reloadData()
+        }
+    }
+    
+    func setUpInitialData() {
+        
+        var titleType = String()
+        if 0 < titlesnew.count{
+            var titless = self.titlesnew[0]
+            if titless.contains("ASSESSMENT") ||  titless.contains("ASSESSMENTS"){
+                titless = "ASSESSMENT"
+            }
+            else if titless.contains("CLASSWORK") ||  titless.contains("CLASSWORKS"){
+                titless = "CLASSWORK"
+            }
+            switch titless {
+            case "HOMEWORK":
+                titleType = "HomeWork"
+            case "ASSESSMENT":
+                titleType = "Assessments"
+            case "CLASSWORK":
+                titleType = "ClassWork"
+            case "QUIZES":
+                titleType = "Quizes/Project/Research"
+                
+            default:
+                break
+            }
+            
+            if  let list = self.completeListDetails?[titleType] as? NSArray {
+                let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
+                dataArray = arrayObjs
+            } else {
+                dataArray = [WeeklyPlanList]()
+            }
+        }
+    }
+    
 }

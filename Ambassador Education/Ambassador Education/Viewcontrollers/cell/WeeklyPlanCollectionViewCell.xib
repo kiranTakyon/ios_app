@@ -47,7 +47,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7y-L1-riK">
                                 <rect key="frame" x="5" y="60" width="178" height="66"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -79,6 +79,7 @@
             </constraints>
             <size key="customSize" width="188" height="146"/>
             <connections>
+                <outlet property="bgView" destination="Dyz-zt-WyO" id="lxt-xc-us7"/>
                 <outlet property="moduleImageView" destination="Q2p-xL-BKC" id="mcB-lF-mmU"/>
                 <outlet property="titleLabel" destination="x7y-L1-riK" id="OuJ-fu-Zs2"/>
             </connections>
