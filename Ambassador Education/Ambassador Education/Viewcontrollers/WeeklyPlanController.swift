@@ -40,7 +40,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var dropDown : DropDown?
     var subId = ""
     var comment_needed = "1"
-    var viewColors: [String] = ["5CB0D7","685AEB","E47763"]
+    var viewColors: [String] = ["F1C690","76CECF","EFC8CB","C49BC9"]
     var subjectsnew = [TNSubject]()
     var subjectID:String = ""
     var savedTime : String?

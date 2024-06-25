@@ -11,7 +11,18 @@ import QuickLook
 import RichEditorView
 
 class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelegate,DRDDownLoadDelegate {
+    @IBOutlet weak var leadingConstraintView: NSLayoutConstraint!
+    @IBOutlet weak var trailingConstraintView: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintView: NSLayoutConstraint!
     @IBOutlet weak var btnViewComment: UIButton!
+    @IBOutlet weak var imageUserProfile: ImageLoader!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var bottomSeperatorView: UIView!
+    @IBOutlet weak var bottomButtonView: UIView!
+    @IBOutlet weak var heightBottomButtonView: NSLayoutConstraint!
+    
     
     @IBOutlet weak var btnAddComment: UIButton!
     @IBOutlet weak var richEditor1ViewHeigh: NSLayoutConstraint!
@@ -180,10 +191,24 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             guard let user = UserDefaultsManager.manager.getUserType() as? String else{
             }
             
+            leadingConstraintView.constant = 50
+            trailingConstraintView.constant = 50
+            topConstraintView.constant = 110
+            seperatorView.isHidden = true
+            titleLabel.isHidden = true
+            btnAddComment.isHidden = true
+            imageUserProfile.isHidden = false
+            titleView.isHidden = false
+            bottomSeperatorView.isHidden = false
+            bottomButtonView.isHidden = false
+            heightBottomButtonView.constant = 50
+            imageUserProfile.loadImageWithUrl("")
+            labelDate.text = weeklyPlanValue.date
+            
             self.topHeaderView.title = "Weekly Plan Details"
             self.constraintViewWebDataTableHeight.constant = 100
             getAttachments(weeklyPlan: weeklyPlanValue)
-            self.titleLabel.text = weeklyPlanValue.topic
+            self.labelTitle.text = weeklyPlanValue.topic
             self.topHeaderView.title = mainTitle
             //let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
             let htmlDecode = weeklyPlanValue.description
@@ -203,7 +228,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
                 }
                 else
                 {
-                    btnAddComment.isHidden = false
+                   // btnAddComment.isHidden = false
                 }
             }
         }
