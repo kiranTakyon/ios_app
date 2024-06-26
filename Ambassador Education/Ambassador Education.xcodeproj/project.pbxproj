@@ -677,6 +677,234 @@
 		13DD1047214905A600CB24AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13DD10462149059500CB24AD /* GoogleService-Info.plist */; };
 		13DD1053214930D400CB24AD /* SAMAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DD1052214930D100CB24AD /* SAMAAssets.xcassets */; };
 		13DD10582149430700CB24AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13DD10572149430700CB24AD /* GoogleService-Info.plist */; };
+		183436772C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436782C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436792C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834367A2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834367B2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834367C2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834367D2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834367E2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834367F2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436802C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436812C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436822C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436832C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436842C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436852C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436862C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436872C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436882C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436892C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834368A2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834368B2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834368C2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834368D2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834368E2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834368F2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436902C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436912C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436922C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436932C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436942C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436952C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436962C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436972C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436982C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		183436992C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834369A2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834369B2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834369C2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		1834369D2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		1834369E2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		1834369F2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A02C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A12C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A22C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A32C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A42C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A52C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A62C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A72C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A82C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436A92C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436AA2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436AB2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436AC2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436AD2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436AE2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436AF2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B02C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B12C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B22C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B32C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B42C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B52C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B62C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B72C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B82C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436B92C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436BA2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436BB2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436BC2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436BD2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436BE2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436BF2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436C02C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436C12C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436C22C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		183436C72C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436C82C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436C92C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436CA2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436CB2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436CC2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436CD2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436CE2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436CF2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D02C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D12C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D22C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D32C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D42C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D62C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D72C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D82C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436D92C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436DA2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436DB2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436DC2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436DD2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436DE2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436DF2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E02C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E12C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E22C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E32C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E42C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E62C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E72C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E82C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436E92C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436EA2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436EB2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436EC2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		183436ED2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436EE2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436EF2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F02C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F12C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F22C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F32C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F42C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F52C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F72C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F82C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436F92C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436FA2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436FB2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436FC2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436FD2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436FE2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183436FF2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437002C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437012C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437022C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437032C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437042C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437052C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437062C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437072C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437082C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437092C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		1834370A2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		1834370B2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		1834370C2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		1834370D2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		1834370E2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		1834370F2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437102C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437112C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437122C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		183437152C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437162C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437172C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437182C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437192C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834371A2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834371B2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834371C2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834371D2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834371E2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834371F2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437202C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437212C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437222C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437232C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437242C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437252C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437262C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437272C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437282C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437292C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834372A2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834372B2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834372C2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834372D2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834372E2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834372F2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437302C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437312C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437322C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437332C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437342C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437352C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437362C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437372C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437382C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		183437392C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834373A2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		1834373B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834373C2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834373D2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834373E2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834373F2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437402C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437412C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437422C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437432C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437442C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437452C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437462C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437472C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437482C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437492C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834374A2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834374B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834374C2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834374D2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834374E2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834374F2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437502C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437512C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437522C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437532C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437542C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437552C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437562C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437572C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437582C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437592C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834375A2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834375B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834375C2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834375D2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834375E2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		1834375F2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		183437602C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
 		183B142C2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */; };
 		183B142D2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */; };
 		183B142E2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */; };
@@ -7471,6 +7699,12 @@
 		13DD10502149229600CB24AD /* PEPSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PEPSAssets.xcassets; sourceTree = "<group>"; };
 		13DD1052214930D100CB24AD /* SAMAAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SAMAAssets.xcassets; sourceTree = "<group>"; };
 		13DD10572149430700CB24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTotalTableViewCell.swift; sourceTree = "<group>"; };
+		183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentTotalTableViewCell.xib; sourceTree = "<group>"; };
+		183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeeklyPlanController+Extension.swift"; sourceTree = "<group>"; };
 		187912CC2C29612500F80762 /* WPTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPTableViewCell.swift; sourceTree = "<group>"; };
 		187912CD2C29612500F80762 /* WPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WPTableViewCell.xib; sourceTree = "<group>"; };
@@ -8876,6 +9110,12 @@
 				18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */,
 				187912CC2C29612500F80762 /* WPTableViewCell.swift */,
 				187912CD2C29612500F80762 /* WPTableViewCell.xib */,
+				183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */,
+				183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */,
+				183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */,
+				183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */,
+				183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */,
+				183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -10348,12 +10588,15 @@
 				18E8391C2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CEE50C4A26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				13CD024821467B2B008F307A /* CredenceAssets.xcassets in Resources */,
+				1834373B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				98CB104A2B565B2C00EB1217 /* NotificationTableViewCell.xib in Resources */,
+				183436ED2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				13CD024621467A04008F307A /* GoogleService-Info.plist in Resources */,
 				136575C32140F0E90045A958 /* SampleText.txt in Resources */,
 				CD42D6F827FBC137006FA37C /* Main.storyboard in Resources */,
 				98CB0E362B565B2900EB1217 /* NotificationMailTableViewCell.xib in Resources */,
 				98CB0D8B2B565A5B00EB1217 /* DashboardView.xib in Resources */,
+				1834369D2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				98B10CDC2A3C5C6200FE000E /* TopHeaderView.xib in Resources */,
 				CEE50BFF26E7CEE800D355C4 /* CrescentV2.xcassets in Resources */,
 				98CB10242B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
@@ -10381,6 +10624,7 @@
 				98CB0D662B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD25253DB33800A92A46 /* Common.xcassets in Resources */,
 				136578B62140F1600045A958 /* TestInapp.jpg in Resources */,
+				1834369E2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				136578B72140F1600045A958 /* Picker.xib in Resources */,
 				18E8391D2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				136578B92140F1600045A958 /* ProgressViewBar.xib in Resources */,
@@ -10403,6 +10647,8 @@
 				13CD025F2146894C008F307A /* NewAcademy.xcassets in Resources */,
 				98CB0FD92B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				136578C12140F1600045A958 /* CalendarSection.xib in Resources */,
+				183436EE2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834373C2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10420,6 +10666,7 @@
 				98CB0D672B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD28253DB33800A92A46 /* Common.xcassets in Resources */,
 				13657D762140F1CC0045A958 /* TestInapp.jpg in Resources */,
+				1834369F2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				13657D772140F1CC0045A958 /* Picker.xib in Resources */,
 				18E8391E2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				13657D792140F1CC0045A958 /* ProgressViewBar.xib in Resources */,
@@ -10442,6 +10689,8 @@
 				13657D812140F1CC0045A958 /* CalendarSection.xib in Resources */,
 				98CB0FDA2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				13CD023A2146774B008F307A /* GoogleService-Info.plist in Resources */,
+				183436EF2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834373D2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10459,6 +10708,7 @@
 				98CB0D692B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD2A253DB33800A92A46 /* Common.xcassets in Resources */,
 				13DD1053214930D400CB24AD /* SAMAAssets.xcassets in Resources */,
+				183436A12C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				136583662140F2260045A958 /* TestInapp.jpg in Resources */,
 				18E839202C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				136583672140F2260045A958 /* Picker.xib in Resources */,
@@ -10481,6 +10731,8 @@
 				1365836D2140F2260045A958 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FDC2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				136583712140F2260045A958 /* CalendarSection.xib in Resources */,
+				183436F12C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834373F2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10498,6 +10750,7 @@
 				98CB0D6B2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD2C253DB33900A92A46 /* Common.xcassets in Resources */,
 				136584932140F22F0045A958 /* .swiftlint.yml in Resources */,
+				183436A32C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				136584962140F22F0045A958 /* TestInapp.jpg in Resources */,
 				18E839222C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				136584972140F22F0045A958 /* Picker.xib in Resources */,
@@ -10520,6 +10773,8 @@
 				13DD1047214905A600CB24AD /* GoogleService-Info.plist in Resources */,
 				98CB0FDE2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				136584A12140F22F0045A958 /* CalendarSection.xib in Resources */,
+				183436F32C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437412C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10544,12 +10799,15 @@
 				18E8392B2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				446D52602539C33100D1026C /* ProgressViewBar.xib in Resources */,
 				98B10D1A2A3C647700FE000E /* TopHeaderView.xib in Resources */,
+				1834374A2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				98CB10592B565B2C00EB1217 /* NotificationTableViewCell.xib in Resources */,
+				183436FC2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				446D52612539C33100D1026C /* TestPenguin.png in Resources */,
 				446D52622539C33100D1026C /* SampleText.txt in Resources */,
 				4493CD41253DB33900A92A46 /* Common.xcassets in Resources */,
 				98CB0E452B565B2900EB1217 /* NotificationMailTableViewCell.xib in Resources */,
 				98CB0D9A2B565A5B00EB1217 /* DashboardView.xib in Resources */,
+				183436AC2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				446D52632539C33100D1026C /* sampleImage.png in Resources */,
 				446D52642539C33100D1026C /* WeeklyPlanCell.xib in Resources */,
 				98CB10332B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
@@ -10577,6 +10835,7 @@
 				98CB0D712B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				988EE36C2A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
 				44883259237EA02B00E80665 /* .swiftlint.yml in Resources */,
+				183436A92C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				4488325B237EA02B00E80665 /* TestInapp.jpg in Resources */,
 				18E839282C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				4488325C237EA02B00E80665 /* Picker.xib in Resources */,
@@ -10599,6 +10858,8 @@
 				CEE50C5B26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				98CB0FE42B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				44883263237EA02B00E80665 /* CalendarSection.xib in Resources */,
+				183436F92C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437472C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10609,6 +10870,7 @@
 				98CB0D732B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				44AD1BE525388F8000368235 /* GoogleService-Info.plist in Resources */,
 				98CB10322B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
+				183436AB2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				44AD1BE425388F6C00368235 /* Mawahib.xcassets in Resources */,
 				98CB0DF82B565B2800EB1217 /* NoticeBoardCollectionViewCell.xib in Resources */,
 				44AD1BD125388E1000368235 /* LaunchScreen.storyboard in Resources */,
@@ -10616,9 +10878,11 @@
 				44AD1BD225388E1000368235 /* WeeklyPlanTable.xib in Resources */,
 				18E839782C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */,
 				988EE3702A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
+				183437492C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				18E838DA2C242980001E25F5 /* NoticeboardCategoryTableViewCell.xib in Resources */,
 				44AD1BD325388E1000368235 /* .swiftlint.yml in Resources */,
 				187913022C29612600F80762 /* WPTableViewCell.xib in Resources */,
+				183436FB2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				98CB0FC02B565B2B00EB1217 /* NoticeBoardTableViewCell.xib in Resources */,
 				44AD1BD425388E1000368235 /* TestInapp.jpg in Resources */,
 				44AD1BD525388E1000368235 /* Picker.xib in Resources */,
@@ -10661,12 +10925,15 @@
 				18E8392C2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				44DC612125798523002E3917 /* TestPenguin.png in Resources */,
 				98B10D182A3C647500FE000E /* TopHeaderView.xib in Resources */,
+				1834374B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				98CB105A2B565B2C00EB1217 /* NotificationTableViewCell.xib in Resources */,
+				183436FD2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				44DC612325798523002E3917 /* SampleText.txt in Resources */,
 				44DC612425798523002E3917 /* Common.xcassets in Resources */,
 				44A75D56257BE5A800AB6299 /* GoogleService-Info.plist in Resources */,
 				98CB0E462B565B2900EB1217 /* NotificationMailTableViewCell.xib in Resources */,
 				98CB0D9B2B565A5B00EB1217 /* DashboardView.xib in Resources */,
+				183436AD2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				44DC612525798523002E3917 /* sampleImage.png in Resources */,
 				44DC612625798523002E3917 /* WeeklyPlanCell.xib in Resources */,
 				98CB10342B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
@@ -10694,6 +10961,7 @@
 				98CB0D6A2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				131EF95E216F293A007DA6B3 /* GoogleService-Info.plist in Resources */,
 				B41C1B4921418FD600A9907B /* TestInapp.jpg in Resources */,
+				183436A22C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				B41C1B62214194C900A9907B /* AsianAssets.xcassets in Resources */,
 				18E839212C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				B41C1B4A21418FD600A9907B /* Picker.xib in Resources */,
@@ -10716,6 +10984,8 @@
 				CEE50C5326E7CEFB00D355C4 /* LPS.xcassets in Resources */,
 				98CB0FDD2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				B41C1B5421418FD600A9907B /* CalendarSection.xib in Resources */,
+				183436F22C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437402C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10733,6 +11003,7 @@
 				98CB0D8A2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD0E12112B170A9600EE599B /* WeeklyPlanTable.xib in Resources */,
 				CD0E12122B170A9600EE599B /* .swiftlint.yml in Resources */,
+				183436C22C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD0E12132B170A9600EE599B /* TestInapp.jpg in Resources */,
 				18E839412C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD0E12142B170A9600EE599B /* Main.storyboard in Resources */,
@@ -10755,6 +11026,8 @@
 				CD0E121C2B170A9600EE599B /* WeeklyPlanCell.xib in Resources */,
 				98CB0FFD2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD0E121D2B170A9600EE599B /* CalendarSection.xib in Resources */,
+				183437122C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437602C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10772,6 +11045,7 @@
 				98CB0D7A2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD110C7E289C41700050EF80 /* LaunchScreen.storyboard in Resources */,
 				CD110C7F289C41700050EF80 /* WeeklyPlanTable.xib in Resources */,
+				183436B22C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD110C80289C41700050EF80 /* .swiftlint.yml in Resources */,
 				18E839312C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD110C81289C41700050EF80 /* TestInapp.jpg in Resources */,
@@ -10794,6 +11068,8 @@
 				CD110C89289C41700050EF80 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FED2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD110C8A289C41700050EF80 /* CalendarSection.xib in Resources */,
+				183437022C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437502C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10811,6 +11087,7 @@
 				98CB0D7B2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD110DBC289C4E4B0050EF80 /* WeeklyPlanTable.xib in Resources */,
 				CD110DBD289C4E4B0050EF80 /* .swiftlint.yml in Resources */,
+				183436B32C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD110DBE289C4E4B0050EF80 /* TestInapp.jpg in Resources */,
 				18E839322C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD110DBF289C4E4B0050EF80 /* Main.storyboard in Resources */,
@@ -10833,6 +11110,8 @@
 				CD110DC6289C4E4B0050EF80 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FEE2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD110DC7289C4E4B0050EF80 /* CalendarSection.xib in Resources */,
+				183437032C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437512C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10850,6 +11129,7 @@
 				98CB0D772B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD16690927DA99C300F31356 /* LaunchScreen.storyboard in Resources */,
 				CD16690B27DA99C300F31356 /* WeeklyPlanTable.xib in Resources */,
+				183436AF2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD16690C27DA99C300F31356 /* .swiftlint.yml in Resources */,
 				18E8392E2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD16690D27DA99C300F31356 /* TestInapp.jpg in Resources */,
@@ -10872,6 +11152,8 @@
 				CD16691427DA99C300F31356 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FEA2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD16691627DA99C300F31356 /* CalendarSection.xib in Resources */,
+				183436FF2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834374D2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10889,6 +11171,7 @@
 				98CB0D892B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD1AE5BA2B0438780000F294 /* LaunchScreen.storyboard in Resources */,
 				CD1AE5BB2B0438780000F294 /* WeeklyPlanTable.xib in Resources */,
+				183436C12C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD1AE5BC2B0438780000F294 /* .swiftlint.yml in Resources */,
 				18E839402C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD1AE5BD2B0438780000F294 /* TestInapp.jpg in Resources */,
@@ -10911,6 +11194,8 @@
 				CD1AE5C62B0438780000F294 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FFC2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD1AE5C72B0438780000F294 /* CalendarSection.xib in Resources */,
+				183437112C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834375F2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10921,6 +11206,7 @@
 				98CB0D762B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD3A90EF2765A39100B9AA49 /* GoogleService-Info.plist in Resources */,
 				98CB10352B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
+				183436AE2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD3A90EE2765A38100B9AA49 /* OurOwn.xcassets in Resources */,
 				98CB0DFB2B565B2800EB1217 /* NoticeBoardCollectionViewCell.xib in Resources */,
 				CD3A90D92765A2F500B9AA49 /* LaunchScreen.storyboard in Resources */,
@@ -10928,9 +11214,11 @@
 				CD3A90DA2765A2F500B9AA49 /* WeeklyPlanTable.xib in Resources */,
 				18E8397B2C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */,
 				988EE3752A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
+				1834374C2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				18E838DD2C242980001E25F5 /* NoticeboardCategoryTableViewCell.xib in Resources */,
 				CD3A90DB2765A2F500B9AA49 /* .swiftlint.yml in Resources */,
 				187913052C29612600F80762 /* WPTableViewCell.xib in Resources */,
+				183436FE2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				98CB0FC32B565B2B00EB1217 /* NoticeBoardTableViewCell.xib in Resources */,
 				CD3A90DC2765A2F500B9AA49 /* TestInapp.jpg in Resources */,
 				CD3A90DD2765A2F500B9AA49 /* Picker.xib in Resources */,
@@ -10973,12 +11261,15 @@
 				18E839332C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD713F0F2900092500A16A3A /* Picker.xib in Resources */,
 				98B10D082A3C646B00FE000E /* TopHeaderView.xib in Resources */,
+				183437522C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				98CB10612B565B2C00EB1217 /* NotificationTableViewCell.xib in Resources */,
+				183437042C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				CD713F102900092500A16A3A /* ProgressViewBar.xib in Resources */,
 				CD713F2229002E5300A16A3A /* GoogleService-Info.plist in Resources */,
 				CD713F112900092500A16A3A /* TestPenguin.png in Resources */,
 				98CB0E4D2B565B2900EB1217 /* NotificationMailTableViewCell.xib in Resources */,
 				98CB0DA22B565A5B00EB1217 /* DashboardView.xib in Resources */,
+				183436B42C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD713F122900092500A16A3A /* SampleText.txt in Resources */,
 				CD713F132900092500A16A3A /* sampleImage.png in Resources */,
 				98CB103B2B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
@@ -11006,6 +11297,7 @@
 				98CB0D882B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD73433F2AF0136600693B8E /* LaunchScreen.storyboard in Resources */,
 				CD7343402AF0136600693B8E /* WeeklyPlanTable.xib in Resources */,
+				183436C02C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7343412AF0136600693B8E /* .swiftlint.yml in Resources */,
 				18E8393F2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7343422AF0136600693B8E /* TestInapp.jpg in Resources */,
@@ -11028,6 +11320,8 @@
 				CD73434B2AF0136600693B8E /* WeeklyPlanCell.xib in Resources */,
 				98CB0FFB2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD73434C2AF0136600693B8E /* CalendarSection.xib in Resources */,
+				183437102C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834375E2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11045,6 +11339,7 @@
 				98CB0D7D2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD76019D295B59FA00812F7B /* WeeklyPlanTable.xib in Resources */,
 				988EE3852A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
+				183436B52C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD76019E295B59FA00812F7B /* .swiftlint.yml in Resources */,
 				18E839342C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD76019F295B59FA00812F7B /* TestInapp.jpg in Resources */,
@@ -11067,6 +11362,8 @@
 				CD7601A7295B59FA00812F7B /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF02B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7601A8295B59FA00812F7B /* CalendarSection.xib in Resources */,
+				183437052C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437532C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11084,6 +11381,7 @@
 				98CB0D822B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD7DDF452AE04921000D0EB4 /* LaunchScreen.storyboard in Resources */,
 				CD7DDF462AE04921000D0EB4 /* WeeklyPlanTable.xib in Resources */,
+				183436BA2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7DDF472AE04921000D0EB4 /* .swiftlint.yml in Resources */,
 				18E839392C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7DDF482AE04921000D0EB4 /* TestInapp.jpg in Resources */,
@@ -11106,6 +11404,8 @@
 				CD7DDF512AE04921000D0EB4 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF52B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7DDF522AE04921000D0EB4 /* CalendarSection.xib in Resources */,
+				1834370A2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437582C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11123,6 +11423,7 @@
 				98CB0D832B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD7DDFEE2AE04CF3000D0EB4 /* LaunchScreen.storyboard in Resources */,
 				CD7DDFEF2AE04CF3000D0EB4 /* WeeklyPlanTable.xib in Resources */,
+				183436BB2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7DDFF02AE04CF3000D0EB4 /* .swiftlint.yml in Resources */,
 				18E8393A2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7DDFF12AE04CF3000D0EB4 /* TestInapp.jpg in Resources */,
@@ -11145,6 +11446,8 @@
 				CD7DDFFA2AE04CF3000D0EB4 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF62B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7DDFFB2AE04CF3000D0EB4 /* CalendarSection.xib in Resources */,
+				1834370B2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437592C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11162,6 +11465,7 @@
 				98CB0D842B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD7DE0972AE058F4000D0EB4 /* LaunchScreen.storyboard in Resources */,
 				CD7DE0982AE058F4000D0EB4 /* WeeklyPlanTable.xib in Resources */,
+				183436BC2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7DE0992AE058F4000D0EB4 /* .swiftlint.yml in Resources */,
 				18E8393B2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7DE09A2AE058F4000D0EB4 /* TestInapp.jpg in Resources */,
@@ -11184,6 +11488,8 @@
 				CD7DE0A32AE058F4000D0EB4 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF72B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7DE0A42AE058F4000D0EB4 /* CalendarSection.xib in Resources */,
+				1834370C2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834375A2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11201,6 +11507,7 @@
 				98CB0D852B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD7DE28E2AE08F4B000D0EB4 /* LaunchScreen.storyboard in Resources */,
 				CD7DE28F2AE08F4B000D0EB4 /* WeeklyPlanTable.xib in Resources */,
+				183436BD2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7DE2902AE08F4B000D0EB4 /* .swiftlint.yml in Resources */,
 				18E8393C2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7DE2912AE08F4B000D0EB4 /* TestInapp.jpg in Resources */,
@@ -11223,6 +11530,8 @@
 				CD7DE29A2AE08F4B000D0EB4 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF82B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7DE29B2AE08F4B000D0EB4 /* CalendarSection.xib in Resources */,
+				1834370D2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834375B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11240,6 +11549,7 @@
 				98CB0D862B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD7DE3362AE09981000D0EB4 /* LaunchScreen.storyboard in Resources */,
 				CD7DE3372AE09981000D0EB4 /* WeeklyPlanTable.xib in Resources */,
+				183436BE2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7DE3382AE09981000D0EB4 /* .swiftlint.yml in Resources */,
 				18E8393D2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7DE3392AE09981000D0EB4 /* TestInapp.jpg in Resources */,
@@ -11262,6 +11572,8 @@
 				CD7DE3422AE09981000D0EB4 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF92B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7DE3432AE09981000D0EB4 /* CalendarSection.xib in Resources */,
+				1834370E2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834375C2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11279,6 +11591,7 @@
 				98CB0D872B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD7DE3DF2AE0A6A5000D0EB4 /* LaunchScreen.storyboard in Resources */,
 				CD7DE3E02AE0A6A5000D0EB4 /* WeeklyPlanTable.xib in Resources */,
+				183436BF2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD7DE3E12AE0A6A5000D0EB4 /* .swiftlint.yml in Resources */,
 				18E8393E2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD7DE3E22AE0A6A5000D0EB4 /* TestInapp.jpg in Resources */,
@@ -11301,6 +11614,8 @@
 				CD7DE3EB2AE0A6A5000D0EB4 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FFA2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD7DE3EC2AE0A6A5000D0EB4 /* CalendarSection.xib in Resources */,
+				1834370F2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834375D2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11318,6 +11633,7 @@
 				98CB0D7F2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD8A98CD2ABCF36500BAF7CD /* LaunchScreen.storyboard in Resources */,
 				CD8A98CE2ABCF36500BAF7CD /* WeeklyPlanTable.xib in Resources */,
+				183436B72C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD8A98CF2ABCF36500BAF7CD /* .swiftlint.yml in Resources */,
 				18E839362C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD8A98D02ABCF36500BAF7CD /* TestInapp.jpg in Resources */,
@@ -11340,6 +11656,8 @@
 				CD8A98D92ABCF36500BAF7CD /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF22B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD8A98DA2ABCF36500BAF7CD /* CalendarSection.xib in Resources */,
+				183437072C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437552C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11357,6 +11675,7 @@
 				98CB0D802B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD8A99792ACCA02400BAF7CD /* LaunchScreen.storyboard in Resources */,
 				CD8A997A2ACCA02400BAF7CD /* WeeklyPlanTable.xib in Resources */,
+				183436B82C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD8A997B2ACCA02400BAF7CD /* .swiftlint.yml in Resources */,
 				18E839372C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD8A997C2ACCA02400BAF7CD /* TestInapp.jpg in Resources */,
@@ -11379,6 +11698,8 @@
 				CD8A99852ACCA02400BAF7CD /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF32B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD8A99862ACCA02400BAF7CD /* CalendarSection.xib in Resources */,
+				183437082C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437562C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11396,6 +11717,7 @@
 				98CB0D812B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD8A9A222AD827A600BAF7CD /* LaunchScreen.storyboard in Resources */,
 				CD8A9A232AD827A600BAF7CD /* WeeklyPlanTable.xib in Resources */,
+				183436B92C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CD8A9A242AD827A600BAF7CD /* .swiftlint.yml in Resources */,
 				18E839382C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CD8A9A252AD827A600BAF7CD /* TestInapp.jpg in Resources */,
@@ -11418,6 +11740,8 @@
 				CD8A9A2E2AD827A600BAF7CD /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF42B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CD8A9A2F2AD827A600BAF7CD /* CalendarSection.xib in Resources */,
+				183437092C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437572C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11435,6 +11759,7 @@
 				98CB0D7E2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CDCACE622A533ABD006BA1A1 /* LaunchScreen.storyboard in Resources */,
 				CDCACE632A533ABD006BA1A1 /* WeeklyPlanTable.xib in Resources */,
+				183436B62C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CDCACE642A533ABD006BA1A1 /* .swiftlint.yml in Resources */,
 				18E839352C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CDCACE652A533ABD006BA1A1 /* TestInapp.jpg in Resources */,
@@ -11457,6 +11782,8 @@
 				CDCACE6E2A533ABD006BA1A1 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FF12B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CDCACE6F2A533ABD006BA1A1 /* CalendarSection.xib in Resources */,
+				183437062C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437542C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11474,6 +11801,7 @@
 				98CB0D792B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CDD2366A289AD40100A7121D /* LaunchScreen.storyboard in Resources */,
 				CDD2366B289AD40100A7121D /* WeeklyPlanTable.xib in Resources */,
+				183436B12C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CDD2366C289AD40100A7121D /* .swiftlint.yml in Resources */,
 				18E839302C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CDD2366D289AD40100A7121D /* TestInapp.jpg in Resources */,
@@ -11496,6 +11824,8 @@
 				CDD23675289AD40100A7121D /* WeeklyPlanCell.xib in Resources */,
 				98CB0FEC2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CDD23676289AD40100A7121D /* CalendarSection.xib in Resources */,
+				183437012C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834374F2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11513,6 +11843,7 @@
 				98CB0D782B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CDE5DC50282551D400A979FA /* LaunchScreen.storyboard in Resources */,
 				CDE5DC51282551D400A979FA /* WeeklyPlanTable.xib in Resources */,
+				183436B02C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CDE5DC52282551D400A979FA /* .swiftlint.yml in Resources */,
 				18E8392F2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CDE5DC53282551D400A979FA /* TestInapp.jpg in Resources */,
@@ -11535,6 +11866,8 @@
 				CDE5DC5A282551D400A979FA /* WeeklyPlanCell.xib in Resources */,
 				98CB0FEB2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CDE5DC5B282551D400A979FA /* CalendarSection.xib in Resources */,
+				183437002C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834374E2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11559,12 +11892,15 @@
 				18E839292C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CE0A601424375C8000568C23 /* ProgressViewBar.xib in Resources */,
 				98B10D1D2A3C647800FE000E /* TopHeaderView.xib in Resources */,
+				183437482C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				98CB10572B565B2C00EB1217 /* NotificationTableViewCell.xib in Resources */,
+				183436FA2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				CE0A601524375C8000568C23 /* TestPenguin.png in Resources */,
 				CE0A601624375C8000568C23 /* SampleText.txt in Resources */,
 				4493CD3A253DB33900A92A46 /* Common.xcassets in Resources */,
 				98CB0E432B565B2900EB1217 /* NotificationMailTableViewCell.xib in Resources */,
 				98CB0D982B565A5B00EB1217 /* DashboardView.xib in Resources */,
+				183436AA2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CE0A601724375C8000568C23 /* sampleImage.png in Resources */,
 				CE0A601824375C8000568C23 /* WeeklyPlanCell.xib in Resources */,
 				98CB10312B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
@@ -11592,6 +11928,7 @@
 				98CB0D6E2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD31253DB33900A92A46 /* Common.xcassets in Resources */,
 				CE0FBC6021F9D2CC00C6D924 /* WeeklyPlanTable.xib in Resources */,
+				183436A62C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CE0FBC6121F9D2CC00C6D924 /* .swiftlint.yml in Resources */,
 				18E839252C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CE0FBC6321F9D2CC00C6D924 /* TestInapp.jpg in Resources */,
@@ -11614,6 +11951,8 @@
 				CE0FBC6921F9D2CC00C6D924 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FE12B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CE0FBC6B21F9D2CC00C6D924 /* CalendarSection.xib in Resources */,
+				183436F62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437442C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11624,6 +11963,7 @@
 				98CB0D702B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CE91B8D8220981D5009D79A2 /* GoogleService-Info.plist in Resources */,
 				98CB102F2B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
+				183436A82C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				988EE36B2A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
 				98CB0DF52B565B2800EB1217 /* NoticeBoardCollectionViewCell.xib in Resources */,
 				4493CD33253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -11631,9 +11971,11 @@
 				CE10ED082201D45200F24DE4 /* WeeklyPlanTable.xib in Resources */,
 				18E839752C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */,
 				CE10ED092201D45200F24DE4 /* .swiftlint.yml in Resources */,
+				183437462C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				18E838D72C242980001E25F5 /* NoticeboardCategoryTableViewCell.xib in Resources */,
 				CE10ED0B2201D45200F24DE4 /* TestInapp.jpg in Resources */,
 				187912FF2C29612600F80762 /* WPTableViewCell.xib in Resources */,
+				183436F82C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				98CB0FBD2B565B2B00EB1217 /* NoticeBoardTableViewCell.xib in Resources */,
 				CE10ED0C2201D45200F24DE4 /* Picker.xib in Resources */,
 				CEE50C5A26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
@@ -11669,6 +12011,7 @@
 				98CB0D6D2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CE11989021F82AB200D028D2 /* WeeklyPlanTable.xib in Resources */,
 				CE11989221F82AB200D028D2 /* .swiftlint.yml in Resources */,
+				183436A52C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CE11989421F82AB200D028D2 /* TestInapp.jpg in Resources */,
 				18E839242C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CE11989521F82AB200D028D2 /* Picker.xib in Resources */,
@@ -11691,6 +12034,8 @@
 				CE11989A21F82AB200D028D2 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FE02B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CE11989C21F82AB200D028D2 /* CalendarSection.xib in Resources */,
+				183436F52C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437432C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11701,6 +12046,7 @@
 				98CB0D6C2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CE77CD2321F5FE6E009A929A /* GoogleService-Info.plist in Resources */,
 				98CB102B2B565B2C00EB1217 /* ModuleCollectionViewCell.xib in Resources */,
+				183436A42C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CE15660E21A96DB400DC758E /* WeeklyPlanTable.xib in Resources */,
 				98CB0DF12B565B2800EB1217 /* NoticeBoardCollectionViewCell.xib in Resources */,
 				4493CD2E253DB33900A92A46 /* Common.xcassets in Resources */,
@@ -11708,9 +12054,11 @@
 				CE15660F21A96DB400DC758E /* .swiftlint.yml in Resources */,
 				18E839712C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */,
 				988EE3662A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
+				183437422C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				18E838D32C242980001E25F5 /* NoticeboardCategoryTableViewCell.xib in Resources */,
 				CE15661121A96DB400DC758E /* TestInapp.jpg in Resources */,
 				187912FB2C29612600F80762 /* WPTableViewCell.xib in Resources */,
+				183436F42C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
 				98CB0FB92B565B2B00EB1217 /* NoticeBoardTableViewCell.xib in Resources */,
 				CE15661221A96DB400DC758E /* Picker.xib in Resources */,
 				CE15661421A96DB400DC758E /* ProgressViewBar.xib in Resources */,
@@ -11746,6 +12094,7 @@
 				98CB0D682B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD29253DB33800A92A46 /* Common.xcassets in Resources */,
 				CE88680621FACE8C00FF0DE0 /* WeeklyPlanTable.xib in Resources */,
+				183436A02C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CE88680721FACE8C00FF0DE0 /* .swiftlint.yml in Resources */,
 				18E8391F2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CE88680921FACE8C00FF0DE0 /* TestInapp.jpg in Resources */,
@@ -11768,6 +12117,8 @@
 				CE88680F21FACE8C00FF0DE0 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FDB2B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CE88681121FACE8C00FF0DE0 /* CalendarSection.xib in Resources */,
+				183436F02C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				1834373E2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11785,6 +12136,7 @@
 				98CB0D6F2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				4493CD32253DB33900A92A46 /* Common.xcassets in Resources */,
 				CE8868A721FAEFFE00FF0DE0 /* WeeklyPlanTable.xib in Resources */,
+				183436A72C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib in Resources */,
 				CE8868A821FAEFFE00FF0DE0 /* .swiftlint.yml in Resources */,
 				18E839262C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CE8868AA21FAEFFE00FF0DE0 /* TestInapp.jpg in Resources */,
@@ -11807,6 +12159,8 @@
 				CE8868B021FAEFFE00FF0DE0 /* WeeklyPlanCell.xib in Resources */,
 				98CB0FE22B565B2B00EB1217 /* CommunicationTableViewCell.xib in Resources */,
 				CE8868B221FAEFFE00FF0DE0 /* CalendarSection.xib in Resources */,
+				183436F72C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
+				183437452C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -12485,6 +12839,7 @@
 				136575642140F0E90045A958 /* TNGallery.swift in Sources */,
 				98CB0E102B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				136575652140F0E90045A958 /* Operation.swift in Sources */,
+				183436C72C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				136575662140F0E90045A958 /* StreamOperation.swift in Sources */,
 				98CB0ECE2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				136575672140F0E90045A958 /* TNCalendarEvent.swift in Sources */,
@@ -12556,6 +12911,7 @@
 				136575982140F0E90045A958 /* SlideController.swift in Sources */,
 				136575992140F0E90045A958 /* AwarenessViewController.swift in Sources */,
 				1365759A2140F0E90045A958 /* SWRevealViewController.m in Sources */,
+				183437152C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				1365759B2140F0E90045A958 /* AwarenessDetailViewController.swift in Sources */,
 				1365759C2140F0E90045A958 /* DigitalResourceSecondListController.swift in Sources */,
 				1365759D2140F0E90045A958 /* NotificationDetailListController.swift in Sources */,
@@ -12575,6 +12931,7 @@
 				136575A92140F0E90045A958 /* MapController.swift in Sources */,
 				136575AA2140F0E90045A958 /* TNGalleryCategory.swift in Sources */,
 				98CB0FFE2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436772C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				136575AB2140F0E90045A958 /* GradeViewController.swift in Sources */,
 				136575AC2140F0E90045A958 /* Global.swift in Sources */,
 				98CB10E42B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -12648,6 +13005,7 @@
 				1365785B2140F1600045A958 /* TNPerson.swift in Sources */,
 				98CB0E112B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				1365785C2140F1600045A958 /* TNGallery.swift in Sources */,
+				183436C82C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				1365785D2140F1600045A958 /* Operation.swift in Sources */,
 				98CB0ECF2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				1365785E2140F1600045A958 /* StreamOperation.swift in Sources */,
@@ -12719,6 +13077,7 @@
 				1365788F2140F1600045A958 /* WebViewController.swift in Sources */,
 				136578902140F1600045A958 /* SlideController.swift in Sources */,
 				136578912140F1600045A958 /* AwarenessViewController.swift in Sources */,
+				183437162C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				136578922140F1600045A958 /* SWRevealViewController.m in Sources */,
 				136578932140F1600045A958 /* AwarenessDetailViewController.swift in Sources */,
 				136578942140F1600045A958 /* DigitalResourceSecondListController.swift in Sources */,
@@ -12738,6 +13097,7 @@
 				136578A02140F1600045A958 /* GalleryCategoryListController.swift in Sources */,
 				136578A12140F1600045A958 /* MapController.swift in Sources */,
 				98CB0FFF2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436782C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				136578A22140F1600045A958 /* TNGalleryCategory.swift in Sources */,
 				136578A32140F1600045A958 /* GradeViewController.swift in Sources */,
 				98CB10E52B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -12811,6 +13171,7 @@
 				13657D1B2140F1CC0045A958 /* TNPerson.swift in Sources */,
 				98CB0E122B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				13657D1C2140F1CC0045A958 /* TNGallery.swift in Sources */,
+				183436C92C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				13657D1D2140F1CC0045A958 /* Operation.swift in Sources */,
 				98CB0ED02B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				13657D1E2140F1CC0045A958 /* StreamOperation.swift in Sources */,
@@ -12882,6 +13243,7 @@
 				13657D4F2140F1CC0045A958 /* WebViewController.swift in Sources */,
 				13657D502140F1CC0045A958 /* SlideController.swift in Sources */,
 				13657D512140F1CC0045A958 /* AwarenessViewController.swift in Sources */,
+				183437172C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				13657D522140F1CC0045A958 /* SWRevealViewController.m in Sources */,
 				13657D532140F1CC0045A958 /* AwarenessDetailViewController.swift in Sources */,
 				13657D542140F1CC0045A958 /* DigitalResourceSecondListController.swift in Sources */,
@@ -12901,6 +13263,7 @@
 				13657D602140F1CC0045A958 /* GalleryCategoryListController.swift in Sources */,
 				13657D612140F1CC0045A958 /* MapController.swift in Sources */,
 				98CB10002B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436792C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				13657D622140F1CC0045A958 /* TNGalleryCategory.swift in Sources */,
 				13657D632140F1CC0045A958 /* GradeViewController.swift in Sources */,
 				98CB10E62B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -12974,6 +13337,7 @@
 				1365830B2140F2260045A958 /* TNPerson.swift in Sources */,
 				98CB0E142B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				1365830C2140F2260045A958 /* TNGallery.swift in Sources */,
+				183436CB2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				1365830D2140F2260045A958 /* Operation.swift in Sources */,
 				98CB0ED22B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				1365830E2140F2260045A958 /* StreamOperation.swift in Sources */,
@@ -13045,6 +13409,7 @@
 				1365833F2140F2260045A958 /* WebViewController.swift in Sources */,
 				136583402140F2260045A958 /* SlideController.swift in Sources */,
 				136583412140F2260045A958 /* AwarenessViewController.swift in Sources */,
+				183437192C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				136583422140F2260045A958 /* SWRevealViewController.m in Sources */,
 				136583432140F2260045A958 /* AwarenessDetailViewController.swift in Sources */,
 				136583442140F2260045A958 /* DigitalResourceSecondListController.swift in Sources */,
@@ -13064,6 +13429,7 @@
 				136583502140F2260045A958 /* GalleryCategoryListController.swift in Sources */,
 				136583512140F2260045A958 /* MapController.swift in Sources */,
 				98CB10022B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834367B2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				136583522140F2260045A958 /* TNGalleryCategory.swift in Sources */,
 				136583532140F2260045A958 /* GradeViewController.swift in Sources */,
 				98CB10E82B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -13137,6 +13503,7 @@
 				1365843B2140F22F0045A958 /* TNPerson.swift in Sources */,
 				98CB0E162B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				1365843C2140F22F0045A958 /* TNGallery.swift in Sources */,
+				183436CD2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				1365843D2140F22F0045A958 /* Operation.swift in Sources */,
 				98CB0ED42B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				1365843E2140F22F0045A958 /* StreamOperation.swift in Sources */,
@@ -13208,6 +13575,7 @@
 				1365846F2140F22F0045A958 /* WebViewController.swift in Sources */,
 				136584702140F22F0045A958 /* SlideController.swift in Sources */,
 				136584712140F22F0045A958 /* AwarenessViewController.swift in Sources */,
+				1834371B2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				136584722140F22F0045A958 /* SWRevealViewController.m in Sources */,
 				136584732140F22F0045A958 /* AwarenessDetailViewController.swift in Sources */,
 				136584742140F22F0045A958 /* DigitalResourceSecondListController.swift in Sources */,
@@ -13227,6 +13595,7 @@
 				136584802140F22F0045A958 /* GalleryCategoryListController.swift in Sources */,
 				136584812140F22F0045A958 /* MapController.swift in Sources */,
 				98CB10042B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834367D2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				136584822140F22F0045A958 /* TNGalleryCategory.swift in Sources */,
 				136584832140F22F0045A958 /* GradeViewController.swift in Sources */,
 				98CB10EA2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -13300,6 +13669,7 @@
 				446D52012539C33100D1026C /* TNPerson.swift in Sources */,
 				98CB0E1F2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				446D52022539C33100D1026C /* TNGallery.swift in Sources */,
+				183436D62C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				446D52032539C33100D1026C /* Operation.swift in Sources */,
 				98CB0EDD2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				446D52042539C33100D1026C /* StreamOperation.swift in Sources */,
@@ -13371,6 +13741,7 @@
 				446D52362539C33100D1026C /* WebViewController.swift in Sources */,
 				446D52372539C33100D1026C /* SlideController.swift in Sources */,
 				446D52382539C33100D1026C /* AwarenessViewController.swift in Sources */,
+				183437242C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				446D52392539C33100D1026C /* SWRevealViewController.m in Sources */,
 				446D523A2539C33100D1026C /* AwarenessDetailViewController.swift in Sources */,
 				446D523B2539C33100D1026C /* DigitalResourceSecondListController.swift in Sources */,
@@ -13390,6 +13761,7 @@
 				446D52472539C33100D1026C /* GalleryCategoryListController.swift in Sources */,
 				446D52482539C33100D1026C /* MapController.swift in Sources */,
 				98CB100D2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436862C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				446D52492539C33100D1026C /* TNGalleryCategory.swift in Sources */,
 				446D524A2539C33100D1026C /* GradeViewController.swift in Sources */,
 				98CB10F32B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -13463,6 +13835,7 @@
 				448831FF237EA02B00E80665 /* TNPerson.swift in Sources */,
 				98CB0E1C2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				44883200237EA02B00E80665 /* TNGallery.swift in Sources */,
+				183436D32C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				44883201237EA02B00E80665 /* Operation.swift in Sources */,
 				98CB0EDA2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				44883202237EA02B00E80665 /* StreamOperation.swift in Sources */,
@@ -13534,6 +13907,7 @@
 				44883233237EA02B00E80665 /* WebViewController.swift in Sources */,
 				44883234237EA02B00E80665 /* SlideController.swift in Sources */,
 				44883235237EA02B00E80665 /* AwarenessViewController.swift in Sources */,
+				183437212C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				44883236237EA02B00E80665 /* SWRevealViewController.m in Sources */,
 				44883237237EA02B00E80665 /* AwarenessDetailViewController.swift in Sources */,
 				44883238237EA02B00E80665 /* DigitalResourceSecondListController.swift in Sources */,
@@ -13553,6 +13927,7 @@
 				44883244237EA02B00E80665 /* GalleryCategoryListController.swift in Sources */,
 				44883245237EA02B00E80665 /* MapController.swift in Sources */,
 				98CB100A2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436832C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				44883246237EA02B00E80665 /* TNGalleryCategory.swift in Sources */,
 				44883247237EA02B00E80665 /* GradeViewController.swift in Sources */,
 				98CB10F02B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -13626,6 +14001,7 @@
 				44AD1B7725388E1000368235 /* TNPerson.swift in Sources */,
 				98CB0E1E2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				44AD1B7825388E1000368235 /* TNGallery.swift in Sources */,
+				183436D52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				44AD1B7925388E1000368235 /* Operation.swift in Sources */,
 				98CB0EDC2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				44AD1B7A25388E1000368235 /* StreamOperation.swift in Sources */,
@@ -13697,6 +14073,7 @@
 				44AD1BAC25388E1000368235 /* WebViewController.swift in Sources */,
 				44AD1BAD25388E1000368235 /* SlideController.swift in Sources */,
 				44AD1BAE25388E1000368235 /* AwarenessViewController.swift in Sources */,
+				183437232C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				44AD1BAF25388E1000368235 /* SWRevealViewController.m in Sources */,
 				44AD1BB025388E1000368235 /* AwarenessDetailViewController.swift in Sources */,
 				44AD1BB125388E1000368235 /* DigitalResourceSecondListController.swift in Sources */,
@@ -13716,6 +14093,7 @@
 				44AD1BBD25388E1000368235 /* GalleryCategoryListController.swift in Sources */,
 				44AD1BBE25388E1000368235 /* MapController.swift in Sources */,
 				98CB100C2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436852C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				44AD1BBF25388E1000368235 /* TNGalleryCategory.swift in Sources */,
 				44AD1BC025388E1000368235 /* GradeViewController.swift in Sources */,
 				98CB10F22B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -13789,6 +14167,7 @@
 				44DC60C225798523002E3917 /* TNPerson.swift in Sources */,
 				98CB0E202B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				44DC60C325798523002E3917 /* TNGallery.swift in Sources */,
+				183436D72C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				44DC60C425798523002E3917 /* Operation.swift in Sources */,
 				98CB0EDE2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				44DC60C525798523002E3917 /* StreamOperation.swift in Sources */,
@@ -13860,6 +14239,7 @@
 				44DC60F725798523002E3917 /* WebViewController.swift in Sources */,
 				44DC60F825798523002E3917 /* SlideController.swift in Sources */,
 				44DC60F925798523002E3917 /* AwarenessViewController.swift in Sources */,
+				183437252C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				44DC60FA25798523002E3917 /* SWRevealViewController.m in Sources */,
 				44DC60FB25798523002E3917 /* AwarenessDetailViewController.swift in Sources */,
 				44DC60FC25798523002E3917 /* DigitalResourceSecondListController.swift in Sources */,
@@ -13879,6 +14259,7 @@
 				44DC610825798523002E3917 /* GalleryCategoryListController.swift in Sources */,
 				44DC610925798523002E3917 /* MapController.swift in Sources */,
 				98CB100E2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436872C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				44DC610A25798523002E3917 /* TNGalleryCategory.swift in Sources */,
 				44DC610B25798523002E3917 /* GradeViewController.swift in Sources */,
 				98CB10F42B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -13952,6 +14333,7 @@
 				B41C1AED21418FD600A9907B /* TNPerson.swift in Sources */,
 				98CB0E152B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				B41C1AEE21418FD600A9907B /* TNGallery.swift in Sources */,
+				183436CC2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				B41C1AEF21418FD600A9907B /* Operation.swift in Sources */,
 				98CB0ED32B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				B41C1AF021418FD600A9907B /* StreamOperation.swift in Sources */,
@@ -14023,6 +14405,7 @@
 				B41C1B2121418FD600A9907B /* WebViewController.swift in Sources */,
 				B41C1B2221418FD600A9907B /* SlideController.swift in Sources */,
 				B41C1B2321418FD600A9907B /* AwarenessViewController.swift in Sources */,
+				1834371A2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				B41C1B2421418FD600A9907B /* SWRevealViewController.m in Sources */,
 				B41C1B2521418FD600A9907B /* AwarenessDetailViewController.swift in Sources */,
 				B41C1B2621418FD600A9907B /* DigitalResourceSecondListController.swift in Sources */,
@@ -14042,6 +14425,7 @@
 				B41C1B3221418FD600A9907B /* GalleryCategoryListController.swift in Sources */,
 				B41C1B3321418FD600A9907B /* MapController.swift in Sources */,
 				98CB10032B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834367C2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				B41C1B3421418FD600A9907B /* TNGalleryCategory.swift in Sources */,
 				B41C1B3521418FD600A9907B /* GradeViewController.swift in Sources */,
 				98CB10E92B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -14115,6 +14499,7 @@
 				CD0E11B02B170A9600EE599B /* TNPerson.swift in Sources */,
 				98CB0E352B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD0E11B12B170A9600EE599B /* TNGallery.swift in Sources */,
+				183436EC2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD0E11B22B170A9600EE599B /* Operation.swift in Sources */,
 				98CB0EF32B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD0E11B32B170A9600EE599B /* StreamOperation.swift in Sources */,
@@ -14186,6 +14571,7 @@
 				CD0E11EB2B170A9600EE599B /* WebViewController.swift in Sources */,
 				CD0E11EC2B170A9600EE599B /* SlideController.swift in Sources */,
 				CD0E11ED2B170A9600EE599B /* AwarenessViewController.swift in Sources */,
+				1834373A2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD0E11EE2B170A9600EE599B /* SWRevealViewController.m in Sources */,
 				CD0E11EF2B170A9600EE599B /* AwarenessDetailViewController.swift in Sources */,
 				CD0E11F02B170A9600EE599B /* DigitalResourceSecondListController.swift in Sources */,
@@ -14205,6 +14591,7 @@
 				CD0E11FC2B170A9600EE599B /* GalleryCategoryListController.swift in Sources */,
 				CD0E11FD2B170A9600EE599B /* MapController.swift in Sources */,
 				98CB10232B565B2C00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834369C2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD0E11FE2B170A9600EE599B /* TNGalleryCategory.swift in Sources */,
 				CD0E11FF2B170A9600EE599B /* GradeViewController.swift in Sources */,
 				98CB11092B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -14278,6 +14665,7 @@
 				CD110C23289C41700050EF80 /* TNPerson.swift in Sources */,
 				98CB0E252B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD110C24289C41700050EF80 /* TNGallery.swift in Sources */,
+				183436DC2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD110C25289C41700050EF80 /* Operation.swift in Sources */,
 				98CB0EE32B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD110C26289C41700050EF80 /* StreamOperation.swift in Sources */,
@@ -14349,6 +14737,7 @@
 				CD110C5B289C41700050EF80 /* WebViewController.swift in Sources */,
 				CD110C5C289C41700050EF80 /* SlideController.swift in Sources */,
 				CD110C5D289C41700050EF80 /* AwarenessViewController.swift in Sources */,
+				1834372A2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD110C5E289C41700050EF80 /* SWRevealViewController.m in Sources */,
 				CD110C5F289C41700050EF80 /* AwarenessDetailViewController.swift in Sources */,
 				CD110C60289C41700050EF80 /* DigitalResourceSecondListController.swift in Sources */,
@@ -14368,6 +14757,7 @@
 				CD110C6C289C41700050EF80 /* GalleryCategoryListController.swift in Sources */,
 				CD110C6D289C41700050EF80 /* MapController.swift in Sources */,
 				98CB10132B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834368C2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD110C6E289C41700050EF80 /* TNGalleryCategory.swift in Sources */,
 				CD110C6F289C41700050EF80 /* GradeViewController.swift in Sources */,
 				98CB10F92B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -14441,6 +14831,7 @@
 				CD110D60289C4E4B0050EF80 /* TNPerson.swift in Sources */,
 				98CB0E262B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD110D61289C4E4B0050EF80 /* TNGallery.swift in Sources */,
+				183436DD2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD110D62289C4E4B0050EF80 /* Operation.swift in Sources */,
 				98CB0EE42B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD110D63289C4E4B0050EF80 /* StreamOperation.swift in Sources */,
@@ -14512,6 +14903,7 @@
 				CD110D98289C4E4B0050EF80 /* WebViewController.swift in Sources */,
 				CD110D99289C4E4B0050EF80 /* SlideController.swift in Sources */,
 				CD110D9A289C4E4B0050EF80 /* AwarenessViewController.swift in Sources */,
+				1834372B2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD110D9B289C4E4B0050EF80 /* SWRevealViewController.m in Sources */,
 				CD110D9C289C4E4B0050EF80 /* AwarenessDetailViewController.swift in Sources */,
 				CD110D9D289C4E4B0050EF80 /* DigitalResourceSecondListController.swift in Sources */,
@@ -14531,6 +14923,7 @@
 				CD110DA9289C4E4B0050EF80 /* GalleryCategoryListController.swift in Sources */,
 				CD110DAA289C4E4B0050EF80 /* MapController.swift in Sources */,
 				98CB10142B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834368D2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD110DAB289C4E4B0050EF80 /* TNGalleryCategory.swift in Sources */,
 				CD110DAC289C4E4B0050EF80 /* GradeViewController.swift in Sources */,
 				98CB10FA2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -14604,6 +14997,7 @@
 				CD1668AF27DA99C300F31356 /* TNPerson.swift in Sources */,
 				98CB0E222B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD1668B027DA99C300F31356 /* TNGallery.swift in Sources */,
+				183436D92C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD1668B127DA99C300F31356 /* Operation.swift in Sources */,
 				98CB0EE02B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD1668B227DA99C300F31356 /* StreamOperation.swift in Sources */,
@@ -14675,6 +15069,7 @@
 				CD1668E727DA99C300F31356 /* WebViewController.swift in Sources */,
 				CD1668E827DA99C300F31356 /* SlideController.swift in Sources */,
 				CD1668E927DA99C300F31356 /* AwarenessViewController.swift in Sources */,
+				183437272C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD1668EA27DA99C300F31356 /* SWRevealViewController.m in Sources */,
 				CD1668EB27DA99C300F31356 /* AwarenessDetailViewController.swift in Sources */,
 				CD1668EC27DA99C300F31356 /* DigitalResourceSecondListController.swift in Sources */,
@@ -14694,6 +15089,7 @@
 				CD1668F827DA99C300F31356 /* GalleryCategoryListController.swift in Sources */,
 				CD1668F927DA99C300F31356 /* MapController.swift in Sources */,
 				98CB10102B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436892C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD1668FA27DA99C300F31356 /* TNGalleryCategory.swift in Sources */,
 				CD1668FB27DA99C300F31356 /* GradeViewController.swift in Sources */,
 				98CB10F62B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -14767,6 +15163,7 @@
 				CD1AE55A2B0438780000F294 /* TNPerson.swift in Sources */,
 				98CB0E342B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD1AE55B2B0438780000F294 /* TNGallery.swift in Sources */,
+				183436EB2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD1AE55C2B0438780000F294 /* Operation.swift in Sources */,
 				98CB0EF22B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD1AE55D2B0438780000F294 /* StreamOperation.swift in Sources */,
@@ -14838,6 +15235,7 @@
 				CD1AE5952B0438780000F294 /* WebViewController.swift in Sources */,
 				CD1AE5962B0438780000F294 /* SlideController.swift in Sources */,
 				CD1AE5972B0438780000F294 /* AwarenessViewController.swift in Sources */,
+				183437392C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD1AE5982B0438780000F294 /* SWRevealViewController.m in Sources */,
 				CD1AE5992B0438780000F294 /* AwarenessDetailViewController.swift in Sources */,
 				CD1AE59A2B0438780000F294 /* DigitalResourceSecondListController.swift in Sources */,
@@ -14857,6 +15255,7 @@
 				CD1AE5A62B0438780000F294 /* GalleryCategoryListController.swift in Sources */,
 				CD1AE5A72B0438780000F294 /* MapController.swift in Sources */,
 				98CB10222B565B2C00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834369B2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD1AE5A82B0438780000F294 /* TNGalleryCategory.swift in Sources */,
 				CD1AE5A92B0438780000F294 /* GradeViewController.swift in Sources */,
 				98CB11082B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -14930,6 +15329,7 @@
 				CD3A907D2765A2F500B9AA49 /* TNPerson.swift in Sources */,
 				98CB0E212B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD3A907E2765A2F500B9AA49 /* TNGallery.swift in Sources */,
+				183436D82C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD3A907F2765A2F500B9AA49 /* Operation.swift in Sources */,
 				98CB0EDF2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD3A90802765A2F500B9AA49 /* StreamOperation.swift in Sources */,
@@ -15001,6 +15401,7 @@
 				CD3A90B52765A2F500B9AA49 /* WebViewController.swift in Sources */,
 				CD3A90B62765A2F500B9AA49 /* SlideController.swift in Sources */,
 				CD3A90B72765A2F500B9AA49 /* AwarenessViewController.swift in Sources */,
+				183437262C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD3A90B82765A2F500B9AA49 /* SWRevealViewController.m in Sources */,
 				CD3A90B92765A2F500B9AA49 /* AwarenessDetailViewController.swift in Sources */,
 				CD3A90BA2765A2F500B9AA49 /* DigitalResourceSecondListController.swift in Sources */,
@@ -15020,6 +15421,7 @@
 				CD3A90C62765A2F500B9AA49 /* GalleryCategoryListController.swift in Sources */,
 				CD3A90C72765A2F500B9AA49 /* MapController.swift in Sources */,
 				98CB100F2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436882C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD3A90C82765A2F500B9AA49 /* TNGalleryCategory.swift in Sources */,
 				CD3A90C92765A2F500B9AA49 /* GradeViewController.swift in Sources */,
 				98CB10F52B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -15093,6 +15495,7 @@
 				CD713EAF2900092500A16A3A /* TNPerson.swift in Sources */,
 				98CB0E272B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD713EB02900092500A16A3A /* TNGallery.swift in Sources */,
+				183436DE2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD713EB12900092500A16A3A /* Operation.swift in Sources */,
 				98CB0EE52B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD713EB22900092500A16A3A /* StreamOperation.swift in Sources */,
@@ -15164,6 +15567,7 @@
 				CD713EE72900092500A16A3A /* WebViewController.swift in Sources */,
 				CD713EE82900092500A16A3A /* SlideController.swift in Sources */,
 				CD713EE92900092500A16A3A /* AwarenessViewController.swift in Sources */,
+				1834372C2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD713EEA2900092500A16A3A /* SWRevealViewController.m in Sources */,
 				CD713EEB2900092500A16A3A /* AwarenessDetailViewController.swift in Sources */,
 				CD713EEC2900092500A16A3A /* DigitalResourceSecondListController.swift in Sources */,
@@ -15183,6 +15587,7 @@
 				CD713EF82900092500A16A3A /* GalleryCategoryListController.swift in Sources */,
 				CD713EF92900092500A16A3A /* MapController.swift in Sources */,
 				98CB10152B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834368E2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD713EFA2900092500A16A3A /* TNGalleryCategory.swift in Sources */,
 				CD713EFB2900092500A16A3A /* GradeViewController.swift in Sources */,
 				98CB10FB2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -15256,6 +15661,7 @@
 				CD7342DF2AF0136600693B8E /* TNPerson.swift in Sources */,
 				98CB0E332B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7342E02AF0136600693B8E /* TNGallery.swift in Sources */,
+				183436EA2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7342E12AF0136600693B8E /* Operation.swift in Sources */,
 				98CB0EF12B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7342E22AF0136600693B8E /* StreamOperation.swift in Sources */,
@@ -15327,6 +15733,7 @@
 				CD73431A2AF0136600693B8E /* WebViewController.swift in Sources */,
 				CD73431B2AF0136600693B8E /* SlideController.swift in Sources */,
 				CD73431C2AF0136600693B8E /* AwarenessViewController.swift in Sources */,
+				183437382C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD73431D2AF0136600693B8E /* SWRevealViewController.m in Sources */,
 				CD73431E2AF0136600693B8E /* AwarenessDetailViewController.swift in Sources */,
 				CD73431F2AF0136600693B8E /* DigitalResourceSecondListController.swift in Sources */,
@@ -15346,6 +15753,7 @@
 				CD73432B2AF0136600693B8E /* GalleryCategoryListController.swift in Sources */,
 				CD73432C2AF0136600693B8E /* MapController.swift in Sources */,
 				98CB10212B565B2C00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834369A2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD73432D2AF0136600693B8E /* TNGalleryCategory.swift in Sources */,
 				CD73432E2AF0136600693B8E /* GradeViewController.swift in Sources */,
 				98CB11072B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -15419,6 +15827,7 @@
 				CD760141295B59FA00812F7B /* TNPerson.swift in Sources */,
 				98CB0E282B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD760142295B59FA00812F7B /* TNGallery.swift in Sources */,
+				183436DF2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD760143295B59FA00812F7B /* Operation.swift in Sources */,
 				98CB0EE62B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD760144295B59FA00812F7B /* StreamOperation.swift in Sources */,
@@ -15490,6 +15899,7 @@
 				CD760179295B59FA00812F7B /* WebViewController.swift in Sources */,
 				CD76017A295B59FA00812F7B /* SlideController.swift in Sources */,
 				CD76017B295B59FA00812F7B /* AwarenessViewController.swift in Sources */,
+				1834372D2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD76017C295B59FA00812F7B /* SWRevealViewController.m in Sources */,
 				CD76017D295B59FA00812F7B /* AwarenessDetailViewController.swift in Sources */,
 				CD76017E295B59FA00812F7B /* DigitalResourceSecondListController.swift in Sources */,
@@ -15509,6 +15919,7 @@
 				CD76018A295B59FA00812F7B /* GalleryCategoryListController.swift in Sources */,
 				CD76018B295B59FA00812F7B /* MapController.swift in Sources */,
 				98CB10162B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834368F2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD76018C295B59FA00812F7B /* TNGalleryCategory.swift in Sources */,
 				CD76018D295B59FA00812F7B /* GradeViewController.swift in Sources */,
 				98CB10FC2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -15582,6 +15993,7 @@
 				CD7DDEE52AE04921000D0EB4 /* TNPerson.swift in Sources */,
 				98CB0E2D2B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7DDEE62AE04921000D0EB4 /* TNGallery.swift in Sources */,
+				183436E42C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7DDEE72AE04921000D0EB4 /* Operation.swift in Sources */,
 				98CB0EEB2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7DDEE82AE04921000D0EB4 /* StreamOperation.swift in Sources */,
@@ -15653,6 +16065,7 @@
 				CD7DDF202AE04921000D0EB4 /* WebViewController.swift in Sources */,
 				CD7DDF212AE04921000D0EB4 /* SlideController.swift in Sources */,
 				CD7DDF222AE04921000D0EB4 /* AwarenessViewController.swift in Sources */,
+				183437322C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD7DDF232AE04921000D0EB4 /* SWRevealViewController.m in Sources */,
 				CD7DDF242AE04921000D0EB4 /* AwarenessDetailViewController.swift in Sources */,
 				CD7DDF252AE04921000D0EB4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -15672,6 +16085,7 @@
 				CD7DDF312AE04921000D0EB4 /* GalleryCategoryListController.swift in Sources */,
 				CD7DDF322AE04921000D0EB4 /* MapController.swift in Sources */,
 				98CB101B2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436942C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD7DDF332AE04921000D0EB4 /* TNGalleryCategory.swift in Sources */,
 				CD7DDF342AE04921000D0EB4 /* GradeViewController.swift in Sources */,
 				98CB11012B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -15745,6 +16159,7 @@
 				CD7DDF8E2AE04CF3000D0EB4 /* TNPerson.swift in Sources */,
 				98CB0E2E2B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7DDF8F2AE04CF3000D0EB4 /* TNGallery.swift in Sources */,
+				183436E52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7DDF902AE04CF3000D0EB4 /* Operation.swift in Sources */,
 				98CB0EEC2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7DDF912AE04CF3000D0EB4 /* StreamOperation.swift in Sources */,
@@ -15816,6 +16231,7 @@
 				CD7DDFC92AE04CF3000D0EB4 /* WebViewController.swift in Sources */,
 				CD7DDFCA2AE04CF3000D0EB4 /* SlideController.swift in Sources */,
 				CD7DDFCB2AE04CF3000D0EB4 /* AwarenessViewController.swift in Sources */,
+				183437332C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD7DDFCC2AE04CF3000D0EB4 /* SWRevealViewController.m in Sources */,
 				CD7DDFCD2AE04CF3000D0EB4 /* AwarenessDetailViewController.swift in Sources */,
 				CD7DDFCE2AE04CF3000D0EB4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -15835,6 +16251,7 @@
 				CD7DDFDA2AE04CF3000D0EB4 /* GalleryCategoryListController.swift in Sources */,
 				CD7DDFDB2AE04CF3000D0EB4 /* MapController.swift in Sources */,
 				98CB101C2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436952C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD7DDFDC2AE04CF3000D0EB4 /* TNGalleryCategory.swift in Sources */,
 				CD7DDFDD2AE04CF3000D0EB4 /* GradeViewController.swift in Sources */,
 				98CB11022B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -15908,6 +16325,7 @@
 				CD7DE0372AE058F4000D0EB4 /* TNPerson.swift in Sources */,
 				98CB0E2F2B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7DE0382AE058F4000D0EB4 /* TNGallery.swift in Sources */,
+				183436E62C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7DE0392AE058F4000D0EB4 /* Operation.swift in Sources */,
 				98CB0EED2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7DE03A2AE058F4000D0EB4 /* StreamOperation.swift in Sources */,
@@ -15979,6 +16397,7 @@
 				CD7DE0722AE058F4000D0EB4 /* WebViewController.swift in Sources */,
 				CD7DE0732AE058F4000D0EB4 /* SlideController.swift in Sources */,
 				CD7DE0742AE058F4000D0EB4 /* AwarenessViewController.swift in Sources */,
+				183437342C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD7DE0752AE058F4000D0EB4 /* SWRevealViewController.m in Sources */,
 				CD7DE0762AE058F4000D0EB4 /* AwarenessDetailViewController.swift in Sources */,
 				CD7DE0772AE058F4000D0EB4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -15998,6 +16417,7 @@
 				CD7DE0832AE058F4000D0EB4 /* GalleryCategoryListController.swift in Sources */,
 				CD7DE0842AE058F4000D0EB4 /* MapController.swift in Sources */,
 				98CB101D2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436962C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD7DE0852AE058F4000D0EB4 /* TNGalleryCategory.swift in Sources */,
 				CD7DE0862AE058F4000D0EB4 /* GradeViewController.swift in Sources */,
 				98CB11032B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -16071,6 +16491,7 @@
 				CD7DE22E2AE08F4B000D0EB4 /* TNPerson.swift in Sources */,
 				98CB0E302B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7DE22F2AE08F4B000D0EB4 /* TNGallery.swift in Sources */,
+				183436E72C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7DE2302AE08F4B000D0EB4 /* Operation.swift in Sources */,
 				98CB0EEE2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7DE2312AE08F4B000D0EB4 /* StreamOperation.swift in Sources */,
@@ -16142,6 +16563,7 @@
 				CD7DE2692AE08F4B000D0EB4 /* WebViewController.swift in Sources */,
 				CD7DE26A2AE08F4B000D0EB4 /* SlideController.swift in Sources */,
 				CD7DE26B2AE08F4B000D0EB4 /* AwarenessViewController.swift in Sources */,
+				183437352C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD7DE26C2AE08F4B000D0EB4 /* SWRevealViewController.m in Sources */,
 				CD7DE26D2AE08F4B000D0EB4 /* AwarenessDetailViewController.swift in Sources */,
 				CD7DE26E2AE08F4B000D0EB4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -16161,6 +16583,7 @@
 				CD7DE27A2AE08F4B000D0EB4 /* GalleryCategoryListController.swift in Sources */,
 				CD7DE27B2AE08F4B000D0EB4 /* MapController.swift in Sources */,
 				98CB101E2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436972C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD7DE27C2AE08F4B000D0EB4 /* TNGalleryCategory.swift in Sources */,
 				CD7DE27D2AE08F4B000D0EB4 /* GradeViewController.swift in Sources */,
 				98CB11042B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -16234,6 +16657,7 @@
 				CD7DE2D62AE09981000D0EB4 /* TNPerson.swift in Sources */,
 				98CB0E312B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7DE2D72AE09981000D0EB4 /* TNGallery.swift in Sources */,
+				183436E82C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7DE2D82AE09981000D0EB4 /* Operation.swift in Sources */,
 				98CB0EEF2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7DE2D92AE09981000D0EB4 /* StreamOperation.swift in Sources */,
@@ -16305,6 +16729,7 @@
 				CD7DE3112AE09981000D0EB4 /* WebViewController.swift in Sources */,
 				CD7DE3122AE09981000D0EB4 /* SlideController.swift in Sources */,
 				CD7DE3132AE09981000D0EB4 /* AwarenessViewController.swift in Sources */,
+				183437362C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD7DE3142AE09981000D0EB4 /* SWRevealViewController.m in Sources */,
 				CD7DE3152AE09981000D0EB4 /* AwarenessDetailViewController.swift in Sources */,
 				CD7DE3162AE09981000D0EB4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -16324,6 +16749,7 @@
 				CD7DE3222AE09981000D0EB4 /* GalleryCategoryListController.swift in Sources */,
 				CD7DE3232AE09981000D0EB4 /* MapController.swift in Sources */,
 				98CB101F2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436982C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD7DE3242AE09981000D0EB4 /* TNGalleryCategory.swift in Sources */,
 				CD7DE3252AE09981000D0EB4 /* GradeViewController.swift in Sources */,
 				98CB11052B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -16397,6 +16823,7 @@
 				CD7DE37F2AE0A6A5000D0EB4 /* TNPerson.swift in Sources */,
 				98CB0E322B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD7DE3802AE0A6A5000D0EB4 /* TNGallery.swift in Sources */,
+				183436E92C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD7DE3812AE0A6A5000D0EB4 /* Operation.swift in Sources */,
 				98CB0EF02B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD7DE3822AE0A6A5000D0EB4 /* StreamOperation.swift in Sources */,
@@ -16468,6 +16895,7 @@
 				CD7DE3BA2AE0A6A5000D0EB4 /* WebViewController.swift in Sources */,
 				CD7DE3BB2AE0A6A5000D0EB4 /* SlideController.swift in Sources */,
 				CD7DE3BC2AE0A6A5000D0EB4 /* AwarenessViewController.swift in Sources */,
+				183437372C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD7DE3BD2AE0A6A5000D0EB4 /* SWRevealViewController.m in Sources */,
 				CD7DE3BE2AE0A6A5000D0EB4 /* AwarenessDetailViewController.swift in Sources */,
 				CD7DE3BF2AE0A6A5000D0EB4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -16487,6 +16915,7 @@
 				CD7DE3CB2AE0A6A5000D0EB4 /* GalleryCategoryListController.swift in Sources */,
 				CD7DE3CC2AE0A6A5000D0EB4 /* MapController.swift in Sources */,
 				98CB10202B565B2C00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436992C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD7DE3CD2AE0A6A5000D0EB4 /* TNGalleryCategory.swift in Sources */,
 				CD7DE3CE2AE0A6A5000D0EB4 /* GradeViewController.swift in Sources */,
 				98CB11062B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -16560,6 +16989,7 @@
 				CD8A986E2ABCF36500BAF7CD /* TNPerson.swift in Sources */,
 				98CB0E2A2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD8A986F2ABCF36500BAF7CD /* TNGallery.swift in Sources */,
+				183436E12C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD8A98702ABCF36500BAF7CD /* Operation.swift in Sources */,
 				98CB0EE82B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD8A98712ABCF36500BAF7CD /* StreamOperation.swift in Sources */,
@@ -16631,6 +17061,7 @@
 				CD8A98A92ABCF36500BAF7CD /* WebViewController.swift in Sources */,
 				CD8A98AA2ABCF36500BAF7CD /* SlideController.swift in Sources */,
 				CD8A98AB2ABCF36500BAF7CD /* AwarenessViewController.swift in Sources */,
+				1834372F2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD8A98AC2ABCF36500BAF7CD /* SWRevealViewController.m in Sources */,
 				CD8A98AD2ABCF36500BAF7CD /* AwarenessDetailViewController.swift in Sources */,
 				CD8A98AE2ABCF36500BAF7CD /* DigitalResourceSecondListController.swift in Sources */,
@@ -16650,6 +17081,7 @@
 				CD8A98BA2ABCF36500BAF7CD /* GalleryCategoryListController.swift in Sources */,
 				CD8A98BB2ABCF36500BAF7CD /* MapController.swift in Sources */,
 				98CB10182B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436912C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD8A98BC2ABCF36500BAF7CD /* TNGalleryCategory.swift in Sources */,
 				CD8A98BD2ABCF36500BAF7CD /* GradeViewController.swift in Sources */,
 				98CB10FE2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -16723,6 +17155,7 @@
 				CD8A99192ACCA02400BAF7CD /* TNPerson.swift in Sources */,
 				98CB0E2B2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD8A991A2ACCA02400BAF7CD /* TNGallery.swift in Sources */,
+				183436E22C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD8A991B2ACCA02400BAF7CD /* Operation.swift in Sources */,
 				98CB0EE92B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD8A991C2ACCA02400BAF7CD /* StreamOperation.swift in Sources */,
@@ -16794,6 +17227,7 @@
 				CD8A99542ACCA02400BAF7CD /* WebViewController.swift in Sources */,
 				CD8A99552ACCA02400BAF7CD /* SlideController.swift in Sources */,
 				CD8A99562ACCA02400BAF7CD /* AwarenessViewController.swift in Sources */,
+				183437302C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD8A99572ACCA02400BAF7CD /* SWRevealViewController.m in Sources */,
 				CD8A99582ACCA02400BAF7CD /* AwarenessDetailViewController.swift in Sources */,
 				CD8A99592ACCA02400BAF7CD /* DigitalResourceSecondListController.swift in Sources */,
@@ -16813,6 +17247,7 @@
 				CD8A99652ACCA02400BAF7CD /* GalleryCategoryListController.swift in Sources */,
 				CD8A99662ACCA02400BAF7CD /* MapController.swift in Sources */,
 				98CB10192B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436922C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD8A99672ACCA02400BAF7CD /* TNGalleryCategory.swift in Sources */,
 				CD8A99682ACCA02400BAF7CD /* GradeViewController.swift in Sources */,
 				98CB10FF2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -16886,6 +17321,7 @@
 				CD8A99C22AD827A600BAF7CD /* TNPerson.swift in Sources */,
 				98CB0E2C2B565B2900EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CD8A99C32AD827A600BAF7CD /* TNGallery.swift in Sources */,
+				183436E32C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CD8A99C42AD827A600BAF7CD /* Operation.swift in Sources */,
 				98CB0EEA2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CD8A99C52AD827A600BAF7CD /* StreamOperation.swift in Sources */,
@@ -16957,6 +17393,7 @@
 				CD8A99FD2AD827A600BAF7CD /* WebViewController.swift in Sources */,
 				CD8A99FE2AD827A600BAF7CD /* SlideController.swift in Sources */,
 				CD8A99FF2AD827A600BAF7CD /* AwarenessViewController.swift in Sources */,
+				183437312C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CD8A9A002AD827A600BAF7CD /* SWRevealViewController.m in Sources */,
 				CD8A9A012AD827A600BAF7CD /* AwarenessDetailViewController.swift in Sources */,
 				CD8A9A022AD827A600BAF7CD /* DigitalResourceSecondListController.swift in Sources */,
@@ -16976,6 +17413,7 @@
 				CD8A9A0E2AD827A600BAF7CD /* GalleryCategoryListController.swift in Sources */,
 				CD8A9A0F2AD827A600BAF7CD /* MapController.swift in Sources */,
 				98CB101A2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436932C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CD8A9A102AD827A600BAF7CD /* TNGalleryCategory.swift in Sources */,
 				CD8A9A112AD827A600BAF7CD /* GradeViewController.swift in Sources */,
 				98CB11002B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -17049,6 +17487,7 @@
 				CDCACE032A533ABD006BA1A1 /* TNPerson.swift in Sources */,
 				98CB0E292B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CDCACE042A533ABD006BA1A1 /* TNGallery.swift in Sources */,
+				183436E02C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CDCACE052A533ABD006BA1A1 /* Operation.swift in Sources */,
 				98CB0EE72B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CDCACE062A533ABD006BA1A1 /* StreamOperation.swift in Sources */,
@@ -17120,6 +17559,7 @@
 				CDCACE3E2A533ABD006BA1A1 /* WebViewController.swift in Sources */,
 				CDCACE3F2A533ABD006BA1A1 /* SlideController.swift in Sources */,
 				CDCACE402A533ABD006BA1A1 /* AwarenessViewController.swift in Sources */,
+				1834372E2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CDCACE412A533ABD006BA1A1 /* SWRevealViewController.m in Sources */,
 				CDCACE422A533ABD006BA1A1 /* AwarenessDetailViewController.swift in Sources */,
 				CDCACE432A533ABD006BA1A1 /* DigitalResourceSecondListController.swift in Sources */,
@@ -17139,6 +17579,7 @@
 				CDCACE4F2A533ABD006BA1A1 /* GalleryCategoryListController.swift in Sources */,
 				CDCACE502A533ABD006BA1A1 /* MapController.swift in Sources */,
 				98CB10172B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436902C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CDCACE512A533ABD006BA1A1 /* TNGalleryCategory.swift in Sources */,
 				CDCACE522A533ABD006BA1A1 /* GradeViewController.swift in Sources */,
 				98CB10FD2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -17212,6 +17653,7 @@
 				CDD23610289AD40100A7121D /* TNGallery.swift in Sources */,
 				98CB0E242B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CDD23611289AD40100A7121D /* Operation.swift in Sources */,
+				183436DB2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CDD23612289AD40100A7121D /* StreamOperation.swift in Sources */,
 				98CB0EE22B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CDD23613289AD40100A7121D /* TNCalendarEvent.swift in Sources */,
@@ -17283,6 +17725,7 @@
 				CDD23647289AD40100A7121D /* WebViewController.swift in Sources */,
 				CDD23648289AD40100A7121D /* SlideController.swift in Sources */,
 				CDD23649289AD40100A7121D /* AwarenessViewController.swift in Sources */,
+				183437292C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CDD2364A289AD40100A7121D /* SWRevealViewController.m in Sources */,
 				CDD2364B289AD40100A7121D /* AwarenessDetailViewController.swift in Sources */,
 				CDD2364C289AD40100A7121D /* DigitalResourceSecondListController.swift in Sources */,
@@ -17302,6 +17745,7 @@
 				CDD23658289AD40100A7121D /* GalleryCategoryListController.swift in Sources */,
 				CDD23659289AD40100A7121D /* MapController.swift in Sources */,
 				98CB10122B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834368B2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CDD2365A289AD40100A7121D /* TNGalleryCategory.swift in Sources */,
 				CDD2365B289AD40100A7121D /* GradeViewController.swift in Sources */,
 				98CB10F82B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -17375,6 +17819,7 @@
 				CDE5DBF5282551D400A979FA /* TNPerson.swift in Sources */,
 				98CB0E232B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CDE5DBF6282551D400A979FA /* TNGallery.swift in Sources */,
+				183436DA2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CDE5DBF7282551D400A979FA /* Operation.swift in Sources */,
 				98CB0EE12B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CDE5DBF8282551D400A979FA /* StreamOperation.swift in Sources */,
@@ -17446,6 +17891,7 @@
 				CDE5DC2D282551D400A979FA /* WebViewController.swift in Sources */,
 				CDE5DC2E282551D400A979FA /* SlideController.swift in Sources */,
 				CDE5DC2F282551D400A979FA /* AwarenessViewController.swift in Sources */,
+				183437282C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CDE5DC30282551D400A979FA /* SWRevealViewController.m in Sources */,
 				CDE5DC31282551D400A979FA /* AwarenessDetailViewController.swift in Sources */,
 				CDE5DC32282551D400A979FA /* DigitalResourceSecondListController.swift in Sources */,
@@ -17465,6 +17911,7 @@
 				CDE5DC3E282551D400A979FA /* GalleryCategoryListController.swift in Sources */,
 				CDE5DC3F282551D400A979FA /* MapController.swift in Sources */,
 				98CB10112B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834368A2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CDE5DC40282551D400A979FA /* TNGalleryCategory.swift in Sources */,
 				CDE5DC41282551D400A979FA /* GradeViewController.swift in Sources */,
 				98CB10F72B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -17538,6 +17985,7 @@
 				CE0A5FB624375C8000568C23 /* TNPerson.swift in Sources */,
 				98CB0E1D2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE0A5FB724375C8000568C23 /* TNGallery.swift in Sources */,
+				183436D42C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE0A5FB824375C8000568C23 /* Operation.swift in Sources */,
 				98CB0EDB2B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE0A5FB924375C8000568C23 /* StreamOperation.swift in Sources */,
@@ -17609,6 +18057,7 @@
 				CE0A5FEB24375C8000568C23 /* WebViewController.swift in Sources */,
 				CE0A5FEC24375C8000568C23 /* SlideController.swift in Sources */,
 				CE0A5FED24375C8000568C23 /* AwarenessViewController.swift in Sources */,
+				183437222C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE0A5FEE24375C8000568C23 /* SWRevealViewController.m in Sources */,
 				CE0A5FEF24375C8000568C23 /* AwarenessDetailViewController.swift in Sources */,
 				CE0A5FF024375C8000568C23 /* DigitalResourceSecondListController.swift in Sources */,
@@ -17628,6 +18077,7 @@
 				CE0A5FFC24375C8000568C23 /* GalleryCategoryListController.swift in Sources */,
 				CE0A5FFD24375C8000568C23 /* MapController.swift in Sources */,
 				98CB100B2B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436842C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE0A5FFE24375C8000568C23 /* TNGalleryCategory.swift in Sources */,
 				CE0A5FFF24375C8000568C23 /* GradeViewController.swift in Sources */,
 				98CB10F12B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -17701,6 +18151,7 @@
 				CE0FBC0621F9D2CC00C6D924 /* TNPerson.swift in Sources */,
 				98CB0E192B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE0FBC0721F9D2CC00C6D924 /* TNGallery.swift in Sources */,
+				183436D02C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE0FBC0821F9D2CC00C6D924 /* Operation.swift in Sources */,
 				98CB0ED72B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE0FBC0921F9D2CC00C6D924 /* StreamOperation.swift in Sources */,
@@ -17772,6 +18223,7 @@
 				CE0FBC3A21F9D2CC00C6D924 /* WebViewController.swift in Sources */,
 				CE0FBC3B21F9D2CC00C6D924 /* SlideController.swift in Sources */,
 				CE0FBC3C21F9D2CC00C6D924 /* AwarenessViewController.swift in Sources */,
+				1834371E2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE0FBC3D21F9D2CC00C6D924 /* SWRevealViewController.m in Sources */,
 				CE0FBC3E21F9D2CC00C6D924 /* AwarenessDetailViewController.swift in Sources */,
 				CE0FBC3F21F9D2CC00C6D924 /* DigitalResourceSecondListController.swift in Sources */,
@@ -17791,6 +18243,7 @@
 				CE0FBC4B21F9D2CC00C6D924 /* GalleryCategoryListController.swift in Sources */,
 				CE0FBC4C21F9D2CC00C6D924 /* MapController.swift in Sources */,
 				98CB10072B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436802C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE0FBC4D21F9D2CC00C6D924 /* TNGalleryCategory.swift in Sources */,
 				CE0FBC4E21F9D2CC00C6D924 /* GradeViewController.swift in Sources */,
 				98CB10ED2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -17864,6 +18317,7 @@
 				CE10ECAF2201D45200F24DE4 /* TNPerson.swift in Sources */,
 				98CB0E1B2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE10ECB02201D45200F24DE4 /* TNGallery.swift in Sources */,
+				183436D22C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE10ECB12201D45200F24DE4 /* Operation.swift in Sources */,
 				98CB0ED92B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE10ECB22201D45200F24DE4 /* StreamOperation.swift in Sources */,
@@ -17935,6 +18389,7 @@
 				CE10ECE32201D45200F24DE4 /* WebViewController.swift in Sources */,
 				CE10ECE42201D45200F24DE4 /* SlideController.swift in Sources */,
 				CE10ECE52201D45200F24DE4 /* AwarenessViewController.swift in Sources */,
+				183437202C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE10ECE62201D45200F24DE4 /* SWRevealViewController.m in Sources */,
 				CE10ECE72201D45200F24DE4 /* AwarenessDetailViewController.swift in Sources */,
 				CE10ECE82201D45200F24DE4 /* DigitalResourceSecondListController.swift in Sources */,
@@ -17954,6 +18409,7 @@
 				CE10ECF42201D45200F24DE4 /* GalleryCategoryListController.swift in Sources */,
 				CE10ECF52201D45200F24DE4 /* MapController.swift in Sources */,
 				98CB10092B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436822C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE10ECF62201D45200F24DE4 /* TNGalleryCategory.swift in Sources */,
 				CE10ECF72201D45200F24DE4 /* GradeViewController.swift in Sources */,
 				98CB10EF2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -18027,6 +18483,7 @@
 				CE11983721F82AB200D028D2 /* TNPerson.swift in Sources */,
 				98CB0E182B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE11983821F82AB200D028D2 /* TNGallery.swift in Sources */,
+				183436CF2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE11983921F82AB200D028D2 /* Operation.swift in Sources */,
 				98CB0ED62B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE11983A21F82AB200D028D2 /* StreamOperation.swift in Sources */,
@@ -18098,6 +18555,7 @@
 				CE11986B21F82AB200D028D2 /* WebViewController.swift in Sources */,
 				CE11986C21F82AB200D028D2 /* SlideController.swift in Sources */,
 				CE11986D21F82AB200D028D2 /* AwarenessViewController.swift in Sources */,
+				1834371D2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE11986E21F82AB200D028D2 /* SWRevealViewController.m in Sources */,
 				CE11986F21F82AB200D028D2 /* AwarenessDetailViewController.swift in Sources */,
 				CE11987021F82AB200D028D2 /* DigitalResourceSecondListController.swift in Sources */,
@@ -18117,6 +18575,7 @@
 				CE11987C21F82AB200D028D2 /* GalleryCategoryListController.swift in Sources */,
 				CE11987D21F82AB200D028D2 /* MapController.swift in Sources */,
 				98CB10062B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834367F2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE11987E21F82AB200D028D2 /* TNGalleryCategory.swift in Sources */,
 				CE11987F21F82AB200D028D2 /* GradeViewController.swift in Sources */,
 				98CB10EC2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -18190,6 +18649,7 @@
 				CE1565B721A96DB400DC758E /* TNPerson.swift in Sources */,
 				98CB0E172B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE1565B821A96DB400DC758E /* TNGallery.swift in Sources */,
+				183436CE2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE1565B921A96DB400DC758E /* Operation.swift in Sources */,
 				98CB0ED52B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE1565BA21A96DB400DC758E /* StreamOperation.swift in Sources */,
@@ -18261,6 +18721,7 @@
 				CE1565EB21A96DB400DC758E /* WebViewController.swift in Sources */,
 				CE1565EC21A96DB400DC758E /* SlideController.swift in Sources */,
 				CE1565ED21A96DB400DC758E /* AwarenessViewController.swift in Sources */,
+				1834371C2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE1565EE21A96DB400DC758E /* SWRevealViewController.m in Sources */,
 				CE1565EF21A96DB400DC758E /* AwarenessDetailViewController.swift in Sources */,
 				CE1565F021A96DB400DC758E /* DigitalResourceSecondListController.swift in Sources */,
@@ -18280,6 +18741,7 @@
 				CE1565FC21A96DB400DC758E /* GalleryCategoryListController.swift in Sources */,
 				CE1565FD21A96DB400DC758E /* MapController.swift in Sources */,
 				98CB10052B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834367E2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE1565FE21A96DB400DC758E /* TNGalleryCategory.swift in Sources */,
 				CE1565FF21A96DB400DC758E /* GradeViewController.swift in Sources */,
 				98CB10EB2B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -18353,6 +18815,7 @@
 				CE8867AC21FACE8C00FF0DE0 /* TNPerson.swift in Sources */,
 				98CB0E132B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE8867AD21FACE8C00FF0DE0 /* TNGallery.swift in Sources */,
+				183436CA2C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE8867AE21FACE8C00FF0DE0 /* Operation.swift in Sources */,
 				98CB0ED12B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE8867AF21FACE8C00FF0DE0 /* StreamOperation.swift in Sources */,
@@ -18424,6 +18887,7 @@
 				CE8867E021FACE8C00FF0DE0 /* WebViewController.swift in Sources */,
 				CE8867E121FACE8C00FF0DE0 /* SlideController.swift in Sources */,
 				CE8867E221FACE8C00FF0DE0 /* AwarenessViewController.swift in Sources */,
+				183437182C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE8867E321FACE8C00FF0DE0 /* SWRevealViewController.m in Sources */,
 				CE8867E421FACE8C00FF0DE0 /* AwarenessDetailViewController.swift in Sources */,
 				CE8867E521FACE8C00FF0DE0 /* DigitalResourceSecondListController.swift in Sources */,
@@ -18443,6 +18907,7 @@
 				CE8867F121FACE8C00FF0DE0 /* GalleryCategoryListController.swift in Sources */,
 				CE8867F221FACE8C00FF0DE0 /* MapController.swift in Sources */,
 				98CB10012B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				1834367A2C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE8867F321FACE8C00FF0DE0 /* TNGalleryCategory.swift in Sources */,
 				CE8867F421FACE8C00FF0DE0 /* GradeViewController.swift in Sources */,
 				98CB10E72B56651300EB1217 /* UIColor+Extension.swift in Sources */,
@@ -18516,6 +18981,7 @@
 				CE88684D21FAEFFE00FF0DE0 /* TNPerson.swift in Sources */,
 				98CB0E1A2B565B2800EB1217 /* NoticeBoardTableViewCell.swift in Sources */,
 				CE88684E21FAEFFE00FF0DE0 /* TNGallery.swift in Sources */,
+				183436D12C2B2084000E5CCC /* PaymentTotalTableViewCell.swift in Sources */,
 				CE88684F21FAEFFE00FF0DE0 /* Operation.swift in Sources */,
 				98CB0ED82B565B2A00EB1217 /* NoticeBoardCollectionViewCell.swift in Sources */,
 				CE88685021FAEFFE00FF0DE0 /* StreamOperation.swift in Sources */,
@@ -18587,6 +19053,7 @@
 				CE88688121FAEFFE00FF0DE0 /* WebViewController.swift in Sources */,
 				CE88688221FAEFFE00FF0DE0 /* SlideController.swift in Sources */,
 				CE88688321FAEFFE00FF0DE0 /* AwarenessViewController.swift in Sources */,
+				1834371F2C2BEA48000E5CCC /* FeeDetailTableViewCell.swift in Sources */,
 				CE88688421FAEFFE00FF0DE0 /* SWRevealViewController.m in Sources */,
 				CE88688521FAEFFE00FF0DE0 /* AwarenessDetailViewController.swift in Sources */,
 				CE88688621FAEFFE00FF0DE0 /* DigitalResourceSecondListController.swift in Sources */,
@@ -18606,6 +19073,7 @@
 				CE88689221FAEFFE00FF0DE0 /* GalleryCategoryListController.swift in Sources */,
 				CE88689321FAEFFE00FF0DE0 /* MapController.swift in Sources */,
 				98CB10082B565B2B00EB1217 /* ProfileTableViewCell.swift in Sources */,
+				183436812C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift in Sources */,
 				CE88689421FAEFFE00FF0DE0 /* TNGalleryCategory.swift in Sources */,
 				CE88689521FAEFFE00FF0DE0 /* GradeViewController.swift in Sources */,
 				98CB10EE2B56651300EB1217 /* UIColor+Extension.swift in Sources */,

@@ -37,6 +37,7 @@ class APIUrls{
     let weeklyPlanView  = "T0006"
     let weeklyPlanComment  = "T0205"
     let paymentDetails  = "T0037"
+    let feeConsolidated = "FEECONSOLIDATED"
     let feeDetails      = "T0036"
     let feeSummary      = "T0035"
     let readNotificatoin = "T0044"

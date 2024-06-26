@@ -81,7 +81,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let widthValue = self.view.frame.size.width/2 - 3
+        let widthValue = (self.view.frame.size.width - 30)/2 - 3
         //let heightValue = CGFloat(90.00)
         
         return CGSize(width: widthValue, height: widthValue)
