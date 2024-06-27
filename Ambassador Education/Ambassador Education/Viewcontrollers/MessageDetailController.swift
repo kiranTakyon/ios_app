@@ -88,7 +88,6 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     }
 
     func getMessageDetails() {
-        topHeaderView.title = text.safeValue
         self.startLoadingAnimation()
         
         var dictionary = [String: Any]()
@@ -416,6 +415,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             let cell = tableView.dequeueReusableCell(withIdentifier: "messageDetailSecondCell", for: indexPath) as! messageDetailSecondCell
             cell.navigationcontroller = self.navigationController
             let message = self.messageList[indexPath.row]
+            cell.subjectLabel.text = text.safeValue
             cell.delegate = self
             cell.personLabel.text = message.sender
             cell.messageLabel.numberOfLines = 0
@@ -510,10 +510,12 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                 cell.data = attachments
             }
             cell.tableViewAttachments.isHidden = false
+            cell.sepratorView.isHidden = false
         }
         else{
             cell.tableViewHeight.constant = 0
             cell.tableViewAttachments.isHidden = true
+            cell.sepratorView.isHidden = true
         }
         
     }
@@ -700,6 +702,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var profileImage: ImageLoader!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var personLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
   //  @IBOutlet weak var seperatorView: UIView!
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
@@ -709,6 +712,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     @IBOutlet weak var richEditorRight: NSLayoutConstraint!
     @IBOutlet weak var richEditorView: RichEditorView!
     @IBOutlet weak var dropDownButton: UIButton!
+    @IBOutlet weak var sepratorView: UIView!
     
     @IBOutlet weak var WPButton: UIButton!
     var navigationcontroller : UINavigationController! = nil

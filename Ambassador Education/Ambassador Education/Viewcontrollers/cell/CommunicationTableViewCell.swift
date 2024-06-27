@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CommunicationTableViewCellDelegate: AnyObject {
+    func communicationTableViewCell(_ cell: CommunicationTableViewCell, didTapOnCellWithIndex index: Int)
+}
+
 class CommunicationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelDate: UILabel!
@@ -17,6 +21,8 @@ class CommunicationTableViewCell: UITableViewCell {
     @IBOutlet weak var ReadIcon: UIImageView!
     @IBOutlet weak var ReadStatus: UILabel!
    
+    var index: Int = -1
+    weak var delegate: CommunicationTableViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +34,7 @@ class CommunicationTableViewCell: UITableViewCell {
 
     }
     
+    @IBAction func didTapOnCell(_ sender: Any) {
+        delegate?.communicationTableViewCell(self, didTapOnCellWithIndex: index)
+    }
 }

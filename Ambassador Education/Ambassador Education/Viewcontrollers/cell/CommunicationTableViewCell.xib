@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="297" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-ix-tPr" customClass="CardView" customModule="Ajyal" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-ix-tPr" customClass="CardView" customModule="ABC" customModuleProvider="target">
                         <rect key="frame" x="5" y="10" width="287" height="59"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4j-rs-0s1">
@@ -98,19 +98,30 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-Dz-myh">
+                                <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="didTapOnCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1y8-1D-qbt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lR4-Dz-myh" firstAttribute="leading" secondItem="ac2-ix-tPr" secondAttribute="leading" id="4A9-sh-EbI"/>
                             <constraint firstItem="7FE-YN-3h5" firstAttribute="centerY" secondItem="ha0-0e-eHg" secondAttribute="centerY" constant="10" id="87x-As-m0m"/>
                             <constraint firstAttribute="bottom" secondItem="sg0-Aj-Nli" secondAttribute="bottom" constant="10" id="9IH-G8-LRr"/>
                             <constraint firstItem="o4j-rs-0s1" firstAttribute="leading" secondItem="ac2-ix-tPr" secondAttribute="leading" id="ESo-mR-lvK"/>
+                            <constraint firstAttribute="trailing" secondItem="lR4-Dz-myh" secondAttribute="trailing" id="JLN-D6-g6x"/>
                             <constraint firstItem="ha0-0e-eHg" firstAttribute="centerY" secondItem="o4j-rs-0s1" secondAttribute="centerY" constant="-10" id="Kh3-Vf-kwS"/>
                             <constraint firstItem="sg0-Aj-Nli" firstAttribute="top" secondItem="ha0-0e-eHg" secondAttribute="bottom" constant="5" id="KzD-Fx-OHs"/>
+                            <constraint firstAttribute="bottom" secondItem="lR4-Dz-myh" secondAttribute="bottom" id="NnI-qK-pk9"/>
                             <constraint firstItem="sg0-Aj-Nli" firstAttribute="leading" secondItem="ha0-0e-eHg" secondAttribute="leading" id="Y69-T7-568"/>
                             <constraint firstItem="o4j-rs-0s1" firstAttribute="top" secondItem="ac2-ix-tPr" secondAttribute="top" id="YMp-ls-gh8"/>
                             <constraint firstItem="7FE-YN-3h5" firstAttribute="leading" secondItem="ha0-0e-eHg" secondAttribute="trailing" constant="20" id="fWL-yB-aKR"/>
                             <constraint firstAttribute="bottom" secondItem="o4j-rs-0s1" secondAttribute="bottom" id="hDq-zJ-waq"/>
                             <constraint firstAttribute="trailing" secondItem="7FE-YN-3h5" secondAttribute="trailing" constant="10" id="ixk-sh-9HE"/>
+                            <constraint firstItem="lR4-Dz-myh" firstAttribute="top" secondItem="ac2-ix-tPr" secondAttribute="top" id="tVc-8V-yvd"/>
                             <constraint firstItem="sg0-Aj-Nli" firstAttribute="trailing" secondItem="ha0-0e-eHg" secondAttribute="trailing" id="v8q-Oa-S6o"/>
                             <constraint firstItem="ha0-0e-eHg" firstAttribute="leading" secondItem="o4j-rs-0s1" secondAttribute="trailing" constant="5" id="xgg-Hq-qBf"/>
                         </constraints>

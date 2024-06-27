@@ -345,6 +345,8 @@ extension CommunicateController: UITableViewDataSource {
         setAttachmentsIcon(msg: message, cell: cell)
         cell.labelMessageType.text = message.subject?.replacingHTMLEntities
         cell.labelDate.text = message.date
+            cell.index = indexPath.row
+        cell.delegate = self
         cell.selectionStyle = .none
         }
         return cell
@@ -396,5 +398,17 @@ extension CommunicateController {
     @IBAction func buttonDraftAction(_ sender: Any) {
         type = .draft
         getInboxMessages(txt : searchText, types: typeValue)
+    }
+}
+
+extension CommunicateController: CommunicationTableViewCellDelegate {
+    func communicationTableViewCell(_ cell: CommunicationTableViewCell, didTapOnCellWithIndex index: Int) {
+        if inboxMessages.count > 0{
+        let message = self.inboxMessages[index]
+        let messageSub = message.subject.safeValue
+        let messageId = message.id.safeValue
+
+            delegate?.getBackToParentView(value: messageId,titleValue :messageSub, isForDraft: isForDraft, message: message)
+        }
     }
 }
