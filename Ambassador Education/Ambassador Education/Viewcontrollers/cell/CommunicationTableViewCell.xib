@@ -33,7 +33,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLg-VN-CJG" userLabel="ReadStatus">
                                         <rect key="frame" x="0.0" y="40" width="30" height="9"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -148,6 +148,7 @@
                 <outlet property="labelDate" destination="mRM-OG-HrY" id="TjX-Us-tez"/>
                 <outlet property="labelHeading" destination="ha0-0e-eHg" id="Hjb-Uq-roC"/>
                 <outlet property="labelMessageType" destination="sg0-Aj-Nli" id="IKx-wS-gPY"/>
+                <outlet property="sideView" destination="o4j-rs-0s1" id="rAF-l8-XSw"/>
             </connections>
             <point key="canvasLocation" x="-197.70992366412213" y="-22.887323943661972"/>
         </tableViewCell>

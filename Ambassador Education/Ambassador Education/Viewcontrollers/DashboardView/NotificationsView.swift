@@ -22,6 +22,13 @@ class NotificationsView: UIView {
     var selectedIndexes: [Int] = []
     private lazy var refresher = IQPullToRefresh(scrollView: tableView, refresher: self, moreLoader: self)
     var pageIndex = 0
+    private var communicateImages:[String] = ["communicate1","communicate2","communicate3"]
+    private var noticeboardImages:[String] = ["noticeboard1","noticeboard2","noticeboard3"]
+    private var weeklyPlanImages:[String] = ["awarnessand1","awarnessand2","awarnessand3"]
+    private var busImages:[String] = ["bus1","bus2","bus3"]
+    private var htmlTypeImages:[String] = ["digitalresourse1","digitalresourse2","digitalresourse3"]
+    private var galleryImages:[String] = ["gallery1","gallery2","gallery3"]
+    
     weak var delegate: NotificationsViewDelegate?
     
     override func awakeFromNib() {
@@ -31,7 +38,7 @@ class NotificationsView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         refresher.enableLoadMore = true
-
+        
     }
     
     required init?(coder: NSCoder) {
@@ -76,22 +83,44 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
         if let msgType = notification.type{
             switch msgType {
             case msgTypes.communicate.rawValue:
-                cell.typeImageV.image = UIImage(named: "emailImage")
+                let index = indexPath.row % communicateImages.count
+                let image = communicateImages[index]
+                cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
                 
-            case msgTypes.noticeboard.rawValue,msgTypes.bus.rawValue,msgTypes.weeklyPlan.rawValue:
-                cell.typeImageV.image = UIImage(named: "NoticeImage")
+            case msgTypes.weeklyPlan.rawValue:
+                let index = indexPath.row % weeklyPlanImages.count
+                let image = weeklyPlanImages[index]
+                cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "weekly Plan"
                 
+            case msgTypes.noticeboard.rawValue:
+                let index = indexPath.row % noticeboardImages.count
+                let image = noticeboardImages[index]
+                cell.typeImageV.image = UIImage(named: image)
+                cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
+                cell.labelTitle.text = "Noticeboard"
+                
+            case msgTypes.bus.rawValue:
+                let index = indexPath.row % busImages.count
+                let image = busImages[index]
+                cell.typeImageV.image = UIImage(named: image)
+                cell.typeImageView.image = #imageLiteral(resourceName: "bus_icon")
+                cell.labelTitle.text = "Bus fare"
+                
             case msgTypes.htmlType.rawValue:
-                cell.typeImageV.image = UIImage(named: "emailImage")
+                let index = indexPath.row % htmlTypeImages.count
+                let image = htmlTypeImages[index]
+                cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image =  #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
                 
             case msgTypes.gallery.rawValue:
-                cell.typeImageV.image = UIImage(named: "photoGalleryImage")
+                let index = indexPath.row % galleryImages.count
+                let image = galleryImages[index]
+                cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
                 cell.labelTitle.text = "Gallery"
                 

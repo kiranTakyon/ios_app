@@ -20,6 +20,9 @@ class CommunicationTableViewCell: UITableViewCell {
     @IBOutlet weak var attachButton: UIButton!
     @IBOutlet weak var ReadIcon: UIImageView!
     @IBOutlet weak var ReadStatus: UILabel!
+    @IBOutlet weak var sideView: UIView!
+    
+    var sideViewBgColors = ["81CACB","A4CACC","B0FED0","C49BC9","CCCCFC","F29D98"]
    
     var index: Int = -1
     weak var delegate: CommunicationTableViewCellDelegate?
@@ -27,6 +30,12 @@ class CommunicationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setUpSideViewBg() {
+        let index = index % sideViewBgColors.count
+        let color = sideViewBgColors[index]
+        sideView.backgroundColor = UIColor(named: color)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

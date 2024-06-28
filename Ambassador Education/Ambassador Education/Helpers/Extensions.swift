@@ -298,7 +298,7 @@ extension UIViewController{
                 let imageFrame = CGRect(x: self.view.center.x - 50, y: label.center.y - 110, width: 100, height: 100)
                 let imageLogo = UIImageView(frame: imageFrame)
                 imageLogo.alpha = 0.5
-                label.tag = 8002
+                imageLogo.tag = 8002
                 imageLogo.image = UIImage(named:"TakyonLogo")
                 
                 self.view.addSubview(imageLogo)

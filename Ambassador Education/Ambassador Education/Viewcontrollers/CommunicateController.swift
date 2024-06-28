@@ -41,6 +41,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
     var searchText = ""
     var isForDraft: Bool = false
     var buttonOrigin : CGPoint = CGPoint(x: 0, y: 0)
+    private var isLoadMore: Bool = false
     
     // MARK: - ViewLifeCycle -
     
@@ -100,6 +101,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
     
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
+        isLoadMore = true
         self.searchText = ""
         self.paginationNumber += 1
         self.getInboxMessages(txt : searchText, types: typeValue)
@@ -155,8 +157,15 @@ class CommunicateController: UIViewController,TaykonProtocol {
             DispatchQueue.main.async {
                 if let messageList = result["MessageList"] as? NSArray{
                     let list = ModelClassManager.sharedManager.createModelArray(data: messageList, modelType: ModelType.TinboxMessage) as! [TinboxMessage]
+                    var message = [TinboxMessage]()
                     for each in list {
-                        self.inboxMessages.append(each)
+                        message.append(each)
+                    }
+                    
+                    if self.isLoadMore {
+                        self.inboxMessages.append(contentsOf: message)
+                    } else {
+                        self.inboxMessages = message
                     }
                     
                     self.stopLoadingAnimation()
@@ -166,8 +175,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
                     self.refreshControl.endRefreshing()
                     if self.inboxMessages.count == 0{
                         self.addNoDataFoundLabel()
-                    }
-                    else{
+                    } else {
                         self.removeNoDataLabel()
                     }
                     
@@ -212,11 +220,11 @@ class CommunicateController: UIViewController,TaykonProtocol {
             cell.ReadStatus.text = str + "/" + str2
             if message.TotalCount == message.ReadCount
             {
-                cell.ReadIcon.image = UIImage(named : "check_green")
+                cell.ReadIcon.image = UIImage(named : "doubletickwhite")
             }
             else if ReadCount!  > 0
             {
-                cell.ReadIcon.image = UIImage(named : "check_grey")
+                cell.ReadIcon.image = UIImage(named : "doubletickgrey")
             }
         }
     }
@@ -228,7 +236,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
                     setCharacterColor(cell: cell, textColr: UIColor.black)
                  case "1":
                      setCharacterColor(cell: cell, textColr: UIColor.lightGray)
-                     cell.ReadIcon.image = UIImage(named: "check_green")
+                     cell.ReadIcon.image = UIImage(named: "doubletickwhite")
                  default:
                      break
          }
@@ -347,7 +355,9 @@ extension CommunicateController: UITableViewDataSource {
         cell.labelDate.text = message.date
             cell.index = indexPath.row
         cell.delegate = self
+        cell.setUpSideViewBg()
         cell.selectionStyle = .none
+        cell.layoutIfNeeded()
         }
         return cell
     }
@@ -383,20 +393,24 @@ extension CommunicateController {
     
     @IBAction func buttonInboxAction(_ sender: Any) {
         type = .inbox
+        isLoadMore = false
         getInboxMessages(txt : searchText, types: typeValue)
     }
     
     @IBAction func buttonSentItemAction(_ sender: Any) {
         type = .sent
+        isLoadMore = false
         getInboxMessages(txt : searchText, types: typeValue)
     }
     @IBAction func buttonWeekleyPlanAction(_ sender: Any) {
         type = .WP
+        isLoadMore = false
         getInboxMessages(txt : searchText, types: typeValue)
     }
     
     @IBAction func buttonDraftAction(_ sender: Any) {
         type = .draft
+        isLoadMore = false
         getInboxMessages(txt : searchText, types: typeValue)
     }
 }

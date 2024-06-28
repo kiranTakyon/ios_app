@@ -728,6 +728,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         didSet{
             setTableViewHeight()
             tableViewAttachments.reloadData()
+            tableViewHeight.constant = tableViewAttachments.contentSize.height
         }
     }
     
@@ -745,7 +746,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         self.tableViewAttachments.dataSource = self
         self.tableViewAttachments.separatorStyle = .none
         self.tableViewAttachments.tableFooterView = UIView()
-        self.tableViewAttachments.estimatedRowHeight = 150.0
+        self.tableViewAttachments.estimatedRowHeight = 250.0
         self.tableViewAttachments.rowHeight = UITableView.automaticDimension
         
     }
@@ -827,6 +828,8 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         cell?.btnDownload.accessibilityHint = "Download"
         cell?.tag = indexPath.row
         cell?.selectionStyle = .none
+        cell?.index = indexPath.row
+        cell?.setUpBgColor()
         cell?.delegate = self
         return cell!
     }
@@ -879,6 +882,17 @@ class MessageDownLoadCell: UITableViewCell{
     
     @IBOutlet weak var downldLabel: UILabel!
     @IBOutlet weak var btnDownload: UIButton!
+    @IBOutlet weak var bgView: UIView!
+    
+    var viewBgColors = ["A4CB9D","B0FED0"]
+    
+    var index: Int = -1
+    
+    func setUpBgColor() {
+        let index = index % viewBgColors.count
+        let color = viewBgColors[index]
+        bgView.backgroundColor = UIColor(named: color)
+    }
     
     @IBAction func dwnloadButtnAction(_ sender: UIButton) {
         self.delegate?.downLoadMylink(sender: sender, index: self.tag)
