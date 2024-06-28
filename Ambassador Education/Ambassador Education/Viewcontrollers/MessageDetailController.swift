@@ -734,7 +734,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     
     func setTableViewHeight(){
         if let count = data?.count {
-            tableViewHeight.constant = CGFloat(50.0 * Double(count))
+            //tableViewHeight.constant = CGFloat(50.0 * Double(count))
         }
         else{
             tableViewHeight.constant = 0.0
