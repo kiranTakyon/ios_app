@@ -8,8 +8,16 @@
 
 import UIKit
 import MBCalendarKit
+import FSCalendar
 
-class CalendarController: CalendarViewController {
+class CalendarController: UIViewController {
+    
+    // MARK: - -
+    
+    @IBOutlet weak var calendarView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var calenderViewHeight: NSLayoutConstraint!
+    
     
     var dictionary = [String:[TNCalendarEvent]]()
     var data : [Date:[CalendarEvent]] = [:]
@@ -23,6 +31,7 @@ class CalendarController: CalendarViewController {
     var eventData = [TNCalendarEvent]()
     
     var completeDates = [String:[TNCalendarEvent]]()
+    var fsCalendar: FSCalendar = FSCalendar()
     
     
     
@@ -51,6 +60,7 @@ class CalendarController: CalendarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "CalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "CalendarTableViewCell")
         setCalender()
         getCalendarEvents()
     }
@@ -75,8 +85,19 @@ class CalendarController: CalendarViewController {
     
     
     func setCalender(){
-        self.delegate = self
-        self.dataSource = self
+        fsCalendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width - 20, height: 300 ))
+        
+        calendarView.addSubview(fsCalendar)
+        fsCalendar.appearance.todayColor = UIColor(named: "ED706B")
+        fsCalendar.appearance.headerTitleColor = .black
+        fsCalendar.appearance.weekdayTextColor = .black
+        fsCalendar.appearance.selectionColor = UIColor(named: "ED706B")
+        fsCalendar.appearance.borderRadius = 0.4
+        fsCalendar.appearance.headerMinimumDissolvedAlpha = 0.0
+        fsCalendar.appearance.eventDefaultColor = .black
+        fsCalendar.delegate = self
+        fsCalendar.dataSource = self
+        fsCalendar.scope = .month
     }
     
     deinit {
@@ -133,7 +154,7 @@ class CalendarController: CalendarViewController {
             DispatchQueue.main.async {
                 guard let title = result["CalendarLabel"] as? String else {return}
                 self.title = title
-
+                
                 guard let events = result["Events"] as? NSArray else{
                     self.stopLoadingAnimation()
                     SweetAlert().showAlert(kAppName, subTitle: "Something went wrong", style: .success)
@@ -257,7 +278,7 @@ class CalendarController: CalendarViewController {
     
     func setDate(str : String) -> Date{
         let dateFormatter = DateFormatter()
-       // dateFormatter.dateFormat = "MMM dd,yyyy"
+        // dateFormatter.dateFormat = "MMM dd,yyyy"
         dateFormatter.setLocalizedDateFormatFromTemplate("MMM dd,yyyy")
         if  let date = dateFormatter.date(from: str){
             print(date)
@@ -289,11 +310,15 @@ class CalendarController: CalendarViewController {
                             eventArray.append(events)
                         }
                         self.data[dateval] = eventArray
+                        self.fsCalendar.reloadData()
                     }
                 }
             }
         }
-        
+        completeEvents = self.data[Date()] ?? []
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         
     }
     
@@ -310,29 +335,24 @@ class CalendarController: CalendarViewController {
     }
     
     
-    override func calendarView(_ calendarView: CalendarView, eventsFor date: Date) -> [CalendarEvent] {
+    
+    @IBAction func didTapOnChangeView(_ sender: UIButton) {
         
-        let eventsForDate = self.data[date] ?? []
+        switch sender.tag {
+        case 0://Today
+            break
+        case 1://Week
+            fsCalendar.scope = .week
+            calenderViewHeight.constant = 130
+            break
+        case 2://Month
+            fsCalendar.scope = .month
+            calenderViewHeight.constant = 300
+            break
+        default:
+            break
+        }
         
-        return eventsForDate
-    }
-    
-    
-    // MARK: - CKCalendarDelegate
-    
-    // Called before the selected date changes.
-    override func calendarView(_ calendarView: CalendarView, didSelect date: Date) {
-        super.calendarView(calendarView, didSelect: date) // Call super to ensure it
-    }
-    
-    // Called after the selected date changes.
-    override func calendarView(_ calendarView: CalendarView, willSelect date: Date) {
-        
-    }
-    
-    // A row was selected in the events table. (Use this to push a details view or whatever.)
-    override func calendarView(_ calendarView: CalendarView, didSelect event: CalendarEvent) {
-        showEventDetails(value: event)
     }
     
     func showEventDetails(value : CalendarEvent) {
@@ -340,7 +360,7 @@ class CalendarController: CalendarViewController {
             if let value = infoDict["event"] as? TNCalendarEvent {
                 let showTxt = "Name : \(value.text.safeValue)\n Start Date : \(value.startDate.safeValue) \n End Date : \(value.endDate.safeValue) \n Notes : \(value.details.safeValue)"
                 let alertController = UIAlertController(title: "View Events", message:
-                    showTxt, preferredStyle: UIAlertController.Style.alert)
+                                                            showTxt, preferredStyle: UIAlertController.Style.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -357,3 +377,42 @@ class EventCell : UITableViewCell{
 
 
 
+extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        fsCalendar.appearance.todayColor = UIColor(named: "ED706B")?.withAlphaComponent(0.5)
+        completeEvents = self.data[date] ?? []
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        
+        for dateData in data {
+            if dateData.key == date {
+                return 1
+            }
+        }
+        
+        return 0
+    }
+}
+
+
+extension CalendarController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return completeEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell", for: indexPath) as? CalendarTableViewCell else { return UITableViewCell() }
+        cell.index = indexPath.row
+        cell.setUpCell(event: completeEvents[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showEventDetails(value: completeEvents[indexPath.row])
+    }
+    
+}
