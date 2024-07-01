@@ -2278,8 +2278,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obI-td-dGr" customClass="TopHeaderView" customModule="Ajyal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.59607843140000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" placeholder="YES" id="6Xk-Z1-pFo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowSecondRightButton" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="setFirstRightButtonImage" value="LogOut"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backButtonTintColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfU-IE-bgw">
-                                <rect key="frame" x="80" y="79" width="293" height="35"/>
+                                <rect key="frame" x="80" y="95" width="293" height="35"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AYe-cz-JBh">
                                         <rect key="frame" x="0.0" y="0.0" width="223" height="34"/>
@@ -2325,7 +2342,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FP8-pw-89f">
-                                <rect key="frame" x="10" y="134" width="373" height="300"/>
+                                <rect key="frame" x="10" y="150" width="373" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="RS5-sa-DjX"/>
@@ -2337,7 +2354,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mbj-dR-rkO">
-                                <rect key="frame" x="30" y="464" width="333" height="35"/>
+                                <rect key="frame" x="30" y="480" width="333" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-XZ-wyG">
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="35"/>
@@ -2393,13 +2410,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listed items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-CO-Yro">
-                                <rect key="frame" x="20" y="529" width="83.333333333333329" height="18"/>
+                                <rect key="frame" x="20" y="545" width="83.333333333333329" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="THv-1g-2eh">
-                                <rect key="frame" x="10" y="567" width="373" height="241"/>
+                                <rect key="frame" x="10" y="583" width="373" height="225"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="dataSource" destination="jOr-fb-0G8" id="Dsh-H0-gxx"/>
@@ -2418,11 +2435,14 @@
                             <constraint firstItem="TvZ-AG-xhd" firstAttribute="trailing" secondItem="THv-1g-2eh" secondAttribute="trailing" constant="10" id="Jea-ag-2af"/>
                             <constraint firstItem="DfU-IE-bgw" firstAttribute="leading" secondItem="TvZ-AG-xhd" secondAttribute="leading" constant="80" id="PRh-Jv-nDk"/>
                             <constraint firstItem="FP8-pw-89f" firstAttribute="leading" secondItem="TvZ-AG-xhd" secondAttribute="leading" constant="10" id="Pj4-OR-aHU"/>
-                            <constraint firstItem="DfU-IE-bgw" firstAttribute="top" secondItem="TvZ-AG-xhd" secondAttribute="top" constant="20" id="U6J-Ew-QAN"/>
+                            <constraint firstItem="obI-td-dGr" firstAttribute="leading" secondItem="TvZ-AG-xhd" secondAttribute="leading" id="UFR-Z2-UlW"/>
                             <constraint firstItem="TvZ-AG-xhd" firstAttribute="trailing" secondItem="FP8-pw-89f" secondAttribute="trailing" constant="10" id="Vhc-cC-ub5"/>
                             <constraint firstItem="THv-1g-2eh" firstAttribute="leading" secondItem="TvZ-AG-xhd" secondAttribute="leading" constant="10" id="dwa-Zi-ylB"/>
+                            <constraint firstItem="DfU-IE-bgw" firstAttribute="top" secondItem="obI-td-dGr" secondAttribute="bottom" constant="20" id="efm-op-P7T"/>
                             <constraint firstItem="qdI-CO-Yro" firstAttribute="top" secondItem="mbj-dR-rkO" secondAttribute="bottom" constant="30" id="oZ0-0E-gxz"/>
+                            <constraint firstItem="obI-td-dGr" firstAttribute="trailing" secondItem="TvZ-AG-xhd" secondAttribute="trailing" id="r8L-dl-0tT"/>
                             <constraint firstItem="mbj-dR-rkO" firstAttribute="leading" secondItem="TvZ-AG-xhd" secondAttribute="leading" constant="30" id="skX-su-fKV"/>
+                            <constraint firstItem="obI-td-dGr" firstAttribute="top" secondItem="GKI-AK-sHP" secondAttribute="top" id="uC5-3d-cRz"/>
                             <constraint firstItem="THv-1g-2eh" firstAttribute="top" secondItem="qdI-CO-Yro" secondAttribute="bottom" constant="20" id="uOC-2L-izD"/>
                             <constraint firstItem="mbj-dR-rkO" firstAttribute="top" secondItem="FP8-pw-89f" secondAttribute="bottom" constant="30" id="vF8-aa-c3V"/>
                         </constraints>
@@ -2433,6 +2453,7 @@
                         <outlet property="calendarView" destination="FP8-pw-89f" id="KBq-EQ-bz2"/>
                         <outlet property="calenderViewHeight" destination="RS5-sa-DjX" id="cod-Bl-i0D"/>
                         <outlet property="tableView" destination="THv-1g-2eh" id="lIN-Mt-fuW"/>
+                        <outlet property="topHeaderView" destination="obI-td-dGr" id="zWb-iu-4JX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pf8-BW-SMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6771,6 +6792,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-jh-O0Q" customClass="TopHeaderView" customModule="Ajyal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
+                                <color key="backgroundColor" name="peachColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" placeholder="YES" id="6jC-rD-AAv"/>
                                 </constraints>

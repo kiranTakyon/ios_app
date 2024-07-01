@@ -12,11 +12,12 @@ import FSCalendar
 
 class CalendarController: UIViewController {
     
-    // MARK: - -
+    // MARK: -IBOutlet's -
     
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calenderViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     
     var dictionary = [String:[TNCalendarEvent]]()
@@ -55,7 +56,8 @@ class CalendarController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setNavigationBar()
+        setSlideMenuProporties()
+        topHeaderView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -65,10 +67,15 @@ class CalendarController: UIViewController {
         getCalendarEvents()
     }
     
+    func setSlideMenuProporties() {
+        if let revealVC = revealViewController() {
+            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
+            view.addGestureRecognizer(revealVC.panGestureRecognizer())
+        }
+    }
+    
     func setNavigationBar(){
-        self.navigationController?.navigationBar.backgroundColor = UIColor.red
-        navigationItem.leftBarButtonItem   = UIBarButtonItem(image: #imageLiteral(resourceName: "Menu2"), style: .plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
-        navigationItem.rightBarButtonItem   = UIBarButtonItem(image: #imageLiteral(resourceName: "LogOut2"), style: .plain, target: self, action: #selector(logOutAction))
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @objc func logOutAction(){
@@ -153,7 +160,7 @@ class CalendarController: UIViewController {
         APIHelper.sharedInstance.apiCallHandler(url, requestType: .POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
                 guard let title = result["CalendarLabel"] as? String else {return}
-                self.title = title
+                self.topHeaderView.title = title
                 
                 guard let events = result["Events"] as? NSArray else{
                     self.stopLoadingAnimation()
@@ -218,7 +225,7 @@ class CalendarController: UIViewController {
                 let date1 = calendar.startOfDay(for: objStartDate as Date)
                 let date2 = calendar.startOfDay(for: objEndDate as Date)
                 let components = calendar.dateComponents([.day], from: date1, to: date2)
-                if let dayDiff = components.day{
+                if let dayDiff = components.day, dayDiff >= 0{
                     for i in 0..<dayDiff + 1 {
                         let checkDate = convertNextDate(dateString: "\(objStartDate)",incrtemnt: i)
                         if dict["\(checkDate)"] == nil{
@@ -291,7 +298,7 @@ class CalendarController: UIViewController {
     
     
     func adEventsToCalendar() {
-        for each in completeDates{
+        for each in completeDates {
             let date = each.key
             let dated =   setDate(str: date)
             let day = self.getFormattedDate(date: dated).0
@@ -340,6 +347,11 @@ class CalendarController: UIViewController {
         
         switch sender.tag {
         case 0://Today
+            fsCalendar.select(Date())
+            completeEvents = self.data[Date()] ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             break
         case 1://Week
             fsCalendar.scope = .week
@@ -387,13 +399,12 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        
+        let calendar = Calendar.current
         for dateData in data {
-            if dateData.key == date {
+            if calendar.isDate(dateData.key, inSameDayAs: date) {
                 return 1
             }
         }
-        
         return 0
     }
 }
@@ -413,6 +424,19 @@ extension CalendarController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showEventDetails(value: completeEvents[indexPath.row])
+    }
+    
+}
+
+
+
+extension CalendarController: TopHeaderDelegate {
+    func secondRightButtonClicked(_ button: UIButton) {
+        print("")
+    }
+    
+    func searchButtonClicked(_ button: UIButton) {
+        logOutAction()
     }
     
 }

@@ -53,8 +53,7 @@ class VerificationEmailViewController: UIViewController, UITextFieldDelegate {
                                     self.setVerifiedUser()                                }
                             })
                        }
-                    }
-                    else{
+                    } else {
                         if let mesaage = result["StatusMessage"] as? String{
                             SweetAlert().showAlert(kAppName, subTitle: mesaage, style: .error, buttonTitle: alertOk, action: { (index) in
                                 if index{
@@ -76,8 +75,7 @@ class VerificationEmailViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         if verificationCodeTextField.text != ""{
             setEmailVerification(key: verificationCodeTextField.text!)
-        }
-        else{
+        } else {
             showAlertController(kAppName, message: "All fields are required", cancelButton: alertOk, otherButtons: [], handler: nil)
         }
     }
