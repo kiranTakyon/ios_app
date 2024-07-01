@@ -20,8 +20,8 @@ enum CommunicationType : String{
 }
 
 class CommunicateController: UIViewController,TaykonProtocol {
-
-// MARK: - IBOutlet -
+    
+    // MARK: - IBOutlet -
     
     @IBOutlet weak var buttonSideArrow: UIButton!
     @IBOutlet weak var communicateTable: UITableView!
@@ -32,7 +32,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
     var delegate : TaykonProtocol?
     
     var type : CommunicationType?
-
+    
     var paginationNumber = 1
     
     var inboxMessages = [TinboxMessage]()
@@ -47,13 +47,13 @@ class CommunicateController: UIViewController,TaykonProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         // Do any additional setup after loading the view.
         communicateTable.register(UINib(nibName: "CommunicationTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationTableViewCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(getMsgs(notification:)), name: NSNotification.Name(rawValue: "searchAction"), object: nil)
         tableViewProporties()
         setRefreshControll()
@@ -67,7 +67,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
     
     @objc func getMsgs(notification : NSNotification){
         if let userInfo = notification.object as? NSDictionary {
-        let msg = userInfo["text"] as? String
+            let msg = userInfo["text"] as? String
             paginationNumber = 0
             inboxMessages.removeAll()
             UIApplication.shared.cancelAllLocalNotifications()
@@ -106,7 +106,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
         self.paginationNumber += 1
         self.getInboxMessages(txt : searchText, types: typeValue)
     }
-
+    
     
     func getInboxMessages(txt : String,types: Int){
         sideView.frame.origin = CGPoint(x: -50, y: sideView.frame.origin.y)
@@ -169,7 +169,9 @@ class CommunicateController: UIViewController,TaykonProtocol {
                     }
                     
                     self.stopLoadingAnimation()
-                    self.communicateTable.reloadData()
+                    DispatchQueue.main.async {
+                        self.communicateTable.reloadData()
+                    }
                     self.removeNoDataLabel()
                     self.checkAndStopBounce(count: list.count)
                     self.refreshControl.endRefreshing()
@@ -189,7 +191,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
         }
     }
     
-
+    
     
     func checkAndStopBounce(count:Int){
         
@@ -230,18 +232,18 @@ class CommunicateController: UIViewController,TaykonProtocol {
     }
     
     func setTheTableCellElementsTextColorWrtIsRead(message : TinboxMessage,cell: CommunicationTableViewCell){
-         if let isUserRead  = message.isRead{
-                 switch isUserRead {
-                 case "0":
-                    setCharacterColor(cell: cell, textColr: UIColor.black)
-                 case "1":
-                     setCharacterColor(cell: cell, textColr: UIColor.lightGray)
-                     cell.ReadIcon.image = UIImage(named: "doubletickwhite")
-                 default:
-                     break
-         }
-         }
-     }
+        if let isUserRead  = message.isRead{
+            switch isUserRead {
+            case "0":
+                setCharacterColor(cell: cell, textColr: UIColor.black)
+            case "1":
+                setCharacterColor(cell: cell, textColr: UIColor.lightGray)
+                cell.ReadIcon.image = UIImage(named: "doubletickwhite")
+            default:
+                break
+            }
+        }
+    }
     func checkSibingsAndGetId() -> String?{
         
         if studentDetails.count > 0{
@@ -252,7 +254,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
             
         }else{
             let userId = UserDefaultsManager.manager.getUserId()
-
+            
             return userId
         }
     }
@@ -260,8 +262,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
     func tableViewProporties(){
         self.communicateTable.delegate = self
         self.communicateTable.dataSource = self
-        self.communicateTable.estimatedRowHeight = 60
-        self.communicateTable.rowHeight = UITableView.automaticDimension
+        self.communicateTable.estimatedRowHeight = 70
     }
     
     func setHeight(isHide : Bool,const : CGFloat,cell: CommunicationTableViewCell){
@@ -279,21 +280,21 @@ class CommunicateController: UIViewController,TaykonProtocol {
             break
         }
     }
-  
+    
     func deleteTheSelectedAttachment(index: Int) {
-
+        
     }
-
+    
     @IBAction func composeAction(_ sender: Any) {
         self.delegate?.getBackToParentView(value: "compose", titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
     }
     
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     func downloadPdfButtonAction(url: String, fileName: String?) {
         
     }
@@ -310,7 +311,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
         
     }
     
-
+    
     func selectedPickerRow(selctedRow: Int) {
         
     }
@@ -342,22 +343,20 @@ extension CommunicateController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommunicationTableViewCell", for: indexPath) as! CommunicationTableViewCell
         if inboxMessages.count > 0 {
-        let message = inboxMessages[indexPath.row]
-        setReadStatus(message: message, cell: cell)
-        setTheTableCellElementsTextColorWrtIsRead(message: message, cell: cell)
-        if let userval = message.user {
-            cell.labelHeading.text = userval
-        } else if let userBol = message.userBool {
-            cell.labelHeading.text = String(userBol)
-        }
-        setAttachmentsIcon(msg: message, cell: cell)
-        cell.labelMessageType.text = message.subject?.replacingHTMLEntities
-        cell.labelDate.text = message.date
+            let message = inboxMessages[indexPath.row]
+            setReadStatus(message: message, cell: cell)
+            setTheTableCellElementsTextColorWrtIsRead(message: message, cell: cell)
+            if let userval = message.user {
+                cell.labelHeading.text = userval
+            } else if let userBol = message.userBool {
+                cell.labelHeading.text = String(userBol)
+            }
+            setAttachmentsIcon(msg: message, cell: cell)
+            cell.labelMessageType.text = message.subject?.replacingHTMLEntities
+            cell.labelDate.text = message.date
             cell.index = indexPath.row
-        cell.delegate = self
-        cell.setUpSideViewBg()
-        cell.selectionStyle = .none
-        cell.layoutIfNeeded()
+            cell.delegate = self
+            cell.setUpSideViewBg()
         }
         return cell
     }
@@ -368,16 +367,12 @@ extension CommunicateController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
         if inboxMessages.count > 0{
-        let message = self.inboxMessages[indexPath.row]
-        let messageSub = message.subject.safeValue
-        let messageId = message.id.safeValue
-
+            let message = self.inboxMessages[indexPath.row]
+            let messageSub = message.subject.safeValue
+            let messageId = message.id.safeValue
+            
             delegate?.getBackToParentView(value: messageId,titleValue :messageSub, isForDraft: isForDraft, message: message)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90.00
     }
 }
 
@@ -418,11 +413,12 @@ extension CommunicateController {
 extension CommunicateController: CommunicationTableViewCellDelegate {
     func communicationTableViewCell(_ cell: CommunicationTableViewCell, didTapOnCellWithIndex index: Int) {
         if inboxMessages.count > 0{
-        let message = self.inboxMessages[index]
-        let messageSub = message.subject.safeValue
-        let messageId = message.id.safeValue
-
+            let message = self.inboxMessages[index]
+            let messageSub = message.subject.safeValue
+            let messageId = message.id.safeValue
+            
             delegate?.getBackToParentView(value: messageId,titleValue :messageSub, isForDraft: isForDraft, message: message)
         }
     }
 }
+

@@ -13,15 +13,15 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommunicationTableViewCell" rowHeight="90" id="KGk-i7-Jjw" customClass="CommunicationTableViewCell" customModule="ABC" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="297" height="79"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="297" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-ix-tPr" customClass="CardView" customModule="ABC" customModuleProvider="target">
-                        <rect key="frame" x="5" y="10" width="287" height="59"/>
+                        <rect key="frame" x="5" y="10" width="287" height="60"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4j-rs-0s1">
-                                <rect key="frame" x="0.0" y="0.0" width="30" height="59"/>
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h36-cs-G57" userLabel="ReadIcon">
                                         <rect key="frame" x="5" y="10" width="20" height="20"/>
@@ -31,7 +31,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLg-VN-CJG" userLabel="ReadStatus">
-                                        <rect key="frame" x="0.0" y="40" width="30" height="9"/>
+                                        <rect key="frame" x="0.0" y="40" width="30" height="10"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -49,17 +49,17 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" text="RADIH MUSTHAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha0-0e-eHg">
-                                <rect key="frame" x="35" y="11" width="112" height="17"/>
+                                <rect key="frame" x="35" y="11.666666666666668" width="112" height="17"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" verticalCompressionResistancePriority="800" text="Re:Re::Re:Re:: message Reply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg0-Aj-Nli">
-                                <rect key="frame" x="35" y="33" width="112" height="16"/>
+                                <rect key="frame" x="35" y="33.666666666666664" width="112" height="16.333333333333336"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="7FE-YN-3h5">
-                                <rect key="frame" x="167" y="14.666666666666668" width="110" height="30.000000000000004"/>
+                                <rect key="frame" x="167" y="15" width="110" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJL-cq-GQT">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -97,9 +97,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YpP-bk-4LJ"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-Dz-myh">
-                                <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
+                                <rect key="frame" x="0.0" y="0.0" width="287" height="60"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
                                     <action selector="didTapOnCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1y8-1D-qbt"/>
@@ -123,6 +126,8 @@
                             <constraint firstAttribute="trailing" secondItem="7FE-YN-3h5" secondAttribute="trailing" constant="10" id="ixk-sh-9HE"/>
                             <constraint firstItem="lR4-Dz-myh" firstAttribute="top" secondItem="ac2-ix-tPr" secondAttribute="top" id="tVc-8V-yvd"/>
                             <constraint firstItem="sg0-Aj-Nli" firstAttribute="trailing" secondItem="ha0-0e-eHg" secondAttribute="trailing" id="v8q-Oa-S6o"/>
+                            <constraint firstItem="ha0-0e-eHg" firstAttribute="leading" secondItem="o4j-rs-0s1" secondAttribute="trailing" constant="5" id="wcy-gm-O8x"/>
+                            <constraint firstAttribute="height" constant="60" id="xSj-xw-YlB"/>
                             <constraint firstItem="ha0-0e-eHg" firstAttribute="leading" secondItem="o4j-rs-0s1" secondAttribute="trailing" constant="5" id="xgg-Hq-qBf"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

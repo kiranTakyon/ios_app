@@ -727,14 +727,17 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     var data : [Attachment]?{
         didSet{
             setTableViewHeight()
-            tableViewAttachments.reloadData()
-            tableViewHeight.constant = tableViewAttachments.contentSize.height
         }
     }
     
     func setTableViewHeight(){
         if let count = data?.count {
             //tableViewHeight.constant = CGFloat(50.0 * Double(count))
+            DispatchQueue.main.async {
+                self.tableViewAttachments.reloadData()
+                self.tableViewHeight.constant = self.tableViewAttachments.contentSize.height
+                self.layoutIfNeeded()
+            }
         }
         else{
             tableViewHeight.constant = 0.0
@@ -960,28 +963,28 @@ extension String {
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToNSAttributedStringDocumentReadingOptionKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.DocumentReadingOptionKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.DocumentReadingOptionKey(rawValue: key), value)})
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.DocumentReadingOptionKey(rawValue: key), value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringDocumentAttributeKey(_ input: NSAttributedString.DocumentAttributeKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringDocumentType(_ input: NSAttributedString.DocumentType) -> String {
-	return input.rawValue
+    return input.rawValue
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
-	guard let input = input else { return nil }
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+    guard let input = input else { return nil }
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
-	return input.rawValue
+    return input.rawValue
 }
 
 
@@ -1004,3 +1007,4 @@ extension MessageDetailController: TopHeaderDelegate {
     }
     
 }
+
