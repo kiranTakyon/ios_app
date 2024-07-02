@@ -9,7 +9,7 @@
 import Foundation
 
 
-class DBKeys{
+class DBKeys {
     static let gcmToken = "gcmToken"
     static  let logInDetails = "logInDetails"
     static  let profileInfo = "ProfileInfo"
@@ -20,5 +20,6 @@ class DBKeys{
     static  let language = "language"
     static  let isNotifications = "isNotifications"
     static  let shouldShowBirthdayWish = "shouldShowBirthdayWish"
+    static  let isRemember = "isRemember"
 }
 

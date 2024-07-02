@@ -159,9 +159,17 @@ func cleanDictionaryValues(dict: NSMutableDictionary)->NSMutableDictionary{
 }
 
 func showLoginPage() {
-    removeAllGlbalValues()
     let appDeligate = UIApplication.shared.delegate as! AppDelegate
     let loginVC = mainStoryBoard.instantiateViewController(withIdentifier: "loginVC") as! ViewController
+    
+    if UserDefaultsManager.manager.getRemember() {
+        guard let username = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.username) as? String else {return}
+        guard let password = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.password) as? String else {return}
+        loginVC.rememberEmail = username
+        loginVC.rememberPassword = password
+        loginVC.isRemember = true
+    }
+    removeAllGlbalValues()
     appDeligate.window?.rootViewController = loginVC
     appDeligate.window?.makeKeyAndVisible()
 }
@@ -179,6 +187,7 @@ func removeAllGlbalValues(){
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.profileInfo)
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.gcmToken)
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.isNotifications)
+    UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.isRemember)
 }
 
 func MD5(string: String) -> Data {

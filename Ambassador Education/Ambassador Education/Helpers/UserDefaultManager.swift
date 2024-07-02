@@ -94,6 +94,18 @@ class UserDefaultsManager {
         UserDefaults.standard.set(isShow, forKey: DBKeys.isNotifications)
     }
     
+    func setRemember(isRemember: Bool) {
+        UserDefaults.standard.set(isRemember, forKey: DBKeys.isRemember)
+    }
+    
+    func getRemember() -> Bool {
+        if let value = UserDefaults.standard.value(forKey: DBKeys.isRemember) as? Bool {
+            return value
+        } else {
+            return false
+        }
+    }
+    
     func getNotifications() -> Bool {
         if let value = UserDefaults.standard.value(forKey: DBKeys.isNotifications) as? Bool {
             return value
