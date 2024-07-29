@@ -14,9 +14,11 @@ protocol NotificationsTableViewCellDelegate: AnyObject {
 }
 
 class NotificationsTableViewCell: UITableViewCell {
-    
+
     //MARK: - IBOutlet's -
-    
+
+    @IBOutlet weak var reactionViewTop: NSLayoutConstraint!
+    @IBOutlet weak var reactionWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var alertTitle: UILabel!
@@ -24,29 +26,67 @@ class NotificationsTableViewCell: UITableViewCell {
     @IBOutlet weak var typeImageView: UIImageView!
     @IBOutlet weak var buttonArrow: UIButton!
     @IBOutlet weak var typeImageV: UIImageView!
-    
-    
+    @IBOutlet weak var buttonCellDidTap: UIButton!
+    @IBOutlet weak var reactionLabel: UILabel!
+
     weak var delegate: NotificationsTableViewCellDelegate?
     var index: Int = -1
-    
-    
+    var emojiCount: Int = 0
+    var reactionView: ReactionView?
+    let imageToEmoji: [String: String] = [
+        "wow": "😊",
+        "love": "❤️",
+        "like": "👍",
+        "clapping hand": "👏",
+        "party popper": "🎉"
+    ]
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        [reactionViewTop,reactionWidthConstraint].forEach({$0?.constant = 0})
+        reactionView = ReactionView()
+
+        let reactions: [Reaction] = [Reaction(title: "wow", imageName: "icn_wow"),
+                                     Reaction(title: "like", imageName: "icn_like"),
+                                     Reaction(title: "party popper", imageName: "icn_celebrate"),
+                                     Reaction(title: "love", imageName: "icn_love"),
+                                     Reaction(title: "clapping hand", imageName: "icn_clap")]
+
+        reactionView?.initialize(delegate: self , reactionsArray: reactions, sourceView: self.contentView, gestureView: buttonCellDidTap)
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
-    
+
+    func setUpReaction() {
+        reactionViewTop.constant = -15
+        reactionWidthConstraint.constant = 20
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reactionLabel.text = nil
+    }
+
     @IBAction func buttonArrowDidTap(_ sender: UIButton) {
         delegate?.notificationsTableViewCell(self, didTapOnArrow: sender, index: index)
     }
-    
+
     @IBAction func buttonCellDidTap(_ sender: UIButton) {
         delegate?.notificationsTableViewCell(self, didTapCell: sender, index: index)
     }
-    
+}
+
+
+extension NotificationsTableViewCell: FacebookLikeReactionDelegate {
+    func selectedReaction(reaction: Reaction) {
+        setUpReaction()
+        emojiCount = 1
+        reactionLabel.text = "\(imageToEmoji[reaction.title] ?? "") \(emojiCount)  "
+    }
+
 }
