@@ -1,8 +1,9 @@
 //
 //  Reaction.swift
-//  FacebookLikeReaction
+//  Ambassador Education
 //
-//  Created by Shraddha Sojitra on 14/02/20.
+//  Created by IE Mac 05 on 29/07/24.
+//  Copyright © 2023 InApp. All rights reserved.
 //
 
 import Foundation

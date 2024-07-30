@@ -140,10 +140,10 @@
                         </variation>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hf1-SU-qjU" customClass="CardView" customModule="ABC" customModuleProvider="target">
-                        <rect key="frame" x="466" y="350" width="50" height="20"/>
+                        <rect key="frame" x="461" y="335" width="50" height="20"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-yt-DBu">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                                <rect key="frame" x="0.0" y="5" width="40" height="10"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -152,15 +152,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GaN-yt-DBu" firstAttribute="leading" secondItem="hf1-SU-qjU" secondAttribute="leading" id="4eS-SL-2S2"/>
-                            <constraint firstAttribute="bottom" secondItem="GaN-yt-DBu" secondAttribute="bottom" id="Bxv-eE-PtQ"/>
+                            <constraint firstAttribute="bottom" secondItem="GaN-yt-DBu" secondAttribute="bottom" constant="5" id="Bxv-eE-PtQ"/>
                             <constraint firstAttribute="height" constant="20" id="EMi-YS-yYp"/>
                             <constraint firstAttribute="width" constant="50" id="KG2-gn-lu2"/>
-                            <constraint firstItem="GaN-yt-DBu" firstAttribute="top" secondItem="hf1-SU-qjU" secondAttribute="top" id="acX-N3-9QP"/>
-                            <constraint firstAttribute="trailing" secondItem="GaN-yt-DBu" secondAttribute="trailing" id="tzc-tp-TQu"/>
+                            <constraint firstItem="GaN-yt-DBu" firstAttribute="top" secondItem="hf1-SU-qjU" secondAttribute="top" constant="5" id="acX-N3-9QP"/>
+                            <constraint firstAttribute="trailing" secondItem="GaN-yt-DBu" secondAttribute="trailing" constant="10" id="tzc-tp-TQu"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="10"/>
+                                <real key="value" value="15"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -168,11 +168,11 @@
                 <color key="backgroundColor" red="0.98823529480000005" green="0.98823529480000005" blue="0.98823529480000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="M8S-oo-Wcz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="B0O-gh-Fat"/>
-                    <constraint firstItem="hf1-SU-qjU" firstAttribute="trailing" secondItem="M8S-oo-Wcz" secondAttribute="trailing" constant="-5" id="Bs4-cl-Q2N"/>
+                    <constraint firstItem="hf1-SU-qjU" firstAttribute="trailing" secondItem="M8S-oo-Wcz" secondAttribute="trailing" constant="-10" id="Bs4-cl-Q2N"/>
                     <constraint firstAttribute="bottom" secondItem="M8S-oo-Wcz" secondAttribute="bottom" constant="10" id="TCd-H9-BPA"/>
                     <constraint firstItem="M8S-oo-Wcz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cd4-hI-kZJ"/>
                     <constraint firstAttribute="trailing" secondItem="M8S-oo-Wcz" secondAttribute="trailing" constant="20" id="ppa-nf-jKz"/>
-                    <constraint firstItem="hf1-SU-qjU" firstAttribute="top" secondItem="M8S-oo-Wcz" secondAttribute="bottom" constant="-10" id="vlm-Rg-oMa"/>
+                    <constraint firstItem="hf1-SU-qjU" firstAttribute="top" secondItem="M8S-oo-Wcz" secondAttribute="bottom" constant="-25" id="vlm-Rg-oMa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -183,9 +183,10 @@
                 <outlet property="buttonCellDidTap" destination="oDR-zk-jLG" id="jzk-tF-9jj"/>
                 <outlet property="labelTime" destination="QFJ-p0-4zM" id="8Yc-SW-2YN"/>
                 <outlet property="labelTitle" destination="ALf-XA-AOe" id="eSB-zn-3Hx"/>
+                <outlet property="reactionHeightConstraint" destination="EMi-YS-yYp" id="rio-YH-Efe"/>
                 <outlet property="reactionLabel" destination="GaN-yt-DBu" id="QAZ-gc-P74"/>
                 <outlet property="reactionViewTop" destination="vlm-Rg-oMa" id="x7a-N6-rXs"/>
-                <outlet property="reactionWidthConstraint" destination="EMi-YS-yYp" id="rio-YH-Efe"/>
+                <outlet property="reactionWidthConstraint" destination="KG2-gn-lu2" id="s8v-eL-djg"/>
                 <outlet property="typeImageV" destination="6Ij-6Q-KbI" id="FOO-aU-5Za"/>
                 <outlet property="typeImageView" destination="4c0-a8-yUT" id="Qa6-Ut-on0"/>
             </connections>

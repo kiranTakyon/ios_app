@@ -12,6 +12,7 @@ import IQPullToRefresh
 
 protocol NotificationsViewDelegate: AnyObject {
     func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification)
+    func removeNoNotificationdataLabel()
 }
 
 class NotificationsView: UIView {
@@ -60,26 +61,26 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as? NotificationsTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         cell.index = indexPath.row
-        
+
         let notification = notificationList[indexPath.row]
-        
+
         if let titel = notification.title{
             cell.alertTitle.numberOfLines = 1
             cell.alertTitle.text = titel
         }
-        
+
         if selectedIndexes.contains(indexPath.row) {
             cell.alertTitle.numberOfLines = 0
             cell.buttonArrow.isSelected = true
         } else {
             cell.buttonArrow.isSelected = false
         }
-        
+
         if let date = notification.date {
             cell.alertDate.text = Date().setDateFormatter(string: date)
             cell.labelTime.text = Date().getTimeFromDate(date: date)
         }
-        
+
         if let msgType = notification.type{
             switch msgType {
             case msgTypes.communicate.rawValue:
@@ -88,52 +89,60 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
                 cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
-                
+
             case msgTypes.weeklyPlan.rawValue:
                 let index = indexPath.row % weeklyPlanImages.count
                 let image = weeklyPlanImages[index]
                 cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "weekly Plan"
-                
+
             case msgTypes.noticeboard.rawValue:
                 let index = indexPath.row % noticeboardImages.count
                 let image = noticeboardImages[index]
                 cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "Noticeboard"
-                
+
             case msgTypes.bus.rawValue:
                 let index = indexPath.row % busImages.count
                 let image = busImages[index]
                 cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "bus_icon")
                 cell.labelTitle.text = "Bus fare"
-                
+
             case msgTypes.htmlType.rawValue:
                 let index = indexPath.row % htmlTypeImages.count
                 let image = htmlTypeImages[index]
                 cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image =  #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
-                
+
             case msgTypes.gallery.rawValue:
                 let index = indexPath.row % galleryImages.count
                 let image = galleryImages[index]
                 cell.typeImageV.image = UIImage(named: image)
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
                 cell.labelTitle.text = "Gallery"
-                
+
             default:
                 cell.typeImageV.image = UIImage(named: "NoticeImage")
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "Notice"
-                
+
             }
         }
-        
+
+        if let cellReactions = notification.reactions {
+
+            if cellReactions.totalReactionCount > 0 {
+                cell.setUpReaction(reactions: cellReactions)
+            } else {
+                cell.reactionHeightConstraint.constant = 0
+            }
+        }
         print("type value is :- ",notification.type)
-        
+
         cell.selectionStyle = .none
         return cell
     }
@@ -144,6 +153,11 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
 // MARK: - NotificationsTableViewCellDelegate -
 
 extension NotificationsView: NotificationsTableViewCellDelegate {
+
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji emoji: String, type: String, index: Int) {
+        apiPostSocialMedia(action: "like", type: type, emoji: emoji,index: index)
+    }
+    
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int) {
         delegate?.notificationsView(self, didTapOnNotification: notificationList [index])
     }
@@ -188,12 +202,36 @@ extension NotificationsView {
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             print(result)
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 complition()
                 guard let nototificationsArray = result["Notification"] as? NSArray else{return}
                 let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
                 self.notificationList.append(contentsOf: notifications)
                 self.refresher.enableLoadMore = notifications.count > 0
+                if self.notificationList.count > 0 {
+                    self.delegate?.removeNoNotificationdataLabel()
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    func apiPostSocialMedia(action: String, type: String, emoji: String = "", index: Int = -1) {
+        let url = APIUrls().postSocialMedia
+        var dictionary = [String:Any]()
+        let notification = notificationList[index]
+        let userId = UserDefaultsManager.manager.getUserId()
+        dictionary[UserIdKey().id] =  userId
+        dictionary["AlertId"] =  notification.alertId ?? 0
+        dictionary["Action"] =  action
+        dictionary["Type"] =  type
+
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            print(result)
+
+            DispatchQueue.main.async {
+                notification.changeUserReactionType(type: type)
                 self.tableView.reloadData()
             }
         }

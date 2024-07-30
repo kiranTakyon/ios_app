@@ -21,6 +21,9 @@ class TNotification: Codable {
     var type : String?
     var catid : String?
     var processid : String?
+    var usrReactionType: String?
+    var reactions: TReaction?
+    var alertId: Int?
 
     
     init(values:NSDictionary) {
@@ -33,5 +36,21 @@ class TNotification: Codable {
         self.type = values["Type"] as? String
         self.catid = values["cat_id"] as? String
         self.processid = values["id"] as? String
+        self.usrReactionType = values["usr_reaction_type"] as? String
+        self.alertId = values["alert_id"] as? Int
+
+        if let itemVals = values["reactions"] as? NSDictionary {
+            self.reactions = TReaction(values: itemVals)
+        }
+    }
+
+    func changeUserReactionType(type: String) {
+        if let usrReactionType = usrReactionType, usrReactionType.isEmpty {
+            reactions?.increaseReactionCount(type: type)
+        } else if type != usrReactionType {
+            reactions?.decreaseReactionCount(type: usrReactionType ?? "")
+            reactions?.increaseReactionCount(type: type)
+        }
+        self.usrReactionType = type
     }
 }

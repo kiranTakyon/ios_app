@@ -1,8 +1,9 @@
 //
 //  ReactionView.swift
-//  FacebookLikeReaction
+//  Ambassador Education
 //
-//  Created by Shraddha Sojitra on 14/02/20.
+//  Created by IE Mac 05 on 29/07/24.
+//  Copyright © 2023 InApp. All rights reserved.
 //
 
 import Foundation
@@ -137,19 +138,20 @@ public class ReactionView: UIView {
                     return reaction.title!
                 }
                 
+                /// uncomment if shows the title above the reaction
                 //Change positin of title
-                for allViews in self.subviews{
-                    for label in allViews.subviews  {
-                        if let lbl = label as? UILabel {
-                            lbl.tag = (hitTestview?.tag)!
-                            lbl.text = titles[(hitTestview?.tag)!]
-                            allViews.frame.size.width = label.frame.width + 15
-                            allViews.center.x =  (point.x) //(hitTestview?.center.x)!
-                            allViews.alpha = 1
-                            lbl.sizeToFit()
-                        }
-                    }
-                }
+//                for allViews in self.subviews{
+//                    for label in allViews.subviews  {
+//                        if let lbl = label as? UILabel {
+//                            lbl.tag = (hitTestview?.tag)!
+//                            lbl.text = titles[(hitTestview?.tag)!]
+//                            allViews.frame.size.width = label.frame.width + 15
+//                            allViews.center.x =  (point.x) //(hitTestview?.center.x)!
+//                            allViews.alpha = 1
+//                            lbl.sizeToFit()
+//                        }
+//                    }
+//                }
             }
         } else {
             UIView.animate(withDuration: 0.2) {

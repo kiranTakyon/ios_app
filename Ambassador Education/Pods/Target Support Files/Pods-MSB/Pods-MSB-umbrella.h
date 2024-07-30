@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_T360VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_T360VersionString[];
+FOUNDATION_EXPORT double Pods_MSBVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MSBVersionString[];
 

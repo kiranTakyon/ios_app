@@ -58,6 +58,7 @@ class APIUrls{
     let getNBDetails = "T0072"
     let getNotification = "T0062"
     let getDashboard = "T0001"
+    let postSocialMedia = "PostSocialMedia"
 }
 
 

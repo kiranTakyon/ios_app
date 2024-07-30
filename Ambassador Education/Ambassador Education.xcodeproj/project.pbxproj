@@ -3282,7 +3282,6 @@
 		B41C1B5421418FD600A9907B /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		B41C1B62214194C900A9907B /* AsianAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C1B61214194C800A9907B /* AsianAssets.xcassets */; };
 		B43023FA2141611300C3E787 /* EFIAAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B43023F92141611300C3E787 /* EFIAAssets.xcassets */; };
-		C30AB3B9C6849B51EF8A1AFA /* Pods_T360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CD9C8B2EB4800FDC816CBA /* Pods_T360.framework */; };
 		CD0ADAF02B30930C001F1858 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */; };
 		CD0ADAF22B309435001F1858 /* WoodlemAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */; };
 		CD0E11822B170A9600EE599B /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
@@ -7144,6 +7143,45 @@
 		EA71EFE12C57997100E20D95 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71EF972C57997100E20D95 /* ReactionView.swift */; };
 		EA71EFE22C57997100E20D95 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71EF972C57997100E20D95 /* ReactionView.swift */; };
 		EA71EFE32C57997100E20D95 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71EF972C57997100E20D95 /* ReactionView.swift */; };
+		EA736D362C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D372C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D382C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D392C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D3A2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D3B2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D3C2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D3D2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D3E2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D3F2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D402C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D412C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D422C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D432C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D442C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D452C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D462C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D472C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D482C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D492C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D4A2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D4B2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D4C2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D4D2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D4E2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D4F2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D502C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D512C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D522C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D532C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D542C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D552C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D562C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D572C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D582C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D592C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D5A2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		EA736D5B2C58E2F000952C8B /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		FB71B1CD5482EC4D4F38DF34 /* Pods_MSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B865E007E13391F4E07DFD42 /* Pods_MSB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7257,7 +7295,6 @@
 		18BAB89A2C3027E4004FB8B6 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		18BAB89B2C3027E4004FB8B6 /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
 		18BAB8EB2C327D54004FB8B6 /* CommunicationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicationTableViewCell.xib; sourceTree = "<group>"; };
-		18CD9C8B2EB4800FDC816CBA /* Pods_T360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E838A42C242980001E25F5 /* NoticeboardCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeboardCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		18E838A52C242980001E25F5 /* NoticeboardCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeboardCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		18E838F42C2429D2001E25F5 /* NoticeBoardListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardListTableViewCell.swift; sourceTree = "<group>"; };
@@ -7313,7 +7350,7 @@
 		455DEE911EBC33DD002D6CEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Ambassador_Education-dvqygmjdncondiahrfxpsyhrkuaz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/NVActivityIndicatorView/NVActivityIndicatorView.framework"; sourceTree = "<group>"; };
 		45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/DGActivityIndicatorView/DGActivityIndicatorView.framework"; sourceTree = "<group>"; };
-		64B68A2437903FF622535D29 /* Pods-T360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T360.debug.xcconfig"; path = "Target Support Files/Pods-T360/Pods-T360.debug.xcconfig"; sourceTree = "<group>"; };
+		4C4BCE9F7D5DAB77EB296D30 /* Pods-MSB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSB.release.xcconfig"; path = "Target Support Files/Pods-MSB/Pods-MSB.release.xcconfig"; sourceTree = "<group>"; };
 		772EB36621EF21C000620F0E /* Quality Education-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quality Education-Info.plist"; sourceTree = "<group>"; };
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
 		9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
@@ -7463,7 +7500,8 @@
 		B4F8F6092044534700515F74 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNAwarnessArticleDetail.swift; sourceTree = "<group>"; };
 		B4FBEA8220810D3D0035AECD /* VideoDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownload.swift; sourceTree = "<group>"; };
-		B5F8504ACFB43E18D69EAF37 /* Pods-T360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T360.release.xcconfig"; path = "Target Support Files/Pods-T360/Pods-T360.release.xcconfig"; sourceTree = "<group>"; };
+		B865E007E13391F4E07DFD42 /* Pods_MSB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9F79A75D8D89E4FE8254C5 /* Pods-MSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSB.debug.xcconfig"; path = "Target Support Files/Pods-MSB/Pods-MSB.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = WoodlemAssets.xcassets; path = "../../../Ambassador Education Target1/Ambassador Education/Assets/WoodlemAssets.xcassets"; sourceTree = "<group>"; };
@@ -7547,6 +7585,7 @@
 		EA7198D72BA457CB004817EC /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		EA71EF942C57996E00E20D95 /* Reaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reaction.swift; sourceTree = "<group>"; };
 		EA71EF972C57997100E20D95 /* ReactionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionView.swift; sourceTree = "<group>"; };
+		EA736D352C58E2F000952C8B /* TReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TReaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -7705,7 +7744,6 @@
 				CD110C77289C41700050EF80 /* MapKit.framework in Frameworks */,
 				CD110C78289C41700050EF80 /* CloudKit.framework in Frameworks */,
 				CD110C79289C41700050EF80 /* DGActivityIndicatorView.framework in Frameworks */,
-				C30AB3B9C6849B51EF8A1AFA /* Pods_T360.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7888,6 +7926,7 @@
 				CD8A99702ACCA02400BAF7CD /* MapKit.framework in Frameworks */,
 				CD8A99712ACCA02400BAF7CD /* CloudKit.framework in Frameworks */,
 				CD8A99722ACCA02400BAF7CD /* DGActivityIndicatorView.framework in Frameworks */,
+				FB71B1CD5482EC4D4F38DF34 /* Pods_MSB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8573,8 +8612,8 @@
 			children = (
 				247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */,
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
-				64B68A2437903FF622535D29 /* Pods-T360.debug.xcconfig */,
-				B5F8504ACFB43E18D69EAF37 /* Pods-T360.release.xcconfig */,
+				BF9F79A75D8D89E4FE8254C5 /* Pods-MSB.debug.xcconfig */,
+				4C4BCE9F7D5DAB77EB296D30 /* Pods-MSB.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -8690,6 +8729,7 @@
 				B4F54A8D2045960D006A0848 /* TNAwarenessDetail.swift */,
 				CE6818F2241CD4A200997AF6 /* TNSubject.swift */,
 				98CB10BC2B565D6700EB1217 /* TModule.swift */,
+				EA736D352C58E2F000952C8B /* TReaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -9105,7 +9145,7 @@
 				45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */,
 				455DEE911EBC33DD002D6CEF /* Alamofire.framework */,
 				35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */,
-				18CD9C8B2EB4800FDC816CBA /* Pods_T360.framework */,
+				B865E007E13391F4E07DFD42 /* Pods_MSB.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -9315,12 +9355,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD110C8D289C41700050EF80 /* Build configuration list for PBXNativeTarget "T360" */;
 			buildPhases = (
-				BA0DEB7F582DBF9CDE456C0D /* [CP] Check Pods Manifest.lock */,
 				CD110BF8289C41700050EF80 /* Sources */,
 				CD110C74289C41700050EF80 /* Frameworks */,
 				CD110C7B289C41700050EF80 /* Resources */,
 				CD110C8B289C41700050EF80 /* ShellScript */,
-				CF7DBFFD3B6D5DC2628A56E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -9587,10 +9625,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A99892ACCA02400BAF7CD /* Build configuration list for PBXNativeTarget "MSB" */;
 			buildPhases = (
+				D88CFB5436F69F0CA5F7381B /* [CP] Check Pods Manifest.lock */,
 				CD8A98E92ACCA02400BAF7CD /* Sources */,
 				CD8A996D2ACCA02400BAF7CD /* Frameworks */,
 				CD8A99752ACCA02400BAF7CD /* Resources */,
 				CD8A99872ACCA02400BAF7CD /* ShellScript */,
+				32534998AEC0ECDC37F524F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -11756,6 +11796,96 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
+		32534998AEC0ECDC37F524F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MSB/Pods-MSB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleSignIn/GoogleSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IQPullToRefresh/IQPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
+				"${BUILT_PRODUCTS_DIR}/Nantes/Nantes.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nantes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MSB/Pods-MSB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		446D52672539C33100D1026C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11820,28 +11950,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		BA0DEB7F582DBF9CDE456C0D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-T360-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CD0E121E2B170A9600EE599B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -12207,94 +12315,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
-		CF7DBFFD3B6D5DC2628A56E6 /* [CP] Embed Pods Frameworks */ = {
+		D88CFB5436F69F0CA5F7381B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-T360/Pods-T360-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleSignIn/GoogleSignIn.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/IQPullToRefresh/IQPullToRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/Nantes/Nantes.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleSignIn.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQPullToRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nantes.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"$(DERIVED_FILE_DIR)/Pods-MSB-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-T360/Pods-T360-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -12370,6 +12410,7 @@
 				988EE3362A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				1365756C2140F0E90045A958 /* TSibling.swift in Sources */,
 				1365756E2140F0E90045A958 /* NoticeboardCategoryController.swift in Sources */,
+				EA736D362C58E2F000952C8B /* TReaction.swift in Sources */,
 				136575702140F0E90045A958 /* Picker.swift in Sources */,
 				136575712140F0E90045A958 /* Protocols.swift in Sources */,
 				136575722140F0E90045A958 /* SkyFloatingLabelTextField.swift in Sources */,
@@ -12523,6 +12564,7 @@
 				988EE3372A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				136578632140F1600045A958 /* CommunicateLandController.swift in Sources */,
 				136578642140F1600045A958 /* TSibling.swift in Sources */,
+				EA736D372C58E2F000952C8B /* TReaction.swift in Sources */,
 				136578662140F1600045A958 /* NoticeboardCategoryController.swift in Sources */,
 				136578682140F1600045A958 /* Picker.swift in Sources */,
 				136578692140F1600045A958 /* Protocols.swift in Sources */,
@@ -12676,6 +12718,7 @@
 				988EE3392A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				13657D232140F1CC0045A958 /* CommunicateLandController.swift in Sources */,
 				13657D242140F1CC0045A958 /* TSibling.swift in Sources */,
+				EA736D382C58E2F000952C8B /* TReaction.swift in Sources */,
 				13657D262140F1CC0045A958 /* NoticeboardCategoryController.swift in Sources */,
 				13657D282140F1CC0045A958 /* Picker.swift in Sources */,
 				13657D292140F1CC0045A958 /* Protocols.swift in Sources */,
@@ -12829,6 +12872,7 @@
 				988EE33B2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				136583132140F2260045A958 /* CommunicateLandController.swift in Sources */,
 				136583142140F2260045A958 /* TSibling.swift in Sources */,
+				EA736D3A2C58E2F000952C8B /* TReaction.swift in Sources */,
 				136583162140F2260045A958 /* NoticeboardCategoryController.swift in Sources */,
 				136583182140F2260045A958 /* Picker.swift in Sources */,
 				136583192140F2260045A958 /* Protocols.swift in Sources */,
@@ -12982,6 +13026,7 @@
 				988EE33D2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				136584432140F22F0045A958 /* CommunicateLandController.swift in Sources */,
 				136584442140F22F0045A958 /* TSibling.swift in Sources */,
+				EA736D3C2C58E2F000952C8B /* TReaction.swift in Sources */,
 				136584462140F22F0045A958 /* NoticeboardCategoryController.swift in Sources */,
 				136584482140F22F0045A958 /* Picker.swift in Sources */,
 				136584492140F22F0045A958 /* Protocols.swift in Sources */,
@@ -13135,6 +13180,7 @@
 				988EE3492A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				446D52092539C33100D1026C /* CommunicateLandController.swift in Sources */,
 				446D520A2539C33100D1026C /* TSibling.swift in Sources */,
+				EA736D452C58E2F000952C8B /* TReaction.swift in Sources */,
 				446D520C2539C33100D1026C /* NoticeboardCategoryController.swift in Sources */,
 				446D520E2539C33100D1026C /* Picker.swift in Sources */,
 				446D520F2539C33100D1026C /* Protocols.swift in Sources */,
@@ -13288,6 +13334,7 @@
 				988EE3442A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				44883207237EA02B00E80665 /* CommunicateLandController.swift in Sources */,
 				44883208237EA02B00E80665 /* TSibling.swift in Sources */,
+				EA736D422C58E2F000952C8B /* TReaction.swift in Sources */,
 				4488320A237EA02B00E80665 /* NoticeboardCategoryController.swift in Sources */,
 				4488320C237EA02B00E80665 /* Picker.swift in Sources */,
 				4488320D237EA02B00E80665 /* Protocols.swift in Sources */,
@@ -13441,6 +13488,7 @@
 				988EE3482A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				44AD1B7F25388E1000368235 /* CommunicateLandController.swift in Sources */,
 				44AD1B8025388E1000368235 /* TSibling.swift in Sources */,
+				EA736D442C58E2F000952C8B /* TReaction.swift in Sources */,
 				44AD1B8225388E1000368235 /* NoticeboardCategoryController.swift in Sources */,
 				44AD1B8425388E1000368235 /* Picker.swift in Sources */,
 				44AD1B8525388E1000368235 /* Protocols.swift in Sources */,
@@ -13594,6 +13642,7 @@
 				988EE34B2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				44DC60CA25798523002E3917 /* CommunicateLandController.swift in Sources */,
 				44DC60CB25798523002E3917 /* TSibling.swift in Sources */,
+				EA736D462C58E2F000952C8B /* TReaction.swift in Sources */,
 				44DC60CD25798523002E3917 /* NoticeboardCategoryController.swift in Sources */,
 				44DC60CF25798523002E3917 /* Picker.swift in Sources */,
 				44DC60D025798523002E3917 /* Protocols.swift in Sources */,
@@ -13747,6 +13796,7 @@
 				988EE33C2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				B41C1AF521418FD600A9907B /* CommunicateLandController.swift in Sources */,
 				B41C1AF621418FD600A9907B /* TSibling.swift in Sources */,
+				EA736D3B2C58E2F000952C8B /* TReaction.swift in Sources */,
 				B41C1AF821418FD600A9907B /* NoticeboardCategoryController.swift in Sources */,
 				B41C1AFA21418FD600A9907B /* Picker.swift in Sources */,
 				B41C1AFB21418FD600A9907B /* Protocols.swift in Sources */,
@@ -13900,6 +13950,7 @@
 				CD0E11B82B170A9600EE599B /* DigitalResourceCategoryCell.swift in Sources */,
 				CD0E11B92B170A9600EE599B /* CommunicateLandController.swift in Sources */,
 				CD0E11BA2B170A9600EE599B /* TSibling.swift in Sources */,
+				EA736D5B2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD0E11BC2B170A9600EE599B /* NoticeboardCategoryController.swift in Sources */,
 				CD0E11BE2B170A9600EE599B /* Picker.swift in Sources */,
 				CD0E11BF2B170A9600EE599B /* Protocols.swift in Sources */,
@@ -14053,6 +14104,7 @@
 				988EE3592A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD110C2B289C41700050EF80 /* CommunicateLandController.swift in Sources */,
 				CD110C2C289C41700050EF80 /* TSibling.swift in Sources */,
+				EA736D4B2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD110C2E289C41700050EF80 /* NoticeboardCategoryController.swift in Sources */,
 				CD110C30289C41700050EF80 /* Picker.swift in Sources */,
 				CD110C31289C41700050EF80 /* Protocols.swift in Sources */,
@@ -14206,6 +14258,7 @@
 				988EE35A2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD110D68289C4E4B0050EF80 /* CommunicateLandController.swift in Sources */,
 				CD110D69289C4E4B0050EF80 /* TSibling.swift in Sources */,
+				EA736D4C2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD110D6B289C4E4B0050EF80 /* NoticeboardCategoryController.swift in Sources */,
 				CD110D6D289C4E4B0050EF80 /* Picker.swift in Sources */,
 				CD110D6E289C4E4B0050EF80 /* Protocols.swift in Sources */,
@@ -14359,6 +14412,7 @@
 				988EE3512A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD1668B727DA99C300F31356 /* CommunicateLandController.swift in Sources */,
 				CD1668B827DA99C300F31356 /* TSibling.swift in Sources */,
+				EA736D482C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD1668BA27DA99C300F31356 /* NoticeboardCategoryController.swift in Sources */,
 				CD1668BC27DA99C300F31356 /* Picker.swift in Sources */,
 				CD1668BD27DA99C300F31356 /* Protocols.swift in Sources */,
@@ -14512,6 +14566,7 @@
 				CD1AE5622B0438780000F294 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD1AE5632B0438780000F294 /* CommunicateLandController.swift in Sources */,
 				CD1AE5642B0438780000F294 /* TSibling.swift in Sources */,
+				EA736D5A2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD1AE5662B0438780000F294 /* NoticeboardCategoryController.swift in Sources */,
 				CD1AE5682B0438780000F294 /* Picker.swift in Sources */,
 				CD1AE5692B0438780000F294 /* Protocols.swift in Sources */,
@@ -14665,6 +14720,7 @@
 				988EE34D2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD3A90852765A2F500B9AA49 /* CommunicateLandController.swift in Sources */,
 				CD3A90862765A2F500B9AA49 /* TSibling.swift in Sources */,
+				EA736D472C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD3A90882765A2F500B9AA49 /* NoticeboardCategoryController.swift in Sources */,
 				CD3A908A2765A2F500B9AA49 /* Picker.swift in Sources */,
 				CD3A908B2765A2F500B9AA49 /* Protocols.swift in Sources */,
@@ -14818,6 +14874,7 @@
 				988EE35B2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD713EB72900092500A16A3A /* CommunicateLandController.swift in Sources */,
 				CD713EB82900092500A16A3A /* TSibling.swift in Sources */,
+				EA736D4D2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD713EBA2900092500A16A3A /* NoticeboardCategoryController.swift in Sources */,
 				CD713EBC2900092500A16A3A /* Picker.swift in Sources */,
 				CD713EBD2900092500A16A3A /* Protocols.swift in Sources */,
@@ -14971,6 +15028,7 @@
 				CD7342E72AF0136600693B8E /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7342E82AF0136600693B8E /* CommunicateLandController.swift in Sources */,
 				CD7342E92AF0136600693B8E /* TSibling.swift in Sources */,
+				EA736D592C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7342EB2AF0136600693B8E /* NoticeboardCategoryController.swift in Sources */,
 				CD7342ED2AF0136600693B8E /* Picker.swift in Sources */,
 				CD7342EE2AF0136600693B8E /* Protocols.swift in Sources */,
@@ -15124,6 +15182,7 @@
 				988EE35D2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD760149295B59FA00812F7B /* CommunicateLandController.swift in Sources */,
 				CD76014A295B59FA00812F7B /* TSibling.swift in Sources */,
+				EA736D4E2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD76014C295B59FA00812F7B /* NoticeboardCategoryController.swift in Sources */,
 				CD76014E295B59FA00812F7B /* Picker.swift in Sources */,
 				CD76014F295B59FA00812F7B /* Protocols.swift in Sources */,
@@ -15277,6 +15336,7 @@
 				CD7DDEED2AE04921000D0EB4 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7DDEEE2AE04921000D0EB4 /* CommunicateLandController.swift in Sources */,
 				CD7DDEEF2AE04921000D0EB4 /* TSibling.swift in Sources */,
+				EA736D532C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7DDEF12AE04921000D0EB4 /* NoticeboardCategoryController.swift in Sources */,
 				CD7DDEF32AE04921000D0EB4 /* Picker.swift in Sources */,
 				CD7DDEF42AE04921000D0EB4 /* Protocols.swift in Sources */,
@@ -15430,6 +15490,7 @@
 				CD7DDF962AE04CF3000D0EB4 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7DDF972AE04CF3000D0EB4 /* CommunicateLandController.swift in Sources */,
 				CD7DDF982AE04CF3000D0EB4 /* TSibling.swift in Sources */,
+				EA736D542C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7DDF9A2AE04CF3000D0EB4 /* NoticeboardCategoryController.swift in Sources */,
 				CD7DDF9C2AE04CF3000D0EB4 /* Picker.swift in Sources */,
 				CD7DDF9D2AE04CF3000D0EB4 /* Protocols.swift in Sources */,
@@ -15583,6 +15644,7 @@
 				CD7DE03F2AE058F4000D0EB4 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7DE0402AE058F4000D0EB4 /* CommunicateLandController.swift in Sources */,
 				CD7DE0412AE058F4000D0EB4 /* TSibling.swift in Sources */,
+				EA736D552C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7DE0432AE058F4000D0EB4 /* NoticeboardCategoryController.swift in Sources */,
 				CD7DE0452AE058F4000D0EB4 /* Picker.swift in Sources */,
 				CD7DE0462AE058F4000D0EB4 /* Protocols.swift in Sources */,
@@ -15736,6 +15798,7 @@
 				CD7DE2362AE08F4B000D0EB4 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7DE2372AE08F4B000D0EB4 /* CommunicateLandController.swift in Sources */,
 				CD7DE2382AE08F4B000D0EB4 /* TSibling.swift in Sources */,
+				EA736D562C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7DE23A2AE08F4B000D0EB4 /* NoticeboardCategoryController.swift in Sources */,
 				CD7DE23C2AE08F4B000D0EB4 /* Picker.swift in Sources */,
 				CD7DE23D2AE08F4B000D0EB4 /* Protocols.swift in Sources */,
@@ -15889,6 +15952,7 @@
 				CD7DE2DE2AE09981000D0EB4 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7DE2DF2AE09981000D0EB4 /* CommunicateLandController.swift in Sources */,
 				CD7DE2E02AE09981000D0EB4 /* TSibling.swift in Sources */,
+				EA736D572C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7DE2E22AE09981000D0EB4 /* NoticeboardCategoryController.swift in Sources */,
 				CD7DE2E42AE09981000D0EB4 /* Picker.swift in Sources */,
 				CD7DE2E52AE09981000D0EB4 /* Protocols.swift in Sources */,
@@ -16042,6 +16106,7 @@
 				CD7DE3872AE0A6A5000D0EB4 /* DigitalResourceCategoryCell.swift in Sources */,
 				CD7DE3882AE0A6A5000D0EB4 /* CommunicateLandController.swift in Sources */,
 				CD7DE3892AE0A6A5000D0EB4 /* TSibling.swift in Sources */,
+				EA736D582C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD7DE38B2AE0A6A5000D0EB4 /* NoticeboardCategoryController.swift in Sources */,
 				CD7DE38D2AE0A6A5000D0EB4 /* Picker.swift in Sources */,
 				CD7DE38E2AE0A6A5000D0EB4 /* Protocols.swift in Sources */,
@@ -16195,6 +16260,7 @@
 				CD8A98762ABCF36500BAF7CD /* DigitalResourceCategoryCell.swift in Sources */,
 				CD8A98772ABCF36500BAF7CD /* CommunicateLandController.swift in Sources */,
 				CD8A98782ABCF36500BAF7CD /* TSibling.swift in Sources */,
+				EA736D502C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD8A987A2ABCF36500BAF7CD /* NoticeboardCategoryController.swift in Sources */,
 				CD8A987C2ABCF36500BAF7CD /* Picker.swift in Sources */,
 				CD8A987D2ABCF36500BAF7CD /* Protocols.swift in Sources */,
@@ -16348,6 +16414,7 @@
 				CD8A99212ACCA02400BAF7CD /* DigitalResourceCategoryCell.swift in Sources */,
 				CD8A99222ACCA02400BAF7CD /* CommunicateLandController.swift in Sources */,
 				CD8A99232ACCA02400BAF7CD /* TSibling.swift in Sources */,
+				EA736D512C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD8A99252ACCA02400BAF7CD /* NoticeboardCategoryController.swift in Sources */,
 				CD8A99272ACCA02400BAF7CD /* Picker.swift in Sources */,
 				CD8A99282ACCA02400BAF7CD /* Protocols.swift in Sources */,
@@ -16501,6 +16568,7 @@
 				CD8A99CA2AD827A600BAF7CD /* DigitalResourceCategoryCell.swift in Sources */,
 				CD8A99CB2AD827A600BAF7CD /* CommunicateLandController.swift in Sources */,
 				CD8A99CC2AD827A600BAF7CD /* TSibling.swift in Sources */,
+				EA736D522C58E2F000952C8B /* TReaction.swift in Sources */,
 				CD8A99CE2AD827A600BAF7CD /* NoticeboardCategoryController.swift in Sources */,
 				CD8A99D02AD827A600BAF7CD /* Picker.swift in Sources */,
 				CD8A99D12AD827A600BAF7CD /* Protocols.swift in Sources */,
@@ -16654,6 +16722,7 @@
 				CDCACE0B2A533ABD006BA1A1 /* DigitalResourceCategoryCell.swift in Sources */,
 				CDCACE0C2A533ABD006BA1A1 /* CommunicateLandController.swift in Sources */,
 				CDCACE0D2A533ABD006BA1A1 /* TSibling.swift in Sources */,
+				EA736D4F2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CDCACE0F2A533ABD006BA1A1 /* NoticeboardCategoryController.swift in Sources */,
 				CDCACE112A533ABD006BA1A1 /* Picker.swift in Sources */,
 				CDCACE122A533ABD006BA1A1 /* Protocols.swift in Sources */,
@@ -16807,6 +16876,7 @@
 				CDD23617289AD40100A7121D /* CommunicateLandController.swift in Sources */,
 				CDD23618289AD40100A7121D /* TSibling.swift in Sources */,
 				CDD2361A289AD40100A7121D /* NoticeboardCategoryController.swift in Sources */,
+				EA736D4A2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CDD2361C289AD40100A7121D /* Picker.swift in Sources */,
 				CDD2361D289AD40100A7121D /* Protocols.swift in Sources */,
 				CDD2361E289AD40100A7121D /* SkyFloatingLabelTextField.swift in Sources */,
@@ -16960,6 +17030,7 @@
 				988EE3532A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CDE5DBFD282551D400A979FA /* CommunicateLandController.swift in Sources */,
 				CDE5DBFE282551D400A979FA /* TSibling.swift in Sources */,
+				EA736D492C58E2F000952C8B /* TReaction.swift in Sources */,
 				CDE5DC00282551D400A979FA /* NoticeboardCategoryController.swift in Sources */,
 				CDE5DC02282551D400A979FA /* Picker.swift in Sources */,
 				CDE5DC03282551D400A979FA /* Protocols.swift in Sources */,
@@ -17113,6 +17184,7 @@
 				988EE3462A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE0A5FBE24375C8000568C23 /* CommunicateLandController.swift in Sources */,
 				CE0A5FBF24375C8000568C23 /* TSibling.swift in Sources */,
+				EA736D432C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE0A5FC124375C8000568C23 /* NoticeboardCategoryController.swift in Sources */,
 				CE0A5FC324375C8000568C23 /* Picker.swift in Sources */,
 				CE0A5FC424375C8000568C23 /* Protocols.swift in Sources */,
@@ -17266,6 +17338,7 @@
 				988EE3412A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE0FBC0E21F9D2CC00C6D924 /* CommunicateLandController.swift in Sources */,
 				CE0FBC0F21F9D2CC00C6D924 /* TSibling.swift in Sources */,
+				EA736D3F2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE0FBC1121F9D2CC00C6D924 /* NoticeboardCategoryController.swift in Sources */,
 				CE0FBC1321F9D2CC00C6D924 /* Picker.swift in Sources */,
 				CE0FBC1421F9D2CC00C6D924 /* Protocols.swift in Sources */,
@@ -17419,6 +17492,7 @@
 				988EE3432A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE10ECB72201D45200F24DE4 /* CommunicateLandController.swift in Sources */,
 				CE10ECB82201D45200F24DE4 /* TSibling.swift in Sources */,
+				EA736D412C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE10ECBA2201D45200F24DE4 /* NoticeboardCategoryController.swift in Sources */,
 				CE10ECBC2201D45200F24DE4 /* Picker.swift in Sources */,
 				CE10ECBD2201D45200F24DE4 /* Protocols.swift in Sources */,
@@ -17572,6 +17646,7 @@
 				988EE3402A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE11983F21F82AB200D028D2 /* CommunicateLandController.swift in Sources */,
 				CE11984021F82AB200D028D2 /* TSibling.swift in Sources */,
+				EA736D3E2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE11984221F82AB200D028D2 /* NoticeboardCategoryController.swift in Sources */,
 				CE11984421F82AB200D028D2 /* Picker.swift in Sources */,
 				CE11984521F82AB200D028D2 /* Protocols.swift in Sources */,
@@ -17725,6 +17800,7 @@
 				988EE33E2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE1565BF21A96DB400DC758E /* CommunicateLandController.swift in Sources */,
 				CE1565C021A96DB400DC758E /* TSibling.swift in Sources */,
+				EA736D3D2C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE1565C221A96DB400DC758E /* NoticeboardCategoryController.swift in Sources */,
 				CE1565C421A96DB400DC758E /* Picker.swift in Sources */,
 				CE1565C521A96DB400DC758E /* Protocols.swift in Sources */,
@@ -17878,6 +17954,7 @@
 				988EE33A2A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE8867B421FACE8C00FF0DE0 /* CommunicateLandController.swift in Sources */,
 				CE8867B521FACE8C00FF0DE0 /* TSibling.swift in Sources */,
+				EA736D392C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE8867B721FACE8C00FF0DE0 /* NoticeboardCategoryController.swift in Sources */,
 				CE8867B921FACE8C00FF0DE0 /* Picker.swift in Sources */,
 				CE8867BA21FACE8C00FF0DE0 /* Protocols.swift in Sources */,
@@ -18031,6 +18108,7 @@
 				988EE3422A4C16F800888512 /* DigitalResourceCategoryCell.swift in Sources */,
 				CE88685521FAEFFE00FF0DE0 /* CommunicateLandController.swift in Sources */,
 				CE88685621FAEFFE00FF0DE0 /* TSibling.swift in Sources */,
+				EA736D402C58E2F000952C8B /* TReaction.swift in Sources */,
 				CE88685821FAEFFE00FF0DE0 /* NoticeboardCategoryController.swift in Sources */,
 				CE88685A21FAEFFE00FF0DE0 /* Picker.swift in Sources */,
 				CE88685B21FAEFFE00FF0DE0 /* Protocols.swift in Sources */,
@@ -21900,7 +21978,6 @@
 		};
 		CD110C8E289C41700050EF80 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64B68A2437903FF622535D29 /* Pods-T360.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -22029,7 +22106,6 @@
 		};
 		CD110C8F289C41700050EF80 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5F8504ACFB43E18D69EAF37 /* Pods-T360.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26576,6 +26652,7 @@
 		};
 		CD8A998A2ACCA02400BAF7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9F79A75D8D89E4FE8254C5 /* Pods-MSB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -26708,6 +26785,7 @@
 		};
 		CD8A998B2ACCA02400BAF7CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C4BCE9F7D5DAB77EB296D30 /* Pods-MSB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

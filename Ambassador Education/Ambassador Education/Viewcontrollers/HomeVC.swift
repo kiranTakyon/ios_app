@@ -570,6 +570,10 @@ extension HomeVC: TopHeaderDelegate {
 
 
 extension HomeVC: NotificationsViewDelegate {
+    func removeNoNotificationdataLabel() {
+        self.removeNoDataLabel()
+    }
+    
     func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification) {
         didTapOnNotification(notification: notification)
     }
