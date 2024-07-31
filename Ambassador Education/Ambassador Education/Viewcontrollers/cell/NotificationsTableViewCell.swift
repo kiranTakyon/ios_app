@@ -36,7 +36,7 @@ class NotificationsTableViewCell: UITableViewCell {
     var emojiCount: Int = 0
     var reactionView: ReactionView?
     let imageToEmoji: [String: String] = [
-        "wow": "😲",
+        "wow": "😮",
         "love": "❤️",
         "like": "👍",
         "clapping hand": "👏",

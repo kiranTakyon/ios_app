@@ -41,7 +41,7 @@ class TReaction: Codable {
         let reactions: [(Int?, String)] = [
             (like, "👍"),
             (love, "❤️"),
-            (wow, "😲"),
+            (wow, "😮"),
             (partyPopper, "🎉"),
             (clappingHand, "👏")
         ]
@@ -66,72 +66,30 @@ class TReaction: Codable {
         return count
     }
 
-    func increaseReactionCount(type: String)  {
-    let reaction = ReactionType(rawValue: type)
+    func updateReactionCount(type: String, increase: Bool) {
+        guard let reaction = ReactionType(rawValue: type) else { return }
+
+        let increment = increase ? 1 : -1
 
         switch reaction {
         case .like:
-            if let like = like {
-                self.like = like + 1
-            }
-            break
+            self.like = (self.like ?? 0) + increment
         case .love:
-            if let love = love {
-                self.love = love + 1
-            }
-            break
+            self.love = (self.love ?? 0) + increment
         case .wow:
-            if let wow = wow {
-                self.wow = wow + 1
-            }
-            break
+            self.wow = (self.wow ?? 0) + increment
         case .partyPopper:
-            if let partyPopper = partyPopper {
-                self.partyPopper = partyPopper + 1
-            }
-            break
+            self.partyPopper = (self.partyPopper ?? 0) + increment
         case .clappingHand:
-            if let clappingHand = clappingHand {
-                self.clappingHand = clappingHand + 1
-            }
-            break
-        case .none:
-            break
+            self.clappingHand = (self.clappingHand ?? 0) + increment
         }
     }
 
-    func decreaseReactionCount(type: String)  {
-        let reaction = ReactionType(rawValue: type)
-
-        switch reaction {
-        case .like:
-            if let like = like {
-                self.like = like - 1
-            }
-            break
-        case .love:
-            if let love = love {
-                self.love = love - 1
-            }
-            break
-        case .wow:
-            if let wow = wow {
-                self.wow = wow - 1
-            }
-            break
-        case .partyPopper:
-            if let partyPopper = partyPopper {
-                self.partyPopper = partyPopper - 1
-            }
-            break
-        case .clappingHand:
-            if let clappingHand = clappingHand {
-                self.clappingHand = clappingHand - 1
-            }
-            break
-        case .none:
-            break
-        }
+    func increaseReactionCount(type: String) {
+        updateReactionCount(type: type, increase: true)
     }
 
+    func decreaseReactionCount(type: String) {
+        updateReactionCount(type: type, increase: false)
+    }
 }
