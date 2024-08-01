@@ -30,6 +30,7 @@ class NotificationsTableViewCell: UITableViewCell {
     @IBOutlet weak var typeImageV: UIImageView!
     @IBOutlet weak var buttonCellDidTap: UIButton!
     @IBOutlet weak var reactionLabel: UILabel!
+    @IBOutlet weak var buttonEmojiDidTap: UIButton!
 
     weak var delegate: NotificationsTableViewCellDelegate?
     var index: Int = -1
@@ -55,7 +56,8 @@ class NotificationsTableViewCell: UITableViewCell {
                                      Reaction(title: "love", imageName: "icn_love"),
                                      Reaction(title: "clapping_hand", imageName: "icn_clap")]
 
-        reactionView?.initialize(delegate: self , reactionsArray: reactions, sourceView: self.contentView, gestureView: buttonCellDidTap)
+        reactionView?.initialize(delegate: self , reactionsArray: reactions, sourceView: self.contentView, gestureView: buttonEmojiDidTap)
+        buttonEmojiDidTap.setTitle("😀", for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -75,6 +77,7 @@ class NotificationsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         reactionLabel.text = nil
+        reactionHeightConstraint.constant = 0
     }
 
     @IBAction func buttonArrowDidTap(_ sender: UIButton) {
