@@ -64,7 +64,15 @@ class UserDefaultsManager {
         UserDefaults.standard.removeObject(forKey: key)
          UserDefaults.standard.synchronize()
     }
-    
+
+    func saveJwtToken(token: String){
+        UserDefaultsManager.manager.insertUserDefaultValue(value: token , key: UserDefaultKeys().jwtToken)
+    }
+
+    func getJwtToken() -> String? {
+        return UserDefaultsManager.manager.getUserDefaultValue(key: UserDefaultKeys().jwtToken) as? String
+    }
+
     func saveUserId(id: String){
         UserDefaultsManager.manager.insertUserDefaultValue(value: id , key: DBKeys.userIdValue)
     }

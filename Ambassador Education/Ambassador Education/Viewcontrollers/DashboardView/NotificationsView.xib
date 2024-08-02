@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,6 +26,13 @@
                         <constraint firstAttribute="width" constant="50" id="MCv-Vg-XMR"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAZ-xU-BdC">
+                    <rect key="frame" x="343" y="558" width="50" height="250"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="didTapOnStogoImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="oE6-R2-BaO"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -33,11 +40,16 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Id7-NR-XVY" secondAttribute="trailing" id="0Ac-rt-QMi"/>
                 <constraint firstItem="Id7-NR-XVY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6JI-GS-4AN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eDk-1a-Dd4" secondAttribute="trailing" id="EK3-Sl-bzY"/>
+                <constraint firstItem="eDk-1a-Dd4" firstAttribute="leading" secondItem="qAZ-xU-BdC" secondAttribute="leading" id="IZH-qV-CpD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eDk-1a-Dd4" secondAttribute="bottom" constant="10" id="MWS-qe-sAR"/>
                 <constraint firstItem="Id7-NR-XVY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OaM-KH-01x"/>
+                <constraint firstItem="eDk-1a-Dd4" firstAttribute="top" secondItem="qAZ-xU-BdC" secondAttribute="top" id="S2o-Fq-2j6"/>
+                <constraint firstItem="eDk-1a-Dd4" firstAttribute="trailing" secondItem="qAZ-xU-BdC" secondAttribute="trailing" id="bXs-Xs-xhb"/>
                 <constraint firstAttribute="bottom" secondItem="Id7-NR-XVY" secondAttribute="bottom" id="qD9-Oz-hOT"/>
+                <constraint firstItem="eDk-1a-Dd4" firstAttribute="bottom" secondItem="qAZ-xU-BdC" secondAttribute="bottom" id="ut6-gc-mXE"/>
             </constraints>
             <connections>
+                <outlet property="imageViewStogoLogo" destination="eDk-1a-Dd4" id="uRc-LH-tSs"/>
                 <outlet property="tableView" destination="Id7-NR-XVY" id="0aE-Ml-Al9"/>
             </connections>
             <point key="canvasLocation" x="132" y="-32"/>

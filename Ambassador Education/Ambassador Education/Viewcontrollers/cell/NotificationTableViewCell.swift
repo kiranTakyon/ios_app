@@ -10,6 +10,7 @@ import UIKit
 
 protocol NotificationTableViewCellDelegate: AnyObject {
     func notificationTableViewCell(_ cell: UITableViewCell, didTapOnNotification notification: TNotification)
+    func notificationTableViewCell(_ view: UITableViewCell, didTapOnStogoImageWith url: String)
 }
 
 class NotificationTableViewCell: UITableViewCell {
@@ -32,7 +33,13 @@ class NotificationTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    
+
+    @IBAction func didTapOnStogoImage(_ sender: UIButton) {
+        if let stringUrl = JWTHelper.shared.getStogoUrl() {
+            delegate?.notificationTableViewCell(self, didTapOnStogoImageWith: stringUrl)
+        }
+    }
+
 }
 
 

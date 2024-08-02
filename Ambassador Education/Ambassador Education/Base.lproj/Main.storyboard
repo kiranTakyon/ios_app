@@ -1295,9 +1295,8 @@
                                     <constraint firstItem="Cnb-vZ-wRA" firstAttribute="leading" secondItem="CVH-BN-xwH" secondAttribute="leading" constant="20" id="yw2-RS-Czs"/>
                                 </constraints>
                             </view>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PF1-Xc-AcW">
-                                <rect key="frame" x="0.0" y="75" width="422" height="655"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PF1-Xc-AcW">
+                                <rect key="frame" x="0.0" y="75" width="393" height="777"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -1307,9 +1306,13 @@
                         <viewLayoutGuide key="safeArea" id="As6-nm-28B"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PF1-Xc-AcW" firstAttribute="leading" secondItem="As6-nm-28B" secondAttribute="leading" id="4MU-xm-Wt7"/>
+                            <constraint firstAttribute="trailing" secondItem="PF1-Xc-AcW" secondAttribute="trailing" id="6PE-oZ-0Zs"/>
+                            <constraint firstItem="PF1-Xc-AcW" firstAttribute="top" secondItem="CVH-BN-xwH" secondAttribute="bottom" id="OUS-Ew-PAM"/>
                             <constraint firstItem="CVH-BN-xwH" firstAttribute="leading" secondItem="As6-nm-28B" secondAttribute="leading" id="hTS-Mw-PSr"/>
                             <constraint firstItem="CVH-BN-xwH" firstAttribute="top" secondItem="wus-b5-jBp" secondAttribute="top" id="hfv-iD-1UL"/>
                             <constraint firstItem="As6-nm-28B" firstAttribute="trailing" secondItem="CVH-BN-xwH" secondAttribute="trailing" id="rqe-dK-uG9"/>
+                            <constraint firstAttribute="bottom" secondItem="PF1-Xc-AcW" secondAttribute="bottom" id="uXX-ZR-6J7"/>
                         </constraints>
                     </view>
                     <connections>

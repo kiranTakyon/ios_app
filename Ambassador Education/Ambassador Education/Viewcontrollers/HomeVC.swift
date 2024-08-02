@@ -573,16 +573,26 @@ extension HomeVC: NotificationsViewDelegate {
     func removeNoNotificationdataLabel() {
         self.removeNoDataLabel()
     }
-    
+
     func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification) {
         didTapOnNotification(notification: notification)
     }
-    
+
     func notificationsView(_ view: NotificationsView, didTapOnGallery id: String) {
         guard let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryListController") as? GalleryListController else { return }
         viewController.categoryId = id
         viewController.categoryName = "Gallery"
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func notificationsView(_ view: NotificationsView, didTapOnStogoImageWith url: String) {
+        gotoWeb(str: url)
+    }
+
+    func gotoWeb(str : String) {
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.strU = str
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -591,8 +601,10 @@ extension HomeVC: DashboardViewDelegate {
         didTapOnNotification(notification: notification)
     }
     
-    
-    
+    func dashboardView(_ view: DashboardView, didTapOnStogoImageWith url: String) {
+        gotoWeb(str: url)
+    }
+
     func didTapOnNotification(notification: TNotification)  {
         if let typeVal = alertType(rawValue: notification.type ?? ""){
             

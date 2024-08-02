@@ -1,3 +1,11 @@
+//
+//  ReactionView.swift
+//  Ambassador Education
+//
+//  Created by IE Mac 05 on 29/07/24.
+//  Copyright © 2023 InApp. All rights reserved.
+//
+
 public protocol FacebookLikeReactionDelegate {
     func selectedReaction(reaction: Reaction)
 }

@@ -129,4 +129,5 @@ struct UserDefaultKeys{
     
     let userDetails = "UserDetails"
     let AccessToken = "AccessToken"
+    let jwtToken    = "JWTToken"
 }

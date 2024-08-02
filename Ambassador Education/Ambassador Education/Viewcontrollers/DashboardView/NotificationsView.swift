@@ -9,16 +9,19 @@
 import Foundation
 import UIKit
 import IQPullToRefresh
+import SwiftJWT
 
 protocol NotificationsViewDelegate: AnyObject {
     func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification)
+    func notificationsView(_ view: NotificationsView, didTapOnStogoImageWith url: String)
     func removeNoNotificationdataLabel()
 }
 
 class NotificationsView: UIView {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var imageViewStogoLogo: UIImageView!
+
     var notificationList = [TNotification]()
     var selectedIndexes: [Int] = []
     private lazy var refresher = IQPullToRefresh(scrollView: tableView, refresher: self, moreLoader: self)
@@ -44,6 +47,12 @@ class NotificationsView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+
+    @IBAction func didTapOnStogoImage(_ sender: UIButton) {
+        if let stringUrl = JWTHelper.shared.getStogoUrl() {
+            delegate?.notificationsView(self, didTapOnStogoImageWith: stringUrl)
+        }
     }
 }
 

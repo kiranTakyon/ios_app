@@ -50,8 +50,8 @@ class WebViewController: UIViewController,WKNavigationDelegate {
     }
     
     
-    //MARK:- WebView Delagates
-    
+    // MARK: - WebView Delagates -
+
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.stopLoadingAnimation()
