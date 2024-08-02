@@ -9,12 +9,13 @@
 import UIKit
 import SwiftJWT
 
-struct MyClaims: Claims {
-    let iat: Int
-    let exp: Int
-    let id: String
-}
 
+// Define the structure of the payload (claims)
+struct MyClaims: Claims {
+    let iat: Int    // Issued at time (timestamp as integer)
+    let exp: Int    // Expiration time (timestamp as integer)
+    let id: String  // User ID (string)
+}
 
 class JWTHelper: NSObject {
 
@@ -37,7 +38,7 @@ class JWTHelper: NSObject {
         // Define the header
         var jwtHeader = Header()
         jwtHeader.typ = "JWT"
-        //jwtHeader.alg = "HS256"
+  //      jwtHeader["timeout"] = 3000    // Add the custom timeout field
 
         var jwt = JWT(header: jwtHeader, claims: claims)
 
@@ -87,4 +88,5 @@ class JWTHelper: NSObject {
         return nil
     }
 
+    
 }

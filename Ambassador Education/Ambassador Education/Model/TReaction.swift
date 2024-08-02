@@ -42,7 +42,7 @@ class TReaction: Codable {
             (like, "👍"),
             (love, "❤️"),
             (wow, "😮"),
-            (partyPopper, "🎉"),
+            (partyPopper, "💡"),
             (clappingHand, "👏")
         ]
 

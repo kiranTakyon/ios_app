@@ -9406,8 +9406,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -11903,6 +11903,23 @@
 			};
 			name = Release;
 		};
+		1D1DB9A1DAE1CFCCAB016A57867AE8DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20D8670C136C25975A0BFD16DE157E52 /* GoogleSignIn.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleSignIn";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				IBSC_MODULE = GoogleSignIn;
+				INFOPLIST_FILE = "Target Support Files/GoogleSignIn/ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = GoogleSignIn;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		20D6FAE9DA5825DF4F2C797516F26F1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D98607D7DBDA2DAE8C368EC917A652C0 /* IQPullToRefresh.debug.xcconfig */;
@@ -12471,6 +12488,23 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		4A156AD0E472CFC5927C14F82B6A0068 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 040F52AC3582C951B0744832AF5541A9 /* GoogleSignIn.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleSignIn";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				IBSC_MODULE = GoogleSignIn;
+				INFOPLIST_FILE = "Target Support Files/GoogleSignIn/ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = GoogleSignIn;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		4EA11A79229957AE2BAFB73E4F2B4665 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -14012,24 +14046,6 @@
 			};
 			name = Debug;
 		};
-		C13F42F850E8543A38CC6D5C8157F335 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20D8670C136C25975A0BFD16DE157E52 /* GoogleSignIn.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleSignIn";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				IBSC_MODULE = GoogleSignIn;
-				INFOPLIST_FILE = "Target Support Files/GoogleSignIn/ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = GoogleSignIn;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		C52E4C8210B5775AB289B273106805B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B56BE81A8FC18F58F19305A15AADDF23 /* MXSegmentedPager.debug.xcconfig */;
@@ -14637,24 +14653,6 @@
 			};
 			name = Release;
 		};
-		F8CBE6CC43DC81A772597AD370955E59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 040F52AC3582C951B0744832AF5541A9 /* GoogleSignIn.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/GoogleSignIn";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				IBSC_MODULE = GoogleSignIn;
-				INFOPLIST_FILE = "Target Support Files/GoogleSignIn/ResourceBundle-GoogleSignIn-GoogleSignIn-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = GoogleSignIn;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		F8CC0975D9536C57AEF1660B109AF5FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7CDEF9BA60493E13108A1FE833F07B77 /* LoggerAPI.debug.xcconfig */;
@@ -14933,8 +14931,8 @@
 		353017B499CE085B323644759E3CDB05 /* Build configuration list for PBXNativeTarget "GoogleSignIn-GoogleSignIn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C13F42F850E8543A38CC6D5C8157F335 /* Debug */,
-				F8CBE6CC43DC81A772597AD370955E59 /* Release */,
+				1D1DB9A1DAE1CFCCAB016A57867AE8DC /* Debug */,
+				4A156AD0E472CFC5927C14F82B6A0068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

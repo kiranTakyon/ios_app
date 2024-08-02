@@ -70,6 +70,13 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as? NotificationsTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         cell.index = indexPath.row
+        let imageToEmoji: [String: String] = [
+            "wow": "😮",
+            "love": "❤️",
+            "like": "👍",
+            "clapping_hand": "👏",
+            "party_popper": "💡"
+        ]
 
         let notification = notificationList[indexPath.row]
 
@@ -153,6 +160,14 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
         print("type value is :- ",notification.type)
 
         cell.selectionStyle = .none
+        print("usrReactionType is :",notification.usrReactionType)
+        //cell.buttonEmojiDidTap.setTitle("\(imageToEmoji[notification.usrReactionType ?? "😀"] ?? "")", for: .normal)
+        if let reactionType = notification.usrReactionType {
+            cell.buttonEmojiDidTap.setTitle("\(imageToEmoji[reactionType] ?? "")", for: .normal)
+        } else {
+            cell.buttonEmojiDidTap.setTitle("😀", for: .normal)
+        }
+        
         return cell
     }
     
@@ -165,7 +180,7 @@ extension NotificationsView: NotificationsTableViewCellDelegate {
 
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji emoji: String, type: String, index: Int) {
         apiPostSocialMedia(action: "like", type: type, emoji: emoji,index: index)
-    }
+         }
     
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int) {
         delegate?.notificationsView(self, didTapOnNotification: notificationList [index])

@@ -40,8 +40,8 @@ class NotificationsTableViewCell: UITableViewCell {
         "wow": "😮",
         "love": "❤️",
         "like": "👍",
-        "clapping hand": "👏",
-        "party popper": "🎉"
+        "clapping_hand": "👏",
+        "party_popper": "💡"
     ]
 
     override func awakeFromNib() {
@@ -57,7 +57,8 @@ class NotificationsTableViewCell: UITableViewCell {
                                      Reaction(title: "clapping_hand", imageName: "icn_clap")]
 
         reactionView?.initialize(delegate: self , reactionsArray: reactions, sourceView: self.contentView, gestureView: buttonEmojiDidTap)
-        buttonEmojiDidTap.setTitle("😀", for: .normal)
+        buttonEmojiDidTap.setTitle("☺", for: .normal)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -89,9 +90,9 @@ class NotificationsTableViewCell: UITableViewCell {
     }
 }
 
-
 extension NotificationsTableViewCell: FacebookLikeReactionDelegate {
     func selectedReaction(reaction: Reaction) {
         delegate?.notificationsTableViewCell(self, didSelectEmoji: "\(imageToEmoji[reaction.title] ?? "")", type: reaction.title, index: index)
     }
 }
+

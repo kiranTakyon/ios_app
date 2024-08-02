@@ -67,7 +67,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     func setAllTextFieldsEmpty(){
         studentNameLabel.text = ""
         studentSecondLabel.text = ""
-        classLabel.text = "Class"
+        //classLabel.text = "Class"
     }
     
     func getTokenValueForMobileNotification(){
@@ -222,7 +222,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
             
             if let studentClass = studentDetail["Class"] as? String{
                 if studentClass != ""{
-                    classLabel.text = "Class - " + studentClass
+                    classLabel.text =  studentClass
                 }
             }
             if let proImage = studentDetail["ProfileImage"] as? String{

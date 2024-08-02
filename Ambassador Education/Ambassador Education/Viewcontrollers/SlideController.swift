@@ -395,7 +395,7 @@ class SlideController: UITableViewController,TaykonProtocol {
                 
                 if selectionTitles.count > indexOfSelectedStudent{
                     tempCell.studentPicker.pickerTextField.text = selectionTitles[indexOfSelectedStudent]
-                    tempCell.studentDetailLabel.text = "Class - " + studentDetails[indexOfSelectedStudent].classValue!
+                    tempCell.studentDetailLabel.text = studentDetails[indexOfSelectedStudent].classValue!
                 }
             } else {
                 let details =  getTheSchoolName()
@@ -768,7 +768,7 @@ class slideMenuFirstCell : UITableViewCell,PickerDelegate{
         if let userId = selectedSibling.userId as? String{
             UserDefaultsManager.manager.saveUserId(id: userId)
         }
-        self.studentDetailLabel.text = "Class Name - " + selectedSibling.classValue.safeValue
+        self.studentDetailLabel.text = selectedSibling.classValue.safeValue
         self.delegate?.getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
        
     }
