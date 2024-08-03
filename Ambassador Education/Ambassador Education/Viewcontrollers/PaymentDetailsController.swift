@@ -382,6 +382,7 @@ extension PaymentDetailsController {
                 if let getFeeDetailReport = result["GetFeeDetailReport"] as? [String: Any] {
                     self.topHeaderView.title = getFeeDetailReport["HeadLabel"] as? String ?? ""
                     self.labelName.text = getFeeDetailReport["Name"] as? String ?? ""
+                    self.labelClass.text = getFeeDetailReport["Division"] as? String ?? ""
                     self.labelDueAmount.text = getFeeDetailReport["TotalDue"] as? String ?? "0.00"
                     self.labelTotalPaid.text = getFeeDetailReport["TotalPaid"] as? String ?? "0.00"
                     self.labelTotalFeeConcession.text = getFeeDetailReport["FeeConcession"] as? String ?? "0.00"
