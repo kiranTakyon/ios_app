@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -2525,27 +2525,17 @@
                                                         <rect key="frame" x="243" y="0.0" width="110" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L3-MT-CBx">
-                                                                <rect key="frame" x="10" y="9.9999999999999982" width="70" height="20.333333333333329"/>
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="41.333333333333336" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownArrowGrey" translatesAutoresizingMaskIntoConstraints="NO" id="T7x-9i-IMI">
-                                                                <rect key="frame" x="85" y="12.666666666666671" width="15" height="15"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="T7x-9i-IMI" secondAttribute="height" multiplier="1:1" id="ilC-Kf-53F"/>
-                                                                    <constraint firstAttribute="height" constant="15" id="jvf-Kj-fv6"/>
-                                                                </constraints>
-                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.50055658820000004" green="0.78734606500000004" blue="0.98041874169999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstItem="5L3-MT-CBx" firstAttribute="leading" secondItem="csD-14-P3E" secondAttribute="leading" constant="10" id="9QS-lI-57g"/>
                                                             <constraint firstItem="5L3-MT-CBx" firstAttribute="centerY" secondItem="csD-14-P3E" secondAttribute="centerY" id="DpD-hd-ksT"/>
                                                             <constraint firstAttribute="width" constant="110" id="HZv-0B-jAF"/>
-                                                            <constraint firstItem="T7x-9i-IMI" firstAttribute="centerY" secondItem="5L3-MT-CBx" secondAttribute="centerY" id="Pvm-8v-zJm"/>
-                                                            <constraint firstAttribute="trailing" secondItem="T7x-9i-IMI" secondAttribute="trailing" constant="10" id="ZJD-jp-9HU"/>
-                                                            <constraint firstItem="T7x-9i-IMI" firstAttribute="leading" secondItem="5L3-MT-CBx" secondAttribute="trailing" constant="5" id="l3x-w5-whU"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="viewcornerRadius">
@@ -7644,7 +7634,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
