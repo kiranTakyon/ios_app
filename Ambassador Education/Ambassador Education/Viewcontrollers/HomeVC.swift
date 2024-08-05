@@ -606,25 +606,33 @@ extension HomeVC: DashboardViewDelegate {
     }
 
     func didTapOnNotification(notification: TNotification)  {
-        if let typeVal = alertType(rawValue: notification.type ?? ""){
-            
-            switch typeVal {
-            case .gallery:
-                presentGalleryPopUp(notification: notification)
-                break
-            case .html:
-                presentHtmlPopUp(notification: notification)
-                break
-            case .communicate:
-                presentCommunicatePopUp(notification: notification)
-            case .noticeboard:
-                presentNoticeboardPopUp(notification: notification)
-                break
-            case .weeklyPlan:
-                presentWeeklyPopUp(notification: notification)
-                break
-            case .bus:
-                break
+
+        if let url = notification.url, isVideoURL(url) {
+            let storyBoard = UIStoryboard(name: "Video", bundle: nil)
+            guard let vc = storyBoard.instantiateViewController(withIdentifier: "NotificationVideoViewController") as? NotificationVideoViewController else { return  }
+            vc.videoUrl = url
+            self.present(vc, animated: true)
+        } else {
+            if let typeVal = alertType(rawValue: notification.type ?? ""){
+
+                switch typeVal {
+                case .gallery:
+                    presentGalleryPopUp(notification: notification)
+                    break
+                case .html:
+                    presentHtmlPopUp(notification: notification)
+                    break
+                case .communicate:
+                    presentCommunicatePopUp(notification: notification)
+                case .noticeboard:
+                    presentNoticeboardPopUp(notification: notification)
+                    break
+                case .weeklyPlan:
+                    presentWeeklyPopUp(notification: notification)
+                    break
+                case .bus:
+                    break
+                }
             }
         }
     }
@@ -686,6 +694,15 @@ extension HomeVC: DashboardViewDelegate {
         let popupVC = PopupViewController(contentController: navVC, popupWidth: popUpWidth, popupHeight: popUpHeight)
         popupVC.cornerRadius = 25
         self.present(popupVC, animated: true)
+    }
+
+    func isVideoURL(_ urlString: String) -> Bool {
+        let videoExtensions = Set(["mp4", "m4v", "mov", "avi", "mkv", "flv", "wmv", "webm"])
+        guard let url = URL(string: urlString) else {
+            return false
+        }
+        let pathExtension = url.pathExtension.lowercased()
+        return videoExtensions.contains(pathExtension)
     }
 }
 

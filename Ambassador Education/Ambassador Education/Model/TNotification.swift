@@ -24,8 +24,8 @@ class TNotification: Codable {
     var usrReactionType: String?
     var reactions: TReaction?
     var alertId: Int?
+    var url: String?
 
-    
     init(values:NSDictionary) {
         self.id = values["id"] as? String
         self.title = values["Title"] as? String
@@ -37,6 +37,7 @@ class TNotification: Codable {
         self.catid = values["cat_id"] as? String
         self.processid = values["id"] as? String
         self.usrReactionType = values["usr_reaction_type"] as? String
+        self.url = values["url"] as? String
         self.alertId = values["alert_id"] as? Int
 
         if let itemVals = values["reactions"] as? NSDictionary {

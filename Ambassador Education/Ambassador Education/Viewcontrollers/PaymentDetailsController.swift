@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 /*
  1 = payementHistory
  2 = fee fee History
@@ -26,7 +27,8 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var labelTotalPayable: UILabel!
     @IBOutlet weak var labelCurrentDue: UILabel!
     @IBOutlet weak var labelAmount: UILabel!
-    
+    @IBOutlet weak var buttonStudentsDropDown: UIButton!
+
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var historyTableViewHeightConstraint: NSLayoutConstraint!
@@ -72,13 +74,14 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     var compid = "0"
     var TotalRecptAmount = "0.00"
     var fee_url_type = UserDefaultsManager.manager.getfeeurltype()
-    
+    var dropDown : DropDown?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setSlideMenuProporties()
         SetupTableView()
         topHeaderView.delegate = self
-        getpaymentSummery()
+        setStudentDropDown()
     }
     
     
@@ -105,7 +108,11 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             break
         }
     }
-    
+
+    @IBAction func buttonStudentDropDownDidTap(_ sender: UIButton) {
+        dropDown?.show()
+    }
+
     
     func setSlideMenuProporties(){
         if let revealVC = revealViewController() {
@@ -368,20 +375,23 @@ extension PaymentDetailsController: TopHeaderDelegate {
 
 extension PaymentDetailsController {
     
-    func getpaymentSummery() {
+    func getpaymentSummery(studentId: String = "" ) {
         startLoadingAnimation()
         let url = APIUrls().feeConsolidated
         var dictionary = [String: Any]()
-        let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] =  userId
-        
+        if !studentId.isEmpty {
+            dictionary[UserIdKey().id] =  studentId
+        } else {
+            let userId = UserDefaultsManager.manager.getUserId()
+            dictionary[UserIdKey().id] =  userId
+        }
+
         APIHelper.sharedInstance.apiCallHandler(url, requestType: .POST, requestString: "", requestParameters: dictionary) { [weak self] (result) in
             
             guard let self = self else { return }
             DispatchQueue.main.async {
                 if let getFeeDetailReport = result["GetFeeDetailReport"] as? [String: Any] {
                     self.topHeaderView.title = getFeeDetailReport["HeadLabel"] as? String ?? ""
-                    self.labelName.text = getFeeDetailReport["Name"] as? String ?? ""
                     self.labelClass.text = getFeeDetailReport["Division"] as? String ?? ""
                     self.labelDueAmount.text = getFeeDetailReport["TotalDue"] as? String ?? "0.00"
                     self.labelTotalPaid.text = getFeeDetailReport["TotalPaid"] as? String ?? "0.00"

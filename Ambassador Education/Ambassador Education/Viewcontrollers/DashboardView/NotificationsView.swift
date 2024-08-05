@@ -80,6 +80,8 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
 
         let notification = notificationList[indexPath.row]
 
+        cell.playIcon.isHidden = !isVideoURL(notification.url ?? "")
+
         if let titel = notification.title{
             cell.alertTitle.numberOfLines = 1
             cell.alertTitle.text = titel
@@ -97,52 +99,80 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
             cell.labelTime.text = Date().getTimeFromDate(date: date)
         }
 
-        if let msgType = notification.type{
+        if let msgType = notification.type {
             switch msgType {
             case msgTypes.communicate.rawValue:
                 let index = indexPath.row % communicateImages.count
                 let image = communicateImages[index]
-                cell.typeImageV.image = UIImage(named: image)
+                if let url = notification.url, !url.isEmpty  {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: image)
+                }
                 cell.typeImageView.image = #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
 
             case msgTypes.weeklyPlan.rawValue:
                 let index = indexPath.row % weeklyPlanImages.count
                 let image = weeklyPlanImages[index]
-                cell.typeImageV.image = UIImage(named: image)
+                if let url = notification.url, !url.isEmpty  {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: image)
+                }
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "weekly Plan"
 
             case msgTypes.noticeboard.rawValue:
                 let index = indexPath.row % noticeboardImages.count
                 let image = noticeboardImages[index]
-                cell.typeImageV.image = UIImage(named: image)
+                if let url = notification.url, !url.isEmpty  {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: image)
+                }
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "Noticeboard"
 
             case msgTypes.bus.rawValue:
                 let index = indexPath.row % busImages.count
                 let image = busImages[index]
-                cell.typeImageV.image = UIImage(named: image)
+                if let url = notification.url, !url.isEmpty  {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: image)
+                }
                 cell.typeImageView.image = #imageLiteral(resourceName: "bus_icon")
                 cell.labelTitle.text = "Bus fare"
 
             case msgTypes.htmlType.rawValue:
                 let index = indexPath.row % htmlTypeImages.count
                 let image = htmlTypeImages[index]
-                cell.typeImageV.image = UIImage(named: image)
+                if let url = notification.url, !url.isEmpty {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: image)
+                }
                 cell.typeImageView.image =  #imageLiteral(resourceName: "email_notification")
                 cell.labelTitle.text = "Mail"
 
             case msgTypes.gallery.rawValue:
                 let index = indexPath.row % galleryImages.count
                 let image = galleryImages[index]
-                cell.typeImageV.image = UIImage(named: image)
+                if let url = notification.url, !url.isEmpty  {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: image)
+                }
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
                 cell.labelTitle.text = "Gallery"
 
             default:
-                cell.typeImageV.image = UIImage(named: "NoticeImage")
+                if let url = notification.url, !url.isEmpty,!isVideoURL(url)  {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: "NoticeImage")
+                }
                 cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
                 cell.labelTitle.text = "Notice"
 
@@ -259,5 +289,14 @@ extension NotificationsView {
                 self.tableView.reloadData()
             }
         }
+    }
+
+    func isVideoURL(_ urlString: String) -> Bool {
+        let videoExtensions = Set(["mp4", "m4v", "mov", "avi", "mkv", "flv", "wmv", "webm"])
+        guard let url = URL(string: urlString) else {
+            return false
+        }
+        let pathExtension = url.pathExtension.lowercased()
+        return videoExtensions.contains(pathExtension)
     }
 }

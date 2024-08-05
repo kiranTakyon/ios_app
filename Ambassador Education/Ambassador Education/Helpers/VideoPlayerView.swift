@@ -37,7 +37,13 @@ public class VideoPlayerView: UIView {
         let videoURL = URL.init(fileURLWithPath: videoPath)
         playVideo(videoURL: videoURL)
     }
-    
+
+    public func setupToPlay(url: String) {
+        if let videoURL = URL(string: url) {
+            playVideo(videoURL: videoURL)
+        }
+    }
+
     public func setupToPlay(videoName: String, type: VideoFormateType = .mov) {
         guard let videoPath = Bundle.init(for: VideoPlayerView.self).path(forResource: videoName, ofType: type.rawValue) else {
             return

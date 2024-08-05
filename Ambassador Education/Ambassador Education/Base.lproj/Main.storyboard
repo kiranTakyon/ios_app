@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -2495,7 +2495,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="233" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-1Q-mtk">
-                                                                <rect key="frame" x="10" y="9.9999999999999982" width="45" height="20.333333333333329"/>
+                                                                <rect key="frame" x="10" y="9.9999999999999982" width="188" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -2507,12 +2507,24 @@
                                                                     <constraint firstAttribute="height" constant="15" id="ClF-3X-JiE"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KK3-0y-Pu3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="233" height="40"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="buttonStudentDropDownDidTap:" destination="H45-SZ-Y3M" eventType="touchUpInside" id="DSh-1I-PbC"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.9704065919" green="0.80334055419999995" blue="0.62349444629999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="TyC-D1-z0e" secondAttribute="trailing" constant="10" id="9sr-4l-tnZ"/>
                                                             <constraint firstItem="W3y-1Q-mtk" firstAttribute="centerY" secondItem="7bD-9R-eoF" secondAttribute="centerY" id="BlL-dj-U3q"/>
+                                                            <constraint firstAttribute="bottom" secondItem="KK3-0y-Pu3" secondAttribute="bottom" id="H4V-iU-Tb8"/>
+                                                            <constraint firstAttribute="trailing" secondItem="KK3-0y-Pu3" secondAttribute="trailing" id="KiW-VK-Omh"/>
                                                             <constraint firstItem="TyC-D1-z0e" firstAttribute="centerY" secondItem="W3y-1Q-mtk" secondAttribute="centerY" id="ZVK-Gw-m7m"/>
+                                                            <constraint firstItem="KK3-0y-Pu3" firstAttribute="top" secondItem="7bD-9R-eoF" secondAttribute="top" id="gVE-bB-Ms1"/>
+                                                            <constraint firstItem="TyC-D1-z0e" firstAttribute="leading" secondItem="W3y-1Q-mtk" secondAttribute="trailing" constant="10" id="gcC-s1-oKD"/>
+                                                            <constraint firstItem="KK3-0y-Pu3" firstAttribute="leading" secondItem="7bD-9R-eoF" secondAttribute="leading" id="w7P-td-TO0"/>
                                                             <constraint firstItem="W3y-1Q-mtk" firstAttribute="leading" secondItem="7bD-9R-eoF" secondAttribute="leading" constant="10" id="zDM-HM-Ckb"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -2936,6 +2948,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStudentsDropDown" destination="KK3-0y-Pu3" id="l2v-oZ-dGb"/>
                         <outlet property="detailTableView" destination="VRj-Y0-36N" id="ure-OX-1RV"/>
                         <outlet property="detailTableViewHeightConstraint" destination="jMo-IY-ou6" id="oJg-cJ-LSw"/>
                         <outlet property="historyTableView" destination="y3V-sj-Qbu" id="Bbk-dY-yOQ"/>

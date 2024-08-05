@@ -79,7 +79,7 @@
                                     <action selector="buttonArrowDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bE9-mJ-mpe"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="emailImage" translatesAutoresizingMaskIntoConstraints="NO" id="6Ij-6Q-KbI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="emailImage" translatesAutoresizingMaskIntoConstraints="NO" id="6Ij-6Q-KbI" customClass="ImageLoader" customModule="ABC" customModuleProvider="target">
                                 <rect key="frame" x="62.666666666666657" y="155" width="375.66666666666674" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="uDU-sI-SLN"/>
@@ -92,10 +92,18 @@
                                     <action selector="buttonCellDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="16j-Qy-Z6E"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Kn3-VZ-0up">
+                                <rect key="frame" x="225.66666666666666" y="220" width="49.999999999999972" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XBe-FF-zwv"/>
+                                    <constraint firstAttribute="width" secondItem="Kn3-VZ-0up" secondAttribute="height" multiplier="1:1" id="aM4-38-EAU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ALf-XA-AOe" firstAttribute="leading" secondItem="4c0-a8-yUT" secondAttribute="trailing" constant="5" id="0tU-GA-yQV"/>
+                            <constraint firstItem="Kn3-VZ-0up" firstAttribute="centerY" secondItem="6Ij-6Q-KbI" secondAttribute="centerY" id="1HK-V9-dO0"/>
                             <constraint firstItem="cSe-S9-20b" firstAttribute="centerY" secondItem="ALf-XA-AOe" secondAttribute="centerY" id="1kM-Yq-hvg"/>
                             <constraint firstAttribute="trailing" secondItem="Nh5-t4-rJd" secondAttribute="trailing" constant="10" id="1wT-bA-0X9"/>
                             <constraint firstItem="4c0-a8-yUT" firstAttribute="top" secondItem="M8S-oo-Wcz" secondAttribute="top" constant="10" id="6fL-5G-hzo"/>
@@ -109,6 +117,7 @@
                             <constraint firstItem="oDR-zk-jLG" firstAttribute="leading" secondItem="M8S-oo-Wcz" secondAttribute="leading" id="Jip-WI-GbC"/>
                             <constraint firstItem="Nh5-t4-rJd" firstAttribute="leading" secondItem="ALf-XA-AOe" secondAttribute="leading" id="Lkc-T9-9gR"/>
                             <constraint firstItem="cSe-S9-20b" firstAttribute="leading" secondItem="ALf-XA-AOe" secondAttribute="trailing" id="NKe-h6-n6W"/>
+                            <constraint firstItem="Kn3-VZ-0up" firstAttribute="centerX" secondItem="6Ij-6Q-KbI" secondAttribute="centerX" id="Uf5-mE-44L"/>
                             <constraint firstAttribute="bottom" secondItem="Nh5-t4-rJd" secondAttribute="bottom" constant="50" id="VfL-xQ-4Tu"/>
                             <constraint firstItem="pEX-yp-moZ" firstAttribute="leading" secondItem="cSe-S9-20b" secondAttribute="trailing" constant="5" id="Xe5-DN-0e6"/>
                             <constraint firstItem="ALf-XA-AOe" firstAttribute="centerY" secondItem="4c0-a8-yUT" secondAttribute="centerY" id="Z06-fY-f99"/>
@@ -195,6 +204,7 @@
                 <outlet property="buttonEmojiDidTap" destination="vZj-EH-v2a" id="JEp-7s-zjZ"/>
                 <outlet property="labelTime" destination="QFJ-p0-4zM" id="8Yc-SW-2YN"/>
                 <outlet property="labelTitle" destination="ALf-XA-AOe" id="eSB-zn-3Hx"/>
+                <outlet property="playIcon" destination="Kn3-VZ-0up" id="WnH-Ie-kcc"/>
                 <outlet property="reactionHeightConstraint" destination="EMi-YS-yYp" id="rio-YH-Efe"/>
                 <outlet property="reactionLabel" destination="GaN-yt-DBu" id="QAZ-gc-P74"/>
                 <outlet property="reactionViewTop" destination="vlm-Rg-oMa" id="x7a-N6-rXs"/>
@@ -209,6 +219,7 @@
         <image name="DownArrowGrey" width="23.5" height="13.5"/>
         <image name="clock" width="9.6666669845581055" height="7.6666665077209473"/>
         <image name="emailImage" width="82" height="60"/>
+        <image name="play_icon" width="16" height="15"/>
         <image name="upArrow" width="15.666666984558105" height="9"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

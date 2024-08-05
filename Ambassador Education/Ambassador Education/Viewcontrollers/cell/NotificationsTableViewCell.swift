@@ -27,10 +27,11 @@ class NotificationsTableViewCell: UITableViewCell {
     @IBOutlet weak var alertDate: UILabel!
     @IBOutlet weak var typeImageView: UIImageView!
     @IBOutlet weak var buttonArrow: UIButton!
-    @IBOutlet weak var typeImageV: UIImageView!
+    @IBOutlet weak var typeImageV: ImageLoader!
     @IBOutlet weak var buttonCellDidTap: UIButton!
     @IBOutlet weak var reactionLabel: UILabel!
     @IBOutlet weak var buttonEmojiDidTap: UIButton!
+    @IBOutlet weak var playIcon: UIImageView!
 
     weak var delegate: NotificationsTableViewCellDelegate?
     var index: Int = -1
@@ -79,6 +80,8 @@ class NotificationsTableViewCell: UITableViewCell {
         super.prepareForReuse()
         reactionLabel.text = nil
         reactionHeightConstraint.constant = 0
+        typeImageV.image = nil
+        playIcon.isHidden = true
     }
 
     @IBAction func buttonArrowDidTap(_ sender: UIButton) {
