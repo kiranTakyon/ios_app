@@ -18,7 +18,7 @@ protocol NotificationsViewDelegate: AnyObject {
 }
 
 class NotificationsView: UIView {
-    
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageViewStogoLogo: UIImageView!
 
@@ -32,9 +32,10 @@ class NotificationsView: UIView {
     private var busImages:[String] = ["bus1","bus2","bus3"]
     private var htmlTypeImages:[String] = ["digitalresourse1","digitalresourse2","digitalresourse3"]
     private var galleryImages:[String] = ["gallery1","gallery2","gallery3"]
-    
+    private var currentlyPlayingCell: NotificationsTableViewCell?
+
     weak var delegate: NotificationsViewDelegate?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
@@ -42,9 +43,9 @@ class NotificationsView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         refresher.enableLoadMore = true
-        
+
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -61,11 +62,11 @@ class NotificationsView: UIView {
 //MARK: - UITableViewDelegate,UITableViewDataSource -
 
 extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notificationList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as? NotificationsTableViewCell else { return UITableViewCell() }
         cell.delegate = self
@@ -80,7 +81,9 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
 
         let notification = notificationList[indexPath.row]
 
-        cell.playIcon.isHidden = !isVideoURL(notification.url ?? "")
+        cell.playIcon.isHidden = true
+        cell.videoPlayerView.isHidden = !isVideoURL(notification.url ?? "")
+        cell.typeImageV.isHidden = isVideoURL(notification.url ?? "")
 
         if let titel = notification.title{
             cell.alertTitle.numberOfLines = 1
@@ -168,7 +171,7 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
                 cell.labelTitle.text = "Gallery"
 
             default:
-                if let url = notification.url, !url.isEmpty,!isVideoURL(url)  {
+                if let url = notification.url, !url.isEmpty,!isVideoURL(url) {
                     cell.typeImageV.loadImageWithUrl(url)
                 } else {
                     cell.typeImageV.image = UIImage(named: "NoticeImage")
@@ -187,6 +190,13 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
                 cell.reactionHeightConstraint.constant = 0
             }
         }
+
+        if let url = notification.url, isVideoURL(url) {
+            cell.setUpVideoView(url: url)
+            if indexPath.row == 0 {
+                cell.playVideo()
+            }
+        }
         print("type value is :- ",notification.type)
 
         cell.selectionStyle = .none
@@ -197,10 +207,36 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.buttonEmojiDidTap.setTitle("😀", for: .normal)
         }
-        
+
         return cell
     }
-    
+
+}
+
+
+extension NotificationsView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        playVisibleVideo()
+    }
+
+    func playVisibleVideo() {
+        let visibleCells = tableView.visibleCells.compactMap { $0 as? NotificationsTableViewCell }
+
+        for cell in visibleCells {
+            if isCellFullyVisible(cell) {
+                cell.playVideo()
+            } else {
+                cell.pauseVideo()
+            }
+        }
+    }
+
+    func isCellFullyVisible(_ cell: UITableViewCell) -> Bool {
+        guard let indexPath = tableView.indexPath(for: cell) else { return false }
+        let cellRect = tableView.rectForRow(at: indexPath)
+        let completelyVisible = tableView.bounds.contains(cellRect)
+        return completelyVisible
+    }
 }
 
 
@@ -210,8 +246,8 @@ extension NotificationsView: NotificationsTableViewCellDelegate {
 
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji emoji: String, type: String, index: Int) {
         apiPostSocialMedia(action: "like", type: type, emoji: emoji,index: index)
-         }
-    
+    }
+
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int) {
         delegate?.notificationsView(self, didTapOnNotification: notificationList [index])
     }
@@ -230,12 +266,12 @@ extension NotificationsView: NotificationsTableViewCellDelegate {
 // MARK: - MoreLoadable, Refreshable -
 
 extension NotificationsView: Refreshable, MoreLoadable {
-    
+
     func refreshTriggered(type: IQPullToRefresh.RefreshType, loadingBegin: @escaping (Bool) -> Void, loadingFinished: @escaping (Bool) -> Void) {
-        
+
         print("refresh!!!!!")
     }
-    
+
     func loadMoreTriggered(type: IQPullToRefresh.LoadMoreType, loadingBegin: @escaping (Bool) -> Void, loadingFinished: @escaping (Bool) -> Void) {
         pageIndex += 1
         loadingBegin(true)
@@ -253,7 +289,7 @@ extension NotificationsView {
         let userId = UserDefaultsManager.manager.getUserId()
         dictionary[UserIdKey().id] =  userId
         dictionary["paginationNumber"] =  pageNumber
-        
+
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             print(result)
             DispatchQueue.main.async { [weak self] in

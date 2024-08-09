@@ -609,31 +609,27 @@ extension HomeVC: DashboardViewDelegate {
 
     func didTapOnNotification(notification: TNotification)  {
 
-        if let url = notification.url, isVideoURL(url) {
-            presentVideoViewController(url: url)
-        } else {
-            if let typeVal = alertType(rawValue: notification.type ?? ""){
-
-                switch typeVal {
-                case .gallery:
-                    presentGalleryPopUp(notification: notification)
-                    break
-                case .html:
-                    presentHtmlPopUp(notification: notification)
-                    break
-                case .communicate:
-                    presentCommunicatePopUp(notification: notification)
-                case .noticeboard:
-                    presentNoticeboardPopUp(notification: notification)
-                    break
-                case .weeklyPlan:
-                    presentWeeklyPopUp(notification: notification)
-                    break
-                case .bus:
-                    break
-                }
+        if let typeVal = alertType(rawValue: notification.type ?? ""){
+            switch typeVal {
+            case .gallery:
+                presentGalleryPopUp(notification: notification)
+                break
+            case .html:
+                presentHtmlPopUp(notification: notification)
+                break
+            case .communicate:
+                presentCommunicatePopUp(notification: notification)
+            case .noticeboard:
+                presentNoticeboardPopUp(notification: notification)
+                break
+            case .weeklyPlan:
+                presentWeeklyPopUp(notification: notification)
+                break
+            case .bus:
+                break
             }
         }
+
     }
 
     func presentCommunicatePopUp(notification: TNotification) {
