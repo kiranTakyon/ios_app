@@ -98,7 +98,7 @@ class NotificationsTableViewCell: UITableViewCell {
 
     @objc private func playerDidFinishPlaying() { 
         avPlayer?.seek(to: .zero)
-        avPlayer?.play()
+       // avPlayer?.play()
     }
 
     func setUpReaction(reactions: TReaction) {
