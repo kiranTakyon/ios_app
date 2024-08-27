@@ -3020,7 +3020,7 @@
 		CD110C88289C41700050EF80 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
 		CD110C89289C41700050EF80 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		CD110C8A289C41700050EF80 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
-		CD110C92289C41F30050EF80 /* T360.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6F685C246307C500D993EB /* T360.xcassets */; };
+		CD110C92289C41F30050EF80 /* STOGO.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6F685C246307C500D993EB /* STOGO.xcassets */; };
 		CD110C93289C42040050EF80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6F685A2463069A00D993EB /* GoogleService-Info.plist */; };
 		CD110D37289C4E4B0050EF80 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CD110D38289C4E4B0050EF80 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -5332,6 +5332,199 @@
 		CDD23676289AD40100A7121D /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CDD2367E289AD42200A7121D /* OrisonSchoolV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1582379DAE3005148EE /* OrisonSchoolV2.xcassets */; };
 		CDD2367F289AD4FF00A7121D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1562379DA4A005148EE /* GoogleService-Info.plist */; };
+		CDD5AD092C7D1B8300B07B38 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
+		CDD5AD0A2C7D1B8300B07B38 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
+		CDD5AD0B2C7D1B8300B07B38 /* WeeklyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */; };
+		CDD5AD0C2C7D1B8300B07B38 /* CustomTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A4C7E2C21BDF700894E91 /* CustomTopView.swift */; };
+		CDD5AD0D2C7D1B8300B07B38 /* TMyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E21F2E270300729AF8 /* TMyProfile.swift */; };
+		CDD5AD0E2C7D1B8300B07B38 /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		CDD5AD0F2C7D1B8300B07B38 /* TInboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B87561F2F87FD00B15818 /* TInboxMessage.swift */; };
+		CDD5AD102C7D1B8300B07B38 /* CalendarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45218A8320808FCF004CF24C /* CalendarSection.swift */; };
+		CDD5AD112C7D1B8300B07B38 /* CommunicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DE02B565B1D00EB1217 /* CommunicationTableViewCell.swift */; };
+		CDD5AD122C7D1B8300B07B38 /* DirectoryCreationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4C1F6AC6CF00599C36 /* DirectoryCreationOperation.swift */; };
+		CDD5AD132C7D1B8300B07B38 /* TNGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40751F533FCA000F62B8 /* TNGroupMember.swift */; };
+		CDD5AD142C7D1B8300B07B38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */; };
+		CDD5AD152C7D1B8300B07B38 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7231F1FC9AF00C0D63F /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		CDD5AD162C7D1B8300B07B38 /* VerificationEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */; };
+		CDD5AD172C7D1B8300B07B38 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436F429204DA0D40076A3D4 /* SweetAlert.swift */; };
+		CDD5AD182C7D1B8300B07B38 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E01F2E1A6900729AF8 /* ModelManager.swift */; };
+		CDD5AD192C7D1B8300B07B38 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
+		CDD5AD1A2C7D1B8300B07B38 /* FileUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4E1F6AC6CF00599C36 /* FileUploadOperation.swift */; };
+		CDD5AD1B2C7D1B8300B07B38 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7241F1FC9AF00C0D63F /* UITextField+fixCaretPosition.swift */; };
+		CDD5AD1C2C7D1B8300B07B38 /* WeeklyPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6E200C766A00288C83 /* WeeklyPlanCell.swift */; };
+		CDD5AD1D2C7D1B8300B07B38 /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EB209B0C7900EB0F1D /* KSTokenView.swift */; };
+		CDD5AD1E2C7D1B8300B07B38 /* TNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DE1F2E199700729AF8 /* TNotification.swift */; };
+		CDD5AD1F2C7D1B8300B07B38 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		CDD5AD202C7D1B8300B07B38 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0D3B2B565A5B00EB1217 /* DashboardView.swift */; };
+		CDD5AD212C7D1B8300B07B38 /* UploadFTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32A45D1F6AC446008A4BC3 /* UploadFTP.swift */; };
+		CDD5AD222C7D1B8300B07B38 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F6092044534700515F74 /* WebViewViewController.swift */; };
+		CDD5AD232C7D1B8300B07B38 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DDC2B565B1900EB1217 /* NotificationsTableViewCell.swift */; };
+		CDD5AD242C7D1B8300B07B38 /* NoticeboardCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E838A42C242980001E25F5 /* NoticeboardCategoryTableViewCell.swift */; };
+		CDD5AD252C7D1B8300B07B38 /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
+		CDD5AD262C7D1B8300B07B38 /* ProgressViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97520F759730071DF9E /* ProgressViewBar.swift */; };
+		CDD5AD272C7D1B8300B07B38 /* WeeklyPlanTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6A200C763F00288C83 /* WeeklyPlanTable.swift */; };
+		CDD5AD282C7D1B8300B07B38 /* GalleryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6361F5094A3006F4D34 /* GalleryListController.swift */; };
+		CDD5AD292C7D1B8300B07B38 /* TNPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890CE02007C8EC00991BF7 /* TNPayment.swift */; };
+		CDD5AD2A2C7D1B8300B07B38 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		CDD5AD2B2C7D1B8300B07B38 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB3F1F23C7730089E203 /* APIHelper.swift */; };
+		CDD5AD2C2C7D1B8300B07B38 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB89A2C3027E4004FB8B6 /* CalendarTableViewCell.swift */; };
+		CDD5AD2D2C7D1B8300B07B38 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
+		CDD5AD2E2C7D1B8300B07B38 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DDF2B565B1C00EB1217 /* ModuleTableViewCell.swift */; };
+		CDD5AD2F2C7D1B8300B07B38 /* TNNoticeBoardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34402030A0C600A35086 /* TNNoticeBoardDetail.swift */; };
+		CDD5AD302C7D1B8300B07B38 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
+		CDD5AD312C7D1B8300B07B38 /* FTPUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F66A3213F946400411212 /* FTPUploadHelper.swift */; };
+		CDD5AD322C7D1B8300B07B38 /* MPGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB148F31F4F1F9800444765 /* MPGTextField.m */; };
+		CDD5AD332C7D1B8300B07B38 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
+		CDD5AD342C7D1B8300B07B38 /* TModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB10BC2B565D6700EB1217 /* TModule.swift */; };
+		CDD5AD352C7D1B8300B07B38 /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E8209B0C7600EB0F1D /* KSToken.swift */; };
+		CDD5AD362C7D1B8300B07B38 /* PaymentDetailsController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C01312C60B461001C47A2 /* PaymentDetailsController+Extension.swift */; };
+		CDD5AD372C7D1B8300B07B38 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7321F1FC9AF00C0D63F /* HomeVC.swift */; };
+		CDD5AD382C7D1B8300B07B38 /* TNAwarnessArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */; };
+		CDD5AD392C7D1B8300B07B38 /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA641F24E8A700BA82BE /* PagerController.swift */; };
+		CDD5AD3A2C7D1B8300B07B38 /* NotificationVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C01782C6111C6001C47A2 /* NotificationVideoViewController.swift */; };
+		CDD5AD3B2C7D1B8300B07B38 /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		CDD5AD3C2C7D1B8300B07B38 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7121F1FC9AF00C0D63F /* APIUrls.swift */; };
+		CDD5AD3D2C7D1B8300B07B38 /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40711F52F607000F62B8 /* CustomCalendarCell.swift */; };
+		CDD5AD3E2C7D1B8300B07B38 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5942B50207900F4A148 /* VideoPlayerView.swift */; };
+		CDD5AD3F2C7D1B8300B07B38 /* TNPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D45BC1F545D930042727A /* TNPerson.swift */; };
+		CDD5AD402C7D1B8300B07B38 /* NoticeBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DD82B565B1300EB1217 /* NoticeBoardTableViewCell.swift */; };
+		CDD5AD412C7D1B8300B07B38 /* TNGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6381F5098D4006F4D34 /* TNGallery.swift */; };
+		CDD5AD422C7D1B8300B07B38 /* PaymentTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */; };
+		CDD5AD432C7D1B8300B07B38 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C501F6AC6CF00599C36 /* Operation.swift */; };
+		CDD5AD442C7D1B8300B07B38 /* NoticeBoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DDD2B565B1A00EB1217 /* NoticeBoardCollectionViewCell.swift */; };
+		CDD5AD452C7D1B8300B07B38 /* StreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C541F6AC6CF00599C36 /* StreamOperation.swift */; };
+		CDD5AD462C7D1B8300B07B38 /* TNCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343A203077B500A35086 /* TNCalendarEvent.swift */; };
+		CDD5AD472C7D1B8300B07B38 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72E1F1FC9AF00C0D63F /* TPKeyboardAvoidingTableView.m */; };
+		CDD5AD482C7D1B8300B07B38 /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71D1F1FC9AF00C0D63F /* DOAlertController.swift */; };
+		CDD5AD492C7D1B8300B07B38 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72C1F1FC9AF00C0D63F /* TPKeyboardAvoidingScrollView.m */; };
+		CDD5AD4A2C7D1B8300B07B38 /* DigitalResourceCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EE3342A4C16F800888512 /* DigitalResourceCategoryCell.swift */; };
+		CDD5AD4B2C7D1B8300B07B38 /* CommunicateLandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */; };
+		CDD5AD4C2C7D1B8300B07B38 /* TSibling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E41F2E4DD700729AF8 /* TSibling.swift */; };
+		CDD5AD4D2C7D1B8300B07B38 /* TReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA736D352C58E2F000952C8B /* TReaction.swift */; };
+		CDD5AD4E2C7D1B8300B07B38 /* NoticeboardCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */; };
+		CDD5AD4F2C7D1B8300B07B38 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71F1F1FC9AF00C0D63F /* Picker.swift */; };
+		CDD5AD502C7D1B8300B07B38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE11F2788AA00742127 /* Protocols.swift */; };
+		CDD5AD512C7D1B8300B07B38 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71EF972C57997100E20D95 /* ReactionView.swift */; };
+		CDD5AD522C7D1B8300B07B38 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7198D72BA457CB004817EC /* BirthdayViewController.swift */; };
+		CDD5AD532C7D1B8300B07B38 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7221F1FC9AF00C0D63F /* SkyFloatingLabelTextField.swift */; };
+		CDD5AD542C7D1B8300B07B38 /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */; };
+		CDD5AD552C7D1B8300B07B38 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
+		CDD5AD562C7D1B8300B07B38 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D406F1F52F607000F62B8 /* CalendarController.swift */; };
+		CDD5AD572C7D1B8300B07B38 /* WriteStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C551F6AC6CF00599C36 /* WriteStreamOperation.swift */; };
+		CDD5AD582C7D1B8300B07B38 /* RegisterPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */; };
+		CDD5AD592C7D1B8300B07B38 /* jsonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7131F1FC9AF00C0D63F /* jsonKeys.swift */; };
+		CDD5AD5A2C7D1B8300B07B38 /* FileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4D1F6AC6CF00599C36 /* FileDownloadOperation.swift */; };
+		CDD5AD5B2C7D1B8300B07B38 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB481F23C7F10089E203 /* Reachability.swift */; };
+		CDD5AD5C2C7D1B8300B07B38 /* DBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DB1F2E14EF00729AF8 /* DBKeys.swift */; };
+		CDD5AD5D2C7D1B8300B07B38 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB401F23C7730089E203 /* Constants.swift */; };
+		CDD5AD5E2C7D1B8300B07B38 /* TNAwarenessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A8D2045960D006A0848 /* TNAwarenessDetail.swift */; };
+		CDD5AD5F2C7D1B8300B07B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45559BF41EBADB3B00F4E6FB /* AppDelegate.swift */; };
+		CDD5AD602C7D1B8300B07B38 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DE22B565B1F00EB1217 /* ModuleCollectionViewCell.swift */; };
+		CDD5AD612C7D1B8300B07B38 /* ReadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C639262053D2970099B85E /* ReadSelectViewController.swift */; };
+		CDD5AD622C7D1B8300B07B38 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */; };
+		CDD5AD632C7D1B8300B07B38 /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		CDD5AD642C7D1B8300B07B38 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97F20F76B220071DF9E /* LinearProgressView.swift */; };
+		CDD5AD652C7D1B8300B07B38 /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE31F278C3700742127 /* ComposeController.swift */; };
+		CDD5AD662C7D1B8300B07B38 /* WPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187912CC2C29612500F80762 /* WPTableViewCell.swift */; };
+		CDD5AD672C7D1B8300B07B38 /* WeeklyPlanFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */; };
+		CDD5AD682C7D1B8300B07B38 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */; };
+		CDD5AD692C7D1B8300B07B38 /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		CDD5AD6A2C7D1B8300B07B38 /* NoticeBoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */; };
+		CDD5AD6B2C7D1B8300B07B38 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7301F1FC9AF00C0D63F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		CDD5AD6C2C7D1B8300B07B38 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
+		CDD5AD6D2C7D1B8300B07B38 /* Reaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71EF942C57996E00E20D95 /* Reaction.swift */; };
+		CDD5AD6E2C7D1B8300B07B38 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */; };
+		CDD5AD6F2C7D1B8300B07B38 /* WeeklyPlanCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E839422C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.swift */; };
+		CDD5AD702C7D1B8300B07B38 /* DigitalResourceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */; };
+		CDD5AD712C7D1B8300B07B38 /* NotificationMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DE12B565B1F00EB1217 /* NotificationMailTableViewCell.swift */; };
+		CDD5AD722C7D1B8300B07B38 /* TNMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4E68D31F6C347E00F95547 /* TNMenuItem.swift */; };
+		CDD5AD732C7D1B8300B07B38 /* CommunicateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DE82B565B2600EB1217 /* CommunicateCell.swift */; };
+		CDD5AD742C7D1B8300B07B38 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
+		CDD5AD752C7D1B8300B07B38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB4A1F23CB450089E203 /* Extensions.swift */; };
+		CDD5AD762C7D1B8300B07B38 /* TNDigitalResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7851F55ABA400A366AA /* TNDigitalResource.swift */; };
+		CDD5AD772C7D1B8300B07B38 /* CommunicateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */; };
+		CDD5AD782C7D1B8300B07B38 /* NoticeBoardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E838F42C2429D2001E25F5 /* NoticeBoardListTableViewCell.swift */; };
+		CDD5AD792C7D1B8300B07B38 /* Date+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0D112B5654FF00EB1217 /* Date+Helper.swift */; };
+		CDD5AD7A2C7D1B8300B07B38 /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E9209B0C7700EB0F1D /* KSTokenField.swift */; };
+		CDD5AD7B2C7D1B8300B07B38 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB421F23C7730089E203 /* UserDefaultManager.swift */; };
+		CDD5AD7C2C7D1B8300B07B38 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DDA2B565B1700EB1217 /* NotificationTableViewCell.swift */; };
+		CDD5AD7D2C7D1B8300B07B38 /* WeeklyPlanController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */; };
+		CDD5AD7E2C7D1B8300B07B38 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C531F6AC6CF00599C36 /* Session.swift */; };
+		CDD5AD7F2C7D1B8300B07B38 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
+		CDD5AD802C7D1B8300B07B38 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72A1F1FC9AF00C0D63F /* TPKeyboardAvoidingCollectionView.m */; };
+		CDD5AD812C7D1B8300B07B38 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */; };
+		CDD5AD822C7D1B8300B07B38 /* SlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA591F24637D00BA82BE /* SlideController.swift */; };
+		CDD5AD832C7D1B8300B07B38 /* AwarenessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8C083203B411A00C921DB /* AwarenessViewController.swift */; };
+		CDD5AD842C7D1B8300B07B38 /* FeeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183437132C2BEA48000E5CCC /* FeeDetailTableViewCell.swift */; };
+		CDD5AD852C7D1B8300B07B38 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7271F1FC9AF00C0D63F /* SWRevealViewController.m */; };
+		CDD5AD862C7D1B8300B07B38 /* AwarenessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */; };
+		CDD5AD872C7D1B8300B07B38 /* DigitalResourceSecondListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */; };
+		CDD5AD882C7D1B8300B07B38 /* NotificationDetailListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */; };
+		CDD5AD892C7D1B8300B07B38 /* DigitalResourcesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */; };
+		CDD5AD8A2C7D1B8300B07B38 /* NoticeboardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */; };
+		CDD5AD8B2C7D1B8300B07B38 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0D3E2B565A5B00EB1217 /* NotificationsView.swift */; };
+		CDD5AD8C2C7D1B8300B07B38 /* VideoDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FBEA8220810D3D0035AECD /* VideoDownload.swift */; };
+		CDD5AD8D2C7D1B8300B07B38 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40701F52F607000F62B8 /* CircleView.swift */; };
+		CDD5AD8E2C7D1B8300B07B38 /* ReadStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C511F6AC6CF00599C36 /* ReadStreamOperation.swift */; };
+		CDD5AD8F2C7D1B8300B07B38 /* DownLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */; };
+		CDD5AD902C7D1B8300B07B38 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A4C552C219CD300894E91 /* CacheManager.swift */; };
+		CDD5AD912C7D1B8300B07B38 /* TNNoticeboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78D1F55E5A600A366AA /* TNNoticeboard.swift */; };
+		CDD5AD922C7D1B8300B07B38 /* JWTHepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC4A77B2C5CC6FC006A64DC /* JWTHepler.swift */; };
+		CDD5AD932C7D1B8300B07B38 /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EA209B0C7800EB0F1D /* KSUtils.swift */; };
+		CDD5AD942C7D1B8300B07B38 /* GalleryCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */; };
+		CDD5AD952C7D1B8300B07B38 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5007E71F2638A10013AA07 /* MapController.swift */; };
+		CDD5AD962C7D1B8300B07B38 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB0DE52B565B2200EB1217 /* ProfileTableViewCell.swift */; };
+		CDD5AD972C7D1B8300B07B38 /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */; };
+		CDD5AD982C7D1B8300B07B38 /* TNGalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6341F508561006F4D34 /* TNGalleryCategory.swift */; };
+		CDD5AD992C7D1B8300B07B38 /* GradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41937672050510A002931EA /* GradeViewController.swift */; };
+		CDD5AD9A2C7D1B8300B07B38 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CB10E32B56651300EB1217 /* UIColor+Extension.swift */; };
+		CDD5AD9B2C7D1B8300B07B38 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB411F23C7730089E203 /* Global.swift */; };
+		CDD5AD9C2C7D1B8300B07B38 /* TNWeeklyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E72200C865500288C83 /* TNWeeklyPlan.swift */; };
+		CDD5AD9D2C7D1B8300B07B38 /* PaymentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE169EA0200687A00019685A /* PaymentDetailsController.swift */; };
+		CDD5AD9E2C7D1B8300B07B38 /* TNGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB148EF1F4F1D5E00444765 /* TNGroup.swift */; };
+		CDD5ADA02C7D1B8300B07B38 /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE630DB81F514D9200CE1022 /* MBCalendarKit.framework */; };
+		CDD5ADA12C7D1B8300B07B38 /* Toast_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7B4CC31F378AA10009D393 /* Toast_Swift.framework */; };
+		CDD5ADA22C7D1B8300B07B38 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
+		CDD5ADA32C7D1B8300B07B38 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
+		CDD5ADA42C7D1B8300B07B38 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
+		CDD5ADA52C7D1B8300B07B38 /* Pods_T360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D02FCBF55B1EA3AC8CEC50D /* Pods_T360.framework */; };
+		CDD5ADA72C7D1B8300B07B38 /* NotificationMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DD92B565B1600EB1217 /* NotificationMailTableViewCell.xib */; };
+		CDD5ADA82C7D1B8300B07B38 /* NoticeboardCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E838A52C242980001E25F5 /* NoticeboardCategoryTableViewCell.xib */; };
+		CDD5ADA92C7D1B8300B07B38 /* ModuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DE92B565B2700EB1217 /* ModuleTableViewCell.xib */; };
+		CDD5ADAB2C7D1B8300B07B38 /* WeeklyPlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */; };
+		CDD5ADAC2C7D1B8300B07B38 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
+		CDD5ADAD2C7D1B8300B07B38 /* STOGO.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6F685C246307C500D993EB /* STOGO.xcassets */; };
+		CDD5ADAE2C7D1B8300B07B38 /* NotificationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0D3C2B565A5B00EB1217 /* NotificationsView.xib */; };
+		CDD5ADAF2C7D1B8300B07B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
+		CDD5ADB02C7D1B8300B07B38 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
+		CDD5ADB12C7D1B8300B07B38 /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */; };
+		CDD5ADB22C7D1B8300B07B38 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C4A1F6AC6CF00599C36 /* .swiftlint.yml */; };
+		CDD5ADB32C7D1B8300B07B38 /* NoticeBoardListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E838F52C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib */; };
+		CDD5ADB42C7D1B8300B07B38 /* TestInapp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9D2101ECF6001B571E /* TestInapp.jpg */; };
+		CDD5ADB52C7D1B8300B07B38 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DDB2B565B1800EB1217 /* ProfileTableViewCell.xib */; };
+		CDD5ADB62C7D1B8300B07B38 /* WPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187912CD2C29612500F80762 /* WPTableViewCell.xib */; };
+		CDD5ADB72C7D1B8300B07B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
+		CDD5ADB82C7D1B8300B07B38 /* Picker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFBA7201F1FC9AF00C0D63F /* Picker.xib */; };
+		CDD5ADB92C7D1B8300B07B38 /* NotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DDE2B565B1B00EB1217 /* NotificationsTableViewCell.xib */; };
+		CDD5ADBA2C7D1B8300B07B38 /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BAB89B2C3027E4004FB8B6 /* CalendarTableViewCell.xib */; };
+		CDD5ADBB2C7D1B8300B07B38 /* ProgressViewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1376C97620F759730071DF9E /* ProgressViewBar.xib */; };
+		CDD5ADBC2C7D1B8300B07B38 /* ModuleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DE62B565B2300EB1217 /* ModuleCollectionViewCell.xib */; };
+		CDD5ADBD2C7D1B8300B07B38 /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		CDD5ADBE2C7D1B8300B07B38 /* TestPenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9B2101EB6B001B571E /* TestPenguin.png */; };
+		CDD5ADBF2C7D1B8300B07B38 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DE72B565B2400EB1217 /* NotificationTableViewCell.xib */; };
+		CDD5ADC02C7D1B8300B07B38 /* NoticeBoardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DD72B565B1200EB1217 /* NoticeBoardCollectionViewCell.xib */; };
+		CDD5ADC12C7D1B8300B07B38 /* SampleText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138C2A5620FDE98D00F8BE17 /* SampleText.txt */; };
+		CDD5ADC22C7D1B8300B07B38 /* NoticeBoardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0DE32B565B2000EB1217 /* NoticeBoardTableViewCell.xib */; };
+		CDD5ADC32C7D1B8300B07B38 /* CommunicationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BAB8EB2C327D54004FB8B6 /* CommunicationTableViewCell.xib */; };
+		CDD5ADC42C7D1B8300B07B38 /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
+		CDD5ADC52C7D1B8300B07B38 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CB0D3D2B565A5B00EB1217 /* DashboardView.xib */; };
+		CDD5ADC62C7D1B8300B07B38 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
+		CDD5ADC72C7D1B8300B07B38 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
+		CDD5ADC82C7D1B8300B07B38 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
+		CDD5ADC92C7D1B8300B07B38 /* PaymentTotalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183436C62C2B2084000E5CCC /* PaymentTotalTableViewCell.xib */; };
+		CDD5ADCA2C7D1B8300B07B38 /* FeeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183437142C2BEA48000E5CCC /* FeeDetailTableViewCell.xib */; };
+		CDD5ADCB2C7D1B8300B07B38 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8C01562C611172001C47A2 /* Video.storyboard */; };
+		CDD5ADD92C7D279C00B07B38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDD5ADD82C7D279B00B07B38 /* GoogleService-Info.plist */; };
 		CDD7AEF22894902F0006478E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
 		CDE5DBCC282551D400A979FA /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CDE5DBCD282551D400A979FA /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -5831,6 +6024,7 @@
 		CE15661721A96DB400DC758E /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
 		CE15661821A96DB400DC758E /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		CE15661A21A96DB400DC758E /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
+		CE60AD932EEF6D8B54ADE714 /* Pods_T360.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D02FCBF55B1EA3AC8CEC50D /* Pods_T360.framework */; };
 		CE6818F5241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
 		CE6818F9241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
 		CE6818FD241CD4A200997AF6 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
@@ -6367,7 +6561,6 @@
 		EAC4A79F2C5CC6FC006A64DC /* JWTHepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC4A77B2C5CC6FC006A64DC /* JWTHepler.swift */; };
 		EAC4A7A02C5CC6FC006A64DC /* JWTHepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC4A77B2C5CC6FC006A64DC /* JWTHepler.swift */; };
 		EAC4A7A12C5CC6FC006A64DC /* JWTHepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC4A77B2C5CC6FC006A64DC /* JWTHepler.swift */; };
-		FB71B1CD5482EC4D4F38DF34 /* Pods_MSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B865E007E13391F4E07DFD42 /* Pods_MSB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -6486,6 +6679,7 @@
 		18E838F52C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeBoardListTableViewCell.xib; sourceTree = "<group>"; };
 		18E839422C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyPlanCollectionViewCell.xib; sourceTree = "<group>"; };
+		1E5587AE88B0C78D05B88EDF /* Pods-T360.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T360.release.xcconfig"; path = "Target Support Files/Pods-T360/Pods-T360.release.xcconfig"; sourceTree = "<group>"; };
 		247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.debug.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.debug.xcconfig"; sourceTree = "<group>"; };
 		35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrisonSchool_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4405BCEF239E15E1007992F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -6534,9 +6728,10 @@
 		455DEE911EBC33DD002D6CEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Ambassador_Education-dvqygmjdncondiahrfxpsyhrkuaz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/NVActivityIndicatorView/NVActivityIndicatorView.framework"; sourceTree = "<group>"; };
 		45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/DGActivityIndicatorView/DGActivityIndicatorView.framework"; sourceTree = "<group>"; };
-		4C4BCE9F7D5DAB77EB296D30 /* Pods-MSB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSB.release.xcconfig"; path = "Target Support Files/Pods-MSB/Pods-MSB.release.xcconfig"; sourceTree = "<group>"; };
 		772EB36621EF21C000620F0E /* Quality Education-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quality Education-Info.plist"; sourceTree = "<group>"; };
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
+		7AC1D4872B0A50C9748DF7F3 /* Pods-T360.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-T360.debug.xcconfig"; path = "Target Support Files/Pods-T360/Pods-T360.debug.xcconfig"; sourceTree = "<group>"; };
+		8D02FCBF55B1EA3AC8CEC50D /* Pods_T360.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_T360.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
 		9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helper.swift"; sourceTree = "<group>"; };
 		9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
@@ -6684,8 +6879,6 @@
 		B4F8F6092044534700515F74 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNAwarnessArticleDetail.swift; sourceTree = "<group>"; };
 		B4FBEA8220810D3D0035AECD /* VideoDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownload.swift; sourceTree = "<group>"; };
-		B865E007E13391F4E07DFD42 /* Pods_MSB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MSB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF9F79A75D8D89E4FE8254C5 /* Pods-MSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MSB.debug.xcconfig"; path = "Target Support Files/Pods-MSB/Pods-MSB.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = WoodlemAssets.xcassets; path = "../../../Ambassador Education Target1/Ambassador Education/Assets/WoodlemAssets.xcassets"; sourceTree = "<group>"; };
@@ -6730,6 +6923,10 @@
 		CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDAttechmentCell.swift; sourceTree = "<group>"; };
 		CDD235DE289ACFC800A7121D /* Pods_PEPS_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PEPS_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD2367C289AD40100A7121D /* OrisonSchool V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrisonSchool V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD5ADD12C7D1B8300B07B38 /* STOGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STOGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD5ADD42C7D1B8400B07B38 /* STOGO-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "STOGO-Info.plist"; path = "/Users/takyon/New_UI/Ambassador Education/STOGO-Info.plist"; sourceTree = "<absolute>"; };
+		CDD5ADD52C7D1CF900B07B38 /* T360.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = T360.xcassets; sourceTree = "<group>"; };
+		CDD5ADD82C7D279B00B07B38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDE5DC61282551D400A979FA /* Alameer V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alameer V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE5DC65282558EF00A979FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDE82449275FC03D00BD4211 /* AddCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentVC.swift; sourceTree = "<group>"; };
@@ -6748,7 +6945,7 @@
 		CE294CEE21E8970700331820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE6818F2241CD4A200997AF6 /* TNSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TNSubject.swift; sourceTree = "<group>"; };
 		CE6F685A2463069A00D993EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CE6F685C246307C500D993EB /* T360.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = T360.xcassets; sourceTree = "<group>"; };
+		CE6F685C246307C500D993EB /* STOGO.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = STOGO.xcassets; sourceTree = "<group>"; };
 		CE7259C521ABF13D00B760AC /* QualityAssests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QualityAssests.xcassets; sourceTree = "<group>"; };
 		CE77CD2121F5FE41009A929A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE88681721FACE8C00FF0DE0 /* ABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6902,6 +7099,7 @@
 				CD110C77289C41700050EF80 /* MapKit.framework in Frameworks */,
 				CD110C78289C41700050EF80 /* CloudKit.framework in Frameworks */,
 				CD110C79289C41700050EF80 /* DGActivityIndicatorView.framework in Frameworks */,
+				CE60AD932EEF6D8B54ADE714 /* Pods_T360.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7084,7 +7282,6 @@
 				CD8A99702ACCA02400BAF7CD /* MapKit.framework in Frameworks */,
 				CD8A99712ACCA02400BAF7CD /* CloudKit.framework in Frameworks */,
 				CD8A99722ACCA02400BAF7CD /* DGActivityIndicatorView.framework in Frameworks */,
-				FB71B1CD5482EC4D4F38DF34 /* Pods_MSB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7109,6 +7306,19 @@
 				CDD23663289AD40100A7121D /* MapKit.framework in Frameworks */,
 				CDD23664289AD40100A7121D /* CloudKit.framework in Frameworks */,
 				CDD23665289AD40100A7121D /* DGActivityIndicatorView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD5AD9F2C7D1B8300B07B38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD5ADA02C7D1B8300B07B38 /* MBCalendarKit.framework in Frameworks */,
+				CDD5ADA12C7D1B8300B07B38 /* Toast_Swift.framework in Frameworks */,
+				CDD5ADA22C7D1B8300B07B38 /* MapKit.framework in Frameworks */,
+				CDD5ADA32C7D1B8300B07B38 /* CloudKit.framework in Frameworks */,
+				CDD5ADA42C7D1B8300B07B38 /* DGActivityIndicatorView.framework in Frameworks */,
+				CDD5ADA52C7D1B8300B07B38 /* Pods_T360.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7252,6 +7462,7 @@
 		13C7D1DD21410DC80053D5DA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CDD5ADD52C7D1CF900B07B38 /* T360.xcassets */,
 				CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */,
 				CD9094092A4E3B8A008F39D0 /* Salmiya.xcassets */,
 				CD9093582A4E3663008F39D0 /* VIS.xcassets */,
@@ -7261,7 +7472,7 @@
 				CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */,
 				44A75D9D257BEBA800AB6299 /* Alansar.xcassets */,
 				4491440C252E173000EAF467 /* PEPSV2Assets.xcassets */,
-				CE6F685C246307C500D993EB /* T360.xcassets */,
+				CE6F685C246307C500D993EB /* STOGO.xcassets */,
 				CE0A60282437757E00568C23 /* AJM.xcassets */,
 				449923A323ABC15A00D54C44 /* Mawahib.xcassets */,
 				44FC017623AA670700FDD48E /* OurOwn.xcassets */,
@@ -7297,6 +7508,7 @@
 		13CD021721467749008F307A /* GooglePlists */ = {
 			isa = PBXGroup;
 			children = (
+				CDD5ADD72C7D272100B07B38 /* GooglePlistSTOGO */,
 				CD0ADAEE2B3092C5001F1858 /* GooglePlistWPS */,
 				CD9094062A4E390F008F39D0 /* GooglePlistVIS */,
 				CD7601B4295B670400812F7B /* GooglePlistPEA */,
@@ -7653,6 +7865,7 @@
 				04FDB98E2BA452F400723566 /* HBT-Info.plist */,
 				04FDB9892BA452D000723566 /* Woodlem-Info.plist */,
 				6745CAFF68722B930D28F3A7 /* Pods */,
+				CDD5ADD42C7D1B8400B07B38 /* STOGO-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -7692,6 +7905,7 @@
 				CD7343522AF0136600693B8E /* FutureLeaders.app */,
 				CD1AE5CD2B0438780000F294 /* Habitat.app */,
 				CD0E12232B170A9600EE599B /* Woodlem.app */,
+				CDD5ADD12C7D1B8300B07B38 /* STOGO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -7726,8 +7940,8 @@
 			children = (
 				247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */,
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
-				BF9F79A75D8D89E4FE8254C5 /* Pods-MSB.debug.xcconfig */,
-				4C4BCE9F7D5DAB77EB296D30 /* Pods-MSB.release.xcconfig */,
+				7AC1D4872B0A50C9748DF7F3 /* Pods-T360.debug.xcconfig */,
+				1E5587AE88B0C78D05B88EDF /* Pods-T360.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -8126,6 +8340,14 @@
 			path = "UIViewController-Popup";
 			sourceTree = "<group>";
 		};
+		CDD5ADD72C7D272100B07B38 /* GooglePlistSTOGO */ = {
+			isa = PBXGroup;
+			children = (
+				CDD5ADD82C7D279B00B07B38 /* GoogleService-Info.plist */,
+			);
+			path = GooglePlistSTOGO;
+			sourceTree = "<group>";
+		};
 		CDE84A2627BEB43600F16EBE /* GooglePlistAthena */ = {
 			isa = PBXGroup;
 			children = (
@@ -8270,7 +8492,7 @@
 				45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */,
 				455DEE911EBC33DD002D6CEF /* Alamofire.framework */,
 				35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */,
-				B865E007E13391F4E07DFD42 /* Pods_MSB.framework */,
+				8D02FCBF55B1EA3AC8CEC50D /* Pods_T360.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -8444,10 +8666,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD110C8D289C41700050EF80 /* Build configuration list for PBXNativeTarget "T360" */;
 			buildPhases = (
+				376BCDB971CE4A954556C0AC /* [CP] Check Pods Manifest.lock */,
 				CD110BF8289C41700050EF80 /* Sources */,
 				CD110C74289C41700050EF80 /* Frameworks */,
 				CD110C7B289C41700050EF80 /* Resources */,
 				CD110C8B289C41700050EF80 /* ShellScript */,
+				85D7F76D34AE27316B6D7D48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -8714,12 +8938,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD8A99892ACCA02400BAF7CD /* Build configuration list for PBXNativeTarget "MSB" */;
 			buildPhases = (
-				D88CFB5436F69F0CA5F7381B /* [CP] Check Pods Manifest.lock */,
 				CD8A98E92ACCA02400BAF7CD /* Sources */,
 				CD8A996D2ACCA02400BAF7CD /* Frameworks */,
 				CD8A99752ACCA02400BAF7CD /* Resources */,
 				CD8A99872ACCA02400BAF7CD /* ShellScript */,
-				32534998AEC0ECDC37F524F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -8764,6 +8986,26 @@
 			name = "OrisonSchool V2";
 			productName = "Ambassador Education";
 			productReference = CDD2367C289AD40100A7121D /* OrisonSchool V2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDD5AD062C7D1B8300B07B38 /* STOGO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD5ADCE2C7D1B8300B07B38 /* Build configuration list for PBXNativeTarget "STOGO" */;
+			buildPhases = (
+				CDD5AD072C7D1B8300B07B38 /* [CP] Check Pods Manifest.lock */,
+				CDD5AD082C7D1B8300B07B38 /* Sources */,
+				CDD5AD9F2C7D1B8300B07B38 /* Frameworks */,
+				CDD5ADA62C7D1B8300B07B38 /* Resources */,
+				CDD5ADCC2C7D1B8300B07B38 /* ShellScript */,
+				CDD5ADCD2C7D1B8300B07B38 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STOGO;
+			productName = "Ambassador Education";
+			productReference = CDD5ADD12C7D1B8300B07B38 /* STOGO.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CDE5DBC8282551D400A979FA /* Alameer V2 */ = {
@@ -9002,6 +9244,10 @@
 						DevelopmentTeam = 5VXG48XRVV;
 						ProvisioningStyle = Manual;
 					};
+					CDD5AD062C7D1B8300B07B38 = {
+						DevelopmentTeam = R7KAQWL2B2;
+						ProvisioningStyle = Manual;
+					};
 					CDE5DBC8282551D400A979FA = {
 						DevelopmentTeam = 74HA8JMU6N;
 						ProvisioningStyle = Manual;
@@ -9081,6 +9327,7 @@
 				CD7342AD2AF0136600693B8E /* FutureLeaders */,
 				CD1AE5282B0438780000F294 /* Habitat */,
 				CD0E117E2B170A9600EE599B /* Woodlem */,
+				CDD5AD062C7D1B8300B07B38 /* STOGO */,
 			);
 		};
 /* End PBXProject section */
@@ -9511,7 +9758,7 @@
 				CD110C93289C42040050EF80 /* GoogleService-Info.plist in Resources */,
 				18E8397F2C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */,
 				988EE3812A4C16F800888512 /* DigitalResourceCategoryCell.xib in Resources */,
-				CD110C92289C41F30050EF80 /* T360.xcassets in Resources */,
+				CD110C92289C41F30050EF80 /* STOGO.xcassets in Resources */,
 				98CB0D7A2B565A5B00EB1217 /* NotificationsView.xib in Resources */,
 				CD110C7E289C41700050EF80 /* LaunchScreen.storyboard in Resources */,
 				CD110C7F289C41700050EF80 /* WeeklyPlanTable.xib in Resources */,
@@ -10293,6 +10540,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDD5ADA62C7D1B8300B07B38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD5ADA72C7D1B8300B07B38 /* NotificationMailTableViewCell.xib in Resources */,
+				CDD5ADA82C7D1B8300B07B38 /* NoticeboardCategoryTableViewCell.xib in Resources */,
+				CDD5ADA92C7D1B8300B07B38 /* ModuleTableViewCell.xib in Resources */,
+				CDD5ADAB2C7D1B8300B07B38 /* WeeklyPlanCollectionViewCell.xib in Resources */,
+				CDD5ADAC2C7D1B8300B07B38 /* DigitalResourceCategoryCell.xib in Resources */,
+				CDD5ADAD2C7D1B8300B07B38 /* STOGO.xcassets in Resources */,
+				CDD5ADAE2C7D1B8300B07B38 /* NotificationsView.xib in Resources */,
+				CDD5ADAF2C7D1B8300B07B38 /* LaunchScreen.storyboard in Resources */,
+				CDD5ADB02C7D1B8300B07B38 /* WeeklyPlanTable.xib in Resources */,
+				CDD5ADB12C7D1B8300B07B38 /* PaymentHistoryTableViewCell.xib in Resources */,
+				CDD5ADB22C7D1B8300B07B38 /* .swiftlint.yml in Resources */,
+				CDD5ADB32C7D1B8300B07B38 /* NoticeBoardListTableViewCell.xib in Resources */,
+				CDD5ADB42C7D1B8300B07B38 /* TestInapp.jpg in Resources */,
+				CDD5ADB52C7D1B8300B07B38 /* ProfileTableViewCell.xib in Resources */,
+				CDD5ADB62C7D1B8300B07B38 /* WPTableViewCell.xib in Resources */,
+				CDD5ADB72C7D1B8300B07B38 /* Main.storyboard in Resources */,
+				CDD5ADB82C7D1B8300B07B38 /* Picker.xib in Resources */,
+				CDD5ADB92C7D1B8300B07B38 /* NotificationsTableViewCell.xib in Resources */,
+				CDD5ADBA2C7D1B8300B07B38 /* CalendarTableViewCell.xib in Resources */,
+				CDD5ADBB2C7D1B8300B07B38 /* ProgressViewBar.xib in Resources */,
+				CDD5ADBC2C7D1B8300B07B38 /* ModuleCollectionViewCell.xib in Resources */,
+				CDD5ADBD2C7D1B8300B07B38 /* TopHeaderView.xib in Resources */,
+				CDD5ADBE2C7D1B8300B07B38 /* TestPenguin.png in Resources */,
+				CDD5ADBF2C7D1B8300B07B38 /* NotificationTableViewCell.xib in Resources */,
+				CDD5ADC02C7D1B8300B07B38 /* NoticeBoardCollectionViewCell.xib in Resources */,
+				CDD5ADD92C7D279C00B07B38 /* GoogleService-Info.plist in Resources */,
+				CDD5ADC12C7D1B8300B07B38 /* SampleText.txt in Resources */,
+				CDD5ADC22C7D1B8300B07B38 /* NoticeBoardTableViewCell.xib in Resources */,
+				CDD5ADC32C7D1B8300B07B38 /* CommunicationTableViewCell.xib in Resources */,
+				CDD5ADC42C7D1B8300B07B38 /* sampleImage.png in Resources */,
+				CDD5ADC52C7D1B8300B07B38 /* DashboardView.xib in Resources */,
+				CDD5ADC62C7D1B8300B07B38 /* Common.xcassets in Resources */,
+				CDD5ADC72C7D1B8300B07B38 /* WeeklyPlanCell.xib in Resources */,
+				CDD5ADC82C7D1B8300B07B38 /* CalendarSection.xib in Resources */,
+				CDD5ADC92C7D1B8300B07B38 /* PaymentTotalTableViewCell.xib in Resources */,
+				CDD5ADCA2C7D1B8300B07B38 /* FeeDetailTableViewCell.xib in Resources */,
+				CDD5ADCB2C7D1B8300B07B38 /* Video.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDE5DC4D282551D400A979FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -10612,13 +10903,74 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
-		32534998AEC0ECDC37F524F7 /* [CP] Embed Pods Frameworks */ = {
+		376BCDB971CE4A954556C0AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-T360-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		446D52672539C33100D1026C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MSB/Pods-MSB-frameworks.sh",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		44AD1BDD25388E1000368235 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		44DC612925798523002E3917 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		85D7F76D34AE27316B6D7D48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-T360/Pods-T360-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
 				"${BUILT_PRODUCTS_DIR}/BlueCryptor/Cryptor.framework",
@@ -10713,47 +11065,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MSB/Pods-MSB-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-T360/Pods-T360-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		446D52672539C33100D1026C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		44AD1BDD25388E1000368235 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		44DC612925798523002E3917 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
 		B41C1B5621418FD600A9907B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -11015,6 +11328,145 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
+		CDD5AD072C7D1B8300B07B38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-T360-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDD5ADCC2C7D1B8300B07B38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
+		};
+		CDD5ADCD2C7D1B8300B07B38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-T360/Pods-T360-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/BlueCryptor/Cryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/BlueECC/CryptorECC.framework",
+				"${BUILT_PRODUCTS_DIR}/BlueRSA/CryptorRSA.framework",
+				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleSignIn/GoogleSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IQPullToRefresh/IQPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/KituraContracts/KituraContracts.framework",
+				"${BUILT_PRODUCTS_DIR}/LoggerAPI/LoggerAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
+				"${BUILT_PRODUCTS_DIR}/Nantes/Nantes.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftJWT/SwiftJWT.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cryptor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptorECC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptorRSA.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KituraContracts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoggerAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Logging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nantes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftJWT.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-T360/Pods-T360-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CDE5DC5C282551D400A979FA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -11092,28 +11544,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		D88CFB5436F69F0CA5F7381B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MSB-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -15357,6 +15787,163 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDD5AD082C7D1B8300B07B38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD5AD092C7D1B8300B07B38 /* ResourceListOperation.swift in Sources */,
+				CDD5AD0A2C7D1B8300B07B38 /* MessageDetailController.swift in Sources */,
+				CDD5AD0B2C7D1B8300B07B38 /* WeeklyPlanController.swift in Sources */,
+				CDD5AD0C2C7D1B8300B07B38 /* CustomTopView.swift in Sources */,
+				CDD5AD0D2C7D1B8300B07B38 /* TMyProfile.swift in Sources */,
+				CDD5AD0E2C7D1B8300B07B38 /* TopHeaderView.swift in Sources */,
+				CDD5AD0F2C7D1B8300B07B38 /* TInboxMessage.swift in Sources */,
+				CDD5AD102C7D1B8300B07B38 /* CalendarSection.swift in Sources */,
+				CDD5AD112C7D1B8300B07B38 /* CommunicationTableViewCell.swift in Sources */,
+				CDD5AD122C7D1B8300B07B38 /* DirectoryCreationOperation.swift in Sources */,
+				CDD5AD132C7D1B8300B07B38 /* TNGroupMember.swift in Sources */,
+				CDD5AD142C7D1B8300B07B38 /* ViewController.swift in Sources */,
+				CDD5AD152C7D1B8300B07B38 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				CDD5AD162C7D1B8300B07B38 /* VerificationEmailViewController.swift in Sources */,
+				CDD5AD172C7D1B8300B07B38 /* SweetAlert.swift in Sources */,
+				CDD5AD182C7D1B8300B07B38 /* ModelManager.swift in Sources */,
+				CDD5AD192C7D1B8300B07B38 /* ResetPasswordVC.swift in Sources */,
+				CDD5AD1A2C7D1B8300B07B38 /* FileUploadOperation.swift in Sources */,
+				CDD5AD1B2C7D1B8300B07B38 /* UITextField+fixCaretPosition.swift in Sources */,
+				CDD5AD1C2C7D1B8300B07B38 /* WeeklyPlanCell.swift in Sources */,
+				CDD5AD1D2C7D1B8300B07B38 /* KSTokenView.swift in Sources */,
+				CDD5AD1E2C7D1B8300B07B38 /* TNotification.swift in Sources */,
+				CDD5AD1F2C7D1B8300B07B38 /* UIButton+Helper.swift in Sources */,
+				CDD5AD202C7D1B8300B07B38 /* DashboardView.swift in Sources */,
+				CDD5AD212C7D1B8300B07B38 /* UploadFTP.swift in Sources */,
+				CDD5AD222C7D1B8300B07B38 /* WebViewViewController.swift in Sources */,
+				CDD5AD232C7D1B8300B07B38 /* NotificationsTableViewCell.swift in Sources */,
+				CDD5AD242C7D1B8300B07B38 /* NoticeboardCategoryTableViewCell.swift in Sources */,
+				CDD5AD252C7D1B8300B07B38 /* UIApplication+Helper.swift in Sources */,
+				CDD5AD262C7D1B8300B07B38 /* ProgressViewBar.swift in Sources */,
+				CDD5AD272C7D1B8300B07B38 /* WeeklyPlanTable.swift in Sources */,
+				CDD5AD282C7D1B8300B07B38 /* GalleryListController.swift in Sources */,
+				CDD5AD292C7D1B8300B07B38 /* TNPayment.swift in Sources */,
+				CDD5AD2A2C7D1B8300B07B38 /* UIViewController+Helper.swift in Sources */,
+				CDD5AD2B2C7D1B8300B07B38 /* APIHelper.swift in Sources */,
+				CDD5AD2C2C7D1B8300B07B38 /* CalendarTableViewCell.swift in Sources */,
+				CDD5AD2D2C7D1B8300B07B38 /* UIViewController+PopUp.swift in Sources */,
+				CDD5AD2E2C7D1B8300B07B38 /* ModuleTableViewCell.swift in Sources */,
+				CDD5AD2F2C7D1B8300B07B38 /* TNNoticeBoardDetail.swift in Sources */,
+				CDD5AD302C7D1B8300B07B38 /* SplashViewController.swift in Sources */,
+				CDD5AD312C7D1B8300B07B38 /* FTPUploadHelper.swift in Sources */,
+				CDD5AD322C7D1B8300B07B38 /* MPGTextField.m in Sources */,
+				CDD5AD332C7D1B8300B07B38 /* LoadMoreControl.swift in Sources */,
+				CDD5AD342C7D1B8300B07B38 /* TModule.swift in Sources */,
+				CDD5AD352C7D1B8300B07B38 /* KSToken.swift in Sources */,
+				CDD5AD362C7D1B8300B07B38 /* PaymentDetailsController+Extension.swift in Sources */,
+				CDD5AD372C7D1B8300B07B38 /* HomeVC.swift in Sources */,
+				CDD5AD382C7D1B8300B07B38 /* TNAwarnessArticleDetail.swift in Sources */,
+				CDD5AD392C7D1B8300B07B38 /* PagerController.swift in Sources */,
+				CDD5AD3A2C7D1B8300B07B38 /* NotificationVideoViewController.swift in Sources */,
+				CDD5AD3B2C7D1B8300B07B38 /* View+Helper.swift in Sources */,
+				CDD5AD3C2C7D1B8300B07B38 /* APIUrls.swift in Sources */,
+				CDD5AD3D2C7D1B8300B07B38 /* CustomCalendarCell.swift in Sources */,
+				CDD5AD3E2C7D1B8300B07B38 /* VideoPlayerView.swift in Sources */,
+				CDD5AD3F2C7D1B8300B07B38 /* TNPerson.swift in Sources */,
+				CDD5AD402C7D1B8300B07B38 /* NoticeBoardTableViewCell.swift in Sources */,
+				CDD5AD412C7D1B8300B07B38 /* TNGallery.swift in Sources */,
+				CDD5AD422C7D1B8300B07B38 /* PaymentTotalTableViewCell.swift in Sources */,
+				CDD5AD432C7D1B8300B07B38 /* Operation.swift in Sources */,
+				CDD5AD442C7D1B8300B07B38 /* NoticeBoardCollectionViewCell.swift in Sources */,
+				CDD5AD452C7D1B8300B07B38 /* StreamOperation.swift in Sources */,
+				CDD5AD462C7D1B8300B07B38 /* TNCalendarEvent.swift in Sources */,
+				CDD5AD472C7D1B8300B07B38 /* TPKeyboardAvoidingTableView.m in Sources */,
+				CDD5AD482C7D1B8300B07B38 /* DOAlertController.swift in Sources */,
+				CDD5AD492C7D1B8300B07B38 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				CDD5AD4A2C7D1B8300B07B38 /* DigitalResourceCategoryCell.swift in Sources */,
+				CDD5AD4B2C7D1B8300B07B38 /* CommunicateLandController.swift in Sources */,
+				CDD5AD4C2C7D1B8300B07B38 /* TSibling.swift in Sources */,
+				CDD5AD4D2C7D1B8300B07B38 /* TReaction.swift in Sources */,
+				CDD5AD4E2C7D1B8300B07B38 /* NoticeboardCategoryController.swift in Sources */,
+				CDD5AD4F2C7D1B8300B07B38 /* Picker.swift in Sources */,
+				CDD5AD502C7D1B8300B07B38 /* Protocols.swift in Sources */,
+				CDD5AD512C7D1B8300B07B38 /* ReactionView.swift in Sources */,
+				CDD5AD522C7D1B8300B07B38 /* BirthdayViewController.swift in Sources */,
+				CDD5AD532C7D1B8300B07B38 /* SkyFloatingLabelTextField.swift in Sources */,
+				CDD5AD542C7D1B8300B07B38 /* MyProfileController.swift in Sources */,
+				CDD5AD552C7D1B8300B07B38 /* DRDAttechmentCell.swift in Sources */,
+				CDD5AD562C7D1B8300B07B38 /* CalendarController.swift in Sources */,
+				CDD5AD572C7D1B8300B07B38 /* WriteStreamOperation.swift in Sources */,
+				CDD5AD582C7D1B8300B07B38 /* RegisterPopUpVc.swift in Sources */,
+				CDD5AD592C7D1B8300B07B38 /* jsonKeys.swift in Sources */,
+				CDD5AD5A2C7D1B8300B07B38 /* FileDownloadOperation.swift in Sources */,
+				CDD5AD5B2C7D1B8300B07B38 /* Reachability.swift in Sources */,
+				CDD5AD5C2C7D1B8300B07B38 /* DBKeys.swift in Sources */,
+				CDD5AD5D2C7D1B8300B07B38 /* Constants.swift in Sources */,
+				CDD5AD5E2C7D1B8300B07B38 /* TNAwarenessDetail.swift in Sources */,
+				CDD5AD5F2C7D1B8300B07B38 /* AppDelegate.swift in Sources */,
+				CDD5AD602C7D1B8300B07B38 /* ModuleCollectionViewCell.swift in Sources */,
+				CDD5AD612C7D1B8300B07B38 /* ReadSelectViewController.swift in Sources */,
+				CDD5AD622C7D1B8300B07B38 /* ImagePreviewController.swift in Sources */,
+				CDD5AD632C7D1B8300B07B38 /* UIDevice+Helper.swift in Sources */,
+				CDD5AD642C7D1B8300B07B38 /* LinearProgressView.swift in Sources */,
+				CDD5AD652C7D1B8300B07B38 /* ComposeController.swift in Sources */,
+				CDD5AD662C7D1B8300B07B38 /* WPTableViewCell.swift in Sources */,
+				CDD5AD672C7D1B8300B07B38 /* WeeklyPlanFilterController.swift in Sources */,
+				CDD5AD682C7D1B8300B07B38 /* ChangePasswordController.swift in Sources */,
+				CDD5AD692C7D1B8300B07B38 /* NSObject+Helper.swift in Sources */,
+				CDD5AD6A2C7D1B8300B07B38 /* NoticeBoardListController.swift in Sources */,
+				CDD5AD6B2C7D1B8300B07B38 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				CDD5AD6C2C7D1B8300B07B38 /* TNSubject.swift in Sources */,
+				CDD5AD6D2C7D1B8300B07B38 /* Reaction.swift in Sources */,
+				CDD5AD6E2C7D1B8300B07B38 /* ForgotPasswordController.swift in Sources */,
+				CDD5AD6F2C7D1B8300B07B38 /* WeeklyPlanCollectionViewCell.swift in Sources */,
+				CDD5AD702C7D1B8300B07B38 /* DigitalResourceDetailController.swift in Sources */,
+				CDD5AD712C7D1B8300B07B38 /* NotificationMailTableViewCell.swift in Sources */,
+				CDD5AD722C7D1B8300B07B38 /* TNMenuItem.swift in Sources */,
+				CDD5AD732C7D1B8300B07B38 /* CommunicateCell.swift in Sources */,
+				CDD5AD742C7D1B8300B07B38 /* AddCommentVC.swift in Sources */,
+				CDD5AD752C7D1B8300B07B38 /* Extensions.swift in Sources */,
+				CDD5AD762C7D1B8300B07B38 /* TNDigitalResource.swift in Sources */,
+				CDD5AD772C7D1B8300B07B38 /* CommunicateController.swift in Sources */,
+				CDD5AD782C7D1B8300B07B38 /* NoticeBoardListTableViewCell.swift in Sources */,
+				CDD5AD792C7D1B8300B07B38 /* Date+Helper.swift in Sources */,
+				CDD5AD7A2C7D1B8300B07B38 /* KSTokenField.swift in Sources */,
+				CDD5AD7B2C7D1B8300B07B38 /* UserDefaultManager.swift in Sources */,
+				CDD5AD7C2C7D1B8300B07B38 /* NotificationTableViewCell.swift in Sources */,
+				CDD5AD7D2C7D1B8300B07B38 /* WeeklyPlanController+Extension.swift in Sources */,
+				CDD5AD7E2C7D1B8300B07B38 /* Session.swift in Sources */,
+				CDD5AD7F2C7D1B8300B07B38 /* VisualEffectView.swift in Sources */,
+				CDD5AD802C7D1B8300B07B38 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				CDD5AD812C7D1B8300B07B38 /* WebViewController.swift in Sources */,
+				CDD5AD822C7D1B8300B07B38 /* SlideController.swift in Sources */,
+				CDD5AD832C7D1B8300B07B38 /* AwarenessViewController.swift in Sources */,
+				CDD5AD842C7D1B8300B07B38 /* FeeDetailTableViewCell.swift in Sources */,
+				CDD5AD852C7D1B8300B07B38 /* SWRevealViewController.m in Sources */,
+				CDD5AD862C7D1B8300B07B38 /* AwarenessDetailViewController.swift in Sources */,
+				CDD5AD872C7D1B8300B07B38 /* DigitalResourceSecondListController.swift in Sources */,
+				CDD5AD882C7D1B8300B07B38 /* NotificationDetailListController.swift in Sources */,
+				CDD5AD892C7D1B8300B07B38 /* DigitalResourcesListController.swift in Sources */,
+				CDD5AD8A2C7D1B8300B07B38 /* NoticeboardDetailController.swift in Sources */,
+				CDD5AD8B2C7D1B8300B07B38 /* NotificationsView.swift in Sources */,
+				CDD5AD8C2C7D1B8300B07B38 /* VideoDownload.swift in Sources */,
+				CDD5AD8D2C7D1B8300B07B38 /* CircleView.swift in Sources */,
+				CDD5AD8E2C7D1B8300B07B38 /* ReadStreamOperation.swift in Sources */,
+				CDD5AD8F2C7D1B8300B07B38 /* DownLoadsViewController.swift in Sources */,
+				CDD5AD902C7D1B8300B07B38 /* CacheManager.swift in Sources */,
+				CDD5AD912C7D1B8300B07B38 /* TNNoticeboard.swift in Sources */,
+				CDD5AD922C7D1B8300B07B38 /* JWTHepler.swift in Sources */,
+				CDD5AD932C7D1B8300B07B38 /* KSUtils.swift in Sources */,
+				CDD5AD942C7D1B8300B07B38 /* GalleryCategoryListController.swift in Sources */,
+				CDD5AD952C7D1B8300B07B38 /* MapController.swift in Sources */,
+				CDD5AD962C7D1B8300B07B38 /* ProfileTableViewCell.swift in Sources */,
+				CDD5AD972C7D1B8300B07B38 /* PaymentHistoryTableViewCell.swift in Sources */,
+				CDD5AD982C7D1B8300B07B38 /* TNGalleryCategory.swift in Sources */,
+				CDD5AD992C7D1B8300B07B38 /* GradeViewController.swift in Sources */,
+				CDD5AD9A2C7D1B8300B07B38 /* UIColor+Extension.swift in Sources */,
+				CDD5AD9B2C7D1B8300B07B38 /* Global.swift in Sources */,
+				CDD5AD9C2C7D1B8300B07B38 /* TNWeeklyPlan.swift in Sources */,
+				CDD5AD9D2C7D1B8300B07B38 /* PaymentDetailsController.swift in Sources */,
+				CDD5AD9E2C7D1B8300B07B38 /* TNGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDE5DBCA282551D400A979FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -19417,6 +20004,7 @@
 		};
 		CD110C8E289C41700050EF80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC1D4872B0A50C9748DF7F3 /* Pods-T360.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -19424,7 +20012,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.36;
+				CURRENT_PROJECT_VERSION = 6.0;
 				DEVELOPMENT_TEAM = R7KAQWL2B2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -19434,9 +20022,11 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
 				INFOPLIST_FILE = "T360-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "STOGO WORLD";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.36;
+				MARKETING_VERSION = 6.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -19545,6 +20135,7 @@
 		};
 		CD110C8F289C41700050EF80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5587AE88B0C78D05B88EDF /* Pods-T360.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -19552,7 +20143,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.36;
+				CURRENT_PROJECT_VERSION = 6.0;
 				DEVELOPMENT_TEAM = R7KAQWL2B2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -19562,9 +20153,11 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
 				INFOPLIST_FILE = "T360-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "STOGO WORLD";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.36;
+				MARKETING_VERSION = 6.0;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24091,7 +24684,6 @@
 		};
 		CD8A998A2ACCA02400BAF7CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF9F79A75D8D89E4FE8254C5 /* Pods-MSB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -24224,7 +24816,6 @@
 		};
 		CD8A998B2ACCA02400BAF7CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C4BCE9F7D5DAB77EB296D30 /* Pods-MSB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25021,6 +25612,320 @@
 				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
 				PROVISIONING_PROFILE_SPECIFIER = "Orison V2.";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Orison V2.";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CDD5ADCF2C7D1B8300B07B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC1D4872B0A50C9748DF7F3 /* Pods-T360.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = R7KAQWL2B2;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7KAQWL2B2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "STOGO-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "STOGO WORLD";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "-D STOGO";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.stogo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "T360 profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "STOGO Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDD5ADD02C7D1B8300B07B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5587AE88B0C78D05B88EDF /* Pods-T360.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = R7KAQWL2B2;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7KAQWL2B2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "STOGO-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "STOGO WORLD";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				"OTHER_CFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BIZPopupView/BIZPopupView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog/DatePickerDialog.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown/DropDown.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar/FSCalendar.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HMSegmentedControl/HMSegmentedControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBCalendarKit/MBCalendarKit.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXPagerView/MXPagerView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXParallaxHeader/MXParallaxHeader.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXSegmentedPager/MXSegmentedPager.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RichEditorView/RichEditorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GGLInstanceID\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleCloudMessaging\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "-D STOGO";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.stogo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "T360 profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "STOGO Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -27246,6 +28151,15 @@
 			buildConfigurations = (
 				CDD2367A289AD40100A7121D /* Debug */,
 				CDD2367B289AD40100A7121D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD5ADCE2C7D1B8300B07B38 /* Build configuration list for PBXNativeTarget "STOGO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD5ADCF2C7D1B8300B07B38 /* Debug */,
+				CDD5ADD02C7D1B8300B07B38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

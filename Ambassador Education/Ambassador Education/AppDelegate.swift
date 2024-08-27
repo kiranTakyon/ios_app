@@ -399,7 +399,7 @@ let appStoreId = "1487457408"
 #elseif AJYAL
 let appStoreId = "1489710536"
 #elseif T360
-let appStoreId = ""
+let appStoreId = "1511964256"
 #elseif CRESENT
 let appStoreId = ""
 #elseif SSI
@@ -422,6 +422,8 @@ let appStoreId = "1484489965"
 let appStoreId = "1487778928"
 #elseif WPS
 let appStoreId = "6474555846"
+#elseif STOGO
+let appStoreId = "6670145265"
 #else
 let appStoreId = ""
 #endif
