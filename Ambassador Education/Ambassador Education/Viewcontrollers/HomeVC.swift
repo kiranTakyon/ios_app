@@ -23,6 +23,7 @@ enum alertType:String{
     case noticeboard    = "NWS"
     case weeklyPlan     = "HMW"
     case bus            = "BUS"
+    case feeds        =  "SWFeeds"
 
 
 }
@@ -514,7 +515,8 @@ enum msgTypes : String{
     case communicate    = "INTM"
     case noticeboard    = "NWS"
     case weeklyPlan     = "HWM"
-    case bus = "BUS"
+    case bus           = "BUS"
+    case feeds         = "SWFeeds"
 
 }
 
@@ -627,6 +629,9 @@ extension HomeVC: DashboardViewDelegate {
                 break
             case .bus:
                 break
+            case .feeds:
+                presentFeedPopUp(notification: notification)
+                break
             }
         }
 
@@ -668,6 +673,20 @@ extension HomeVC: DashboardViewDelegate {
         let popupVC = PopupViewController(contentController: detailVc, popupWidth: popUpWidth, popupHeight: popUpHeight)
         popupVC.cornerRadius = 25
         self.present(popupVC, animated: true)
+    }
+
+    func presentFeedPopUp(notification: TNotification) {
+
+        if let detailVc = videoStoryBoard.instantiateViewController(withIdentifier: "NotificationVideoViewController") as? NotificationVideoViewController {
+            detailVc.notification = notification
+            let popupVC = PopupViewController(contentController: detailVc, popupWidth: popUpWidth, popupHeight: popUpHeight)
+            popupVC.cornerRadius = 25
+            self.present(popupVC, animated: true)
+        } else {
+            // Handle the case where instantiation failed
+            print("Failed to instantiate view controller with identifier 'NotificationVideoViewController'")
+        }
+
     }
 
     func presentNoticeboardPopUp(notification: TNotification) {

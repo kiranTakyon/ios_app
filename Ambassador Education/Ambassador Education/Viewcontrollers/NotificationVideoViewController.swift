@@ -11,14 +11,27 @@ import UIKit
 class NotificationVideoViewController: UIViewController {
 
     @IBOutlet weak var videoView: VideoPlayerView!
-    var videoUrl: String = ""
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+
+    var notification: TNotification?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        videoView.setupToPlay(url: videoUrl)
-        // Do any additional setup after loading the view.
+        activity.startAnimating()
+        activity.isHidden = false
+        if let video = notification?.url {
+            videoView.setupToPlay(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" )
+        }
+        titleLabel.text = notification?.title
+        descriptionLabel.text = notification?.details
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
+            self.activity.stopAnimating()
+            self.activity.isHidden = true
+        })
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         videoView.stopPlayer()

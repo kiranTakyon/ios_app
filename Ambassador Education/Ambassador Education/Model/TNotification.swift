@@ -29,7 +29,7 @@ class TNotification: Codable {
     init(values:NSDictionary) {
         self.id = values["id"] as? String
         self.title = values["Title"] as? String
-        self.details = values["details"] as? String
+        self.details = values["Details"] as? String
         self.date = values["Date"] as? String
         self.createdBy = values["CreatedBy"] as? String
         self.hashKey = values["HashKey"] as? String

@@ -13,6 +13,8 @@ protocol NotificationsTableViewCellDelegate: AnyObject {
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapOnArrow button: UIButton, index: Int)
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int)
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji  emoji: String, type: String, index: Int)
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didProfileTapped button: UIButton, index: Int)
+
 }
 
 class NotificationsTableViewCell: UITableViewCell {
@@ -96,7 +98,7 @@ class NotificationsTableViewCell: UITableViewCell {
         avPlayer?.pause()
     }
 
-    @objc private func playerDidFinishPlaying() { 
+    @objc private func playerDidFinishPlaying() {
         avPlayer?.seek(to: .zero)
        // avPlayer?.play()
     }
@@ -128,6 +130,10 @@ class NotificationsTableViewCell: UITableViewCell {
 
     @IBAction func buttonCellDidTap(_ sender: UIButton) {
         delegate?.notificationsTableViewCell(self, didTapCell: sender, index: index)
+    }
+    
+    @IBAction func profileButtonTapped(_ sender: UIButton){
+        delegate?.notificationsTableViewCell(self, didProfileTapped: sender, index: index)
     }
 }
 

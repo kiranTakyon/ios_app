@@ -90,12 +90,12 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
             cell.alertTitle.text = titel
         }
 
-        if selectedIndexes.contains(indexPath.row) {
-            cell.alertTitle.numberOfLines = 0
-            cell.buttonArrow.isSelected = true
-        } else {
-            cell.buttonArrow.isSelected = false
-        }
+//        if selectedIndexes.contains(indexPath.row) {
+//            cell.alertTitle.numberOfLines = 0
+//            cell.buttonArrow.isSelected = true
+//        } else {
+//            cell.buttonArrow.isSelected = false
+//        }
 
         if let date = notification.date {
             cell.alertDate.text = Date().setDateFormatter(string: date)
@@ -169,6 +169,15 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
                 }
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
                 cell.labelTitle.text = "Gallery"
+                
+            case msgTypes.feeds.rawValue:
+                if let url = notification.url, !url.isEmpty,!isVideoURL(url) {
+                    cell.typeImageV.loadImageWithUrl(url)
+                } else {
+                    cell.typeImageV.image = UIImage(named: "NoticeImage")
+                }
+                cell.typeImageView.image = #imageLiteral(resourceName: "Notice")
+                cell.labelTitle.text = "Feed"
 
             default:
                 if let url = notification.url, !url.isEmpty,!isVideoURL(url) {
@@ -260,6 +269,13 @@ extension NotificationsView: NotificationsTableViewCellDelegate {
         delegate?.notificationsView(self, didTapOnNotification: notificationList [index])
         tableView.reloadData()
     }
+    
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didProfileTapped button: UIButton, index: Int) {
+        if let stringUrl = JWTHelper.shared.getStogoUrlWithProfil() {
+            print(stringUrl)
+            gotoWeb(str: stringUrl)
+        }
+    }
 }
 
 
@@ -278,6 +294,13 @@ extension NotificationsView: Refreshable, MoreLoadable {
         apiForLoadMore(pageNumber: pageIndex) {
             loadingFinished(true)
         }
+    }
+    // open stego url
+    func gotoWeb(str : String) {
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.strU = str
+        parentViewController?.navigationController?.isNavigationBarHidden = true
+        parentViewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -336,3 +359,4 @@ extension NotificationsView {
         return videoExtensions.contains(pathExtension)
     }
 }
+

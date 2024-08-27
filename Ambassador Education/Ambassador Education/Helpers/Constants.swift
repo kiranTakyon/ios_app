@@ -18,6 +18,7 @@ let BaseUrl = "https://t360.lasagu.net/Takyon360_API/T360_API/"
 let kAppName = ""
 
 let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+let videoStoryBoard = UIStoryboard(name: "Video", bundle: nil)
 
 let alertOk = "OK"
 let alertNo = "NO"
