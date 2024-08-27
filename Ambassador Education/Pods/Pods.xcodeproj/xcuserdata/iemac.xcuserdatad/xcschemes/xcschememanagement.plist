@@ -4,10 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AppAuth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>80</integer>
+		</dict>
 		<key>AppAuth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>120</integer>
+			<integer>93</integer>
 		</dict>
 		<key>BIZPopupView.xcscheme</key>
 		<dict>
@@ -21,20 +28,41 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>BlueCryptor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>81</integer>
+		</dict>
 		<key>BlueCryptor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>86</integer>
+			<integer>83</integer>
+		</dict>
+		<key>BlueECC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>82</integer>
 		</dict>
 		<key>BlueECC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>96</integer>
+			<integer>94</integer>
+		</dict>
+		<key>BlueRSA.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>83</integer>
 		</dict>
 		<key>BlueRSA.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>98</integer>
+			<integer>85</integer>
 		</dict>
 		<key>CCBottomRefreshControl.xcscheme</key>
 		<dict>
@@ -228,15 +256,29 @@
 			<key>orderHint</key>
 			<integer>40</integer>
 		</dict>
+		<key>GTMAppAuth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>86</integer>
+		</dict>
 		<key>GTMAppAuth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>104</integer>
+			<integer>88</integer>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>87</integer>
 		</dict>
 		<key>GTMSessionFetcher.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>95</integer>
+			<integer>91</integer>
 		</dict>
 		<key>GoogleAppMeasurement.xcscheme</key>
 		<dict>
@@ -262,15 +304,29 @@
 			<key>orderHint</key>
 			<integer>45</integer>
 		</dict>
+		<key>GoogleSignIn-GoogleSignIn.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>85</integer>
+		</dict>
 		<key>GoogleSignIn-GoogleSignIn.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>121</integer>
+			<integer>89</integer>
+		</dict>
+		<key>GoogleSignIn.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>84</integer>
 		</dict>
 		<key>GoogleSignIn.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>91</integer>
+			<integer>90</integer>
 		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>
@@ -298,20 +354,41 @@
 			<key>orderHint</key>
 			<integer>49</integer>
 		</dict>
+		<key>KituraContracts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>88</integer>
+		</dict>
 		<key>KituraContracts.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>102</integer>
+			<integer>82</integer>
+		</dict>
+		<key>LoggerAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>89</integer>
 		</dict>
 		<key>LoggerAPI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>103</integer>
+			<integer>87</integer>
+		</dict>
+		<key>Logging.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>90</integer>
 		</dict>
 		<key>Logging.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>105</integer>
+			<integer>84</integer>
 		</dict>
 		<key>MBCalendarKit.xcscheme</key>
 		<dict>
@@ -373,15 +450,8 @@
 			<key>orderHint</key>
 			<integer>63</integer>
 		</dict>
-		<key>Pods-MSB.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>114</integer>
-		</dict>
 		<key>Pods-OrisonSchool V2.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>64</integer>
 		</dict>
@@ -393,108 +463,134 @@
 		<key>Pods-PEPS V2.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>65</integer>
+			<integer>64</integer>
+		</dict>
+		<key>Pods-STOGO.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>91</integer>
+		</dict>
+		<key>Pods-T360.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>100</integer>
 		</dict>
 		<key>PromisesObjC.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>67</integer>
+			<integer>66</integer>
 		</dict>
 		<key>PromisesObjC.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>66</integer>
+			<integer>65</integer>
 		</dict>
 		<key>RichEditorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>68</integer>
+			<integer>67</integer>
 		</dict>
 		<key>RichEditorView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>69</integer>
+			<integer>68</integer>
 		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>71</integer>
+			<integer>70</integer>
 		</dict>
 		<key>SCLAlertView.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>70</integer>
+			<integer>69</integer>
 		</dict>
 		<key>SkyFloatingLabelTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>73</integer>
+			<integer>72</integer>
 		</dict>
 		<key>SkyFloatingLabelTextField.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>72</integer>
+			<integer>71</integer>
+		</dict>
+		<key>SwiftJWT.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>92</integer>
 		</dict>
 		<key>SwiftJWT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>118</integer>
+			<integer>95</integer>
 		</dict>
 		<key>SwiftSoup.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>74</integer>
+			<integer>73</integer>
 		</dict>
 		<key>SwiftSoup.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>75</integer>
+			<integer>74</integer>
 		</dict>
 		<key>TPKeyboardAvoiding.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>78</integer>
+			<integer>77</integer>
 		</dict>
 		<key>TPKeyboardAvoiding.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>79</integer>
+			<integer>78</integer>
 		</dict>
 		<key>Toast-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>76</integer>
+			<integer>75</integer>
 		</dict>
 		<key>Toast-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>77</integer>
+			<integer>76</integer>
 		</dict>
 		<key>Updates.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>80</integer>
+			<integer>79</integer>
+		</dict>
+		<key>Zip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>93</integer>
 		</dict>
 		<key>Zip.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>87</integer>
+			<integer>86</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
