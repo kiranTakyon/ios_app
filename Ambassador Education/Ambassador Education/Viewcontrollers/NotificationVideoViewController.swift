@@ -22,7 +22,7 @@ class NotificationVideoViewController: UIViewController {
         activity.startAnimating()
         activity.isHidden = false
         if let video = notification?.url {
-            videoView.setupToPlay(url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" )
+            videoView.setupToPlay(url: video)
         }
         titleLabel.text = notification?.title
         descriptionLabel.text = notification?.details
