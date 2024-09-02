@@ -526,9 +526,9 @@ class SlideController: UITableViewController,TaykonProtocol {
     
     func getSegueIdentifier(title:String) -> String{
         
-        let identifier = menuListDetails[title]?[1]
+        let identifier = menuListDetails[title]?[1] ?? ""
         
-        return identifier!
+        return identifier
         
     }
      func setTableCellColor(indexPath:IndexPath,cell:slidemenuCell){

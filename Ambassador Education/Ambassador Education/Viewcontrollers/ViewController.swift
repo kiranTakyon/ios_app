@@ -252,7 +252,7 @@ class ViewController: UIViewController {
                     
                     let VUser : Int = Int(resultDict["VerifiedUser"] as! String)!
                     let Vemail : String = resultDict["Email"] as! String
-                    
+
                     //(resultDict["Verify"] as! String) ?? resultDict["Email"] as! String
                     let pass_updt_period : Int = Int(resultDict["pass_updt_period"]as! String)!
                     // let pass_updt_period : Int = 1

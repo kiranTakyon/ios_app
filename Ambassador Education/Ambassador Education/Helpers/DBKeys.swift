@@ -21,5 +21,9 @@ class DBKeys {
     static  let isNotifications = "isNotifications"
     static  let shouldShowBirthdayWish = "shouldShowBirthdayWish"
     static  let isRemember = "isRemember"
+
+    // save token and session key
+    static  let session_Token = "session_Token"
+    static  let refresh_token = "refresh_token"
 }
 

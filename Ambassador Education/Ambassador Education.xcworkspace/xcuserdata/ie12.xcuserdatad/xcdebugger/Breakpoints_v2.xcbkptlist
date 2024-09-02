@@ -7,524 +7,352 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A2594D16-1DA8-4562-8577-755135E167BE"
-            shouldBeEnabled = "No"
+            uuid = "33E59042-F056-4D0B-940A-6AA4AE2DA877"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Helpers/APIHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "apiCallHandler(_:requestType:requestString:typingCountVal:requestParameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "33E59042-F056-4D0B-940A-6AA4AE2DA877 - 165cf99037c46218"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in STOGO.APIHelper.apiCallHandler(_: Swift.String, requestType: STOGO.MethodType, requestString: Swift.String, typingCountVal: Swift.Int, requestParameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (__C.NSDictionary) -&gt; ()) -&gt; ()"
+                  moduleName = "STOGO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie12/Downloads/ios_new%204/Ambassador%20Education/Ambassador%20Education/Helpers/APIHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1572">
+               </Location>
+               <Location
+                  uuid = "33E59042-F056-4D0B-940A-6AA4AE2DA877 - 775baf76cc052725"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in STOGO.APIHelper.apiCallHandler(_: Swift.String, requestType: STOGO.MethodType, requestString: Swift.String, typingCountVal: Swift.Int, requestParameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (__C.NSDictionary) -&gt; ()) -&gt; ()"
+                  moduleName = "STOGO"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie12/Downloads/ios_new%204/Ambassador%20Education/Ambassador%20Education/Helpers/APIHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "364">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18CE0660-9BB6-4C45-A14C-CF2929322F5F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/SlideController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "528"
+            endingLineNumber = "528"
+            landmarkName = "getSegueIdentifier(title:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEC9E3CA-5080-426C-BD83-79830339C252"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ambassador Education/Viewcontrollers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "postLogIn(email:password:isAutoLogin:)"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
+            landmarkName = "attributedLabel(_:didSelectLink:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A2594D16-1DA8-4562-8577-755135E167BE - 93645b016919d152"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "T360.ViewController.postLogIn(email: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;, isAutoLogin: Swift.Bool) -&gt; ()"
-                  moduleName = "T360"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "228"
-                  endingLineNumber = "228"
-                  offsetFromSymbolStart = "5928">
-               </Location>
-               <Location
-                  uuid = "A2594D16-1DA8-4562-8577-755135E167BE - 534ced77471bc7d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.NSDictionary) -&gt; () in T360.ViewController.postLogIn(email: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;, isAutoLogin: Swift.Bool) -&gt; ()"
-                  moduleName = "T360"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "230"
-                  endingLineNumber = "230"
-                  offsetFromSymbolStart = "858">
-               </Location>
-               <Location
-                  uuid = "A2594D16-1DA8-4562-8577-755135E167BE - c1370ca2fc7227cc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.ViewController.postLogIn(email: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;, isAutoLogin: Swift.Bool) -&gt; ()"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "228"
-                  endingLineNumber = "228"
-                  offsetFromSymbolStart = "5928">
-               </Location>
-               <Location
-                  uuid = "A2594D16-1DA8-4562-8577-755135E167BE - c100ff97480571e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.NSDictionary) -&gt; () in MSB.ViewController.postLogIn(email: Swift.Optional&lt;Swift.String&gt;, password: Swift.Optional&lt;Swift.String&gt;, isAutoLogin: Swift.Bool) -&gt; ()"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "230"
-                  endingLineNumber = "230"
-                  offsetFromSymbolStart = "858">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C11A01D-02CC-4E9D-A21E-620C534868FB"
-            shouldBeEnabled = "No"
+            uuid = "3299B1FD-C73E-4381-96D6-225F3408B763"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Helpers/APIHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "apiCallHandler(_:requestType:requestString:typingCountVal:requestParameters:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "263D9909-50C1-435B-8E20-3DFACDF79AEE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/CalendarView/CalendarController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "logOutAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "451541F8-E9E9-4B8D-B3A4-E967FF2E454A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/AwarenessViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "logOutButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93C40CFB-698F-48A3-9F78-D2BF3B5DEA3A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/AwarenessViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "secondRightButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A302D0B-A411-446A-886B-707CDD36664B"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ambassador Education/Viewcontrollers/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "433"
-            endingLineNumber = "433"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "562"
+            endingLineNumber = "562"
+            landmarkName = "searchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B95C6790-A4F3-4E16-9B42-2946E709DF5F"
+            uuid = "06632773-1F6A-4188-A1BE-B21D041E88D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/MyProfileController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "743"
+            endingLineNumber = "743"
+            landmarkName = "secondRightButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACF2660A-44D2-44E6-82CB-D55D74F333A9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/CommunicateLandController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkName = "secondRightButtonClicked(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B95C6790-A4F3-4E16-9B42-2946E709DF5F - 156f5f22540e0081"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183"
-                  offsetFromSymbolStart = "17600">
-               </Location>
-               <Location
-                  uuid = "B95C6790-A4F3-4E16-9B42-2946E709DF5F - 156f5f22540e00e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "17786">
-               </Location>
-               <Location
-                  uuid = "B95C6790-A4F3-4E16-9B42-2946E709DF5F - 156f5f22540e00e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "182"
-                  endingLineNumber = "182"
-                  offsetFromSymbolStart = "17893">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D1DBDC9D-6000-4953-8AA7-4668B8712A63"
+            uuid = "F78A946C-270A-45C8-9B30-6EA617C8A83D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/GalleryCategoryListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "searchButtonClicked(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D1DBDC9D-6000-4953-8AA7-4668B8712A63 - 156f5f22540e0775"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "14690">
-               </Location>
-               <Location
-                  uuid = "D1DBDC9D-6000-4953-8AA7-4668B8712A63 - 156f5f22540e0775"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "163"
-                  endingLineNumber = "163"
-                  offsetFromSymbolStart = "14697">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C5CE4F2-3320-4783-9253-26EB0E1D08F4"
+            uuid = "A97D254F-08FA-4C9D-91D6-A0721C89E7BD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/NoticeboardCategoryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "logoutButtonAction(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6C5CE4F2-3320-4783-9253-26EB0E1D08F4 - 156f5f22540e049e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "12813">
-               </Location>
-               <Location
-                  uuid = "6C5CE4F2-3320-4783-9253-26EB0E1D08F4 - 156f5f22540e049e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "12820">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73C60100-4A45-45CE-A2C6-09E0350C269A"
+            uuid = "D0AA31A9-C79E-48DE-B3B8-7B3F56B8C61B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/NoticeboardCategoryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "searchButtonClicked(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "73C60100-4A45-45CE-A2C6-09E0350C269A - 156f5f22540e0a2b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
-                  offsetFromSymbolStart = "10933">
-               </Location>
-               <Location
-                  uuid = "73C60100-4A45-45CE-A2C6-09E0350C269A - 156f5f22540e0a2b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
-                  offsetFromSymbolStart = "10940">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A95BA2C6-DE08-4DBA-BD6C-09CF2FEC94F1"
+            uuid = "69846B56-BFB3-44F9-B0C0-1C3832381803"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/DigitalResourcesListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "logOutButtonAction(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A95BA2C6-DE08-4DBA-BD6C-09CF2FEC94F1 - 156f5f22540e0bb4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "9053">
-               </Location>
-               <Location
-                  uuid = "A95BA2C6-DE08-4DBA-BD6C-09CF2FEC94F1 - 156f5f22540e0bb4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "9060">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "10E65145-4791-43AF-A92B-4B7AEE2CB250"
+            uuid = "6D517210-083C-49E9-8FA1-54367411A5F2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/DigitalResourcesListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "secondRightButtonClicked(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "10E65145-4791-43AF-A92B-4B7AEE2CB250 - 156f5f22540e08c1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "7173">
-               </Location>
-               <Location
-                  uuid = "10E65145-4791-43AF-A92B-4B7AEE2CB250 - 156f5f22540e08c1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "7180">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A3E8971F-ECEC-48BB-8FDC-9597D2CCEDDA"
+            uuid = "BA5BCB8E-A486-4126-B944-CB1FE5C4D101"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/DashboardView/NotificationsView.swift"
+            filePath = "Ambassador Education/Viewcontrollers/PaymentDetailsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
+            landmarkName = "logOutButtonAction(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A3E8971F-ECEC-48BB-8FDC-9597D2CCEDDA - 156f5f22540e0e6a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "5293">
-               </Location>
-               <Location
-                  uuid = "A3E8971F-ECEC-48BB-8FDC-9597D2CCEDDA - 156f5f22540e0e6a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.NotificationsView.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/DashboardView/NotificationsView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "5300">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "09465529-2B61-47E9-9C38-93FB937AC821"
+            uuid = "EEDAA017-A591-431A-B325-B306425475B3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/HomeVC.swift"
+            filePath = "Ambassador Education/Viewcontrollers/PaymentDetailsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "679"
-            endingLineNumber = "679"
-            landmarkName = "presentFeedPopUp(notification:)"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "searchButtonClicked(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "09465529-2B61-47E9-9C38-93FB937AC821 - 2770d7f258f5d31a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.HomeVC.presentFeedPopUp(notification: MSB.TNotification) -&gt; ()"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "679"
-                  endingLineNumber = "679"
-                  offsetFromSymbolStart = "102">
-               </Location>
-               <Location
-                  uuid = "09465529-2B61-47E9-9C38-93FB937AC821 - 2770d7f258f5d31a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.HomeVC.presentFeedPopUp(notification: MSB.TNotification) -&gt; ()"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "679"
-                  endingLineNumber = "679"
-                  offsetFromSymbolStart = "97">
-               </Location>
-               <Location
-                  uuid = "09465529-2B61-47E9-9C38-93FB937AC821 - 2770d7f258f5d33d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MSB.HomeVC.presentFeedPopUp(notification: MSB.TNotification) -&gt; ()"
-                  moduleName = "MSB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ie12/Desktop/MProject/ios_new/Ambassador%20Education/Ambassador%20Education/Viewcontrollers/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "680"
-                  endingLineNumber = "680"
-                  offsetFromSymbolStart = "97">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BB556F8B-3C71-46BF-8EA2-E1B1EFCB51A3"
+            uuid = "7A82D86A-A880-4C78-A666-A3ABF59257BB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ambassador Education/Viewcontrollers/NotificationVideoViewController.swift"
+            filePath = "Ambassador Education/Viewcontrollers/WeeklyPlanController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "707"
+            endingLineNumber = "707"
+            landmarkName = "thirdRightButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CF7B711-3DBA-4FED-BEA2-02F841E73C39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/GradeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "logoutButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9110751-AFEC-461F-888B-580AA36DA773"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ambassador Education/Viewcontrollers/GradeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "secondRightButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

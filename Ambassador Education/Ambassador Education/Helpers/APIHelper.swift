@@ -59,21 +59,27 @@ class APIHelper {
                 baseAuth = self.getBasicAuth(dictionary: requestParameters)
                 BaseAuthValue = baseAuth
                 
-            }else{
+            } else {
                 if originalUrl.contains("LOGIN") {
                     baseAuth = self.getBasicAuth(dictionary: requestParameters)
                     BaseAuthValue = baseAuth
-                }else if originalUrl.contains("T0048"){
+                } else if originalUrl.contains("T0048"){
                     baseAuth = self.getBasicAuthForForgotPassword(dictionary: requestParameters)
                     BaseAuthValue = baseAuth
-                }
-                else{
-                    baseAuth = BaseAuthValue
+                } else {
+//                    baseAuth = BaseAuthValue
+
+                    baseAuth = UserDefaultsManager.manager.getSessionToken() ?? "" /// send session token
                 }
             }
             
             print("Basic \(baseAuth)")
-            request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
+            if originalUrl.contains("T0048") || originalUrl.contains("LOGIN") {
+                request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
+            } else {
+            request.setValue("Bearer \(baseAuth)", forHTTPHeaderField: "Authorization")
+                             }
+
             //  }
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             /*     if let token = UserDefaultsManager.manager.getUserDefaultValue(key: UserDefaultKeys().AccessToken){
@@ -119,8 +125,18 @@ class APIHelper {
             let dataTask = session.dataTask(with: request as URLRequest) {data,response,error in
                 if let httpResponse = response as? HTTPURLResponse {
                     
-                    print("reposense code",httpResponse.statusCode)
-                    
+                    print("reposense code", httpResponse.statusCode)
+
+                              if httpResponse.statusCode == 401 { // Unauthorized, token might be expired
+                                  self.refreshToken { success in
+                                      if success {
+                                          // Retry the original request
+                                          self.apiCallHandler(originalUrl, requestType: requestType, requestString: requestString, typingCountVal: typingCountVal, requestParameters: requestParameters, completion: completion)
+                                      } else {
+                                          completion(["message": "Failed to refresh token"])
+                                      }
+                                  }
+                              }
                     //                if httpResponse.statusCode == 401 {
                     //
                     //                     guard let data = data else {
@@ -152,12 +168,18 @@ class APIHelper {
                             let theJSONText = String(data: theJSONData,
                                                      encoding: .ascii)
                             print("JSON response string = \(theJSONText!)")
+                            
                         }
                         print(json)
-                        if originalUrl.contains("authorize.net"){
-                            completion(json)
+                        if let sessionToken = json["session_token" ]{
+                            UserDefaultsManager.manager.saveSessionToken(token: sessionToken as! String )
                         }
-                        else{
+                        if let refreshToken = json["refresh_token" ]{
+                            UserDefaultsManager.manager.saveRefreshableToken(token: refreshToken as! String )
+                        }
+                        if originalUrl.contains("authorize.net") {
+                            completion(json)
+                        } else {
                             //   let typingDict = NSDictionary(object: typingCountVal, forKey: "typingCount" as NSCopying)
                             let combinedDict = NSMutableDictionary(dictionary: json)
                             combinedDict["typingCount"] = typingCountVal
@@ -186,7 +208,101 @@ class APIHelper {
             completion([JsonKeys().message :"No Internet Connection"])
         }
     }
-    
+     // token refresh 
+
+    func refreshToken(completion: @escaping (_ success: Bool) -> Void) {
+        guard let refreshToken = UserDefaultsManager.manager.getRefreableToken() else {
+            print("Refresh token not found")
+            completion(false)
+            return
+        }
+
+        let refreshTokenUrl = BaseUrl + APIUrls().REFRESH_TOKEN
+        guard let sessionToken = UserDefaultsManager.manager.getSessionToken() else {
+            print("Session token not found")
+            completion(false)
+            return
+        }
+
+        // Prepare the request
+        guard let url = URL(string: refreshTokenUrl) else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(sessionToken)", forHTTPHeaderField: "Authorization")  // Ensure the "Bearer" prefix if required by API
+
+        // Create the JSON body
+        let parameters = [
+            "refresh_token": refreshToken,
+            "session_token": sessionToken
+        ]
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+        } catch {
+            print("Error creating JSON body for refresh token request: \(error)")
+            completion(false)
+            return
+        }
+
+        // Perform the request
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error refreshing token: \(error)")
+                completion(false)
+                return
+            }
+
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Invalid response")
+                completion(false)
+                return
+            }
+
+            if httpResponse.statusCode != 202 {
+                print("Unexpected status code: \(httpResponse.statusCode)")
+                completion(false)
+                return
+            }
+
+            guard let data = data else {
+                print("No data received")
+                completion(false)
+                return
+            }
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let statusCode = json["StatusCode"] as? Int, statusCode == 1 {
+                        if let newSessionToken = json["session_token"] as? String,
+                           let newRefreshToken = json["refresh_token"] as? String {
+                            // Store new tokens if necessary
+                            UserDefaultsManager.manager.saveSessionToken(token: newSessionToken)
+                            UserDefaultsManager.manager.saveSessionToken(token: newRefreshToken)
+                            completion(true)
+                        } else {
+                            print("Invalid response data")
+                            completion(false)
+                        }
+                    } else {
+                        print("Token refresh failed: \(json["StatusMessage"] ?? "Unknown error")")
+                        completion(false)
+                    }
+                }
+            } catch {
+                print("Error parsing JSON response: \(error)")
+                completion(false)
+            }
+        }
+
+        dataTask.resume()
+    }
+
+
     
     func postmanCall(){
         

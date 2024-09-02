@@ -62,7 +62,7 @@ class UserDefaultsManager {
     
     func removeFromUserDefault(key : String){
         UserDefaults.standard.removeObject(forKey: key)
-         UserDefaults.standard.synchronize()
+        UserDefaults.standard.synchronize()
     }
 
     func saveJwtToken(token: String){
@@ -120,5 +120,22 @@ class UserDefaultsManager {
         } else {
             return false
         }
+    }
+
+    // save refreshable toke and session token
+
+    func saveSessionToken(token: String) {
+        UserDefaults.standard.set(token, forKey: DBKeys.session_Token)
+    }
+    func saveRefreshableToken(token: String) {
+        UserDefaults.standard.set(token, forKey: DBKeys.refresh_token)
+    }
+    func getSessionToken() -> String? {
+        return UserDefaults.standard.string(forKey: DBKeys.session_Token)
+
+    }
+    func getRefreableToken() -> String? {
+        return UserDefaults.standard.string(forKey: DBKeys.refresh_token)
+
     }
 }

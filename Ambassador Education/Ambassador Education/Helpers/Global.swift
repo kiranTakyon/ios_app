@@ -188,6 +188,9 @@ func removeAllGlbalValues(){
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.gcmToken)
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.isNotifications)
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.isRemember)
+    UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.refresh_token)
+    UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.session_Token)
+
 }
 
 func MD5(string: String) -> Data {

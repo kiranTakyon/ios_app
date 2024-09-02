@@ -12,6 +12,7 @@ import Foundation
 class APIUrls{
 
     let logIn           = "LOGIN"
+    let REFRESH_TOKEN   = "REFRESH_TOKEN"
     let getProfile      = "T0013"
     let saveProfile     = "T0033"
     let getInBox        = "T0009"
