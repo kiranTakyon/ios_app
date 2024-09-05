@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UpcomingEventCollectionViewCell" customModule="ABC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9U-PO-pc3">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TME-2I-lEa">
+                                <rect key="frame" x="50" y="10" width="150" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus3" translatesAutoresizingMaskIntoConstraints="NO" id="G5d-RF-EBG" customClass="ImageLoader" customModule="ABC" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="130" height="130"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="viewcornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="G5d-RF-EBG" secondAttribute="trailing" constant="10" id="4s7-x0-xh4"/>
+                                    <constraint firstAttribute="height" constant="150" id="DPc-Je-vkW"/>
+                                    <constraint firstAttribute="width" secondItem="TME-2I-lEa" secondAttribute="height" multiplier="1:1" id="OiM-oG-UFc"/>
+                                    <constraint firstAttribute="bottom" secondItem="G5d-RF-EBG" secondAttribute="bottom" constant="10" id="Xw5-bz-vni"/>
+                                    <constraint firstItem="G5d-RF-EBG" firstAttribute="leading" secondItem="TME-2I-lEa" secondAttribute="leading" constant="10" id="hW3-Eh-o0d"/>
+                                    <constraint firstItem="G5d-RF-EBG" firstAttribute="top" secondItem="TME-2I-lEa" secondAttribute="top" constant="10" id="o8d-wG-l2r"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="viewcornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-nB-ecE">
+                                <rect key="frame" x="50" y="170" width="150" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hNb-nB-ecE" secondAttribute="bottom" constant="5" id="6Xv-og-rfQ"/>
+                            <constraint firstItem="TME-2I-lEa" firstAttribute="top" secondItem="P9U-PO-pc3" secondAttribute="top" constant="10" id="7n2-Bk-bla"/>
+                            <constraint firstItem="hNb-nB-ecE" firstAttribute="trailing" secondItem="TME-2I-lEa" secondAttribute="trailing" id="F8E-vK-BKb"/>
+                            <constraint firstItem="TME-2I-lEa" firstAttribute="centerX" secondItem="P9U-PO-pc3" secondAttribute="centerX" id="H4W-9h-OiA"/>
+                            <constraint firstItem="hNb-nB-ecE" firstAttribute="leading" secondItem="TME-2I-lEa" secondAttribute="leading" id="TuH-Xb-8eZ"/>
+                            <constraint firstItem="hNb-nB-ecE" firstAttribute="top" secondItem="TME-2I-lEa" secondAttribute="bottom" constant="10" id="vIf-K9-yop"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="P9U-PO-pc3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9rw-Gg-Il5"/>
+                <constraint firstAttribute="bottom" secondItem="P9U-PO-pc3" secondAttribute="bottom" id="Hkd-6K-sPE"/>
+                <constraint firstAttribute="trailing" secondItem="P9U-PO-pc3" secondAttribute="trailing" id="N1a-OK-7xL"/>
+                <constraint firstItem="P9U-PO-pc3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mF2-hd-3FX"/>
+            </constraints>
+            <size key="customSize" width="250" height="185"/>
+            <connections>
+                <outlet property="eventImageView" destination="G5d-RF-EBG" id="sjs-um-S7k"/>
+                <outlet property="tittleLabel" destination="hNb-nB-ecE" id="tgF-aj-GP0"/>
+            </connections>
+            <point key="canvasLocation" x="178.62595419847327" y="35.563380281690144"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bus3" width="1080" height="1080"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

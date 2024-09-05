@@ -33,6 +33,7 @@ enum ModelType:String {
     case TNAwarenessDetail = "TNAwarenessDetail"
     case TNSubject = "TNSubject"
     case TModule = "TModule"
+    case TUpcomingEvent = "TUpcomingEvent"
 
 }
 
@@ -71,6 +72,7 @@ class ModelClassManager {
                 case .TNAwarenessDetail : object = TNAwarenessDetail(values : eachData)
                 case .TNSubject:object = TNSubject(values:eachData)
                 case .TModule:object = TModule(values:eachData)
+                case .TUpcomingEvent:object = TUpcomingEvent(values:eachData)
                     
 //TNPerson
                 default:

@@ -15,12 +15,14 @@ protocol NotificationsViewDelegate: AnyObject {
     func notificationsView(_ view: NotificationsView, didTapOnNotification notification: TNotification)
     func notificationsView(_ view: NotificationsView, didTapOnStogoImageWith url: String)
     func removeNoNotificationdataLabel()
+    func didTapOnUpcomingEventView()
 }
 
 class NotificationsView: UIView {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageViewStogoLogo: UIImageView!
+    @IBOutlet weak var upcomingEventView: UIView!
 
     var notificationList = [TNotification]()
     var selectedIndexes: [Int] = []
@@ -40,6 +42,7 @@ class NotificationsView: UIView {
         super.awakeFromNib()
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
         tableView.register(UINib(nibName: "NotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationsTableViewCell")
+        upcomingEventView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         tableView.delegate = self
         tableView.dataSource = self
         refresher.enableLoadMore = true
@@ -54,6 +57,10 @@ class NotificationsView: UIView {
         if let stringUrl = JWTHelper.shared.getStogoUrl() {
             delegate?.notificationsView(self, didTapOnStogoImageWith: stringUrl)
         }
+    }
+
+    @IBAction func didTapOnUpcomingEventView(_ sender: UIButton) {
+        delegate?.didTapOnUpcomingEventView()
     }
 }
 

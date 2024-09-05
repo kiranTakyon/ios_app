@@ -48,9 +48,23 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     var notificationList = [TNotification]()
     var moduleList = [TModule]()
     var NoticeBoardItems = [TNNoticeBoardDetail]()
+    var upcomingEvents = [TUpcomingEvent]()
     var buttonOrigin : CGPoint = CGPoint(x: 0, y: 0)
     let dashboardView: DashboardView = DashboardView.fromNib()
     let notificationsView: NotificationsView = NotificationsView.fromNib()
+
+    private var upcomingShadowView: UIView!
+    private var upcomingRevealWidth: CGFloat = 300
+    private let paddingForRotation: CGFloat = 150
+    private var isExpanded: Bool = false
+    private var draggingIsEnabled: Bool = false
+    private var panBaseLocation: CGFloat = 0.0
+
+    // Expand/Collapse the side menu by changing trailing's constant
+    private var sideMenuTrailingConstraint: NSLayoutConstraint!
+    private var upComingEventViewController: UpComingEventViewController!
+
+    private var revealSideMenuOnTop: Bool = true
 
     let popUpHeight = UIScreen.main.bounds.height - 150
     let popUpWidth = UIScreen.main.bounds.width - 60
@@ -65,6 +79,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         addObserverToNotification()
         topHeaderView.delegate = self
         addGestureOnButton()
+        showUpComingEventView()
     }
 
     func setAllTextFieldsEmpty(){
@@ -361,6 +376,10 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
                     self.NoticeBoardItems.append(contentsOf: noticeBoard)
                 }
 
+                if let upcomingEvents = result["upcoming_events"] as? NSArray {
+                    let upcomingEvent = ModelClassManager.sharedManager.createModelArray(data: upcomingEvents, modelType: ModelType.TUpcomingEvent) as! [TUpcomingEvent]
+                    self.upcomingEvents.append(contentsOf: upcomingEvent)
+                }
 
                 if let notifications = logInResponseGloabl.value(forKey: "Notification") as? NSArray
                 {
@@ -574,6 +593,10 @@ extension HomeVC: TopHeaderDelegate {
 
 
 extension HomeVC: NotificationsViewDelegate {
+    func didTapOnUpcomingEventView() {
+        openUpComingEvent()
+    }
+    
     func removeNoNotificationdataLabel() {
         self.removeNoDataLabel()
     }
@@ -597,6 +620,10 @@ extension HomeVC: NotificationsViewDelegate {
         let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         vc.strU = str
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openUpComingEvent() {
+        sideMenuState(expanded: self.isExpanded ? false : true)
     }
 }
 
@@ -742,4 +769,116 @@ extension HomeVC: WeeklyPlanControllerDelegate {
     }
     
     
+}
+
+
+extension HomeVC {
+
+    func showUpComingEventView() {
+
+        // Shadow Background View
+        self.upcomingShadowView = UIView(frame: self.view.bounds)
+        self.upcomingShadowView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.upcomingShadowView.backgroundColor = .black
+        self.upcomingShadowView.alpha = 0.0
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(TapGestureRecognizer))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        tapGestureRecognizer.delegate = self
+        self.upcomingShadowView.addGestureRecognizer(tapGestureRecognizer)
+        if self.revealSideMenuOnTop {
+            view.insertSubview(self.upcomingShadowView, at: 6)
+        }
+
+        guard let upComingEventViewController = upcomingEvent.instantiateViewController(withIdentifier: "UpComingEventViewController") as? UpComingEventViewController else { return }
+        //upComingEventViewController.upcomingEvents = upcomingEvents
+       // upComingEventViewController.collectionView.reloadData()
+        upComingEventViewController.delegate = self
+        self.upComingEventViewController = upComingEventViewController
+        view.insertSubview(upComingEventViewController.view, at: self.revealSideMenuOnTop ? 6 : 0)
+        addChild(upComingEventViewController)
+        upComingEventViewController.didMove(toParent: self)
+
+        // UpComingEvent AutoLayout
+
+        upComingEventViewController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        // Set up height for the view controller's view
+        let viewHeight: CGFloat = 300 // Adjust this value to your desired height
+
+        if self.revealSideMenuOnTop {
+            self.sideMenuTrailingConstraint = upComingEventViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: self.upcomingRevealWidth)
+            sideMenuTrailingConstraint.isActive = true
+        }
+
+        NSLayoutConstraint.activate([
+            upComingEventViewController.view.widthAnchor.constraint(equalToConstant: self.upcomingRevealWidth),
+            upComingEventViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            upComingEventViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            //upComingEventViewController.view.heightAnchor.constraint(equalToConstant: viewHeight) // Set the height constraint
+        ])
+       // self.upComingEventViewController.collectionView.reloadData()
+    }
+
+
+
+
+    func sideMenuState(expanded: Bool) {
+        if expanded {
+            self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? 0 : -self.upcomingRevealWidth) { _ in
+                self.isExpanded = true
+            }
+            // Animate Shadow (Fade In)
+            UIView.animate(withDuration: 0.5) { self.upcomingShadowView.alpha = 0.6 }
+        }
+        else {
+            self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? self.upcomingRevealWidth : 0) { _ in
+                self.isExpanded = false
+            }
+            // Animate Shadow (Fade Out)
+            UIView.animate(withDuration: 0.5) { self.upcomingShadowView.alpha = 0.0 }
+        }
+        self.upComingEventViewController.upcomingEvents = upcomingEvents
+        self.upComingEventViewController.collectionView.reloadData()
+    }
+
+
+    func animateSideMenu(targetPosition: CGFloat, completion: @escaping (Bool) -> ()) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .layoutSubviews, animations: {
+            if self.revealSideMenuOnTop {
+                self.sideMenuTrailingConstraint.constant = targetPosition
+                self.view.layoutIfNeeded()
+            } else {
+                self.view.subviews[1].frame.origin.x = targetPosition
+            }
+        }, completion: completion)
+    }
+
+
+}
+
+
+extension HomeVC: UIGestureRecognizerDelegate {
+    @objc func TapGestureRecognizer(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            if self.isExpanded {
+                self.sideMenuState(expanded: false)
+            }
+        }
+    }
+
+    // Close view when you tap on the shadow background view
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of: self.upComingEventViewController.view))! {
+            return false
+        }
+        return true
+    }
+}
+
+
+extension HomeVC: UpComingEventViewControllerDelegate {
+    func didTapOnIconButton() {
+        sideMenuState(expanded: self.isExpanded ? false : true)
+    }
+
 }

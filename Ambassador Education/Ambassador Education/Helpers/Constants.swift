@@ -19,6 +19,7 @@ let kAppName = ""
 
 let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
 let videoStoryBoard = UIStoryboard(name: "Video", bundle: nil)
+let upcomingEvent = UIStoryboard(name: "UpComingEvent", bundle: nil)
 
 let alertOk = "OK"
 let alertNo = "NO"

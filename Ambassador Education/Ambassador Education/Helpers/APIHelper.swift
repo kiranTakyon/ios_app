@@ -63,12 +63,10 @@ class APIHelper {
                 if originalUrl.contains("LOGIN") {
                     baseAuth = self.getBasicAuth(dictionary: requestParameters)
                     BaseAuthValue = baseAuth
-                } else if originalUrl.contains("T0048"){
+                } else if originalUrl.contains("T0048") {
                     baseAuth = self.getBasicAuthForForgotPassword(dictionary: requestParameters)
                     BaseAuthValue = baseAuth
                 } else {
-//                    baseAuth = BaseAuthValue
-
                     baseAuth = UserDefaultsManager.manager.getSessionToken() ?? "" /// send session token
                 }
             }
@@ -77,8 +75,8 @@ class APIHelper {
             if originalUrl.contains("T0048") || originalUrl.contains("LOGIN") {
                 request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
             } else {
-            request.setValue("Bearer \(baseAuth)", forHTTPHeaderField: "Authorization")
-                             }
+                request.setValue("Bearer \(baseAuth)", forHTTPHeaderField: "Authorization")
+            }
 
             //  }
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -127,80 +125,65 @@ class APIHelper {
                     
                     print("reposense code", httpResponse.statusCode)
 
-                              if httpResponse.statusCode == 401 { // Unauthorized, token might be expired
-                                  self.refreshToken { success in
-                                      if success {
-                                          // Retry the original request
-                                          self.apiCallHandler(originalUrl, requestType: requestType, requestString: requestString, typingCountVal: typingCountVal, requestParameters: requestParameters, completion: completion)
-                                      } else {
-                                          completion(["message": "Failed to refresh token"])
-                                      }
-                                  }
-                              }
-                    //                if httpResponse.statusCode == 401 {
-                    //
-                    //                     guard let data = data else {
-                    //
-                    //                        return
-                    //                    }
-                    //
-                    //                    let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                    //
-                    //                    print("data",datastring)
-                    //
-                    //                  //  self.goToRoot() authorization expired
-                    //                }
-                    //                else{
-                    do {
-                        guard let data = data else {
-                            completion([JsonKeys().message : "Some error occured . Please try again"])
-                            throw JSONError.NoData
+                    if httpResponse.statusCode == 401 { // Unauthorized, token might be expired
+                        self.refreshToken { success in
+                            if success {
+                                // Retry the original request
+                                self.apiCallHandler(originalUrl, requestType: requestType, requestString: requestString, typingCountVal: typingCountVal, requestParameters: requestParameters, completion: completion)
+                            } else {
+                                completion(["message": "Failed to refresh token"])
+                            }
                         }
-                        // print(response)
-                        // let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                            completion([JsonKeys().message : []])
-                            throw JSONError.ConversionFailed
+                    } else {
+                        do {
+                            guard let data = data else {
+                                completion([JsonKeys().message : "Some error occured . Please try again"])
+                                throw JSONError.NoData
+                            }
+                            // print(response)
+                            // let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+                            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+                                completion([JsonKeys().message : []])
+                                throw JSONError.ConversionFailed
+                            }
+                            if let theJSONData = try? JSONSerialization.data(
+                                withJSONObject: json,
+                                options: []) {
+                                let theJSONText = String(data: theJSONData,
+                                                         encoding: .ascii)
+                                print("JSON response string = \(theJSONText!)")
+
+                            }
+                            print(json)
+                            if let sessionToken = json["session_token" ]{
+                                UserDefaultsManager.manager.saveSessionToken(token: sessionToken as! String )
+                            }
+                            if let refreshToken = json["refresh_token" ]{
+                                UserDefaultsManager.manager.saveRefreshableToken(token: refreshToken as! String )
+                            }
+                            if originalUrl.contains("authorize.net") {
+                                completion(json)
+                            } else {
+                                //   let typingDict = NSDictionary(object: typingCountVal, forKey: "typingCount" as NSCopying)
+                                let combinedDict = NSMutableDictionary(dictionary: json)
+                                combinedDict["typingCount"] = typingCountVal
+                                print("combined dict is :",combinedDict)
+                                let staticDict = NSDictionary(dictionary: combinedDict)
+                                completion(staticDict)
+                            }
+
+                        } catch let error as JSONError {
+                            completion([JsonKeys().message : "Json error occured . Please try again"])
+                            print(error.rawValue)
+                        } catch let error as NSError {
+                            completion([JsonKeys().message :"Json error occured . Please try again"])
+                            print("Error = \(error.debugDescription)")
                         }
-                        if let theJSONData = try? JSONSerialization.data(
-                            withJSONObject: json,
-                            options: []) {
-                            let theJSONText = String(data: theJSONData,
-                                                     encoding: .ascii)
-                            print("JSON response string = \(theJSONText!)")
-                            
-                        }
-                        print(json)
-                        if let sessionToken = json["session_token" ]{
-                            UserDefaultsManager.manager.saveSessionToken(token: sessionToken as! String )
-                        }
-                        if let refreshToken = json["refresh_token" ]{
-                            UserDefaultsManager.manager.saveRefreshableToken(token: refreshToken as! String )
-                        }
-                        if originalUrl.contains("authorize.net") {
-                            completion(json)
-                        } else {
-                            //   let typingDict = NSDictionary(object: typingCountVal, forKey: "typingCount" as NSCopying)
-                            let combinedDict = NSMutableDictionary(dictionary: json)
-                            combinedDict["typingCount"] = typingCountVal
-                            print("combined dict is :",combinedDict)
-                            let staticDict = NSDictionary(dictionary: combinedDict)
-                            completion(staticDict)
-                        }
-                        
-                    } catch let error as JSONError {
-                        completion([JsonKeys().message : "Json error occured . Please try again"])
-                        print(error.rawValue)
-                    } catch let error as NSError {
-                        completion([JsonKeys().message :"Json error occured . Please try again"])
-                        print("Error = \(error.debugDescription)")
                     }
-                    // }
-                }
-                else{
+                } else {
                     completion([JsonKeys().message :"Some error occured . Please try again"])
                 }
-                
+
             }
             dataTask.resume()
         }
@@ -208,7 +191,7 @@ class APIHelper {
             completion([JsonKeys().message :"No Internet Connection"])
         }
     }
-     // token refresh 
+    // token refresh
 
     func refreshToken(completion: @escaping (_ success: Bool) -> Void) {
         guard let refreshToken = UserDefaultsManager.manager.getRefreableToken() else {
@@ -309,12 +292,12 @@ class APIHelper {
         let headers = [
             "content-type": "application/json",
             
-            ]
+        ]
         let parameters = [
             "Password": "e10adc3949ba59abbe56e057f20f883e",
             "UserName": "AKAP4449",
             "Language": "English"
-            ] as [String : Any]
+        ] as [String : Any]
         
         var postData : Data?
         
@@ -370,9 +353,9 @@ class APIHelper {
     func getBasicAuthForForgotPassword(dictionary:[String:Any]) -> String{
         
         
-         let username = "TakAdmin"//dictionary["UserName"] as! String
-       // let email = dictionary["VEmail"] as! String
-         let password = "1dfec5f317bf845120dfc030b0b385e8"
+        let username = "TakAdmin"//dictionary["UserName"] as! String
+        // let email = dictionary["VEmail"] as! String
+        let password = "1dfec5f317bf845120dfc030b0b385e8"
         /* let md5Data = MD5(string:password)
          let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
          let md5Password = md5Hex*/

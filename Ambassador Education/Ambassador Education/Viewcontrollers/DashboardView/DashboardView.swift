@@ -12,6 +12,7 @@ import UIKit
 protocol DashboardViewDelegate: AnyObject {
     func dashboardView(_ view: DashboardView, didTapOnNotification notification: TNotification)
     func dashboardView(_ view: DashboardView, didTapOnStogoImageWith url: String)
+    func didTapOnUpcomingEventView()
 }
 
 class DashboardView: UIView {
@@ -103,4 +104,7 @@ extension DashboardView: NotificationTableViewCellDelegate {
         delegate?.dashboardView(self, didTapOnStogoImageWith: url)
     }
 
+    func didTapOnUpcomingEventView() {
+        delegate?.didTapOnUpcomingEventView()
+    }
 }

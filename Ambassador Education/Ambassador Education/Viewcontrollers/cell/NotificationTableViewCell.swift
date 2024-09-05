@@ -11,11 +11,13 @@ import UIKit
 protocol NotificationTableViewCellDelegate: AnyObject {
     func notificationTableViewCell(_ cell: UITableViewCell, didTapOnNotification notification: TNotification)
     func notificationTableViewCell(_ view: UITableViewCell, didTapOnStogoImageWith url: String)
+    func didTapOnUpcomingEventView()
 }
 
 class NotificationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var upcomingEventView: UIView!
     
     var notificationList = [TNotification]()
     var selectedIndexes: [Int] = []
@@ -25,6 +27,7 @@ class NotificationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         tableView.register(UINib(nibName: "NotificationMailTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationMailTableViewCell")
+        upcomingEventView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -39,7 +42,9 @@ class NotificationTableViewCell: UITableViewCell {
             delegate?.notificationTableViewCell(self, didTapOnStogoImageWith: stringUrl)
         }
     }
-
+    @IBAction func didTapOnUpcomingEventView(_ sender: UIButton) {
+        delegate?.didTapOnUpcomingEventView()
+    }
 }
 
 
