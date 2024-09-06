@@ -10,6 +10,7 @@ import UIKit
 
 protocol UpComingEventViewControllerDelegate: AnyObject {
     func didTapOnIconButton()
+    func upComingEventViewController(_ view: UpComingEventViewController, didTapOnEvent event: TUpcomingEvent)
 }
 
 class UpComingEventViewController: UIViewController {
@@ -45,6 +46,11 @@ extension UpComingEventViewController: UICollectionViewDelegate, UICollectionVie
         cell.setupCell(event: event)
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let event = upcomingEvents[indexPath.item]
+        delegate?.upComingEventViewController(self, didTapOnEvent: event)
     }
 
 }

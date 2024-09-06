@@ -73,13 +73,17 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
+        showUpComingEventView()
         setAllTextFieldsEmpty()
         getTokenValueForMobileNotification()
         setSlideMenuProporties()
         addObserverToNotification()
         topHeaderView.delegate = self
         addGestureOnButton()
-        showUpComingEventView()
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     func setAllTextFieldsEmpty(){
@@ -109,6 +113,8 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
 
     func addObserverToNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(notified(notification:)), name: Notification.Name(rawValue: "HomeChnageWithSiblings"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(sessionExpired), name: Notification.Name(rawValue: "SessionExpired"), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -266,6 +272,18 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
         }
     }
 
+    @objc func sessionExpired() {
+        let topVc = UIApplication.getTopViewController()
+        let alertController = UIAlertController(title: "Alert", message: "Your session has expired. Please log in again.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            isFirstTime = true
+            gradeBookLink = ""
+            showLoginPage()
+        }
+        alertController.addAction(okAction)
+        topVc?.present(alertController, animated: true, completion: nil)
+    }
+
     func postLogIn(id: String){
         var dictionary = [String: String]()
 
@@ -380,7 +398,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
                     let upcomingEvent = ModelClassManager.sharedManager.createModelArray(data: upcomingEvents, modelType: ModelType.TUpcomingEvent) as! [TUpcomingEvent]
                     self.upcomingEvents.append(contentsOf: upcomingEvent)
                 }
-
+                self.upComingEventViewController.upcomingEvents = self.upcomingEvents
                 if let notifications = logInResponseGloabl.value(forKey: "Notification") as? NSArray
                 {
                     logInResponseGloabl.removeObject(forKey: Notification.self)
@@ -790,8 +808,6 @@ extension HomeVC {
         }
 
         guard let upComingEventViewController = upcomingEvent.instantiateViewController(withIdentifier: "UpComingEventViewController") as? UpComingEventViewController else { return }
-        //upComingEventViewController.upcomingEvents = upcomingEvents
-       // upComingEventViewController.collectionView.reloadData()
         upComingEventViewController.delegate = self
         self.upComingEventViewController = upComingEventViewController
         view.insertSubview(upComingEventViewController.view, at: self.revealSideMenuOnTop ? 6 : 0)
@@ -802,28 +818,28 @@ extension HomeVC {
 
         upComingEventViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        // Set up height for the view controller's view
-        let viewHeight: CGFloat = 300 // Adjust this value to your desired height
-
         if self.revealSideMenuOnTop {
             self.sideMenuTrailingConstraint = upComingEventViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: self.upcomingRevealWidth)
             sideMenuTrailingConstraint.isActive = true
         }
-
+        self.upComingEventViewController.upcomingEvents = upcomingEvents
         NSLayoutConstraint.activate([
             upComingEventViewController.view.widthAnchor.constraint(equalToConstant: self.upcomingRevealWidth),
             upComingEventViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             upComingEventViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            //upComingEventViewController.view.heightAnchor.constraint(equalToConstant: viewHeight) // Set the height constraint
         ])
-       // self.upComingEventViewController.collectionView.reloadData()
     }
 
 
 
-
     func sideMenuState(expanded: Bool) {
+
         if expanded {
+            self.upComingEventViewController.upcomingEvents = upcomingEvents
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.upComingEventViewController.collectionView.reloadData()
+            }
             self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? 0 : -self.upcomingRevealWidth) { _ in
                 self.isExpanded = true
             }
@@ -837,8 +853,7 @@ extension HomeVC {
             // Animate Shadow (Fade Out)
             UIView.animate(withDuration: 0.5) { self.upcomingShadowView.alpha = 0.0 }
         }
-        self.upComingEventViewController.upcomingEvents = upcomingEvents
-        self.upComingEventViewController.collectionView.reloadData()
+
     }
 
 
@@ -877,6 +892,20 @@ extension HomeVC: UIGestureRecognizerDelegate {
 
 
 extension HomeVC: UpComingEventViewControllerDelegate {
+    func upComingEventViewController(_ view: UpComingEventViewController, didTapOnEvent event: TUpcomingEvent) {
+        /// present event view
+
+        if let eventViewController = upcomingEvent.instantiateViewController(withIdentifier: "EventViewController") as? EventViewController {
+            eventViewController.upcomingEvent = event
+            if let stringUrl = JWTHelper.shared.getStogoUrl() {
+                eventViewController.url = stringUrl
+            }
+            let popupVC = PopupViewController(contentController: eventViewController, popupWidth: popUpWidth, popupHeight: popUpHeight)
+            popupVC.cornerRadius = 25
+            self.present(popupVC, animated: true)
+        }
+    }
+
     func didTapOnIconButton() {
         sideMenuState(expanded: self.isExpanded ? false : true)
     }

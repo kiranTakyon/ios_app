@@ -33,7 +33,7 @@ class APIHelper {
     
     static let sharedInstance = APIHelper()
     
-    func apiCallHandler(_ originalUrl: String, requestType: MethodType,requestString:String,typingCountVal:Int = 0, requestParameters: [String : Any], completion: @escaping (_ result: NSDictionary) -> Void) {
+    func apiCallHandler(_ originalUrl: String, requestType: MethodType,requestString:String,typingCountVal:Int = 0, requestParameters: [String : Any], isRefreshToken: Bool = false, completion: @escaping (_ result: NSDictionary) -> Void) {
         
         if Reachability.isConnectedToInternet() == true {
             
@@ -125,13 +125,13 @@ class APIHelper {
                     
                     print("reposense code", httpResponse.statusCode)
 
-                    if httpResponse.statusCode == 401 { // Unauthorized, token might be expired
+                    if httpResponse.statusCode == 401  && !isRefreshToken { // Unauthorized, token might be expired
                         self.refreshToken { success in
                             if success {
                                 // Retry the original request
-                                self.apiCallHandler(originalUrl, requestType: requestType, requestString: requestString, typingCountVal: typingCountVal, requestParameters: requestParameters, completion: completion)
+                                self.apiCallHandler(originalUrl, requestType: requestType, requestString: requestString, typingCountVal: typingCountVal, requestParameters: requestParameters,isRefreshToken: true, completion: completion)
                             } else {
-                                completion(["message": "Failed to refresh token"])
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SessionExpired"), object: nil)
                             }
                         }
                     } else {
