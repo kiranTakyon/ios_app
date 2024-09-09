@@ -687,6 +687,7 @@ extension HomeVC: DashboardViewDelegate {
         let navVC = mainStoryBoard.instantiateViewController(withIdentifier: "MessageDetailsNavigationController") as! UINavigationController
         let vc = navVC.children[0] as! MessageDetailController
         vc.messageId = notification.id
+        
         vc.typeMsg = typeValue
         vc.isPresent = true
 

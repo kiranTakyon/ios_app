@@ -28,7 +28,10 @@ class ModuleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.backgroundColor = .clear // Clear any existing color before reuse
+    }
 }
 
 //MARK: - UICollectionViewDelegate,UICollectionViewDataSource -
@@ -42,8 +45,7 @@ extension ModuleTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ModuleCollectionViewCell", for: indexPath) as? ModuleCollectionViewCell else { return UICollectionViewCell() }
         let module = moduleList[indexPath.row]
         cell.labelModule.text = module.module
-        cell.labelDataCount.text = module.data_count
-        
+        cell.labelDataCount.text = module.data_count != nil ? String(module.data_count!) : nil
         switch module.module {
             
         case "Notice Board":

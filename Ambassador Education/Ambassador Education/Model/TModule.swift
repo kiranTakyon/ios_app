@@ -13,11 +13,11 @@ import WebKit
 class TModule: Codable {
     
     var module : String?
-    var data_count : String?
+    var data_count : Int64?
 
     init(values:NSDictionary) {
         self.module = values["module"] as? String
-        self.data_count = values["data_count"] as? String
+        self.data_count = values["data_count"] as? Int64
 
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zuG-nJ-j1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -86,7 +86,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLC-tw-idV">
-                                <rect key="frame" x="80" y="240" width="160" height="40"/>
+                                <rect key="frame" x="80" y="206" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.59607843137254901" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2kz-N9-3Cc"/>
@@ -1969,15 +1969,15 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="C0G-mc-sxx"/>
+                                                <exclude reference="l43-yj-sjU"/>
+                                                <exclude reference="sVz-Zq-FTw"/>
                                                 <exclude reference="CdL-5C-rQC"/>
                                                 <exclude reference="K6s-sz-Gz7"/>
-                                                <exclude reference="Tu1-b3-PcD"/>
-                                                <exclude reference="l43-yj-sjU"/>
                                                 <exclude reference="lim-3Q-bOp"/>
-                                                <exclude reference="pre-52-1em"/>
-                                                <exclude reference="sVz-Zq-FTw"/>
                                                 <exclude reference="uwn-ae-zoT"/>
+                                                <exclude reference="C0G-mc-sxx"/>
+                                                <exclude reference="Tu1-b3-PcD"/>
+                                                <exclude reference="pre-52-1em"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -2192,8 +2192,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="e6T-jd-sYe"/>
-                                                            <exclude reference="Ruw-CG-buk"/>
                                                             <exclude reference="yb9-S6-SYE"/>
+                                                            <exclude reference="Ruw-CG-buk"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -3742,8 +3742,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="2u9-Qk-tGf"/>
-                                                            <exclude reference="V3n-7e-Phy"/>
                                                             <exclude reference="m0R-NI-BoV"/>
+                                                            <exclude reference="V3n-7e-Phy"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -3880,8 +3880,8 @@
                                                             <exclude reference="KW5-mO-fBW"/>
                                                             <exclude reference="aFe-Ly-xCv"/>
                                                             <exclude reference="scz-Kk-Gji"/>
-                                                            <exclude reference="1UF-j7-Prf"/>
                                                             <exclude reference="CXb-Sx-rOA"/>
+                                                            <exclude reference="1UF-j7-Prf"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -4015,7 +4015,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I9-9w-R81">
-                                <rect key="frame" x="80" y="240" width="160" height="40"/>
+                                <rect key="frame" x="80" y="206" width="160" height="40"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.59607843137254901" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hxg-8F-hsi"/>
@@ -4643,7 +4643,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jC-E6-94I">
-                                <rect key="frame" x="26" y="465" width="128" height="40"/>
+                                <rect key="frame" x="26" y="431" width="128" height="40"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.59607843137254901" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9E9-bI-Hqn"/>
@@ -4657,7 +4657,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j01-ec-cad">
-                                <rect key="frame" x="166" y="465" width="128" height="40"/>
+                                <rect key="frame" x="166" y="431" width="128" height="40"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.59607843137254901" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ocf-Rq-bsl"/>
@@ -4841,7 +4841,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HX-ki-yDk">
-                                <rect key="frame" x="26" y="295" width="284" height="40"/>
+                                <rect key="frame" x="26" y="261" width="284" height="40"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.59607843137254901" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JIw-EK-ys3"/>
@@ -6201,7 +6201,7 @@
                                                     <action selector="forgotButtonAction:" destination="uIJ-qA-rfc" eventType="touchUpInside" id="vk1-tI-936"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sm6-M9-QIc">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sm6-M9-QIc">
                                                 <rect key="frame" x="132" y="559" width="150" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -7574,7 +7574,7 @@
         <segue reference="9sU-wh-kmE"/>
         <segue reference="sZY-Vn-uxT"/>
         <segue reference="LfD-ZK-Stt"/>
-        <segue reference="ckE-j1-YuK"/>
+        <segue reference="Zwc-Cg-mRq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AddCC" width="128" height="128"/>
@@ -7640,7 +7640,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="scrollViewTexturedBackgroundColor">
             <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -7649,7 +7649,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -164,7 +164,7 @@ extension NotificationsView: UITableViewDelegate, UITableViewDataSource {
                     cell.typeImageV.image = UIImage(named: image)
                 }
                 cell.typeImageView.image =  #imageLiteral(resourceName: "email_notification")
-                cell.labelTitle.text = "Mail"
+                cell.labelTitle.text = "Digital Resources"
 
             case msgTypes.gallery.rawValue:
                 let index = indexPath.row % galleryImages.count

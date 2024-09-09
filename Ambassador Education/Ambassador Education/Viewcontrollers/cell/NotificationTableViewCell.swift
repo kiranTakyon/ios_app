@@ -91,7 +91,7 @@ extension NotificationTableViewCell: UITableViewDelegate, UITableViewDataSource 
                 
             case msgTypes.htmlType.rawValue:
                 cell.typeImageView.image =  #imageLiteral(resourceName: "email_notification")
-                cell.labelTitle.text = "Mail"
+                cell.labelTitle.text = "Digital Resources"
                 
             case msgTypes.gallery.rawValue:
                 cell.typeImageView.image = #imageLiteral(resourceName: "Gallary")
