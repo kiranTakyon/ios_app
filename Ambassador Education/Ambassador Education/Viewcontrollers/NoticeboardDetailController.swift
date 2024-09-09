@@ -184,7 +184,7 @@ class NoticeboardDetailController: UIViewController {
             //   APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
                 print(result)
-                if result["StatusCode"] as? Int == 1{
+                if result["StatusCode"] as? Int == 1 {
                     self.detail = TNNoticeBoardDetail(values: result["item"] as! NSDictionary)
                     // if let messages = result["item"] as? NSArray{
                     // if let messages = result["item"] as? NSArray{

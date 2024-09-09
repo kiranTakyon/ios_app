@@ -265,7 +265,7 @@ class APIHelper {
                            let newRefreshToken = json["refresh_token"] as? String {
                             // Store new tokens if necessary
                             UserDefaultsManager.manager.saveSessionToken(token: newSessionToken)
-                            UserDefaultsManager.manager.saveSessionToken(token: newRefreshToken)
+                            UserDefaultsManager.manager.saveRefreshableToken(token: newRefreshToken)
                             completion(true)
                         } else {
                             print("Invalid response data")

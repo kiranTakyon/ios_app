@@ -305,6 +305,7 @@ class HomeVC: UIViewController,SWRevealViewControllerDelegate {
                     if resultDict["StatusCode"] as? Int == 1 {
 
                         logInResponseGloabl = NSMutableDictionary(dictionary: resultDict)//resultDict as NSMutableDictionary
+                        UserDefaultsManager.manager.saveDictionaryToUserDefaults(dictionary: logInResponseGloabl, forKey: DBKeys.logInResponse)
                         // Post Notification so that Side Menu updates its items on Sibling Login...
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateSideMenuItems"), object: nil)
                         UserDefaultsManager.manager.saveUserId(id:  (logInResponseGloabl.value(forKey: "UserId") as? String).safeValue)

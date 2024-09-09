@@ -18,7 +18,7 @@ let fillFields = "All fields are mandatory"
 var showWebUrl : String?
 let toHomeSegue = "toHome"
 
-
+/// msbpreg1101
 var currentUserName = ""
 var currentPassword = ""
 var currentLanguage = ""
@@ -47,23 +47,14 @@ class ViewController: UIViewController {
         setUpLabelDontHaveAnAccount()
         setCountryPicker()
         setVersion()
-        getDashboardWhenAlreadyLogin()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    func getDashboardWhenAlreadyLogin(){
-        if let user = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.username) as? String{
-            if let pass = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.password) as? String{
-                if user != "" && pass != ""{
-                    self.startLoadingAnimation()
-                    self.showSavedCredentials()
-                    self.postLogIn(email: user, password: pass, isAutoLogin: true)
-                }
-            }
-        } else {
-            showRememberCredential()
-        }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showRememberCredential()
     }
+    
     func setCountryPicker(){
         
         self.countryPicker.pickerInputItems(["English","عربى"])
@@ -161,7 +152,7 @@ class ViewController: UIViewController {
 
         if passwordField.text != "" && usernameField.text != "" && countryPicker.pickerTextField.text != ""{
             return false
-        }else{
+        } else {
             return true
         }
 
@@ -271,6 +262,7 @@ class ViewController: UIViewController {
                         }
                         logInResponseGloabl.removeAllObjects()
                         logInResponseGloabl = NSMutableDictionary(dictionary: resultDict)
+                        UserDefaultsManager.manager.saveDictionaryToUserDefaults(dictionary: logInResponseGloabl, forKey: DBKeys.logInResponse)
                         sibling = false
                         self.stopLoadingAnimation()
                         self.setCurrentCredentials(userName: self.usernameField.text!, password: self.passwordField.text!)

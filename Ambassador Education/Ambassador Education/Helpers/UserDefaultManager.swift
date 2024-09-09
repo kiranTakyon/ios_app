@@ -138,4 +138,29 @@ class UserDefaultsManager {
         return UserDefaults.standard.string(forKey: DBKeys.refresh_token)
 
     }
+
+    // Function to save the NSMutableDictionary to UserDefaults
+    func saveDictionaryToUserDefaults(dictionary: NSMutableDictionary, forKey key: String) {
+        do {
+            let data = try PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
+            UserDefaults.standard.set(data, forKey: key)
+        } catch {
+            print("Error saving dictionary to UserDefaults: \(error)")
+        }
+    }
+
+    // Function to retrieve the NSMutableDictionary from UserDefaults
+    func retrieveDictionaryFromUserDefaults(forKey key: String) -> NSMutableDictionary? {
+        if let data = UserDefaults.standard.data(forKey: key) {
+            do {
+                let dictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? NSMutableDictionary
+                return dictionary
+            } catch {
+                print("Error retrieving dictionary from UserDefaults: \(error)")
+            }
+        }
+        return nil
+    }
+
+
 }

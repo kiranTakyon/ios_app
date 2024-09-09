@@ -190,6 +190,7 @@ func removeAllGlbalValues(){
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.isRemember)
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.refresh_token)
     UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.session_Token)
+    UserDefaultsManager.manager.removeFromUserDefault(key: DBKeys.logInResponse)
 
 }
 
