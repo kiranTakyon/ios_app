@@ -385,7 +385,7 @@ extension PaymentDetailsController {
             let userId = UserDefaultsManager.manager.getUserId()
             dictionary[UserIdKey().id] =  userId
         }
-
+        self.payemntDetails.removeAll()
         APIHelper.sharedInstance.apiCallHandler(url, requestType: .POST, requestString: "", requestParameters: dictionary) { [weak self] (result) in
             
             guard let self = self else { return }
