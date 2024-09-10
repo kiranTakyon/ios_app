@@ -318,7 +318,7 @@ extension NotificationsView {
         var dictionary = [String:Any]()
         let userId = UserDefaultsManager.manager.getUserId()
         dictionary[UserIdKey().id] =  userId
-        dictionary["paginationNumber"] =  pageNumber
+        dictionary["paginationNumber"] =  pageNumber + 1
 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             print(result)
