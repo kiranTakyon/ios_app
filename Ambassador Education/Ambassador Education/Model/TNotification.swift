@@ -10,7 +10,7 @@ import Foundation
 import  UIKit
 import WebKit
 
-class TNotification: Codable {
+class TNotification: Codable, Hashable {
     
     var id : String?
     var title : String?
@@ -25,6 +25,14 @@ class TNotification: Codable {
     var reactions: TReaction?
     var alertId: Int?
     var url: String?
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func ==(lhs: TNotification, rhs: TNotification) -> Bool {
+        return lhs.id == rhs.id
+    }
 
     init(values:NSDictionary) {
         self.id = values["id"] as? String

@@ -332,6 +332,7 @@ extension NotificationsView {
                 if self.notificationList.count > 0 {
                     self.delegate?.removeNoNotificationdataLabel()
                 }
+                self.notificationList = self.notificationList.unique()
                 self.tableView.reloadData()
             }
         }

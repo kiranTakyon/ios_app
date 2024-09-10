@@ -467,3 +467,10 @@ fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [Stri
 	guard let input = input else { return nil }
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
+
+
+extension Array where Element: Hashable {
+    func unique() -> [Element] {
+        return Array(Set(self))
+    }
+}

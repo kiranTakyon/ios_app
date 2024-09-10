@@ -43,6 +43,7 @@ extension UpComingEventViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpcomingEventCollectionViewCell", for: indexPath) as? UpcomingEventCollectionViewCell else { return UICollectionViewCell() }
         let event = upcomingEvents[indexPath.item]
+        cell.index = indexPath.item
         cell.setupCell(event: event)
 
         return cell

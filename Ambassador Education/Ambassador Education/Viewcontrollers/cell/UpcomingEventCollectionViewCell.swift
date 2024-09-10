@@ -12,6 +12,10 @@ class UpcomingEventCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var tittleLabel: UILabel!
     @IBOutlet weak var eventImageView: ImageLoader!
+    @IBOutlet weak var cellBorderView: UIView!
+
+    var borderColor = ["FF6666","91D0DF"]
+    var index: Int = -1
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +29,9 @@ class UpcomingEventCollectionViewCell: UICollectionViewCell {
         if let url = event.image {
             eventImageView.loadImageWithUrl(url)
         }
+        let index = index % borderColor.count
+        let color = borderColor[index]
+        cellBorderView.backgroundColor = UIColor(named: color)
     }
 
 }

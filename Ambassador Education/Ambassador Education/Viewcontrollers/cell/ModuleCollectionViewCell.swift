@@ -13,6 +13,7 @@ class ModuleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelModule: UILabel!
     @IBOutlet weak var moduleImageView: UIImageView!
     @IBOutlet weak var labelDataCount: UILabel!
+    @IBOutlet weak var cellBackgroundView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

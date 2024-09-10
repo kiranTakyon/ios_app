@@ -15,7 +15,8 @@ class ModuleTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var moduleList = [TModule]()
-    
+    var moduleBgColor = ["FF6666","99CB98","91D0DF","F1BB4E","DDAF84","669ACC"]
+
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.register(UINib(nibName: "ModuleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ModuleCollectionViewCell")
@@ -46,6 +47,9 @@ extension ModuleTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         let module = moduleList[indexPath.row]
         cell.labelModule.text = module.module
         cell.labelDataCount.text = module.data_count != nil ? String(module.data_count!) : nil
+        let index = indexPath.item % moduleBgColor.count
+        let color = moduleBgColor[index]
+        cell.cellBackgroundView.backgroundColor = UIColor(named: color)
         switch module.module {
             
         case "Notice Board":

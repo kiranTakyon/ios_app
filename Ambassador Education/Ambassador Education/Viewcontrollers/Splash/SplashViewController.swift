@@ -37,8 +37,8 @@ class SplashViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + dealy) {
             self.videoView.stopPlayer()
-            if let sessionToken = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.session_Token) as? String, !sessionToken.isEmpty {
-                logInResponseGloabl = UserDefaultsManager.manager.retrieveDictionaryFromUserDefaults(forKey: DBKeys.logInResponse) ?? [:]
+            if let sessionToken = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.session_Token) as? String, !sessionToken.isEmpty, let loginResponse = UserDefaultsManager.manager.retrieveDictionaryFromUserDefaults(forKey: DBKeys.logInResponse) {
+                logInResponseGloabl = loginResponse
                 self.performSegue(withIdentifier: "navigateToHome", sender: nil)
             } else {
                 self.performSegue(withIdentifier: "toLogin", sender: nil)
