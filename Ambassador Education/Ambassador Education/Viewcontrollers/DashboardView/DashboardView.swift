@@ -46,7 +46,7 @@ class DashboardView: UIView {
 extension DashboardView: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,15 +62,7 @@ extension DashboardView: UITableViewDelegate, UITableViewDataSource {
             cell.collectionView.reloadData()
             return cell
             
-        } else if indexPath.section == 2 {
-            
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeBoardTableViewCell", for: indexPath) as? NoticeBoardTableViewCell else { return UITableViewCell() }
-            cell.NoticeBoardItems = NoticeBoardItems
-            cell.collectionView.reloadData()
-            return cell
-            
         } else {
-            
             // create a new cell if needed or reuse an old one
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell", for: indexPath) as? NotificationTableViewCell else { return UITableViewCell()}
@@ -86,10 +78,8 @@ extension DashboardView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 200
-        } else  if indexPath.section == 2 {
-            return 150
         } else {
-            return 330
+            return 400
         }
     }
     
