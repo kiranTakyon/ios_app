@@ -8,7 +8,9 @@
 
 import Foundation
 
-let BaseUrl = "https://t360.lasagu.net/Takyon360_API/T360_API/"
+let BaseUrl = "https://beta.reportz.co.in/t360api/T360_API/"
+//let BaseUrl = "https://t360.lasagu.net/Takyon360_API/T360_API/"
+//"https://beta.reportz.co.in/t360api/T360_API/"
 //"https://reportz.co.in/Takyon360/T360_API2/"// //"http://lasagu.net/school/T360Api/"
 //"http://lasagu.net/school/T360_API/"
 

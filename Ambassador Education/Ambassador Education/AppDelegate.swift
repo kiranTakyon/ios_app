@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     let registrationKey = "onRegistrationCompleted"
     let messageKey = "onMessageReceived"
-    let subscriptionTopic = "/topics/global"
+    let subscriptionTopic = "/global"
     
     let gcmMessageIDKey = "gcm.message_id"
     var appId = ""

@@ -74,7 +74,7 @@ class JWTHelper: NSObject {
     }
 
     func getStogoUrl() -> String? {
-        let url = "https://dev.stogoworld.com?token="
+        let url = "https://stogoworld.com/?token="
         let userId = UserDefaultsManager.manager.getUserId()
         if let token = UserDefaultsManager.manager.getJwtToken() {
             if let refreshToken = refreshJWTIfNeeded(currentToken: token, userID: userId) {
@@ -90,7 +90,7 @@ class JWTHelper: NSObject {
 
     func getStogoUrlWithProfil() -> String? {
         let userId = UserDefaultsManager.manager.getUserId()
-          let url = "https://dev.stogoworld.com/profile/\(userId)?token="
+          let url = "https://stogoworld.com/profile/\(userId)?token="
           if let token = UserDefaultsManager.manager.getJwtToken() {
               if let refreshToken = refreshJWTIfNeeded(currentToken: token, userID: userId) {
                   return url + refreshToken
