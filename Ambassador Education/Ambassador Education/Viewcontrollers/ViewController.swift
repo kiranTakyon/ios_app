@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     //    var  popUpViewVc : BIZPopupViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpLabelDontHaveAnAccount()
+     //   setUpLabelDontHaveAnAccount()
         setCountryPicker()
         setVersion()
         // Do any additional setup after loading the view, typically from a nib.
