@@ -426,6 +426,8 @@ extension AppDelegate {
         let appStoreId = "6474555846"
 #elseif AIQN
         let appStoreId = "6476014314"
+#elseif EPS
+        let appStoreId = "6698888081"
 #else
         let appStoreId = ""
 #endif

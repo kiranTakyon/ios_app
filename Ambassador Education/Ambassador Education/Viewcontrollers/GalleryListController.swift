@@ -128,7 +128,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
 
         if array.count != 0 {
             for each in array {
-                if let imageUrl = each.thumbnail as? String,
+                if let imageUrl = each.thumbnail?.removingPercentEncoding as? String,
                    let imageTitle = each.galleryTitle as? String {
                     let imageInfo = ["imageUrl": imageUrl, "imageTitle": imageTitle]
                     imageArray.append(imageInfo)
@@ -200,7 +200,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         
         //cell.titleLabel.text = item.galleryTitle
         if let url = item.thumbnail{
-            cell.imageView.loadImageWithUrl(url)
+            cell.imageView.loadImageWithUrl(url.removingPercentEncoding!)
         }
         if let name = item.galleryTitle{
             if name.contains("&quot") || name.contains(";"){

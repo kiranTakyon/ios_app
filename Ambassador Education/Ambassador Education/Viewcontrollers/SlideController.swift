@@ -485,9 +485,10 @@ class SlideController: UITableViewController,TaykonProtocol {
             }
            }
         }
-        
+        print(indexPath)
+        print(indexPath.row)
         if indexPath.row == 0 {
-        } else if indexPath.row == 20 {
+       // } else if indexPath.row == 20 {
             
         } else {
             let cell = tableView.cellForRow(at: indexPath) as! slidemenuCell

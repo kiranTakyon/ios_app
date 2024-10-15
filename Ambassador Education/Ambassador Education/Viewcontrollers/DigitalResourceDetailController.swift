@@ -119,6 +119,12 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         labelHeight.constant = height
         seperatorView.isHidden = hide
     }
+    // Helper function to detect RTL language (e.g., Arabic)
+    func isRTLLanguage(content: String) -> Bool {
+        // Arabic Unicode range is U+0600 to U+06FF
+        let rtlCharacterSet = CharacterSet(charactersIn: "\u{0600}"..."\u{06FF}")
+        return content.rangeOfCharacter(from: rtlCharacterSet) != nil
+    }
     
     func setData(){
         if let digital = digitalResource {
@@ -177,7 +183,17 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             //let htmlDecode = weeklyPlanValue.description.safeValue.replacingHTMLEntities
             let htmlDecode = weeklyPlanValue.description
             //richEditorView.html = htmlDecode.safeValue
-            richEditorView1.html = htmlDecode.safeValue
+            // Check if the content is in Arabic or another RTL language
+            if isRTLLanguage(content: htmlDecode.safeValue) {
+                    // Set the editor view alignment to right-to-left
+                    richEditorView1.html = "<div style=\"text-align:right; direction:rtl;\">\(htmlDecode.safeValue)</div>"
+                } else {
+                    // For non-RTL languages, use the default alignment
+                    richEditorView1.html = "<div style=\"text-align:left; direction:ltr;\">\(htmlDecode.safeValue)</div>"
+                }
+
+            
+ //           richEditorView1.html = htmlDecode.safeValue
             if(comment_needed=="0")
             {
                 btnAddComment.isHidden = true

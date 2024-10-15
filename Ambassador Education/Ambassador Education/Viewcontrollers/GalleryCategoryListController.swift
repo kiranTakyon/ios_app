@@ -127,7 +127,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
 
         
         if let url = item.thumbnail{
-            cell.imageView.loadImageWithUrl(url)
+            cell.imageView.loadImageWithUrl(url.removingPercentEncoding!)
         }
 
         

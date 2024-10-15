@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09F38DF9E41C21E69E8C3EE5 /* Pods_Alitqan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB4298576A1DE2E8CC1755 /* Pods_Alitqan.framework */; };
 		131EF95E216F293A007DA6B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 131EF95D216F2939007DA6B3 /* GoogleService-Info.plist */; };
 		1365753C2140F0E90045A958 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		1365753D2140F0E90045A958 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
@@ -3051,7 +3050,6 @@
 		CD7C927F2B5CB8B200A0D215 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
 		CD7C92802B5CB8B200A0D215 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CD7C92882B5CBAB000A0D215 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */; };
-		CD7C92892B5CBAC200A0D215 /* WoodlemAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */; };
 		CD7DDEB62AE04921000D0EB4 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CD7DDEB72AE04921000D0EB4 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CD7DDEB82AE04921000D0EB4 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -3970,6 +3968,7 @@
 		CD7DE3EC2AE0A6A5000D0EB4 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CD7DE3F32AE0A7A1000D0EB4 /* PEPSV2Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4491440C252E173000EAF467 /* PEPSV2Assets.xcassets */; };
 		CD7DE3F42AE0A7D2000D0EB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44914409252E0C9800EAF467 /* GoogleService-Info.plist */; };
+		CD818C052C021B32006FADA9 /* WoodlemAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD818C042C021B31006FADA9 /* WoodlemAssets.xcassets */; };
 		CD8A983F2ABCF36500BAF7CD /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CD8A98402ABCF36500BAF7CD /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CD8A98412ABCF36500BAF7CD /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -4637,6 +4636,8 @@
 		CDB7C4352748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C4362748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
 		CDB7C43B2748127D00FE5186 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
+		CDC110FD2C9DA4BD00DBC5C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDC110FC2C9DA4BD00DBC5C4 /* GoogleService-Info.plist */; };
+		CDC110FF2C9DAAFC00DBC5C4 /* EPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC110FE2C9DAAFC00DBC5C4 /* EPS.xcassets */; };
 		CDCACDD42A533ABD006BA1A1 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CDCACDD52A533ABD006BA1A1 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		CDCACDD62A533ABD006BA1A1 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -4933,6 +4934,160 @@
 		CDD23676289AD40100A7121D /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CDD2367E289AD42200A7121D /* OrisonSchoolV2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1582379DAE3005148EE /* OrisonSchoolV2.xcassets */; };
 		CDD2367F289AD4FF00A7121D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4442B1562379DA4A005148EE /* GoogleService-Info.plist */; };
+		CDD5ADDD2C7D350A00B07B38 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
+		CDD5ADDE2C7D350A00B07B38 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
+		CDD5ADDF2C7D350A00B07B38 /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
+		CDD5ADE02C7D350A00B07B38 /* WeeklyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */; };
+		CDD5ADE12C7D350A00B07B38 /* TMyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E21F2E270300729AF8 /* TMyProfile.swift */; };
+		CDD5ADE22C7D350A00B07B38 /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10CD92A3C5C6100FE000E /* TopHeaderView.swift */; };
+		CDD5ADE32C7D350A00B07B38 /* TInboxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B87561F2F87FD00B15818 /* TInboxMessage.swift */; };
+		CDD5ADE42C7D350A00B07B38 /* CalendarSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45218A8320808FCF004CF24C /* CalendarSection.swift */; };
+		CDD5ADE52C7D350A00B07B38 /* DirectoryCreationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4C1F6AC6CF00599C36 /* DirectoryCreationOperation.swift */; };
+		CDD5ADE62C7D350A00B07B38 /* TNGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40751F533FCA000F62B8 /* TNGroupMember.swift */; };
+		CDD5ADE72C7D350A00B07B38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */; };
+		CDD5ADE82C7D350A00B07B38 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7231F1FC9AF00C0D63F /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		CDD5ADE92C7D350A00B07B38 /* VerificationEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */; };
+		CDD5ADEA2C7D350A00B07B38 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436F429204DA0D40076A3D4 /* SweetAlert.swift */; };
+		CDD5ADEB2C7D350A00B07B38 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E01F2E1A6900729AF8 /* ModelManager.swift */; };
+		CDD5ADEC2C7D350A00B07B38 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
+		CDD5ADED2C7D350A00B07B38 /* FileUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4E1F6AC6CF00599C36 /* FileUploadOperation.swift */; };
+		CDD5ADEE2C7D350A00B07B38 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7241F1FC9AF00C0D63F /* UITextField+fixCaretPosition.swift */; };
+		CDD5ADEF2C7D350A00B07B38 /* WeeklyPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6E200C766A00288C83 /* WeeklyPlanCell.swift */; };
+		CDD5ADF02C7D350A00B07B38 /* KSTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EB209B0C7900EB0F1D /* KSTokenView.swift */; };
+		CDD5ADF12C7D350A00B07B38 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5942B50207900F4A148 /* VideoPlayerView.swift */; };
+		CDD5ADF22C7D350A00B07B38 /* TNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DE1F2E199700729AF8 /* TNotification.swift */; };
+		CDD5ADF32C7D350A00B07B38 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */; };
+		CDD5ADF42C7D350A00B07B38 /* UploadFTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32A45D1F6AC446008A4BC3 /* UploadFTP.swift */; };
+		CDD5ADF52C7D350A00B07B38 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F6092044534700515F74 /* WebViewViewController.swift */; };
+		CDD5ADF62C7D350A00B07B38 /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
+		CDD5ADF72C7D350A00B07B38 /* ProgressViewBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97520F759730071DF9E /* ProgressViewBar.swift */; };
+		CDD5ADF82C7D350A00B07B38 /* WeeklyPlanTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E6A200C763F00288C83 /* WeeklyPlanTable.swift */; };
+		CDD5ADF92C7D350A00B07B38 /* GalleryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6361F5094A3006F4D34 /* GalleryListController.swift */; };
+		CDD5ADFA2C7D350A00B07B38 /* TNPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890CE02007C8EC00991BF7 /* TNPayment.swift */; };
+		CDD5ADFB2C7D350A00B07B38 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9862F60F2A3DDBBB00203E96 /* UIViewController+Helper.swift */; };
+		CDD5ADFC2C7D350A00B07B38 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB3F1F23C7730089E203 /* APIHelper.swift */; };
+		CDD5ADFD2C7D350A00B07B38 /* UIViewController+PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */; };
+		CDD5ADFE2C7D350A00B07B38 /* TNNoticeBoardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34402030A0C600A35086 /* TNNoticeBoardDetail.swift */; };
+		CDD5ADFF2C7D350A00B07B38 /* FTPUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F66A3213F946400411212 /* FTPUploadHelper.swift */; };
+		CDD5AE002C7D350A00B07B38 /* MPGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB148F31F4F1F9800444765 /* MPGTextField.m */; };
+		CDD5AE012C7D350A00B07B38 /* LoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC3AFB23377EC700BFBEB7 /* LoadMoreControl.swift */; };
+		CDD5AE022C7D350A00B07B38 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374120504687002931EA /* FSCalendar.m */; };
+		CDD5AE032C7D350A00B07B38 /* KSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E8209B0C7600EB0F1D /* KSToken.swift */; };
+		CDD5AE042C7D350A00B07B38 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7321F1FC9AF00C0D63F /* HomeVC.swift */; };
+		CDD5AE052C7D350A00B07B38 /* TNAwarnessArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */; };
+		CDD5AE062C7D350A00B07B38 /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA641F24E8A700BA82BE /* PagerController.swift */; };
+		CDD5AE072C7D350A00B07B38 /* FSCalendarTransitionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375120504687002931EA /* FSCalendarTransitionCoordinator.m */; };
+		CDD5AE082C7D350A00B07B38 /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B10D2E2A3C654500FE000E /* View+Helper.swift */; };
+		CDD5AE092C7D350A00B07B38 /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373320504687002931EA /* FSCalendarCollectionView.m */; };
+		CDD5AE0A2C7D350A00B07B38 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7121F1FC9AF00C0D63F /* APIUrls.swift */; };
+		CDD5AE0B2C7D350A00B07B38 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373720504687002931EA /* FSCalendarDelegationProxy.m */; };
+		CDD5AE0C2C7D350A00B07B38 /* CustomCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40711F52F607000F62B8 /* CustomCalendarCell.swift */; };
+		CDD5AE0D2C7D350A00B07B38 /* TNPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D45BC1F545D930042727A /* TNPerson.swift */; };
+		CDD5AE0E2C7D350A00B07B38 /* TNGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6381F5098D4006F4D34 /* TNGallery.swift */; };
+		CDD5AE0F2C7D350A00B07B38 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C501F6AC6CF00599C36 /* Operation.swift */; };
+		CDD5AE102C7D350A00B07B38 /* StreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C541F6AC6CF00599C36 /* StreamOperation.swift */; };
+		CDD5AE112C7D350A00B07B38 /* TNCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343A203077B500A35086 /* TNCalendarEvent.swift */; };
+		CDD5AE122C7D350A00B07B38 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72E1F1FC9AF00C0D63F /* TPKeyboardAvoidingTableView.m */; };
+		CDD5AE132C7D350A00B07B38 /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71D1F1FC9AF00C0D63F /* DOAlertController.swift */; };
+		CDD5AE142C7D350A00B07B38 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72C1F1FC9AF00C0D63F /* TPKeyboardAvoidingScrollView.m */; };
+		CDD5AE152C7D350A00B07B38 /* DigitalResourceCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988EE3342A4C16F800888512 /* DigitalResourceCategoryCell.swift */; };
+		CDD5AE162C7D350A00B07B38 /* CommunicateLandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */; };
+		CDD5AE172C7D350A00B07B38 /* TSibling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171E41F2E4DD700729AF8 /* TSibling.swift */; };
+		CDD5AE182C7D350A00B07B38 /* FSCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374820504687002931EA /* FSCalendarExtensions.m */; };
+		CDD5AE192C7D350A00B07B38 /* NoticeboardCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */; };
+		CDD5AE1A2C7D350A00B07B38 /* FSCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374220504687002931EA /* FSCalendarCollectionViewLayout.m */; };
+		CDD5AE1B2C7D350A00B07B38 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA71F1F1FC9AF00C0D63F /* Picker.swift */; };
+		CDD5AE1C2C7D350A00B07B38 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE11F2788AA00742127 /* Protocols.swift */; };
+		CDD5AE1D2C7D350A00B07B38 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7221F1FC9AF00C0D63F /* SkyFloatingLabelTextField.swift */; };
+		CDD5AE1E2C7D350A00B07B38 /* MyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */; };
+		CDD5AE1F2C7D350A00B07B38 /* DRDAttechmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */; };
+		CDD5AE202C7D350A00B07B38 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D406F1F52F607000F62B8 /* CalendarController.swift */; };
+		CDD5AE212C7D350A00B07B38 /* FSCalendarScopeHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374320504687002931EA /* FSCalendarScopeHandle.m */; };
+		CDD5AE222C7D350A00B07B38 /* WriteStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C551F6AC6CF00599C36 /* WriteStreamOperation.swift */; };
+		CDD5AE232C7D350A00B07B38 /* RegisterPopUpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */; };
+		CDD5AE242C7D350A00B07B38 /* jsonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7131F1FC9AF00C0D63F /* jsonKeys.swift */; };
+		CDD5AE252C7D350A00B07B38 /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = B419375320504687002931EA /* FSCalendarAppearance.m */; };
+		CDD5AE262C7D350A00B07B38 /* FileDownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C4D1F6AC6CF00599C36 /* FileDownloadOperation.swift */; };
+		CDD5AE272C7D350A00B07B38 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB481F23C7F10089E203 /* Reachability.swift */; };
+		CDD5AE282C7D350A00B07B38 /* DBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3171DB1F2E14EF00729AF8 /* DBKeys.swift */; };
+		CDD5AE292C7D350A00B07B38 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB401F23C7730089E203 /* Constants.swift */; };
+		CDD5AE2A2C7D350A00B07B38 /* TNAwarenessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A8D2045960D006A0848 /* TNAwarenessDetail.swift */; };
+		CDD5AE2B2C7D350A00B07B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45559BF41EBADB3B00F4E6FB /* AppDelegate.swift */; };
+		CDD5AE2C2C7D350A00B07B38 /* ReadSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C639262053D2970099B85E /* ReadSelectViewController.swift */; };
+		CDD5AE2D2C7D350A00B07B38 /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373920504687002931EA /* FSCalendarDelegationFactory.m */; };
+		CDD5AE2E2C7D350A00B07B38 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */; };
+		CDD5AE2F2C7D350A00B07B38 /* UIDevice+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865CD692A3C8630006C8F6E /* UIDevice+Helper.swift */; };
+		CDD5AE302C7D350A00B07B38 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1376C97F20F76B220071DF9E /* LinearProgressView.swift */; };
+		CDD5AE312C7D350A00B07B38 /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBE31F278C3700742127 /* ComposeController.swift */; };
+		CDD5AE322C7D350A00B07B38 /* WeeklyPlanFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */; };
+		CDD5AE332C7D350A00B07B38 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */; };
+		CDD5AE342C7D350A00B07B38 /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */; };
+		CDD5AE352C7D350A00B07B38 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
+		CDD5AE362C7D350A00B07B38 /* NoticeBoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */; };
+		CDD5AE372C7D350A00B07B38 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7301F1FC9AF00C0D63F /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		CDD5AE382C7D350A00B07B38 /* TNSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6818F2241CD4A200997AF6 /* TNSubject.swift */; };
+		CDD5AE392C7D350A00B07B38 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */; };
+		CDD5AE3A2C7D350A00B07B38 /* FSCalendarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374B20504687002931EA /* FSCalendarConstants.m */; };
+		CDD5AE3B2C7D350A00B07B38 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B419373F20504687002931EA /* FSCalendarCell.m */; };
+		CDD5AE3C2C7D350A00B07B38 /* DigitalResourceDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */; };
+		CDD5AE3D2C7D350A00B07B38 /* TNMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4E68D31F6C347E00F95547 /* TNMenuItem.swift */; };
+		CDD5AE3E2C7D350A00B07B38 /* AddCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE82449275FC03D00BD4211 /* AddCommentVC.swift */; };
+		CDD5AE3F2C7D350A00B07B38 /* FSCalendar+Deprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374A20504687002931EA /* FSCalendar+Deprecated.m */; };
+		CDD5AE402C7D350A00B07B38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB4A1F23CB450089E203 /* Extensions.swift */; };
+		CDD5AE412C7D350A00B07B38 /* TNDigitalResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7851F55ABA400A366AA /* TNDigitalResource.swift */; };
+		CDD5AE422C7D350A00B07B38 /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374020504687002931EA /* FSCalendarStickyHeader.m */; };
+		CDD5AE432C7D350A00B07B38 /* CommunicateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */; };
+		CDD5AE442C7D350A00B07B38 /* KSTokenField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0E9209B0C7700EB0F1D /* KSTokenField.swift */; };
+		CDD5AE452C7D350A00B07B38 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB421F23C7730089E203 /* UserDefaultManager.swift */; };
+		CDD5AE462C7D350A00B07B38 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C531F6AC6CF00599C36 /* Session.swift */; };
+		CDD5AE472C7D350A00B07B38 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */; };
+		CDD5AE482C7D350A00B07B38 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA72A1F1FC9AF00C0D63F /* TPKeyboardAvoidingCollectionView.m */; };
+		CDD5AE492C7D350A00B07B38 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */; };
+		CDD5AE4A2C7D350A00B07B38 /* SlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEFFA591F24637D00BA82BE /* SlideController.swift */; };
+		CDD5AE4B2C7D350A00B07B38 /* AwarenessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8C083203B411A00C921DB /* AwarenessViewController.swift */; };
+		CDD5AE4C2C7D350A00B07B38 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFBA7271F1FC9AF00C0D63F /* SWRevealViewController.m */; };
+		CDD5AE4D2C7D350A00B07B38 /* AwarenessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */; };
+		CDD5AE4E2C7D350A00B07B38 /* DigitalResourceSecondListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */; };
+		CDD5AE4F2C7D350A00B07B38 /* NotificationDetailListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */; };
+		CDD5AE502C7D350A00B07B38 /* DigitalResourcesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */; };
+		CDD5AE512C7D350A00B07B38 /* NoticeboardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */; };
+		CDD5AE522C7D350A00B07B38 /* VideoDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FBEA8220810D3D0035AECD /* VideoDownload.swift */; };
+		CDD5AE532C7D350A00B07B38 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D40701F52F607000F62B8 /* CircleView.swift */; };
+		CDD5AE542C7D350A00B07B38 /* FSCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374C20504687002931EA /* FSCalendarCalculator.m */; };
+		CDD5AE552C7D350A00B07B38 /* ReadStreamOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C511F6AC6CF00599C36 /* ReadStreamOperation.swift */; };
+		CDD5AE562C7D350A00B07B38 /* DownLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */; };
+		CDD5AE572C7D350A00B07B38 /* TNNoticeboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC7B78D1F55E5A600A366AA /* TNNoticeboard.swift */; };
+		CDD5AE582C7D350A00B07B38 /* FSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374420504687002931EA /* FSCalendarWeekdayView.m */; };
+		CDD5AE592C7D350A00B07B38 /* KSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135CA0EA209B0C7800EB0F1D /* KSUtils.swift */; };
+		CDD5AE5A2C7D350A00B07B38 /* GalleryCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */; };
+		CDD5AE5B2C7D350A00B07B38 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5007E71F2638A10013AA07 /* MapController.swift */; };
+		CDD5AE5C2C7D350A00B07B38 /* TNGalleryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97C6341F508561006F4D34 /* TNGalleryCategory.swift */; };
+		CDD5AE5D2C7D350A00B07B38 /* GradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41937672050510A002931EA /* GradeViewController.swift */; };
+		CDD5AE5E2C7D350A00B07B38 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA738E122BA331DB009E63C2 /* BirthdayViewController.swift */; };
+		CDD5AE5F2C7D350A00B07B38 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA4EB411F23C7730089E203 /* Global.swift */; };
+		CDD5AE602C7D350A00B07B38 /* TNWeeklyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C6E72200C865500288C83 /* TNWeeklyPlan.swift */; };
+		CDD5AE612C7D350A00B07B38 /* PaymentDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE169EA0200687A00019685A /* PaymentDetailsController.swift */; };
+		CDD5AE622C7D350A00B07B38 /* TNGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB148EF1F4F1D5E00444765 /* TNGroup.swift */; };
+		CDD5AE642C7D350A00B07B38 /* MBCalendarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE630DB81F514D9200CE1022 /* MBCalendarKit.framework */; };
+		CDD5AE652C7D350A00B07B38 /* Toast_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7B4CC31F378AA10009D393 /* Toast_Swift.framework */; };
+		CDD5AE662C7D350A00B07B38 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5007E91F263A960013AA07 /* MapKit.framework */; };
+		CDD5AE672C7D350A00B07B38 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE294CEC21E8933300331820 /* CloudKit.framework */; };
+		CDD5AE682C7D350A00B07B38 /* DGActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */; };
+		CDD5AE6C2C7D350A00B07B38 /* DigitalResourceCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988EE3352A4C16F800888512 /* DigitalResourceCategoryCell.xib */; };
+		CDD5AE6D2C7D350A00B07B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */; };
+		CDD5AE6E2C7D350A00B07B38 /* WeeklyPlanTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6B200C763F00288C83 /* WeeklyPlanTable.xib */; };
+		CDD5AE6F2C7D350A00B07B38 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C4A1F6AC6CF00599C36 /* .swiftlint.yml */; };
+		CDD5AE702C7D350A00B07B38 /* TestInapp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9D2101ECF6001B571E /* TestInapp.jpg */; };
+		CDD5AE712C7D350A00B07B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
+		CDD5AE722C7D350A00B07B38 /* Picker.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFBA7201F1FC9AF00C0D63F /* Picker.xib */; };
+		CDD5AE732C7D350A00B07B38 /* ProgressViewBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1376C97620F759730071DF9E /* ProgressViewBar.xib */; };
+		CDD5AE742C7D350A00B07B38 /* TopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B10CDA2A3C5C6200FE000E /* TopHeaderView.xib */; };
+		CDD5AE752C7D350A00B07B38 /* TestPenguin.png in Resources */ = {isa = PBXBuildFile; fileRef = 13826B9B2101EB6B001B571E /* TestPenguin.png */; };
+		CDD5AE762C7D350A00B07B38 /* SampleText.txt in Resources */ = {isa = PBXBuildFile; fileRef = 138C2A5620FDE98D00F8BE17 /* SampleText.txt */; };
+		CDD5AE772C7D350A00B07B38 /* sampleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AEFC9C6A1F6AD72A00599C36 /* sampleImage.png */; };
+		CDD5AE782C7D350A00B07B38 /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493CD20253DB33800A92A46 /* Common.xcassets */; };
+		CDD5AE792C7D350A00B07B38 /* WeeklyPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C6E6F200C766A00288C83 /* WeeklyPlanCell.xib */; };
+		CDD5AE7A2C7D350A00B07B38 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		CDD7AEF22894902F0006478E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD42D6F427FBC137006FA37C /* Main.storyboard */; };
 		CDE5DBCB282551D400A979FA /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		CDE5DBCC282551D400A979FA /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
@@ -6084,6 +6239,7 @@
 		CEE50C5F26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6626E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
 		CEE50C6B26E7CEFB00D355C4 /* LPS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */; };
+		E3ABCC3ECCA7CBF5CE5CCECB /* Pods_Alitqan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2682FC3C975FC9675CF6B21D /* Pods_Alitqan.framework */; };
 		EA738E132BA331DB009E63C2 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA738E122BA331DB009E63C2 /* BirthdayViewController.swift */; };
 		EA738E142BA331DB009E63C2 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA738E122BA331DB009E63C2 /* BirthdayViewController.swift */; };
 		EA738E152BA331DB009E63C2 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA738E122BA331DB009E63C2 /* BirthdayViewController.swift */; };
@@ -6224,9 +6380,9 @@
 		13DD10502149229600CB24AD /* PEPSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PEPSAssets.xcassets; sourceTree = "<group>"; };
 		13DD1052214930D100CB24AD /* SAMAAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SAMAAssets.xcassets; sourceTree = "<group>"; };
 		13DD10572149430700CB24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1868F56E294239E0D164FC62 /* Pods-Alitqan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alitqan.release.xcconfig"; path = "Target Support Files/Pods-Alitqan/Pods-Alitqan.release.xcconfig"; sourceTree = "<group>"; };
 		247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.debug.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.debug.xcconfig"; sourceTree = "<group>"; };
-		29CB4298576A1DE2E8CC1755 /* Pods_Alitqan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alitqan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2682FC3C975FC9675CF6B21D /* Pods_Alitqan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alitqan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2754F78E00279D468E8CAF75 /* Pods-Alitqan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alitqan.release.xcconfig"; path = "Target Support Files/Pods-Alitqan/Pods-Alitqan.release.xcconfig"; sourceTree = "<group>"; };
 		4405BCEF239E15E1007992F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		440671EB252C5B97001B8C7B /* PEPSV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PEPSV2-Info.plist"; path = "/Users/jayesh/Desktop/t360-ios/Ambassador Education/PEPSV2-Info.plist"; sourceTree = "<absolute>"; };
 		440B6B67239A5472004A0894 /* TaryamSchoolv2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TaryamSchoolv2.xcassets; sourceTree = "<group>"; };
@@ -6275,6 +6431,7 @@
 		455DEE911EBC33DD002D6CEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Ambassador_Education-dvqygmjdncondiahrfxpsyhrkuaz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/NVActivityIndicatorView/NVActivityIndicatorView.framework"; sourceTree = "<group>"; };
 		45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/DGActivityIndicatorView/DGActivityIndicatorView.framework"; sourceTree = "<group>"; };
+		532A22326981C670E669FD7E /* Pods-Alitqan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alitqan.debug.xcconfig"; path = "Target Support Files/Pods-Alitqan/Pods-Alitqan.debug.xcconfig"; sourceTree = "<group>"; };
 		772EB36621EF21C000620F0E /* Quality Education-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quality Education-Info.plist"; sourceTree = "<group>"; };
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
 		9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
@@ -6434,7 +6591,6 @@
 		B4FBEA8220810D3D0035AECD /* VideoDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownload.swift; sourceTree = "<group>"; };
 		CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = WoodlemAssets.xcassets; path = "../../../Ambassador Education Target1/Ambassador Education/Assets/WoodlemAssets.xcassets"; sourceTree = "<group>"; };
 		CD110C90289C41700050EF80 /* T360.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T360.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD110DCD289C4E4B0050EF80 /* Crescent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crescent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD110DD1289C4F6F0050EF80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -6460,6 +6616,7 @@
 		CD7DE2A12AE08F4B000D0EB4 /* Ambassador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ambassador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7DE3492AE09981000D0EB4 /* Ajyal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ajyal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7DE3F22AE0A6A5000D0EB4 /* PEPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PEPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD818C042C021B31006FADA9 /* WoodlemAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WoodlemAssets.xcassets; sourceTree = "<group>"; };
 		CD8A98E02ABCF36500BAF7CD /* ICS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8A998C2ACCA02400BAF7CD /* MSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8A9A352AD827A600BAF7CD /* VIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6477,10 +6634,13 @@
 		CDB7C3CD27480F8200FE5186 /* UIViewController+PopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PopUp.swift"; sourceTree = "<group>"; };
 		CDB7C3CE27480F8D00FE5186 /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRDAttechmentCell.swift; sourceTree = "<group>"; };
+		CDC110FC2C9DA4BD00DBC5C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDC110FE2C9DAAFC00DBC5C4 /* EPS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EPS.xcassets; sourceTree = "<group>"; };
 		CDCACE752A533ABD006BA1A1 /* Amana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD235DE289ACFC800A7121D /* Pods_PEPS_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_PEPS_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD2367C289AD40100A7121D /* OrisonSchool V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OrisonSchool V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDD6F4CAE8F39B4463FA68FF /* Pods-Alitqan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alitqan.debug.xcconfig"; path = "Target Support Files/Pods-Alitqan/Pods-Alitqan.debug.xcconfig"; sourceTree = "<group>"; };
+		CDD5AE7F2C7D350A00B07B38 /* EPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD5AE822C7D350B00B07B38 /* EPS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "EPS-Info.plist"; path = "/Users/takyon/ios_new/Ambassador Education/EPS-Info.plist"; sourceTree = "<absolute>"; };
 		CDE5DC61282551D400A979FA /* Alameer V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alameer V2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE5DC64282551D400A979FA /* Alameer V2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Alameer V2-Info.plist"; path = "/Users/takyon/ios_new/Ambassador Education/Alameer V2-Info.plist"; sourceTree = "<absolute>"; };
 		CDE5DC65282558EF00A979FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -6882,7 +7042,7 @@
 				CD9765262B519209004C9E2C /* MapKit.framework in Frameworks */,
 				CD9765272B519209004C9E2C /* CloudKit.framework in Frameworks */,
 				CD9765282B519209004C9E2C /* DGActivityIndicatorView.framework in Frameworks */,
-				09F38DF9E41C21E69E8C3EE5 /* Pods_Alitqan.framework in Frameworks */,
+				E3ABCC3ECCA7CBF5CE5CCECB /* Pods_Alitqan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6907,6 +7067,18 @@
 				CDD23663289AD40100A7121D /* MapKit.framework in Frameworks */,
 				CDD23664289AD40100A7121D /* CloudKit.framework in Frameworks */,
 				CDD23665289AD40100A7121D /* DGActivityIndicatorView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD5AE632C7D350A00B07B38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD5AE642C7D350A00B07B38 /* MBCalendarKit.framework in Frameworks */,
+				CDD5AE652C7D350A00B07B38 /* Toast_Swift.framework in Frameworks */,
+				CDD5AE662C7D350A00B07B38 /* MapKit.framework in Frameworks */,
+				CDD5AE672C7D350A00B07B38 /* CloudKit.framework in Frameworks */,
+				CDD5AE682C7D350A00B07B38 /* DGActivityIndicatorView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7078,8 +7250,9 @@
 		13C7D1DD21410DC80053D5DA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CDC110FE2C9DAAFC00DBC5C4 /* EPS.xcassets */,
+				CD818C042C021B31006FADA9 /* WoodlemAssets.xcassets */,
 				CD9765482B51E080004C9E2C /* AIQN.xcassets */,
-				CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */,
 				CD9094092A4E3B8A008F39D0 /* Salmiya.xcassets */,
 				CD9093582A4E3663008F39D0 /* VIS.xcassets */,
 				CD7601B2295B64B400812F7B /* PEAAssets.xcassets */,
@@ -7124,6 +7297,7 @@
 		13CD021721467749008F307A /* GooglePlists */ = {
 			isa = PBXGroup;
 			children = (
+				CDC110F92C9DA48F00DBC5C4 /* GooglePlistEPS */,
 				CD97654F2B51E5D5004C9E2C /* GooglePlistAlitqan */,
 				CD0ADAEE2B3092C5001F1858 /* GooglePlistWPS */,
 				CD9094062A4E390F008F39D0 /* GooglePlistVIS */,
@@ -7485,6 +7659,7 @@
 				04FDB9702BA41DFE00723566 /* Alitqan-Info.plist */,
 				042707202BA41A72006633C4 /* Woodlem-Info.plist */,
 				6745CAFF68722B930D28F3A7 /* Pods */,
+				CDD5AE822C7D350B00B07B38 /* EPS-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -7530,6 +7705,7 @@
 				CD1AE5CD2B0438780000F294 /* Habitat.app */,
 				CD9765432B519209004C9E2C /* Alitqan.app */,
 				CD7C92862B5CB8B200A0D215 /* Woodlem.app */,
+				CDD5AE7F2C7D350A00B07B38 /* EPS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -7563,8 +7739,8 @@
 			children = (
 				247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */,
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
-				CDD6F4CAE8F39B4463FA68FF /* Pods-Alitqan.debug.xcconfig */,
-				1868F56E294239E0D164FC62 /* Pods-Alitqan.release.xcconfig */,
+				532A22326981C670E669FD7E /* Pods-Alitqan.debug.xcconfig */,
+				2754F78E00279D468E8CAF75 /* Pods-Alitqan.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -7954,6 +8130,14 @@
 			path = "UIViewController-Popup";
 			sourceTree = "<group>";
 		};
+		CDC110F92C9DA48F00DBC5C4 /* GooglePlistEPS */ = {
+			isa = PBXGroup;
+			children = (
+				CDC110FC2C9DA4BD00DBC5C4 /* GoogleService-Info.plist */,
+			);
+			path = GooglePlistEPS;
+			sourceTree = "<group>";
+		};
 		CDE84A2627BEB43600F16EBE /* GooglePlistAthena */ = {
 			isa = PBXGroup;
 			children = (
@@ -8080,7 +8264,7 @@
 				45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */,
 				45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */,
 				455DEE911EBC33DD002D6CEF /* Alamofire.framework */,
-				29CB4298576A1DE2E8CC1755 /* Pods_Alitqan.framework */,
+				2682FC3C975FC9675CF6B21D /* Pods_Alitqan.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -8596,12 +8780,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD9765402B519209004C9E2C /* Build configuration list for PBXNativeTarget "Alitqan" */;
 			buildPhases = (
-				A4607FB4D7E175FA4AA23C3A /* [CP] Check Pods Manifest.lock */,
+				D5B3DBD870D267E40E8C4639 /* [CP] Check Pods Manifest.lock */,
 				CD97649D2B519209004C9E2C /* Sources */,
 				CD9765232B519209004C9E2C /* Frameworks */,
 				CD97652B2B519209004C9E2C /* Resources */,
 				CD97653E2B519209004C9E2C /* ShellScript */,
-				E73B7CFDE82999ABA24B3FF9 /* [CP] Embed Pods Frameworks */,
+				19524F215FD23ADC6AA3AE96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -8646,6 +8830,24 @@
 			name = "OrisonSchool V2";
 			productName = "Ambassador Education";
 			productReference = CDD2367C289AD40100A7121D /* OrisonSchool V2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDD5ADDB2C7D350A00B07B38 /* EPS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD5AE7C2C7D350A00B07B38 /* Build configuration list for PBXNativeTarget "EPS" */;
+			buildPhases = (
+				CDD5ADDC2C7D350A00B07B38 /* Sources */,
+				CDD5AE632C7D350A00B07B38 /* Frameworks */,
+				CDD5AE692C7D350A00B07B38 /* Resources */,
+				CDD5AE7B2C7D350A00B07B38 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EPS;
+			productName = "Ambassador Education";
+			productReference = CDD5AE7F2C7D350A00B07B38 /* EPS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CDE5DBC8282551D400A979FA /* Alameer V2 */ = {
@@ -8798,8 +9000,9 @@
 		45559BE91EBADB3B00F4E6FB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = InApp;
 				TargetAttributes = {
 					136575392140F0E90045A958 = {
@@ -9029,6 +9232,7 @@
 				CD1AE5282B0438780000F294 /* Habitat */,
 				CD97649B2B519209004C9E2C /* Alitqan */,
 				CD7C91DE2B5CB8B200A0D215 /* Woodlem */,
+				CDD5ADDB2C7D350A00B07B38 /* EPS */,
 			);
 		};
 /* End PBXProject section */
@@ -9489,7 +9693,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7C92892B5CBAC200A0D215 /* WoodlemAssets.xcassets in Resources */,
+				CD818C052C021B32006FADA9 /* WoodlemAssets.xcassets in Resources */,
 				CD7C92882B5CBAB000A0D215 /* GoogleService-Info.plist in Resources */,
 				CD7C92712B5CB8B200A0D215 /* DigitalResourceCategoryCell.xib in Resources */,
 				CD7C92732B5CB8B200A0D215 /* LaunchScreen.storyboard in Resources */,
@@ -9798,6 +10002,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDD5AE692C7D350A00B07B38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD5AE6C2C7D350A00B07B38 /* DigitalResourceCategoryCell.xib in Resources */,
+				CDD5AE6D2C7D350A00B07B38 /* LaunchScreen.storyboard in Resources */,
+				CDD5AE6E2C7D350A00B07B38 /* WeeklyPlanTable.xib in Resources */,
+				CDD5AE6F2C7D350A00B07B38 /* .swiftlint.yml in Resources */,
+				CDD5AE702C7D350A00B07B38 /* TestInapp.jpg in Resources */,
+				CDD5AE712C7D350A00B07B38 /* Main.storyboard in Resources */,
+				CDD5AE722C7D350A00B07B38 /* Picker.xib in Resources */,
+				CDC110FF2C9DAAFC00DBC5C4 /* EPS.xcassets in Resources */,
+				CDD5AE732C7D350A00B07B38 /* ProgressViewBar.xib in Resources */,
+				CDD5AE742C7D350A00B07B38 /* TopHeaderView.xib in Resources */,
+				CDD5AE752C7D350A00B07B38 /* TestPenguin.png in Resources */,
+				CDD5AE762C7D350A00B07B38 /* SampleText.txt in Resources */,
+				CDD5AE772C7D350A00B07B38 /* sampleImage.png in Resources */,
+				CDC110FD2C9DA4BD00DBC5C4 /* GoogleService-Info.plist in Resources */,
+				CDD5AE782C7D350A00B07B38 /* Common.xcassets in Resources */,
+				CDD5AE792C7D350A00B07B38 /* WeeklyPlanCell.xib in Resources */,
+				CDD5AE7A2C7D350A00B07B38 /* CalendarSection.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDE5DC4D282551D400A979FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -10057,6 +10285,92 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
+		19524F215FD23ADC6AA3AE96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alitqan/Pods-Alitqan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
+				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleSignIn/GoogleSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alitqan/Pods-Alitqan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		446D52672539C33100D1026C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -10108,28 +10422,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		A4607FB4D7E175FA4AA23C3A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Alitqan-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		B41C1B5621418FD600A9907B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -10302,14 +10594,14 @@
 		};
 		CD7DE29C2AE08F4B000D0EB4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
@@ -10405,6 +10697,19 @@
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
 		};
 		CDD23677289AD40100A7121D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7\n";
+		};
+		CDD5AE7B2C7D350A00B07B38 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -10521,90 +10826,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
-		E73B7CFDE82999ABA24B3FF9 /* [CP] Embed Pods Frameworks */ = {
+		D5B3DBD870D267E40E8C4639 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Alitqan/Pods-Alitqan-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
-				"${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/EzPopup/EzPopup.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstanceID/FirebaseInstanceID.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleSignIn/GoogleSignIn.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/MBCalendarKit/MBCalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework",
-				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
-				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/Updates/Updates.framework",
-				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BIZPopupView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCBottomRefreshControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzPopup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstanceID.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleSignIn.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXPagerView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedPager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Updates.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"$(DERIVED_FILE_DIR)/Pods-Alitqan-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alitqan/Pods-Alitqan-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -14981,6 +15222,147 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDD5ADDC2C7D350A00B07B38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD5ADDD2C7D350A00B07B38 /* FSCalendarHeaderView.m in Sources */,
+				CDD5ADDE2C7D350A00B07B38 /* ResourceListOperation.swift in Sources */,
+				CDD5ADDF2C7D350A00B07B38 /* MessageDetailController.swift in Sources */,
+				CDD5ADE02C7D350A00B07B38 /* WeeklyPlanController.swift in Sources */,
+				CDD5ADE12C7D350A00B07B38 /* TMyProfile.swift in Sources */,
+				CDD5ADE22C7D350A00B07B38 /* TopHeaderView.swift in Sources */,
+				CDD5ADE32C7D350A00B07B38 /* TInboxMessage.swift in Sources */,
+				CDD5ADE42C7D350A00B07B38 /* CalendarSection.swift in Sources */,
+				CDD5ADE52C7D350A00B07B38 /* DirectoryCreationOperation.swift in Sources */,
+				CDD5ADE62C7D350A00B07B38 /* TNGroupMember.swift in Sources */,
+				CDD5ADE72C7D350A00B07B38 /* ViewController.swift in Sources */,
+				CDD5ADE82C7D350A00B07B38 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				CDD5ADE92C7D350A00B07B38 /* VerificationEmailViewController.swift in Sources */,
+				CDD5ADEA2C7D350A00B07B38 /* SweetAlert.swift in Sources */,
+				CDD5ADEB2C7D350A00B07B38 /* ModelManager.swift in Sources */,
+				CDD5ADEC2C7D350A00B07B38 /* ResetPasswordVC.swift in Sources */,
+				CDD5ADED2C7D350A00B07B38 /* FileUploadOperation.swift in Sources */,
+				CDD5ADEE2C7D350A00B07B38 /* UITextField+fixCaretPosition.swift in Sources */,
+				CDD5ADEF2C7D350A00B07B38 /* WeeklyPlanCell.swift in Sources */,
+				CDD5ADF02C7D350A00B07B38 /* KSTokenView.swift in Sources */,
+				CDD5ADF12C7D350A00B07B38 /* VideoPlayerView.swift in Sources */,
+				CDD5ADF22C7D350A00B07B38 /* TNotification.swift in Sources */,
+				CDD5ADF32C7D350A00B07B38 /* UIButton+Helper.swift in Sources */,
+				CDD5ADF42C7D350A00B07B38 /* UploadFTP.swift in Sources */,
+				CDD5ADF52C7D350A00B07B38 /* WebViewViewController.swift in Sources */,
+				CDD5ADF62C7D350A00B07B38 /* UIApplication+Helper.swift in Sources */,
+				CDD5ADF72C7D350A00B07B38 /* ProgressViewBar.swift in Sources */,
+				CDD5ADF82C7D350A00B07B38 /* WeeklyPlanTable.swift in Sources */,
+				CDD5ADF92C7D350A00B07B38 /* GalleryListController.swift in Sources */,
+				CDD5ADFA2C7D350A00B07B38 /* TNPayment.swift in Sources */,
+				CDD5ADFB2C7D350A00B07B38 /* UIViewController+Helper.swift in Sources */,
+				CDD5ADFC2C7D350A00B07B38 /* APIHelper.swift in Sources */,
+				CDD5ADFD2C7D350A00B07B38 /* UIViewController+PopUp.swift in Sources */,
+				CDD5ADFE2C7D350A00B07B38 /* TNNoticeBoardDetail.swift in Sources */,
+				CDD5ADFF2C7D350A00B07B38 /* FTPUploadHelper.swift in Sources */,
+				CDD5AE002C7D350A00B07B38 /* MPGTextField.m in Sources */,
+				CDD5AE012C7D350A00B07B38 /* LoadMoreControl.swift in Sources */,
+				CDD5AE022C7D350A00B07B38 /* FSCalendar.m in Sources */,
+				CDD5AE032C7D350A00B07B38 /* KSToken.swift in Sources */,
+				CDD5AE042C7D350A00B07B38 /* HomeVC.swift in Sources */,
+				CDD5AE052C7D350A00B07B38 /* TNAwarnessArticleDetail.swift in Sources */,
+				CDD5AE062C7D350A00B07B38 /* PagerController.swift in Sources */,
+				CDD5AE072C7D350A00B07B38 /* FSCalendarTransitionCoordinator.m in Sources */,
+				CDD5AE082C7D350A00B07B38 /* View+Helper.swift in Sources */,
+				CDD5AE092C7D350A00B07B38 /* FSCalendarCollectionView.m in Sources */,
+				CDD5AE0A2C7D350A00B07B38 /* APIUrls.swift in Sources */,
+				CDD5AE0B2C7D350A00B07B38 /* FSCalendarDelegationProxy.m in Sources */,
+				CDD5AE0C2C7D350A00B07B38 /* CustomCalendarCell.swift in Sources */,
+				CDD5AE0D2C7D350A00B07B38 /* TNPerson.swift in Sources */,
+				CDD5AE0E2C7D350A00B07B38 /* TNGallery.swift in Sources */,
+				CDD5AE0F2C7D350A00B07B38 /* Operation.swift in Sources */,
+				CDD5AE102C7D350A00B07B38 /* StreamOperation.swift in Sources */,
+				CDD5AE112C7D350A00B07B38 /* TNCalendarEvent.swift in Sources */,
+				CDD5AE122C7D350A00B07B38 /* TPKeyboardAvoidingTableView.m in Sources */,
+				CDD5AE132C7D350A00B07B38 /* DOAlertController.swift in Sources */,
+				CDD5AE142C7D350A00B07B38 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				CDD5AE152C7D350A00B07B38 /* DigitalResourceCategoryCell.swift in Sources */,
+				CDD5AE162C7D350A00B07B38 /* CommunicateLandController.swift in Sources */,
+				CDD5AE172C7D350A00B07B38 /* TSibling.swift in Sources */,
+				CDD5AE182C7D350A00B07B38 /* FSCalendarExtensions.m in Sources */,
+				CDD5AE192C7D350A00B07B38 /* NoticeboardCategoryController.swift in Sources */,
+				CDD5AE1A2C7D350A00B07B38 /* FSCalendarCollectionViewLayout.m in Sources */,
+				CDD5AE1B2C7D350A00B07B38 /* Picker.swift in Sources */,
+				CDD5AE1C2C7D350A00B07B38 /* Protocols.swift in Sources */,
+				CDD5AE1D2C7D350A00B07B38 /* SkyFloatingLabelTextField.swift in Sources */,
+				CDD5AE1E2C7D350A00B07B38 /* MyProfileController.swift in Sources */,
+				CDD5AE1F2C7D350A00B07B38 /* DRDAttechmentCell.swift in Sources */,
+				CDD5AE202C7D350A00B07B38 /* CalendarController.swift in Sources */,
+				CDD5AE212C7D350A00B07B38 /* FSCalendarScopeHandle.m in Sources */,
+				CDD5AE222C7D350A00B07B38 /* WriteStreamOperation.swift in Sources */,
+				CDD5AE232C7D350A00B07B38 /* RegisterPopUpVc.swift in Sources */,
+				CDD5AE242C7D350A00B07B38 /* jsonKeys.swift in Sources */,
+				CDD5AE252C7D350A00B07B38 /* FSCalendarAppearance.m in Sources */,
+				CDD5AE262C7D350A00B07B38 /* FileDownloadOperation.swift in Sources */,
+				CDD5AE272C7D350A00B07B38 /* Reachability.swift in Sources */,
+				CDD5AE282C7D350A00B07B38 /* DBKeys.swift in Sources */,
+				CDD5AE292C7D350A00B07B38 /* Constants.swift in Sources */,
+				CDD5AE2A2C7D350A00B07B38 /* TNAwarenessDetail.swift in Sources */,
+				CDD5AE2B2C7D350A00B07B38 /* AppDelegate.swift in Sources */,
+				CDD5AE2C2C7D350A00B07B38 /* ReadSelectViewController.swift in Sources */,
+				CDD5AE2D2C7D350A00B07B38 /* FSCalendarDelegationFactory.m in Sources */,
+				CDD5AE2E2C7D350A00B07B38 /* ImagePreviewController.swift in Sources */,
+				CDD5AE2F2C7D350A00B07B38 /* UIDevice+Helper.swift in Sources */,
+				CDD5AE302C7D350A00B07B38 /* LinearProgressView.swift in Sources */,
+				CDD5AE312C7D350A00B07B38 /* ComposeController.swift in Sources */,
+				CDD5AE322C7D350A00B07B38 /* WeeklyPlanFilterController.swift in Sources */,
+				CDD5AE332C7D350A00B07B38 /* ChangePasswordController.swift in Sources */,
+				CDD5AE342C7D350A00B07B38 /* NSObject+Helper.swift in Sources */,
+				CDD5AE352C7D350A00B07B38 /* SplashViewController.swift in Sources */,
+				CDD5AE362C7D350A00B07B38 /* NoticeBoardListController.swift in Sources */,
+				CDD5AE372C7D350A00B07B38 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				CDD5AE382C7D350A00B07B38 /* TNSubject.swift in Sources */,
+				CDD5AE392C7D350A00B07B38 /* ForgotPasswordController.swift in Sources */,
+				CDD5AE3A2C7D350A00B07B38 /* FSCalendarConstants.m in Sources */,
+				CDD5AE3B2C7D350A00B07B38 /* FSCalendarCell.m in Sources */,
+				CDD5AE3C2C7D350A00B07B38 /* DigitalResourceDetailController.swift in Sources */,
+				CDD5AE3D2C7D350A00B07B38 /* TNMenuItem.swift in Sources */,
+				CDD5AE3E2C7D350A00B07B38 /* AddCommentVC.swift in Sources */,
+				CDD5AE3F2C7D350A00B07B38 /* FSCalendar+Deprecated.m in Sources */,
+				CDD5AE402C7D350A00B07B38 /* Extensions.swift in Sources */,
+				CDD5AE412C7D350A00B07B38 /* TNDigitalResource.swift in Sources */,
+				CDD5AE422C7D350A00B07B38 /* FSCalendarStickyHeader.m in Sources */,
+				CDD5AE432C7D350A00B07B38 /* CommunicateController.swift in Sources */,
+				CDD5AE442C7D350A00B07B38 /* KSTokenField.swift in Sources */,
+				CDD5AE452C7D350A00B07B38 /* UserDefaultManager.swift in Sources */,
+				CDD5AE462C7D350A00B07B38 /* Session.swift in Sources */,
+				CDD5AE472C7D350A00B07B38 /* VisualEffectView.swift in Sources */,
+				CDD5AE482C7D350A00B07B38 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				CDD5AE492C7D350A00B07B38 /* WebViewController.swift in Sources */,
+				CDD5AE4A2C7D350A00B07B38 /* SlideController.swift in Sources */,
+				CDD5AE4B2C7D350A00B07B38 /* AwarenessViewController.swift in Sources */,
+				CDD5AE4C2C7D350A00B07B38 /* SWRevealViewController.m in Sources */,
+				CDD5AE4D2C7D350A00B07B38 /* AwarenessDetailViewController.swift in Sources */,
+				CDD5AE4E2C7D350A00B07B38 /* DigitalResourceSecondListController.swift in Sources */,
+				CDD5AE4F2C7D350A00B07B38 /* NotificationDetailListController.swift in Sources */,
+				CDD5AE502C7D350A00B07B38 /* DigitalResourcesListController.swift in Sources */,
+				CDD5AE512C7D350A00B07B38 /* NoticeboardDetailController.swift in Sources */,
+				CDD5AE522C7D350A00B07B38 /* VideoDownload.swift in Sources */,
+				CDD5AE532C7D350A00B07B38 /* CircleView.swift in Sources */,
+				CDD5AE542C7D350A00B07B38 /* FSCalendarCalculator.m in Sources */,
+				CDD5AE552C7D350A00B07B38 /* ReadStreamOperation.swift in Sources */,
+				CDD5AE562C7D350A00B07B38 /* DownLoadsViewController.swift in Sources */,
+				CDD5AE572C7D350A00B07B38 /* TNNoticeboard.swift in Sources */,
+				CDD5AE582C7D350A00B07B38 /* FSCalendarWeekdayView.m in Sources */,
+				CDD5AE592C7D350A00B07B38 /* KSUtils.swift in Sources */,
+				CDD5AE5A2C7D350A00B07B38 /* GalleryCategoryListController.swift in Sources */,
+				CDD5AE5B2C7D350A00B07B38 /* MapController.swift in Sources */,
+				CDD5AE5C2C7D350A00B07B38 /* TNGalleryCategory.swift in Sources */,
+				CDD5AE5D2C7D350A00B07B38 /* GradeViewController.swift in Sources */,
+				CDD5AE5E2C7D350A00B07B38 /* BirthdayViewController.swift in Sources */,
+				CDD5AE5F2C7D350A00B07B38 /* Global.swift in Sources */,
+				CDD5AE602C7D350A00B07B38 /* TNWeeklyPlan.swift in Sources */,
+				CDD5AE612C7D350A00B07B38 /* PaymentDetailsController.swift in Sources */,
+				CDD5AE622C7D350A00B07B38 /* TNGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CDE5DBCA282551D400A979FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -16142,7 +16524,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CredenceSchool-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -16284,7 +16669,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CredenceSchool-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -16474,7 +16862,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewAcademySchool-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -16616,7 +17007,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/NewAcademySchool-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -16806,7 +17200,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EFIA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -16948,7 +17345,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EFIA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -17138,7 +17538,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SAMA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -17280,7 +17683,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SAMA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -17470,7 +17876,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RAK Academy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -17612,7 +18021,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RAK Academy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -17803,7 +18215,10 @@
 				);
 				INFOPLIST_FILE = "AjmanModern-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.12;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -17947,7 +18362,10 @@
 				);
 				INFOPLIST_FILE = "AjmanModern-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.12;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -18139,7 +18557,10 @@
 				);
 				INFOPLIST_FILE = "Sms-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.01;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -18283,7 +18704,10 @@
 				);
 				INFOPLIST_FILE = "Sms-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.01;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -18475,7 +18899,10 @@
 				);
 				INFOPLIST_FILE = "AlMawahib-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -18619,7 +19046,10 @@
 				);
 				INFOPLIST_FILE = "AlMawahib-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -18811,7 +19241,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Alansar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -18955,7 +19388,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Alansar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -19165,6 +19601,7 @@
 				DEVELOPMENT_TEAM = FP9BBFKB3C;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -19229,6 +19666,7 @@
 				DEVELOPMENT_TEAM = FP9BBFKB3C;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -19268,7 +19706,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AsianInternational-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -19410,7 +19851,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AsianInternational-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -19601,7 +20045,10 @@
 				);
 				INFOPLIST_FILE = "T360-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.36;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -19729,7 +20176,10 @@
 				);
 				INFOPLIST_FILE = "T360-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.36;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -19908,7 +20358,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Crescent English School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.71;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -20040,7 +20493,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Crescent English School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.71;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -20217,7 +20673,10 @@
 				);
 				INFOPLIST_FILE = "RakScholars V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.31;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -20345,7 +20804,10 @@
 				);
 				INFOPLIST_FILE = "RakScholars V2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.31;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -20524,7 +20986,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Habitat;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.72;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -20656,7 +21121,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Habitat;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.72;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -20834,7 +21302,10 @@
 				);
 				INFOPLIST_FILE = "OurOwn-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.18;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -20979,7 +21450,10 @@
 				);
 				INFOPLIST_FILE = "OurOwn-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.18;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -21160,8 +21634,9 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: FATIMA ALI (52KKTA9V2N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: FATIMA ALI (52KKTA9V2N)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.33;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 52KKTA9V2N;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -21170,9 +21645,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
 				INFOPLIST_FILE = "SSI-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "School of Scientific Innovation";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.33;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -21288,8 +21767,9 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: FATIMA ALI (52KKTA9V2N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: FATIMA ALI (52KKTA9V2N)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.33;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 52KKTA9V2N;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -21298,9 +21778,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
 				INFOPLIST_FILE = "SSI-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "School of Scientific Innovation";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.33;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -21478,7 +21962,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Future Leaders School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.60;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -21610,7 +22097,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Future Leaders School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.60;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -21790,7 +22280,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Pakistan Education Academy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.34;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -21922,7 +22415,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Pakistan Education Academy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.34;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -22088,9 +22584,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.64;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 4FZ5TJ46T5;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4FZ5TJ46T5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -22102,8 +22599,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Woodlempark;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.64;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -22220,9 +22720,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.64;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 4FZ5TJ46T5;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4FZ5TJ46T5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -22234,8 +22735,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Woodlempark;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.64;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -22414,7 +22918,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Taryam American School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -22546,7 +23053,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Taryam American School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -22726,7 +23236,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = LPS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.58;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -22858,7 +23371,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = LPS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.58;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -23024,9 +23540,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.59;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = N78PMQ93HN;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N78PMQ93HN;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -23038,8 +23555,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Athena Education";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.59;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -23156,9 +23676,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (N78PMQ93HN)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.59;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = N78PMQ93HN;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N78PMQ93HN;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -23170,8 +23691,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Athena Education";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.59;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -23339,6 +23863,7 @@
 				CURRENT_PROJECT_VERSION = 1.56;
 				DEVELOPMENT_TEAM = 8DUU25XJP6;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8DUU25XJP6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -23350,7 +23875,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Ambassador Education";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.56;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -23471,6 +23999,7 @@
 				CURRENT_PROJECT_VERSION = 1.56;
 				DEVELOPMENT_TEAM = 8DUU25XJP6;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8DUU25XJP6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -23482,7 +24011,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Ambassador Education";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.56;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -23662,7 +24194,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Ajyal Schools";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -23794,7 +24329,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Ajyal Schools";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -23974,7 +24512,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = PEPS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -24106,7 +24647,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = PEPS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -24286,7 +24830,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ICS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -24418,7 +24965,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ICS;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -24584,9 +25134,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.70;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7RT5A45LT9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -24598,8 +25149,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "MSB Dubai";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.70;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24716,9 +25270,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Anjali Mohan Singh (7RT5A45LT9)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.70;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 7RT5A45LT9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7RT5A45LT9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -24730,8 +25285,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "MSB Dubai";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.70;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -24896,9 +25454,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.59;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 69LA48AR43;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 69LA48AR43;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -24910,8 +25469,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Virginia International School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.59;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -25028,9 +25590,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: IRSHAD PONNANKAI KALLUKETTUVALAPPIL (69LA48AR43)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.59;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 69LA48AR43;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 69LA48AR43;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -25042,8 +25605,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Virginia International School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.59;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -25201,7 +25767,7 @@
 		};
 		CD9765412B519209004C9E2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDD6F4CAE8F39B4463FA68FF /* Pods-Alitqan.debug.xcconfig */;
+			baseConfigurationReference = 532A22326981C670E669FD7E /* Pods-Alitqan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25209,9 +25775,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.73;
+				CURRENT_PROJECT_VERSION = 1.77;
 				DEVELOPMENT_TEAM = ZYJWGV93Z4;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZYJWGV93Z4;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -25223,8 +25790,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Alitqan American School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.73;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.77;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -25334,7 +25904,7 @@
 		};
 		CD9765422B519209004C9E2C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1868F56E294239E0D164FC62 /* Pods-Alitqan.release.xcconfig */;
+			baseConfigurationReference = 2754F78E00279D468E8CAF75 /* Pods-Alitqan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -25342,9 +25912,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.73;
+				CURRENT_PROJECT_VERSION = 1.77;
 				DEVELOPMENT_TEAM = ZYJWGV93Z4;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZYJWGV93Z4;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -25356,8 +25927,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Alitqan American School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.73;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.77;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -25536,7 +26110,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Al Amana School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -25668,7 +26245,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Al Amana School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.59;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -25834,9 +26414,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.73;
+				CURRENT_PROJECT_VERSION = 1.76;
 				DEVELOPMENT_TEAM = 5VXG48XRVV;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5VXG48XRVV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -25848,8 +26429,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Orison School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.73;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.76;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -25966,9 +26550,10 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Smanitha K V (5VXG48XRVV)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.73;
+				CURRENT_PROJECT_VERSION = 1.76;
 				DEVELOPMENT_TEAM = 5VXG48XRVV;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5VXG48XRVV;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -25980,8 +26565,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Orison School";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.73;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.76;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -26137,6 +26725,326 @@
 			};
 			name = Release;
 		};
+		CDD5AE7D2C7D350A00B07B38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: HAFIZ MOHAMMED AHMED BARAKA (R8ZGZ7ZD8D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: HAFIZ MOHAMMED AHMED BARAKA (R8ZGZ7ZD8D)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.76;
+				DEVELOPMENT_TEAM = R8ZGZ7ZD8D;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R8ZGZ7ZD8D;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "EPS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EPS AUH";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.76;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D WPS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.eps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "EPS Profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "EPS Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDD5AE7E2C7D350A00B07B38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Distribution: HAFIZ MOHAMMED AHMED BARAKA (R8ZGZ7ZD8D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: HAFIZ MOHAMMED AHMED BARAKA (R8ZGZ7ZD8D)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.76;
+				DEVELOPMENT_TEAM = R8ZGZ7ZD8D;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R8ZGZ7ZD8D;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DGActivityIndicatorView",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SkyFloatingLabelTextField",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
+				);
+				INFOPLIST_FILE = "EPS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "EPS AUH";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.76;
+				"OTHER_CFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BIZPopupView/BIZPopupView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog/DatePickerDialog.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown/DropDown.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FSCalendar/FSCalendar.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/HMSegmentedControl/HMSegmentedControl.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBCalendarKit/MBCalendarKit.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXPagerView/MXPagerView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXParallaxHeader/MXParallaxHeader.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MXSegmentedPager/MXSegmentedPager.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RichEditorView/RichEditorView.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftSoup/SwiftSoup.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Toast-Swift/Toast_Swift.framework/Headers\"",
+					"-iquote",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GGLInstanceID\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/GoogleCloudMessaging\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AddressBook\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BIZPopupView\"",
+					"-framework",
+					"\"CCBottomRefreshControl\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"DGActivityIndicatorView\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"EventKit\"",
+					"-framework",
+					"\"EventKitUI\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"MBCalendarKit\"",
+					"-framework",
+					"\"MXPagerView\"",
+					"-framework",
+					"\"MXParallaxHeader\"",
+					"-framework",
+					"\"MXSegmentedPager\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"RichEditorView\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-ObjC",
+					"-all_load",
+					"-ObjC",
+					"-all_load",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D WPS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.eps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
+				PROVISIONING_PROFILE_SPECIFIER = "EPS Profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "EPS Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CDE5DC5F282551D400A979FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -26146,8 +27054,9 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Noushad Shamsudheen (74HA8JMU6N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Noushad Shamsudheen (74HA8JMU6N)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.31;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 74HA8JMU6N;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -26156,9 +27065,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
 				INFOPLIST_FILE = "Alameer V2-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Alameer School";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.31;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -26274,8 +27187,9 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Noushad Shamsudheen (74HA8JMU6N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Noushad Shamsudheen (74HA8JMU6N)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.31;
+				CURRENT_PROJECT_VERSION = 1.74;
 				DEVELOPMENT_TEAM = 74HA8JMU6N;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/NVActivityIndicatorView",
@@ -26284,9 +27198,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MBCalendarKit",
 				);
 				INFOPLIST_FILE = "Alameer V2-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Alameer School";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 5.31;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.74;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -26461,7 +27379,10 @@
 				);
 				INFOPLIST_FILE = "AjmanModern-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.03;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -26605,7 +27526,10 @@
 				);
 				INFOPLIST_FILE = "AjmanModern-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 5.03;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
@@ -26796,7 +27720,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BIS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -26938,7 +27865,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BIS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -27128,7 +28058,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DarAlUloom-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -27270,7 +28203,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DarAlUloom-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -27460,7 +28396,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Salmiya-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -27602,7 +28541,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Salmiya-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -27792,7 +28734,10 @@
 				);
 				INFOPLIST_FILE = "Renaissance School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -27934,7 +28879,10 @@
 				);
 				INFOPLIST_FILE = "Renaissance School-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -28124,7 +29072,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ABC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -28266,7 +29217,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/ABC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -28456,7 +29410,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PEA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -28598,7 +29555,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PEA-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -29056,6 +30016,15 @@
 			buildConfigurations = (
 				CDD2367A289AD40100A7121D /* Debug */,
 				CDD2367B289AD40100A7121D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD5AE7C2C7D350A00B07B38 /* Build configuration list for PBXNativeTarget "EPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD5AE7D2C7D350A00B07B38 /* Debug */,
+				CDD5AE7E2C7D350A00B07B38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
