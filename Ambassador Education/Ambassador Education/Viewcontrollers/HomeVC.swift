@@ -46,8 +46,6 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         topHeaderView.delegate = self
         setSlideMenuProporties()
         addObserverToNotification()
-
-
     }
     
     func setAllTextFieldsEmpty() {

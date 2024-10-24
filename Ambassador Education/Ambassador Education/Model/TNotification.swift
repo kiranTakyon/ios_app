@@ -23,7 +23,7 @@ class TNotification{
     var processid : String?
 
     
-    init(values:NSDictionary) {
+   init(values:NSDictionary) {
         self.id = values["id"] as? String
         self.title = values["Title"] as? String
         self.details = values["details"] as? String

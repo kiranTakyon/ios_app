@@ -645,12 +645,11 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         cell.richEditorView.isScrollEnabled = true
        // cell.richEditorView.setFontSize(30)
         
-      
         //cell.richEditorView.html  = string  //"Message Content";  //string
         getHeightOfRichEditorView(cell: cell, text: string.html2String )
         cell.richEditorView.isUserInteractionEnabled = true
         cell.richEditorView.editingEnabled = false
-        
+        var newString = ""
         if string != "" {
         if ((string.contains("weeklyplan?cat_id=")) != false || (string.contains("weeklyplan/?cat_id=")) != false){
             cell.WPButton.frame = CGRect( x: 300, y: cell.richEditorHeight.constant+50, width: 100, height: 35 );
@@ -659,12 +658,20 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
             self.itemId = self.itemId?.components(separatedBy: "\">click here")[0]
             let ID:Int? = Int(self.itemId ?? "0")
             cell.WPButton.tag = ID ?? 0
-            let newString = string.replacingOccurrences(of: "<a[^>]*>(.*?)</a>", with: "Click on <strong>View</strong> button", options: .regularExpression, range: nil)
-            cell.richEditorView.html  = newString
+            newString = string.replacingOccurrences(of: "<a[^>]*>(.*?)</a>", with: "Click on <strong>View</strong> button", options: .regularExpression, range: nil)
+            //cell.richEditorView.html  = newString
         }
             else{
-                cell.richEditorView.html  = string
+               // cell.richEditorView.html  = string
+                newString = string
             }
+            if isRTLLanguage(content: newString) {
+                    // Set the editor view alignment to right-to-left
+                cell.richEditorView.html = "<div style=\"text-align:right; direction:rtl;\">\(newString)</div>"
+                } else {
+                    // For non-RTL languages, use the default alignment
+                    cell.richEditorView.html = "<div style=\"text-align:left; direction:ltr;\">\(newString)</div>"
+                }
         }
        
     }

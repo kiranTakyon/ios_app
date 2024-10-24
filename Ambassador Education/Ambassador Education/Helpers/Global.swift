@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 import WebKit
+// Helper function to detect RTL language (e.g., Arabic)
+func isRTLLanguage(content: String) -> Bool {
+    // Arabic Unicode range is U+0600 to U+06FF
+    let rtlCharacterSet = CharacterSet(charactersIn: "\u{0600}"..."\u{06FF}")
+    return content.rangeOfCharacter(from: rtlCharacterSet) != nil
+}
 
 func cleanDictionary(dict: NSDictionary)->NSMutableDictionary{
     let mutableDict: NSMutableDictionary = dict.mutableCopy() as! NSMutableDictionary

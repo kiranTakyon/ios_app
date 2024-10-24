@@ -9127,10 +9127,6 @@
 						DevelopmentTeam = 69LA48AR43;
 						ProvisioningStyle = Manual;
 					};
-					CD97649B2B519209004C9E2C = {
-						DevelopmentTeam = ZYJWGV93Z4;
-						ProvisioningStyle = Manual;
-					};
 					CDCACDD12A533ABD006BA1A1 = {
 						DevelopmentTeam = N4GAY335VT;
 						ProvisioningStyle = Manual;
@@ -25772,11 +25768,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.77;
-				DEVELOPMENT_TEAM = ZYJWGV93Z4;
+				CURRENT_PROJECT_VERSION = 1.79;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZYJWGV93Z4;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -25794,7 +25790,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.77;
+				MARKETING_VERSION = 5.79;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -25893,8 +25889,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.aiqn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
-				PROVISIONING_PROFILE_SPECIFIER = Alitqan;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Alitqan;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = AIQN_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -25912,8 +25908,8 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Zeyad Aias (ZYJWGV93Z4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.77;
-				DEVELOPMENT_TEAM = ZYJWGV93Z4;
+				CURRENT_PROJECT_VERSION = 1.79;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZYJWGV93Z4;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -25931,7 +25927,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.77;
+				MARKETING_VERSION = 5.79;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -26079,7 +26075,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.aiqn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f9a82b5-c4c9-421e-8f39-47c29d92e346";
-				PROVISIONING_PROFILE_SPECIFIER = Alitqan;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Alitqan;
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

@@ -433,9 +433,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         let attributeFontSaySomething : [String : Any] = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor) : UIColor.white,convertFromNSAttributedStringKey(NSAttributedString.Key.font) : UIFont.boldSystemFont(ofSize: 14.0)]
         //
        viewPager.segmentedControl.titleTextAttributes = attributeFontSaySomething
-        
-        
-        
+
     }
     
     
@@ -510,19 +508,16 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
             case "CLASSWORK":
                 titleType = "ClassWork"
             case "QUIZES":
-                titleType = "Quizes/Project/Research"
+                titleType = "Quizes"
+                //titleType = "Quizes/Project/Research"
                 
             default:
                 break
             }
-            
+ 
             if  let list = self.completeListDetails?[titleType] as? NSArray{
-                
-                
                 let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
-                
-                
-                
+                            
                 tableView.dataArray = arrayObjs
             }
             else{
@@ -550,7 +545,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
         
     }
-    
     
     
     func showPopUpView(){

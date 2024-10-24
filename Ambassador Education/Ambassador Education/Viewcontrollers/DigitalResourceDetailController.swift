@@ -119,12 +119,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         labelHeight.constant = height
         seperatorView.isHidden = hide
     }
-    // Helper function to detect RTL language (e.g., Arabic)
-    func isRTLLanguage(content: String) -> Bool {
-        // Arabic Unicode range is U+0600 to U+06FF
-        let rtlCharacterSet = CharacterSet(charactersIn: "\u{0600}"..."\u{06FF}")
-        return content.rangeOfCharacter(from: rtlCharacterSet) != nil
-    }
     
     func setData(){
         if let digital = digitalResource {
@@ -191,8 +185,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
                     // For non-RTL languages, use the default alignment
                     richEditorView1.html = "<div style=\"text-align:left; direction:ltr;\">\(htmlDecode.safeValue)</div>"
                 }
-
-            
  //           richEditorView1.html = htmlDecode.safeValue
             if(comment_needed=="0")
             {
