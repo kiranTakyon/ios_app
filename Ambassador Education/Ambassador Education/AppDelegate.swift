@@ -16,6 +16,8 @@ import SwiftSoup
 import Updates
 import GoogleSignIn
 //import Google
+var wasLaunchedFromNotification: Bool = false
+var remoteNotification: NSDictionary?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -33,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     let gcmMessageIDKey = "gcm.message_id"
     var appId = ""
-    
+
     
     //#if ORISONSCHOOLV2
     //    let value = 1
@@ -47,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     //#endif
     
     func application(_ application: UIApplication,didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         //   FirebaseApp.configure()
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
@@ -58,6 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         UIApplication.shared.applicationIconBadgeNumber = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {  /// Showing dealy for update popup on top view
             self.showUpdateAppAlert()
+        }
+
+        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+            print("App launched from notification with userInfo: \(notification)")
+            remoteNotification = notification as NSDictionary
+            wasLaunchedFromNotification = true
+        } else {
+            wasLaunchedFromNotification = false
         }
         return true
     }
@@ -94,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
-        
+
         // Print full message.
         print(userInfo)
     }
@@ -291,7 +301,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print full message.
         print(userInfo)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: self.messageKey), object: nil,
+                                            userInfo: userInfo)
+        }
+
         completionHandler()
     }
 }
