@@ -129,9 +129,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         // Handle the received message
         // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
         
-        NotificationCenter.default.post(name: Notification.Name(rawValue: messageKey), object: nil,
+       NotificationCenter.default.post(name: Notification.Name(rawValue: messageKey), object: nil,
                                         userInfo: userInfo)
-        
         completionHandler(UIBackgroundFetchResult.newData)
     }
     

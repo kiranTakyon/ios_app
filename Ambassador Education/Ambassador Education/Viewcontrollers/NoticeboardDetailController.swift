@@ -141,7 +141,7 @@ class NoticeboardDetailController: UIViewController {
             if let desc = detail?.description {
                 let htmlDecode = desc.replacingHTMLEntities
                 richView.html = htmlDecode.safeValue
-                getHrefLink(string: htmlDecode.safeValue)
+                //getHrefLink(string: htmlDecode.safeValue)
                 //            print(richView.selectedHref)
             }
         } else if let _ = awarnessPlan {
