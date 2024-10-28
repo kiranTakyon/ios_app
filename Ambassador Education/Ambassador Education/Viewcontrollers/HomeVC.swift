@@ -41,9 +41,9 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     override func viewDidLoad() {
         super.viewDidLoad()
         if wasLaunchedFromNotification {
-            if let dict = remoteNotification?["message"] as? NSDictionary, let data = dict["data"] as? NSDictionary {
+            if let dict = remoteNotification {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    let notification = TNotification(values: data)
+                    let notification = TNotification(values: dict)
                     self.didShowNotificationDetails(notification)
                 }
             }
@@ -190,8 +190,8 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     }
 
     @objc func openNotification(notification: Notification) {
-        if let dict = notification.userInfo?["message"] as? NSDictionary, let data = dict["data"] as? NSDictionary {
-            let notification = TNotification(values: data)
+        if let dict = notification.userInfo as? NSDictionary {
+            let notification = TNotification(values: dict)
             didShowNotificationDetails(notification)
         }
     }
