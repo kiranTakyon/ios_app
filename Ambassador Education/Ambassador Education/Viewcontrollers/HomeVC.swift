@@ -40,6 +40,8 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
     var notificationList = [TNotification]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        getTokenValueForMobileNotification()
+        addObserverToNotification()
         if wasLaunchedFromNotification {
             if let dict = remoteNotification {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -52,10 +54,10 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
         } else {
             setAllTextFieldsEmpty()
             tableViewProporties()
-            getTokenValueForMobileNotification()
+           // getTokenValueForMobileNotification()
             topHeaderView.delegate = self
             setSlideMenuProporties()
-            addObserverToNotification()
+            //addObserverToNotification()
         }
     }
 
@@ -188,14 +190,32 @@ class HomeVC: UIViewController,UITableViewDataSource, UITableViewDelegate,SWReve
             postLogIn(id : (dict["userId"] as? String).safeValue)
         }
     }
-
     @objc func openNotification(notification: Notification) {
-        if let dict = notification.userInfo as? NSDictionary {
-            let notification = TNotification(values: dict)
-            didShowNotificationDetails(notification)
-        }
-    }
+        let userId = UserDefaultsManager.manager.getUserId()
 
+        if(userId=="319215")
+           {
+               let notificationD0 = "\(notification)"
+               SweetAlert().showAlert("Notification", subTitle: notificationD0, style: .warning)
+    
+               let notificationD = "\(notification.userInfo)"
+               SweetAlert().showAlert("Notification userInfo", subTitle: notificationD, style: .warning)
+              let notificationDescription = "\(notification.userInfo?["message"])"
+               SweetAlert().showAlert("Notification message", subTitle: notificationDescription, style: .warning)
+               let userInfo = notification.userInfo
+               let title = userInfo?["Type"] as? String ?? "No Type"
+               let body = userInfo?["Details"] as? String ?? "No Details"
+               SweetAlert().showAlert(title, subTitle: body, style: .warning)
+               let notificationData = "\(notification.userInfo?["data"])"
+               SweetAlert().showAlert("Notification Data", subTitle: notificationData, style: .warning)
+
+           }
+     
+          if let dict = notification.userInfo as? NSDictionary {
+              let notification = TNotification(values: dict)
+              didShowNotificationDetails(notification)
+          }
+      }
     func didShowNotificationDetails(_ notification: TNotification ) {
         if let type = notification.type {
             if let typeVal = alertType(rawValue: type){

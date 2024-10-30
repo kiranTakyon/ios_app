@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Alitqan2VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Alitqan2VersionString[];
+FOUNDATION_EXPORT double Pods_AlitqanVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_AlitqanVersionString[];
 
