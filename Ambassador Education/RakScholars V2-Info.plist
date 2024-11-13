@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Scholar Indian School V2</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +20,17 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.47516392331-7agijpg4t7mthj9oibofjcqa6civn1k0</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>Fabric</key>
@@ -49,8 +60,6 @@
 		<key>NSExceptionDomains</key>
 		<dict/>
 	</dict>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>This app needs the permission to media library to upload files if you chose to , in messaging &amp; other screens</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>This app needs bluetooth permission to share files</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
@@ -59,10 +68,6 @@
 	<string>Needs Calender for picking your dates to save your events</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs the permission to capture your photo for profile updation</string>
-	<key>NSDocumentsFolderUsageDescription</key>
-	<string>This app needs the permission to documents &amp; downloads  to upload  and download files if you chose to , in messaging &amp; other screens</string>
-	<key>NSDownloadsFolderUsageDescription</key>
-	<string>This app needs the permission to documents &amp; downloads  to upload  and download files if you chose to , in messaging &amp; other screens</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs the permission to save your data</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -82,15 +87,10 @@
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
