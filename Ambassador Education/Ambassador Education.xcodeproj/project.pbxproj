@@ -474,7 +474,6 @@
 		136584A12140F22F0045A958 /* CalendarSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45218A85208090E1004CF24C /* CalendarSection.xib */; };
 		13CD023A2146774B008F307A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CD02212146774A008F307A /* GoogleService-Info.plist */; };
 		13CD024621467A04008F307A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CD024521467A02008F307A /* GoogleService-Info.plist */; };
-		13CD024821467B2B008F307A /* CredenceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD024721467B2A008F307A /* CredenceAssets.xcassets */; };
 		13CD025D2146880D008F307A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13CD025C2146880B008F307A /* GoogleService-Info.plist */; };
 		13CD025F2146894C008F307A /* NewAcademy.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD025E2146894A008F307A /* NewAcademy.xcassets */; };
 		13DD10422148F10700CB24AD /* RAFAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13CD0253214681B8008F307A /* RAFAssets.xcassets */; };
@@ -6846,7 +6845,6 @@
 		13CD021D2146774A008F307A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13CD02212146774A008F307A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13CD024521467A02008F307A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		13CD024721467B2A008F307A /* CredenceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CredenceAssets.xcassets; sourceTree = "<group>"; };
 		13CD024C21467F79008F307A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13CD024E2146800D008F307A /* AlShorouqAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlShorouqAssets.xcassets; sourceTree = "<group>"; };
 		13CD02512146816C008F307A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -7703,7 +7701,6 @@
 				13CD025E2146894A008F307A /* NewAcademy.xcassets */,
 				13CD0253214681B8008F307A /* RAFAssets.xcassets */,
 				13CD024E2146800D008F307A /* AlShorouqAssets.xcassets */,
-				13CD024721467B2A008F307A /* CredenceAssets.xcassets */,
 				13CD0212214670E0008F307A /* AlAmanaAssets.xcassets */,
 				B41C1B61214194C800A9907B /* AsianAssets.xcassets */,
 				B43023F92141611300C3E787 /* EFIAAssets.xcassets */,
@@ -9585,7 +9582,6 @@
 				18BAB8EC2C327D5A004FB8B6 /* CommunicationTableViewCell.xib in Resources */,
 				18E8391C2C2429D2001E25F5 /* NoticeBoardListTableViewCell.xib in Resources */,
 				CEE50C4A26E7CEFB00D355C4 /* LPS.xcassets in Resources */,
-				13CD024821467B2B008F307A /* CredenceAssets.xcassets in Resources */,
 				1834373B2C2BEA48000E5CCC /* FeeDetailTableViewCell.xib in Resources */,
 				98CB104A2B565B2C00EB1217 /* NotificationTableViewCell.xib in Resources */,
 				183436ED2C2B2084000E5CCC /* PaymentTotalTableViewCell.xib in Resources */,
@@ -25916,7 +25912,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.06;
+				CURRENT_PROJECT_VERSION = 1.07;
 				DEVELOPMENT_TEAM = R7KAQWL2B2;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7KAQWL2B2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -25931,7 +25927,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.07;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -26049,7 +26045,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Jayesh sebastian (R7KAQWL2B2)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.06;
+				CURRENT_PROJECT_VERSION = 1.07;
 				DEVELOPMENT_TEAM = R7KAQWL2B2;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R7KAQWL2B2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -26064,7 +26060,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.07;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
