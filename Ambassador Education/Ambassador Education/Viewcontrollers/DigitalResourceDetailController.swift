@@ -633,10 +633,13 @@ class DigitalResourceDataListCell: UITableViewCell {
     @IBOutlet weak var richEditorViewBG: RichEditorWebView!
 }
 extension DigitalResourceDetailController : TaykonProtocol {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }
-    
     
     func deleteTheSelectedAttachment(index: Int) {
         

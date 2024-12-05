@@ -9,6 +9,10 @@
 import UIKit
 
 class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol ,UITextFieldDelegate,PagerDelegate{
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     
     
   

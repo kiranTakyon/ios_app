@@ -20,6 +20,10 @@ enum CommunicationType : String{
 }
 
 class CommunicateController: UIViewController,UITableViewDataSource, UITableViewDelegate,TaykonProtocol {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }

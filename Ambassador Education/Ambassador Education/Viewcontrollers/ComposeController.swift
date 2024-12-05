@@ -20,6 +20,10 @@ struct AttachmentType {
 }
 
 class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProtocol, UITextFieldDelegate, UIDocumentPickerDelegate, KSTokenViewDelegate {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         

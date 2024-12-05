@@ -15,6 +15,8 @@ import Foundation
     func deleteTheSelectedAttachment(index : Int)
     func downloadPdfButtonAction(url: String,fileName : String?)
     func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage)
+    func getBackToParentViewW(value:Any?,titleValue : String?)
+     
     func getBackToTableView(value:Any?,tagValueInt : Int)
     func getBackToParentViewS(value:Any?,titleValue : String?)
     func selectedPickerRow(selctedRow:Int)

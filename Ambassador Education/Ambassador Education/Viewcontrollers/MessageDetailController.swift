@@ -16,6 +16,10 @@ let html =   NSAttributedString.DocumentType.self
 
 
 class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewDataSource,TaykonProtocol {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }

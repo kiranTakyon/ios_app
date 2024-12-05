@@ -12,6 +12,10 @@ import SCLAlertView
 import EzPopup
 
 class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDelegate,UIPopoverPresentationControllerDelegate,TaykonProtocol {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
         
     }

@@ -571,7 +571,9 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
          presentPopUpViewController(popvc)
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+        print("wpfParent")
+
         if let values = value as? (String,String,Int,String,String){
             
             let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")

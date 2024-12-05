@@ -18,6 +18,10 @@ var siblingUname = ""
 var siblingPwd = ""
 var OpenBrowser = false
 class SlideController: UITableViewController,TaykonProtocol {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
 
     var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
     var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]

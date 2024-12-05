@@ -351,17 +351,20 @@ class WeeklyPlanFilterController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func searchAction(_ sender: Any) {
+        print("wpf")
         if selectClassField.text != "" && selectSubject.text != "" && startingDateField.text != "" && endingDateField.text != ""{
             isSearch = 0
             let fullTime = (startTimeString,endTimeString,isSearch,divId,subjectID )
-            delegate?.getBackToParentView(value: fullTime, titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
+           // delegate?.getBackToParentView(value: fullTime, titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
+            delegate?.getBackToParentViewW(value: fullTime, titleValue: nil)
+            
             dismissPopUpViewController()
         }
         else{
             SweetAlert().showAlert(kAppName, subTitle: "All fields are required", style: .error)
         }
     }
-    
+   
     @IBAction func viewLatestAction(_ sender: Any) {
         isSearch = 1
         let fullTime = (startTimeString,endTimeString,isSearch,divId,subjectID)

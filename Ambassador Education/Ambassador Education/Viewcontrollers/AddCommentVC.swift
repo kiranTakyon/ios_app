@@ -10,6 +10,10 @@ import UIKit
 import MobileCoreServices
 
 class AddCommentVC: UIViewController,TaykonProtocol,UIDocumentMenuDelegate,UIDocumentPickerDelegate {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     func getBackToTableViewS(value: Any?, tagValueInt: Int) {
     
     }

@@ -455,6 +455,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : TaykonProtocol {
+    func getBackToParentViewW(value: Any?, titleValue: String?) {
+    
+    }
+    
     
     func deleteTheSelectedAttachment(index: Int) {
         
