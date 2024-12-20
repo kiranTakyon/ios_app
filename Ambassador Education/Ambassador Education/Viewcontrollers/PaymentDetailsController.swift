@@ -99,6 +99,9 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         else if finance == 3{
 //            titleLabel.text = "Fee Summary"
           }
+        else if finance == 4 {
+            secondSectionNameLabel.text = "Transport Fee Details"
+        }
         else {
 //            titleLabel.text = "Absence Report"
             self.secondSectionNameLabel.text = self.headLabel
@@ -139,63 +142,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
     }
 
     
-   /* func getWeeklyPlan(){
-        self.startLoadingAnimation()
-        var dictionary = [String: String]()
-         let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] =  userId
-        let url = APIUrls().weeklyPlan
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            
-            if let divisionArray = result["Divisions"] as? NSArray{
-                
-                if divisionArray.count > 0{
-                    
-                    if let division = divisionArray[0] as? NSDictionary{
-                        
-                        if let divisionId = division["DivId"] as? Int{
-                            self.classValue.divId = divisionId
-                        }
-                        
-                        if let divValue = division["Division"] as? String{
-                            self.classValue.division = divValue
-                        }
-                    }
-                }
-                
-            }
-                    self.headLabel = result["HeadLabel"] as? String ?? ""
-                    self.dayLabel = result["DayLabel"] as? String ?? "Day"
-                    self.dateLabel = result["DateLabel"] as? String ?? "Date"
-                    self.typeLabel = result["TypeLabel"] as? String ?? "Type"
-                    self.totalLabel = result["TotalLabel"] as? String ?? "Total"
-                    self.totalPaidLabel = result["PaidLabel"] as? String ?? "Total Paid"
-                    self.FeeLabel = result["FeeLabel"] as? String ?? "Fee"
-
-                    self.nameLabel = result["NameLabel"] as? String ?? "Name"
-                    self.classLabel = result["ClassLabel"] as? String ?? "Class"
-                    self.amountLabel = result["AmountLabel"] as? String ?? "Amount"
-                    self.accountDetailsLabel = result["AccountDetailsLabel"] as? String ?? "Payment Details"
-                    self.payLabel = result["PayLabel"] as? String ?? "Payment Details"
-            
-             DispatchQueue.main.async {
-                self.titleLabel.text = self.headLabel
-                self.stopLoadingAnimation()
-                if let message = result["MSG"] as? String{
-                    SweetAlert().showAlert(kAppName , subTitle: message, style: AlertStyle.error)
-                }
-                else{
-                    self.StudentDetailTableView.reloadData()
-                }
-            }
-            
-            print("weekly plan result is :-",result)
-        }
-        
-    }
-*/
-    
     func getWeeklyPlanView(){
         var url = ""
         payView.isHidden = true
@@ -210,10 +156,14 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         }else  if finance == 3 {
             payView.isHidden = false
             PayOptions.isHidden = false
-            
-//            payViewHeightConstraint.constant = 70
             payViewHeightConstraint.constant = 138
             url = APIUrls().feeSummary
+        }
+        else if finance == 4 {
+            payView.isHidden = false
+            PayOptions.isHidden = false
+            payViewHeightConstraint.constant = 78
+            url = APIUrls().transfeeSummary
         }
         else  if finance == 5 {
             url = APIUrls().absenceReport
@@ -225,7 +175,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: .POST, requestString: "", requestParameters: dictionary) { (result) in
             
-            print("weekly planview result :- ",result)
+            print("Fee view result :- ",result)
             self.headLabel = result["HeadLabel"] as? String ?? ""
             self.dayLabel = result["DayLabel"] as? String ?? "Day"
             self.dateLabel = result["DateLabel"] as? String ?? "Date"
@@ -261,7 +211,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
                 self.PayOptions.setTitle(self.OtherLabel, forSegmentAt: 2)
             }
             
-            if finance == 3{
+            if finance == 3 || finance == 4{
                 self.feesummaryDictionary = result
                 DispatchQueue.main.async {
                     if let link  = self.feesummaryDictionary.value(forKey: "PaymentUrl") as? String{
@@ -328,9 +278,10 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             return 2
         }else{
             
-            if finance == 3{
+            if finance == 3 || finance == 4 {
                return self.feeSummaryTitles.count
             }
+        
             else if finance == 5{
                 return self.absentDetails.count //> 0 ? (self.absentDetails.count + 1) : 0
 
@@ -378,7 +329,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
             
         }else{
             
-            if finance == 3{
+            if finance == 3 || finance == 4 {
                 
                  let cell = tableView.dequeueReusableCell(withIdentifier: "FeeDetailCell", for: indexPath) as! FeeDetailCell
                 

@@ -112,7 +112,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
-              print("requestParameters :- ",dictionary)
+            print("requestParameters :- ",dictionary)
             print("result :- ",result)
             DispatchQueue.main.async{
                 
@@ -224,8 +224,8 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                     }
                 }
                 
-                self.viewPager.segmentedControl.selectedSegmentIndex = 0
-               // self.viewPager.segmentedControl.select(index: 0, animated: true)
+               // self.viewPager.segmentedControl.selectedSegmentIndex = 0
+               
                 self.setPagerView()
                 self.stopLoadingAnimation()
                // self.titles.removeAll()
@@ -234,12 +234,12 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 //self.titles.removeAll()
             }
         }
-        
-        
+
     }
     func setPagerView(){
         if completeListDetails !=  nil{
             titlesnew.removeAll();
+            titles.removeAll();
             for each in completeListDetails!{
                 if each.value is NSArray{
                     if let value = each.value as? NSArray{
@@ -270,7 +270,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                 titles.append("")
             }
             self.viewPager.reloadData()
-            
+           // self.viewPager.segmentedControl.select(0)
         }
     }
     func callDownLoadWeeklyPlanReport(type:String){
@@ -572,7 +572,6 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
     }
     
     func getBackToParentViewW(value: Any?, titleValue: String?) {
-        print("wpfParent")
 
         if let values = value as? (String,String,Int,String,String){
             

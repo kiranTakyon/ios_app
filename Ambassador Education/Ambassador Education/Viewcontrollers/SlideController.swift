@@ -23,8 +23,8 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
 
-    var titles = ["","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
-    var images = ["Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
+    var titles = ["Transport Fee Summary","","Home","My Profile","Locator & Navigator","Gallery","Communication","Notice Board","Calendar","Finance","Payment History","Fee Details","Fee Summary","Academics","Gardebook","Digital Resources","Awareness & policies","Absebce Report","Weekly Plan"]
+    var images = ["Finance","Home","Home","Profile","Location","Gallary","Communication","Noticeboard","Calender","","","","","","","","","","","","","","","","","","","",""]
     
     var selectionTitles = [String]()
     var selectionIds = [Int]()
@@ -50,6 +50,7 @@ class SlideController: UITableViewController,TaykonProtocol {
                            "T0036":["Fee Details","toFeeDetails"],
                            "T0037":["Payment History","toFeeDetails"],
                            "T0038":["Absence Report","toFeeDetails"],
+                           "T0055":["Transport Fee Summary","toFeeSummary"],
                            "T0008":["",""],
                            "T0058":["Student Behaviour","toGradeBook"],
                            "T0059":["Primary Timetable","toGradeBook"],
@@ -489,8 +490,6 @@ class SlideController: UITableViewController,TaykonProtocol {
             }
            }
         }
-        print(indexPath)
-        print(indexPath.row)
         if indexPath.row == 0 {
        // } else if indexPath.row == 20 {
             
@@ -508,6 +507,8 @@ class SlideController: UITableViewController,TaykonProtocol {
                     finance = 2
                 } else if cell.hashKey == APIUrls().feeSummary {
                     finance = 3
+                } else if cell.hashKey == APIUrls().transfeeSummary {
+                    finance = 4
                 } else if cell.hashKey == APIUrls().absenceReport {
                     finance = 5
                 }

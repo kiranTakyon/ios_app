@@ -39,6 +39,7 @@ class APIUrls{
     let paymentDetails  = "T0037"
     let feeDetails      = "T0036"
     let feeSummary      = "T0035"
+    let transfeeSummary = "T0055"
     let readNotificatoin = "T0044"
     let getCalendarEvents = "T0002"
     let emailVerificationCode = "T0046"
