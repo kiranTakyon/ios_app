@@ -415,7 +415,7 @@ extension AppDelegate {
         let appStoreId = "1489710536"
 #elseif T360
         let appStoreId = ""
-#elseif CRESENT
+#elseif CRESCENT
         let appStoreId = "1584652255"
 #elseif SSI
         let appStoreId = ""

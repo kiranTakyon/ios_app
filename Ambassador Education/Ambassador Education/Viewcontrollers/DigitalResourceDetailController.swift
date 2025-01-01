@@ -32,6 +32,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     @IBOutlet weak var attachViewTop: NSLayoutConstraint!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
+    @IBOutlet weak var ViewContent: UIView!
     var weeklyPlan : WeeklyPlanList?
     let videoDownload  = VideoDownload()
     var fileURLs = [NSURL]()
@@ -146,10 +147,10 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             self.topHeaderView.title = digital.title ?? ""
             
             if let content = digital.content{
-                
                 let htmlDecode = content.replacingHTMLEntities
                 //richEditorView.html = htmlDecode.safeValue
                 richEditorView1.html = htmlDecode.safeValue
+                
             }
             if arrDataList.count != 0 {
               //  self.constraintviewBGHeight.constant = CGFloat((self.arrDataList.count * 300) + 20)
@@ -215,6 +216,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
             let labelHeight = labelSize.height //here it is!
             richEditor1ViewHeigh.constant =  labelHeight + 10 //+ 100
            // newREVHeight.constant = labelHeight + 10
+            self.viewWebDataListBG
             self.constraintViewWebDataTableHeight.constant = CGFloat((self.arrDataList.count * 300) + 20) + richEditor1ViewHeigh.constant
 //            self.constraintViewWebDataTableHeight.constant = CGFloat(self.constraintViewWebDataTableHeight.constant) + richEditor1ViewHeigh.constant;
         }
@@ -371,8 +373,6 @@ extension DigitalResourceDetailController {
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [self] (result) in
             
             DispatchQueue.main.async {
-                print("...........")
-                print(result)
                 if result["StatusCode"] as? Int == 1 {
                     guard let digitalResource = result["item"] as? NSDictionary else {
                         print("Error: Item is nil or cannot be cast to NSDictionary")
