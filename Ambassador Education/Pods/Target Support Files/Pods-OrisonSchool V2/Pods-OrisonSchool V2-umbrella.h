@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_HabitatVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_HabitatVersionString[];
+FOUNDATION_EXPORT double Pods_OrisonSchool_V2VersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_OrisonSchool_V2VersionString[];
 

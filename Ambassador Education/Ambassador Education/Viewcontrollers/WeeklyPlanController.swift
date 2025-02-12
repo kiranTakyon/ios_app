@@ -13,6 +13,7 @@ import BIZPopupView
 import QuickLook
 
 var mainTitle = ""
+var selectedSegment = 0
 
 class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmentedPagerDataSource,TaykonProtocol {
         
@@ -224,7 +225,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
                     }
                 }
                 
-               // self.viewPager.segmentedControl.selectedSegmentIndex = 0
+                //self.viewPager.segmentedControl.selectedSegmentIndex = 0
                
                 self.setPagerView()
                 self.stopLoadingAnimation()
@@ -240,6 +241,7 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
         if completeListDetails !=  nil{
             titlesnew.removeAll();
             titles.removeAll();
+            selectedSegment = self.viewPager.segmentedControl.selectedSegmentIndex
             for each in completeListDetails!{
                 if each.value is NSArray{
                     if let value = each.value as? NSArray{
@@ -261,13 +263,16 @@ class WeeklyPlanController: UIViewController,MXSegmentedPagerDelegate,MXSegmente
             if self.titles.count > 0{
                 mainTitle = self.titles[0]
                 isEmpty = false
-                
                // self.viewPager.isHidden = false
             }
             else{
                 isEmpty = true
                 titles.removeAll()
                 titles.append("")
+            }
+            if(selectedSegment>=self.titles.count)
+            {
+                self.viewPager.segmentedControl.selectedSegmentIndex = 0
             }
             self.viewPager.reloadData()
            // self.viewPager.segmentedControl.select(0)
