@@ -20,6 +20,7 @@ struct AttachmentType {
 }
 
 class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProtocol, UITextFieldDelegate, UIDocumentPickerDelegate, KSTokenViewDelegate {
+    
     func getBackToParentViewW(value: Any?, titleValue: String?) {
     
     }
@@ -90,9 +91,76 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
         subjectTextField.placeholder = "Subject"
         setMessages()
         isIncluded = false
+       //setupAISuggestionButton()
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Setup AI Suggestion Button
+    private func setupAISuggestionButton() {
+        let aiButton = UIButton(frame: CGRect(x: 100, y: 500, width: 180, height: 40))
+        aiButton.setTitle("Get AI Suggestion", for: .normal)
+        aiButton.backgroundColor = .systemBlue
+        aiButton.layer.cornerRadius = 8
+        aiButton.addTarget(self, action: #selector(fetchAISuggestion), for: .touchUpInside)
+        view.addSubview(aiButton)
+    }
+
+    // MARK: - Fetch AI Suggestion
+    @objc private func fetchAISuggestion() {
+        let subject = subjectTextField.text ?? "General Inquiry"
+        let context = "Draft an email for the subject: \(subject)"
+        
+        getEmailSuggestion(from: context) { [weak self] suggestion in
+            DispatchQueue.main.async {
+                self?.editorView.html = suggestion ?? "No suggestion available"
+            }
+        }
+    }
+    // MARK: - AI Email Suggestion API Call
+    private func getEmailSuggestion(from userMessage: String, completion: @escaping (String?) -> Void) {
+        guard let apiKey = getOpenAIKey() else {
+            print("❌ OpenAI API Key not found")
+            completion(nil)
+            return
+        }
+        
+        let url = URL(string: "https://api.openai.com/v1/chat/completions")!
+        let requestData: [String: Any] = [
+            "model": "gpt-3.5-turbo",
+            "messages": [
+                ["role": "system", "content": "You are an AI that helps draft professional emails."],
+                ["role": "user", "content": userMessage]
+            ],
+            "max_tokens": 200
+        ]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: requestData)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+            if let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+               let choices = jsonResponse["choices"] as? [[String: Any]],
+               let message = choices.first?["message"] as? [String: Any],
+               let content = message["content"] as? String {
+                completion(content.trimmingCharacters(in: .whitespacesAndNewlines))
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
+    
+    // MARK: - Fetch OpenAI API Key from Info.plist
+       private func getOpenAIKey() -> String? {
+           return Bundle.main.object(forInfoDictionaryKey: "OpenAI_API_Key") as? String
+       }
     
     private func stringFromHtml(string: String,method: String)  {
         if method.contains("Forward") ||  method.contains("إلى الأمام") {
@@ -649,20 +717,6 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
       //  if !isReply{
             dictionary["Recipients"] = self.getRecipients()
        // }
-//        else{
-//            var recipients = [[String: Any]]()
-//            var recipient = [String:Any]()
-//            recipient["UserId"] = obj?.senderId
-//            recipient["Name"] = obj?.sender
-//            recipient["RecipientType"] = 0
-//            recipient["GroupId"] = findMyGroupId(name: (obj?.senderId.safeValue).safeValue)
-//            recipients.append(recipient)
-//            dictionary["Recipients"] = recipients
-//        }
-//         if titleText == "Reply"{
-//            dictionary["GroupId"] = [findMyGroupId(name: (obj?.senderId.safeValue).safeValue)]
-//        }
-       //  else{
             let groups = groupIds
             dictionary["GroupId"] = groups
        // }
@@ -749,19 +803,6 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
             return ""
         }
     }
-//        let arr = file.components(separatedBy: "rptzfileup/") as! [String]
-//        if arr.count > 0{
-//            for eachValue in arr{
-//                if eachValue.contains(".pdf") ||  eachValue.contains(".docx") || eachValue.contains(".doc")||eachValue.contains(".jpeg") || eachValue.contains(".png") || eachValue.contains(".jpg") || eachValue.contains(".PDF") ||  eachValue.contains(".DOCX") || eachValue.contains(".DOC")||eachValue.contains(".JPEG") || eachValue.contains(".PNG") || eachValue.contains(".JPG") {
-//                    return eachValue
-//                }
-//            }
-//        }
-//        }
-//        return ""
-//    }
-    
-    
     //GetFtpLocation Credebtilas
     
     func getFTPDetails() {		
