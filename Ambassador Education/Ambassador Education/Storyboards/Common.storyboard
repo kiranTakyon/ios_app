@@ -2810,10 +2810,10 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowFirstRightButton" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowSecondRightButton" value="NO"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleTextColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backButtonTintColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -2861,6 +2861,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddPerson" translatesAutoresizingMaskIntoConstraints="NO" id="gRD-cb-NZj">
                                                 <rect key="frame" x="10" y="80" width="35" height="35"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gRD-cb-NZj" secondAttribute="height" multiplier="1:1" id="eoF-hE-qTF"/>
                                                     <constraint firstAttribute="width" constant="35" id="vwO-83-ZVP"/>
                                                 </constraints>
                                             </imageView>
@@ -3053,6 +3054,7 @@
                                                 <rect key="frame" x="10" y="135" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="86Z-hj-Fqb"/>
+                                                    <constraint firstAttribute="width" secondItem="V3w-fS-txF" secondAttribute="height" multiplier="1:1" id="rOO-vR-K5Z"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -3075,7 +3077,6 @@
                                             <constraint firstItem="TXp-6l-5z7" firstAttribute="centerY" secondItem="byL-nz-AlR" secondAttribute="centerY" id="b3r-1I-dw7"/>
                                             <constraint firstItem="fZe-QX-LCz" firstAttribute="leading" secondItem="Ugk-PA-36H" secondAttribute="leading" constant="10" id="cja-Qv-4f1"/>
                                             <constraint firstItem="3k0-AF-vHY" firstAttribute="leading" secondItem="sXu-5g-7KK" secondAttribute="leading" id="dJ1-aH-wTA"/>
-                                            <constraint firstItem="gRD-cb-NZj" firstAttribute="width" secondItem="gRD-cb-NZj" secondAttribute="height" multiplier="1:1" id="eoF-hE-qTF"/>
                                             <constraint firstAttribute="trailing" secondItem="fZe-QX-LCz" secondAttribute="trailing" constant="10" id="gUO-pA-nmV"/>
                                             <constraint firstItem="sXu-5g-7KK" firstAttribute="top" secondItem="3k0-AF-vHY" secondAttribute="bottom" constant="10" id="hp4-h0-fML"/>
                                             <constraint firstItem="g7l-p7-8ka" firstAttribute="leading" secondItem="gT9-8I-Fes" secondAttribute="trailing" constant="10" id="hw7-Tz-7Ul"/>
@@ -3087,7 +3088,6 @@
                                             <constraint firstItem="3k0-AF-vHY" firstAttribute="trailing" secondItem="sXu-5g-7KK" secondAttribute="trailing" id="oPe-qq-Bqj"/>
                                             <constraint firstItem="LxI-4L-boQ" firstAttribute="leading" secondItem="rJp-My-5qD" secondAttribute="leading" id="pi1-aW-Rkh"/>
                                             <constraint firstAttribute="bottom" secondItem="Ttl-ln-whn" secondAttribute="bottom" id="q6c-lB-DSe"/>
-                                            <constraint firstItem="V3w-fS-txF" firstAttribute="width" secondItem="V3w-fS-txF" secondAttribute="height" multiplier="1:1" id="rOO-vR-K5Z"/>
                                             <constraint firstItem="rJp-My-5qD" firstAttribute="trailing" secondItem="g7l-p7-8ka" secondAttribute="trailing" id="v6V-5i-EYW"/>
                                             <constraint firstItem="Ttl-ln-whn" firstAttribute="leading" secondItem="Ugk-PA-36H" secondAttribute="leading" constant="16" id="vEw-fY-9fV"/>
                                             <constraint firstItem="LxI-4L-boQ" firstAttribute="top" secondItem="rJp-My-5qD" secondAttribute="bottom" constant="10" id="vLr-3d-CN2"/>

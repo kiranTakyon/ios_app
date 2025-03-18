@@ -232,6 +232,7 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
         attachmentTb.dataSource = self
         attachmentTb.tableFooterView = UIView()
         topHeaderView.title = titleText
+        
         setBorderColor()
     }
     
