@@ -189,3 +189,37 @@ class Attachment{
     }
 }
 
+class FeeSummary: Codable {
+    var totalFee: String?
+    var totalDue: String?
+    var currentDue: String?
+    var totalPaid: String?
+    var sName: String?
+
+    enum CodingKeys: String, CodingKey {
+        case totalFee = "TotalFee"
+        case totalDue = "TotalDue"
+        case currentDue = "CurrentDue"
+        case totalPaid = "TotalPaid"
+        case sName = "SName"
+    }
+
+    // Default initializer
+    init() {
+        self.totalFee = nil
+        self.totalDue = nil
+        self.currentDue = nil
+        self.totalPaid = nil
+        self.sName = nil
+    }
+
+    // Initializer with dictionary
+    init(values: NSDictionary) {
+        self.totalFee = values["TotalFee"] as? String
+        self.totalDue = values["TotalDue"] as? String
+        self.currentDue = values["CurrentDue"] as? String
+        self.totalPaid = values["TotalPaid"] as? String
+        self.sName = values["SName"] as? String
+    }
+}
+

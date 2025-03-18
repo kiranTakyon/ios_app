@@ -23,7 +23,6 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
-        setSlideMenuProporties()
         tableViewProporties()
         getArticleList()
     }
@@ -36,13 +35,6 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
             getArticleList()
         }
         return true
-    }
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
     }
     
 
@@ -152,7 +144,7 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
     }
     
     func navigateToArticleDetail(catId : Int,title: String){
-        let page = mainStoryBoard.instantiateViewController(withIdentifier: "AwarenessDetailViewController") as? AwarenessDetailViewController
+        let page = commonStoryBoard.instantiateViewController(withIdentifier: "AwarenessDetailViewController") as? AwarenessDetailViewController
         page?.id = catId
         page?.titleName = title
         self.navigationController?.pushViewController(page!, animated: true)

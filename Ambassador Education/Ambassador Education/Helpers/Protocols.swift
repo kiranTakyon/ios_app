@@ -11,7 +11,6 @@ import Foundation
 
  protocol TaykonProtocol {
     
-    
     func deleteTheSelectedAttachment(index : Int)
     func downloadPdfButtonAction(url: String,fileName : String?)
     func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage)

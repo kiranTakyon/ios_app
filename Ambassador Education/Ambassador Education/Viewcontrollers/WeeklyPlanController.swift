@@ -52,7 +52,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var subjectDropDown : DropDown?
     var datePicker : UIDatePicker!
     var startTimeString = ""
-    var endTimeString = ""
+    var endTimeString = "End Date"
     var startTime = Date()
     var endTime = Date()
     var isSearch = Int()
@@ -78,8 +78,8 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var popUpViewVc : BIZPopupViewController?
     let today = NSDate()
     
-    var currentFromDate = ""
-    var currentToDate = ""
+    var currentFromDate = "Start Date"
+    var currentToDate = "End Date"
     
     
     override func viewDidLoad() {
@@ -87,7 +87,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         isEmpty = false
 //        self.showPopUpView()
         setDateFormatter()
-        setSlideMenuProporties()
         setDatesOnPicker()
         videoDownload.delegate = self
         quickLookController.dataSource = self
@@ -108,6 +107,8 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         tableView.dataSource = self
         self.endingDateField.delegate = self 
         self.startingDateField.delegate = self
+        self.endingDateField.text = "End Date"
+        self.startingDateField.text = "Start Date"
         getWeeklyPlanAPI()
         // Do any additional setup after loading the view.
     }
@@ -480,14 +481,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         
     }
     
-    func setSlideMenuProporties(){
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
-    
-    
     @IBAction func FromdatePickerAction(_ sender: Any) {
         self.fromDatePickerTapped()
     }
@@ -509,7 +502,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     
     func showPopUpView(){
         let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "WeeklyPlanFilterController") as! WeeklyPlanFilterController
+        let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "WeeklyPlanFilterController") as! WeeklyPlanFilterController
         popvc.delegate = self
         if let _ = weeklyPlan?.divisions {
             popvc.divisions = weeklyPlan?.divisions
@@ -600,31 +593,14 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     
     func navigateToDetail(weeklyPlan:WeeklyPlanList){
         
-        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        let detailVc = DigitalResourceDetailController.instantiate(from: .digitalResource)
         detailVc.weeklyPlan = weeklyPlan
         detailVc.divId = self.divId
         detailVc.comment_needed = self.comment_needed
         self.navigationController?.pushViewController(detailVc, animated: true)
         
     }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
 
@@ -735,7 +711,7 @@ extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSo
         let colorIndex = indexPath.row % viewColors.count
         let hexString = viewColors[colorIndex]
         
-        cell.bgView.backgroundColor = UIColor(named: hexString)
+       // cell.bgView.backgroundColor = UIColor(named: hexString)
         cell.titleLabel.text = titles[indexPath.row]
         
         return cell

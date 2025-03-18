@@ -51,6 +51,7 @@ class TopHeaderView: UIView {
     @IBOutlet weak var secondRightButton: UIButton!
     @IBOutlet weak var stackViewRightButtons: UIStackView!
     @IBOutlet weak var thirdRightButton: UIButton!
+    @IBOutlet weak var backButtonWidth: NSLayoutConstraint!
     
     // MARK: - Properties
     @IBInspectable
@@ -84,6 +85,7 @@ class TopHeaderView: UIView {
     var shouldShowBackButton: Bool = false {
         didSet {
             backButton.isHidden = !shouldShowBackButton
+            backButtonWidth.constant = 0
         }
     }
     
@@ -179,10 +181,8 @@ class TopHeaderView: UIView {
         thirdRightButton.isHidden = !show
     }
     
-    func setMenuOnLeftButton(reveal: SWRevealViewController? = nil) {
-        backButton.setImage(image: UIImage(named: "Menu"), inSize: CGSize(width: 20, height: 15), forState: .normal)
-        backButton.removeTarget(nil, action: nil, for: .allEvents)
-        backButton.addTarget(reveal, action: #selector(SWRevealViewController.revealToggle(_:)), for: UIControl.Event.touchUpInside)
+    func setMenuButton(){
+        backButton.setImage(UIImage(named: "Menu2"), for: .normal)
     }
     
     func setBorderAtBottom() {

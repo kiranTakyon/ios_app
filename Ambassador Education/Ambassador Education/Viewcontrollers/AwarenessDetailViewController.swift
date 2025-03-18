@@ -30,7 +30,6 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
         start = 0
         articleList.removeAll()
         getArticleList(page: start, searchText: "")
-        // Do any additional setup after loading the view.
     }
 
   
@@ -164,9 +163,9 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     func navigateTodigitalResourceDetail(category:TNAwarenessDetail){
-        var page = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardDetailController") as? NoticeboardDetailController
-        page?.awarnessPlan = category
-        self.navigationController?.pushViewController(page!, animated: true)
+        var page = NoticeboardDetailController.instantiate(from: .noticeboard)
+        page.awarnessPlan = category
+        self.navigationController?.pushViewController(page, animated: true)
         
     }
     

@@ -22,19 +22,10 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        setSlideMenuProporties()
         tableViewProporties()
         getCategoryList()
-
-        // Do any additional setup after loading the view.
     }
     
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
     
     func tableViewProporties() {
         categoryTable.register(UINib(nibName: "NoticeboardCategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticeboardCategoryTableViewCell")
@@ -136,7 +127,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     }
     
     func navigateToDetail(item:[TNNoticeBoardDetail],text: String){
-        let galleryListVc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeBoardListController") as! NoticeBoardListController
+        let galleryListVc = commonStoryBoard.instantiateViewController(withIdentifier: "NoticeBoardListController") as! NoticeBoardListController
         galleryListVc.listValues = item
         galleryListVc.titleValue = text
         self.navigationController?.pushViewController(galleryListVc, animated: true)
@@ -204,7 +195,7 @@ extension NoticeboardCategoryController: TopHeaderDelegate {
 
 extension NoticeboardCategoryController: NoticeboardCategoryTableViewCellDelegate {
     func noticeboardCategoryTableViewCell(_ cell: NoticeboardCategoryTableViewCell, didSelectCellwithIndex index: Int, item: TNNoticeBoardDetail) {
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardDetailController") as! NoticeboardDetailController
+        let vc = NoticeboardDetailController.instantiate(from: .noticeboard)
         vc.detail = item
         vc.NbID = item.id ?? ""
         self.navigationController?.pushViewController(vc, animated: true)

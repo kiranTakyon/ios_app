@@ -136,6 +136,16 @@ class APIHelper {
                         }
                     } else {
                         do {
+                            
+                            if let data = data{
+                                if let jsonString = String(data: data, encoding: .utf8) {
+                                    print(jsonString)
+                                    print("original url = \(originalUrl)")
+                                } else {
+                                    print("Failed to convert JSON data to string")
+                                }
+                            }
+                            
                             guard let data = data else {
                                 completion([JsonKeys().message : "Some error occured . Please try again"])
                                 throw JSONError.NoData

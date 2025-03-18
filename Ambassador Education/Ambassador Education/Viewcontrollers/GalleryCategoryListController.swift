@@ -20,15 +20,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         getCategoryList()
-        setSlideMenuProporties()
         topHeaderView.delegate = self
-    }
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
     }
     
     func getCategoryList() {
@@ -187,7 +179,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
     } */
     
     func navigateToGallery(cat:TNGalleryCategory){
-        let galleryListVc = mainStoryBoard.instantiateViewController(withIdentifier: "GalleryListController") as! GalleryListController
+        let galleryListVc = commonStoryBoard.instantiateViewController(withIdentifier: "GalleryListController") as! GalleryListController
         galleryListVc.categoryId = cat.categoryId
         galleryListVc.categoryName = cat.category
 

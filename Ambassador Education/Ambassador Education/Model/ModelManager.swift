@@ -34,6 +34,7 @@ enum ModelType:String {
     case TNSubject = "TNSubject"
     case TModule = "TModule"
     case TUpcomingEvent = "TUpcomingEvent"
+    case TFeeSummary = "FeeSummary"
 
 }
 
@@ -73,7 +74,7 @@ class ModelClassManager {
                 case .TNSubject:object = TNSubject(values:eachData)
                 case .TModule:object = TModule(values:eachData)
                 case .TUpcomingEvent:object = TUpcomingEvent(values:eachData)
-                    
+                case .TFeeSummary:object = FeeSummary(values:eachData)
 //TNPerson
                 default:
                     break

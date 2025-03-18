@@ -18,7 +18,8 @@ class CalendarController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calenderViewHeight: NSLayoutConstraint!
     @IBOutlet weak var topHeaderView: TopHeaderView!
-    
+    var prevButton: UIButton!
+    var nextButton: UIButton!
     
     var dictionary = [String:[TNCalendarEvent]]()
     var data : [Date:[CalendarEvent]] = [:]
@@ -56,7 +57,6 @@ class CalendarController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setSlideMenuProporties()
         topHeaderView.delegate = self
     }
     
@@ -67,12 +67,6 @@ class CalendarController: UIViewController {
         getCalendarEvents()
     }
     
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
     
     func setNavigationBar(){
         self.navigationController?.navigationBar.isHidden = true
@@ -93,19 +87,54 @@ class CalendarController: UIViewController {
     
     func setCalender(){
         fsCalendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width - 20, height: 300 ))
-        
         calendarView.addSubview(fsCalendar)
-        fsCalendar.appearance.todayColor = UIColor(named: "ED706B")
+        fsCalendar.appearance.todayColor = UIColor(named: "9CDAE7")
         fsCalendar.appearance.headerTitleColor = .black
         fsCalendar.appearance.weekdayTextColor = .black
-        fsCalendar.appearance.selectionColor = UIColor(named: "ED706B")
+        fsCalendar.appearance.selectionColor = UIColor(named: "9CDAE7")
         fsCalendar.appearance.borderRadius = 0.4
         fsCalendar.appearance.headerMinimumDissolvedAlpha = 0.0
         fsCalendar.appearance.eventDefaultColor = .black
         fsCalendar.delegate = self
         fsCalendar.dataSource = self
         fsCalendar.scope = .month
+        addCustomNavButtons()
     }
+    
+    func addCustomNavButtons() {
+        let headerFrame = fsCalendar.frame
+        
+        // Previous Button
+        prevButton = UIButton(frame: CGRect(x: headerFrame.minX + 60, y: headerFrame.minY + 5, width: 30, height: 30))
+        if #available(iOS 13.0, *) {
+            prevButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        } else {
+            prevButton.setImage(UIImage(named: "icon_prev"), for: .normal)
+        }
+        prevButton.tintColor = .black
+        prevButton.addTarget(self, action: #selector(prevMonth), for: .touchUpInside)
+        calendarView.addSubview(prevButton)
+        
+        // Next Button
+        nextButton = UIButton(frame: CGRect(x: headerFrame.maxX - 90, y: headerFrame.minY + 5, width: 30, height: 30))
+        if #available(iOS 13.0, *) {
+            nextButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        } else {
+            nextButton.setImage(UIImage(named: "icon_next"), for: .normal)
+        }
+        nextButton.tintColor = .black
+        nextButton.addTarget(self, action: #selector(nextMonth), for: .touchUpInside)
+        calendarView.addSubview(nextButton)
+        
+    }
+    
+    @objc func prevMonth() {
+          fsCalendar.setCurrentPage(Calendar.current.date(byAdding: .month, value: -1, to: fsCalendar.currentPage)!, animated: true)
+      }
+      
+      @objc func nextMonth() {
+          fsCalendar.setCurrentPage(Calendar.current.date(byAdding: .month, value: 1, to: fsCalendar.currentPage)!, animated: true)
+      }
     
     deinit {
         print("\(#function)")

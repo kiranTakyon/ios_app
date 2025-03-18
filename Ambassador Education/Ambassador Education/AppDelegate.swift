@@ -332,6 +332,22 @@ extension AppDelegate {
         let config = GIDConfiguration(clientID: clientID)
         GIDSignIn.sharedInstance.configuration = config
     }
+    
+    func navigateToTabbar(){
+        let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController {
+            window?.rootViewController = tabBarController
+        }
+        window?.makeKeyAndVisible()
+    }
+    
+    func navigateToViewController(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "loginVC") as? ViewController {
+            window?.rootViewController = tabBarController
+        }
+        window?.makeKeyAndVisible()
+    }
 }
 
 

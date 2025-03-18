@@ -20,8 +20,13 @@ let BaseUrl = "https://beta.reportz.co.in/t360api/T360_API/"
 let kAppName = ""
 
 let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+let commonStoryBoard = UIStoryboard(name: "Common", bundle: nil)
 let videoStoryBoard = UIStoryboard(name: "Video", bundle: nil)
 let upcomingEvent = UIStoryboard(name: "UpComingEvent", bundle: nil)
+let gallery = UIStoryboard(name: "Gallery", bundle: nil)
+let communicateLand = UIStoryboard(name: "CommunicateLand", bundle: nil)
+let noticeboard = UIStoryboard(name: "Noticeboard", bundle: nil)
+let weeklyPlan = UIStoryboard(name: "WeeklyPlan", bundle: nil)
 
 let alertOk = "OK"
 let alertNo = "NO"

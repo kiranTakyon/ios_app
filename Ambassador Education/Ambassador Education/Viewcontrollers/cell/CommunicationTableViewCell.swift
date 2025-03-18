@@ -35,7 +35,7 @@ class CommunicationTableViewCell: UITableViewCell {
     func setUpSideViewBg() {
         let index = index % sideViewBgColors.count
         let color = sideViewBgColors[index]
-        sideView.backgroundColor = UIColor(named: color)
+    //    sideView.backgroundColor = UIColor(named: color)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

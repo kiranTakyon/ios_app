@@ -22,7 +22,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var menuButton: UIButton!
     
     var profileImageUrl : String?
     var icons = ["User","User","User","Email","Mobile","LocationGray","Email"]
@@ -39,13 +38,13 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
-        setSlideMenuProporties()
+        topHeaderView.shouldShowBackButton = false
         isEditClicked = false
         containerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         profileTable.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
         // Do any additional setup after loading the view.
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,7 +59,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         isFromCamera = false
     }
     
-   
     
     func deleteTheSelectedAttachment(index: Int) {
         
@@ -73,13 +71,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         cell.textField.textColor =  color
         cell.textField.isUserInteractionEnabled = interactionStatus
         }
-    }
-    
-    func setSlideMenuProporties(){
-            if let revealVC = revealViewController() {
-                topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-                view.addGestureRecognizer(revealVC.panGestureRecognizer())
-            }
     }
     
     func getProfileDetails(){
@@ -207,7 +198,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
             if result["StatusCode"] as? Int == 1{
                 profileInfoGlobal.removeAllObjects()
                 profileInfoGlobal = NSMutableDictionary(dictionary : result)
-                self.topHeaderView.title = result["ProfileLabel"] as? String ?? ""
+               self.topHeaderView.title = result["ProfileLabel"] as? String ?? ""
                 
                 guard let NameLabel = result["NameLabel"] as? String else {return}
                 guard let UserNameLabel = result["UserNameLabel"] as? String else {return}
@@ -292,7 +283,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         let iconVal = icons[indexPath.row]
         cell.headingImageView.image = UIImage(named:iconVal)
         cell.labelHeading.text = placeHolders[indexPath.row]
-        self.tableHeight.constant = profileTable.contentSize.height
+        self.tableHeight.constant = profileTable.contentSize.height - 100
         cell.textField.text = titles[indexPath.row]
         if !isEditClicked!{
             setUIUserInteractionDisabledAndAble(cell: cell, color: UIColor.lightGray, interactionStatus: false)
@@ -349,7 +340,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func setMyLocationAction(_ sender: Any) {
-        let mapVc = mainStoryBoard.instantiateViewController(withIdentifier: "mapVc") as! MapController
+        let mapVc = commonStoryBoard.instantiateViewController(withIdentifier: "mapVc") as! MapController
         
         mapVc.latitude = Double(seperateOptionalTextFromString(text: profileInfo!.latitude!))
         mapVc.longitude = Double(seperateOptionalTextFromString(text: profileInfo!.longitude!))
@@ -385,7 +376,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     func popUpVc(){
        
         let heightVal = 400
-        let popvc = mainStoryBoard.instantiateViewController(withIdentifier: "changePasswordVc") as! ChangePasswordController
+        let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "changePasswordVc") as! ChangePasswordController
         popvc.delegate = self
 //        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width: self.view.frame.size.width - 40,height: CGFloat(heightVal)))
 //        self.present(popUpViewVc!, animated: true, completion: nil)
@@ -397,7 +388,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     func popUpVcToEmailVerification(email: String){
         
         let heightVal = 400
-        let popvc = mainStoryBoard.instantiateViewController(withIdentifier: "VerificationEmailView") as! VerificationEmailViewController
+        let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "VerificationEmailView") as! VerificationEmailViewController
         popvc.delegate = self
         if let emailValue = email as? String{
             popvc.email = emailValue
@@ -645,7 +636,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func navigateToGallery(url:String,title:String,indexPath: Int){
-        let galleryDetail = mainStoryBoard.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+        let galleryDetail = commonStoryBoard.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
         galleryDetail.imageUrl = url
         galleryDetail.pageTitle  = ""
         galleryDetail.titleValue = title
@@ -738,6 +729,7 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
 
 
 extension MyProfileController: TopHeaderDelegate {
+    
     func secondRightButtonClicked(_ button: UIButton) {
         SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
             if isOtherButton == true {
@@ -763,4 +755,7 @@ extension MyProfileController: TopHeaderDelegate {
             callProfileEdit()
         }
     }
+    
+    
+    
 }

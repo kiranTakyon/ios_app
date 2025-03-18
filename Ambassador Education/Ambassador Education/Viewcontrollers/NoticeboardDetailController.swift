@@ -49,21 +49,11 @@ class NoticeboardDetailController: UIViewController {
         } else {
             setHtml()
         }
-        if isFromDashboardNotification {
-            setSlideMenuProporties()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         progressBar.isHidden = true
         addBlurEffectToTableView(inputView: self.view, hide: true)
-    }
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
     }
     
     func setVideoDownload() {
@@ -208,7 +198,7 @@ class NoticeboardDetailController: UIViewController {
     @IBAction func backAction(_ sender: Any) {
         // self.navigationController?.popViewController(animated: true)
         if self.navigationController?.viewControllers.count == 1 {
-            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "NoticeboardCategoryController") as! CommunicateLandController
+            let vc = NoticeboardCategoryController.instantiate(from: .noticeboard)
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
             self.navigationController!.popViewController(animated: true)

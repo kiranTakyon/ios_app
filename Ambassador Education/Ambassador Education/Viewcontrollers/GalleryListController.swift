@@ -216,7 +216,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
     
     
     func navigateToGallery(url:String,title:String,indexPath: Int){
-        let galleryDetail = mainStoryBoard.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+        let galleryDetail = ImagePreviewController.instantiate(from: .gallery)
         galleryDetail.imageUrl = url
         galleryDetail.pageTitle  = "Gallery"
         galleryDetail.titleValue = title == "" ? self.topHeaderView.title : title

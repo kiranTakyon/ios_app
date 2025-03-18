@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92282271390000004" green="0.44399243589999998" blue="0.42350918050000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="9CDAE7"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mIs-02-Lv1" secondAttribute="trailing" constant="20" id="BLc-vM-sLW"/>
                             <constraint firstItem="mIs-02-Lv1" firstAttribute="centerY" secondItem="bkg-is-djC" secondAttribute="centerY" id="Bho-FS-NWl"/>
@@ -63,4 +64,9 @@
             <point key="canvasLocation" x="74.809160305343511" y="19.718309859154932"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="9CDAE7">
+            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

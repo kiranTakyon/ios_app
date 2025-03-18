@@ -36,21 +36,10 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
        // print(imageArr)
         topHeaderView.delegate = self
         
-        if isFromDashboardNotification {
-            setSlideMenuProporties()
-        }
-        
         if isPresent {
             topHeaderView.isHidden = true
             topHeaderView.viewHeightConstraint.constant = 40
             addCustomTopView()
-        }
-    }
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
         }
     }
     
@@ -113,7 +102,7 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
         //self.navigationController?.popViewController(animated: true)
         //if self.pageTitle == "NOT_TEST"{
         if self.navigationController?.viewControllers.count == 1 {
-            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            let vc = FeedViewController.instantiate(from: .home)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
@@ -124,7 +113,6 @@ class ImagePreviewController: UIViewController,UIScrollViewDelegate {
     }
     @IBAction func leftButtonScrollAction(_ sender: UIButton) {
         if let imageArrays = imageArr as? [String] {
-            
             if position >= 0 {
                 if position != 0 {
                     position -= 1

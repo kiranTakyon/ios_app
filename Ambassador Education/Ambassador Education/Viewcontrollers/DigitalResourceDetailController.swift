@@ -81,7 +81,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         videoDownload.delegate = self
         
         if isFromNotification {
-            setSlideMenuProporties()
             if(NbID != "") {
                 getDataFromNotificationApi()
             } else {
@@ -108,13 +107,6 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
        // isFromNotification = true
-    }
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
     }
     
     func setUI() {
@@ -255,8 +247,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
         
     }
     func showPopUpView(){
-        let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "AddCommentVC") as! AddCommentVC
+        let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "AddCommentVC") as! AddCommentVC
         popvc.delegate = self
         popvc.weeklyPlan = self.weeklyPlan
         popvc.strDId = self.divId
@@ -323,7 +314,7 @@ class DigitalResourceDetailController: UIViewController, DRDAttechmentCellDelega
     func showComments()
     {
         
-        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "MessageDetailController") as! MessageDetailController
+        let detailVc = MessageDetailController.instantiate(from: .communicateLand)
         detailVc.messageId = self.msgId
         detailVc.typeMsg  = 3
         detailVc.text = self.weeklyPlan?.topic
@@ -565,7 +556,7 @@ class DRDDownLoadCell: UITableViewCell{
 }
 extension DigitalResourceDetailController:VideoDownloadDelegate{
     func gotoWeb(str : String) {
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        let vc = commonStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         vc.strU = str
         self.navigationController?.pushViewController(vc, animated: true)
     }

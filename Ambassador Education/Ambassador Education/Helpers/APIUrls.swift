@@ -60,6 +60,10 @@ class APIUrls{
     let getNotification = "T0062"
     let getDashboard = "T0001"
     let postSocialMedia = "PostSocialMedia"
+    let fUELMETER = "FUELMETER"
+    let jOURNEYPROGRESS = "JOURNEYPROGRESS"
+    let cHALLANGESPROGRESS = "CHALLANGESPROGRESS"
+    let qUIZPROGRESS = "QUIZPROGRESS"
 }
 
 

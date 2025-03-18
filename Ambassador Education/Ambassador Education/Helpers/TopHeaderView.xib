@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopHeaderView" customModule="Ajyal">
             <connections>
                 <outlet property="backButton" destination="u07-lt-Q8k" id="bLT-ny-8IX"/>
+                <outlet property="backButtonWidth" destination="fs3-21-4dk" id="A0g-JM-CUm"/>
                 <outlet property="searchButton" destination="W8S-Ep-8nD" id="HWB-Eg-km8"/>
                 <outlet property="searchTextField" destination="fmm-hl-gPH" id="AKM-6u-H3e"/>
                 <outlet property="secondRightButton" destination="IxO-Ij-Mvg" id="KI3-oT-zdK"/>
@@ -30,7 +32,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="623" height="88"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u07-lt-Q8k">
-                            <rect key="frame" x="2.5" y="38" width="40" height="40"/>
+                            <rect key="frame" x="2.5" y="43" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="MS2-Ru-ZHG"/>
                                 <constraint firstAttribute="width" constant="40" id="fs3-21-4dk"/>
@@ -41,7 +43,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-8W-OXn">
-                            <rect key="frame" x="60" y="48" width="465" height="20.5"/>
+                            <rect key="frame" x="60" y="53" width="465" height="20.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Resource List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFw-zB-tCA">
                                     <rect key="frame" x="0.0" y="0.0" width="162.5" height="20.5"/>
@@ -58,7 +60,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OYa-1I-CvE">
-                            <rect key="frame" x="545" y="46" width="68" height="24"/>
+                            <rect key="frame" x="545" y="51" width="68" height="24"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8S-Ep-8nD">
                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -66,6 +68,7 @@
                                         <constraint firstAttribute="height" constant="24" id="iYH-ya-76a"/>
                                         <constraint firstAttribute="width" secondItem="W8S-Ep-8nD" secondAttribute="height" multiplier="1:1" id="tK5-Km-Klc"/>
                                     </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="Search"/>
                                     <connections>
                                         <action selector="searchButtonAction:" destination="-1" eventType="touchUpInside" id="V1z-PB-FmA"/>
@@ -77,6 +80,7 @@
                                         <constraint firstAttribute="height" constant="24" id="8bP-ku-UKh"/>
                                         <constraint firstAttribute="width" secondItem="IxO-Ij-Mvg" secondAttribute="height" multiplier="1:1" id="s5w-Tp-cKb"/>
                                     </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="Search"/>
                                     <connections>
                                         <action selector="secondRightButtonAction:" destination="-1" eventType="touchUpInside" id="Ggn-AC-ROZ"/>
@@ -86,6 +90,7 @@
                                     <rect key="frame" x="68" y="0.0" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="HfR-Wg-F5C"/>
+                                        <constraint firstAttribute="width" secondItem="XQx-xZ-rM0" secondAttribute="height" multiplier="1:1" id="Y5L-9o-Joe"/>
                                         <constraint firstAttribute="width" secondItem="XQx-xZ-rM0" secondAttribute="height" multiplier="1:1" id="bnC-OI-JZo"/>
                                     </constraints>
                                     <state key="normal" image="Search"/>
@@ -94,9 +99,6 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="XQx-xZ-rM0" firstAttribute="width" secondItem="XQx-xZ-rM0" secondAttribute="height" multiplier="1:1" id="Y5L-9o-Joe"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,12 +110,12 @@
                         <constraint firstItem="OYa-1I-CvE" firstAttribute="leading" secondItem="jIl-8W-OXn" secondAttribute="trailing" constant="20" id="W2v-9V-lXg"/>
                         <constraint firstItem="u07-lt-Q8k" firstAttribute="leading" secondItem="hNi-k0-n2F" secondAttribute="leading" constant="2.5" id="Z8B-aM-Vvx"/>
                         <constraint firstItem="jIl-8W-OXn" firstAttribute="centerY" secondItem="u07-lt-Q8k" secondAttribute="centerY" id="u77-on-jlt"/>
-                        <constraint firstAttribute="bottom" secondItem="u07-lt-Q8k" secondAttribute="bottom" constant="10" id="z45-kx-9P9"/>
+                        <constraint firstAttribute="bottom" secondItem="u07-lt-Q8k" secondAttribute="bottom" constant="5" id="z45-kx-9P9"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="hOR-uE-hfV"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="003466"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hNi-k0-n2F" secondAttribute="trailing" id="0dK-SC-Mpp"/>
                 <constraint firstAttribute="bottom" secondItem="hNi-k0-n2F" secondAttribute="bottom" id="GKe-xc-6Do"/>
@@ -127,5 +129,8 @@
     <resources>
         <image name="Back2" width="25" height="25"/>
         <image name="Search" width="25" height="25"/>
+        <namedColor name="003466">
+            <color red="0.0" green="0.20399999618530273" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

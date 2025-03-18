@@ -78,7 +78,6 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSlideMenuProporties()
         SetupTableView()
         topHeaderView.delegate = self
         setStudentDropDown()
@@ -113,14 +112,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         dropDown?.show()
     }
 
-    
-    func setSlideMenuProporties(){
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
-    
+
     func setSectionHeader() {
         if finance == 1 {
         } else {
@@ -300,11 +292,11 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         
     }
     func navigateToWebView(){
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "GradeViewController") as? GradeViewController
+        let vc = GradeViewController.instantiate(from: .grade)
         if payLink != "" {
-            vc?.header  = "Payment"
+            vc.header  = "Payment"
             gradeBookLink = payLink
-            self.present(vc!, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

@@ -76,7 +76,7 @@ class NoticeboardCategoryTableViewCell: UITableViewCell {
             let colorIndex = index % sideViewColors.count
             let hexString = sideViewColors[colorIndex]
             
-            sideView.backgroundColor = UIColor(named: hexString)
+          //  sideView.backgroundColor = UIColor(named: hexString)
             listValues = item
             tableView.reloadData()
         }

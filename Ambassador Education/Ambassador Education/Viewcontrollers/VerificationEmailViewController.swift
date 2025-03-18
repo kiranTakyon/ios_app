@@ -96,9 +96,11 @@ class VerificationEmailViewController: UIViewController, UITextFieldDelegate {
 
 }
 extension VerificationEmailViewController:UITextViewDelegate {
- func textFieldShouldReturn(_ textField: UITextField) -> Bool
- {
-     verificationCodeTextField.resignFirstResponder()
-     return true
- }
- }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        verificationCodeTextField.resignFirstResponder()
+        return true
+    }
+    
+}

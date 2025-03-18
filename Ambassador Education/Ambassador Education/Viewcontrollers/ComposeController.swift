@@ -191,8 +191,8 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     }
     
     func setConstraints(addPersonWidthValue: CGFloat,addCcHeightValue: CGFloat,groupViewHeightValue: CGFloat,personViewHeightValue: CGFloat,hide: Bool){
-        addPersonWidth.constant = addPersonWidthValue
-        addCcHeight.constant =  addCcHeightValue
+        //addPersonWidth.constant = addPersonWidthValue
+        //addCcHeight.constant =  addCcHeightValue
         groupViewHeight.constant = groupViewHeightValue
         personViewHeight.constant = personViewHeightValue
         personView.isHidden  = hide
@@ -217,7 +217,7 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     
     func setRichToolbarProporties(){
         toolBar.tintColor = UIColor.white
-        toolBar.barTintColor = UIColor(named: "lightPink")
+        toolBar.barTintColor = UIColor(named: "9CDAE7")
         toolBar.options = RichEditorDefaultOption.all
         toolBar.delegate = self
         toolBar.editor = self.editorView

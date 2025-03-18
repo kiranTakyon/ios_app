@@ -11,9 +11,7 @@ import QuickLook
 
 class GradeViewController: UIViewController,WKUIDelegate {
 
-    
     @IBOutlet weak var webView: WKWebView!
-   
     @IBOutlet weak var progressBar: ProgressViewBar!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
@@ -37,8 +35,7 @@ class GradeViewController: UIViewController,WKUIDelegate {
             topHeaderView.setLeftButtonImage = #imageLiteral(resourceName: "Back2")
             topHeaderView.backButton.addTarget(self, action: #selector(self.backAction), for: UIControl.Event.touchUpInside)
         } else {
-            topHeaderView.setLeftButtonImage = #imageLiteral(resourceName: "Menu")
-            setSlideMenuProporties()
+            topHeaderView.setLeftButtonImage =  UIImage(named:"Back2") ?? UIImage()
        }
     }
     
@@ -135,13 +132,6 @@ class GradeViewController: UIViewController,WKUIDelegate {
         
     }
     
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
     
     @IBAction func logoutButtonAction(_ sender: UIButton) {
         SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to logout?", style: AlertStyle.warning, buttonTitle:"Want to stay", buttonColor:UIColor.lightGray , otherButtonTitle:  "Yes, Please!", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in

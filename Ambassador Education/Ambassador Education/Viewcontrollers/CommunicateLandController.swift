@@ -10,9 +10,7 @@ import UIKit
 
 class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDelegate{
     
-    
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var searchText = ""
@@ -21,19 +19,9 @@ class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDel
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.setMenuOnLeftButton()
         topHeaderView.searchTextField.delegate = self
         self.getInboxMessages(searchTextValue : "")
-        setSlideMenuProporties()
         // Do any additional setup after loading the view.
-    }
-    
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
     }
     
     func didChangeTabToIndex(_ pager: PagerController, index: Int) {
@@ -45,7 +33,7 @@ class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDel
     }
     
     func setUpContainer() {
-        guard let communicationVC = mainStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? CommunicateController else { return }
+        guard let communicationVC = commonStoryBoard.instantiateViewController(withIdentifier: "communicateVC") as? CommunicateController else { return }
         communicationVC.type = CommunicationType.inbox
         communicationVC.delegate = self
         communicationVC.view.frame = containerView.bounds
@@ -79,7 +67,7 @@ class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDel
                     
                     let list = MessageModel(values: result)
                     self.removeNoDataLabel()
-                    self.topHeaderView.title = list.communicateLabel.safeValue
+                    self.topHeaderView.title = "Communicate"
                     self.stopLoadingAnimation()
                     self.setUpContainer()
                     
@@ -101,20 +89,20 @@ class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDel
         let valueReal = value as? String
         
         if isForDraft {
-            let composeViewC = mainStoryBoard.instantiateViewController(withIdentifier: "composeVc") as! ComposeController
+            let composeViewC = commonStoryBoard.instantiateViewController(withIdentifier: "ComposeController") as! ComposeController
             composeViewC.titleText = "Draft"
             composeViewC.obj = message
             composeViewC.parentMessageId = Int(message.id.safeValue).safeValueOfInt
             composeViewC.commDraftId = Int(message.id.safeValue).safeValueOfInt
             self.navigationController?.pushViewController(composeViewC, animated: true)
         } else if  valueReal != "compose" {
-            let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "MessageDetailController") as! MessageDetailController
+            let detailVc = MessageDetailController.instantiate(from: .communicateLand)
             detailVc.messageId = valueReal
             detailVc.typeMsg  = typeValue
             detailVc.text = titleValue
             self.navigationController?.pushViewController(detailVc, animated: true)
         } else {
-            let composeViewC = mainStoryBoard.instantiateViewController(withIdentifier: "composeVc") as! ComposeController
+            let composeViewC = commonStoryBoard.instantiateViewController(withIdentifier: "ComposeController") as! ComposeController
             composeViewC.titleText = "Compose New Mail"
             self.navigationController?.pushViewController(composeViewC, animated: true)
         }

@@ -64,7 +64,7 @@ class Colors {
     var gl:CAGradientLayer!
     
     init() {
-        let colorTop = UIColor.appOrangeColor().cgColor////UIColor(red:  169.0 / 255.0, green: 2.0 / 255.0, blue: 0, alpha:1).cgColor//UIColor(red: 192.0 / 255.0, green: 38.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor.appColor().cgColor////UIColor(red:  169.0 / 255.0, green: 2.0 / 255.0, blue: 0, alpha:1).cgColor//UIColor(red: 192.0 / 255.0, green: 38.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0).cgColor
         let colorBottom =  UIColor(red: 1, green:1 , blue: 1, alpha: 1).cgColor
         
         self.gl = CAGradientLayer()
@@ -75,6 +75,11 @@ class Colors {
 
 
 extension UIColor{
+    
+    class func appColor() -> UIColor
+    {
+        return UIColor.colorFromHEX(hexValue: 0x9CDAE7)
+    }
     
     class func appOrangeColor() -> UIColor
     {
@@ -263,7 +268,7 @@ extension Data {
 
 extension UIViewController{
     
-    func addNoDataFoundLabel(textValue:String = "No Items availble")  {
+    func addNoDataFoundLabel(textValue:String = "No Items Available")  {
         
         DispatchQueue.main.async {
             func getString()->String{

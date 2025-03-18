@@ -266,7 +266,10 @@ class ViewController: UIViewController {
                         sibling = false
                         self.stopLoadingAnimation()
                         self.setCurrentCredentials(userName: self.usernameField.text!, password: self.passwordField.text!)
-                        self.performSegue(withIdentifier: toHomeSegue, sender: nil)
+                     //   self.performSegue(withIdentifier: toHomeSegue, sender: nil)
+                        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                            appDelegate.navigateToTabbar()
+                        }
                     }
                 } else {
                     if let errorMessage = resultDict["StatusMessage"] as? String{
@@ -425,7 +428,7 @@ class ViewController: UIViewController {
     func popUpVc() {
         DispatchQueue.main.async {
             let heightVal = 375
-            let popvc = mainStoryBoard.instantiateViewController(withIdentifier: "changePasswordVc") as! ChangePasswordController
+            let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "changePasswordVc") as! ChangePasswordController
             popvc.delegate = self
             popvc.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width - 50, height: CGFloat(heightVal))
             self.accessibilityHint = "ForceFully"
@@ -441,7 +444,7 @@ class ViewController: UIViewController {
     func showPopUpView() {
         
         let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "ForgotPasswordController") as! ForgotPasswordController
+        let popvc = ForgotPasswordController.instantiate(from: .common)
         //         var popUpViewVc : BIZPopupViewController?
         //        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))
         //        self.present(popUpViewVc!, animated: true, completion: nil)

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZKe-fX-A5n">
+            <objects>
+                <navigationController modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="B53-3G-y11" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZW9-c3-py8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wvC-az-7sN" kind="relationship" relationship="rootViewController" id="Mwe-hA-X62"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t37-lD-FNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1479" y="-1621"/>
+        </scene>
+        <!--Grade View Controller-->
+        <scene sceneID="hA4-OL-7Y1">
+            <objects>
+                <viewController storyboardIdentifier="GradeViewController" modalPresentationStyle="fullScreen" id="wvC-az-7sN" customClass="GradeViewController" customModule="ABC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qvq-eu-npK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvK-h2-nhy" customClass="TopHeaderView" customModule="ABC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" placeholder="YES" id="LON-3c-O6U"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="setFirstRightButtonImage" value="DownLoadWhite"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="setSecondRightButtonImage" value="LogOut"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-cr-23k">
+                                <rect key="frame" x="0.0" y="75" width="393" height="777"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-DU-3BF" customClass="ProgressViewBar" customModule="ABC" customModuleProvider="target">
+                                <rect key="frame" x="15" y="386" width="363" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ca9-PF-9qH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JIa-i8-j6t"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UvK-h2-nhy" firstAttribute="leading" secondItem="JIa-i8-j6t" secondAttribute="leading" id="Ozl-Qy-Hfc"/>
+                            <constraint firstItem="JIa-i8-j6t" firstAttribute="trailing" secondItem="SFC-cr-23k" secondAttribute="trailing" id="Tsu-Rv-pOb"/>
+                            <constraint firstItem="JIa-i8-j6t" firstAttribute="trailing" secondItem="Eo3-DU-3BF" secondAttribute="trailing" constant="15" id="TwB-hl-grR"/>
+                            <constraint firstItem="Eo3-DU-3BF" firstAttribute="leading" secondItem="JIa-i8-j6t" secondAttribute="leading" constant="15" id="W65-Jj-oJ3"/>
+                            <constraint firstItem="Eo3-DU-3BF" firstAttribute="centerY" secondItem="Qvq-eu-npK" secondAttribute="centerY" id="aP0-FJ-sx5"/>
+                            <constraint firstItem="SFC-cr-23k" firstAttribute="leading" secondItem="Qvq-eu-npK" secondAttribute="leading" id="fYo-sk-gEI"/>
+                            <constraint firstItem="Eo3-DU-3BF" firstAttribute="centerX" secondItem="JIa-i8-j6t" secondAttribute="centerX" id="oxQ-a4-f61"/>
+                            <constraint firstAttribute="bottom" secondItem="SFC-cr-23k" secondAttribute="bottom" id="p8N-XY-IWd"/>
+                            <constraint firstItem="UvK-h2-nhy" firstAttribute="top" secondItem="Qvq-eu-npK" secondAttribute="top" id="pAE-al-bJW"/>
+                            <constraint firstItem="SFC-cr-23k" firstAttribute="top" secondItem="UvK-h2-nhy" secondAttribute="bottom" id="uFQ-dq-HUz"/>
+                            <constraint firstItem="JIa-i8-j6t" firstAttribute="trailing" secondItem="UvK-h2-nhy" secondAttribute="trailing" id="vk6-8b-1ZX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ziu-RC-FNH"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="progressBar" destination="Eo3-DU-3BF" id="UPn-8K-WKF"/>
+                        <outlet property="topHeaderView" destination="UvK-h2-nhy" id="ert-vk-Stc"/>
+                        <outlet property="webView" destination="SFC-cr-23k" id="wNi-GS-ehl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7r6-QU-IvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1480.1526717557251" y="-875.35211267605644"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="DownLoadWhite" width="25" height="25"/>
+        <image name="LogOut" width="128" height="128"/>
+    </resources>
+</document>

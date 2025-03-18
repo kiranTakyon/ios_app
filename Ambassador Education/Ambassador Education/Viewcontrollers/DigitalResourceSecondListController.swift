@@ -138,7 +138,7 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     }
 
     func navigateToDetail(digitalResource:TNDigitalResourceSubList) {
-        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        let detailVc = DigitalResourceDetailController.instantiate(from: .digitalResource)
         detailVc.digitalResource = digitalResource
         navigationController?.pushViewController(detailVc, animated: true)
     }

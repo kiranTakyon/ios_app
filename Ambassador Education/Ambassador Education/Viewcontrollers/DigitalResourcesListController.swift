@@ -22,7 +22,6 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
-        setSlideMenuProporties()
         setUpCollectionView()
         getCategoryList()
     }
@@ -36,15 +35,7 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         }
         return true
     }
-    
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
    
-    
     func setUpCollectionView() {
         let nib = UINib(nibName: "DigitalResourceCategoryCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "DigitalResourceCategoryCell")
@@ -93,7 +84,7 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
     }
     
     func navigateTodigitalResourceDetail(category:TNDigitalResourceCategory) {
-        let digitalVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceSecondListController") as! DigitalResourceSecondListController
+        let digitalVc = commonStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceSecondListController") as! DigitalResourceSecondListController
         digitalVc.catId = category.categoryId!
         digitalVc.titleValue = category.caetgory
         digitalVc.isPresent = isPresent

@@ -255,17 +255,19 @@ extension WeeklyPlanController: UITextFieldDelegate {
     func setDate(){
         
         if let details = self.completeListDetails {
-            
-            if let start = details["FromDate"] as? String{
-                startTimeString = start
-                startingDateField.text = start
+            if let start = details["FromDate"] as? String {
+                if start != "" {
+                    startTimeString = start
+                    startingDateField.text = start
+                }
             }
-            if let end = details["ToDate"] as? String{
-                endTimeString = end
-                endingDateField.text = end
+            if let end = details["ToDate"] as? String {
+                if end != "" {
+                    endTimeString = end
+                    endingDateField.text = end
+                }
             }
         }
-        
     }
     
     

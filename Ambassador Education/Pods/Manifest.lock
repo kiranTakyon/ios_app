@@ -15,6 +15,9 @@ PODS:
     - Fabric (~> 1.10.2)
   - DatePickerDialog (4.0)
   - DGActivityIndicatorView (2.1.1)
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
   - DropDown (2.3.13)
   - EzPopup (1.2)
   - Fabric (1.10.2)
@@ -137,6 +140,7 @@ DEPENDENCIES:
   - Crashlytics
   - DatePickerDialog
   - DGActivityIndicatorView
+  - DGCharts
   - DropDown
   - EzPopup
   - Fabric
@@ -170,6 +174,7 @@ SPEC REPOS:
     - Crashlytics
     - DatePickerDialog
     - DGActivityIndicatorView
+    - DGCharts
     - DropDown
     - EzPopup
     - Fabric
@@ -221,6 +226,7 @@ SPEC CHECKSUMS:
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
   DatePickerDialog: ccff2f91ff7a018057a4d72fa5ad6de49c8cb0cd
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   EzPopup: 989ac21992a82ad6d1245c747a78bf3833279ef0
   Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
@@ -262,6 +268,6 @@ SPEC CHECKSUMS:
   Updates: 2a35686c1d7c10dcf8bed98a9c194f8d305f7bb6
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: 2fa0e5e337a5776b2e83ef05ead3cf2a82b31185
+PODFILE CHECKSUM: 00d05b04f6e5ce00b1d3fe108e913017f9139b34
 
 COCOAPODS: 1.15.2

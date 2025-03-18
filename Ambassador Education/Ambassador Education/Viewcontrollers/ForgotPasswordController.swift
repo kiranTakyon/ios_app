@@ -88,8 +88,8 @@ class ForgotPasswordController: UIViewController {
     
     func showResetPasswordPopUpView(){
         
-        let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popvc = MainStoyboard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
+        let commonStoyboard = UIStoryboard(name: "Common", bundle: nil)
+        let popvc = commonStoyboard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
         popvc.userEmail = passwordField.text
 //        var popUpViewVc : BIZPopupViewController?
 //        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(310)))

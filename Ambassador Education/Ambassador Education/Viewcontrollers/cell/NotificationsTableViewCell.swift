@@ -21,9 +21,6 @@ class NotificationsTableViewCell: UITableViewCell {
 
     //MARK: - IBOutlet's -
 
-    @IBOutlet weak var reactionViewTop: NSLayoutConstraint!
-    @IBOutlet weak var reactionHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var reactionWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var alertTitle: UILabel!
@@ -54,8 +51,6 @@ class NotificationsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        [reactionViewTop,reactionHeightConstraint].forEach({$0?.constant = 0})
         reactionView = ReactionView()
 
         let reactions: [Reaction] = [Reaction(title: "wow", imageName: "icn_wow"),
@@ -104,9 +99,6 @@ class NotificationsTableViewCell: UITableViewCell {
     }
 
     func setUpReaction(reactions: TReaction) {
-        reactionViewTop.constant = -25
-        reactionHeightConstraint.constant = 30
-        reactionWidthConstraint.constant = CGFloat(30 + (reactions.reactionCount * 25))
         emojiCount = 1
         reactionLabel.text = "\(reactions.emojis) \(reactions.totalReactionCount)  "
     }
@@ -114,7 +106,6 @@ class NotificationsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         reactionLabel.text = nil
-        reactionHeightConstraint.constant = 0
         typeImageV.image = nil
         playIcon.isHidden = true
         playerLayer?.removeFromSuperlayer()

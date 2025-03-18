@@ -4,26 +4,26 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="CalendarTableViewCell" customModule="ABC" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="CalendarTableViewCell" customModule="ABC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-um-ctZ">
-                        <rect key="frame" x="5" y="5" width="310" height="100"/>
+                        <rect key="frame" x="5" y="5" width="349" height="115"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pP-Gj-gc4">
-                                <rect key="frame" x="-3" y="-3" width="10" height="106"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.69019607839999997" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="-3" y="-3" width="10" height="121"/>
+                                <color key="backgroundColor" name="AppColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="gKY-0L-8sr"/>
                                 </constraints>
@@ -34,7 +34,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefault" translatesAutoresizingMaskIntoConstraints="NO" id="nOl-SV-c0z" customClass="ImageLoader" customModule="ABC" customModuleProvider="target">
-                                <rect key="frame" x="27" y="20" width="60" height="60"/>
+                                <rect key="frame" x="27" y="20" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nOl-SV-c0z" secondAttribute="height" multiplier="1:1" id="456-lu-Bjw"/>
                                     <constraint firstAttribute="width" constant="60" id="j6n-Bu-Fdd"/>
@@ -46,7 +46,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="99Q-Qs-bZk">
-                                <rect key="frame" x="97" y="19.999999999999996" width="150" height="52.666666666666657"/>
+                                <rect key="frame" x="112" y="19.999999999999996" width="150" height="52.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3L-vh-xHi">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="10.666666666666666"/>
@@ -98,16 +98,17 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psN-5j-qLH">
-                                <rect key="frame" x="280" y="10" width="25" height="25"/>
+                                <rect key="frame" x="319" y="10" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="4t7-X3-fP5"/>
                                     <constraint firstAttribute="width" secondItem="psN-5j-qLH" secondAttribute="height" multiplier="1:1" id="AJa-az-LbU"/>
                                 </constraints>
+                                <color key="tintColor" name="AppColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="doubletickRed"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="9CDAE7"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8pP-Gj-gc4" secondAttribute="bottom" constant="-3" id="7XY-SR-vMl"/>
                             <constraint firstItem="8pP-Gj-gc4" firstAttribute="leading" secondItem="dzr-um-ctZ" secondAttribute="leading" constant="-3" id="7cX-WP-3xB"/>
@@ -144,15 +145,18 @@
                 <outlet property="labelTitle" destination="f3L-vh-xHi" id="FhN-Id-yCJ"/>
                 <outlet property="sideView" destination="8pP-Gj-gc4" id="CJG-2V-JwS"/>
             </connections>
-            <point key="canvasLocation" x="61.068702290076331" y="41.901408450704224"/>
+            <point key="canvasLocation" x="90.839694656488547" y="49.295774647887328"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="UserDefault" width="60" height="60"/>
+        <image name="UserDefault" width="75" height="75"/>
         <image name="clock" width="9.6666669845581055" height="7.6666665077209473"/>
         <image name="doubletickRed" width="35" height="34.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="9CDAE7">
+            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppColor">
+            <color red="0.0" green="0.20399999618530273" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

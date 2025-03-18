@@ -34,10 +34,12 @@ def shared_pods
   pod 'GoogleSignIn'
   pod 'Zip'
   pod 'SwiftJWT'
+  pod 'DGCharts'
+  
 end
 
 
-target 'STOGO' do
+target 'OrisonSchool V2' do
   shared_pods
 end
 

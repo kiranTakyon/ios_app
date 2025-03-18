@@ -225,7 +225,7 @@ func temp(str : String) -> Date{
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
     let date = dateFormatter.date(from: str)
-    return date!
+    return date ?? Date()
 }
 
 func changetoDiffFormatInDate(value:String,fromFormat: String,toFormat:String) -> Date{

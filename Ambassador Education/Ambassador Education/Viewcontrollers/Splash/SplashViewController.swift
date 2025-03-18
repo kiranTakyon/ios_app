@@ -39,9 +39,13 @@ class SplashViewController: UIViewController {
             self.videoView.stopPlayer()
             if let sessionToken = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.session_Token) as? String, !sessionToken.isEmpty, let loginResponse = UserDefaultsManager.manager.retrieveDictionaryFromUserDefaults(forKey: DBKeys.logInResponse) {
                 logInResponseGloabl = loginResponse
-                self.performSegue(withIdentifier: "navigateToHome", sender: nil)
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.navigateToTabbar()
+                }
             } else {
-                self.performSegue(withIdentifier: "toLogin", sender: nil)
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.navigateToViewController()
+                }
             }
         }
         

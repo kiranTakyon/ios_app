@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -69,11 +69,11 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPCOMING EVENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwd-we-LOv">
                                                 <rect key="frame" x="49.999999999999986" y="14.999999999999998" width="157.66666666666663" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="peachColor"/>
+                                        <color key="backgroundColor" name="AppColor"/>
                                         <constraints>
                                             <constraint firstItem="wP3-4b-Mmx" firstAttribute="leading" secondItem="i6j-KJ-Mv4" secondAttribute="leading" constant="10" id="4yp-CH-ccL"/>
                                             <constraint firstItem="Rwd-we-LOv" firstAttribute="centerY" secondItem="wP3-4b-Mmx" secondAttribute="centerY" id="7Nl-Mt-bkV"/>
@@ -82,8 +82,8 @@
                                             <constraint firstAttribute="height" constant="50" id="gxV-RP-ykv"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1cz-To-ynr">
-                                        <rect key="frame" x="30" y="79" width="363" height="200"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1cz-To-ynr">
+                                        <rect key="frame" x="30" y="80" width="363" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="iTM-F1-UHm"/>
@@ -163,7 +163,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="peachColor"/>
+                                <color key="backgroundColor" name="AppColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="k1N-NG-EDI" secondAttribute="trailing" constant="5" id="H4X-vg-0sT"/>
                                     <constraint firstAttribute="height" constant="50" id="lPl-s9-dxf"/>
@@ -223,8 +223,8 @@
     <resources>
         <image name="CloseBlack" width="13" height="13"/>
         <image name="bell.badge" catalog="system" width="117" height="128"/>
-        <namedColor name="peachColor">
-            <color red="0.97647058823529409" green="0.59607843137254901" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AppColor">
+            <color red="0.0" green="0.20399999618530273" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.94675880670000001" green="0.78025859590000002" blue="0.56858521699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="9CDAE7"/>
                         <constraints>
                             <constraint firstItem="x7y-L1-riK" firstAttribute="centerX" secondItem="tje-Lf-RYe" secondAttribute="centerX" id="28i-IM-LcI"/>
                             <constraint firstAttribute="bottom" secondItem="x7y-L1-riK" secondAttribute="bottom" constant="20" id="ILE-WY-5SJ"/>
@@ -88,6 +89,9 @@
     </objects>
     <resources>
         <image name="Email" width="128" height="128"/>
+        <namedColor name="9CDAE7">
+            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -58,7 +58,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         messageTable.tableFooterView = UIView()
      
         if isFromDashboardNotification {
-            setSlideMenuProporties()
+          //  setSlideMenuProporties()
         }
         if isPresent {
             topHeaderView.isHidden = true
@@ -76,17 +76,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         addBlurEffectToTableView(inputView: self.view, hide: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-//        self.performSegue(withIdentifier: "toMessageDetail", sender: self)
-    }
     
-    func setSlideMenuProporties() {
-        if let revealVC = revealViewController() {
-            topHeaderView.setMenuOnLeftButton(reveal: revealVC)
-            view.addGestureRecognizer(revealVC.panGestureRecognizer())
-        }
-    }
-
     func getMessageDetails() {
         self.startLoadingAnimation()
         
@@ -130,7 +120,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     func showPicker(tag : Int){
-        if let colorVC = mainStoryBoard.instantiateViewController(withIdentifier: "ReadSelectViewController") as? ReadSelectViewController {
+        if let colorVC = commonStoryBoard.instantiateViewController(withIdentifier: "ReadSelectViewController") as? ReadSelectViewController {
             if messageList.count > 0{
 
                 var msgId = [String]()
@@ -173,7 +163,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     func moveToComposeController(titleTxt : String,index : Int,tag: Int){
-        let composeViewC = mainStoryBoard.instantiateViewController(withIdentifier: "composeVc") as! ComposeController
+        let composeViewC = commonStoryBoard.instantiateViewController(withIdentifier: "ComposeController") as! ComposeController
         composeViewC.titleText = titleTxt
         
         let currentMessage = self.messageList[tag]
@@ -547,7 +537,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         if tagValue != 9000000{
 
           
-        let composeViewC = mainStoryBoard.instantiateViewController(withIdentifier: "composeVc") as! ComposeController
+        let composeViewC = commonStoryBoard.instantiateViewController(withIdentifier: "ComposeController") as! ComposeController
             composeViewC.titleText = (resultValue?.replyLabel.safeValue).safeValue
 
             composeViewC.selectedPersonItems.removeAll()
@@ -637,7 +627,7 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet var bkimg: [UIImageView]!
     @IBAction func backAction(_ sender: Any) {
         if self.navigationController?.viewControllers.count == 1 {
-            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "CommunicateLandController") as! CommunicateLandController
+            let vc = CommunicateLandController.instantiate(from: .communicateLand)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else {
@@ -754,7 +744,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
         
     }
     func gotoWeb(str : String) {
-        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        let vc = commonStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         vc.strU = str
         self.navigationcontroller?.pushViewController(vc, animated: true)
     }
@@ -773,7 +763,7 @@ class messageDetailSecondCell : UITableViewCell,UITableViewDataSource,UITableVie
     }
     func showComments(itemid : String)
     {
-        let detailVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceDetailController") as! DigitalResourceDetailController
+        let detailVc = DigitalResourceDetailController.instantiate(from: .digitalResource)
         //detailVc.weeklyPlan = weeklyPlan
         detailVc.WpID = itemid
         self.navigationcontroller?.pushViewController(detailVc, animated: true)
