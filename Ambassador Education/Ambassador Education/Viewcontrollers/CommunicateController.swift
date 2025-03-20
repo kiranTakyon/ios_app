@@ -201,7 +201,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
         
     }
     func setCharacterColor(cell:CommunicationTableViewCell,textColr: UIColor){
-        cell.labelHeading.textColor = textColr
+        //cell.labelHeading.textColor = textColr
         cell.labelMessageType.textColor = textColr
     }
     
