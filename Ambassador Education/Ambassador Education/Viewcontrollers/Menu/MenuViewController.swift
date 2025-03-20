@@ -187,8 +187,26 @@ class MenuViewController: UIViewController {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        setSideMenuForFinance(false)
-        setSideMenuForAcademics(false)
+        guard let collectionView = scrollView as? UICollectionView else { return }
+        
+        let visibleIndexPaths = collectionView.indexPathsForVisibleItems
+        let sortedIndexPaths = visibleIndexPaths.sorted(by: { $0.section < $1.section }) // Get the top-most section
+        
+        if let topSection = sortedIndexPaths.first?.section {
+            switch topSection {
+            case 0:
+                setSideMenuForAcademics(false)
+                setSideMenuForFinance(false)
+            case 1:
+                setSideMenuForAcademics(true)
+                setSideMenuForFinance(false)
+            case 2:
+                setSideMenuForAcademics(false)
+                setSideMenuForFinance(true)
+            default:
+                break
+            }
+        }
     }
 }
 
@@ -210,7 +228,7 @@ extension MenuViewController{
     func configureCollectionViewCell() {
         collectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionView.register(UINib(nibName: MenuHeaderCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuHeaderCollectionViewCell.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 450, right: 0)
     }
     
     @objc func getMenuDetails() {

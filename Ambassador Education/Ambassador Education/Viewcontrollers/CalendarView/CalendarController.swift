@@ -420,7 +420,7 @@ class EventCell : UITableViewCell{
 
 extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        fsCalendar.appearance.todayColor = UIColor(named: "ED706B")?.withAlphaComponent(0.5)
+        fsCalendar.appearance.todayColor = UIColor(named: "9CDAE7")?.withAlphaComponent(0.5)
         completeEvents = self.data[date] ?? []
         DispatchQueue.main.async {
             self.tableView.reloadData()
