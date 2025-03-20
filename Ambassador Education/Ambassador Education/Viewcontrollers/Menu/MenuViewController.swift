@@ -28,6 +28,13 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var profileImage: ImageLoader!
     @IBOutlet weak var studentPicker: Picker!
+    @IBOutlet weak var academicsStackView: UIView!
+    @IBOutlet weak var financeStackView: UIView!
+    @IBOutlet weak var financeImageView: UIImageView!
+    @IBOutlet weak var financeLabel: UILabel!
+    @IBOutlet weak var academicsImageView: UIImageView!
+    @IBOutlet weak var academicsLabel: UILabel!
+    
     var delegate : TaykonProtocol?
     var siblings = [TSibling]()
     
@@ -41,7 +48,7 @@ class MenuViewController: UIViewController {
                            "T0018":["gallery","toGallery"],
                            "T0009":["communicate","toCommunicate"],
                            "T0004":["",""],
-                           "T0005":["weeklyPlan","toWeeklyPlan"],
+                           "T0005":["academicContent","toWeeklyPlan"],
                            "T0012":["gradeBook","toGradeBook"],
                            "T0019":["awarenessAndPolicies","toAwareness"],
                            "T0021":["digitalResources","toDigitalResource"],
@@ -121,7 +128,68 @@ class MenuViewController: UIViewController {
         }
         siblings = studentDetails
     }
-
+    
+    
+    @IBAction func academicsButtonPressed(_ sender: UIButton) {
+        let indexPath = IndexPath(item: 0, section: 1)
+        moveToSection(indexPath)
+       
+    }
+    
+    
+    @IBAction func financeButtonPressed(_ sender: UIButton) {
+        let indexPath = IndexPath(item: 0, section: 2)
+        moveToSection(indexPath)
+    }
+    
+    func setSideMenuForAcademics(_ selected:Bool){
+        if selected{
+            academicsStackView.backgroundColor = .clear
+            academicsImageView.tintColor = UIColor.white
+            academicsLabel.textColor = UIColor.white
+        }
+        else{
+            academicsStackView.backgroundColor = .white
+            academicsImageView.tintColor = UIColor(named: "AppColor")
+            academicsLabel.textColor = UIColor(named: "AppColor")
+        }
+    }
+    
+    func setSideMenuForFinance(_ selected:Bool){
+        if selected{
+            financeStackView.backgroundColor = .clear
+            financeImageView.tintColor = UIColor.white
+            financeLabel.textColor = UIColor.white
+        }
+        else{
+            financeStackView.backgroundColor = .white
+            financeImageView.tintColor = UIColor(named: "AppColor")
+            financeLabel.textColor = UIColor(named: "AppColor")
+        }
+    }
+    
+    func moveToSection(_ indexPath:IndexPath){
+        collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+        DispatchQueue.main.async {
+            if let attributes = self.collectionView.layoutAttributesForItem(at: indexPath) {
+                let offset = CGPoint(x: 0, y: attributes.frame.origin.y - 10)
+                self.collectionView.setContentOffset(offset, animated: false)
+                if indexPath.section == 1{
+                    self.setSideMenuForAcademics(true)
+                    self.setSideMenuForFinance(false)
+                }
+                else{
+                    self.setSideMenuForFinance(true)
+                    self.setSideMenuForAcademics(false)
+                }
+            }
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        setSideMenuForFinance(false)
+        setSideMenuForAcademics(false)
+    }
 }
 
 // MARK: - Private functions -
