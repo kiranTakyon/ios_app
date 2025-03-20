@@ -210,7 +210,7 @@ extension MenuViewController{
     func configureCollectionViewCell() {
         collectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionView.register(UINib(nibName: MenuHeaderCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuHeaderCollectionViewCell.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
     }
     
     @objc func getMenuDetails() {
