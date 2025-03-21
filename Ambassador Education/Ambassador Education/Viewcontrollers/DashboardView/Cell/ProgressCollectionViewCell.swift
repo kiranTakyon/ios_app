@@ -14,10 +14,14 @@ class ProgressCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var containView: UIView!
     @IBOutlet private var circularProgressHome: CircularProgressView!
+    @IBOutlet private var headingLable: UILabel!
+    @IBOutlet private var persentageLabel: UILabel!
+    
     var data: TProgressTypeModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         circularProgressHome.progress = 0.75
     }
     

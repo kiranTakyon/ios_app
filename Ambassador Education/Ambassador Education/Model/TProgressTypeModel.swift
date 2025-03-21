@@ -12,12 +12,18 @@ struct TProgressTypeModel: Codable {
     let statusCode: Int?
     let statusMessage, userID: String?
     let fuelPercentage: Int?
-
+    let journey_percentage: Int?
+    let challengesPercentage: Int?
+    let quizPercentage: Int?
+    
     enum CodingKeys: String, CodingKey {
         case statusCode = "StatusCode"
         case statusMessage = "StatusMessage"
         case userID = "user_id"
         case fuelPercentage = "fuel_percentage"
+        case journeyPercentage = "journey_percentage"
+        case challengesPercentage = "challenges_percentage"
+        case quizPercentage = "quiz_percentage"
     }
     
     init(values:NSDictionary) {
@@ -25,5 +31,8 @@ struct TProgressTypeModel: Codable {
         self.statusMessage = values["StatusMessage"] as? String
         self.userID = values["user_id"] as? String
         self.fuelPercentage = values["fuel_percentage"] as? Int
+        self.fuelPercentage = values["journey_percentage"] as? Int
+        self.challengesPercentage = values["challenges_percentage"] as? Int
+        self.quizPercentage = values["quiz_percentage"] as? Int
     }
 }
