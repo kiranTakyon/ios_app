@@ -37,7 +37,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dkm-Ov-XR7">
-                                                <rect key="frame" x="16.333333333333332" y="19.666666666666664" width="32.333333333333343" height="25.333333333333336"/>
+                                                <rect key="frame" x="16.333333333333332" y="20.333333333333329" width="32.333333333333343" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5i5-OY-nTR">
                                                         <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="14"/>
@@ -45,9 +45,9 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNf-x6-YfB">
-                                                        <rect key="frame" x="6.6666666666666679" y="17.000000000000004" width="19" height="8.3333333333333321"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="7"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNf-x6-YfB">
+                                                        <rect key="frame" x="2.9999999999999982" y="17" width="26.333333333333329" height="7"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="6"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -115,6 +115,8 @@
             <connections>
                 <outlet property="circularProgressHome" destination="aa9-jP-zAl" id="LjB-2s-dJj"/>
                 <outlet property="containView" destination="B5b-V7-B36" id="Jug-jK-9Zg"/>
+                <outlet property="headingLable" destination="IYy-vq-Hn0" id="qdi-rL-2Ad"/>
+                <outlet property="persentageLabel" destination="5i5-OY-nTR" id="9i2-Wp-c28"/>
             </connections>
             <point key="canvasLocation" x="395.41984732824426" y="-4.2253521126760569"/>
         </collectionViewCell>

@@ -62,6 +62,7 @@ class DashboardViewController: UIViewController{
     let popUpWidth = UIScreen.main.bounds.width - 60
     var moduleBgColor = ["FF6666","99CB98","91D0DF","F1BB4E","DDAF84","669ACC"]
     var progressModel = [TProgressTypeModel]()
+    var apiRoutesArray:[String] = [APIUrls().fUELMETER,APIUrls().jOURNEYPROGRESS,APIUrls().cHALLANGESPROGRESS,APIUrls().qUIZPROGRESS]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,9 @@ class DashboardViewController: UIViewController{
         studentImageView.layer.cornerRadius = studentImageView.frame.width / 2
         setAllTextFieldsEmpty()
         updateCollectionViewHeight()
-        callAPI()
+        for item in apiRoutesArray{
+         callProgressAPI(item)
+        }
     }
     
     func setAllTextFieldsEmpty(){
@@ -283,23 +286,30 @@ extension DashboardViewController: WeeklyPlanControllerDelegate {
 
 extension DashboardViewController{
     
-    func callAPI(){
-        let dict = logInResponseGloabl
-        let url = APIUrls().jOURNEYPROGRESS
-        if let token = UserDefaultsManager.manager.getSessionToken(){
-            let userId = UserDefaultsManager.manager.getUserId()
-            let SchoolCode = dict["CompanyId"] ?? 36
-            let dictionary: [String:Any] =
-            [
-                "SchoolCode": SchoolCode,
-                "user_id": userId,
-                "token" : token
-            ]
-            APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-                print(result)
+    func callProgressAPI(_ url: String) {
+        guard let token = UserDefaultsManager.manager.getSessionToken(),
+              let dict = logInResponseGloabl as? [String: Any] else { return }
+        let userId = UserDefaultsManager.manager.getUserId()
+        let schoolCode = dict["CompanyId"] as? Int ?? 36
+        let parameters: [String: Any] = [
+            "SchoolCode": schoolCode,
+            "user_id": userId,
+            "token": token
+        ]
+
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: parameters) { [weak self] result in
+            DispatchQueue.main.async {
+                if let responseDict = result as? NSDictionary,
+                   let message = responseDict["StatusMessage"] as? String,
+                   message == "Success" {
+                    
+                    let progress = TProgressTypeModel(values: responseDict)
+                    self?.progressViews.append(progress)
+                }
             }
         }
     }
+
     
     func setNotitificationList(id :String){
 
@@ -452,7 +462,7 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
                 return 4
             }
             else{
-                return 0
+                return progressViews.count
             }
         }
     }
@@ -513,6 +523,7 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.identifier , for: indexPath) as? ProgressCollectionViewCell else { return UICollectionViewCell() }
+            cell.data = progressViews[indexPath.row]
             return cell
         }
     }
