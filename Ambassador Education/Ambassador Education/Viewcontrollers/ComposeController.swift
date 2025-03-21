@@ -191,8 +191,8 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     }
     
     func setConstraints(addPersonWidthValue: CGFloat,addCcHeightValue: CGFloat,groupViewHeightValue: CGFloat,personViewHeightValue: CGFloat,hide: Bool){
-        //addPersonWidth.constant = addPersonWidthValue
-        //addCcHeight.constant =  addCcHeightValue
+       // addPersonWidth.constant = addPersonWidthValue
+       // addCcHeight.constant =  addCcHeightValue
         groupViewHeight.constant = groupViewHeightValue
         personViewHeight.constant = personViewHeightValue
         personView.isHidden  = hide
