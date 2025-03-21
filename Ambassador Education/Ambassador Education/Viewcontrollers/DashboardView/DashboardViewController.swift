@@ -484,6 +484,18 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
                 break
             case "Online Payment":
                 break
+            case "Awareness & Policies":
+                cell.imageView.image = UIImage(named: "awarenessAndPolicies")
+                break
+            case "Add Gallery":
+                cell.imageView.image = UIImage(named: "module_gallery")
+                break
+            case "Exam Schedule":
+                cell.imageView.image = UIImage(named: "examination")
+                break
+            case "Communicate and Collaborate":
+                cell.imageView.image = UIImage(named: "communicate")
+                break
             case .none:
                 break
             case .some(_):
