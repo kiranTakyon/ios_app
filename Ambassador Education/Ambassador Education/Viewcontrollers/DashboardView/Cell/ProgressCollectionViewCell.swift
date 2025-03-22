@@ -34,23 +34,29 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     func updateUILabels(with model: TProgressTypeModel) {
         var progressValue: Double = 0.0
-        var labelText: String = "0"
+        var headingLabelText: String = "0"
+        var percentage = 0
         
         if let quiz = model.quizPercentage {
-            labelText = "Quiz: \(quiz)%"
+            percentage = quiz
+            headingLabelText = "Quiz: \(quiz)%"
             progressValue = Double(quiz) / 100.0
         } else if let challenges = model.challengesPercentage {
-            labelText = "Challenges: \(challenges)%"
+            percentage = challenges
+            headingLabelText = "Challenges: \(challenges)%"
             progressValue = Double(challenges) / 100.0
         } else if let journey = model.journeyPercentage {
-            labelText = "Journey: \(journey)%"
+            percentage = journey
+            headingLabelText = "Journey: \(journey)%"
             progressValue = Double(journey) / 100.0
         } else if let fuel = model.fuelPercentage {
-            labelText = "Fuel: \(fuel)%"
+            percentage = fuel
+            headingLabelText = "Fuel: \(fuel)%"
             progressValue = Double(fuel) / 100.0
         }
         
-        persentageLabel.text = labelText
+        headingLable.text = headingLabelText
+        persentageLabel.text = "\(percentage)%"
         circularProgressHome.progress = CGFloat(progressValue)
     }
 
