@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD329472FF60912100BFC1F2 /* Pods_Takyon360Buzz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36B1C99B72038E57E175E06 /* Pods_Takyon360Buzz.framework */; };
 		AEF8E7851F28D85100D158B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8E7841F28D85100D158B5 /* AppDelegate.swift */; };
 		AEF8E78A1F28D85100D158B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF8E7881F28D85100D158B5 /* Main.storyboard */; };
 		AEF8E78C1F28D85100D158B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF8E78B1F28D85100D158B5 /* Assets.xcassets */; };
@@ -34,11 +33,13 @@
 		B4EECC7820863FAB005822A4 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EECC7720863FAB005822A4 /* APIHelper.swift */; };
 		B4EECC7B20863FE0005822A4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EECC7A20863FE0005822A4 /* Reachability.swift */; };
 		B4F1D2E820877959007D37E6 /* BusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F1D2E720877959007D37E6 /* BusModel.swift */; };
+		BF4D7579EF7585CA94FA5D90 /* Pods_Takyon360Buzz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9978D32B413289EC3EA7EC /* Pods_Takyon360Buzz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		113151AB169011F935281978 /* Pods-Takyon360Buzz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takyon360Buzz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz.release.xcconfig"; sourceTree = "<group>"; };
+		44965B919206F4F4B9761CCF /* Pods-Takyon360Buzz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takyon360Buzz.debug.xcconfig"; path = "Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz.debug.xcconfig"; sourceTree = "<group>"; };
 		48A513382088538400482464 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8ED5F61C462B2AF7C751D390 /* Pods-Takyon360Buzz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takyon360Buzz.release.xcconfig"; path = "Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz.release.xcconfig"; sourceTree = "<group>"; };
 		AEF8E7811F28D85100D158B5 /* Takyon360Buzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Takyon360Buzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF8E7841F28D85100D158B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF8E7891F28D85100D158B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,8 +68,7 @@
 		B4EECC7720863FAB005822A4 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		B4EECC7A20863FE0005822A4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B4F1D2E720877959007D37E6 /* BusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusModel.swift; sourceTree = "<group>"; };
-		D36B1C99B72038E57E175E06 /* Pods_Takyon360Buzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Takyon360Buzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFC6C28815E14744BDA18B77 /* Pods-Takyon360Buzz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Takyon360Buzz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz.debug.xcconfig"; sourceTree = "<group>"; };
+		BA9978D32B413289EC3EA7EC /* Pods_Takyon360Buzz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Takyon360Buzz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD329472FF60912100BFC1F2 /* Pods_Takyon360Buzz.framework in Frameworks */,
+				BF4D7579EF7585CA94FA5D90 /* Pods_Takyon360Buzz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,9 +87,18 @@
 			isa = PBXGroup;
 			children = (
 				48A513382088538400482464 /* Security.framework */,
-				D36B1C99B72038E57E175E06 /* Pods_Takyon360Buzz.framework */,
+				BA9978D32B413289EC3EA7EC /* Pods_Takyon360Buzz.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AA6AD9ED5AF526597D74002 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44965B919206F4F4B9761CCF /* Pods-Takyon360Buzz.debug.xcconfig */,
+				8ED5F61C462B2AF7C751D390 /* Pods-Takyon360Buzz.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		AEF8E7781F28D85100D158B5 = {
@@ -97,8 +106,8 @@
 			children = (
 				AEF8E7831F28D85100D158B5 /* Takyon360Buzz */,
 				AEF8E7821F28D85100D158B5 /* Products */,
-				B1B46FF3D13D043E4A46B6D6 /* Pods */,
 				11EFF2E7F4596628D7F9535E /* Frameworks */,
+				6AA6AD9ED5AF526597D74002 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,15 +168,6 @@
 				B4EECC7520863F55005822A4 /* APIUrls.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		B1B46FF3D13D043E4A46B6D6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DFC6C28815E14744BDA18B77 /* Pods-Takyon360Buzz.debug.xcconfig */,
-				113151AB169011F935281978 /* Pods-Takyon360Buzz.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B4284D23208650B90045C308 /* BridgeFile */ = {
@@ -232,12 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF8E7931F28D85100D158B5 /* Build configuration list for PBXNativeTarget "Takyon360Buzz" */;
 			buildPhases = (
-				A32AA2F527004262360DB5EA /* [CP] Check Pods Manifest.lock */,
+				82E27D4E34DBF85DD5DA12FC /* [CP] Check Pods Manifest.lock */,
 				AEF8E77D1F28D85100D158B5 /* Sources */,
 				AEF8E77E1F28D85100D158B5 /* Frameworks */,
 				AEF8E77F1F28D85100D158B5 /* Resources */,
-				79F6CD80DC16C7FE9E2EA865 /* [CP] Embed Pods Frameworks */,
-				FE52587C5BB333D63DAE9D2D /* [CP] Copy Pods Resources */,
+				077064CC1307534504E5DDD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,13 +298,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		79F6CD80DC16C7FE9E2EA865 /* [CP] Embed Pods Frameworks */ = {
+		077064CC1307534504E5DDD6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
 				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
@@ -330,40 +329,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A32AA2F527004262360DB5EA /* [CP] Check Pods Manifest.lock */ = {
+		82E27D4E34DBF85DD5DA12FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Takyon360Buzz-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE52587C5BB333D63DAE9D2D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Takyon360Buzz/Pods-Takyon360Buzz-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -471,9 +459,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PROVISIONING_PROFILE = "8ce74428-8323-4af3-b806-5566940f686d";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -527,8 +516,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PROVISIONING_PROFILE = "8ce74428-8323-4af3-b806-5566940f686d";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -538,7 +528,7 @@
 		};
 		AEF8E7941F28D85100D158B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFC6C28815E14744BDA18B77 /* Pods-Takyon360Buzz.debug.xcconfig */;
+			baseConfigurationReference = 44965B919206F4F4B9761CCF /* Pods-Takyon360Buzz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Sibi  Mathews (FP9BBFKB3C)";
@@ -559,7 +549,7 @@
 		};
 		AEF8E7951F28D85100D158B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 113151AB169011F935281978 /* Pods-Takyon360Buzz.release.xcconfig */;
+			baseConfigurationReference = 8ED5F61C462B2AF7C751D390 /* Pods-Takyon360Buzz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Sibi  Mathews (FP9BBFKB3C)";
