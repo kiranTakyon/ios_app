@@ -105,7 +105,14 @@ extension UIColor{
 extension String {
     var html2AttributedString: NSAttributedString? {
         do {
-            return try NSAttributedString(data: Data(utf8), options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            return try NSAttributedString(
+                 data: Data(utf8),
+                 options: [
+                     .documentType: NSAttributedString.DocumentType.html,
+                     .characterEncoding: String.Encoding.utf8.rawValue
+                 ],
+                 documentAttributes: nil
+             )
         } catch {
             print("error:", error)
             return nil
@@ -146,7 +153,14 @@ extension String {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
         do {
             
-            return try NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            return try NSAttributedString(
+                 data: data,
+                 options: [
+                     .documentType: NSAttributedString.DocumentType.html,
+                     .characterEncoding: String.Encoding.utf8.rawValue
+                 ],
+                 documentAttributes: nil
+             )
         } catch {
             return NSAttributedString()
         }
@@ -154,10 +168,14 @@ extension String {
     // extension String {
     var replacingHTMLEntities: String? {
         do {
-            return try NSAttributedString(data: Data(utf8), options: [
-                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
-                ], documentAttributes: nil).string
+            return try NSAttributedString(
+                  data: Data(utf8),
+                  options: [
+                      .documentType: NSAttributedString.DocumentType.html,
+                      .characterEncoding: String.Encoding.utf8.rawValue
+                  ],
+                  documentAttributes: nil
+              ).string
         } catch {
             return nil
         }
@@ -168,9 +186,9 @@ extension NSAttributedString {
     
     public convenience init?(HTMLString html: String, font: UIFont? = nil) throws {
         
-        let options: [String: Any] = [
-            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: NSNumber(value: String.Encoding.utf8.rawValue)
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
         ]
         
         guard let data = html.data(using: .utf8, allowLossyConversion: true) else {
@@ -183,7 +201,7 @@ extension NSAttributedString {
                 throw NSError(domain: "Parse Error", code: 0, userInfo: nil)
             }
             var attrs = attr.attributes(at: 0, effectiveRange: nil)
-            attrs[NSFontAttributeName] = font
+            attrs[NSAttributedStringKey.font] = font
             attr.setAttributes(attrs, range: NSRange(location: 0, length: attr.length))
             self.init(attributedString: attr)
         } else {
@@ -370,7 +388,14 @@ extension UIImage {
 extension Data {
     var attributedString: NSAttributedString? {
         do {
-            return try NSAttributedString(data: self, options :[NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            return try NSAttributedString(
+                data: self,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
         } catch let error as NSError {
             print(error.localizedDescription)
         }
@@ -385,7 +410,7 @@ extension NSMutableAttributedString {
         
         let foundRange = self.mutableString.range(of: textToFind)
         if foundRange.location != NSNotFound {
-            self.addAttribute(NSLinkAttributeName, value: linkURL, range: foundRange)
+            self.addAttribute(NSAttributedString.Key.link, value: linkURL, range: foundRange)
             return true
         }
         return false

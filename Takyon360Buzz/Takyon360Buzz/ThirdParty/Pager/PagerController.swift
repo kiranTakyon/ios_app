@@ -545,43 +545,35 @@ open class PagerController: UIViewController, UIPageViewControllerDataSource, UI
 		weak var wSelf: PagerController? = self
 
 		if activeContentIndex == self.activeContentIndex {
-			DispatchQueue.main.async(execute: {
-				_ in
+            DispatchQueue.main.async {
+                self.pageViewController.setViewControllers([viewController!], direction: .forward, animated: false) { completed in
+                    wSelf!.animatingToTab = false
+                }
+            }
 
-				self.pageViewController.setViewControllers([viewController!], direction: .forward, animated: false, completion: {
-					(completed: Bool) -> Void in
-					wSelf!.animatingToTab = false
-				})
-			})
 		} else if !(activeContentIndex + 1 == self.activeContentIndex || activeContentIndex - 1 == self.activeContentIndex) {
 
 			let direction: UIPageViewControllerNavigationDirection = (activeContentIndex < self.activeContentIndex) ? .reverse : .forward
-			DispatchQueue.main.async(execute: {
-				_ in
-
-				self.pageViewController.setViewControllers([viewController!], direction: direction, animated: true, completion: {
-					completed in
-
-					wSelf?.animatingToTab = false
+            DispatchQueue.main.async {
+                self.pageViewController.setViewControllers([viewController!], direction: direction, animated: true) { completed in
+                    wSelf?.animatingToTab = false
 
                     if completed {
-                        DispatchQueue.main.async(execute: {
-                            () -> Void in
+                        DispatchQueue.main.async {
                             wPageViewController!.setViewControllers([viewController!], direction: direction, animated: false, completion: nil)
-                        })
+                        }
                     }
-				})
-			})
+                }
+            }
+
 		} else {
 			let direction: UIPageViewControllerNavigationDirection = (activeContentIndex < self.activeContentIndex) ? .reverse : .forward
-			DispatchQueue.main.async(execute: {
-				_ in
+            DispatchQueue.main.async {
+                self.pageViewController.setViewControllers([viewController!], direction: direction, animated: true) { completed in
+                    wSelf!.animatingToTab = true
+                }
+            }
 
-				self.pageViewController.setViewControllers([viewController!], direction: direction, animated: true, completion: {
-					(completed: Bool) -> Void in
-					wSelf!.animatingToTab = true
-				})
-			})
 		}
 
 		// Clean out of sight contents

@@ -2,7 +2,7 @@ PODS:
   - BIZPopupView (1.0.0):
     - TPKeyboardAvoiding
   - DGActivityIndicatorView (2.1.1)
-  - DropDown (2.3.1)
+  - DropDown (2.3.13)
   - HMSegmentedControl (1.5.3)
   - MXPagerView (0.2.1)
   - MXParallaxHeader (0.6.1)
@@ -10,7 +10,7 @@ PODS:
     - HMSegmentedControl (= 1.5.3)
     - MXPagerView (= 0.2.1)
     - MXParallaxHeader (= 0.6.1)
-  - SkyFloatingLabelTextField (3.4.0)
+  - SkyFloatingLabelTextField (3.8.0)
   - TPKeyboardAvoiding (1.3.2)
 
 DEPENDENCIES:
@@ -20,17 +20,29 @@ DEPENDENCIES:
   - MXSegmentedPager
   - SkyFloatingLabelTextField (~> 3.0)
 
+SPEC REPOS:
+  trunk:
+    - BIZPopupView
+    - DGActivityIndicatorView
+    - DropDown
+    - HMSegmentedControl
+    - MXPagerView
+    - MXParallaxHeader
+    - MXSegmentedPager
+    - SkyFloatingLabelTextField
+    - TPKeyboardAvoiding
+
 SPEC CHECKSUMS:
   BIZPopupView: 2f16ecbc852baa16e1ef20b67abaa831909ec994
   DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
-  DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
   MXPagerView: ede184b5191b2ed689ccf05a750a9978cce42414
   MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
   MXSegmentedPager: a35ebaf939e1629f24db3bb26653c1c557362f59
-  SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 54a5ee8dde7089dea8d2d8eb4edb27bfb5fd5275
+PODFILE CHECKSUM: fc39091f2203fbc5ebdfe1d2ff8c900afb584255
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.16.2

@@ -52,7 +52,7 @@ class ForgotPasswordController: UIViewController {
         let url = APIUrls().forgotPassword
         
         
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: sendDict) { (result) in
+            APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: sendDict) { (result, data) in
             DispatchQueue.main.async {
                 self.activityView.stopAnimating();
                 self.dismiss(animated: true, completion: { 

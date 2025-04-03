@@ -132,7 +132,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func getDashboardWhenAlreadyLogin(){
+    @objc func getDashboardWhenAlreadyLogin(){
         if let user = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.username) as? String{
             if let pass = UserDefaultsManager.manager.getUserDefaultValue(key: DBKeys.password) as? String{
                 if user != "" && pass != ""{

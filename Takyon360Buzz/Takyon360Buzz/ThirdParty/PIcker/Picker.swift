@@ -193,7 +193,7 @@ class Picker: UIView , UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDe
         pickerTextField.inputAccessoryView = toolBar
     }
     
-    func doneAction(){
+    @objc func doneAction(){
         if pickerType == .picker{
             if selectedValue != ""{
                 pickerTextField.text = selectedValue
@@ -272,7 +272,7 @@ class Picker: UIView , UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDe
     }
     
     //MARK:- DatePicker
-    func handleDatePicker(_ sender : UIDatePicker) {
+    @objc func handleDatePicker(_ sender : UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.dateFormat = "MM-dd-yyyy"
@@ -280,7 +280,7 @@ class Picker: UIView , UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDe
     }
     
     //MARK:- TimePicker
-    func handleTimePicker(_ sender : UIDatePicker) {
+    @objc func handleTimePicker(_ sender : UIDatePicker) {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "hh:mm a"
         pickerTextField.text = timeFormatter.string(from: sender.date)

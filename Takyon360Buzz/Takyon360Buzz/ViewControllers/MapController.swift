@@ -193,7 +193,7 @@ class MapController: UIViewController,MKMapViewDelegate {
         }
     }
     
-    func getMapAddress(){
+    @objc func getMapAddress(){
         
         self.startLoadingAnimation()
         let url  = APIUrls().busMsgsList
