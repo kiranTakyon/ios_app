@@ -72,8 +72,9 @@ class DashboardViewController: UIViewController{
         studentImageView.layer.cornerRadius = studentImageView.frame.width / 2
         setAllTextFieldsEmpty()
         updateCollectionViewHeight()
-        for item in apiRoutesArray{
-         callProgressAPI(item)
+        
+        for item in apiRoutesArray {
+            callProgressAPI(item)
         }
     }
     
@@ -294,7 +295,7 @@ extension DashboardViewController{
         let parameters: [String: Any] = [
             "SchoolCode": schoolCode,
             "user_id": userId,
-            "token": token
+            "Token": token
         ]
 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: parameters) { [weak self] result in
@@ -450,25 +451,22 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0{
+        if section == 0 {
             return moduleList.count
-
         }
-        else if section == 1{
+        else if section == 1 {
             return 1
-        }
-        else{
-            if progressViews.count > 0{
+        } else {
+            if progressViews.count > 0 {
                 return 4
-            }
-            else{
+            } else {
                 return progressViews.count
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0{
+        if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashboardCollectionViewCell.identifier , for: indexPath) as? DashboardCollectionViewCell else { return UICollectionViewCell() }
             let module = moduleList[indexPath.row]
             cell.nameLabel.text = module.module
@@ -512,18 +510,16 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
                 break
             }
             return cell
-        }
-        else if indexPath.section == 1{
+        } else if indexPath.section == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashboardGraphCollectionViewCell.identifier , for: indexPath) as? DashboardGraphCollectionViewCell else { return UICollectionViewCell() }
-            if let feeSummary = feeSummary.first{
+            if let feeSummary = feeSummary.first {
                 cell.feeSummary = feeSummary
                 cell.updateChart(with: feeSummary)
             }
             return cell
-        }
-        else {
+        } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.identifier , for: indexPath) as? ProgressCollectionViewCell else { return UICollectionViewCell() }
-            cell.data = progressViews[indexPath.row]
+            cell.setProgressData(data: progressViews[indexPath.row])
             return cell
         }
     }

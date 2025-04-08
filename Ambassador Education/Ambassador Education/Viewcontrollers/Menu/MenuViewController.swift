@@ -103,10 +103,9 @@ class MenuViewController: UIViewController {
         print(studentDetails)
         studentPicker.pickerInputItems(selectionTitles as NSArray)
         studentPicker.pickerInputIDitems(selectionIds)
-        guard let user = UserDefaultsManager.manager.getUserType() as? String else {
-        }
         schoolNameLabel.numberOfLines = 0
         studentNameLabel.numberOfLines = 0
+        let user = UserDefaultsManager.manager.getUserType()
         if user == UserType.parent.rawValue || user == UserType.student.rawValue{
             if selectionTitles.count > indexOfSelectedStudent{
                 studentPicker.pickerTextField.text = selectionTitles[indexOfSelectedStudent]
@@ -155,8 +154,8 @@ class MenuViewController: UIViewController {
         }
     }
     
-    func setSideMenuForFinance(_ selected:Bool){
-        if selected{
+    func setSideMenuForFinance(_ selected:Bool) {
+        if selected {
             financeStackView.backgroundColor = .clear
             financeImageView.tintColor = UIColor.white
             financeLabel.textColor = UIColor.white
@@ -174,11 +173,10 @@ class MenuViewController: UIViewController {
             if let attributes = self.collectionView.layoutAttributesForItem(at: indexPath) {
                 let offset = CGPoint(x: 0, y: attributes.frame.origin.y - 10)
                 self.collectionView.setContentOffset(offset, animated: false)
-                if indexPath.section == 1{
+                if indexPath.section == 1 {
                     self.setSideMenuForAcademics(true)
                     self.setSideMenuForFinance(false)
-                }
-                else{
+                } else {
                     self.setSideMenuForFinance(true)
                     self.setSideMenuForAcademics(false)
                 }
@@ -228,7 +226,7 @@ extension MenuViewController{
     func configureCollectionViewCell() {
         collectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionView.register(UINib(nibName: MenuHeaderCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuHeaderCollectionViewCell.identifier)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 450, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 500, right: 0)
     }
     
     @objc func getMenuDetails() {

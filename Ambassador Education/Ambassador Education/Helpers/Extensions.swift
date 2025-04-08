@@ -78,7 +78,7 @@ extension UIColor{
     
     class func appColor() -> UIColor
     {
-        return UIColor.colorFromHEX(hexValue: 0x9CDAE7)
+        return UIColor.colorFromHEX(hexValue: 0x88CFDE)
     }
     
     class func appOrangeColor() -> UIColor

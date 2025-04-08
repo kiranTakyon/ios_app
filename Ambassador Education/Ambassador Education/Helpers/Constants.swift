@@ -9,6 +9,7 @@
 import Foundation
 
 let BaseUrl = "https://beta.reportz.co.in/t360api/T360_API/"
+let DashboardBaseUrl = "https://beta.reportz.co.in/t360api/T360_NotificationApi/"
 //let BaseUrl = "https://t360.lasagu.net/Takyon360_API/T360_API/"
 //"https://beta.reportz.co.in/t360api/T360_API/"
 //"https://reportz.co.in/Takyon360/T360_API2/"// //"http://lasagu.net/school/T360Api/"

@@ -16,7 +16,6 @@ import Foundation
 import UIKit
 import WebKit
 var tokenExpire = Bool()
-var BaseAuthValue = ""
 
 enum JSONError: String, Error {
     case NoData = "ERROR: no data"
@@ -42,11 +41,15 @@ class APIHelper {
             
             requestTypeString = requestType.rawValue
             
-            let completeUrl = BaseUrl + originalUrl
-            
+            var completeUrl = BaseUrl + originalUrl
+            if ["CHALLANGESPROGRESS", "QUIZPROGRESS", "FUELMETER", "JOURNEYPROGRESS"].contains(originalUrl) {
+                completeUrl = DashboardBaseUrl + originalUrl
+            }
+            print("Complete url = \(completeUrl)")
+
             let inputUrlString = completeUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed)
             
-            guard let url = URL(string: inputUrlString!) else{
+            guard let url = URL(string: inputUrlString!) else {
                 print("Error in creating url")
                 return
             }
@@ -55,17 +58,13 @@ class APIHelper {
             request.httpMethod = requestTypeString
             
             var baseAuth = ""
-            if originalUrl.contains("_LOGIN"){
+            if originalUrl.contains("_LOGIN") {
                 baseAuth = self.getBasicAuth(dictionary: requestParameters)
-                BaseAuthValue = baseAuth
-                
             } else {
                 if originalUrl.contains("LOGIN") {
                     baseAuth = self.getBasicAuth(dictionary: requestParameters)
-                    BaseAuthValue = baseAuth
                 } else if originalUrl.contains("T0048") {
                     baseAuth = self.getBasicAuthForForgotPassword(dictionary: requestParameters)
-                    BaseAuthValue = baseAuth
                 } else {
                     baseAuth = UserDefaultsManager.manager.getSessionToken() ?? "" /// send session token
                 }
@@ -73,6 +72,9 @@ class APIHelper {
             
             print("Basic \(baseAuth)")
             if originalUrl.contains("T0048") || originalUrl.contains("LOGIN") {
+                request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
+            } else if ["CHALLANGESPROGRESS", "QUIZPROGRESS", "FUELMETER", "JOURNEYPROGRESS"].contains(originalUrl) {
+                baseAuth = self.getBasicAuthForProgressAPI()
                 request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
             } else {
                 request.setValue("Bearer \(baseAuth)", forHTTPHeaderField: "Authorization")
@@ -376,6 +378,15 @@ class APIHelper {
         let base64LoginString = loginData.base64EncodedString()
         
         return base64LoginString
+    }
+    
+    func getBasicAuthForProgressAPI() -> String {
+        
+        let basicHeader = "T360NotifApiUser" + ":" + "*@!T36oN0t!F!@*"
+        if let data = basicHeader.data(using: .utf8) {
+            return data.base64EncodedString()
+        }
+        return ""
     }
     
     /*  func goToRoot(){

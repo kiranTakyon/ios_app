@@ -21,15 +21,15 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        if let data = data{
+        if let data = data {
             updateUILabels(with: data)
         }
         circularProgressHome.progress = 0.75
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
+    func setProgressData(data: TProgressTypeModel) {
+        self.data = data
+        updateUILabels(with: data)
     }
     
     func updateUILabels(with model: TProgressTypeModel) {
