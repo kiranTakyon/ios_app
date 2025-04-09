@@ -133,8 +133,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8m-7k-nX1">
                                 <rect key="frame" x="10" y="263" width="564" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reation" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-yt-DBu">
-                                        <rect key="frame" x="506.66666666666657" y="0.0" width="57.333333333333314" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-yt-DBu">
+                                        <rect key="frame" x="40" y="0.0" width="524" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -154,6 +154,7 @@
                                     <constraint firstItem="GaN-yt-DBu" firstAttribute="top" secondItem="c8m-7k-nX1" secondAttribute="top" id="6GZ-fq-3SJ"/>
                                     <constraint firstAttribute="bottom" secondItem="GaN-yt-DBu" secondAttribute="bottom" id="6gS-GD-79T"/>
                                     <constraint firstAttribute="bottom" secondItem="GaN-yt-DBu" secondAttribute="bottom" constant="47" id="A1j-ZS-G6R"/>
+                                    <constraint firstItem="GaN-yt-DBu" firstAttribute="leading" secondItem="vZj-EH-v2a" secondAttribute="trailing" constant="10" id="Wey-Ff-MPt"/>
                                     <constraint firstItem="vZj-EH-v2a" firstAttribute="centerY" secondItem="c8m-7k-nX1" secondAttribute="centerY" id="YEs-5l-ftU"/>
                                     <constraint firstAttribute="trailing" secondItem="GaN-yt-DBu" secondAttribute="trailing" id="dEY-fh-r4Z"/>
                                     <constraint firstAttribute="height" constant="30" id="eET-bb-sGs"/>
@@ -254,7 +255,7 @@
         <image name="DownArrowGrey" width="23.5" height="13.5"/>
         <image name="clock" width="9.6666669845581055" height="7.6666665077209473"/>
         <image name="emailImage" width="82" height="60"/>
-        <image name="icn_react" width="55" height="55"/>
+        <image name="icn_react" width="110" height="110"/>
         <image name="play_icon" width="16" height="15"/>
         <image name="upArrow" width="15.666666984558105" height="9"/>
         <namedColor name="FDFDFD">

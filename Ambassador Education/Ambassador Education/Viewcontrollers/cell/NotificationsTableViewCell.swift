@@ -43,7 +43,7 @@ class NotificationsTableViewCell: UITableViewCell {
         "love": "❤️",
         "like": "👍",
         "clapping_hand": "👏",
-        "party_popper": "💡"
+        "party_popper": "🎉"
     ]
 
     var avPlayer: AVPlayer?
@@ -55,7 +55,7 @@ class NotificationsTableViewCell: UITableViewCell {
 
         let reactions: [Reaction] = [Reaction(title: "wow", imageName: "icn_wow"),
                                      Reaction(title: "like", imageName: "icn_like"),
-                                     Reaction(title: "party_popper", imageName: "icn_celebrate"),
+                                     Reaction(title: "party_popper", imageName: "party_popper"),
                                      Reaction(title: "love", imageName: "icn_love"),
                                      Reaction(title: "clapping_hand", imageName: "icn_clap")]
 

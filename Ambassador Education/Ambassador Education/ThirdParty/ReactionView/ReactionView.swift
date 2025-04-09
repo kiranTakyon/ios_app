@@ -49,15 +49,19 @@ public class ReactionView: UIView {
             let imgView = UIImageView(image: UIImage(named: reaction.imageName!)!)
             imgView.isUserInteractionEnabled = true
             imgView.frame = CGRect(x: 0, y: 0, width: iconHeight, height: iconHeight)
-            imgView.layer.cornerRadius = (imgView.frame.height) / 2
-            imgView.layer.masksToBounds = true
+
+            // Make sure contentMode respects aspect ratio
+            imgView.contentMode = .scaleAspectFit
+
+            // Optional: only round if image is circular
+            imgView.layer.cornerRadius = 0
+            imgView.layer.masksToBounds = false
             imgView.layer.borderColor = UIColor.clear.cgColor
             imgView.layer.borderWidth = 0
-            imgView.contentMode = .scaleAspectFit
+
             imgView.tag = index
             reactions[index].tag = index
 
-            // Add tap gesture to each image
             let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTap(_:)))
             imgView.addGestureRecognizer(imageTapGesture)
 
