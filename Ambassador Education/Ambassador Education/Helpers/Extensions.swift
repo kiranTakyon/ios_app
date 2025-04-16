@@ -266,7 +266,7 @@ extension Data {
     }
 }
 
-extension UIViewController{
+extension UIViewController {
     
     func addNoDataFoundLabel(textValue:String = "No Items Available")  {
         
@@ -304,7 +304,7 @@ extension UIViewController{
                 let imageLogo = UIImageView(frame: imageFrame)
                 imageLogo.alpha = 0.5
                 imageLogo.tag = 8002
-                imageLogo.image = UIImage(named:"TakyonLogo")
+                imageLogo.image = UIImage(named:"stogo_world_logo")
                 
                 self.view.addSubview(imageLogo)
             }

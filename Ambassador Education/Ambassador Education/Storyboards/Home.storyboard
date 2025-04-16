@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3zR-WJ-3mV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3zR-WJ-3mV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -408,20 +408,38 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stogo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-ds-SqA">
-                                        <rect key="frame" x="348" y="519" width="50" height="250"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8p4-Gg-cSA">
+                                        <rect key="frame" x="343" y="519" width="50" height="250"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stogo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="S1P-ds-SqA">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="LV3-AH-HP9"/>
+                                                    <constraint firstAttribute="height" constant="250" id="iN7-iY-PGZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qB-UD-xqb">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="250"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="didTapOnStogoImage:" destination="CrK-I8-qDz" eventType="touchUpInside" id="hfT-JV-2dX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="LV3-AH-HP9"/>
-                                            <constraint firstAttribute="height" constant="250" id="iN7-iY-PGZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="S1P-ds-SqA" secondAttribute="trailing" id="30z-f1-897"/>
+                                            <constraint firstAttribute="height" constant="250" id="6Px-M1-SGA"/>
+                                            <constraint firstItem="S1P-ds-SqA" firstAttribute="top" secondItem="4qB-UD-xqb" secondAttribute="top" id="G4k-uk-HHN"/>
+                                            <constraint firstItem="S1P-ds-SqA" firstAttribute="top" secondItem="8p4-Gg-cSA" secondAttribute="top" id="JRr-WJ-eJM"/>
+                                            <constraint firstItem="S1P-ds-SqA" firstAttribute="leading" secondItem="8p4-Gg-cSA" secondAttribute="leading" id="K9t-5Y-kCR"/>
+                                            <constraint firstItem="S1P-ds-SqA" firstAttribute="trailing" secondItem="4qB-UD-xqb" secondAttribute="trailing" id="lWx-jb-5Ne"/>
+                                            <constraint firstItem="S1P-ds-SqA" firstAttribute="leading" secondItem="4qB-UD-xqb" secondAttribute="leading" id="pRw-3Q-G5h"/>
+                                            <constraint firstAttribute="width" constant="50" id="q44-Cq-vvE"/>
+                                            <constraint firstItem="S1P-ds-SqA" firstAttribute="bottom" secondItem="4qB-UD-xqb" secondAttribute="bottom" id="vyE-yh-aiT"/>
+                                            <constraint firstAttribute="bottom" secondItem="S1P-ds-SqA" secondAttribute="bottom" id="xV8-Lb-nKi"/>
                                         </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qB-UD-xqb">
-                                        <rect key="frame" x="348" y="519" width="50" height="250"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <connections>
-                                            <action selector="didTapOnStogoImage:" destination="CrK-I8-qDz" eventType="touchUpInside" id="hfT-JV-2dX"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-uC-9lA" customClass="TopHeaderView" customModule="ABC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
                                         <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -443,30 +461,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="S1P-ds-SqA" firstAttribute="leading" secondItem="4qB-UD-xqb" secondAttribute="leading" id="6Ub-Fm-Q68"/>
                                     <constraint firstItem="ePi-8X-AkT" firstAttribute="top" secondItem="Neu-uC-9lA" secondAttribute="bottom" id="H0A-7h-kPT"/>
-                                    <constraint firstAttribute="bottom" secondItem="4qB-UD-xqb" secondAttribute="bottom" id="HFU-8e-ryP"/>
-                                    <constraint firstItem="S1P-ds-SqA" firstAttribute="trailing" secondItem="Vxw-qP-QGs" secondAttribute="trailing" id="IhM-IH-0tO"/>
                                     <constraint firstItem="ePi-8X-AkT" firstAttribute="trailing" secondItem="Neu-uC-9lA" secondAttribute="trailing" id="JEc-At-7gn"/>
                                     <constraint firstAttribute="bottom" secondItem="Zjp-Lx-xcZ" secondAttribute="bottom" id="LjU-Gm-pNR"/>
-                                    <constraint firstItem="S1P-ds-SqA" firstAttribute="bottom" secondItem="4qB-UD-xqb" secondAttribute="bottom" id="Lks-Pl-gg8"/>
                                     <constraint firstAttribute="trailing" secondItem="Zjp-Lx-xcZ" secondAttribute="trailing" id="Nml-lW-t8T"/>
                                     <constraint firstItem="ePi-8X-AkT" firstAttribute="leading" secondItem="Neu-uC-9lA" secondAttribute="leading" id="T8V-we-aEI"/>
                                     <constraint firstItem="Neu-uC-9lA" firstAttribute="leading" secondItem="NA4-3O-tGd" secondAttribute="leading" id="bHn-QM-ljv"/>
                                     <constraint firstAttribute="top" secondItem="Neu-uC-9lA" secondAttribute="top" id="eSn-MH-8I5"/>
+                                    <constraint firstItem="8p4-Gg-cSA" firstAttribute="top" secondItem="Vxw-qP-QGs" secondAttribute="bottom" constant="10" id="fTo-3r-zeh"/>
                                     <constraint firstAttribute="trailing" secondItem="Vxw-qP-QGs" secondAttribute="trailing" constant="-5" id="hRF-XD-lHe"/>
-                                    <constraint firstItem="S1P-ds-SqA" firstAttribute="top" secondItem="Vxw-qP-QGs" secondAttribute="bottom" constant="10" id="mJa-be-Meb"/>
+                                    <constraint firstAttribute="trailing" secondItem="8p4-Gg-cSA" secondAttribute="trailing" id="lZd-oB-X1r"/>
                                     <constraint firstAttribute="trailing" secondItem="Neu-uC-9lA" secondAttribute="trailing" id="oq6-w1-AkV"/>
-                                    <constraint firstItem="S1P-ds-SqA" firstAttribute="top" secondItem="4qB-UD-xqb" secondAttribute="top" id="t73-sv-Exa"/>
-                                    <constraint firstItem="S1P-ds-SqA" firstAttribute="trailing" secondItem="4qB-UD-xqb" secondAttribute="trailing" id="tWo-En-Hff"/>
                                     <constraint firstItem="Zjp-Lx-xcZ" firstAttribute="leading" secondItem="NA4-3O-tGd" secondAttribute="leading" id="uF3-Ww-QMG"/>
                                     <constraint firstItem="Zjp-Lx-xcZ" firstAttribute="top" secondItem="ePi-8X-AkT" secondAttribute="bottom" id="v7f-nj-EhX"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="HFU-8e-ryP"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sre-r5-TCR"/>
@@ -474,8 +482,8 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="NA4-3O-tGd" secondAttribute="bottom" id="13S-yW-pfb"/>
                             <constraint firstAttribute="trailing" secondItem="NA4-3O-tGd" secondAttribute="trailing" id="MuY-TY-VnF"/>
+                            <constraint firstItem="8p4-Gg-cSA" firstAttribute="bottom" secondItem="sre-r5-TCR" secondAttribute="bottom" id="Qv9-bT-j9h"/>
                             <constraint firstItem="NA4-3O-tGd" firstAttribute="leading" secondItem="lR3-Ts-CKf" secondAttribute="leading" id="gdp-zv-xXR"/>
-                            <constraint firstItem="S1P-ds-SqA" firstAttribute="bottom" secondItem="sre-r5-TCR" secondAttribute="bottom" id="jCH-l9-qMA"/>
                             <constraint firstItem="NA4-3O-tGd" firstAttribute="top" secondItem="lR3-Ts-CKf" secondAttribute="top" id="rov-9h-TdR"/>
                         </constraints>
                     </view>
@@ -484,7 +492,7 @@
                         <outlet property="bellContainerView" destination="Vxw-qP-QGs" id="5qw-bj-SPk"/>
                         <outlet property="classLabel" destination="CJl-aT-wtT" id="dw6-4X-wMO"/>
                         <outlet property="classLabelHeight" destination="jjh-CM-5Pi" id="8uq-pO-WDg"/>
-                        <outlet property="imageViewStogoLogo" destination="S1P-ds-SqA" id="Gck-71-bSl"/>
+                        <outlet property="stogoWorldContainerView" destination="8p4-Gg-cSA" id="2ow-m4-tj7"/>
                         <outlet property="studentImageView" destination="Xxr-jW-nXU" id="6Sj-L5-Qt1"/>
                         <outlet property="studentNameLabel" destination="ENd-Hf-5xP" id="uID-Kd-PKT"/>
                         <outlet property="studentSecondLabel" destination="DKw-78-wJw" id="Fi2-gx-MhF"/>
@@ -508,7 +516,7 @@
         <image name="studentImage" width="123" height="123"/>
         <image name="wof" width="100" height="32"/>
         <namedColor name="9CDAE7">
-            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.53333333333333333" green="0.81176470588235294" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FDFDFD">
             <color red="0.99299997091293335" green="0.99299997091293335" blue="0.99299997091293335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

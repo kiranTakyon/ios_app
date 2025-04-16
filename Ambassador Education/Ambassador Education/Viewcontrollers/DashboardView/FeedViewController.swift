@@ -42,7 +42,7 @@ var notificationObject : TNotification = TNotification(values: NSDictionary())
 class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imageViewStogoLogo: UIImageView!
+    @IBOutlet weak var stogoWorldContainerView: UIView!
     @IBOutlet weak var upcomingEventView: UIView!
     @IBOutlet weak var studentImageView: ImageLoader!
     @IBOutlet weak var studentSecondLabel: UILabel!
@@ -90,7 +90,8 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         setAllTextFieldsEmpty()
         getTokenValueForMobileNotification()
         addObserverToNotification()
-        topHeaderView.delegate = self        
+        updateStogoWorldVisibility()
+        topHeaderView.delegate = self
     }
     
     func setAllTextFieldsEmpty(){
@@ -152,10 +153,24 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
+    func updateStogoWorldVisibility() {
+        let logInDetails = logInResponseGloabl
+        guard let menuList = logInDetails["MenuList"] as? [[String: Any]] else { return }
+        
+        let sortedArray = menuList.sorted { Int($0["MenuOrder"] as! String)! < Int($1["MenuOrder"] as! String)! }
+                
+        let unsortedItems = ModelClassManager.sharedManager.createModelArray(data: sortedArray as NSArray, modelType: ModelType.TNMenuItem) as! [TNMenuItem]
+        
+        if unsortedItems.contains(where: { $0.hashKey.safeValue == "T0059_1" }) {
+            stogoWorldContainerView.isHidden = false
+        } else {
+            stogoWorldContainerView.isHidden = true
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
 
     @IBAction func didTapOnStogoImage(_ sender: UIButton) {
         if let stringUrl = JWTHelper.shared.getStogoUrl() {

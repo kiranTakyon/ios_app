@@ -1126,6 +1126,7 @@
 		18E8398D2C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */; };
 		18E8398E2C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */; };
 		18E8398F2C25B1BB001E25F5 /* WeeklyPlanCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */; };
+		409C34D25AA58765747D69E1 /* Pods_STOGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BB8B0AF4E5B78CDEC6A9E2 /* Pods_STOGO.framework */; };
 		446D51D92539C33100D1026C /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		446D51DA2539C33100D1026C /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
 		446D51DB2539C33100D1026C /* WeeklyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */; };
@@ -1517,7 +1518,6 @@
 		44EF07ED231AD6E900524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07EE231AD6EA00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
 		44EF07EF231AD6EB00524BAE /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */; };
-		597376A1286CFD3C72596E97 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */; };
 		9818D1592A4EFC0900F71FCC /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
 		9818D15A2A4EFC0900F71FCC /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
 		9818D15C2A4EFC0900F71FCC /* UIApplication+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */; };
@@ -7532,7 +7532,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		047AD81A8F688BDECCFC9B72 /* Pods-OrisonSchool V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.debug.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.debug.xcconfig"; sourceTree = "<group>"; };
 		04FDB9762BA451DF00723566 /* BIS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BIS-Info.plist"; sourceTree = "<group>"; };
 		04FDB9772BA451E600723566 /* OrisonSchool V2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrisonSchool V2-Info.plist"; sourceTree = "<group>"; };
 		04FDB9782BA451F200723566 /* Sms-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sms-Info.plist"; sourceTree = "<group>"; };
@@ -7610,6 +7609,7 @@
 		13DD10502149229600CB24AD /* PEPSAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PEPSAssets.xcassets; sourceTree = "<group>"; };
 		13DD1052214930D100CB24AD /* SAMAAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SAMAAssets.xcassets; sourceTree = "<group>"; };
 		13DD10572149430700CB24AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		155C3CC004FA298352ED5177 /* Pods-STOGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STOGO.release.xcconfig"; path = "Target Support Files/Pods-STOGO/Pods-STOGO.release.xcconfig"; sourceTree = "<group>"; };
 		183436752C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		183436762C2B1EE1000E5CCC /* PaymentHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		183436C52C2B2084000E5CCC /* PaymentTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTotalTableViewCell.swift; sourceTree = "<group>"; };
@@ -7631,7 +7631,7 @@
 		18E839422C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPlanCollectionViewCell.swift; sourceTree = "<group>"; };
 		18E839432C25B1BA001E25F5 /* WeeklyPlanCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyPlanCollectionViewCell.xib; sourceTree = "<group>"; };
 		247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.debug.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.debug.xcconfig"; sourceTree = "<group>"; };
-		35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrisonSchool_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36B5A196006722684DB5D39F /* Pods-STOGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STOGO.debug.xcconfig"; path = "Target Support Files/Pods-STOGO/Pods-STOGO.debug.xcconfig"; sourceTree = "<group>"; };
 		4405BCEF239E15E1007992F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		440671EB252C5B97001B8C7B /* PEPSV2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PEPSV2-Info.plist"; path = "/Users/jayesh/Desktop/t360-ios/Ambassador Education/PEPSV2-Info.plist"; sourceTree = "<absolute>"; };
 		440B6B67239A5472004A0894 /* TaryamSchoolv2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TaryamSchoolv2.xcassets; sourceTree = "<group>"; };
@@ -7680,6 +7680,7 @@
 		45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/DGActivityIndicatorView/DGActivityIndicatorView.framework"; sourceTree = "<group>"; };
 		772EB36621EF21C000620F0E /* Quality Education-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quality Education-Info.plist"; sourceTree = "<group>"; };
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
+		82BB8B0AF4E5B78CDEC6A9E2 /* Pods_STOGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STOGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
 		9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helper.swift"; sourceTree = "<group>"; };
 		9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
@@ -7819,7 +7820,6 @@
 		B4F8F6092044534700515F74 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B4F8F60F204483EC00515F74 /* TNAwarnessArticleDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNAwarnessArticleDetail.swift; sourceTree = "<group>"; };
 		B4FBEA8220810D3D0035AECD /* VideoDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDownload.swift; sourceTree = "<group>"; };
-		BCBF72F5D10CD6A799C38B32 /* Pods-OrisonSchool V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.release.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.release.xcconfig"; sourceTree = "<group>"; };
 		CD0A061627DA67DC007222F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAEF2B30930B001F1858 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD0ADAF12B309435001F1858 /* WoodlemAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = WoodlemAssets.xcassets; path = "../../../Ambassador Education Target1/Ambassador Education/Assets/WoodlemAssets.xcassets"; sourceTree = "<group>"; };
@@ -8282,7 +8282,6 @@
 				CDD23663289AD40100A7121D /* MapKit.framework in Frameworks */,
 				CDD23664289AD40100A7121D /* CloudKit.framework in Frameworks */,
 				CDD23665289AD40100A7121D /* DGActivityIndicatorView.framework in Frameworks */,
-				597376A1286CFD3C72596E97 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8295,6 +8294,7 @@
 				CDD5ADA22C7D1B8300B07B38 /* MapKit.framework in Frameworks */,
 				CDD5ADA32C7D1B8300B07B38 /* CloudKit.framework in Frameworks */,
 				CDD5ADA42C7D1B8300B07B38 /* DGActivityIndicatorView.framework in Frameworks */,
+				409C34D25AA58765747D69E1 /* Pods_STOGO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8914,8 +8914,8 @@
 			children = (
 				247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */,
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
-				047AD81A8F688BDECCFC9B72 /* Pods-OrisonSchool V2.debug.xcconfig */,
-				BCBF72F5D10CD6A799C38B32 /* Pods-OrisonSchool V2.release.xcconfig */,
+				36B5A196006722684DB5D39F /* Pods-STOGO.debug.xcconfig */,
+				155C3CC004FA298352ED5177 /* Pods-STOGO.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -9518,7 +9518,7 @@
 				45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */,
 				45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */,
 				455DEE911EBC33DD002D6CEF /* Alamofire.framework */,
-				35A599D6E0D0B16B765504D4 /* Pods_OrisonSchool_V2.framework */,
+				82BB8B0AF4E5B78CDEC6A9E2 /* Pods_STOGO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -9998,12 +9998,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDD23679289AD40100A7121D /* Build configuration list for PBXNativeTarget "OrisonSchool V2" */;
 			buildPhases = (
-				CE82319FBDA1C0EDFEDD1382 /* [CP] Check Pods Manifest.lock */,
 				CDD235E4289AD40100A7121D /* Sources */,
 				CDD23660289AD40100A7121D /* Frameworks */,
 				CDD23667289AD40100A7121D /* Resources */,
 				CDD23677289AD40100A7121D /* ShellScript */,
-				90A37E738A74E33F12B87118 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -10018,10 +10016,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDD5ADCE2C7D1B8300B07B38 /* Build configuration list for PBXNativeTarget "STOGO" */;
 			buildPhases = (
+				238AB8D9F093AB9E85DB0283 /* [CP] Check Pods Manifest.lock */,
 				CDD5AD082C7D1B8300B07B38 /* Sources */,
 				CDD5AD9F2C7D1B8300B07B38 /* Frameworks */,
 				CDD5ADA62C7D1B8300B07B38 /* Resources */,
 				CDD5ADCC2C7D1B8300B07B38 /* ShellScript */,
+				427EF75211D1529EF6382A74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -12538,52 +12538,35 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
-		446D52672539C33100D1026C /* ShellScript */ = {
+		238AB8D9F093AB9E85DB0283 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STOGO-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
-		44AD1BDD25388E1000368235 /* ShellScript */ = {
+		427EF75211D1529EF6382A74 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		44DC612925798523002E3917 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		90A37E738A74E33F12B87118 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-STOGO/Pods-STOGO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/BIZPopupView/BIZPopupView.framework",
 				"${BUILT_PRODUCTS_DIR}/BlueCryptor/Cryptor.framework",
@@ -12680,8 +12663,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STOGO/Pods-STOGO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		446D52672539C33100D1026C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		44AD1BDD25388E1000368235 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
+		};
+		44DC612925798523002E3917 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
 		B41C1B5621418FD600A9907B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -13007,28 +13029,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
-		};
-		CE82319FBDA1C0EDFEDD1382 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OrisonSchool V2-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		CE88681321FACE8C00FF0DE0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -27158,7 +27158,6 @@
 		};
 		CDD2367A289AD40100A7121D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 047AD81A8F688BDECCFC9B72 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27291,7 +27290,6 @@
 		};
 		CDD2367B289AD40100A7121D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCBF72F5D10CD6A799C38B32 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27472,6 +27470,7 @@
 		};
 		CDD5ADCF2C7D1B8300B07B38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B5A196006722684DB5D39F /* Pods-STOGO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -27604,6 +27603,7 @@
 		};
 		CDD5ADD02C7D1B8300B07B38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 155C3CC004FA298352ED5177 /* Pods-STOGO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

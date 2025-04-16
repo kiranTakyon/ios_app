@@ -658,7 +658,7 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
-        let totalPadding = 13 + 13 + 2 * 2
+        let totalPadding = 13 + 13 + 10 * 2
         let itemWidth = (Int(collectionViewWidth) - totalPadding) / 3
         
         switch indexPath.section {
@@ -678,11 +678,11 @@ extension MenuViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 10
     }
 }
 
