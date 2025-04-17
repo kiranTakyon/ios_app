@@ -161,8 +161,10 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         let unsortedItems = ModelClassManager.sharedManager.createModelArray(data: sortedArray as NSArray, modelType: ModelType.TNMenuItem) as! [TNMenuItem]
         
         if unsortedItems.contains(where: { $0.hashKey.safeValue == "T0059_1" }) {
+            bellContainerView.isHidden = false
             stogoWorldContainerView.isHidden = false
         } else {
+            bellContainerView.isHidden = true
             stogoWorldContainerView.isHidden = true
         }
     }
@@ -753,12 +755,10 @@ extension FeedViewController{
                     self.upcomingEvents.append(contentsOf: upcomingEvent)
                 }
                 self.upComingEventViewController.upcomingEvents = self.upcomingEvents
-                if let notifications = logInResponseGloabl.value(forKey: "Notification") as? NSArray
-                {
+                if logInResponseGloabl.value(forKey: "Notification") is NSArray {
                     logInResponseGloabl.removeObject(forKey: Notification.self)
                     logInResponseGloabl.setValue(nototificationsArray, forKey: "Notification")
                 }
-
 
                 cacheManager.saveToCache(data: self.notificationList, key: "notificationsCache")
                 cacheManager.saveToCache(data: self.moduleList, key: "modulesCache")
