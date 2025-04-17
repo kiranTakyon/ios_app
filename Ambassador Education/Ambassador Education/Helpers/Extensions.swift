@@ -311,7 +311,7 @@ extension UIViewController {
         }
     }
     
-    func removeNoDataLabel(){
+    func removeNoDataLabel() {
         
         if let label = self.view.viewWithTag(8001) as? UILabel{
             label.removeFromSuperview()

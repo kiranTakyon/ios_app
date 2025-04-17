@@ -75,7 +75,6 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
     private var draggingIsEnabled: Bool = false
     private var panBaseLocation: CGFloat = 0.0
     private var upComingEventViewController: UpComingEventViewController!
-    private var revealSideMenuOnTop: Bool = true
 
     let popUpHeight = UIScreen.main.bounds.height - 150
     let popUpWidth = UIScreen.main.bounds.width - 60
@@ -99,7 +98,7 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         studentSecondLabel.text = ""
     }
     
-    func setTableView(){
+    func setTableView() {
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
         tableView.register(UINib(nibName: "NotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "NotificationsTableViewCell")
         upcomingEventView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
@@ -193,7 +192,7 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func openUpComingEvent() {
-        sideMenuState(expanded: self.isExpanded ? false : true)
+        sideMenuState(expanded: !self.isExpanded)
     }
     
     func setProfileImageToRound() {
@@ -211,13 +210,16 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                 self?.upComingEventViewController.collectionView.reloadData()
             }
-            self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? 0 : -self.upcomingRevealWidth) { _ in
+            // Hide no data label if needed
+            self.updateNoDataLabelVisibility(isHidden: true)
+            self.animateSideMenu(targetPosition: 0) { _ in
                 self.isExpanded = true
             }
             UIView.animate(withDuration: 0.5) { self.upcomingShadowView.alpha = 0.6 }
-        }
-        else {
-            self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? self.upcomingRevealWidth : 0) { _ in
+        } else {
+            //Show no data label if needed
+            self.updateNoDataLabelVisibility(isHidden: false)
+            self.animateSideMenu(targetPosition: self.upcomingRevealWidth) { _ in
                 self.isExpanded = false
             }
             UIView.animate(withDuration: 0.5) { self.upcomingShadowView.alpha = 0.0 }
@@ -226,15 +228,21 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func animateSideMenu(targetPosition: CGFloat, completion: @escaping (Bool) -> ()) {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .layoutSubviews, animations: {
-            if self.revealSideMenuOnTop {
                 self.sideMenuTrailingConstraint.constant = targetPosition
                 self.view.layoutIfNeeded()
-            } else {
-                self.view.subviews[1].frame.origin.x = targetPosition
-            }
+            
         }, completion: completion)
     }
 
+    func updateNoDataLabelVisibility(isHidden: Bool) {
+        if let label = self.view.viewWithTag(8001) as? UILabel{
+            label.isHidden = isHidden
+        }
+        if let imageView = self.view.viewWithTag(8002) as? UIImageView{
+            imageView.isHidden = isHidden
+        }
+    }
+    
 }
 
 
@@ -574,25 +582,21 @@ extension FeedViewController{
         tapGestureRecognizer.numberOfTapsRequired = 1
         tapGestureRecognizer.delegate = self
         self.upcomingShadowView.addGestureRecognizer(tapGestureRecognizer)
-        if self.revealSideMenuOnTop {
-            view.insertSubview(self.upcomingShadowView, at: 6)
-        }
+        view.insertSubview(self.upcomingShadowView, at: 6)
 
         guard let upComingEventViewController = upcomingEvent.instantiateViewController(withIdentifier: "UpComingEventViewController") as? UpComingEventViewController else { return }
         upComingEventViewController.delegate = self
         self.upComingEventViewController = upComingEventViewController
-        view.insertSubview(upComingEventViewController.view, at: self.revealSideMenuOnTop ? 6 : 0)
+        view.insertSubview(upComingEventViewController.view, at: 6)
         addChild(upComingEventViewController)
+        
         upComingEventViewController.didMove(toParent: self)
 
         // UpComingEvent AutoLayout
-
         upComingEventViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
-        if self.revealSideMenuOnTop {
-            self.sideMenuTrailingConstraint = upComingEventViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: self.upcomingRevealWidth)
-            sideMenuTrailingConstraint.isActive = true
-        }
+        self.sideMenuTrailingConstraint = upComingEventViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: self.upcomingRevealWidth)
+        sideMenuTrailingConstraint.isActive = true
         self.upComingEventViewController.upcomingEvents = upcomingEvents
         NSLayoutConstraint.activate([
             upComingEventViewController.view.widthAnchor.constraint(equalToConstant: self.upcomingRevealWidth),
@@ -664,7 +668,7 @@ extension FeedViewController{
         let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
         self.notificationList.append(contentsOf: notifications)
         self.setStudentDetailsOnView(studentDetail: logInResponseGloabl)
-        if self.notificationList.count == 0{
+        if self.notificationList.count == 0 {
             self.addNoDataFoundLabel(textValue: "Hurray all your notification are attended !!")
         }
         else{
