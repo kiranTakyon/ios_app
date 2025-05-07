@@ -77,6 +77,7 @@ class MenuViewController: UIViewController {
     var academicsItems = [TNMenuItem]()
     var financeItems = [TNMenuItem]()
     var sectionHeaderItems = [TNMenuItem]()
+    var isMenuApperaFirst = false
     
     // MARK: - Life cycle -
     override func viewDidLoad() {
@@ -311,6 +312,20 @@ extension MenuViewController{
         }
         
         menuListItems = zeroParentIds
+        let userType = UserDefaultsManager.manager.getUserType()
+        if userType == "admin"{
+            if let index = financeItems.firstIndex(where: { $0.hashKey == "T0035" }) {
+                financeItems.remove(at: index)
+            }
+        }
+        
+        if !isMenuApperaFirst{
+            isMenuApperaFirst = true
+            if let index = mainItems.firstIndex(where: { $0.hashKey == "T0001" }) {
+                let item = mainItems[index]
+                navigateToViewController(for: item.hashKey ?? "", header: item.label ?? "", from: self, animated: false)
+            }
+        }
         
         collectionView.reloadData()
     }
@@ -376,7 +391,7 @@ extension MenuViewController{
 // MARK: - Navigation functions -
 extension MenuViewController{
 
-    func navigateToViewController(for key: String, header:String,from viewController: UIViewController) {
+    func navigateToViewController(for key: String, header:String,from viewController: UIViewController, animated: Bool = true) {
         var destinationVC: UIViewController?
         switch key {
         case "T0001":
@@ -436,7 +451,7 @@ extension MenuViewController{
         }
 
         if let destination = destinationVC {
-            viewController.navigationController?.pushViewController(destination, animated: true)
+            viewController.navigationController?.pushViewController(destination, animated: animated)
         }
     }
     

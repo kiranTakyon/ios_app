@@ -636,7 +636,7 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func navigateToGallery(url:String,title:String,indexPath: Int){
-        let galleryDetail = commonStoryBoard.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+        let galleryDetail = gallery.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
         galleryDetail.imageUrl = url
         galleryDetail.pageTitle  = ""
         galleryDetail.titleValue = title

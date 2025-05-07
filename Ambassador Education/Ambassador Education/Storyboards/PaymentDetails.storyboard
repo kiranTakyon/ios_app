@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="55R-y1-LHu">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -494,6 +494,7 @@
                             <constraint firstItem="3r9-cH-dYe" firstAttribute="top" secondItem="gWq-Cf-EtS" secondAttribute="bottom" id="iO6-tU-2Xf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uDb-N0-YPQ"/>
                     <connections>
                         <outlet property="buttonStudentsDropDown" destination="pVc-tx-pGf" id="SEL-05-fFu"/>
                         <outlet property="detailTableView" destination="5Ut-lT-7a1" id="bf0-VN-Nl6"/>
@@ -513,14 +514,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCd-QM-UMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2257" y="-482"/>
+            <point key="canvasLocation" x="-1330.534351145038" y="-482.3943661971831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zRC-ee-mJ8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="55R-y1-LHu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WST-lU-DAO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pmG-hq-nIL" kind="relationship" relationship="rootViewController" id="wJ9-ca-GIE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="val-0I-RJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2257.2519083969464" y="-482.3943661971831"/>
         </scene>
     </scenes>
     <resources>
         <image name="DownArrowGrey" width="23.5" height="13.5"/>
         <image name="LogOut" width="128" height="128"/>
         <namedColor name="9CDAE7">
-            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.53333333333333333" green="0.81176470588235294" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

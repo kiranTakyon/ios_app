@@ -215,6 +215,7 @@ class GalleryCategoryList : UITableViewCell{
 
 
 extension GalleryCategoryListController: TopHeaderDelegate {
+    
     func secondRightButtonClicked(_ button: UIButton) {
         print("")
     }

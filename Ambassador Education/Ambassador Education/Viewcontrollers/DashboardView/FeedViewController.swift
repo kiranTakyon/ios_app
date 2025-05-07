@@ -163,6 +163,9 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         if unsortedItems.contains(where: { $0.hashKey.safeValue == "T0059_1" }) {
             bellContainerView.isHidden = false
             stogoWorldContainerView.isHidden = false
+            if upcomingEvents.count == 0{
+                stogoWorldContainerView.isHidden = true
+            }
         } else {
             bellContainerView.isHidden = true
             stogoWorldContainerView.isHidden = true
@@ -764,6 +767,7 @@ extension FeedViewController{
                 cacheManager.saveToCache(data: self.moduleList, key: "modulesCache")
                 cacheManager.saveToCache(data: self.NoticeBoardItems, key: "noticeBoardCache")
                 self.updateUI()
+                self.updateStogoWorldVisibility()
             }
         }
     }

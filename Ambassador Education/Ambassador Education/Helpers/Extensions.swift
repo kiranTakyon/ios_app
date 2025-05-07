@@ -476,6 +476,7 @@ fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [Stri
 
 extension Array where Element: Hashable {
     func unique() -> [Element] {
-        return Array(Set(self))
+        var seen = Set<Element>()
+        return self.filter { seen.insert($0).inserted }
     }
 }

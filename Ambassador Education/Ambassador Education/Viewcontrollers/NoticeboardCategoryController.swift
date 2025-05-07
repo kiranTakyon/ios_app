@@ -107,23 +107,11 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        
-//    
-//        let item = categoryList[indexPath.row]
-//        if let cell = tableView.cellForRow(at: indexPath) as? GalleryCategoryList{
-//            self.navigateToDetail(item: item.Items!, text: getTitleOfCell(cell: cell))
-//
-//     }
-//        
-//    }
-    
-    func getTitleOfCell(cell :GalleryCategoryList) -> String{
-        if let text = cell.titleLabel.text{
-        var title  = text
-            return text
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let item = categoryList[indexPath.row]
+        if let items = item.Items,let category = item.category {
+            self.navigateToDetail(item: items, text: category)
         }
-        return ""
     }
     
     func navigateToDetail(item:[TNNoticeBoardDetail],text: String){

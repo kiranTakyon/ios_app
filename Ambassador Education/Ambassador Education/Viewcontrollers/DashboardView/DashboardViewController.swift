@@ -66,9 +66,11 @@ class DashboardViewController: UIViewController{
         studentImageView.layer.cornerRadius = studentImageView.frame.width / 2
         setAllTextFieldsEmpty()
         updateCollectionViewHeight()
-        
-        for item in apiRoutesArray {
-            callProgressAPI(item)
+        let userType = UserDefaultsManager.manager.getUserType()
+        if userType != "admin" {
+            for item in apiRoutesArray {
+                callProgressAPI(item)
+            }
         }
     }
     

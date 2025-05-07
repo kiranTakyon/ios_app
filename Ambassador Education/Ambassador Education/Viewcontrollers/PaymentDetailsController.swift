@@ -296,7 +296,7 @@ class PaymentDetailsController: UIViewController,UITableViewDelegate,UITableView
         if payLink != "" {
             vc.header  = "Payment"
             gradeBookLink = payLink
-            self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
