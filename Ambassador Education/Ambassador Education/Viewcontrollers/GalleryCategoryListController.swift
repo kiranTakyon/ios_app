@@ -15,15 +15,19 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
     var gallaryModel : GalleryItems?
     
     @IBOutlet weak var topHeaderView: TopHeaderView!
-
-
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getCategoryList()
         topHeaderView.delegate = self
+        searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
     }
     
-    func getCategoryList() {
+    func getCategoryList(_ searchQuery: String = ""){
         
         self.startLoadingAnimation()
         
@@ -35,7 +39,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
         
         //{"UserId":"98189","SearchText":""}
         dictionary[UserIdKey().id] = userId
-        dictionary[GalleryCategory.searchText] = ""
+        dictionary[GalleryCategory.searchText] = searchQuery
      //   dictionary[GalleryCategory.paginationNumber] = 1
 
         
@@ -203,6 +207,12 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        if let text = searchTextField.text, text != "" {
+            getCategoryList(text)
+        }
+    }
 
 }
 
@@ -231,6 +241,42 @@ extension GalleryCategoryListController: TopHeaderDelegate {
                 gradeBookLink = ""
             }
         }
+    }
+    
+}
+
+extension GalleryCategoryListController{
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            if lastQuery != "" {
+                lastQuery = ""
+                getCategoryList(query)
+            }
+            return
+        }
+
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+
+        lastQuery = query
+        //getInboxMessages(txt : query, types: typeValue)
     }
     
 }

@@ -32,13 +32,16 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
     var isFromCamera = false
     var profileInfo : TMyProfile?
 //    var  popUpViewVc : BIZPopupViewController?
+    var shouldShowBackButton = false
     var isEditClicked : Bool?
     
     @IBOutlet weak var profileTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.shouldShowBackButton = false
+        if !shouldShowBackButton{
+            topHeaderView.shouldShowBackButton = false
+        }
         isEditClicked = false
         containerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         profileTable.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
@@ -58,7 +61,6 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         }
         isFromCamera = false
     }
-    
     
     func deleteTheSelectedAttachment(index: Int) {
         

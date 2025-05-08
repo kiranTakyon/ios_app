@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -280,11 +280,22 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKt-tP-aO6">
+                                <rect key="frame" x="10" y="71.666666666666671" width="297.33333333333331" height="45"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="redirectToProfileScreenPressed:" destination="ARD-7p-MNQ" eventType="touchUpInside" id="gAJ-0o-K5r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bc3-Gs-oFj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="AKt-tP-aO6" firstAttribute="bottom" secondItem="qRz-eS-lju" secondAttribute="bottom" id="3Hh-99-68I"/>
                             <constraint firstItem="laZ-bU-gf8" firstAttribute="leading" secondItem="Bc3-Gs-oFj" secondAttribute="leading" id="6pv-Ox-ZGX"/>
+                            <constraint firstItem="AKt-tP-aO6" firstAttribute="leading" secondItem="HOH-YK-HnL" secondAttribute="leading" id="Ark-dg-YfH"/>
+                            <constraint firstItem="AKt-tP-aO6" firstAttribute="trailing" secondItem="qRz-eS-lju" secondAttribute="trailing" id="BOn-Bu-DOx"/>
+                            <constraint firstItem="AKt-tP-aO6" firstAttribute="top" secondItem="qRz-eS-lju" secondAttribute="top" id="Lkj-el-ffl"/>
                             <constraint firstItem="laZ-bU-gf8" firstAttribute="top" secondItem="EuD-eS-WWJ" secondAttribute="top" id="OT2-LJ-cFn"/>
                             <constraint firstItem="Bc3-Gs-oFj" firstAttribute="trailing" secondItem="laZ-bU-gf8" secondAttribute="trailing" id="Pd5-k0-LCj"/>
                             <constraint firstAttribute="bottom" secondItem="laZ-bU-gf8" secondAttribute="bottom" id="QqN-5r-e3W"/>

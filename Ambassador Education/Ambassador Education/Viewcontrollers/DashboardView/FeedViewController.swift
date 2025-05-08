@@ -93,6 +93,13 @@ class FeedViewController: UIViewController, UIGestureRecognizerDelegate {
         topHeaderView.delegate = self
     }
     
+    @IBAction func redirectToProfileScreenPressed(_ sender: Any) {
+        let profile = MyProfileController.instantiate(from: .myProfile)
+        profile.shouldShowBackButton = true
+        navigationController?.pushViewController(profile, animated: true)
+    }
+    
+    
     func setAllTextFieldsEmpty(){
         studentNameLabel.text = ""
         studentSecondLabel.text = ""

@@ -18,23 +18,24 @@ class CalendarController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calenderViewHeight: NSLayoutConstraint!
     @IBOutlet weak var topHeaderView: TopHeaderView!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
     var prevButton: UIButton!
     var nextButton: UIButton!
-    
     var dictionary = [String:[TNCalendarEvent]]()
     var data : [Date:[CalendarEvent]] = [:]
     var sections = [String]()
     var items = [[String]]()
     let calendar = CalendarViewController()
     var calendarEvent  : NSObject?
-    
     var completeEvents = [CalendarEvent]()
-    
     var eventData = [TNCalendarEvent]()
-    
     var completeDates = [String:[TNCalendarEvent]]()
     var fsCalendar: FSCalendar = FSCalendar()
-    
+    var currentDate = Date()
     
     
     fileprivate lazy var dateFormatter: DateFormatter = {
@@ -62,11 +63,21 @@ class CalendarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         tableView.register(UINib(nibName: "CalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "CalendarTableViewCell")
         setCalender()
         getCalendarEvents()
     }
     
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        if let text = searchTextField.text, text != "" {
+            let event = self.data[currentDate] ?? []
+            completeEvents = filterEvents(byTitle: text, in: event)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     func setNavigationBar(){
         self.navigationController?.navigationBar.isHidden = true
@@ -421,6 +432,7 @@ class EventCell : UITableViewCell{
 extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         fsCalendar.appearance.todayColor = UIColor(named: "9CDAE7")?.withAlphaComponent(0.5)
+        currentDate = date
         completeEvents = self.data[date] ?? []
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -440,6 +452,7 @@ extension CalendarController: FSCalendarDelegate, FSCalendarDataSource {
 
 
 extension CalendarController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return completeEvents.count
     }
@@ -455,6 +468,14 @@ extension CalendarController: UITableViewDelegate, UITableViewDataSource {
         showEventDetails(value: completeEvents[indexPath.row])
     }
     
+    func filterEvents(byTitle searchText: String, in events: [CalendarEvent]) -> [CalendarEvent] {
+        guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return events
+        }
+        return events.filter { event in
+            event.title.localizedCaseInsensitiveContains(searchText)
+        }
+    }
 }
 
 
@@ -466,6 +487,41 @@ extension CalendarController: TopHeaderDelegate {
     
     func searchButtonClicked(_ button: UIButton) {
         logOutAction()
+    }
+    
+}
+
+extension CalendarController{
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        debounceWorkItem?.cancel()
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        debounceWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            if lastQuery != "" {
+                lastQuery = ""
+                let event = self.data[currentDate] ?? []
+                completeEvents = filterEvents(byTitle: query, in: event)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            return
+        }
+
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+
+        lastQuery = query
     }
     
 }

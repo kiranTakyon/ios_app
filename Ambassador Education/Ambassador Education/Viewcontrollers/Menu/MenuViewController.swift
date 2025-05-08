@@ -142,6 +142,11 @@ class MenuViewController: UIViewController {
         moveToSection(indexPath)
     }
     
+    @IBAction func redirectToProfileScreenPressed(_ sender: Any) {
+        navigateToViewController(for: "MyProfileKey", header: "", from: self)
+    }
+    
+    
     func setSideMenuForAcademics(_ selected:Bool){
         if selected{
             academicsStackView.backgroundColor = .clear
@@ -439,7 +444,9 @@ extension MenuViewController{
         case "T0010":
             openBuzzApp()
         case "MyProfileKey":
-            destinationVC = MyProfileController.instantiate(from: .myProfile)
+            let profile = MyProfileController.instantiate(from: .myProfile)
+            profile.shouldShowBackButton = true
+            destinationVC = profile
         case "T0059_1":
             if let stringUrl = JWTHelper.shared.getStogoUrl() {
                 gotoWeb(str : stringUrl)

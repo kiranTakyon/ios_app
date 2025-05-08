@@ -85,6 +85,11 @@ class DashboardViewController: UIViewController{
         setNotitificationList(id : userId)
     }
     
+    @IBAction func redirectToProfileScreenPressed(_ sender: Any) {
+        let profile = MyProfileController.instantiate(from: .myProfile)
+        profile.shouldShowBackButton = true
+        navigationController?.pushViewController(profile, animated: true)
+    }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)

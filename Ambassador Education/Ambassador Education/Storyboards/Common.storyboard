@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -2259,6 +2259,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="W9A-A9-Iwh" eventType="touchUpInside" id="WUN-uB-nsB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2509,6 +2512,8 @@
                     <connections>
                         <outlet property="buttonSideArrow" destination="9kK-9I-284" id="gZ2-j0-T2U"/>
                         <outlet property="communicateTable" destination="Lmk-Rl-xhf" id="O8m-Yb-MHF"/>
+                        <outlet property="searchButton" destination="gZd-QQ-63q" id="UM8-7z-izQ"/>
+                        <outlet property="searchTextField" destination="vJY-35-2cS" id="nTK-cg-36r"/>
                         <outlet property="sideView" destination="7Uy-ge-YTL" id="w7h-T0-CAy"/>
                     </connections>
                 </viewController>
@@ -3190,38 +3195,6 @@
             <point key="canvasLocation" x="10167" y="3899"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="5kc-Rn-hbT">
-            <size key="intrinsicContentSize" width="115.66666666666667" height="28.333333333333332"/>
-        </designable>
-        <designable name="DIq-fA-0Vu">
-            <size key="intrinsicContentSize" width="166" height="28.333333333333332"/>
-        </designable>
-        <designable name="EMt-93-tNh">
-            <size key="intrinsicContentSize" width="132.33333333333334" height="20.666666666666668"/>
-        </designable>
-        <designable name="J6C-Zg-axJ">
-            <size key="intrinsicContentSize" width="72" height="18.666666666666668"/>
-        </designable>
-        <designable name="QRQ-Z3-uDW">
-            <size key="intrinsicContentSize" width="128.66666666666666" height="20.666666666666668"/>
-        </designable>
-        <designable name="Z5R-Zw-poZ">
-            <size key="intrinsicContentSize" width="40" height="28.333333333333332"/>
-        </designable>
-        <designable name="ezu-wP-PdL">
-            <size key="intrinsicContentSize" width="140.33333333333334" height="28.333333333333332"/>
-        </designable>
-        <designable name="k1Z-IU-Z58">
-            <size key="intrinsicContentSize" width="107.66666666666667" height="20.666666666666668"/>
-        </designable>
-        <designable name="quQ-L3-SdX">
-            <size key="intrinsicContentSize" width="88.333333333333329" height="28.333333333333332"/>
-        </designable>
-        <designable name="wW0-bw-Q83">
-            <size key="intrinsicContentSize" width="62.333333333333336" height="18.666666666666668"/>
-        </designable>
-    </designables>
     <resources>
         <image name="AddCC" width="1417" height="1417"/>
         <image name="AddGroup" width="128" height="128"/>
@@ -3253,13 +3226,13 @@
         <image name="inbox" width="512" height="512"/>
         <image name="rightArrowBlack" width="512" height="512"/>
         <namedColor name="9CDAE7">
-            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.53333333333333333" green="0.81176470588235294" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="A4CACC">
             <color red="0.63921568627450975" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="AppColor">
-            <color red="0.0" green="0.20399999618530273" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10196078431372549" green="0.25882352941176473" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="C8C8C8">
             <color red="0.7839999794960022" green="0.7839999794960022" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
