@@ -520,7 +520,6 @@ extension CalendarController{
             print("Skipping API – same query")
             return
         }
-
         lastQuery = query
     }
     

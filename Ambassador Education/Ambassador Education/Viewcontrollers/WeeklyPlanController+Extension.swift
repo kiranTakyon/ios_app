@@ -146,13 +146,16 @@ extension WeeklyPlanController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
-        self.showDatePicker(textField: textField)
+        if textField == startingDateField {
+            self.showDatePicker(textField: textField, date: startTime)
+        }
+        else{
+            self.showDatePicker(textField: textField, date: endTime)
+        }
         return true
-        
     }
     
-    func showDatePicker(textField:UITextField){
+    func showDatePicker(textField:UITextField,date:Date = Date()){
         
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.datePicker.tag = textField.tag
@@ -165,6 +168,7 @@ extension WeeklyPlanController: UITextFieldDelegate {
             // Fallback on earlier versions
         }
         datePicker.isSelected = true
+        datePicker.date = date
         // ToolBar
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -259,12 +263,14 @@ extension WeeklyPlanController: UITextFieldDelegate {
                 if start != "" {
                     startTimeString = start
                     startingDateField.text = start
+                    startTime = convertToDate(from: start) ?? Date()
                 }
             }
             if let end = details["ToDate"] as? String {
                 if end != "" {
                     endTimeString = end
                     endingDateField.text = end
+                    endTime = convertToDate(from: end) ?? Date()
                 }
             }
         }
@@ -281,4 +287,11 @@ extension WeeklyPlanController: UITextFieldDelegate {
         }
     }
     
+    func convertToDate(from dateString: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter.date(from: dateString)
+    }
 }

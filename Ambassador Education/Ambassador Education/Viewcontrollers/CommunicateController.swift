@@ -30,6 +30,11 @@ class CommunicateController: UIViewController,TaykonProtocol {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var inboxImage: UIImageView!
+    @IBOutlet weak var sentImage: UIImageView!
+    @IBOutlet weak var wpImage: UIImageView!
+    @IBOutlet weak var draftImage: UIImageView!
+    
     // MARK: - Propertie's -
     
     var delegate : TaykonProtocol?
@@ -52,9 +57,9 @@ class CommunicateController: UIViewController,TaykonProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         communicateTable.register(UINib(nibName: "CommunicationTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationTableViewCell")
         searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        updateImageColors()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +122,26 @@ class CommunicateController: UIViewController,TaykonProtocol {
         self.getInboxMessages(txt : searchText, types: typeValue)
     }
     
+    func updateImageColors() {
+        
+        inboxImage.tintColor = .white
+        sentImage.tintColor = .white
+        wpImage.tintColor = .white
+        draftImage.tintColor = .white
+
+        switch type {
+        case .inbox:
+            inboxImage.tintColor = UIColor(named: "9CDAE7")
+        case .sent:
+            sentImage.tintColor = UIColor(named: "9CDAE7")
+        case .WP:
+            wpImage.tintColor = UIColor(named: "9CDAE7")
+        case .draft:
+            draftImage.tintColor = UIColor(named: "9CDAE7")
+        case .none:
+            break
+        }
+    }
     
     func getInboxMessages(txt : String,types: Int){
         sideView.frame.origin = CGPoint(x: -50, y: sideView.frame.origin.y)
@@ -400,23 +425,27 @@ extension CommunicateController {
     @IBAction func buttonInboxAction(_ sender: Any) {
         type = .inbox
         isLoadMore = false
+        updateImageColors()
         getInboxMessages(txt : searchText, types: typeValue)
     }
     
     @IBAction func buttonSentItemAction(_ sender: Any) {
         type = .sent
         isLoadMore = false
+        updateImageColors()
         getInboxMessages(txt : searchText, types: typeValue)
     }
     @IBAction func buttonWeekleyPlanAction(_ sender: Any) {
         type = .WP
         isLoadMore = false
+        updateImageColors()
         getInboxMessages(txt : searchText, types: typeValue)
     }
     
     @IBAction func buttonDraftAction(_ sender: Any) {
         type = .draft
         isLoadMore = false
+        updateImageColors()
         getInboxMessages(txt : searchText, types: typeValue)
     }
 }

@@ -2326,6 +2326,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inbox" translatesAutoresizingMaskIntoConstraints="NO" id="3oY-q7-6VM">
                                                         <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="zch-o9-AcH"/>
                                                         </constraints>
@@ -2361,6 +2362,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowsendwhite" translatesAutoresizingMaskIntoConstraints="NO" id="ten-DW-ho5">
                                                         <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="LDc-z4-Flx"/>
                                                         </constraints>
@@ -2396,6 +2398,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat-bubble" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-T0-mUw">
                                                         <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="wk7-Vm-c9P"/>
                                                         </constraints>
@@ -2431,6 +2434,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="draft" translatesAutoresizingMaskIntoConstraints="NO" id="NzM-SJ-Ql6">
                                                         <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="1JF-td-VoT"/>
                                                         </constraints>
@@ -2512,9 +2516,13 @@
                     <connections>
                         <outlet property="buttonSideArrow" destination="9kK-9I-284" id="gZ2-j0-T2U"/>
                         <outlet property="communicateTable" destination="Lmk-Rl-xhf" id="O8m-Yb-MHF"/>
+                        <outlet property="draftImage" destination="NzM-SJ-Ql6" id="c9X-CZ-VgK"/>
+                        <outlet property="inboxImage" destination="3oY-q7-6VM" id="zBP-Ju-v7F"/>
                         <outlet property="searchButton" destination="gZd-QQ-63q" id="UM8-7z-izQ"/>
                         <outlet property="searchTextField" destination="vJY-35-2cS" id="nTK-cg-36r"/>
+                        <outlet property="sentImage" destination="ten-DW-ho5" id="GkO-bt-t86"/>
                         <outlet property="sideView" destination="7Uy-ge-YTL" id="w7h-T0-CAy"/>
+                        <outlet property="wpImage" destination="fnn-T0-mUw" id="CGD-jf-VnM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MR-So-zBX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -56,6 +56,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
             self.categoryList = cetgories
             
              DispatchQueue.main.async {
+                self.removeNoDataLabel()
                 self.categoryTable.reloadData()
                 self.stopLoadingAnimation()
                 if self.categoryList.count == 0{

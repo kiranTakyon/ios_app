@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDY-Cb-Fqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDY-Cb-Fqn">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -293,7 +293,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pu5-XE-gKu"/>
                     <connections>
-                        <outlet property="changePasswordLabel" destination="m66-la-2zl" id="RJr-n6-1DA"/>
+                        <outlet property="changePasswordView" destination="nKy-Jr-872" id="pSU-sT-k5n"/>
                         <outlet property="containerView" destination="cwT-89-Ev2" id="9Sv-Ws-wzH"/>
                         <outlet property="labelName" destination="nQ2-3W-yce" id="41L-cp-H6b"/>
                         <outlet property="profileImageView" destination="XgN-Jl-zpS" id="UrZ-8W-5mz"/>
@@ -337,7 +337,7 @@
         <image name="SetLocation" width="25" height="25"/>
         <image name="profile_ic" width="32" height="32"/>
         <namedColor name="9CDAE7">
-            <color red="0.6119999885559082" green="0.85500001907348633" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.53333333333333333" green="0.81176470588235294" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
