@@ -326,7 +326,15 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             return cell
         }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            if let cell = collectionView.cellForItem(at: indexPath) as? DashboardCollectionViewCell {
+                let moduleName = cell.nameLabel.text ?? ""
+                navigateToViewController(for: moduleName, animated: true)
+            }
+        }
+    }
 }
 
 // MARK: - CollectionViewDelegateFlowLayout -
@@ -369,5 +377,32 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
     private func updateCollectionViewHeight() {
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
+    }
+}
+
+extension DashboardViewController {
+    
+    func navigateToViewController(for key: String, animated: Bool = true) {
+        var destinationVC: UIViewController?
+        switch key {
+        case "Notice Board":
+            destinationVC = NoticeboardCategoryController.instantiate(from: .noticeboard)
+        case "Add Gallery", "Gallery":
+            destinationVC = GalleryCategoryListController.instantiate(from: .gallery)
+        case "Communicate and Collaborate":
+            destinationVC = CommunicateLandController.instantiate(from: .communicateLand)
+        case "Weekly Plan":
+            destinationVC = WeeklyPlanController.instantiate(from: .weeklyPlan)
+        case "Exam Schedule":
+            destinationVC = CalendarController.instantiate(from: .calendar)
+        case "Awareness & Policies":
+            destinationVC = AwarenessViewController.instantiate(from: .awareness)
+            
+        default:
+            print("Invalid key provided.")
+            return
+        }
+        guard let destination = destinationVC else { return }
+        navigationController?.pushViewController(destination, animated: animated)
     }
 }

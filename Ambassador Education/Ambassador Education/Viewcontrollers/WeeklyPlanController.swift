@@ -58,7 +58,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var isSearch = Int()
     
     var dataArray : [WeeklyPlanList] = [WeeklyPlanList](){
-        
+
         didSet {
             self.setDataArray()
         }
@@ -150,6 +150,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         // backgroundSession = nil
     }
     
+
     func getWeeklyPlanAPI(){
         startLoadingAnimation()
         let url = APIUrls().weeklyPlan
@@ -276,7 +277,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                 self.collectionView.reloadData()
                 self.setDropDown()
                 self.setDate()
-
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     self.setUpInitialData()
                     self.titles.removeAll()
@@ -482,14 +483,14 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     }
     
     @IBAction func FromdatePickerAction(_ sender: Any) {
+        datePicker.date = startTime
         self.fromDatePickerTapped()
     }
     
     
     @IBAction func TodatePickerAction(_ sender: Any) {
-        
+        datePicker.date = endTime
         self.toDatePickerTapped()
-        
     }
     
 
@@ -540,7 +541,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     
     func refreshParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
         if let values = value as? (String,String,Int,String,String){
-            
             let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
             let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
             divId = values.3
@@ -848,7 +848,7 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
     }
     
     func setUpInitialData() {
-        
+        dataArray.removeAll()
         var titleType = String()
         if 0 < titlesnew.count{
             var titless = self.titlesnew[0]
@@ -871,10 +871,12 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
             default:
                 break
             }
-            
             if  let list = self.completeListDetails?[titleType] as? NSArray {
                 let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
                 dataArray = arrayObjs
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             } else {
                 dataArray = [WeeklyPlanList]()
             }

@@ -14,7 +14,7 @@ import EzPopup
 class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDelegate,UIPopoverPresentationControllerDelegate,TaykonProtocol {
   
 
-    @IBOutlet weak var changePasswordLabel: UIButton!
+    @IBOutlet weak var changePasswordView: UIView!
     @IBOutlet weak var setMyLocationButton: UIButton!
     @IBOutlet weak var verifyEmailButton: UIButton!
     @IBOutlet weak var profileImageView: ImageLoader!
@@ -146,12 +146,12 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         
         if(userType=="parent" || userType == "student")
         {
-            changePasswordLabel.isHidden=false
+            changePasswordView.isHidden=false
              titles = [parentCde,namae,userN,mail,mobile,location,verifyMail]
         }
         else
         {
-            changePasswordLabel.isHidden=true
+            changePasswordView.isHidden=true
             titles = [namae,userN,mail,mobile,location,verifyMail]
         }
        // titles = [parentCde,namae,userN,mail,mobile,location,verifyMail]
