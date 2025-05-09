@@ -719,7 +719,7 @@ extension MenuViewController: TaykonProtocol {
     func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {}
     
     func postNotification(userId : String,student: String, classValue : String,img : String,name : String){
-        NotificationCenter.default.post(name: Notification.Name("HomeChnageWithSiblings"), object:  ["userId" : userId])//, "studentName" : student,"classValue" : classValue,"img": img, "name" : name])
+        NotificationCenter.default.post(name: Notification.Name("HomeChnageWithSiblings"), object:  ["userId" : userId, "studentName" : student,"classValue" : classValue,"img": img, "name" : name])
     }
     
     func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
@@ -757,7 +757,11 @@ extension MenuViewController: PickerDelegate{
             UserDefaultsManager.manager.saveUserId(id: userId)
         }
         self.studentNameLabel.text = selectedSibling.studentName.safeValue
-       getBackToParentView(value: selectedSibling, titleValue: "", isForDraft: false, message: TinboxMessage(values: [:]))
+        sibling = true
+        siblingUserId = selectedSibling.userId.safeValue
+        siblingUname = selectedSibling.logInUserName.safeValue
+        siblingPwd = selectedSibling.logInPasword.safeValue
+        postNotification(userId: selectedSibling.userId ?? "", student: selectedSibling.studentName ?? "", classValue: selectedSibling.classValue ?? "", img: selectedSibling.proileImage ?? "", name: selectedSibling.studentName ?? "")
     }
     
 }

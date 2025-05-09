@@ -56,7 +56,8 @@ class CommunicateController: UIViewController,TaykonProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchTextField.delegate = self
+        hideKeyboardWhenTappedAround()
         communicateTable.register(UINib(nibName: "CommunicationTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationTableViewCell")
         searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         updateImageColors()
@@ -462,7 +463,7 @@ extension CommunicateController: CommunicationTableViewCellDelegate {
     }
 }
 
-extension CommunicateController{
+extension CommunicateController: UITextFieldDelegate {
     
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -495,5 +496,17 @@ extension CommunicateController{
         lastQuery = query
         //getInboxMessages(txt : query, types: typeValue)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+          
+          let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+          debounceWorkItem?.cancel()
+        
+          getInboxMessages(txt : query, types: typeValue)
+          
+          return true
+      }
     
 }

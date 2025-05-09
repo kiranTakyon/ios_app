@@ -29,6 +29,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         if let  _ = categoryName{
             self.topHeaderView.title = categoryName!
         }
+        hideKeyboardWhenTappedAround()
         topHeaderView.delegate = self
         getGalleryImages(searchTextValue: searchText)
         loadMoreControl = LoadMoreControl(scrollView: galleryCollectionView, spacingFromLastCell: 10, indicatorHeight: 60)

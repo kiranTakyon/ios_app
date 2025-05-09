@@ -63,6 +63,8 @@ class CalendarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.delegate = self
+        hideKeyboardWhenTappedAround()
         searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         tableView.register(UINib(nibName: "CalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "CalendarTableViewCell")
         setCalender()
@@ -491,7 +493,7 @@ extension CalendarController: TopHeaderDelegate {
     
 }
 
-extension CalendarController{
+extension CalendarController: UITextFieldDelegate {
     
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -521,6 +523,21 @@ extension CalendarController{
             return
         }
         lastQuery = query
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        debounceWorkItem?.cancel()
+        
+        let event = self.data[currentDate] ?? []
+        completeEvents = filterEvents(byTitle: query, in: event)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+                
+        return true
     }
     
 }

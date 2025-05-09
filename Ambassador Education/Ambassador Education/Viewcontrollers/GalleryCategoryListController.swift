@@ -22,6 +22,8 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.delegate = self
+        hideKeyboardWhenTappedAround()
         getCategoryList()
         topHeaderView.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
@@ -246,7 +248,7 @@ extension GalleryCategoryListController: TopHeaderDelegate {
     
 }
 
-extension GalleryCategoryListController{
+extension GalleryCategoryListController: UITextFieldDelegate {
     
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -278,6 +280,17 @@ extension GalleryCategoryListController{
 
         lastQuery = query
         //getInboxMessages(txt : query, types: typeValue)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        debounceWorkItem?.cancel()
+        
+        getCategoryList(query)
+        
+        return true
     }
     
 }

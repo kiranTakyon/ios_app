@@ -24,6 +24,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         topHeaderView.delegate = self
         tableViewProporties()
         getCategoryList()
+        hideKeyboardWhenTappedAround()
     }
     
     

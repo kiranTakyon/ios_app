@@ -15,6 +15,7 @@ import Messages
 import SwiftSoup
 import Updates
 import GoogleSignIn
+import IQKeyboardManagerSwift
 //import Google
 
 @UIApplicationMain
@@ -52,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //FirebaseApp.configure()
         setFireBase(application : application)
     //    FirebaseApp.configure()
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.enable = true
         googleSignInConfiguration()
         UIApplication.shared.applicationIconBadgeNumber = 0
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {  /// Showing dealy for update popup on top view
