@@ -86,7 +86,7 @@
                                                 </constraints>
                                             </imageView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zMC-vJ-vhf">
-                                                <rect key="frame" x="0.0" y="154" width="322.33333333333331" height="615"/>
+                                                <rect key="frame" x="0.0" y="184" width="322.33333333333331" height="585"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="MoJ-uI-Gbn">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -97,9 +97,9 @@
                                                 <cells/>
                                             </collectionView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-2j-4Rd">
-                                                <rect key="frame" x="20" y="134" width="282.33333333333331" height="0.0"/>
+                                                <rect key="frame" x="20" y="134" width="282.33333333333331" height="40"/>
                                                 <subviews>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwB-C5-xfs" customClass="Picker" customModule="ABC" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwB-C5-xfs" customClass="Picker" customModule="ABC" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="282.33333333333331" height="40"/>
                                                         <color key="backgroundColor" name="01ABBF"/>
                                                         <constraints>
@@ -127,19 +127,19 @@
                                             <constraint firstItem="HOH-YK-HnL" firstAttribute="leading" secondItem="hWC-dL-wQa" secondAttribute="leading" constant="10" id="jGM-TF-adP"/>
                                             <constraint firstItem="qRz-eS-lju" firstAttribute="leading" secondItem="HOH-YK-HnL" secondAttribute="trailing" constant="15" id="lNM-d9-v8H"/>
                                             <constraint firstAttribute="trailing" secondItem="Axb-2j-4Rd" secondAttribute="trailing" constant="20" symbolic="YES" id="lhJ-qS-L7n"/>
+                                            <constraint firstItem="zMC-vJ-vhf" firstAttribute="top" secondItem="Axb-2j-4Rd" secondAttribute="bottom" constant="10" id="mX6-Vr-vt5"/>
                                             <constraint firstItem="Km2-Ef-s3C" firstAttribute="centerY" secondItem="HOH-YK-HnL" secondAttribute="centerY" constant="-10" id="ovW-n8-yoz"/>
-                                            <constraint firstItem="zMC-vJ-vhf" firstAttribute="top" secondItem="Km2-Ef-s3C" secondAttribute="bottom" constant="10" id="vxP-nc-lPY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-2J-8J7">
                                         <rect key="frame" x="322.33333333333331" y="0.0" width="70.666666666666686" height="769"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiL-6S-0cF">
-                                                <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="169"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="199"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMy-le-eL4">
-                                                <rect key="frame" x="0.0" y="169" width="70.666666666666671" height="60"/>
+                                                <rect key="frame" x="0.0" y="199" width="70.666666666666671" height="60"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academicContent" translatesAutoresizingMaskIntoConstraints="NO" id="saX-DT-YlN">
                                                         <rect key="frame" x="17.666666666666686" y="5" width="35" height="35"/>
@@ -173,7 +173,7 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-kQ-20V">
-                                                <rect key="frame" x="-0.33333333333331439" y="229" width="70.666666666666671" height="60"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="259" width="70.666666666666671" height="60"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finance" translatesAutoresizingMaskIntoConstraints="NO" id="9y6-eK-pTM">
                                                         <rect key="frame" x="17.666666666666686" y="5" width="35" height="35"/>
@@ -207,18 +207,18 @@
                                                 </variation>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiT-aI-Krn">
-                                                <rect key="frame" x="-0.33333333333331439" y="229" width="70.666666666666671" height="60"/>
+                                                <rect key="frame" x="-0.33333333333331439" y="259" width="70.666666666666671" height="60"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="financeButtonPressed:" destination="ARD-7p-MNQ" eventType="touchUpInside" id="8a5-t9-oeV"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bwy-EL-fxF">
-                                                <rect key="frame" x="0.0" y="289" width="70.666666666666671" height="480"/>
+                                                <rect key="frame" x="0.0" y="319" width="70.666666666666671" height="450"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiP-yz-z36">
-                                                <rect key="frame" x="0.0" y="169" width="70.666666666666671" height="60"/>
+                                                <rect key="frame" x="0.0" y="199" width="70.666666666666671" height="60"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <connections>
                                                     <action selector="academicsButtonPressed:" destination="ARD-7p-MNQ" eventType="touchUpInside" id="VJs-OF-ehc"/>
