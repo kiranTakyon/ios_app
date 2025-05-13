@@ -17,7 +17,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var labelDataCount: UILabel!
     @IBOutlet weak var countContainerView: UIView!
-    
+    var model = TModule(values: [:])
     
     override func awakeFromNib() {
         super.awakeFromNib()

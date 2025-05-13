@@ -13,6 +13,7 @@ class NoticeBoardListTableViewCell: UITableViewCell {
     @IBOutlet weak var imageUserProfile: ImageLoader!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var cellBackView: CardView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

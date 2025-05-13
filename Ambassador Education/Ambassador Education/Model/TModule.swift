@@ -14,10 +14,11 @@ class TModule: Codable {
     
     var module : String?
     var data_count : Int64?
+    var hashKey : String?
 
     init(values:NSDictionary) {
         self.module = values["module"] as? String
         self.data_count = values["data_count"] as? Int64
-
+        self.hashKey = values["HashKey"] as? String
     }
 }

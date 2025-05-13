@@ -34,6 +34,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var financeLabel: UILabel!
     @IBOutlet weak var academicsImageView: UIImageView!
     @IBOutlet weak var academicsLabel: UILabel!
+    @IBOutlet weak var financeButton: UIButton!
     
     var delegate : TaykonProtocol?
     var siblings = [TSibling]()
@@ -237,6 +238,10 @@ extension MenuViewController{
     
     @objc func getMenuDetails() {
         let logInDetails = logInResponseGloabl
+        sectionHeaderItems.removeAll()
+        mainItems.removeAll()
+        financeItems.removeAll()
+        academicsItems.removeAll()
         guard let menuList = logInDetails["MenuList"] as? [[String: Any]] else { return }
         
         let sortedArray = menuList.sorted { Int($0["MenuOrder"] as! String)! < Int($1["MenuOrder"] as! String)! }
@@ -322,6 +327,11 @@ extension MenuViewController{
             if let index = financeItems.firstIndex(where: { $0.hashKey == "T0035" }) {
                 financeItems.remove(at: index)
             }
+        }
+        
+        if financeItems.count == 0 {
+            financeStackView.isHidden = true
+            financeButton.isHidden = true
         }
         
         if !isMenuApperaFirst{
@@ -415,11 +425,7 @@ extension MenuViewController{
         case "T0012":
             if OpenBrowser == true {
                 if let gradeBookLink = gradeBookLink, let url = URL(string: gradeBookLink) {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(url)
-                    } else {
-                        UIApplication.shared.openURL(url)
-                    }
+                    UIApplication.shared.open(url)
                 }
             } else {
                 let gradeVC = GradeViewController.instantiate(from: .grade)

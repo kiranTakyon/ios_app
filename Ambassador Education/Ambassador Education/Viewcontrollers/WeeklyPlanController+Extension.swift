@@ -133,6 +133,7 @@ extension WeeklyPlanController: UITextFieldDelegate {
         if array.count > 0{
             for each in array{
                 if each.division  == item{
+                    classNameString = each.division ?? "Class :"
                     return each.divId!
                 }
             }
@@ -147,7 +148,7 @@ extension WeeklyPlanController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == startingDateField {
-            self.showDatePicker(textField: textField, date: startTime)
+            self.showDatePicker(textField: textField, date: startTime,tag: 2)
         }
         else{
             self.showDatePicker(textField: textField, date: endTime)
@@ -155,12 +156,13 @@ extension WeeklyPlanController: UITextFieldDelegate {
         return true
     }
     
-    func showDatePicker(textField:UITextField,date:Date = Date()){
+    func showDatePicker(textField:UITextField,date:Date = Date(),tag:Int = 0) {
         
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.datePicker.tag = textField.tag
         self.datePicker.backgroundColor = UIColor.white
         self.datePicker.datePickerMode = UIDatePicker.Mode.date
+        self.datePicker.tag = tag
         textField.inputView = self.datePicker
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
@@ -195,37 +197,10 @@ extension WeeklyPlanController: UITextFieldDelegate {
         let dateValue  = dateFormatter1.string(from: datePicker.date)
         print("nn",datePicker.tag)
         
-        if datePicker.tag == 2{
-            
-            startingDateField.text = dateValue
-            print("nn",dateValue)
-            print("nn",startingDateField.text)
-            startTime = (datePicker.date as NSDate) as Date
-            startTimeString  = dateValue
-            endingDateField.text =  getThe5thDayFromSelectedDate(date: datePicker.date as NSDate, value: 4)
-            endTimeString = endingDateField.text!
-            endTime = changetoDiffFormatInDate(value:endTimeString,fromFormat: "dd-MM-yyyy",toFormat:"yyyy-MM-dd hh:mm:ss")
-            
-            //  endTime = convertToDate(dateVal: endTimeString)
-            
-            //            let dateFormatZeros = "yyyy-MM-dd hh:mm:ss +0000"
-            //            let dateFormatMonthText = "dd MMM yyyy"
-            //            let dateFormatDateTimeText = "d MMMM y hh:mm a"
-        }else{
-            
-            endingDateField.text = "\(dateValue)"
-            endTime = (datePicker.date as NSDate) as Date
-            endTimeString = dateValue
-            //  startingDateField.text =
-            // getThe5thDayFromSelectedDate(date: datePicker.date as NSDate, value: -4)
-            startTimeString = startingDateField.text!
-            
-        }
-        
         let calendar = NSCalendar.current
         
-        let date1 = calendar.startOfDay(for: startTime as Date)
-        let date2 = calendar.startOfDay(for: endTime as Date)//startOfDayForDate(endTime)
+        let date1 = datePicker.tag == 2 ? datePicker.date : calendar.startOfDay(for: startTime as Date)
+        let date2 = datePicker.tag == 0 ?  datePicker.date : calendar.startOfDay(for: endTime as Date)//startOfDayForDate(endTime)
         
         let components = calendar.dateComponents([.day], from: date1, to: date2)
         print(components.day)
@@ -241,8 +216,31 @@ extension WeeklyPlanController: UITextFieldDelegate {
                 //                viewLatestButtton.isUserInteractionEnabled = false
             }
             else{
-                //                searchButton.isUserInteractionEnabled = true
-                //                viewLatestButtton.isUserInteractionEnabled = true
+                if datePicker.tag == 2{
+                    startingDateField.text = dateValue
+                    print("nn",dateValue)
+                    print("nn",startingDateField.text)
+                    startTime = (datePicker.date as NSDate) as Date
+                    startTimeString  = dateValue
+                    endingDateField.text =  getThe5thDayFromSelectedDate(date: datePicker.date as NSDate, value: 4)
+                    endTimeString = endingDateField.text!
+                    endTime = changetoDiffFormatInDate(value:endTimeString,fromFormat: "dd-MM-yyyy",toFormat:"yyyy-MM-dd hh:mm:ss")
+                    
+                    //  endTime = convertToDate(dateVal: endTimeString)
+                    
+                    //            let dateFormatZeros = "yyyy-MM-dd hh:mm:ss +0000"
+                    //            let dateFormatMonthText = "dd MMM yyyy"
+                    //            let dateFormatDateTimeText = "d MMMM y hh:mm a"
+                }else{
+                    
+                    endingDateField.text = "\(dateValue)"
+                    endTime = (datePicker.date as NSDate) as Date
+                    endTimeString = dateValue
+                    //  startingDateField.text =
+                    // getThe5thDayFromSelectedDate(date: datePicker.date as NSDate, value: -4)
+                    startTimeString = startingDateField.text!
+                    
+                }
             }
             
         }

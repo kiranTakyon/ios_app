@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -133,12 +133,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8m-7k-nX1">
                                 <rect key="frame" x="10" y="263" width="564" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaN-yt-DBu">
-                                        <rect key="frame" x="40" y="0.0" width="524" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-JW-MOe">
+                                        <rect key="frame" x="40" y="0.0" width="0.0" height="30"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuL-ie-2bj">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZj-EH-v2a">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <constraints>
@@ -151,18 +156,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="GaN-yt-DBu" firstAttribute="top" secondItem="c8m-7k-nX1" secondAttribute="top" id="6GZ-fq-3SJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="GaN-yt-DBu" secondAttribute="bottom" id="6gS-GD-79T"/>
-                                    <constraint firstAttribute="bottom" secondItem="GaN-yt-DBu" secondAttribute="bottom" constant="47" id="A1j-ZS-G6R"/>
-                                    <constraint firstItem="GaN-yt-DBu" firstAttribute="leading" secondItem="vZj-EH-v2a" secondAttribute="trailing" constant="10" id="Wey-Ff-MPt"/>
+                                    <constraint firstItem="VQa-JW-MOe" firstAttribute="top" secondItem="c8m-7k-nX1" secondAttribute="top" id="X3m-ve-UcI"/>
                                     <constraint firstItem="vZj-EH-v2a" firstAttribute="centerY" secondItem="c8m-7k-nX1" secondAttribute="centerY" id="YEs-5l-ftU"/>
-                                    <constraint firstAttribute="trailing" secondItem="GaN-yt-DBu" secondAttribute="trailing" id="dEY-fh-r4Z"/>
                                     <constraint firstAttribute="height" constant="30" id="eET-bb-sGs"/>
                                     <constraint firstItem="vZj-EH-v2a" firstAttribute="leading" secondItem="c8m-7k-nX1" secondAttribute="leading" id="hMc-Gb-YtO"/>
+                                    <constraint firstItem="VQa-JW-MOe" firstAttribute="leading" secondItem="c8m-7k-nX1" secondAttribute="leading" constant="182" id="ht6-mI-2hj"/>
+                                    <constraint firstItem="VQa-JW-MOe" firstAttribute="leading" secondItem="vZj-EH-v2a" secondAttribute="trailing" constant="10" id="qOs-1T-UW6"/>
+                                    <constraint firstAttribute="bottom" secondItem="VQa-JW-MOe" secondAttribute="bottom" id="zF0-pe-puZ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="A1j-ZS-G6R"/>
+                                        <exclude reference="ht6-mI-2hj"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -240,10 +244,10 @@
                 <outlet property="buttonArrow" destination="ftn-w4-INZ" id="Nnl-1Y-j8Q"/>
                 <outlet property="buttonCellDidTap" destination="8pa-Z5-mFr" id="ZWF-Di-qds"/>
                 <outlet property="buttonEmojiDidTap" destination="vZj-EH-v2a" id="JEp-7s-zjZ"/>
+                <outlet property="imagesStackView" destination="VQa-JW-MOe" id="89r-g5-9d2"/>
                 <outlet property="labelTime" destination="QFJ-p0-4zM" id="8Yc-SW-2YN"/>
                 <outlet property="labelTitle" destination="ALf-XA-AOe" id="eSB-zn-3Hx"/>
                 <outlet property="playIcon" destination="Kn3-VZ-0up" id="WnH-Ie-kcc"/>
-                <outlet property="reactionLabel" destination="GaN-yt-DBu" id="QAZ-gc-P74"/>
                 <outlet property="typeImageV" destination="6Ij-6Q-KbI" id="FOO-aU-5Za"/>
                 <outlet property="typeImageView" destination="4c0-a8-yUT" id="Qa6-Ut-on0"/>
                 <outlet property="videoPlayerView" destination="hpd-bS-YmB" id="ukE-LU-bmF"/>

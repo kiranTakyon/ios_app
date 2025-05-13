@@ -21,6 +21,7 @@ class NotificationsTableViewCell: UITableViewCell {
 
     //MARK: - IBOutlet's -
 
+    @IBOutlet weak var imagesStackView: UIStackView!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var alertTitle: UILabel!
@@ -100,12 +101,12 @@ class NotificationsTableViewCell: UITableViewCell {
 
     func setUpReaction(reactions: TReaction) {
         emojiCount = 1
-        reactionLabel.text = "\(reactions.emojis) \(reactions.totalReactionCount)  "
+        addImagesToStackView(reactions.reactionImageNames, stackView: imagesStackView)
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        reactionLabel.text = nil
+      //  reactionLabel.text = nil
         typeImageV.image = nil
         playIcon.isHidden = true
         playerLayer?.removeFromSuperlayer()
@@ -125,6 +126,23 @@ class NotificationsTableViewCell: UITableViewCell {
     
     @IBAction func profileButtonTapped(_ sender: UIButton){
         delegate?.notificationsTableViewCell(self, didProfileTapped: sender, index: index)
+    }
+    
+    func addImagesToStackView(_ images: [String], stackView: UIStackView) {
+        stackView.arrangedSubviews.forEach { view in
+            stackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+
+        for image in images {
+            let imageView = UIImageView(image: UIImage(named: image))
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = false
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
+            stackView.addArrangedSubview(imageView)
+        }
     }
 }
 

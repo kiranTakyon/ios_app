@@ -68,10 +68,8 @@ class DashboardViewController: UIViewController{
         setAllTextFieldsEmpty()
         updateCollectionViewHeight()
         userType = UserDefaultsManager.manager.getUserType()
-        if userType != "admin" {
-            for item in apiRoutesArray {
-                callProgressAPI(item)
-            }
+        for item in apiRoutesArray {
+            callProgressAPI(item)
         }
     }
     
@@ -255,17 +253,15 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
+        switch section {
+        case 0:
             return moduleList.count
-        }
-        else if section == 1 && userType != "admin" {
-            return 1
-        } else {
-            if progressViews.count > 0 {
-                return 4
-            } else {
-                return progressViews.count
-            }
+        case 1:
+            return feeSummary.isEmpty ? 0 : 1
+        case 2:
+            return progressViews.isEmpty ? 0 : 4
+        default:
+            return 0
         }
     }
     
@@ -273,6 +269,7 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
         if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashboardCollectionViewCell.identifier , for: indexPath) as? DashboardCollectionViewCell else { return UICollectionViewCell() }
             let module = moduleList[indexPath.row]
+            cell.model = module
             cell.nameLabel.text = module.module
             cell.labelDataCount.text = module.data_count != nil ? String(module.data_count!) : nil
             let index = indexPath.item % moduleBgColor.count
@@ -331,8 +328,8 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if let cell = collectionView.cellForItem(at: indexPath) as? DashboardCollectionViewCell {
-                let moduleName = cell.nameLabel.text ?? ""
-                navigateToViewController(for: moduleName, animated: true)
+                let module = cell.model
+                navigateToViewController(for: module.hashKey ?? "", animated: true)
             }
         }
     }
@@ -346,11 +343,11 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
         let totalPadding = 5 + 5 + 10 * 2
         if indexPath.section == 0{
             let itemWidth = (Int(collectionViewWidth) - totalPadding) / 3
-            return CGSize(width: itemWidth, height: itemWidth + 15)
+            return CGSize(width: itemWidth, height: itemWidth + 20)
         }
         else if indexPath.section == 1{
             if let feeSummary = feeSummary.first{
-                return CGSize(width: collectionView.bounds.width - 10, height: 350)
+                return CGSize(width: collectionView.bounds.width - 10, height: 370)
             }
             else{
                 return CGSize(width: collectionView.bounds.width - 10, height: 0)
@@ -386,19 +383,41 @@ extension DashboardViewController {
     func navigateToViewController(for key: String, animated: Bool = true) {
         var destinationVC: UIViewController?
         switch key {
-        case "Notice Board":
+        case "T0001":
+            destinationVC = DashboardViewController.instantiate(from: .home)
+        case "T0011":
             destinationVC = NoticeboardCategoryController.instantiate(from: .noticeboard)
-        case "Add Gallery", "Gallery":
+        case "T0018":
             destinationVC = GalleryCategoryListController.instantiate(from: .gallery)
-        case "Communicate and Collaborate":
+        case "T0009":
             destinationVC = CommunicateLandController.instantiate(from: .communicateLand)
-        case "Weekly Plan":
+        case "T0004", "T0008":
+            print("No navigation available for this key.")
+            return
+        case "T0005":
             destinationVC = WeeklyPlanController.instantiate(from: .weeklyPlan)
-        case "Exam Schedule":
-            destinationVC = CalendarController.instantiate(from: .calendar)
-        case "Awareness & Policies":
+        case "T0012":
+            let gradeVC = GradeViewController.instantiate(from: .grade)
+            gradeVC.hashkey = selectedHash ?? ""
+            destinationVC = gradeVC
+        case "T0019":
             destinationVC = AwarenessViewController.instantiate(from: .awareness)
-            
+        case "T0021":
+            destinationVC = DigitalResourcesListController.instantiate(from: .digitalResource)
+        case "T0041", "T0039", "T0040", "T0058", "T0059", "T0059_3", "T0059_4", "T0059_5", "T0060", "T0069", "T0059_6":
+            let gradeVC = GradeViewController.instantiate(from: .grade)
+            destinationVC = gradeVC
+        case "T0035":
+            destinationVC = PaymentDetailsController.instantiate(from: .paymentDetails)
+        case "T0036", "T0037", "T0038":
+            destinationVC = PaymentDetailsController.instantiate(from: .paymentDetails)
+        case "T0002":
+            destinationVC = CalendarController.instantiate(from: .calendar)
+        case "MyProfileKey":
+            let profile = MyProfileController.instantiate(from: .myProfile)
+            profile.shouldShowBackButton = true
+            destinationVC = profile
+      
         default:
             print("Invalid key provided.")
             return

@@ -21,6 +21,7 @@ protocol WeeklyPlanControllerDelegate: AnyObject {
 
 class WeeklyPlanController: UIViewController,TaykonProtocol {
         
+    @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var viewPager: MXSegmentedPager!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var tableView: UITableView!
@@ -58,7 +59,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var isSearch = Int()
     
     var dataArray : [WeeklyPlanList] = [WeeklyPlanList](){
-
         didSet {
             self.setDataArray()
         }
@@ -80,12 +80,15 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     
     var currentFromDate = "Start Date"
     var currentToDate = "End Date"
-    
+    var classNameString = ""{
+        didSet {
+            self.setClassName(for: classNameString)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         isEmpty = false
-//        self.showPopUpView()
         setDateFormatter()
         setDatesOnPicker()
         videoDownload.delegate = self
@@ -117,6 +120,10 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         super.viewWillAppear(animated)
         addBlurEffectToTableView(inputView: self.view, hide: true)
         progressBar.isHidden = true
+    }
+    
+    func setClassName(for className: String) {
+        classNameLabel.text = "Class: \(className)"
     }
     
     func deleteTheSelectedAttachment(index: Int) {
@@ -194,12 +201,13 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                         if div.count > 0{
                             self.divId = div[0].divId.safeValue
                             self.subId = sub[0].subject_id.safeValue
-                            self.getWeeklyPlanDetails(fromDate: "", toDate: "", isSearch: 1, Sub_Id: self.subId, div: self.divId)
+                            self.classNameString = div[0].division.safeValue
+                            self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId)
                         }
                     }
                     else
                     {
-                        self.getWeeklyPlanDetails(fromDate: "", toDate: "", isSearch: 1, Sub_Id: self.subId, div: self.divId)
+                        self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId)
                     }
                 }
             }
@@ -483,13 +491,13 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     }
     
     @IBAction func FromdatePickerAction(_ sender: Any) {
-        datePicker.date = startTime
+ //       datePicker.date = startTime
         self.fromDatePickerTapped()
     }
     
     
     @IBAction func TodatePickerAction(_ sender: Any) {
-        datePicker.date = endTime
+    //    datePicker.date = endTime
         self.toDatePickerTapped()
     }
     

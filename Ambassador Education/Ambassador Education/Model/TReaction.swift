@@ -55,6 +55,25 @@ class TReaction: Codable {
         return text
     }
 
+    var reactionImageNames: [String] {
+        var imageNames: [String] = []
+        let reactionImages: [(Int?, String)] = [
+            (like, "icn_like"),
+            (love, "icn_love"),
+            (wow, "icn_wow"),
+            (partyPopper, "party_popper"),
+            (clappingHand, "icn_clap")
+        ]
+
+        for (count, imageName) in reactionImages {
+            if (count ?? 0) > 0 {
+                imageNames.append(imageName)
+            }
+        }
+
+        return imageNames
+    }
+    
     var reactionCount: Int {
         var count: Int = 0
         let reactions = [like, love, wow, partyPopper, clappingHand]
