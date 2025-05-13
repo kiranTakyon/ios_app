@@ -704,15 +704,17 @@ extension FeedViewController{
     }
     
     @objc func sessionExpired() {
-        let topVc = UIApplication.getTopViewController()
-        let alertController = UIAlertController(title: "Alert", message: "Your session has expired. Please log in again.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            isFirstTime = true
-            gradeBookLink = ""
-            showLoginPage()
+        DispatchQueue.main.async {
+            let topVc = UIApplication.getTopViewController()
+            let alertController = UIAlertController(title: "Alert", message: "Your session has expired. Please log in again.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                isFirstTime = true
+                gradeBookLink = ""
+                showLoginPage()
+            }
+            alertController.addAction(okAction)
+            topVc?.present(alertController, animated: true, completion: nil)
         }
-        alertController.addAction(okAction)
-        topVc?.present(alertController, animated: true, completion: nil)
     }
     
     func setNotitificationList(id :String){
