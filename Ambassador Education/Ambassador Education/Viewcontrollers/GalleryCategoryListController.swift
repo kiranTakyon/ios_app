@@ -260,10 +260,9 @@ extension GalleryCategoryListController: UITextFieldDelegate {
         }
         
         debounceWorkItem = workItem
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
     }
-    
+
     private func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             if lastQuery != "" {
@@ -279,9 +278,9 @@ extension GalleryCategoryListController: UITextFieldDelegate {
         }
 
         lastQuery = query
-        //getInboxMessages(txt : query, types: typeValue)
+        getCategoryList(query)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
@@ -289,7 +288,6 @@ extension GalleryCategoryListController: UITextFieldDelegate {
         debounceWorkItem?.cancel()
         
         getCategoryList(query)
-        
         return true
     }
     

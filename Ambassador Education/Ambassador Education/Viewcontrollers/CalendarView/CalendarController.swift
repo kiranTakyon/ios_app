@@ -20,7 +20,7 @@ class CalendarController: UIViewController {
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
-    
+    private var debounceDelay: TimeInterval { 0.3 }
     private var lastQuery: String = ""
     private var debounceWorkItem: DispatchWorkItem?
     var prevButton: UIButton!
@@ -497,47 +497,53 @@ extension CalendarController: UITextFieldDelegate {
     
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
         debounceWorkItem?.cancel()
+        
         let workItem = DispatchWorkItem { [weak self] in
             self?.performSearchIfNeeded(query: query)
         }
+        
         debounceWorkItem = workItem
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + debounceDelay, execute: workItem)
     }
     
     private func performSearchIfNeeded(query: String) {
         if query.isEmpty {
-            if lastQuery != "" {
-                lastQuery = ""
-                let event = self.data[currentDate] ?? []
-                completeEvents = filterEvents(byTitle: query, in: event)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
+            guard !lastQuery.isEmpty else { return }
+            lastQuery = ""
+            callAPI(with: query)
             return
         }
-
+        
         guard query != lastQuery else {
             print("Skipping API – same query")
             return
         }
+        
         lastQuery = query
+        callAPI(with: query)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
         let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        debounceWorkItem?.cancel()
         
-        let event = self.data[currentDate] ?? []
-        completeEvents = filterEvents(byTitle: query, in: event)
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-                
+        debounceWorkItem?.cancel()
+        callAPI(with: query)
+        
         return true
+    }
+    
+    private func callAPI(with query: String) {
+        let eventsForDate = data[currentDate] ?? []
+        completeEvents = filterEvents(byTitle: query, in: eventsForDate)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
 }

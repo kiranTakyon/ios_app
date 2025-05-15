@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AwarenessViewController: UIViewController,UITableViewDataSource,UITableViewDelegate ,UITextFieldDelegate{
+class AwarenessViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
 
     @IBOutlet weak var articleTableView: UITableView!
@@ -17,26 +17,18 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
     
     var articleList = [TNAwarnessArticleDetail]()
     var searchText = ""
-
+    private var debounceDelay: TimeInterval { 0.3 }
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
+        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         tableViewProporties()
         getArticleList()
     }
-
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != "" {
-            searchText = topHeaderView.searchTextField.text!
-            topHeaderView.searchTextField.resignFirstResponder()
-            getArticleList()
-        }
-        return true
-    }
-    
 
     func tableViewProporties() {
       //  let listNib = UINib(nibName: "ArticleCategoryList", bundle: nil)
@@ -217,3 +209,51 @@ extension AwarenessViewController: TopHeaderDelegate {
     }
     
 }
+
+
+extension AwarenessViewController: UITextFieldDelegate {
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            if lastQuery != "" {
+                lastQuery = ""
+                searchText = lastQuery
+                getArticleList()
+            }
+            return
+        }
+
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+
+        lastQuery = query
+        searchText = lastQuery
+        getArticleList()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        debounceWorkItem?.cancel()
+        searchText = lastQuery
+        getArticleList()
+        return true
+    }
+}
+
+

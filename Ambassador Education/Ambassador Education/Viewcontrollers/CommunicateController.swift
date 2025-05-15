@@ -494,7 +494,7 @@ extension CommunicateController: UITextFieldDelegate {
         }
 
         lastQuery = query
-        //getInboxMessages(txt : query, types: typeValue)
+        getInboxMessages(txt : query, types: typeValue)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -139,8 +139,8 @@ class NotificationsTableViewCell: UITableViewCell {
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = false
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-            imageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
+            imageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
             stackView.addArrangedSubview(imageView)
         }
     }

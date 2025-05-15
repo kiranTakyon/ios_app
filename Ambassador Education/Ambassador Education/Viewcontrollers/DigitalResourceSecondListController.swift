@@ -15,7 +15,7 @@ struct CategoryAndItem {
     var isItem : Bool?
 }
 
-class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate {
+class DigitalResourceSecondListController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var catId = ""
@@ -29,11 +29,15 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
     var arrCatgoryAndItem: [CategoryAndItem] = []
     var shouldEnableLoadMore: Bool = true
     var isPresent: Bool = false
+    private var debounceDelay: TimeInterval { 0.3 }
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
+        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         setUpCollectionView()
         getDigitalResources(searcText : searchText)
         setTitle()
@@ -50,16 +54,6 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
             topHeaderView.title = title
         }
     }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != "" {
-            searchText = topHeaderView.searchTextField.text!
-            topHeaderView.searchTextField.resignFirstResponder()
-            getDigitalResources(searcText: searchText)
-        }
-        return true
-    }
-    
     
     @objc func clearTextField() {
        getDigitalResources(searcText: "")
@@ -226,5 +220,52 @@ extension DigitalResourceSecondListController: UICollectionViewDelegateFlowLayou
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
        return 10
+    }
+}
+
+extension DigitalResourceSecondListController: UITextFieldDelegate {
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            lastQuery = ""
+            searchText = lastQuery
+            getDigitalResources(searcText: searchText)
+            return
+        }
+        
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+        
+        lastQuery = query
+        searchText = lastQuery
+        getDigitalResources(searcText: searchText)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        debounceWorkItem?.cancel()
+        
+        if !lastQuery.isEmpty {
+            searchText = lastQuery
+            getDigitalResources(searcText: searchText)
+        }
+        
+        return true
     }
 }

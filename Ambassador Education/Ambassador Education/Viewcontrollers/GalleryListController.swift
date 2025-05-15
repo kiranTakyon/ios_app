@@ -8,13 +8,16 @@
 
 import UIKit
 
-class GalleryListController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UITextFieldDelegate {
+class GalleryListController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var categoryId : String?
     var categoryName:String?
     var imageArray = [String]()
     var paginationNumber = 0
     var searchText = ""
+    private var debounceDelay: TimeInterval { 0.3 }
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
     
     @IBOutlet weak var searchIcon: UIImageView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -35,19 +38,10 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         loadMoreControl = LoadMoreControl(scrollView: galleryCollectionView, spacingFromLastCell: 10, indicatorHeight: 60)
         loadMoreControl.delegate = self
         topHeaderView.searchTextField.delegate = self
+        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         self.navigationController?.navigationBar.isHidden = true
         
         // Do any additional setup after loading the view.
-    }
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != ""{
-            searchText = topHeaderView.searchTextField.text!
-            topHeaderView.searchTextField.resignFirstResponder()
-            getGalleryImages(searchTextValue: searchText)
-        }
-        return true
     }
     
     func getGalleryImages(searchTextValue : String){
@@ -295,3 +289,52 @@ extension GalleryListController: TopHeaderDelegate {
     }
     
 }
+
+
+extension GalleryListController: UITextFieldDelegate {
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + debounceDelay, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            lastQuery = ""
+            searchText = lastQuery
+            getGalleryImages(searchTextValue: searchText)
+            return
+        }
+        
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+        
+        lastQuery = query
+        searchText = lastQuery
+        getGalleryImages(searchTextValue: searchText)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        debounceWorkItem?.cancel()
+        
+        if !lastQuery.isEmpty {
+            searchText = lastQuery
+            getGalleryImages(searchTextValue: searchText)
+        }
+        
+        return true
+    }
+}
+

@@ -8,18 +8,22 @@
 
 import UIKit
 
-class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDelegate{
+class CommunicateLandController: UIViewController,TaykonProtocol {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
     var searchText = ""
     var delegates : TaykonProtocol?
+    private var debounceDelay: TimeInterval { 0.3 }
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
+        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         self.getInboxMessages(searchTextValue : "")
         // Do any additional setup after loading the view.
     }
@@ -109,18 +113,6 @@ class CommunicateLandController: UIViewController,TaykonProtocol ,UITextFieldDel
     }
         
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != ""{
-            searchText = topHeaderView.searchTextField.text!
-            topHeaderView.searchTextField.resignFirstResponder()
-            if searchText != ""{
-                let obj = ["text" : topHeaderView.searchTextField.text.safeValue,"type": typeValue] as [String : Any]
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "searchAction"), object: obj)
-            }
-        }
-        return true
-    }
-    
     func downloadPdfButtonAction(url: String, fileName: String?) {
         
     }
@@ -198,3 +190,59 @@ extension CommunicateLandController: TopHeaderDelegate {
     }
     
 }
+
+extension CommunicateLandController: UITextFieldDelegate {
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + debounceDelay, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            lastQuery = ""
+            searchText = lastQuery
+            return
+        }
+        
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+        
+        lastQuery = query
+        searchText = lastQuery
+        
+        let obj: [String: Any] = [
+            "text": query,
+            "type": typeValue
+        ]
+        NotificationCenter.default.post(name: NSNotification.Name("searchAction"), object: obj)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        debounceWorkItem?.cancel()
+        
+        if !lastQuery.isEmpty {
+            searchText = lastQuery
+            let obj: [String: Any] = [
+                "text": lastQuery,
+                "type": typeValue
+            ]
+            NotificationCenter.default.post(name: NSNotification.Name("searchAction"), object: obj)
+        }
+        
+        return true
+    }
+}
+

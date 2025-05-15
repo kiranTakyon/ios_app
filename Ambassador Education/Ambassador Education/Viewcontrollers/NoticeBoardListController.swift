@@ -8,16 +8,18 @@
 
 import UIKit
 
-class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var listTableVIew: UITableView!
     
     var listValues : [TNNoticeBoardDetail]?
     var tempValue : [TNNoticeBoardDetail]?
     var titleValue : String?
-
-    @IBOutlet weak var topHeaderView: TopHeaderView!
+    private var debounceDelay: TimeInterval { 0.3 }
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
     
+    @IBOutlet weak var topHeaderView: TopHeaderView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,8 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         tempValue = listValues
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
-        
-        // Do any additional setup after loading the view.
+        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+
     }
     
     func tableViewProporties(){
@@ -43,14 +45,6 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         if let  _ = titleValue{
             self.topHeaderView.title = titleValue!
         }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != ""{
-            topHeaderView.searchTextField.resignFirstResponder()
-            getListSearch(text: topHeaderView.searchTextField.text!)
-        }
-        return true
     }
     
     //MARK:- TableView Delegates and Datasources
@@ -176,4 +170,48 @@ extension NoticeBoardListController: TopHeaderDelegate {
         }
     }
     
+}
+
+extension NoticeBoardListController: UITextFieldDelegate {
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            lastQuery = ""
+            getListSearch(text: "")
+            return
+        }
+        
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+        
+        lastQuery = query
+        getListSearch(text: query)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        debounceWorkItem?.cancel()
+        
+        if !lastQuery.isEmpty {
+            getListSearch(text: lastQuery)
+        }
+        
+        return true
+    }
 }

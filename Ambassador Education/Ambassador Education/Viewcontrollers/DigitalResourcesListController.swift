@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
+class DigitalResourcesListController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -17,23 +17,17 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
     var categoryList = [TNDigitalResourceCategory]()
     var searchText = ""
     var isPresent: Bool = false
+    private var debounceDelay: TimeInterval { 0.3 }
+    private var lastQuery: String = ""
+    private var debounceWorkItem: DispatchWorkItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
         topHeaderView.searchTextField.delegate = self
+        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         setUpCollectionView()
         getCategoryList()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != ""{
-            //setClaerButton()
-            searchText = topHeaderView.searchTextField.text!
-            topHeaderView.searchTextField.resignFirstResponder()
-            self.getCategoryList()
-        }
-        return true
     }
    
     func setUpCollectionView() {
@@ -198,3 +192,51 @@ extension DigitalResourcesListController: TopHeaderDelegate {
     }
     
 }
+
+extension DigitalResourcesListController: UITextFieldDelegate {
+    
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
+        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        
+        debounceWorkItem?.cancel()
+        
+        let workItem = DispatchWorkItem { [weak self] in
+            self?.performSearchIfNeeded(query: query)
+        }
+        
+        debounceWorkItem = workItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
+    }
+    
+    private func performSearchIfNeeded(query: String) {
+        if query.isEmpty {
+            lastQuery = ""
+            searchText = lastQuery
+            getCategoryList()
+            return
+        }
+        
+        guard query != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+        
+        lastQuery = query
+        searchText = lastQuery
+        getCategoryList()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        debounceWorkItem?.cancel()
+        
+        if !lastQuery.isEmpty {
+            searchText = lastQuery
+            getCategoryList()
+        }
+        
+        return true
+    }
+}
+
