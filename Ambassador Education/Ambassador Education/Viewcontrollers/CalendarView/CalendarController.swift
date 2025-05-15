@@ -20,9 +20,10 @@ class CalendarController: UIViewController {
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
-    private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    
+    private var lastQuery = ""
+    private var searchText = ""
+    private var debouncedDelegate: DebouncedTextFieldDelegate!
     var prevButton: UIButton!
     var nextButton: UIButton!
     var dictionary = [String:[TNCalendarEvent]]()
@@ -63,9 +64,9 @@ class CalendarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.delegate = self
         hideKeyboardWhenTappedAround()
-        searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        searchTextField.delegate = debouncedDelegate
         tableView.register(UINib(nibName: "CalendarTableViewCell", bundle: nil), forCellReuseIdentifier: "CalendarTableViewCell")
         setCalender()
         getCalendarEvents()
@@ -493,23 +494,9 @@ extension CalendarController: TopHeaderDelegate {
     
 }
 
-extension CalendarController: UITextFieldDelegate {
+extension CalendarController: DebouncedSearchHandling{
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + debounceDelay, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+    func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             guard !lastQuery.isEmpty else { return }
             lastQuery = ""
@@ -526,21 +513,9 @@ extension CalendarController: UITextFieldDelegate {
         callAPI(with: query)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        callAPI(with: query)
-        
-        return true
-    }
-    
     private func callAPI(with query: String) {
         let eventsForDate = data[currentDate] ?? []
         completeEvents = filterEvents(byTitle: query, in: eventsForDate)
-        
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }

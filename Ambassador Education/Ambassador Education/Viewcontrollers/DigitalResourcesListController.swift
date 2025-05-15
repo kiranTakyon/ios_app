@@ -18,14 +18,14 @@ class DigitalResourcesListController: UIViewController {
     var searchText = ""
     var isPresent: Bool = false
     private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+    private var debouncedDelegate: DebouncedTextFieldDelegate! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.searchTextField.delegate = self
-        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        topHeaderView.searchTextField.delegate = debouncedDelegate
         setUpCollectionView()
         getCategoryList()
     }
@@ -193,23 +193,9 @@ extension DigitalResourcesListController: TopHeaderDelegate {
     
 }
 
-extension DigitalResourcesListController: UITextFieldDelegate {
+extension DigitalResourcesListController: DebouncedSearchHandling {
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+     func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
@@ -227,16 +213,5 @@ extension DigitalResourcesListController: UITextFieldDelegate {
         getCategoryList()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        debounceWorkItem?.cancel()
-        
-        if !lastQuery.isEmpty {
-            searchText = lastQuery
-            getCategoryList()
-        }
-        
-        return true
-    }
 }
 

@@ -16,16 +16,17 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var searchTextField: UITextField!
     
-    private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+    private var searchText = ""
+    private var debouncedDelegate: DebouncedTextFieldDelegate!
+    
     var selectedIndexes: [Int] = []
-    var searchText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        searchTextField.delegate = debouncedDelegate
         tableViewProporties()
         getCategoryList()
         hideKeyboardWhenTappedAround()
@@ -207,23 +208,9 @@ extension NoticeboardCategoryController: NoticeboardCategoryTableViewCellDelegat
     
 }
 
-extension NoticeboardCategoryController: UITextFieldDelegate {
+extension NoticeboardCategoryController: DebouncedSearchHandling{
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+    func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             if lastQuery != "" {
                 lastQuery = ""
@@ -232,23 +219,15 @@ extension NoticeboardCategoryController: UITextFieldDelegate {
             }
             return
         }
-
+        
         guard query != lastQuery else {
             print("Skipping API – same query")
             return
         }
-
+        
         lastQuery = query
         searchText = lastQuery
         getCategoryList()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        debounceWorkItem?.cancel()
-        searchText = lastQuery
-        getCategoryList()
-        return true
-    }
-    
+
 }

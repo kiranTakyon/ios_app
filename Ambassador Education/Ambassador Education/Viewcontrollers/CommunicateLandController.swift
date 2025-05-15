@@ -13,17 +13,16 @@ class CommunicateLandController: UIViewController,TaykonProtocol {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
-    var searchText = ""
+    private var searchText = ""
     var delegates : TaykonProtocol?
-    private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+    private var debouncedDelegate: DebouncedTextFieldDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.searchTextField.delegate = self
-        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        topHeaderView.searchTextField.delegate = debouncedDelegate
         self.getInboxMessages(searchTextValue : "")
         // Do any additional setup after loading the view.
     }
@@ -191,23 +190,9 @@ extension CommunicateLandController: TopHeaderDelegate {
     
 }
 
-extension CommunicateLandController: UITextFieldDelegate {
+extension CommunicateLandController: DebouncedSearchHandling {
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + debounceDelay, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+     func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
@@ -229,20 +214,5 @@ extension CommunicateLandController: UITextFieldDelegate {
         NotificationCenter.default.post(name: NSNotification.Name("searchAction"), object: obj)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        debounceWorkItem?.cancel()
-        
-        if !lastQuery.isEmpty {
-            searchText = lastQuery
-            let obj: [String: Any] = [
-                "text": lastQuery,
-                "type": typeValue
-            ]
-            NotificationCenter.default.post(name: NSNotification.Name("searchAction"), object: obj)
-        }
-        
-        return true
-    }
 }
 

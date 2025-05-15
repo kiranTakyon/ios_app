@@ -16,8 +16,8 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
     var paginationNumber = 0
     var searchText = ""
     private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+     private var debouncedDelegate: DebouncedTextFieldDelegate!
     
     @IBOutlet weak var searchIcon: UIImageView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -37,8 +37,8 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         getGalleryImages(searchTextValue: searchText)
         loadMoreControl = LoadMoreControl(scrollView: galleryCollectionView, spacingFromLastCell: 10, indicatorHeight: 60)
         loadMoreControl.delegate = self
-        topHeaderView.searchTextField.delegate = self
-        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        topHeaderView.searchTextField.delegate = debouncedDelegate 
         self.navigationController?.navigationBar.isHidden = true
         
         // Do any additional setup after loading the view.
@@ -291,23 +291,9 @@ extension GalleryListController: TopHeaderDelegate {
 }
 
 
-extension GalleryListController: UITextFieldDelegate {
+extension GalleryListController: DebouncedSearchHandling {
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + debounceDelay, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+    func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
@@ -325,16 +311,5 @@ extension GalleryListController: UITextFieldDelegate {
         getGalleryImages(searchTextValue: searchText)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        debounceWorkItem?.cancel()
-        
-        if !lastQuery.isEmpty {
-            searchText = lastQuery
-            getGalleryImages(searchTextValue: searchText)
-        }
-        
-        return true
-    }
 }
 

@@ -44,8 +44,8 @@ class CommunicateController: UIViewController,TaykonProtocol {
     var paginationNumber = 1
     
     var inboxMessages = [TinboxMessage]()
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+     private var debouncedDelegate: DebouncedTextFieldDelegate!
     let refreshControl = UIRefreshControl()
     var searchText = ""
     var isForDraft: Bool = false
@@ -56,10 +56,10 @@ class CommunicateController: UIViewController,TaykonProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.delegate = self
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        searchTextField.delegate = debouncedDelegate 
         hideKeyboardWhenTappedAround()
         communicateTable.register(UINib(nibName: "CommunicationTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationTableViewCell")
-        searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         updateImageColors()
     }
     
@@ -463,23 +463,9 @@ extension CommunicateController: CommunicationTableViewCellDelegate {
     }
 }
 
-extension CommunicateController: UITextFieldDelegate {
+extension CommunicateController: DebouncedSearchHandling {
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+    func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             if lastQuery != "" {
                 lastQuery = ""
@@ -496,17 +482,5 @@ extension CommunicateController: UITextFieldDelegate {
         lastQuery = query
         getInboxMessages(txt : query, types: typeValue)
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-          textField.resignFirstResponder()
-          
-          let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-          debounceWorkItem?.cancel()
-        
-          getInboxMessages(txt : query, types: typeValue)
-          
-          return true
-      }
     
 }

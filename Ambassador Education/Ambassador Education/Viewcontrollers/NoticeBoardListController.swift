@@ -15,9 +15,8 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
     var listValues : [TNNoticeBoardDetail]?
     var tempValue : [TNNoticeBoardDetail]?
     var titleValue : String?
-    private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+     private var debouncedDelegate: DebouncedTextFieldDelegate!
     
     @IBOutlet weak var topHeaderView: TopHeaderView!
     
@@ -27,9 +26,8 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         setTitle()
         tempValue = listValues
         topHeaderView.delegate = self
-        topHeaderView.searchTextField.delegate = self
-        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
-
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        topHeaderView.searchTextField.delegate = debouncedDelegate
     }
     
     func tableViewProporties(){
@@ -172,23 +170,9 @@ extension NoticeBoardListController: TopHeaderDelegate {
     
 }
 
-extension NoticeBoardListController: UITextFieldDelegate {
+extension NoticeBoardListController: DebouncedSearchHandling {
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+    func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             lastQuery = ""
             getListSearch(text: "")
@@ -204,14 +188,4 @@ extension NoticeBoardListController: UITextFieldDelegate {
         getListSearch(text: query)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        debounceWorkItem?.cancel()
-        
-        if !lastQuery.isEmpty {
-            getListSearch(text: lastQuery)
-        }
-        
-        return true
-    }
 }

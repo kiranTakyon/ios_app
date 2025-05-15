@@ -20,15 +20,14 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
     var id : Int?
     var titleName : String?
     var start = Int()
-    private var debounceDelay: TimeInterval { 0.3 }
-    private var lastQuery: String = ""
-    private var debounceWorkItem: DispatchWorkItem?
+    private var lastQuery = ""
+    private var debouncedDelegate: DebouncedTextFieldDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topHeaderView.delegate = self
-        topHeaderView.searchTextField.delegate = self
-        topHeaderView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        topHeaderView.searchTextField.delegate = debouncedDelegate
         tableViewProporties()
         topHeaderView.title = titleName ?? ""
         start = 0
@@ -192,23 +191,9 @@ extension AwarenessDetailViewController: TopHeaderDelegate {
     
 }
 
-extension AwarenessDetailViewController: UITextFieldDelegate {
+extension AwarenessDetailViewController: DebouncedSearchHandling{
     
-    @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        
-        debounceWorkItem?.cancel()
-        
-        let workItem = DispatchWorkItem { [weak self] in
-            self?.performSearchIfNeeded(query: query)
-        }
-        
-        debounceWorkItem = workItem
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: workItem)
-    }
-    
-    private func performSearchIfNeeded(query: String) {
+     func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
@@ -228,17 +213,5 @@ extension AwarenessDetailViewController: UITextFieldDelegate {
         getArticleList(page: start, searchText: searchText)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        debounceWorkItem?.cancel()
-        
-        if !lastQuery.isEmpty {
-            searchText = lastQuery
-            articleList.removeAll()
-            getArticleList(page: start, searchText: searchText)
-        }
-        
-        return true
-    }
 }
 
