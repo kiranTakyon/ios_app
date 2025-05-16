@@ -322,25 +322,25 @@ extension MenuViewController{
         }
         
         menuListItems = zeroParentIds
-        let userType = UserDefaultsManager.manager.getUserType()
-        if userType == "admin"{
-            if let index = financeItems.firstIndex(where: { $0.hashKey == "T0035" }) {
-                financeItems.remove(at: index)
-            }
-        }
+//        let userType = UserDefaultsManager.manager.getUserType()
+//        if userType == "admin"{
+//            if let index = financeItems.firstIndex(where: { $0.hashKey == "T0035" }) {
+//                financeItems.remove(at: index)
+//            }
+//        }
         
         if financeItems.count == 0 {
             financeStackView.isHidden = true
             financeButton.isHidden = true
         }
         
-        if !isMenuApperaFirst{
-            isMenuApperaFirst = true
-            if let index = mainItems.firstIndex(where: { $0.hashKey == "T0001" }) {
-                let item = mainItems[index]
-                navigateToViewController(for: item.hashKey ?? "", header: item.label ?? "", from: self, animated: false)
-            }
-        }
+//        if !isMenuApperaFirst{
+//            isMenuApperaFirst = true
+//            if let index = mainItems.firstIndex(where: { $0.hashKey == "T0001" }) {
+//                let item = mainItems[index]
+//                navigateToViewController(for: item.hashKey ?? "", header: item.label ?? "", from: self, animated: false)
+//            }
+//        }
         
         collectionView.reloadData()
     }
@@ -410,7 +410,8 @@ extension MenuViewController{
         var destinationVC: UIViewController?
         switch key {
         case "T0001":
-            destinationVC = DashboardViewController.instantiate(from: .home)
+            self.tabBarController?.selectedIndex = 2
+            destinationVC = DashboardViewController.instantiate(from: .tabbar)
         case "T0011":
             destinationVC = NoticeboardCategoryController.instantiate(from: .noticeboard)
         case "T0018":

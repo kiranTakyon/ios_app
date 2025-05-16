@@ -384,7 +384,7 @@ extension DashboardViewController {
         var destinationVC: UIViewController?
         switch key {
         case "T0001":
-            destinationVC = DashboardViewController.instantiate(from: .home)
+            destinationVC = DashboardViewController.instantiate(from: .tabbar)
         case "T0011":
             destinationVC = NoticeboardCategoryController.instantiate(from: .noticeboard)
         case "T0018":

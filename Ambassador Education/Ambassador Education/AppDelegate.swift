@@ -339,6 +339,7 @@ extension AppDelegate {
     func navigateToTabbar(){
         let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
         if let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController {
+            tabBarController.selectedIndex = 2
             window?.rootViewController = tabBarController
         }
         window?.makeKeyAndVisible()
