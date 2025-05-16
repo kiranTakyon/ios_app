@@ -216,7 +216,7 @@ class ViewController: UIViewController {
         
         
         
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary,isRefreshToken: true) { (result) in
             
             if let resultDict = result as? NSDictionary{
                 
