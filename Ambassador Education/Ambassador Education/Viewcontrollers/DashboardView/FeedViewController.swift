@@ -395,6 +395,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
 
             if cellReactions.totalReactionCount > 0 {
                 cell.setUpReaction(reactions: cellReactions)
+                cell.setButtonEmojiDidTap(notification.usrReactionType ?? "")
             } else {
                // cell.reactionHeightConstraint.constant = 0
             }

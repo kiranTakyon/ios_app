@@ -49,17 +49,15 @@ class NotificationsTableViewCell: UITableViewCell {
 
     var avPlayer: AVPlayer?
     var playerLayer: AVPlayerLayer?
-
+    let reactions: [Reaction] = [Reaction(title: "wow", imageName: "icn_wow"),
+                                 Reaction(title: "like", imageName: "icn_like"),
+                                 Reaction(title: "party_popper", imageName: "party_popper"),
+                                 Reaction(title: "love", imageName: "icn_love"),
+                                 Reaction(title: "clapping_hand", imageName: "icn_clap")]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         reactionView = ReactionView()
-
-        let reactions: [Reaction] = [Reaction(title: "wow", imageName: "icn_wow"),
-                                     Reaction(title: "like", imageName: "icn_like"),
-                                     Reaction(title: "party_popper", imageName: "party_popper"),
-                                     Reaction(title: "love", imageName: "icn_love"),
-                                     Reaction(title: "clapping_hand", imageName: "icn_clap")]
-
         reactionView?.initialize(delegate: self , reactionsArray: reactions, sourceView: self.contentView, gestureView: buttonEmojiDidTap)
         buttonEmojiDidTap.setTitle("☺", for: .normal)
 
@@ -97,6 +95,20 @@ class NotificationsTableViewCell: UITableViewCell {
     @objc private func playerDidFinishPlaying() {
         avPlayer?.seek(to: .zero)
        // avPlayer?.play()
+    }
+    
+    func setButtonEmojiDidTap(_ image:String){
+        if image != ""{
+            let imageName = getImageName(for: image)
+            buttonEmojiDidTap.setImage(UIImage(named: imageName), for: .normal)
+        }
+        else{
+            buttonEmojiDidTap.setImage(UIImage(named: "icn_react"), for: .normal)
+        }
+    }
+    
+    func getImageName(for title: String) -> String {
+        return reactions.first { $0.title == title }?.imageName ?? ""
     }
 
     func setUpReaction(reactions: TReaction) {
