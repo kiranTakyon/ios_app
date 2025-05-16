@@ -101,7 +101,7 @@ class NotificationsTableViewCell: UITableViewCell {
 
     func setUpReaction(reactions: TReaction) {
         emojiCount = 1
-        addImagesToStackView(reactions.reactionImageNames, stackView: imagesStackView)
+        addImagesToStackView(reactions.reactionImageNames, stackView: imagesStackView, labelText: "\(reactions.reactionCount)")
     }
 
     override func prepareForReuse() {
@@ -128,7 +128,8 @@ class NotificationsTableViewCell: UITableViewCell {
         delegate?.notificationsTableViewCell(self, didProfileTapped: sender, index: index)
     }
     
-    func addImagesToStackView(_ images: [String], stackView: UIStackView) {
+    func addImagesToStackView(_ images: [String], stackView: UIStackView, labelText: String) {
+        
         stackView.arrangedSubviews.forEach { view in
             stackView.removeArrangedSubview(view)
             view.removeFromSuperview()
@@ -143,6 +144,13 @@ class NotificationsTableViewCell: UITableViewCell {
             imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
             stackView.addArrangedSubview(imageView)
         }
+
+        let label = UILabel()
+        label.text = labelText
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .black
+        label.numberOfLines = 1
+        stackView.addArrangedSubview(label)
     }
 }
 
