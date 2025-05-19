@@ -402,27 +402,48 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         }
     }
     
-    func saveProfile(){
-            self.startLoadingAnimation()
-            let url = APIUrls().saveProfile
-            
+    func saveProfile() {
+        // Check if there are any changes before making API call
+        if !hasProfileChanges() {
+            self.isEditClicked = false
+            SweetAlert().showAlert(kAppName, subTitle: "No changes made to update", style: .warning)
+            self.profileTable.reloadData()
+            return
+        }
+
+        self.startLoadingAnimation()
+        let url = APIUrls().saveProfile
         
-            APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: getValuesFromAllVisibleCellsOfTableView()) { (result) in
-                
-                if result["StatusCode"] as? Int == 1{
-                    
-                    DispatchQueue.main.async {
-                        self.isEditClicked = false
-                        self.stopLoadingAnimation()
-                        SweetAlert().showAlert(kAppName, subTitle:  "Profile updated successfully", style: AlertStyle.success)
-                        self.getMyProfile()
-                        //self.profileTable.reloadData()
-                    }
-                    
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: getValuesFromAllVisibleCellsOfTableView()) { (result) in
+            if result["StatusCode"] as? Int == 1 {
+                DispatchQueue.main.async {
+                    self.isEditClicked = false
+                    self.stopLoadingAnimation()
+                    SweetAlert().showAlert(kAppName, subTitle: "Profile updated successfully", style: .success)
+                    self.getMyProfile()
                 }
             }
+        }
     }
-    
+
+    // Add new function to check for profile changes
+    private func hasProfileChanges() -> Bool {
+        guard let visibleCells = profileTable.visibleCells as? [ProfileTableViewCell] else { return false }
+        
+        for (index, cell) in visibleCells.enumerated() {
+            if index < titles.count && cell.textField.text != titles[index] {
+                return true
+            }
+        }
+        
+        // Check if profile image was changed
+        if isFromCamera {
+            return true
+        }
+        
+        return false
+    }
+
     func getUdidOfDevide() -> String{
         return  UIDevice.current.identifierForVendor!.uuidString
     }
