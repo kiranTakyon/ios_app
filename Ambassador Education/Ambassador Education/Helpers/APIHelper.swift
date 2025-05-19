@@ -155,7 +155,7 @@ class APIHelper {
                             // print(response)
                             // let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                             guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                                completion([JsonKeys().message : []])
+                                completion([JsonKeys().message : [],JsonKeys().status : httpResponse.statusCode])
                                 throw JSONError.ConversionFailed
                             }
                             if let theJSONData = try? JSONSerialization.data(
@@ -185,7 +185,7 @@ class APIHelper {
                             }
 
                         } catch let error as JSONError {
-                            completion([JsonKeys().message : "Json error occured . Please try again"])
+                            completion([JsonKeys().message : "Json error occured . Please try again",JsonKeys().status : httpResponse.statusCode])
                             print(error.rawValue)
                         } catch let error as NSError {
                             completion([JsonKeys().message :"Json error occured . Please try again"])

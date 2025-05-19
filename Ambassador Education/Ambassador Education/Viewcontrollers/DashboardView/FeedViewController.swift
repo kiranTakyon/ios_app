@@ -522,6 +522,7 @@ extension FeedViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 complition()
+                notificationList.removeAll()
                 guard let nototificationsArray = result["Notification"] as? NSArray else{return}
                 let notifications = ModelClassManager.sharedManager.createModelArray(data: nototificationsArray, modelType: ModelType.TNotification) as! [TNotification]
                 self.notificationList.append(contentsOf: notifications)
@@ -547,10 +548,7 @@ extension FeedViewController {
 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             DispatchQueue.main.async {
-                if let notifications = result["Notification"] as? [[String: Any]],
-                   let firstNotification = notifications.first,
-                   let reactions = firstNotification["reactions"] as? [String: Int],
-                   reactions[type] != nil {
+                if let status = result["status"] as? Int,status == 202{
                     notification.changeUserReactionType(type: type)
                     self.tableView.reloadData()
                     completion(true)
