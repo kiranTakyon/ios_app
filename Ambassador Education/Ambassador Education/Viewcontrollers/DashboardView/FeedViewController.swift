@@ -453,9 +453,18 @@ extension FeedViewController: UIScrollViewDelegate {
 // MARK: - NotificationsTableViewCellDelegate -
 
 extension FeedViewController: NotificationsTableViewCellDelegate {
+    
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji emoji: String, type: String, index: Int, completion: @escaping (Bool) -> Void) {
+        apiPostSocialMedia(action: "like", type: type, emoji: emoji, index: index) { success in
+            completion(success)
+        }
+    }
+
 
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji emoji: String, type: String, index: Int) {
-        apiPostSocialMedia(action: "like", type: type, emoji: emoji,index: index)
+        apiPostSocialMedia(action: "like", type: type, emoji: emoji, index: index) { success in
+          //  completion(success)
+        }
     }
 
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int) {
@@ -526,22 +535,28 @@ extension FeedViewController {
         }
     }
 
-    func apiPostSocialMedia(action: String, type: String, emoji: String = "", index: Int = -1) {
+    func apiPostSocialMedia(action: String, type: String, emoji: String = "", index: Int = -1, completion: @escaping (Bool) -> Void) {
         let url = APIUrls().postSocialMedia
         var dictionary = [String:Any]()
         let notification = notificationList[index]
         let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] =  userId
-        dictionary["AlertId"] =  notification.alertId ?? 0
-        dictionary["Action"] =  action
-        dictionary["Type"] =  type
+        dictionary[UserIdKey().id] = userId
+        dictionary["AlertId"] = notification.alertId ?? 0
+        dictionary["Action"] = action
+        dictionary["Type"] = type
 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            print(result)
-
             DispatchQueue.main.async {
-                notification.changeUserReactionType(type: type)
-                self.tableView.reloadData()
+                if let notifications = result["Notification"] as? [[String: Any]],
+                   let firstNotification = notifications.first,
+                   let reactions = firstNotification["reactions"] as? [String: Int],
+                   reactions[type] != nil {
+                    notification.changeUserReactionType(type: type)
+                    self.tableView.reloadData()
+                    completion(true)
+                } else {
+                    completion(false)
+                }
             }
         }
     }

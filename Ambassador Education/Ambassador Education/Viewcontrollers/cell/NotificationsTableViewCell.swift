@@ -12,7 +12,7 @@ import AVFoundation
 protocol NotificationsTableViewCellDelegate: AnyObject {
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapOnArrow button: UIButton, index: Int)
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didTapCell button: UIButton, index: Int)
-    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji  emoji: String, type: String, index: Int)
+    func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didSelectEmoji emoji: String, type: String, index: Int, completion: @escaping (Bool) -> Void)
     func notificationsTableViewCell(_ cell: NotificationsTableViewCell, didProfileTapped button: UIButton, index: Int)
 
 }
@@ -168,7 +168,20 @@ class NotificationsTableViewCell: UITableViewCell {
 
 extension NotificationsTableViewCell: FacebookLikeReactionDelegate {
     func selectedReaction(reaction: Reaction) {
-        delegate?.notificationsTableViewCell(self, didSelectEmoji: "\(imageToEmoji[reaction.title] ?? "")", type: reaction.title, index: index)
+        let previousEmoji = buttonEmojiDidTap.currentTitle
+        let previousImage = buttonEmojiDidTap.currentImage
+        if let newEmoji = imageToEmoji[reaction.title] {
+            buttonEmojiDidTap.setTitle(newEmoji, for: .normal)
+            buttonEmojiDidTap.setImage(UIImage(named: reaction.imageName), for: .normal)
+        }
+        delegate?.notificationsTableViewCell(self, didSelectEmoji: "\(imageToEmoji[reaction.title] ?? "")", type: reaction.title, index: index) { success in
+            if !success {
+                DispatchQueue.main.async {
+                    self.buttonEmojiDidTap.setTitle(previousEmoji, for: .normal)
+                    self.buttonEmojiDidTap.setImage(previousImage, for: .normal)
+                }
+            }
+        }
     }
 }
 
