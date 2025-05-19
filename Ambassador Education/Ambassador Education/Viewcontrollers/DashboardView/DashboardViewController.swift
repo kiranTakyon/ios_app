@@ -125,7 +125,9 @@ extension DashboardViewController{
                    message == "Success" {
                     
                     let progress = TProgressTypeModel(values: responseDict)
-                    self?.progressViews.append(progress)
+                    if progress.percentage >= 0{
+                        self?.progressViews.append(progress)
+                    }
                 }
             }
         }

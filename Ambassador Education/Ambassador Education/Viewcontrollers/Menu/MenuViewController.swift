@@ -321,6 +321,10 @@ extension MenuViewController{
             zeroParentIds.insert(profileItem, at: 1)
         }
         
+        if let index = mainItems.firstIndex(where: { $0.hashKey == "T0099" }) {
+            mainItems.remove(at: index)
+        }
+        
         menuListItems = zeroParentIds
 //        let userType = UserDefaultsManager.manager.getUserType()
 //        if userType == "admin"{
@@ -333,15 +337,6 @@ extension MenuViewController{
             financeStackView.isHidden = true
             financeButton.isHidden = true
         }
-        
-//        if !isMenuApperaFirst{
-//            isMenuApperaFirst = true
-//            if let index = mainItems.firstIndex(where: { $0.hashKey == "T0001" }) {
-//                let item = mainItems[index]
-//                navigateToViewController(for: item.hashKey ?? "", header: item.label ?? "", from: self, animated: false)
-//            }
-//        }
-        
         collectionView.reloadData()
     }
     

@@ -16,14 +16,13 @@ extension UIViewController{
     
     func startLoadingAnimation(){
         
-        
         let activityView = UIView()
-        let screenRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 60)//CGRect(0, 0, UIScreen.main.bounds.width, UIScreen.main.bounds.height + 60)//UIScreen.mainScreen().bounds
+        let screenRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 60)
         activityView.backgroundColor = UIColor.gray
         activityView.tag = 1000001
         self.view.addSubview(activityView)
         activityView.frame = CGRect(x: 0,y: 0,  width:screenRect.width,  height: screenRect.height)
-
+        
         
         let colors = Colors()
         activityView.backgroundColor = UIColor.clear
@@ -31,19 +30,31 @@ extension UIViewController{
         backgroundLayer?.frame = activityView.frame
         activityView.layer.insertSublayer(backgroundLayer!, at: 0)
         
-        let activityIndicator = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.lineScale, tintColor: UIColor.white, size: 40.00)
-        
-        
-        let xVal = UIScreen.main.bounds.width/2 - 25
-        let yVal = UIScreen.main.bounds.height/2 - 25
-        
-        activityIndicator?.frame = CGRect(x: xVal, y: yVal, width: 50, height: 50)
-        activityIndicator?.tag = 100000
-        activityIndicator?.startAnimating()
-        activityView.addSubview(activityIndicator!)
-        
-        self.view.addSubview(activityView)
-        
+        if let activityIndicator = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.lineScale, tintColor: UIColor.white, size: 40.00){
+            
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicator.tag = 100000
+            activityIndicator.startAnimating()
+            activityView.addSubview(activityIndicator)
+            
+            NSLayoutConstraint.activate([
+                activityIndicator.centerXAnchor.constraint(equalTo: activityView.centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: activityView.centerYAnchor),
+                activityIndicator.widthAnchor.constraint(equalToConstant: 40),
+                activityIndicator.heightAnchor.constraint(equalToConstant: 40)
+            ])
+            
+            self.view.addSubview(activityView)
+            
+            activityView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                activityView.topAnchor.constraint(equalTo: self.view.topAnchor),
+                activityView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                activityView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+                activityView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            ])
+        }
+      
     }
     
     

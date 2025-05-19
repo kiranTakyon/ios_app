@@ -35,4 +35,12 @@ struct TProgressTypeModel: Codable {
         self.challengesPercentage = values["challenges_percentage"] as? Int
         self.quizPercentage = values["quiz_percentage"] as? Int
     }
+    
+    var percentage: Int {
+           return quizPercentage
+               ?? challengesPercentage
+               ?? journeyPercentage
+               ?? fuelPercentage
+               ?? -1
+       }
 }
