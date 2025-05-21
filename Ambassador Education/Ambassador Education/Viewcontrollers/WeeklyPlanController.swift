@@ -717,9 +717,9 @@ extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeeklyPlanCollectionViewCell", for: indexPath) as? WeeklyPlanCollectionViewCell else { return UICollectionViewCell() }
         let colorIndex = indexPath.row % viewColors.count
-        let hexString = viewColors[colorIndex]
-        
-       // cell.bgView.backgroundColor = UIColor(named: hexString)
+        let title = titles[indexPath.row]
+        let isSelected = mainTitle.lowercased() == title.lowercased()
+        cell.bgView.backgroundColor = isSelected ? UIColor(named: "AppColor") : UIColor(named: "9CDAE7")
         cell.titleLabel.text = titles[indexPath.row]
         
         return cell
