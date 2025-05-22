@@ -45,9 +45,9 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
         self.articleTableView.rowHeight = UITableView.automaticDimension
     }
     
-    func getArticleList(page: Int,searchText : String){
+    func getArticleList(page: Int,searchText : String,isSearch: Bool = false){
         
-        self.startLoadingAnimation()
+        isSearch ? topHeaderView.searchTextField.showLoadingIndicator(color: .white) : self.startLoadingAnimation()
         
         let url = APIUrls().viewArticleCode
         
@@ -67,7 +67,7 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
                 guard let categryValues = result["ArticlesItems"] as? NSArray else{
                     DispatchQueue.main.async {
 
-                    self.stopLoadingAnimation()
+                        isSearch ? self.topHeaderView.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                     //SweetAlert().showAlert(kAppName, subTitle: result["MSG"] as! String, style: AlertStyle.error)
 
                     }
@@ -80,6 +80,7 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
                 let articles = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNAwarenessDetail) as! [TNAwarenessDetail]
                 
                 for each in articles{
+                    self.articleList.removeAll()
                     self.articleList.append(each)
                 }
             DispatchQueue.main.async {
@@ -89,11 +90,13 @@ class AwarenessDetailViewController: UIViewController,UITableViewDelegate,UITabl
                 }
                 self.removeNoDataLabel()
                 self.articleTableView.reloadData()
-                self.stopLoadingAnimation()
+                isSearch ? self.topHeaderView.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                 if self.articleList.count == 0{
                     self.addNoDataFoundLabel()
                 }
-                
+                else{
+                    self.removeNoDataLabel()
+                }
             }
         }
         
@@ -198,7 +201,7 @@ extension AwarenessDetailViewController: DebouncedSearchHandling{
             lastQuery = ""
             searchText = lastQuery
             articleList.removeAll()
-            getArticleList(page: start, searchText: searchText)
+            getArticleList(page: start, searchText: searchText,isSearch: true)
             return
         }
         
@@ -210,7 +213,7 @@ extension AwarenessDetailViewController: DebouncedSearchHandling{
         lastQuery = query
         searchText = lastQuery
         articleList.removeAll()
-        getArticleList(page: start, searchText: searchText)
+        getArticleList(page: start, searchText: searchText,isSearch: true)
     }
     
 }

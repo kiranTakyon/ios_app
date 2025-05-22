@@ -35,9 +35,9 @@ class DigitalResourcesListController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "DigitalResourceCategoryCell")
     }
     
-    func getCategoryList(){
+    func getCategoryList(isSearch: Bool = false){
         
-        self.startLoadingAnimation()
+        isSearch ? self.topHeaderView.searchTextField.showLoadingIndicator(color: .white) : self.startLoadingAnimation()
         
         let url = APIUrls().getDigitalResource
         
@@ -66,7 +66,7 @@ class DigitalResourcesListController: UIViewController {
             
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                self.stopLoadingAnimation()
+                isSearch ? self.topHeaderView.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                 if self.categoryList.count == 0{
                     self.addNoDataFoundLabel()
                 }
@@ -199,7 +199,7 @@ extension DigitalResourcesListController: DebouncedSearchHandling {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
-            getCategoryList()
+            getCategoryList(isSearch: true)
             return
         }
         
@@ -210,7 +210,7 @@ extension DigitalResourcesListController: DebouncedSearchHandling {
         
         lastQuery = query
         searchText = lastQuery
-        getCategoryList()
+        getCategoryList(isSearch: true)
     }
     
 }

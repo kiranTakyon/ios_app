@@ -144,9 +144,9 @@ class CommunicateController: UIViewController,TaykonProtocol {
         }
     }
     
-    func getInboxMessages(txt : String,types: Int){
+    func getInboxMessages(txt : String,types: Int,isSearch: Bool = false){
         sideView.frame.origin = CGPoint(x: -50, y: sideView.frame.origin.y)
-        self.startLoadingAnimation()
+        isSearch ? searchTextField.showLoadingIndicator() : self.startLoadingAnimation()
         var url  = ""
         
         if type == CommunicationType.inbox{
@@ -204,7 +204,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
                         self.inboxMessages = message
                     }
                     
-                    self.stopLoadingAnimation()
+                    isSearch ? self.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                     DispatchQueue.main.async {
                         self.communicateTable.reloadData()
                     }
@@ -218,7 +218,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
                     }
                     
                 } else {
-                    self.stopLoadingAnimation()
+                    isSearch ? self.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                     //   self.addNoDataFoundLabel()
                     self.refreshControl.endRefreshing()
                 }
@@ -469,7 +469,7 @@ extension CommunicateController: DebouncedSearchHandling {
         if query.isEmpty {
             if lastQuery != "" {
                 lastQuery = ""
-                getInboxMessages(txt : "", types: typeValue)
+                getInboxMessages(txt : "", types: typeValue,isSearch: true)
             }
             return
         }
@@ -480,7 +480,7 @@ extension CommunicateController: DebouncedSearchHandling {
         }
 
         lastQuery = query
-        getInboxMessages(txt : query, types: typeValue)
+        getInboxMessages(txt : query, types: typeValue,isSearch: true)
     }
     
 }

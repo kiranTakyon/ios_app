@@ -94,8 +94,8 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
     }
 
     
-    func getListSearch(text : String){
-        self.startLoadingAnimation()
+    func getListSearch(text : String,isSearch: Bool = false){
+        isSearch ? topHeaderView.searchTextField.showLoadingIndicator(color: .white) : self.startLoadingAnimation()
         listValues?.removeAll()
         if text != ""{
             if let value = tempValue{
@@ -117,7 +117,7 @@ class NoticeBoardListController: UIViewController,UITableViewDelegate,UITableVie
         }
         else{
         }
-        self.stopLoadingAnimation()
+        isSearch ? self.topHeaderView.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
     }
 
     
@@ -175,7 +175,7 @@ extension NoticeBoardListController: DebouncedSearchHandling {
     func performSearchIfNeeded(query: String) {
         if query.isEmpty {
             lastQuery = ""
-            getListSearch(text: "")
+            getListSearch(text: "",isSearch: true)
             return
         }
         
@@ -185,7 +185,7 @@ extension NoticeBoardListController: DebouncedSearchHandling {
         }
         
         lastQuery = query
-        getListSearch(text: query)
+        getListSearch(text: query,isSearch: true)
     }
     
 }

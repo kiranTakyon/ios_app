@@ -720,6 +720,7 @@ extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSo
         let title = titles[indexPath.row]
         let isSelected = mainTitle.lowercased() == title.lowercased()
         cell.bgView.backgroundColor = isSelected ? UIColor(named: "AppColor") : UIColor(named: "9CDAE7")
+        cell.titleLabel.textColor = isSelected ? UIColor.white : UIColor.black
         cell.titleLabel.text = titles[indexPath.row]
         
         return cell

@@ -29,9 +29,9 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
         topHeaderView.delegate = self
     }
     
-    func getCategoryList(_ searchQuery: String = ""){
+    func getCategoryList(_ searchQuery: String = "",isSearch: Bool = false){
         
-        self.startLoadingAnimation()
+        isSearch ? searchTextField.showLoadingIndicator() : self.startLoadingAnimation()
         
         let url = APIUrls().getGalleryCategory
         
@@ -60,7 +60,7 @@ class GalleryCategoryListController: UIViewController,UICollectionViewDelegate, 
              DispatchQueue.main.async {
                 self.removeNoDataLabel()
                 self.categoryTable.reloadData()
-                self.stopLoadingAnimation()
+                 isSearch ? self.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                 if self.categoryList.count == 0{
                     self.addNoDataFoundLabel()
                 }
@@ -254,7 +254,7 @@ extension GalleryCategoryListController: DebouncedSearchHandling {
         if query.isEmpty {
             if lastQuery != "" {
                 lastQuery = ""
-                getCategoryList(query)
+                getCategoryList(query,isSearch: true)
             }
             return
         }
@@ -265,7 +265,7 @@ extension GalleryCategoryListController: DebouncedSearchHandling {
         }
 
         lastQuery = query
-        getCategoryList(query)
+        getCategoryList(query,isSearch: true)
     }
 
 }
