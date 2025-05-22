@@ -224,8 +224,8 @@
                                                             <action selector="didTapOnSubjectDropDown:" destination="BRV-Bg-R4h" eventType="touchUpInside" id="twg-oQ-ZKw"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-ny-4nc" customClass="ProgressViewBar" customModule="ABC" customModuleProvider="target">
-                                                        <rect key="frame" x="-5" y="-25" width="363" height="80"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-ny-4nc" customClass="ProgressViewBar" customModule="ABC" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-25" width="363" height="80"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="wN0-P0-JgQ"/>
@@ -368,14 +368,12 @@
                             <constraint firstItem="neD-Qq-GV1" firstAttribute="leading" secondItem="v8e-rc-24Z" secondAttribute="leading" constant="20" id="J18-hr-Qb4"/>
                             <constraint firstItem="v8j-Kg-v2C" firstAttribute="trailing" secondItem="Apk-zb-E5L" secondAttribute="trailing" constant="20" id="KB4-qS-PpM"/>
                             <constraint firstItem="4oZ-6w-xEq" firstAttribute="leading" secondItem="Apk-zb-E5L" secondAttribute="leading" id="L74-tK-zyn"/>
-                            <constraint firstItem="v8j-Kg-v2C" firstAttribute="trailing" secondItem="7MJ-ny-4nc" secondAttribute="trailing" constant="15" id="U2i-yy-gLf"/>
                             <constraint firstAttribute="trailing" secondItem="Hmm-AA-to7" secondAttribute="trailing" id="Wke-1T-JgR"/>
                             <constraint firstItem="Apk-zb-E5L" firstAttribute="top" secondItem="4oZ-6w-xEq" secondAttribute="bottom" constant="20" id="X6b-LF-Bjq"/>
                             <constraint firstItem="rDH-q7-jK7" firstAttribute="top" secondItem="Hmm-AA-to7" secondAttribute="bottom" constant="10" id="aCu-Y2-uYJ"/>
                             <constraint firstItem="v8j-Kg-v2C" firstAttribute="bottom" secondItem="rDH-q7-jK7" secondAttribute="bottom" id="bTp-QU-GB7"/>
                             <constraint firstItem="4zo-62-Jgx" firstAttribute="top" secondItem="v8e-rc-24Z" secondAttribute="top" id="g1l-xA-K91"/>
                             <constraint firstItem="neD-Qq-GV1" firstAttribute="top" secondItem="Apk-zb-E5L" secondAttribute="bottom" constant="20" id="hGS-GM-vwx"/>
-                            <constraint firstItem="7MJ-ny-4nc" firstAttribute="leading" secondItem="v8j-Kg-v2C" secondAttribute="leading" constant="15" id="k8K-yu-VSb"/>
                             <constraint firstItem="Hmm-AA-to7" firstAttribute="top" secondItem="neD-Qq-GV1" secondAttribute="bottom" constant="5" id="kqv-1F-naR"/>
                             <constraint firstItem="v8j-Kg-v2C" firstAttribute="trailing" secondItem="rDH-q7-jK7" secondAttribute="trailing" id="lzh-YA-mDB"/>
                             <constraint firstItem="rDH-q7-jK7" firstAttribute="leading" secondItem="v8j-Kg-v2C" secondAttribute="leading" id="m4H-u9-Pjn"/>
