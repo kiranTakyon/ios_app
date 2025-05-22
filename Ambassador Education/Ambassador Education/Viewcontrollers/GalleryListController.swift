@@ -44,9 +44,9 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
         // Do any additional setup after loading the view.
     }
     
-    func getGalleryImages(searchTextValue : String){
+    func getGalleryImages(searchTextValue : String,isSearch: Bool = false){
         
-        self.startLoadingAnimation()
+        isSearch ? searchTextField.showLoadingIndicator() : self.startLoadingAnimation() 
         let url = APIUrls().getGallery
         
         //let userId = UserDefaultsManager.manager.getUserId()
@@ -88,7 +88,7 @@ class GalleryListController: UIViewController, UICollectionViewDelegate, UIColle
                 self.removeNoDataLabel()
                 self.fetchAllImageUrls(array: galleries)
                 self.galleryCollectionView.reloadData()
-                self.stopLoadingAnimation()
+                isSearch ? self.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation() 
                 if self.galleryItems.count == 0{
                     self.galleryCollectionView.isHidden = true
                     self.addNoDataFoundLabel()
@@ -297,7 +297,7 @@ extension GalleryListController: DebouncedSearchHandling {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
-            getGalleryImages(searchTextValue: searchText)
+            getGalleryImages(searchTextValue: searchText,isSearch: true)
             return
         }
         
@@ -308,7 +308,7 @@ extension GalleryListController: DebouncedSearchHandling {
         
         lastQuery = query
         searchText = lastQuery
-        getGalleryImages(searchTextValue: searchText)
+        getGalleryImages(searchTextValue: searchText,isSearch: true)
     }
     
 }

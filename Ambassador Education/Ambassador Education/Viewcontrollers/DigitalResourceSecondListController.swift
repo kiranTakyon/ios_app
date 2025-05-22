@@ -58,9 +58,9 @@ class DigitalResourceSecondListController: UIViewController {
        getDigitalResources(searcText: "")
     }
     
-    func getDigitalResources(searcText : String) {
+    func getDigitalResources(searcText : String,isSearch: Bool = false) {
         
-        self.startLoadingAnimation()
+        isSearch ? topHeaderView.searchTextField.showLoadingIndicator(color: .white) : self.startLoadingAnimation()
         
         let url = APIUrls().getDigitalResourceDetails
         
@@ -90,7 +90,7 @@ class DigitalResourceSecondListController: UIViewController {
             DispatchQueue.main.async {
                 self.removeNoDataLabel()
                 self.checkAndStopBounce()
-                self.stopLoadingAnimation()
+                isSearch ? self.topHeaderView.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                 if self.arrCatgoryAndItem.count == 0 {
                     self.collectionView.isHidden = true
                     self.addNoDataFoundLabel()
@@ -228,7 +228,7 @@ extension DigitalResourceSecondListController: DebouncedSearchHandling {
         if query.isEmpty {
             lastQuery = ""
             searchText = lastQuery
-            getDigitalResources(searcText: searchText)
+            getDigitalResources(searcText: searchText,isSearch: true)
             return
         }
         
@@ -239,7 +239,7 @@ extension DigitalResourceSecondListController: DebouncedSearchHandling {
         
         lastQuery = query
         searchText = lastQuery
-        getDigitalResources(searcText: searchText)
+        getDigitalResources(searcText: searchText,isSearch: true)
     }
     
 }

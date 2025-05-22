@@ -39,9 +39,9 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
         categoryTable.rowHeight = UITableView.automaticDimension
     }
     
-    func getCategoryList() {
+    func getCategoryList(isSearch: Bool = false) {
         
-        self.startLoadingAnimation()
+        isSearch ? searchTextField.showLoadingIndicator() : self.startLoadingAnimation()
         let url = APIUrls().getNoticeboard
         
         let userId = UserDefaultsManager.manager.getUserId()
@@ -59,7 +59,7 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
             DispatchQueue.main.async {
                 self.topHeaderView.title = result["HeadLabel"] as? String ?? ""
             guard let categryValues = result["Categories"] as? NSArray else{
-                self.stopLoadingAnimation()
+                isSearch ? self.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation() 
                 SweetAlert().showAlert(kAppName, subTitle:  result["MSG"] as! String, style: AlertStyle.error)
 
                 return
@@ -68,11 +68,13 @@ class NoticeboardCategoryController: UIViewController,UITableViewDelegate,UITabl
             let cetgories = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNNoticeboardCategory) as! [TNNoticeboardCategory]
             
             self.categoryList = cetgories
-            
                 self.categoryTable.reloadData()
-                self.stopLoadingAnimation()
+                isSearch ? self.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                 if self.categoryList.count == 0 {
                     self.addNoDataFoundLabel()
+                }
+                else{
+                    self.removeNoDataLabel()
                 }
             }
         }
@@ -215,7 +217,7 @@ extension NoticeboardCategoryController: DebouncedSearchHandling{
             if lastQuery != "" {
                 lastQuery = ""
                 searchText = lastQuery
-                getCategoryList()
+                getCategoryList(isSearch: true)
             }
             return
         }
@@ -227,7 +229,7 @@ extension NoticeboardCategoryController: DebouncedSearchHandling{
         
         lastQuery = query
         searchText = lastQuery
-        getCategoryList()
+        getCategoryList(isSearch: true)
     }
 
 }

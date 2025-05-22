@@ -224,9 +224,17 @@
                                                             <action selector="didTapOnSubjectDropDown:" destination="BRV-Bg-R4h" eventType="touchUpInside" id="twg-oQ-ZKw"/>
                                                         </connections>
                                                     </button>
+                                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-ny-4nc" customClass="ProgressViewBar" customModule="ABC" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-25" width="363" height="80"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="wN0-P0-JgQ"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="7MJ-ny-4nc" firstAttribute="centerY" secondItem="QTr-UM-reY" secondAttribute="centerY" id="1lW-R0-u4h"/>
                                                     <constraint firstItem="s6N-kY-ClA" firstAttribute="centerY" secondItem="9sK-p8-cnt" secondAttribute="centerY" id="O1v-W6-Bcg"/>
                                                     <constraint firstAttribute="trailing" secondItem="s6N-kY-ClA" secondAttribute="trailing" constant="10" id="QCP-dW-sGX"/>
                                                     <constraint firstItem="9sK-p8-cnt" firstAttribute="centerY" secondItem="QTr-UM-reY" secondAttribute="centerY" id="Vok-GZ-cou"/>
@@ -350,18 +358,10 @@
                                     <constraint firstAttribute="bottom" secondItem="Wlb-Pl-DoG" secondAttribute="bottom" id="wbT-os-Xzg"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MJ-ny-4nc" customClass="ProgressViewBar" customModule="ABC" customModuleProvider="target">
-                                <rect key="frame" x="15" y="386" width="363" height="80"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="wN0-P0-JgQ"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v8j-Kg-v2C"/>
                         <color key="backgroundColor" red="0.94117647410000005" green="0.94117647410000005" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="7MJ-ny-4nc" firstAttribute="centerY" secondItem="v8e-rc-24Z" secondAttribute="centerY" id="2T8-3b-ztI"/>
                             <constraint firstItem="4zo-62-Jgx" firstAttribute="leading" secondItem="v8j-Kg-v2C" secondAttribute="leading" id="Adh-9H-WmC"/>
                             <constraint firstItem="4oZ-6w-xEq" firstAttribute="trailing" secondItem="Apk-zb-E5L" secondAttribute="trailing" id="C7G-wO-LpF"/>
                             <constraint firstAttribute="trailing" secondItem="neD-Qq-GV1" secondAttribute="trailing" constant="20" id="IT9-sN-dcz"/>
@@ -372,10 +372,7 @@
                             <constraint firstItem="Apk-zb-E5L" firstAttribute="top" secondItem="4oZ-6w-xEq" secondAttribute="bottom" constant="20" id="X6b-LF-Bjq"/>
                             <constraint firstItem="rDH-q7-jK7" firstAttribute="top" secondItem="Hmm-AA-to7" secondAttribute="bottom" constant="10" id="aCu-Y2-uYJ"/>
                             <constraint firstItem="v8j-Kg-v2C" firstAttribute="bottom" secondItem="rDH-q7-jK7" secondAttribute="bottom" id="bTp-QU-GB7"/>
-                            <constraint firstItem="7MJ-ny-4nc" firstAttribute="leading" secondItem="v8j-Kg-v2C" secondAttribute="leading" constant="15" id="du5-LB-P6X"/>
-                            <constraint firstItem="v8j-Kg-v2C" firstAttribute="trailing" secondItem="7MJ-ny-4nc" secondAttribute="trailing" constant="15" id="emw-kg-F8f"/>
                             <constraint firstItem="4zo-62-Jgx" firstAttribute="top" secondItem="v8e-rc-24Z" secondAttribute="top" id="g1l-xA-K91"/>
-                            <constraint firstItem="7MJ-ny-4nc" firstAttribute="centerX" secondItem="v8j-Kg-v2C" secondAttribute="centerX" id="hE4-d3-Hcx"/>
                             <constraint firstItem="neD-Qq-GV1" firstAttribute="top" secondItem="Apk-zb-E5L" secondAttribute="bottom" constant="20" id="hGS-GM-vwx"/>
                             <constraint firstItem="Hmm-AA-to7" firstAttribute="top" secondItem="neD-Qq-GV1" secondAttribute="bottom" constant="5" id="kqv-1F-naR"/>
                             <constraint firstItem="v8j-Kg-v2C" firstAttribute="trailing" secondItem="rDH-q7-jK7" secondAttribute="trailing" id="lzh-YA-mDB"/>

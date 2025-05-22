@@ -38,9 +38,9 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
     }
 
     
-    func getArticleList(){
+    func getArticleList(isSearch: Bool = false){
         
-        self.startLoadingAnimation()
+        isSearch ? topHeaderView.searchTextField.showLoadingIndicator(color: .white) : self.startLoadingAnimation() 
         
         let url = APIUrls().articleCode
         
@@ -58,7 +58,7 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
             print("digita categories ",categryValues)
             
             DispatchQueue.main.async {
-                self.stopLoadingAnimation()
+                isSearch ? self.topHeaderView.searchTextField.hideLoadingIndicator() :  self.stopLoadingAnimation()
                 if categryValues.count > 0{
                 let articles = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNAwarnessArticleDetail) as! [TNAwarnessArticleDetail]
                 self.articleList.removeAll()
@@ -217,7 +217,7 @@ extension AwarenessViewController: DebouncedSearchHandling {
             if lastQuery != "" {
                 lastQuery = ""
                 searchText = lastQuery
-                getArticleList()
+                getArticleList(isSearch: true)
             }
             return
         }
@@ -229,7 +229,7 @@ extension AwarenessViewController: DebouncedSearchHandling {
 
         lastQuery = query
         searchText = lastQuery
-        getArticleList()
+        getArticleList(isSearch: true)
     }
 }
 
