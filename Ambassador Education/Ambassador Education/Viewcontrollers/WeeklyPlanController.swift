@@ -28,11 +28,12 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var labelSubject: UILabel!
     @IBOutlet weak var buttonSubjectDropDown: UIButton!
+    @IBOutlet weak var viewClassDropDown: UIView!
     @IBOutlet weak var endingDateField: UITextField!
     @IBOutlet weak var startingDateField: UITextField!
     
     var selectedIndexes: [Int] = []
-    
+    var divisions: [WeeklyDivision] = []
     let videoDownload  = VideoDownload()
     var fileURLs = [NSURL]()
     let quickLookController = QLPreviewController()
@@ -57,6 +58,8 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var startTime = Date()
     var endTime = Date()
     var isSearch = Int()
+    
+    var classDropDown : DropDown?
     
     var dataArray : [WeeklyPlanList] = [WeeklyPlanList](){
         didSet {
@@ -122,8 +125,12 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         progressBar.isHidden = true
     }
     
+    @IBAction func selectClassDropDown(_ sender: Any) {
+        classDropDown?.show()
+    }
+    
     func setClassName(for className: String) {
-        classNameLabel.text = "Class: \(className)"
+        classNameLabel.text = "\(className)"
     }
     
     func deleteTheSelectedAttachment(index: Int) {
@@ -177,6 +184,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                     let weeklyPlanModels = ModelClassManager.sharedManager.createModelArray(data: [result], modelType: ModelType.TNWeeklyPlan) as! [TNWeeklyPlan]
                     
                     self.weeklyPlan = weeklyPlanModels[0]
+                    self.setClassDropDown()
                     self.topHeaderView.title = self.weeklyPlan?.weelyPlanLabel.safeValue ?? ""
                     self.stopLoadingAnimation()
                 }
@@ -888,6 +896,34 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
                 }
             } else {
                 dataArray = [WeeklyPlanList]()
+            }
+        }
+    }
+    
+    func setClassDropDown(){
+        savedTime = nil
+        classDropDown = DropDown()
+        DropDown.startListeningToKeyboard()
+        classDropDown?.direction  = .bottom
+        classDropDown?.anchorView = viewClassDropDown
+        var dataSources = [String]()
+        divisions = self.weeklyPlan?.divisions ?? []
+        for subject in divisions{
+            dataSources.append(subject.division!)
+        }
+        classDropDown?.dataSource = dataSources
+        if dataSources.count > 0{
+            self.classNameLabel.text = dataSources[0]
+            classDropDown?.selectionAction = {[weak self]  (index: Int, item: String) in
+                guard let self = self else { return }
+                print("Selected item: \(item) at index: \(index)")
+                self.divId = self.filterDivIdWrtName(item: item, array: self.divisions)
+                self.classNameLabel.text = item
+                if  self.startingDateField.text != "" &&  self.endingDateField.text != ""{
+                    self.isSearch = 0
+                    let fullTime = (startTimeString,endTimeString,isSearch,filterDivId,subjectID )
+                    self.refreshParentView(value: fullTime, titleValue: nil, isForDraft: false)
+                }
             }
         }
     }
