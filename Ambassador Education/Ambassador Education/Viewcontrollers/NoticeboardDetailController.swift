@@ -143,24 +143,42 @@ class NoticeboardDetailController: UIViewController {
     
     func setHtml() {
         richView.editingEnabled = false
-        //richView.isEditingEnabled = false
-        
-        if let _ = detail {
-            if let desc = detail?.description {
+        var htmlContent: String = ""
+        if let detail = detail {
+            if let desc = detail.description {
                 let htmlDecode = desc.replacingHTMLEntities
-                richView.html = htmlDecode.safeValue
-                getHrefLink(string: htmlDecode.safeValue)
-                //            print(richView.selectedHref)
+                // Inject CSS to make images responsive
+                let responsiveCSS = """
+                    <style>
+                        img { 
+                            max-width: 100% !important; 
+                            height: auto !important; 
+                            display: block; 
+                            margin: 0 auto;
+                        }
+                    </style>
+                """
+                htmlContent = responsiveCSS + htmlDecode.safeValue
             }
-        } else if let _ = awarnessPlan {
-            if let desc = awarnessPlan?.description{
+        } else if let awarnessPlan = awarnessPlan {
+            if let desc = awarnessPlan.description {
                 let htmlDecode = desc.replacingHTMLEntities
-                richView.html = htmlDecode!
-                topHeaderView.shouldShowFirstRightButtons(false)
-                //getHrefLink(string: htmlDecode.safeValue)
+                let responsiveCSS = """
+                    <style>
+                        img { 
+                            max-width: 100% !important; 
+                            height: auto !important; 
+                            display: block; 
+                            margin: 0 auto;
+                        }
+                    </style>
+                """
+                htmlContent = responsiveCSS + htmlDecode!
             }
         }
+        richView.html = htmlContent
     }
+
     
     func getDetailsbyID() {
         // startLoadingAnimation()
