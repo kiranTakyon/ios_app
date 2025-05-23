@@ -723,10 +723,10 @@ extension DigitalResourceDetailController {
         
         var dictionary = [String: Any]()
         
-        dictionary[UserIdKey().id] = userId
+        dictionary[UserIdKey().id] = 319194
         dictionary[GalleryCategory.searchText] = ""
         dictionary[GalleryCategory.paginationNumber] = 1
-        dictionary["CategoryId"] = Int(notification.catid ?? "")
+        dictionary["CategoryId"] = Int(notification.catid ?? 0)
         
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
@@ -736,6 +736,7 @@ extension DigitalResourceDetailController {
             DispatchQueue.main.async {
                 self.stopLoadingAnimation()
                 self.digitalResource = cetgories.first
+                self.setData()
             }
             
         }

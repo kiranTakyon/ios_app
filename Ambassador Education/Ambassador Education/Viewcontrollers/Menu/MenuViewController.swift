@@ -475,7 +475,7 @@ extension MenuViewController{
         switch selectedAlertType {
         case .gallery:
             let vc = ImagePreviewController.instantiate(from: .gallery)
-            let url = notificationObject.catid ?? ""
+            let url = "\(notificationObject.catid ?? 0)"
             vc.imageUrl = url
             vc.imageArr = [url]
             vc.pageTitle = notificationObject.title

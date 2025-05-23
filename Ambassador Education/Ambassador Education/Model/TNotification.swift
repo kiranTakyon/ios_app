@@ -19,7 +19,7 @@ class TNotification: Codable, Hashable {
     var createdBy : String?
     var hashKey : String?
     var type : String?
-    var catid : String?
+    var catid : Int?
     var processid : String?
     var usrReactionType: String?
     var reactions: TReaction?
@@ -42,7 +42,7 @@ class TNotification: Codable, Hashable {
         self.createdBy = values["CreatedBy"] as? String
         self.hashKey = values["HashKey"] as? String
         self.type = values["Type"] as? String
-        self.catid = values["cat_id"] as? String
+        self.catid = values["cat_id"] as? Int
         self.processid = values["id"] as? String
         self.usrReactionType = values["usr_reaction_type"] as? String
         self.url = values["url"] as? String

@@ -892,7 +892,7 @@ extension FeedViewController{
     func presentGalleryPopUp(notification: TNotification) {
         let navVC = gallery.instantiateViewController(withIdentifier: "ImagPreviewNavigationController") as! UINavigationController
         let vc = navVC.children[0] as! ImagePreviewController
-        let url = notification.catid ?? ""
+        let url = "\(notification.catid ?? 0)"
         vc.imageUrl = url
         vc.imageArr = Array([url])
         vc.pageTitle = notification.title
