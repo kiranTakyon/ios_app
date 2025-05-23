@@ -215,6 +215,9 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                     }
                     else
                     {
+                        if let div = self.weeklyPlan?.divisions{
+                            self.classNameString = div[0].division.safeValue
+                        }
                         self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId)
                     }
                 }
@@ -913,7 +916,6 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
         }
         classDropDown?.dataSource = dataSources
         if dataSources.count > 0{
-            self.classNameLabel.text = dataSources[0]
             classDropDown?.selectionAction = {[weak self]  (index: Int, item: String) in
                 guard let self = self else { return }
                 print("Selected item: \(item) at index: \(index)")

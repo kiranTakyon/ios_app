@@ -723,7 +723,7 @@ extension DigitalResourceDetailController {
         
         var dictionary = [String: Any]()
         
-        dictionary[UserIdKey().id] = 319194
+        dictionary[UserIdKey().id] = userId
         dictionary[GalleryCategory.searchText] = ""
         dictionary[GalleryCategory.paginationNumber] = 1
         dictionary["CategoryId"] = Int(notification.catid ?? 0)
