@@ -158,14 +158,7 @@ class APIHelper {
                                 completion([JsonKeys().message : [],JsonKeys().status : httpResponse.statusCode])
                                 throw JSONError.ConversionFailed
                             }
-                            if let theJSONData = try? JSONSerialization.data(
-                                withJSONObject: json,
-                                options: []) {
-                                let theJSONText = String(data: theJSONData,
-                                                         encoding: .ascii)
-                                print("JSON response string = \(theJSONText!)")
-
-                            }
+                        
                             print(json)
                             if let sessionToken = json["session_token" ]{
                                 UserDefaultsManager.manager.saveSessionToken(token: sessionToken as! String )
