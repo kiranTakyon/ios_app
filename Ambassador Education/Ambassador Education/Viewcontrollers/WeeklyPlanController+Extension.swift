@@ -93,15 +93,7 @@ extension WeeklyPlanController: UITextFieldDelegate {
         dropDown = DropDown()
         DropDown.startListeningToKeyboard()
         dropDown?.direction  = .any
-        
-        
-        // The view to which the drop down will appear on
-        //dropDown?.anchorView = selectClassField // UIView or UIBarButtonItem
-        
-        // The list of items to display. Can be changed dynamically
-        
         guard let  _ = weeklyPlan?.divisions else {return}
-        
         var dataSources = [String]()
         if let divisions = weeklyPlan?.divisions {
             for division in divisions {
@@ -109,9 +101,9 @@ extension WeeklyPlanController: UITextFieldDelegate {
                 dataSources.append(division.division!)
             }
         }
-        dropDown?.dataSource = dataSources//["Car", "Motorcycle", "Truck"]
+        dropDown?.dataSource = dataSources
         if dataSources.count > 0 {
-            self.filterDivId = filterDivIdWrtName(item: dataSources[0], array: (self.weeklyPlan?.divisions!)!)
+            self.filterDivId = filterDivIdWrtName(item:classNameString, array: (self.weeklyPlan?.divisions!)!)
             self.getSubjectAPI();
         }
         

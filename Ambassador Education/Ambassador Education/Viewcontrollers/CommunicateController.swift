@@ -30,10 +30,10 @@ class CommunicateController: UIViewController,TaykonProtocol {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
     
-    @IBOutlet weak var inboxImage: UIImageView!
-    @IBOutlet weak var sentImage: UIImageView!
-    @IBOutlet weak var wpImage: UIImageView!
-    @IBOutlet weak var draftImage: UIImageView!
+    @IBOutlet weak var inboxView: UIView!
+    @IBOutlet weak var sentView: UIView!
+    @IBOutlet weak var wpView: UIView!
+    @IBOutlet weak var draftView: UIView!
     
     // MARK: - Propertie's -
     
@@ -125,20 +125,20 @@ class CommunicateController: UIViewController,TaykonProtocol {
     
     func updateImageColors() {
         
-        inboxImage.tintColor = .white
-        sentImage.tintColor = .white
-        wpImage.tintColor = .white
-        draftImage.tintColor = .white
+        inboxView.backgroundColor = UIColor(named: "AppColor")
+        sentView.backgroundColor = UIColor(named: "AppColor")
+        wpView.backgroundColor = UIColor(named: "AppColor")
+        draftView.backgroundColor = UIColor(named: "AppColor")
 
         switch type {
         case .inbox:
-            inboxImage.tintColor = UIColor(named: "9CDAE7")
+            inboxView.backgroundColor = UIColor(named: "9CDAE7")
         case .sent:
-            sentImage.tintColor = UIColor(named: "9CDAE7")
+            sentView.backgroundColor = UIColor(named: "9CDAE7")
         case .WP:
-            wpImage.tintColor = UIColor(named: "9CDAE7")
+            wpView.backgroundColor = UIColor(named: "9CDAE7")
         case .draft:
-            draftImage.tintColor = UIColor(named: "9CDAE7")
+            draftView.backgroundColor = UIColor(named: "9CDAE7")
         case .none:
             break
         }
