@@ -58,6 +58,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var startTime = Date()
     var endTime = Date()
     var isSearch = Int()
+    var selectedIndex = 0
     
     var classDropDown : DropDown?
     
@@ -307,7 +308,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     self.setUpInitialData()
-                    self.titles.removeAll()
+                  //  self.titles.removeAll()
                     self.stopLoadingAnimation()
                 }
             }
@@ -749,6 +750,9 @@ extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSo
         if titles.count > 0{
             if let value = self.titles[indexPath.item] as? String{
                 mainTitle  = value
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
             }
         }
         self.startLoadingAnimation()

@@ -149,8 +149,6 @@ extension DashboardViewController{
         if let cachedModules: [TModule] = cacheManager.loadFromCache(key: "modulesCache") {
             self.moduleList = cachedModules
             self.updateUI()
-        } else {
-            self.startLoadingAnimation()
         }
         self.startLoadingAnimation()
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
