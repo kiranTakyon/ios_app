@@ -98,7 +98,6 @@ class WeeklyPlanFilterController: UIViewController,UITextFieldDelegate{
         if dataSources.count > 0{
             self.selectClassField.text = dataSources[0]
             self .divId = filterDivIdWrtName(item: dataSources[0], array: self.divisions!)
-            self.getSubjectAPI();
             dropDown?.selectionAction = { (index: Int, item: String) in
                 print("Selected item: \(item) at index: \(index)")
                 self.divId = self.filterDivIdWrtName(item: item, array: self.divisions!)

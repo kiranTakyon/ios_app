@@ -14,7 +14,6 @@ extension WeeklyPlanController: UITextFieldDelegate {
     func getSubjectAPI(){
         startLoadingAnimation()
         let url = APIUrls().subjectList;
-        
         var dictionary = [String: String]()
         let userId = UserDefaultsManager.manager.getUserId()
         dictionary[UserIdKey().id] =  userId
@@ -24,9 +23,7 @@ extension WeeklyPlanController: UITextFieldDelegate {
                 print("result :- ",result)
                 if result["StatusCode"] as? Int == 1{
                     if let values = result["subjectlist"] as? NSArray{
-                        
                         let subjectmodel = ModelClassManager.sharedManager.createModelArray(data: values, modelType: ModelType.TNSubject) as! [TNSubject]
-                        
                         self.subjectsnew = subjectmodel
                         self.setSubjectDropDown()
                     }
@@ -50,8 +47,6 @@ extension WeeklyPlanController: UITextFieldDelegate {
                 }
             }
         }
-        
-        
     }
     
     func setSubjectDropDown(){
@@ -59,22 +54,14 @@ extension WeeklyPlanController: UITextFieldDelegate {
         subjectDropDown = DropDown()
         DropDown.startListeningToKeyboard()
         subjectDropDown?.direction  = .any
-        
-        
-        // The view to which the drop down will appear on
-        subjectDropDown?.anchorView = buttonSubjectDropDown // UIView or UIBarButtonItem
-        
-        // The list of items to display. Can be changed dynamically
-        
-        // guard let  _ = subjects else {return}
+        subjectDropDown?.anchorView = buttonSubjectDropDown
         let _ = subjectsnew
         var dataSources = [String]()
         for subject in subjectsnew{
             
             dataSources.append(subject.subject_name!)
         }
-        
-        subjectDropDown?.dataSource = dataSources //["Car", "Motorcycle", "Truck"]
+        subjectDropDown?.dataSource = dataSources
         if dataSources.count > 0{
             self.labelSubject.text = dataSources[0]
             self.subjectID = filterSubIdWrtName(item: dataSources[0], array: self.subjectsnew)
@@ -97,7 +84,6 @@ extension WeeklyPlanController: UITextFieldDelegate {
         var dataSources = [String]()
         if let divisions = weeklyPlan?.divisions {
             for division in divisions {
-                
                 dataSources.append(division.division!)
             }
         }

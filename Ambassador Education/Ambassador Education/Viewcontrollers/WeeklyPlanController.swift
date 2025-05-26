@@ -129,6 +129,12 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         classDropDown?.show()
     }
     
+    
+    @IBAction func viewLatestButtonPressed(_ sender: Any) {
+        isSearch = 1
+        getWeeklyPlanDetails(fromDate: "", toDate: "", isSearch: isSearch, Sub_Id: subId, div: divId)
+    }
+    
     func setClassName(for className: String) {
         classNameLabel.text = "\(className)"
     }
@@ -210,7 +216,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                             self.divId = div[0].divId.safeValue
                             self.subId = sub[0].subject_id.safeValue
                             self.classNameString = div[0].division.safeValue
-                            self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId)
+                            self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: true)
                         }
                     }
                     else
@@ -218,7 +224,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
                         if let div = self.weeklyPlan?.divisions{
                             self.classNameString = div[0].division.safeValue
                         }
-                        self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId)
+                        self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: true)
                     }
                 }
             }
@@ -247,7 +253,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     }
     
     
-    func getWeeklyPlanDetails(fromDate:String,toDate:String,isSearch : Int,Sub_Id:String,div : String){
+    func getWeeklyPlanDetails(fromDate:String,toDate:String,isSearch : Int,Sub_Id:String,div : String,isCallFrist: Bool = false){
         startLoadingAnimation()
         let url = APIUrls().weeklyPlanView
         
@@ -294,7 +300,9 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
 
                 self.setPagerView()
                 self.collectionView.reloadData()
-                self.setDropDown()
+                if isCallFrist{
+                    self.setDropDown()
+                }
                 self.setDate()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {

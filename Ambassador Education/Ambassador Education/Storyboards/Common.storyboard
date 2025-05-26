@@ -2288,17 +2288,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SFz-yX-UJb">
                                         <rect key="frame" x="0.0" y="10" width="95" height="180"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRO-mt-mj1">
-                                                <rect key="frame" x="45" y="0.0" width="50" height="32"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRO-mt-mj1">
+                                                <rect key="frame" x="45" y="0.0" width="50" height="0.0"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrowBlack" translatesAutoresizingMaskIntoConstraints="NO" id="TEz-Sv-9cZ">
-                                                        <rect key="frame" x="25" y="0.0" width="20" height="32"/>
+                                                        <rect key="frame" x="25" y="0.0" width="20" height="0.0"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="LAk-hU-tyc"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-9I-284">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                                         <connections>
                                                             <action selector="buttonArrowAction:" destination="W9A-A9-Iwh" eventType="touchUpInside" id="Ir6-r6-tDB"/>
                                                         </connections>
@@ -2322,17 +2322,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJv-J6-63X">
-                                                <rect key="frame" x="45" y="37" width="50" height="32"/>
+                                                <rect key="frame" x="45" y="0.0" width="50" height="41.333333333333336"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inbox" translatesAutoresizingMaskIntoConstraints="NO" id="3oY-q7-6VM">
-                                                        <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <rect key="frame" x="15" y="4.9999999999999982" width="20" height="31.333333333333329"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="zch-o9-AcH"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTl-WZ-fKw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="41.333333333333336"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -2358,17 +2358,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CV4-ty-SF5">
-                                                <rect key="frame" x="45" y="74" width="50" height="32"/>
+                                                <rect key="frame" x="45" y="46.333333333333343" width="50" height="41.333333333333343"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowsendwhite" translatesAutoresizingMaskIntoConstraints="NO" id="ten-DW-ho5">
-                                                        <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <rect key="frame" x="15" y="4.9999999999999982" width="20" height="31.333333333333329"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="LDc-z4-Flx"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuP-ZM-T0N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="41.333333333333336"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -2394,17 +2394,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUv-Pf-qfr">
-                                                <rect key="frame" x="45" y="111" width="50" height="32"/>
+                                                <rect key="frame" x="45" y="92.666666666666657" width="50" height="41"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat-bubble" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-T0-mUw">
-                                                        <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <rect key="frame" x="15" y="5" width="20" height="31"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="wk7-Vm-c9P"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYd-PR-8cs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="41"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -2430,17 +2430,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3X-Z2-ATd">
-                                                <rect key="frame" x="45" y="148" width="50" height="32"/>
+                                                <rect key="frame" x="45" y="138.66666666666669" width="50" height="41.333333333333343"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="draft" translatesAutoresizingMaskIntoConstraints="NO" id="NzM-SJ-Ql6">
-                                                        <rect key="frame" x="15" y="5" width="20" height="22"/>
+                                                        <rect key="frame" x="15" y="4.9999999999999982" width="20" height="31.333333333333329"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="1JF-td-VoT"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2g-qB-lky">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="41.333333333333336"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
