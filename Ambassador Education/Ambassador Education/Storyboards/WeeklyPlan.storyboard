@@ -180,6 +180,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="searchButtonAction:" destination="BRV-Bg-R4h" eventType="touchUpInside" id="1ef-zX-Qea"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -478,6 +481,7 @@
                         <outlet property="labelSubject" destination="9sK-p8-cnt" id="hqn-IS-Je6"/>
                         <outlet property="noDataLabel" destination="I44-O8-IEh" id="tbM-Ac-dyd"/>
                         <outlet property="progressBar" destination="7MJ-ny-4nc" id="5UZ-Af-bDP"/>
+                        <outlet property="searchTextField" destination="Qw7-BD-8ZU" id="duA-NK-vIY"/>
                         <outlet property="startingDateField" destination="LYh-FN-yW6" id="P2N-zz-0Zw"/>
                         <outlet property="tableView" destination="Wlb-Pl-DoG" id="P85-A5-xcR"/>
                         <outlet property="toDateLabel" destination="srm-i6-hAl" id="HaQ-y5-8a0"/>

@@ -31,7 +31,14 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     @IBOutlet weak var viewClassDropDown: UIView!
     @IBOutlet weak var endingDateField: UITextField!
     @IBOutlet weak var startingDateField: UITextField!
-    
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var fromDateLabel: UILabel!
+    @IBOutlet weak var toDateLabel: UILabel!
+    @IBOutlet weak var progressBar: ProgressViewBar!
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    private var lastQuery = ""
+    private var searchText = ""
     var selectedIndexes: [Int] = []
     var divisions: [WeeklyDivision] = []
     let videoDownload  = VideoDownload()
@@ -46,7 +53,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var subjectsnew = [TNSubject]()
     var subjectID:String = ""
     var savedTime : String?
-    
     var isPresent: Bool = false
     var completeListDetails : NSDictionary?
     var backgroundSession: URLSession!
@@ -54,34 +60,24 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var subjectDropDown : DropDown?
     var datePicker : UIDatePicker!
     var startTimeString = ""
-    var endTimeString = "End Date"
+    var endTimeString = ""
     var startTime = Date()
     var endTime = Date()
     var isSearch = Int()
-    var selectedIndex = 0
-    
+    private var debouncedDelegate: DebouncedTextFieldDelegate!
     var classDropDown : DropDown?
-    
     var dataArray : [WeeklyPlanList] = [WeeklyPlanList](){
         didSet {
             self.setDataArray()
         }
     }
-    
-    @IBOutlet weak var fromDateLabel: UILabel!
-    @IBOutlet weak var toDateLabel: UILabel!
-    @IBOutlet weak var progressBar: ProgressViewBar!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     var weeklyPlan : TNWeeklyPlan?
     var titles = [String]()
     var titlesnew = [String]()
     let dateFormatter1 = DateFormatter()
     var isEmpty = false
-    
     var popUpViewVc : BIZPopupViewController?
     let today = NSDate()
-    
     var currentFromDate = "Start Date"
     var currentToDate = "End Date"
     var classNameString = ""{
@@ -117,7 +113,8 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         self.endingDateField.text = "End Date"
         self.startingDateField.text = "Start Date"
         getWeeklyPlanAPI()
-        // Do any additional setup after loading the view.
+        debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
+        searchTextField.delegate = debouncedDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,9 +128,18 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     }
     
     
+    @IBAction func searchButtonAction(_ sender: Any) {
+        if searchTextField.text?.isEmpty == false {
+            performSearchIfNeeded(query: searchTextField.text ?? "")
+        }
+    }
+    
     @IBAction func viewLatestButtonPressed(_ sender: Any) {
-        isSearch = 1
-        getWeeklyPlanDetails(fromDate: "", toDate: "", isSearch: isSearch, Sub_Id: subId, div: divId)
+        self.startTimeString = ""
+        self.endTimeString = ""
+        self.subId = ""
+        self.divId = ""
+        self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: false)
     }
     
     func setClassName(for className: String) {
@@ -318,6 +324,7 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     }
     func setPagerView(){
         if completeListDetails !=  nil{
+            titles.removeAll()
             titlesnew.removeAll();
             for each in completeListDetails!{
                 if each.value is NSArray{
@@ -347,7 +354,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
             }
             
             self.collectionView.reloadData()
-            
         }
     }
     func callDownLoadWeeklyPlanReport(type:String){
@@ -780,12 +786,7 @@ extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSo
             }
             
             if  let list = self.completeListDetails?[titleType] as? NSArray {
-                
-                
                 let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
-                
-                
-                
                 dataArray = arrayObjs
             } else {
                 dataArray = [WeeklyPlanList]()
@@ -943,3 +944,76 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
     }
     
 }
+
+extension WeeklyPlanController: DebouncedSearchHandling {
+
+    func performSearchIfNeeded(query: String) {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedQuery.isEmpty {
+            guard !lastQuery.isEmpty else { return }
+            lastQuery = ""
+            reloadTableWithCompleteData()
+            return
+        }
+
+        guard trimmedQuery != lastQuery else {
+            print("Skipping API – same query")
+            return
+        }
+
+        lastQuery = trimmedQuery
+        callAPI(with: trimmedQuery)
+    }
+
+    private func callAPI(with query: String) {
+        let events = fetchEvents()
+        dataArray = filterEvents(byTitle: query, in: events)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+
+    private func reloadTableWithCompleteData() {
+        let events = fetchEvents()
+        dataArray = events
+
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+
+    private func fetchEvents() -> [WeeklyPlanList] {
+        let categoryKey = getMappedTitle(from: mainTitle)
+        guard let list = completeListDetails?[categoryKey] as? NSArray else {
+            return []
+        }
+
+        return ModelClassManager.sharedManager
+            .createModelArray(data: list, modelType: .WeeklyPlanList) as? [WeeklyPlanList] ?? []
+    }
+
+    func filterEvents(byTitle searchText: String, in events: [WeeklyPlanList]) -> [WeeklyPlanList] {
+        let trimmedText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedText.isEmpty else { return events }
+
+        return events.filter { $0.topic?.localizedCaseInsensitiveContains(trimmedText) ?? false }
+    }
+
+    func getMappedTitle(from title: String) -> String {
+        switch title.uppercased() {
+        case "HOMEWORK":
+            return "HomeWork"
+        case "ASSESSMENT":
+            return "Assessments"
+        case "CLASSWORK":
+            return "ClassWork"
+        case "QUIZES":
+            return "Quizes/Project/Research"
+        default:
+            return "Unknown"
+        }
+    }
+}
+
+

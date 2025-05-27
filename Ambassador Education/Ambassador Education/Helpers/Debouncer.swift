@@ -52,12 +52,9 @@ class DebouncedTextFieldDelegate: NSObject , UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
 
-        let currentText = textField.text ?? ""
-        guard let textRange = Range(range, in: currentText) else { return true }
-        let updatedText = currentText.replacingCharacters(in: textRange, with: string)
-        let query = updatedText.trimmingCharacters(in: .whitespacesAndNewlines)
-        print("Delegate called")
-        debouncer.debounce { [weak handler] in
+        debouncer.debounce { [weak handler, weak textField] in
+            guard let textField = textField else { return }
+            let query = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             handler?.performSearchIfNeeded(query: query)
         }
 
