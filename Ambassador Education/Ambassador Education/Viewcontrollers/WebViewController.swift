@@ -12,6 +12,8 @@ class WebViewController: UIViewController,WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     internal var strU : String = ""
+    
+    var isPresent: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,11 @@ class WebViewController: UIViewController,WKNavigationDelegate {
     }
     
     @IBAction func btnBackAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        if isPresent {
+            self.dismiss(animated: false)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     func loadWebView(){
         self.startLoadingAnimation()

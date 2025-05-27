@@ -546,9 +546,7 @@ class DRDDownLoadCell: UITableViewCell{
 
     @IBAction func dwnloadButtnAction(_ sender: UIButton) {
         if sender.tag == 1 {
-            //preview
             DigitalResourceDetailController().gotoWeb(str: "")
-            
         }
         else {
             self.delegate?.downLoadMylink(sender: sender, index: self.tag) }
@@ -558,7 +556,8 @@ extension DigitalResourceDetailController:VideoDownloadDelegate{
     func gotoWeb(str : String) {
         let vc = commonStoryBoard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         vc.strU = str
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.isPresent = isPresent
+        isPresent ? self.present(vc, animated: true) :  self.navigationController?.pushViewController(vc, animated: true)
     }
     func loadingStarted(){
         //  self.startLoadingAnimation()
