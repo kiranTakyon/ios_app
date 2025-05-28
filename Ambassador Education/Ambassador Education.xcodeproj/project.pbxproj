@@ -9239,52 +9239,22 @@
 		AEFBA7311F1FC9AF00C0D63F /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				EB926E612DE71FCF00B97DC9 /* Noticeboard */,
+				EB926E602DE71F8300B97DC9 /* Authentication */,
+				EB926E5F2DE71F3E00B97DC9 /* DigitalResource */,
+				EB926E572DE71CFA00B97DC9 /* Gallery */,
+				EB926E562DE71CDE00B97DC9 /* Weekly */,
+				EB926E552DE71CC700B97DC9 /* Communication */,
 				EBF39C702D647D6F0017B01C /* Tabbar */,
 				EB6B57C42D60996600E4A8A5 /* Menu */,
 				98CB0D3A2B565A5B00EB1217 /* DashboardView */,
 				98D0F5912B501E8700F4A148 /* Splash */,
 				988EE3312A4C149D00888512 /* cell */,
-				CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */,
 				AE6D406E1F52F607000F62B8 /* CalendarView */,
-				B4F8C083203B411A00C921DB /* AwarenessViewController.swift */,
-				AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */,
-				B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */,
-				AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */,
-				AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */,
-				AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */,
-				AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */,
-				AE5007E71F2638A10013AA07 /* MapController.swift */,
-				AE21DBDF1F2783B500742127 /* MessageDetailController.swift */,
-				AE21DBE31F278C3700742127 /* ComposeController.swift */,
-				AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */,
-				44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */,
-				CDE82449275FC03D00BD4211 /* AddCommentVC.swift */,
-				AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */,
-				AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */,
-				AE97C6361F5094A3006F4D34 /* GalleryListController.swift */,
-				AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */,
-				AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */,
-				AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */,
-				AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */,
-				AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */,
-				AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */,
-				AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */,
-				AE169EA0200687A00019685A /* PaymentDetailsController.swift */,
-				AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */,
-				183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */,
-				AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */,
-				AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */,
-				AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */,
-				B4F8F6092044534700515F74 /* WebViewViewController.swift */,
-				B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */,
-				B41937672050510A002931EA /* GradeViewController.swift */,
-				B4C639262053D2970099B85E /* ReadSelectViewController.swift */,
-				B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */,
-				EA7198D72BA457CB004817EC /* BirthdayViewController.swift */,
-				EA8C01312C60B461001C47A2 /* PaymentDetailsController+Extension.swift */,
-				EA8C01782C6111C6001C47A2 /* NotificationVideoViewController.swift */,
-				EA830D492C89B52600FDC6F8 /* UpComingEventViewController.swift */,
-				EA9783EC2C8ACFD600DC9C13 /* EventViewController.swift */,
+				EB926E5A2DE71D7500B97DC9 /* Notications */,
+				EB926E5D2DE71E0400B97DC9 /* Awareness */,
+				EB926E5C2DE71DB600B97DC9 /* Payment */,
+				EB926E5E2DE71EFB00B97DC9 /* Common */,
 			);
 			path = Viewcontrollers;
 			sourceTree = "<group>";
@@ -9544,6 +9514,116 @@
 				EB6B58BB2D60BCEF00E4A8A5 /* MenuCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB926E552DE71CC700B97DC9 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				AE21DBDF1F2783B500742127 /* MessageDetailController.swift */,
+				AEEFFA621F24E21500BA82BE /* CommunicateLandController.swift */,
+				AEEFFA661F24F8AC00BA82BE /* CommunicateController.swift */,
+				AE21DBE31F278C3700742127 /* ComposeController.swift */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		EB926E562DE71CDE00B97DC9 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				AEDC50B0200BC026006ADFCB /* WeeklyPlanController.swift */,
+				183B142B2C298AF700F78EF1 /* WeeklyPlanController+Extension.swift */,
+				AE6BF36C200D0D1A0045CFB2 /* WeeklyPlanFilterController.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		EB926E572DE71CFA00B97DC9 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				AE97C6321F5083F9006F4D34 /* GalleryCategoryListController.swift */,
+				AE97C6361F5094A3006F4D34 /* GalleryListController.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		EB926E5A2DE71D7500B97DC9 /* Notications */ = {
+			isa = PBXGroup;
+			children = (
+				AEC7B78F1F55E74C00A366AA /* NotificationDetailListController.swift */,
+				EA8C01782C6111C6001C47A2 /* NotificationVideoViewController.swift */,
+			);
+			path = Notications;
+			sourceTree = "<group>";
+		};
+		EB926E5C2DE71DB600B97DC9 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				EA8C01312C60B461001C47A2 /* PaymentDetailsController+Extension.swift */,
+				AE169EA0200687A00019685A /* PaymentDetailsController.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		EB926E5D2DE71E0400B97DC9 /* Awareness */ = {
+			isa = PBXGroup;
+			children = (
+				B4F8C083203B411A00C921DB /* AwarenessViewController.swift */,
+				B4F54A89204590B1006A0848 /* AwarenessDetailViewController.swift */,
+			);
+			path = Awareness;
+			sourceTree = "<group>";
+		};
+		EB926E5E2DE71EFB00B97DC9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AE5007E71F2638A10013AA07 /* MapController.swift */,
+				AEF4C4F01F3A272A003ED1C9 /* WebViewController.swift */,
+				AE2371291F50AEFA00EA4CDB /* ImagePreviewController.swift */,
+				B4F8F6092044534700515F74 /* WebViewViewController.swift */,
+				B41937672050510A002931EA /* GradeViewController.swift */,
+				B4C639262053D2970099B85E /* ReadSelectViewController.swift */,
+				B4F33578207BBE5F008D07C3 /* DownLoadsViewController.swift */,
+				EA7198D72BA457CB004817EC /* BirthdayViewController.swift */,
+				EA830D492C89B52600FDC6F8 /* UpComingEventViewController.swift */,
+				EA9783EC2C8ACFD600DC9C13 /* EventViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EB926E5F2DE71F3E00B97DC9 /* DigitalResource */ = {
+			isa = PBXGroup;
+			children = (
+				CDE82449275FC03D00BD4211 /* AddCommentVC.swift */,
+				AEC7B78B1F55CCB800A366AA /* DigitalResourceDetailController.swift */,
+				AEC7B7891F55B19600A366AA /* DigitalResourceSecondListController.swift */,
+				AEC7B7831F55A93400A366AA /* DigitalResourcesListController.swift */,
+				CDB7C4192748127C00FE5186 /* DRDAttechmentCell.swift */,
+			);
+			path = DigitalResource;
+			sourceTree = "<group>";
+		};
+		EB926E602DE71F8300B97DC9 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AE9A1AC71F3233590078E628 /* ChangePasswordController.swift */,
+				AE9814F41F783263004FEA98 /* ForgotPasswordController.swift */,
+				AEEFFA5D1F24CE3D00BA82BE /* MyProfileController.swift */,
+				AEFBA7331F1FC9AF00C0D63F /* RegisterPopUpVc.swift */,
+				44EF07D8231AD67F00524BAE /* ResetPasswordVC.swift */,
+				B4F287432039567B00D7B6D9 /* VerificationEmailViewController.swift */,
+				AEFBA7341F1FC9AF00C0D63F /* ViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EB926E612DE71FCF00B97DC9 /* Noticeboard */ = {
+			isa = PBXGroup;
+			children = (
+				AE630DB41F51448800CE1022 /* NoticeboardCategoryController.swift */,
+				AEED343E203099BF00A35086 /* NoticeboardDetailController.swift */,
+				AEED34422030A1AD00A35086 /* NoticeBoardListController.swift */,
+			);
+			path = Noticeboard;
 			sourceTree = "<group>";
 		};
 		EBED12982D6C9BB0005AE657 /* Cell */ = {
