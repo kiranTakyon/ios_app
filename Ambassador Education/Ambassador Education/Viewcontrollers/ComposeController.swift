@@ -1280,30 +1280,47 @@ extension ComposeController {
         if attachmentTypes.count > 4 {
             _ = SweetAlert().showAlert("", subTitle: "You can only upload 5 attachments at a time", style: .warning)
         } else {
-            let alertController = UIAlertController(title:nil, message: "Add Attachment", preferredStyle: .actionSheet)
-            let galleryAction =  UIAlertAction(title: "Gallery", style: .default, handler: { (action) in
+            let alertController = UIAlertController(title: nil, message: "Add Attachment", preferredStyle: .actionSheet)
+            
+            let galleryAction = UIAlertAction(title: "Gallery", style: .default) { _ in
                 self.getImageFromImagPickerController()
-            })
-            let iCloudAction = UIAlertAction(title: "iCloud", style: .default, handler: { (action) in
+            }
+            
+            let iCloudAction = UIAlertAction(title: "iCloud", style: .default) { _ in
                 self.getDocumentsFromiCloud()
-            })
-            let cancelAction =  UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            }
+            
+            let filesAction = UIAlertAction(title: "Files", style: .default) { _ in
+                self.getFilesFromLocal()
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
             alertController.addAction(galleryAction)
             alertController.addAction(iCloudAction)
+            alertController.addAction(filesAction)
             alertController.addAction(cancelAction)
             
             if UI_USER_INTERFACE_IDIOM() == .pad {
-                if let currentPopoverPresentationController = alertController.popoverPresentationController {
-                    currentPopoverPresentationController.sourceView = sender
-                    currentPopoverPresentationController.sourceRect = sender.bounds
-                    currentPopoverPresentationController.permittedArrowDirections = .any
-                    present(alertController, animated: true, completion: nil)
+                if let popover = alertController.popoverPresentationController {
+                    popover.sourceView = sender
+                    popover.sourceRect = sender.bounds
+                    popover.permittedArrowDirections = .any
                 }
-            } else {
-                present(alertController, animated: true, completion: nil)
             }
+            
+            present(alertController, animated: true, completion: nil)
         }
         
+    }
+    
+    
+    func getFilesFromLocal() {
+        let supportedTypes: [String] = ["public.item"]
+        let documentPicker = UIDocumentPickerViewController(documentTypes: supportedTypes, in: .import)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        present(documentPicker, animated: true, completion: nil)
     }
     @IBAction func didTapOndelete(_ sender: UIButton) {
         
