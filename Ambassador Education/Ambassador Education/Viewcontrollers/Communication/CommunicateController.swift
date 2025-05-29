@@ -19,7 +19,8 @@ enum CommunicationType : String{
     case draft = "Draft"
 }
 
-class CommunicateController: UIViewController,TaykonProtocol {
+class CommunicateController: UIViewController,TaykonProtocol{
+    
     
     // MARK: - IBOutlet -
     
@@ -34,18 +35,20 @@ class CommunicateController: UIViewController,TaykonProtocol {
     @IBOutlet weak var sentView: UIView!
     @IBOutlet weak var wpView: UIView!
     @IBOutlet weak var draftView: UIView!
+    @IBOutlet weak var templatesView: UIView!
     
     // MARK: - Propertie's -
     
     var delegate : TaykonProtocol?
     
     var type : CommunicationType?
-    
+    var templates: TemplateResponse?
+    var templateList = [Template]()
     var paginationNumber = 1
     
     var inboxMessages = [TinboxMessage]()
     private var lastQuery = ""
-     private var debouncedDelegate: DebouncedTextFieldDelegate!
+    private var debouncedDelegate: DebouncedTextFieldDelegate!
     let refreshControl = UIRefreshControl()
     var searchText = ""
     var isForDraft: Bool = false
@@ -57,10 +60,12 @@ class CommunicateController: UIViewController,TaykonProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         debouncedDelegate = DebouncedTextFieldDelegate(handler: self)
-        searchTextField.delegate = debouncedDelegate 
+        searchTextField.delegate = debouncedDelegate
         hideKeyboardWhenTappedAround()
         communicateTable.register(UINib(nibName: "CommunicationTableViewCell", bundle: nil), forCellReuseIdentifier: "CommunicationTableViewCell")
+        communicateTable.register(UINib(nibName: TemplateTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TemplateTableViewCell.identifier)
         updateImageColors()
+        callTemplateListAPI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +97,15 @@ class CommunicateController: UIViewController,TaykonProtocol {
         }
     }
     
+    @IBAction func templateList(_ sender: Any) {
+        type = .none
+        updateImageColors()
+        DispatchQueue.main.async {
+            self.communicateTable.reloadData()
+        }
+    }
+    
+    
     func addGestureOnButton() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_ :)))
         view.addGestureRecognizer(gesture)
@@ -108,19 +122,21 @@ class CommunicateController: UIViewController,TaykonProtocol {
     }
     
     func setRefreshControll(){
-        
-        
         refreshControl.addTarget(self, action: #selector(CommunicateController.refresh(sender:)), for: UIControl.Event.valueChanged)
-        
         communicateTable.bottomRefreshControl = refreshControl// not required when using UITableV
     }
     
     @objc func refresh(sender:AnyObject) {
-        // Code to refresh table view
-        isLoadMore = true
-        self.searchText = ""
-        self.paginationNumber += 1
-        self.getInboxMessages(txt : searchText, types: typeValue)
+        switch type {
+        case .inbox, .sent ,.WP, .draft:
+            isLoadMore = true
+            self.searchText = ""
+            self.paginationNumber += 1
+            self.getInboxMessages(txt : searchText, types: typeValue)
+        case .none:
+            isLoadMore = true
+            callTemplateListAPI()
+        }
     }
     
     func updateImageColors() {
@@ -129,7 +145,8 @@ class CommunicateController: UIViewController,TaykonProtocol {
         sentView.backgroundColor = UIColor(named: "AppColor")
         wpView.backgroundColor = UIColor(named: "AppColor")
         draftView.backgroundColor = UIColor(named: "AppColor")
-
+        templatesView.backgroundColor = UIColor(named: "AppColor")
+        
         switch type {
         case .inbox:
             inboxView.backgroundColor = UIColor(named: "9CDAE7")
@@ -140,7 +157,7 @@ class CommunicateController: UIViewController,TaykonProtocol {
         case .draft:
             draftView.backgroundColor = UIColor(named: "9CDAE7")
         case .none:
-            break
+            templatesView.backgroundColor = UIColor(named: "9CDAE7")
         }
     }
     
@@ -321,6 +338,12 @@ class CommunicateController: UIViewController,TaykonProtocol {
         
     }
     
+    @IBAction func addTemplate(_ sender: Any) {
+        let vc = AddNewTemplateViewController.instantiate(from: .communicateLand)
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func composeAction(_ sender: Any) {
         self.delegate?.getBackToParentView(value: "compose", titleValue: nil, isForDraft: false, message: TinboxMessage(values: [:]))
     }
@@ -371,46 +394,67 @@ class CommunicateController: UIViewController,TaykonProtocol {
 
 extension CommunicateController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.inboxMessages.count
+        switch type {
+        case .inbox, .sent ,.WP, .draft:
+            return self.inboxMessages.count
+        case .none:
+            return self.templateList.count
+        }
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunicationTableViewCell", for: indexPath) as! CommunicationTableViewCell
-        if inboxMessages.count > 0 {
-            let message = inboxMessages[indexPath.row]
-            setReadStatus(message: message, cell: cell)
-            setTheTableCellElementsTextColorWrtIsRead(message: message, cell: cell)
-            if let userval = message.user {
-                cell.labelHeading.text = userval
-            } else if let userBol = message.userBool {
-                cell.labelHeading.text = String(userBol)
+        switch type {
+        case .inbox, .sent ,.WP, .draft:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommunicationTableViewCell", for: indexPath) as! CommunicationTableViewCell
+            if inboxMessages.count > 0 {
+                let message = inboxMessages[indexPath.row]
+                setReadStatus(message: message, cell: cell)
+                setTheTableCellElementsTextColorWrtIsRead(message: message, cell: cell)
+                if let userval = message.user {
+                    cell.labelHeading.text = userval
+                } else if let userBol = message.userBool {
+                    cell.labelHeading.text = String(userBol)
+                }
+                setAttachmentsIcon(msg: message, cell: cell)
+                cell.labelMessageType.text = message.subject?.replacingHTMLEntities
+                cell.labelDate.text = message.date
+                cell.index = indexPath.row
+                cell.delegate = self
+                cell.setUpSideViewBg()
             }
-            setAttachmentsIcon(msg: message, cell: cell)
-            cell.labelMessageType.text = message.subject?.replacingHTMLEntities
-            cell.labelDate.text = message.date
-            cell.index = indexPath.row
+            return cell
+        case .none:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TemplateTableViewCell.identifier, for: indexPath) as! TemplateTableViewCell
+            let template = templateList[indexPath.row]
+            cell.setData(template: template)
+            cell.template = template
             cell.delegate = self
-            cell.setUpSideViewBg()
+            return cell
         }
-        return cell
     }
 }
 
 
 extension CommunicateController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
-        if inboxMessages.count > 0{
-            let message = self.inboxMessages[indexPath.row]
-            let messageSub = message.subject.safeValue
-            let messageId = message.id.safeValue
-            
-            delegate?.getBackToParentView(value: messageId,titleValue :messageSub, isForDraft: isForDraft, message: message)
+        switch type {
+        case .inbox, .sent ,.WP, .draft:
+            if inboxMessages.count > 0{
+                let message = self.inboxMessages[indexPath.row]
+                let messageSub = message.subject.safeValue
+                let messageId = message.id.safeValue
+                
+                delegate?.getBackToParentView(value: messageId,titleValue :messageSub, isForDraft: isForDraft, message: message)
+            }
+        case .none:
+            break
         }
     }
+    
 }
 
 
@@ -469,18 +513,135 @@ extension CommunicateController: DebouncedSearchHandling {
         if query.isEmpty {
             if lastQuery != "" {
                 lastQuery = ""
-                getInboxMessages(txt : "", types: typeValue,isSearch: true)
+                switch type{
+                case .inbox, .sent ,.WP, .draft:
+                    getInboxMessages(txt : "", types: typeValue,isSearch: true)
+                    
+                case .none:
+                    callTempaltesFilter(with: query)
+                }
             }
             return
         }
-
+        
         guard query != lastQuery else {
             print("Skipping API – same query")
             return
         }
-
+        
         lastQuery = query
-        getInboxMessages(txt : query, types: typeValue,isSearch: true)
+        switch type{
+        case .inbox, .sent ,.WP, .draft:
+            getInboxMessages(txt : "", types: typeValue,isSearch: true)
+            
+        case .none:
+            callTempaltesFilter(with: query)
+        }
+    }
+    
+    private func callTempaltesFilter(with query: String) {
+        let templates = templates?.templates ?? []
+        templateList = filterEvents(byTitle: query, in: templates)
+        DispatchQueue.main.async { [weak self] in
+            self?.communicateTable.reloadData()
+        }
+    }
+    
+    func filterEvents(byTitle searchText: String, in events: [Template]) -> [Template] {
+        guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return events
+        }
+        return events.filter { event in
+            event.templateName.localizedCaseInsensitiveContains(searchText)
+        }
+    }
+}
+
+extension CommunicateController{
+    
+    func callTemplateListAPI() {
+        let userId = UserDefaultsManager.manager.getUserId()
+        let parameters: [String: Any] = [
+            "tempname": "Mail Template",
+            "UserId": userId,
+        ]
+        let url = APIUrls().getTemplate
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: parameters) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.isLoadMore = false
+                if let responseDict = result as? NSDictionary,
+                   let message = responseDict["StatusMessage"] as? String,
+                   message == "Success" {
+                    let progress = TemplateResponse(values: responseDict)
+                    self?.templates = progress
+                    self?.templateList = progress.templates
+                    for template in progress.templates {
+                        print("ID: \(template.templateID), Name: \(template.templateName)")
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+extension CommunicateController: TemplateTableViewCellDelegate {
+    
+    func templateTableViewCellDidTapEdit(_ cell: TemplateTableViewCell) {
+        let vc = AddNewTemplateViewController.instantiate(from: .communicateLand)
+        vc.isComeForEdit = true
+        vc.delegate = self
+        vc.templates = cell.template
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func templateTableViewCellDidTapDelete(_ cell: TemplateTableViewCell) {
+        SweetAlert().showAlert("Confirm please", subTitle: "Are you sure, you want to Delete?", style: AlertStyle.warning, buttonTitle:"Cancel", buttonColor:UIColor.lightGray , otherButtonTitle:  "Delete", otherButtonColor: UIColor.red) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                
+            }
+            else {
+                let id = cell.template?.templateID ?? ""
+                self.deleteTemplateData(id)
+            }
+        }
+    }
+    
+    func deleteTemplateData(_ id:String) {
+        let userId  = UserDefaultsManager.manager.getUserId()
+        var dictionary = [String:Any]()
+        dictionary["UserId"] = userId
+        dictionary["TempId"] = id
+        let url = APIUrls().deleteTemplate
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [weak self] result in
+            DispatchQueue.main.async {
+                if let message = result["StatusMessage"] as? String,
+                   message == "Success" {
+                    self?.callTemplateListAPI()
+                }
+                else{
+                    self?.showAlert("Error", "Failed to delete template. Please try again.")
+                }
+            }
+        }
+    }
+    
+    func showAlert(_ tittle: String,_ message: String) {
+        SweetAlert().showAlert(
+            tittle,
+            subTitle: message,
+            style: .warning,
+            buttonTitle: "OK",
+            buttonColor: UIColor.systemRed
+        )
+    }
+    
+}
+
+extension CommunicateController : AddNewTemplateDelegate{
+    
+    func refreshTemplates() {
+        callTemplateListAPI()
     }
     
 }

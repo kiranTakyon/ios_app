@@ -64,6 +64,12 @@ class APIUrls{
     let jOURNEYPROGRESS = "JOURNEYPROGRESS"
     let cHALLANGESPROGRESS = "CHALLANGESPROGRESS"
     let qUIZPROGRESS = "QUIZPROGRESS"
+    let getTemplate = "T0402"
+    let getSelectedTemplate = "T0401"
+    let deleteTemplate = "T0403"
+    let editTemplate = "T0402"
+    let geTemplateNames = "T0400"
+    let addTemplate = "TEMPMSG"
 }
 
 
