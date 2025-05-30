@@ -101,6 +101,17 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                         if self.text.safeValue == "" && !list.isEmpty {
                             self.topHeaderView.title = "\(list.first!.subject!)"
                         }
+                        else{
+                            if typeValue == 2{
+                                self.topHeaderView.title = "Inbox"
+                            }
+                            else if typeValue == 1 {
+                                self.topHeaderView.title = "Sent"
+                            }
+                            else {
+                                self.topHeaderView.title = ""
+                            }
+                        }
                         self.messageTable.reloadData()
                         self.stopLoadingAnimation()
                             if self.messageList.count == 0{
