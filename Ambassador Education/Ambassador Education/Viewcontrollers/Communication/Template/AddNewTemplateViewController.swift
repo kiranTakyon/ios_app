@@ -155,16 +155,16 @@ extension AddNewTemplateViewController{
         var dictionary = [String:Any]()
         dictionary["UserId"] = userId
         dictionary["client_ip"] = getUdidOfDevide()
-        dictionary["tempname"] = templateTitleTextField.text
-        dictionary["tempmsg"] = bodyText
+        dictionary["TempName"] = templateTitleTextField.text
+        dictionary["TempMsg"] = bodyText
+        dictionary["TempId"] = templates?.templateID ?? ""
         let url = APIUrls().editTemplate
         self.startLoadingAnimation()
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "",typingCountVal: typingCount, requestParameters: dictionary) { [weak self] result in
-            
             guard let self = self else { return }
             DispatchQueue.main.async {
-                if let message = result["StatusMessage"] as? String,
-                   message == "Success" {
+                if let status = result["StatusCode"] as? Int,
+                   status == 1 {
                     self.delegate?.refreshTemplates()
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -200,6 +200,4 @@ extension AddNewTemplateViewController{
             }
         }
     }
-    
-    
 }

@@ -8,6 +8,7 @@
 import UIKit
 import RichEditorView
 import MobileCoreServices
+import DropDown
 //import RebekkaTouch
 
 
@@ -45,12 +46,12 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     @IBOutlet weak var editorView: RichEditorView!
     @IBOutlet weak var toolBar: RichEditorToolbar!
     @IBOutlet weak var topHeaderView: TopHeaderView!
-    
-    
+    @IBOutlet weak var templateView: UIView!
+    @IBOutlet weak var templateLabel: UILabel!
     @IBOutlet weak var suggestionConstraint: NSLayoutConstraint!
     
     var forwardMsgIdValue = String()
-    //var fileUpload = UploadFTP()
+    var templateId = ""
     var fileUpload = FTPUpload()
     var isReplyMail = false
     var attachmentTypes: [AttachmentType] = []
@@ -59,7 +60,7 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     var selectedPersons = ""
     var selectedPersonCC = ""
     var isIncluded = false
-    
+    var templateList = [Template]()
     var groupItems = [TNGroup]()
     var personItems = [TNPerson]()
     var obj : TinboxMessage?
@@ -72,6 +73,8 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     var session: Session!
     var draftMessageList = [TinboxMessage]()
     var commDraftId: Int?
+    var templateDropDown : DropDown?
+    var templateIds = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,15 +83,19 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
         setTableViewProporties()
         getFTPDetails()
         subjectTextField.delegate = self
+        groupView.backgroundColor = UIColor.white
         getTokenView(tokenView : groupView,placeHolder: "Select Group")
         getTokenView(tokenView : personView,placeHolder:"Select Person")
         getTokenView(tokenView : bccView,placeHolder:"Add Cc")
         subjectTextField.placeholder = "Subject"
         setMessages()
         isIncluded = false
-        // Do any additional setup after loading the view.
+        callTemplateListAPI()
     }
     
+    @IBAction func showTemplatesAction(_ sender: UIButton) {
+        templateDropDown?.show()
+    }
     
     private func stringFromHtml(string: String,method: String)  {
         if method.contains("Forward") ||  method.contains("إلى الأمام") {
@@ -952,6 +959,40 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
         return id
     }
     
+    func setTemplateDropDown(){
+        templateDropDown = DropDown()
+        DropDown.startListeningToKeyboard()
+        templateDropDown?.direction  = .bottom
+        templateDropDown?.anchorView = templateView
+        var dataSources = [String]()
+        for template in templateList{
+            dataSources.append(template.templateName)
+        }
+        templateIds = templateList.map { $0.templateID }
+        templateDropDown?.dataSource = dataSources
+        if dataSources.count > 0{
+            templateDropDown?.selectionAction = {[weak self]  (index: Int, item: String) in
+                guard let self = self else { return }
+                print("Selected item: \(item) at index: \(index)")
+                let id = self.templateIds[index]
+                self.editorView.html = self.filterMessageIdWrtName(item: id, array: self.templateList)
+                self.templateLabel.text = item
+            }
+        }
+    }
+    
+    func filterMessageIdWrtName(item : String,array :[Template]) -> String{
+        if array.count > 0{
+            for each in array{
+                if each.templateID  == item{
+                    return each.templateMessage
+                }
+            }
+        }
+        return ""
+    }
+    
+    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -1324,6 +1365,31 @@ extension ComposeController {
     }
     @IBAction func didTapOndelete(_ sender: UIButton) {
         
+    }
+    
+}
+
+extension ComposeController{
+    
+    func callTemplateListAPI() {
+        let userId = UserDefaultsManager.manager.getUserId()
+        let parameters: [String: Any] = [
+            "tempname": "Mail Template",
+            "UserId": userId,
+        ]
+        let url = APIUrls().getTemplate
+        startLoadingAnimation()
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: parameters) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.stopLoadingAnimation()
+                if let message = result["StatusMessage"] as? String,
+                   message == "Success" {
+                    let progress = TemplateResponse(values: result)
+                    self?.templateList = progress.templates
+                    self?.setTemplateDropDown()
+                }
+            }
+        }
     }
     
 }

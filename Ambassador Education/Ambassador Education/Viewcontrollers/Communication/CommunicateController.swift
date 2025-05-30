@@ -575,9 +575,7 @@ extension CommunicateController{
                     let progress = TemplateResponse(values: responseDict)
                     self?.templates = progress
                     self?.templateList = progress.templates
-                    for template in progress.templates {
-                        print("ID: \(template.templateID), Name: \(template.templateName)")
-                    }
+                    self?.communicateTable.reloadData()
                 }
             }
         }
@@ -613,10 +611,12 @@ extension CommunicateController: TemplateTableViewCellDelegate {
         dictionary["UserId"] = userId
         dictionary["TempId"] = id
         let url = APIUrls().deleteTemplate
+        startLoadingAnimation()
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { [weak self] result in
             DispatchQueue.main.async {
-                if let message = result["StatusMessage"] as? String,
-                   message == "Success" {
+                self?.stopLoadingAnimation()
+                if let status = result["StatusCode"] as? Int,
+                   status == 1  {
                     self?.callTemplateListAPI()
                 }
                 else{
