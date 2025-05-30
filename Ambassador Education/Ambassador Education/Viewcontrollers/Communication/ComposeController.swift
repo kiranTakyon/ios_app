@@ -91,6 +91,7 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
         setMessages()
         isIncluded = false
         callTemplateListAPI()
+        
     }
     
     @IBAction func showTemplatesAction(_ sender: UIButton) {
