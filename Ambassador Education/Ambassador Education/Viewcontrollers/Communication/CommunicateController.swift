@@ -66,6 +66,7 @@ class CommunicateController: UIViewController,TaykonProtocol{
         communicateTable.register(UINib(nibName: TemplateTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TemplateTableViewCell.identifier)
         updateImageColors()
         callTemplateListAPI()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -256,6 +257,7 @@ class CommunicateController: UIViewController,TaykonProtocol{
     func setCharacterColor(cell:CommunicationTableViewCell,textColr: UIColor){
         //cell.labelHeading.textColor = textColr
         cell.labelMessageType.textColor = textColr
+        
     }
     
     func setReadStatus(message : TinboxMessage,cell: CommunicationTableViewCell){

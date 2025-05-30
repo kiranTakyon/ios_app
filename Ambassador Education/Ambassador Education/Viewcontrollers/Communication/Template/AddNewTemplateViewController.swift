@@ -15,10 +15,12 @@ protocol AddNewTemplateDelegate: AnyObject {
 
 class AddNewTemplateViewController: UIViewController {
     
+    @IBOutlet weak var bottomViewOutlet: NSLayoutConstraint!
     @IBOutlet weak var templateTitleTextField: UITextField!
     @IBOutlet weak var topHeaderView: TopHeaderView!
     @IBOutlet weak var editorView: RichEditorView!
     @IBOutlet weak var toolBar: RichEditorToolbar!
+    
     var isComeForEdit: Bool = false
     var templates: Template?
     weak var delegate: AddNewTemplateDelegate?
@@ -28,9 +30,12 @@ class AddNewTemplateViewController: UIViewController {
         topHeaderView.delegate = self
         topHeaderView.title = "Add New Template"
         setRichToolbarProporties()
+        hideKeyboardWhenTappedAround()
         if isComeForEdit {
             setData()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func setData() {
@@ -70,7 +75,33 @@ class AddNewTemplateViewController: UIViewController {
             addTemplateData()
         }
     }
-    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
+            return
+        }
+
+        // Fix over-shifting by removing safe area inset from keyboard height
+        let keyboardHeight = keyboardFrame.height
+        let safeAreaBottom = view.safeAreaInsets.bottom
+        let adjustedHeight = keyboardHeight - safeAreaBottom + 5
+
+        UIView.animate(withDuration: duration) {
+            self.bottomViewOutlet.constant = adjustedHeight
+            self.view.layoutIfNeeded()
+        }
+    }
+
+
+    @objc func keyboardWillHide(_ notification: Notification) {
+        if let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval {
+            UIView.animate(withDuration: duration) {
+                self.bottomViewOutlet.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+
     func showAlert(_ message: String) {
         SweetAlert().showAlert(
             "Validation Failed",

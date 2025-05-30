@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -475,6 +475,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyL-NV-tNh" customClass="RichEditorView" customModule="RichEditorView">
+                                <rect key="frame" x="15" y="125" width="363" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="287" id="Wxl-Fd-2Fw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Wxl-Fd-2Fw"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRH-Xf-9d3" customClass="TopHeaderView" customModule="ABC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="75"/>
                                 <color key="backgroundColor" name="AppColor"/>
@@ -536,18 +548,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyL-NV-tNh" customClass="RichEditorView" customModule="RichEditorView">
-                                <rect key="frame" x="15" y="125" width="363" height="583"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="287" id="Wxl-Fd-2Fw"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Wxl-Fd-2Fw"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Template" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-ki-Cdr">
                                 <rect key="frame" x="15.000000000000004" y="91" width="63.333333333333343" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
@@ -572,12 +572,12 @@
                             <constraint firstItem="sq0-Ct-Ot8" firstAttribute="leading" secondItem="1CB-4K-1H6" secondAttribute="leading" constant="15" id="Ayl-kB-v56"/>
                             <constraint firstItem="Kae-ki-Cdr" firstAttribute="centerY" secondItem="leY-w8-AGG" secondAttribute="centerY" id="BTI-r7-J2o"/>
                             <constraint firstItem="Kae-ki-Cdr" firstAttribute="leading" secondItem="sq0-Ct-Ot8" secondAttribute="leading" id="C40-gC-x1x"/>
+                            <constraint firstItem="sq0-Ct-Ot8" firstAttribute="top" secondItem="RyL-NV-tNh" secondAttribute="bottom" constant="10" id="Hgj-lU-4YF"/>
                             <constraint firstItem="1CB-4K-1H6" firstAttribute="trailing" secondItem="leY-w8-AGG" secondAttribute="trailing" constant="15" id="I0C-Xz-OkL"/>
                             <constraint firstItem="uRH-Xf-9d3" firstAttribute="trailing" secondItem="1CB-4K-1H6" secondAttribute="trailing" id="OsH-1k-fea"/>
                             <constraint firstItem="1CB-4K-1H6" firstAttribute="trailing" secondItem="sq0-Ct-Ot8" secondAttribute="trailing" constant="15" id="RK7-0y-2o2"/>
                             <constraint firstItem="1CB-4K-1H6" firstAttribute="bottom" secondItem="Tir-yn-xb8" secondAttribute="bottom" constant="10" id="TTS-4t-OT8"/>
                             <constraint firstItem="RyL-NV-tNh" firstAttribute="leading" secondItem="sq0-Ct-Ot8" secondAttribute="leading" id="bOr-AV-Bo9"/>
-                            <constraint firstItem="sq0-Ct-Ot8" firstAttribute="top" secondItem="RyL-NV-tNh" secondAttribute="bottom" constant="10" id="brw-6v-0hB"/>
                             <constraint firstItem="RyL-NV-tNh" firstAttribute="trailing" secondItem="sq0-Ct-Ot8" secondAttribute="trailing" id="ePU-Fh-jea"/>
                             <constraint firstItem="leY-w8-AGG" firstAttribute="leading" secondItem="Kae-ki-Cdr" secondAttribute="trailing" constant="10" id="ehE-Dc-NpA"/>
                             <constraint firstItem="RyL-NV-tNh" firstAttribute="top" secondItem="leY-w8-AGG" secondAttribute="bottom" constant="10" id="fZL-WC-W5s"/>
@@ -586,6 +586,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomViewOutlet" destination="TTS-4t-OT8" id="zll-RK-5hh"/>
                         <outlet property="editorView" destination="RyL-NV-tNh" id="H2R-Yb-kTE"/>
                         <outlet property="templateTitleTextField" destination="leY-w8-AGG" id="fIl-CC-zes"/>
                         <outlet property="toolBar" destination="sq0-Ct-Ot8" id="AfJ-jA-jSg"/>
