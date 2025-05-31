@@ -580,17 +580,12 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
       func loadPDFAndShare(url: String, fileName: String){
-     
         addBlurEffectToTableView(inputView: self.view, hide: false)
         progressBar.isHidden = false
         progressBar.progressBar.setProgress(1.0, animated: true)
         progressBar.titleText = "Downloading,Please wait"
-
         videoDownload.startDownloadingUrls(urlToDowload:[url],type:"", fileName:fileName)
-
        }
-
-    
 
     func groupIdsAndNames(message:TinboxMessage) -> ([Int],[String]){
         

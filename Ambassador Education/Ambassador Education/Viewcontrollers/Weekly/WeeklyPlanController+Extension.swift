@@ -11,119 +11,6 @@ import DropDown
 
 extension WeeklyPlanController: UITextFieldDelegate {
     
-    func getSubjectAPI(){
-        startLoadingAnimation()
-        let url = APIUrls().subjectList;
-        var dictionary = [String: String]()
-        let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] =  userId
-        dictionary[WeeklyPlanKeys().Div_Id]     = self.filterDivId
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            DispatchQueue.main.async {
-                print("result :- ",result)
-                if result["StatusCode"] as? Int == 1{
-                    if let values = result["subjectlist"] as? NSArray{
-                        let subjectmodel = ModelClassManager.sharedManager.createModelArray(data: values, modelType: ModelType.TNSubject) as! [TNSubject]
-                        self.subjectsnew = subjectmodel
-                        self.setSubjectDropDown()
-                    }
-                    self.stopLoadingAnimation();
-                }
-                else {
-                    self.stopLoadingAnimation()
-                    
-                    if let message = result["MSG"] as? String{
-                        SweetAlert().showAlert(kAppName , subTitle: message, style: AlertStyle.error)
-                    }
-                    else{
-                        if let  message = result["StatusMessage"] as? String{
-                            SweetAlert().showAlert(kAppName, subTitle: message, style: .success, buttonTitle: alertOk, action: { (index) in
-                                if index{
-                                    
-                                }
-                            })
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    func setSubjectDropDown(){
-        savedTime = nil
-        subjectDropDown = DropDown()
-        DropDown.startListeningToKeyboard()
-        subjectDropDown?.direction  = .any
-        subjectDropDown?.anchorView = buttonSubjectDropDown
-        let _ = subjectsnew
-        var dataSources = [String]()
-        for subject in subjectsnew{
-            
-            dataSources.append(subject.subject_name!)
-        }
-        subjectDropDown?.dataSource = dataSources
-        if dataSources.count > 0{
-            self.labelSubject.text = dataSources[0]
-            self.subjectID = filterSubIdWrtName(item: dataSources[0], array: self.subjectsnew)
-            subjectDropDown?.selectionAction = { (index: Int, item: String) in
-                print("Selected item: \(item) at index: \(index)")
-                self.subjectID = self.filterSubIdWrtName(item: item, array: self.subjectsnew)
-                self.labelSubject.text = item
-                
-            }
-        }
-        
-    }
-    
-    func setDropDown(){
-        savedTime = nil
-        dropDown = DropDown()
-        DropDown.startListeningToKeyboard()
-        dropDown?.direction  = .any
-        guard let  _ = weeklyPlan?.divisions else {return}
-        var dataSources = [String]()
-        if let divisions = weeklyPlan?.divisions {
-            for division in divisions {
-                dataSources.append(division.division!)
-            }
-        }
-        dropDown?.dataSource = dataSources
-        if dataSources.count > 0 {
-            self.filterDivId = filterDivIdWrtName(item:classNameString, array: (self.weeklyPlan?.divisions!)!)
-            self.getSubjectAPI();
-        }
-        
-    }
-    
-    
-    func filterSubIdWrtName(item : String,array :[TNSubject]) -> String{
-        if array.count > 0{
-            for each in array{
-                if each.subject_name  == item{
-                    return each.subject_id!
-                }
-            }
-        }
-        return ""
-    }
-    
-    func filterDivIdWrtName(item : String,array :[WeeklyDivision]) -> String{
-        if array.count > 0{
-            for each in array{
-                if each.division  == item{
-                    classNameString = each.division ?? "Class :"
-                    return each.divId!
-                }
-            }
-        }
-        return ""
-    }
-    
-    @IBAction func didTapOnSubjectDropDown(_ sender: Any) {
-        
-        subjectDropDown?.show()
-    }
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == startingDateField {
             self.showDatePicker(textField: textField, date: startTime,tag: 2)
@@ -196,28 +83,17 @@ extension WeeklyPlanController: UITextFieldDelegate {
             else{
                 if datePicker.tag == 2{
                     startingDateField.text = dateValue
-                    print("nn",dateValue)
-                    print("nn",startingDateField.text)
                     startTime = (datePicker.date as NSDate) as Date
                     startTimeString  = dateValue
-                    endingDateField.text =  getThe5thDayFromSelectedDate(date: datePicker.date as NSDate, value: 4)
                     endTimeString = endingDateField.text!
                     endTime = changetoDiffFormatInDate(value:endTimeString,fromFormat: "dd-MM-yyyy",toFormat:"yyyy-MM-dd hh:mm:ss")
-                    
-                    //  endTime = convertToDate(dateVal: endTimeString)
-                    
-                    //            let dateFormatZeros = "yyyy-MM-dd hh:mm:ss +0000"
-                    //            let dateFormatMonthText = "dd MMM yyyy"
-                    //            let dateFormatDateTimeText = "d MMMM y hh:mm a"
                 }else{
                     
                     endingDateField.text = "\(dateValue)"
                     endTime = (datePicker.date as NSDate) as Date
                     endTimeString = dateValue
-                    //  startingDateField.text =
-                    // getThe5thDayFromSelectedDate(date: datePicker.date as NSDate, value: -4)
                     startTimeString = startingDateField.text!
-                    
+                    startTime = changetoDiffFormatInDate(value:startTimeString,fromFormat: "dd-MM-yyyy",toFormat:"yyyy-MM-dd hh:mm:ss")
                 }
             }
             
@@ -231,43 +107,310 @@ extension WeeklyPlanController: UITextFieldDelegate {
         endingDateField.resignFirstResponder()
         
     }
+}
+
+
+//MARK: - UICollectionViewDelegate,UICollectionViewDataSource -
+
+extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if !isEmpty {
+            titles = titles.filter { $0 != "" }
+        }
+        if titles.count > 0 {
+            return titles.count
+        }
+        return 0
+    }
     
-    func setDate(){
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeeklyPlanCollectionViewCell", for: indexPath) as? WeeklyPlanCollectionViewCell else { return UICollectionViewCell() }
+        let colorIndex = indexPath.row % viewColors.count
+        let title = titles[indexPath.row]
+        let isSelected = mainTitle.lowercased() == title.lowercased()
+        cell.bgView.backgroundColor = isSelected ? UIColor(named: "AppColor") : UIColor(named: "9CDAE7")
+        cell.titleLabel.textColor = isSelected ? UIColor.white : UIColor.black
+        cell.titleLabel.text = titles[indexPath.row]
         
-        if let details = self.completeListDetails {
-            if let start = details["FromDate"] as? String {
-                if start != "" {
-                    startTimeString = start
-                    startingDateField.text = start
-                    startTime = convertToDate(from: start) ?? Date()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if titles.count > 0{
+            if let value = self.titles[indexPath.item] as? String{
+                mainTitle  = value
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
                 }
             }
-            if let end = details["ToDate"] as? String {
-                if end != "" {
-                    endTimeString = end
-                    endingDateField.text = end
-                    endTime = convertToDate(from: end) ?? Date()
+        }
+        self.startLoadingAnimation()
+        var titleType = String()
+        if indexPath.item < titlesnew.count{
+            var titless = self.titlesnew[indexPath.item]
+            if titless.contains("ASSESSMENT") ||  titless.contains("ASSESSMENTS"){
+                titless = "ASSESSMENT"
+            }
+            else if titless.contains("CLASSWORK") ||  titless.contains("CLASSWORKS"){
+                titless = "CLASSWORK"
+            }
+            switch titless {
+            case "HOMEWORK":
+                titleType = "HomeWork"
+            case "ASSESSMENT":
+                titleType = "Assessments"
+            case "CLASSWORK":
+                titleType = "ClassWork"
+            case "QUIZES":
+                titleType = "Quizes/Project/Research"
+                
+            default:
+                break
+            }
+            
+            if  let list = self.completeListDetails?[titleType] as? NSArray {
+                let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
+                dataArray = arrayObjs
+            } else {
+                dataArray = [WeeklyPlanList]()
+            }
+            self.stopLoadingAnimation()
+        }
+    }
+    
+}
+
+extension WeeklyPlanController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 85, height: 110)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+       return 10
+    }
+}
+
+
+
+//MARK: - API Calls -
+extension WeeklyPlanController {
+    
+    func getSubjectAPI(){
+        startLoadingAnimation()
+        let url = APIUrls().subjectList;
+        var dictionary = [String: String]()
+        let userId = UserDefaultsManager.manager.getUserId()
+        dictionary[UserIdKey().id] =  userId
+        dictionary[WeeklyPlanKeys().Div_Id] = self.divId
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            DispatchQueue.main.async {
+                print("result :- ",result)
+                if result["StatusCode"] as? Int == 1{
+                    if let values = result["subjectlist"] as? NSArray{
+                        let subjectmodel = ModelClassManager.sharedManager.createModelArray(data: values, modelType: ModelType.TNSubject) as! [TNSubject]
+                        self.subjectsnew = subjectmodel
+                        self.setSubjectDropDown()
+                    }
+                    self.stopLoadingAnimation();
+                }
+                else {
+                    self.stopLoadingAnimation()
+                    
+                    if let message = result["MSG"] as? String{
+                        SweetAlert().showAlert(kAppName , subTitle: message, style: AlertStyle.error)
+                    }
+                    else{
+                        if let  message = result["StatusMessage"] as? String{
+                            SweetAlert().showAlert(kAppName, subTitle: message, style: .success, buttonTitle: alertOk, action: { (index) in
+                                if index{
+                                    
+                                }
+                            })
+                        }
+                    }
                 }
             }
         }
     }
     
-    
-    @IBAction func searchAction(_ sender: Any) {
-        if startingDateField.text != "" && endingDateField.text != ""{
-            isSearch = 0
-            let fullTime = (startTimeString,endTimeString,isSearch,filterDivId,subjectID )
-            self.refreshParentView(value: fullTime, titleValue: nil, isForDraft: false)
-        } else {
-            SweetAlert().showAlert(kAppName, subTitle: "All fields are required", style: .error)
+    func callDownLoadWeeklyPlanReport(type:String){
+        
+        let url = APIUrls().weeklyPlanView
+        let userId = UserDefaultsManager.manager.getUserId()
+        var dictionary = [String: Any]()
+        dictionary["UserId"] = userId
+        dictionary["Div_Id"] = divId
+        if let date = fromDateLabel.text?.lastWords(3){
+            dictionary["FromDate"] = date[0]+"/"+date[1]+"/"+date[2]
+            
+        }
+        if let date = toDateLabel.text?.lastWords(3){
+            dictionary["ToDate"] = date[0]+"/"+date[1]+"/"+date[2]
+            
+        }
+        dictionary["isLatest"] = true
+        dictionary["Type"] = type
+        dictionary["Limit"] = 5
+        dictionary["OffSet"] = 0
+        
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            DispatchQueue.main.async {
+                self.stopLoadingAnimation()
+                
+                if let status = result["StatusCode"] as? Int{
+                    
+                    self.setDownLoadUrl(result: result, type: type)
+                    if let msg = result["StatusMessage"] as? String{
+                        //SweetAlert().showAlert(kAppName, subTitle: msg, style: AlertStyle)
+                        
+                    }
+                }
+            }
         }
     }
     
-    func convertToDate(from dateString: String) -> Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        return formatter.date(from: dateString)
+    func getWeeklyPlanDetails(fromDate:String,toDate:String,isSearch : Int,Sub_Id:String,div : String,isCallFrist: Bool = false){
+        startLoadingAnimation()
+        let url = APIUrls().weeklyPlanView
+        let userId = UserDefaultsManager.manager.getUserId()
+        let isLatest  = isSearch
+        let offset = 0
+        let type = ""
+        let limit = 50
+        var dictionary = [String: Any]()
+
+        dictionary[UserIdKey().id]              = userId
+        dictionary[WeeklyPlanKeys().Div_Id]     = div
+        dictionary[WeeklyPlanKeys().Sub_Id]     = Sub_Id
+        dictionary[WeeklyPlanKeys().IsLatest]   = isLatest
+        dictionary[WeeklyPlanKeys().OffSet]     = offset
+        dictionary[WeeklyPlanKeys().type]       = type
+        dictionary[WeeklyPlanKeys().FromDate]   = fromDate
+        dictionary[WeeklyPlanKeys().ToDate]     = toDate
+        dictionary[WeeklyPlanKeys().Limit]      = limit
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            self.completeListDetails = result
+            DispatchQueue.main.async {
+                if let details = self.completeListDetails{
+                    if let start = details["FromDate"] as? String{
+                        self.fromDateLabel.text = "From : " + start
+                    }
+                    if let end = details["ToDate"] as? String{
+                        self.toDateLabel.text = "To : " + end
+                    }
+                    if let comm_n = details["WPComments"] as? String {
+                        self.comment_needed = comm_n
+                    }
+                }
+
+                self.setPagerView()
+                self.collectionView.reloadData()
+                if isCallFrist{
+                    self.getSubjectAPI();
+                }
+                self.setDate()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.setUpInitialData()
+                 
+                    self.stopLoadingAnimation()
+                }
+            }
+        }
     }
+    
+    func getWeeklyPlanAPI(){
+        startLoadingAnimation()
+        let url = APIUrls().weeklyPlan
+        
+        var dictionary = [String: String]()
+        let userId = UserDefaultsManager.manager.getUserId()
+        dictionary[UserIdKey().id] =  userId
+        
+        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+            
+              print("requestParameters :- ",dictionary)
+            print("result :- ",result)
+            DispatchQueue.main.async{
+                
+                if result["StatusCode"] as? Int == 1{
+                    
+                    let weeklyPlanModels = ModelClassManager.sharedManager.createModelArray(data: [result], modelType: ModelType.TNWeeklyPlan) as! [TNWeeklyPlan]
+                    
+                    self.weeklyPlan = weeklyPlanModels[0]
+                    self.setClassDropDown()
+                    self.topHeaderView.title = self.weeklyPlan?.weelyPlanLabel.safeValue ?? ""
+                    self.stopLoadingAnimation()
+                }
+                else{
+                    self.stopLoadingAnimation()
+                    
+                    if let message = result["MSG"] as? String{
+                        SweetAlert().showAlert(kAppName , subTitle: message, style: AlertStyle.error)
+                    }
+                    else{
+                        if let  message = result["StatusMessage"] as? String{
+                            SweetAlert().showAlert(kAppName, subTitle: message, style: .success, buttonTitle: alertOk, action: { (index) in
+                                if index{
+                                    
+                                }
+                            })
+                        }
+                    }
+                }
+                if self.weeklyPlan != nil{
+                    if let div = self.weeklyPlan?.divisions,let sub = self.weeklyPlan?.subjects{
+                        if div.count > 0{
+                            self.divId = div[0].divId.safeValue
+                            self.subId = sub[0].subject_id.safeValue
+                            self.classNameString = div[0].division.safeValue
+                            self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: true)
+                        }
+                    }
+                    else
+                    {
+                        if let div = self.weeklyPlan?.divisions{
+                            self.classNameString = div[0].division.safeValue
+                        }
+                        self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: "",isCallFrist: true)
+                    }
+                }
+            }
+        }
+    }
+}
+
+//MARK: - TaykonProtocol -
+extension WeeklyPlanController: TaykonProtocol{
+    
+    func downloadPdfButtonAction(url: String, fileName: String?) {
+        
+    }
+    
+    func selectedPickerRow(selctedRow: Int) {
+        
+    }
+    
+    func popUpDismiss() {
+        
+    }
+    
+    func moveToComposeController(titleTxt: String,index : Int,tag: Int) {
+        
+    }
+    func getSearchWithCommunicate(searchTxt: String, type: Int) {
+        
+    }
+    
+    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
+        
+    }
+    
 }

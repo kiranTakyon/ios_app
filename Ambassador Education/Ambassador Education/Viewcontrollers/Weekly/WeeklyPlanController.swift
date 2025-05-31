@@ -19,7 +19,7 @@ protocol WeeklyPlanControllerDelegate: AnyObject {
     func weeklyPlanController(_ view: UIViewController, didtapOnCellForPopupWith comment: String, divId: String, weeklyPlan: WeeklyPlanList)
 }
 
-class WeeklyPlanController: UIViewController,TaykonProtocol {
+class WeeklyPlanController: UIViewController {
         
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var viewPager: MXSegmentedPager!
@@ -45,7 +45,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     var fileURLs = [NSURL]()
     let quickLookController = QLPreviewController()
     var divId = ""
-    var filterDivId = ""
     var dropDown : DropDown?
     var subId = ""
     var comment_needed = "1"
@@ -142,186 +141,106 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
         self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: false)
     }
     
-    func setClassName(for className: String) {
-        classNameLabel.text = "\(className)"
-    }
-    
-    func deleteTheSelectedAttachment(index: Int) {
-        
-    }
-    
-    func setDateFormatter() {
-        dateFormatter1.dateStyle = .long
-        dateFormatter1.dateFormat = DateTypes.yyyyMMdd
-        let details = logInResponseGloabl;
-        if(details["CompanyId"]as! String=="330")//Don't display dates for Al Zuhour #53462
-        {
-            self.fromDateLabel.isHidden = true
-            self.toDateLabel.isHidden = true
-        }
-    }
-    func setDatesOnPicker(){
-        var daycomponents = DateComponents(calendar: Calendar.current,weekday:  Calendar.current.firstWeekday)
-        print("hh",Calendar.current.timeZone)
-        
-        let startday = Calendar.current.nextDate(after: Date(), matching: daycomponents, matchingPolicy: .nextTimePreservingSmallerComponents)
-        daycomponents.day = -8
-        var fromdate = Calendar.current.date(byAdding: daycomponents, to: startday ?? today as Date)
-       // self.fromDateLabel.text = "From : \(dateFormatter1.string(from: today as Date))"
-        self.fromDateLabel.text = "From : \(dateFormatter1.string(from: fromdate ?? today as Date))"
-        
-        self.toDateLabel.text = "To : \(getThe5thDayFromSelectedDate(date: fromdate as! NSDate, value: +1))"
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
-        // backgroundSession = nil
+    
+    }
+
+    @IBAction func FromdatePickerAction(_ sender: Any) {
+        self.fromDatePickerTapped()
     }
     
+    
+    @IBAction func TodatePickerAction(_ sender: Any) {
+        self.toDatePickerTapped()
+    }
+    
+    @IBAction func didTapOnSubjectDropDown(_ sender: Any) {
+        subjectDropDown?.show()
+    }
+    
+    @IBAction func searchAction(_ sender: Any) {
+        if startingDateField.text != "" && endingDateField.text != ""{
+            isSearch = 0
+            let fullTime = (startTimeString,endTimeString,isSearch,divId,subjectID )
+            self.refreshParentView(value: fullTime, titleValue: nil, isForDraft: false)
+        } else {
+            SweetAlert().showAlert(kAppName, subTitle: "All fields are required", style: .error)
+        }
+    }
+}
 
-    func getWeeklyPlanAPI(){
-        startLoadingAnimation()
-        let url = APIUrls().weeklyPlan
-        
-        var dictionary = [String: String]()
-        let userId = UserDefaultsManager.manager.getUserId()
-        dictionary[UserIdKey().id] =  userId
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+//MARK: - Functions -
+extension WeeklyPlanController {
+    
+    func showPopUpView(){
+        let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
+        let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "WeeklyPlanFilterController") as! WeeklyPlanFilterController
+        popvc.delegate = self
+        if let _ = weeklyPlan?.divisions {
+            popvc.divisions = weeklyPlan?.divisions
+        }
+        if let details = self.completeListDetails{
             
-              print("requestParameters :- ",dictionary)
-            print("result :- ",result)
-            DispatchQueue.main.async{
-                
-                if result["StatusCode"] as? Int == 1{
-                    
-                    let weeklyPlanModels = ModelClassManager.sharedManager.createModelArray(data: [result], modelType: ModelType.TNWeeklyPlan) as! [TNWeeklyPlan]
-                    
-                    self.weeklyPlan = weeklyPlanModels[0]
-                    self.setClassDropDown()
-                    self.topHeaderView.title = self.weeklyPlan?.weelyPlanLabel.safeValue ?? ""
-                    self.stopLoadingAnimation()
-                }
-                else{
-                    self.stopLoadingAnimation()
-                    
-                    if let message = result["MSG"] as? String{
-                        SweetAlert().showAlert(kAppName , subTitle: message, style: AlertStyle.error)
-                    }
-                    else{
-                        if let  message = result["StatusMessage"] as? String{
-                            SweetAlert().showAlert(kAppName, subTitle: message, style: .success, buttonTitle: alertOk, action: { (index) in
-                                if index{
-                                    
-                                }
-                            })
-                        }
-                    }
-                }
-                if self.weeklyPlan != nil{
-                    if let div = self.weeklyPlan?.divisions,let sub = self.weeklyPlan?.subjects{
-                        if div.count > 0{
-                            self.divId = div[0].divId.safeValue
-                            self.subId = sub[0].subject_id.safeValue
-                            self.classNameString = div[0].division.safeValue
-                            self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: true)
-                        }
-                    }
-                    else
-                    {
-                        if let div = self.weeklyPlan?.divisions{
-                            self.classNameString = div[0].division.safeValue
-                        }
-                        self.getWeeklyPlanDetails(fromDate: self.startTimeString, toDate: self.endTimeString, isSearch: 1, Sub_Id: self.subId, div: self.divId,isCallFrist: true)
-                    }
-                }
+            if let start = details["FromDate"] as? String{
+                popvc.startTimeString = start
+            }
+            if let end = details["ToDate"] as? String{
+                popvc.endTimeString = end
             }
         }
-        
-        
+ 
+        popvc.view.frame = CGRect(x: 0, y: 0, width: 300, height: CGFloat(520))
+         popUpEffectType = .flipDown
+         presentPopUpViewController(popvc)
     }
     
-    func downloadPdfButtonAction(url: String, fileName: String?) {
-        
-    }
-    
-    func selectedPickerRow(selctedRow: Int) {
-        
-    }
-    
-    func popUpDismiss() {
-        
-    }
-    
-    func moveToComposeController(titleTxt: String,index : Int,tag: Int) {
-        
-    }
-    func getSearchWithCommunicate(searchTxt: String, type: Int) {
-        
-    }
-    
-    
-    func getWeeklyPlanDetails(fromDate:String,toDate:String,isSearch : Int,Sub_Id:String,div : String,isCallFrist: Bool = false){
-        startLoadingAnimation()
-        let url = APIUrls().weeklyPlanView
-        
-        
-        let userId = UserDefaultsManager.manager.getUserId()
-        
-        
-        let isLatest  = isSearch
-        let offset = 0
-        let type = ""
-        
-        let limit = 50
-        
-        var dictionary = [String: Any]()
-        
-        dictionary[UserIdKey().id]              = userId
-        dictionary[WeeklyPlanKeys().Div_Id]     = div
-        dictionary[WeeklyPlanKeys().Sub_Id]     = Sub_Id
-        dictionary[WeeklyPlanKeys().IsLatest]   = isLatest
-        dictionary[WeeklyPlanKeys().OffSet]     = offset
-        dictionary[WeeklyPlanKeys().type]       = type
-        dictionary[WeeklyPlanKeys().FromDate]   = fromDate
-        dictionary[WeeklyPlanKeys().ToDate]     = toDate
-        dictionary[WeeklyPlanKeys().Limit]      = limit
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
+    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
+        if let values = value as? (String,String,Int,String,String){
             
-            print("WeeklyPlanView result is :- ",result)
-            
-            self.completeListDetails = result
-            
-            DispatchQueue.main.async {
-                if let details = self.completeListDetails{
-                    if let start = details["FromDate"] as? String{
-                        self.fromDateLabel.text = "From : " + start
-                    }
-                    if let end = details["ToDate"] as? String{
-                        self.toDateLabel.text = "To : " + end
-                    }
-                    if let comm_n = details["WPComments"] as? String {
-                        self.comment_needed = comm_n
-                    }
-                }
-
-                self.setPagerView()
-                self.collectionView.reloadData()
-                if isCallFrist{
-                    self.setDropDown()
-                }
-                self.setDate()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    self.setUpInitialData()
-                  //  self.titles.removeAll()
-                    self.stopLoadingAnimation()
-                }
-            }
+            let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
+            let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
+            divId = values.3
+            subId = values.4
+            self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
         }
         
+        self.popUpViewVc?.dismiss(animated: true, completion: nil)
         
     }
+    
+    func refreshParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
+        if let values = value as? (String,String,Int,String,String){
+            let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
+            let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
+            divId = values.3
+            subId = values.4
+            self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
+        }
+    }
+    
+    func getBackToTableView(value: Any?,tagValueInt : Int) {
+        
+        if let values = value as? WeeklyPlanList{
+            
+            if isPresent {
+                self.dismiss(animated: true)
+                delegate?.weeklyPlanController(self, didtapOnCellForPopupWith: comment_needed, divId: divId, weeklyPlan: values)
+            } else {
+                self.navigateToDetail(weeklyPlan:values)
+            }
+            
+        }
+    }
+
+    func navigateToDetail(weeklyPlan:WeeklyPlanList){
+        let detailVc = DigitalResourceDetailController.instantiate(from: .digitalResource)
+        detailVc.weeklyPlan = weeklyPlan
+        detailVc.divId = self.divId
+        detailVc.comment_needed = self.comment_needed
+        self.navigationController?.pushViewController(detailVc, animated: true)
+    }
+
+    
     func setPagerView(){
         if completeListDetails !=  nil{
             titles.removeAll()
@@ -356,43 +275,6 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
             self.collectionView.reloadData()
         }
     }
-    func callDownLoadWeeklyPlanReport(type:String){
-        
-        // startLoadingAnimation()
-        let url = APIUrls().weeklyPlanView
-        let userId = UserDefaultsManager.manager.getUserId()
-        var dictionary = [String: Any]()
-        dictionary["UserId"] = userId
-        dictionary["Div_Id"] = divId
-        if let date = fromDateLabel.text?.lastWords(3){
-            dictionary["FromDate"] = date[0]+"/"+date[1]+"/"+date[2]
-            
-        }
-        if let date = toDateLabel.text?.lastWords(3){
-            dictionary["ToDate"] = date[0]+"/"+date[1]+"/"+date[2]
-            
-        }
-        dictionary["isLatest"] = true
-        dictionary["Type"] = type
-        dictionary["Limit"] = 5
-        dictionary["OffSet"] = 0
-        
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            DispatchQueue.main.async {
-                self.stopLoadingAnimation()
-                
-                if let status = result["StatusCode"] as? Int{
-                    
-                    self.setDownLoadUrl(result: result, type: type)
-                    if let msg = result["StatusMessage"] as? String{
-                        //SweetAlert().showAlert(kAppName, subTitle: msg, style: AlertStyle)
-                        
-                    }
-                }
-            }
-        }
-    }
     
     func setDownLoadUrl(result : NSDictionary,type:String){
         if let attachmentLink = result["AttachmentLink"] as? String{
@@ -405,12 +287,144 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
             }
         }
     }
+
+    func loadPDFAndShare(url: String,formatString: String,fileName: String){
+        var urlString = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let urls = URL(string: urlString!)
+        addBlurEffectToTableView(inputView: self.view, hide: false)
+        progressBar.isHidden = false
+        progressBar.progressBar.setProgress(1.0, animated: true)
+        progressBar.titleText = "Downloading,Please wait"
+        videoDownload.startDownloadingUrls(urlToDowload:[urlString!],type:"",fileName: fileName)
+        
+    }
+    
+    func setClassName(for className: String) {
+        classNameLabel.text = "\(className)"
+    }
+    
+    func deleteTheSelectedAttachment(index: Int) {
+        
+    }
+    
+    func setDateFormatter() {
+        dateFormatter1.dateStyle = .long
+        dateFormatter1.dateFormat = DateTypes.yyyyMMdd
+        let details = logInResponseGloabl;
+        if(details["CompanyId"]as! String=="330")//Don't display dates for Al Zuhour #53462
+        {
+            self.fromDateLabel.isHidden = true
+            self.toDateLabel.isHidden = true
+        }
+    }
+    
+    func setSubjectDropDown(){
+        savedTime = nil
+        subjectDropDown = DropDown()
+        DropDown.startListeningToKeyboard()
+        subjectDropDown?.direction  = .any
+        subjectDropDown?.anchorView = buttonSubjectDropDown
+        let _ = subjectsnew
+        var dataSources = [String]()
+        for subject in subjectsnew{
+            
+            dataSources.append(subject.subject_name!)
+        }
+        subjectDropDown?.dataSource = dataSources
+        if dataSources.count > 0{
+            self.labelSubject.text = dataSources[0]
+            self.subjectID = filterSubIdWrtName(item: dataSources[0], array: self.subjectsnew)
+            self.subId = self.subjectID
+            subjectDropDown?.selectionAction = { (index: Int, item: String) in
+                print("Selected item: \(item) at index: \(index)")
+                self.subjectID = self.filterSubIdWrtName(item: item, array: self.subjectsnew)
+                self.labelSubject.text = item
+                
+            }
+        }
+    }
+    
+    func filterSubIdWrtName(item : String,array :[TNSubject]) -> String{
+        if array.count > 0{
+            for each in array{
+                if each.subject_name  == item{
+                    return each.subject_id!
+                }
+            }
+        }
+        return ""
+    }
+    
+    func filterDivIdWrtName(item : String,array :[WeeklyDivision]) -> String{
+        if array.count > 0{
+            for each in array{
+                if each.division  == item{
+                    classNameString = each.division ?? "Class :"
+                    return each.divId!
+                }
+            }
+        }
+        return ""
+    }
+}
+
+//MARK: - Date Formattter -
+
+extension WeeklyPlanController {
+    
+    func setDatesOnPicker(){
+        var daycomponents = DateComponents(calendar: Calendar.current,weekday:  Calendar.current.firstWeekday)
+        print("hh",Calendar.current.timeZone)
+        let startday = Calendar.current.nextDate(after: Date(), matching: daycomponents, matchingPolicy: .nextTimePreservingSmallerComponents)
+        daycomponents.day = -8
+        var fromdate = Calendar.current.date(byAdding: daycomponents, to: startday ?? today as Date)
+        self.fromDateLabel.text = "From : \(dateFormatter1.string(from: fromdate ?? today as Date))"
+        self.toDateLabel.text = "To : \(getThe5thDayFromSelectedDate(date: fromdate as! NSDate, value: +1))"
+    }
+  
+    func convertToDate(from dateString: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        return formatter.date(from: dateString)
+    }
+    
+    func convertToDateString(from dateString: String) -> String? {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "dd-MM-yyyy"
+        
+        if let date = inputFormatter.date(from: dateString) {
+            return outputFormatter.string(from: date)
+        }
+        return nil
+    }
+    
+    func getThe5thDayFromSelectedDate(date : NSDate,value : Int) -> String{
+        var dayComponent = DateComponents()
+        dayComponent.day = value*(weeklyPlan?.no_days ?? 5)
+        let theCalendar = Calendar.current
+        let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
+        let dateValue  = dateFormatter1.string(from: nextDate!)
+        return dateValue
+    }
+    
+    func getprevSelectedDate(date : NSDate,value : Int) -> String{
+        var dayComponent = DateComponents()
+        dayComponent.day = value
+        let theCalendar = Calendar.current
+        let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
+        let dateValue  = dateFormatter1.string(from: nextDate!)
+        return dateValue
+    }
     
     
     func convertToSlash(date : String)-> String{
         var letter = ""
         if date != ""{
-            
             for each in date{
                 if each == "-"{
                     letter.append("/")
@@ -426,219 +440,116 @@ class WeeklyPlanController: UIViewController,TaykonProtocol {
     
     
     func fromDatePickerTapped() {
-        
-        if fromDateLabel.text != ""{
-            if let value = fromDateLabel.text?.components(separatedBy: ": ") as? [String]{
-                
-                for each in value{
-                    if each.contains("-") || each.contains("/"){
-                        toDateLabel.text = each
-                        
-                        if let dt = toDateLabel.text {
-                            
-                            if  let dates = dt.components(separatedBy: "-") as? [String]{
-                                var newdate = ""
-                                var format = ""
-                                if each.contains("-"){
-                                    if dates.count > 0{
-                                        newdate = each //dates[2] + "/" + dates[1] + "/" + dates[0]
-                                        format = "yyyy-MM-dd"
-                                        
-                                    }
-                                }else{
-                                    newdate = each
-                                    format = "yyyy-MM-dd"
-                                }
-                                let date =  changetoDiffFormatInDate(value:newdate,fromFormat:format ,toFormat:"yyyy-MM-dd hh:mm:ss")
-                                let nextDate = getThe5thDayFromSelectedDate(date: date as NSDate, value: -1)
-                                self.fromDateLabel.text = "From : " + nextDate//+ convertToSlash(date: nextDate)
-                                
-                                self.getWeeklyPlanDetails(fromDate: nextDate, toDate: newdate, isSearch: 0, Sub_Id: subId, div: divId)
-                            }
-                            
-                        }
+        if fromDateLabel.text != "" {
+            if let value = fromDateLabel.text?.components(separatedBy: ": ") {
+                for each in value {
+                    if each.contains("-") || each.contains("/") {
+                        let normalizedDateStr = each.replacingOccurrences(of: "-", with: "/")
+                        let newdate = convertToDDMMYYYY(normalizedDateStr)
+                        toDateLabel.text = newdate
+                        let format = "dd/MM/yyyy"
+                        let date = changetoDiffFormatInDate(value: newdate, fromFormat: format, toFormat: "yyyy-MM-dd hh:mm:ss")
+                        let nextDate = getThe5thDayFromSelectedDate(date: date as NSDate, value: -1)
+                        let formatedStart = nextDate.replacingOccurrences(of: "-", with: "/")
+                        let formatedEnd = newdate.replacingOccurrences(of: "-", with: "/")
+                        self.fromDateLabel.text = "From : " + formatedStart
+                        self.getWeeklyPlanDetails(fromDate: formatedStart, toDate: formatedEnd, isSearch: 0, Sub_Id: subId, div: divId)
                     }
                 }
             }
         }
     }
-    
-    
+
+    func convertToDDMMYYYY(_ dateString: String) -> String {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy/MM/dd"
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "dd/MM/yyyy"
+        if let date = inputFormatter.date(from: dateString) {
+            return outputFormatter.string(from: date)
+        } else {
+            return dateString
+        }
+    }
+
     func toDatePickerTapped() {
-
-        if toDateLabel.text != ""{
-            if let  value = toDateLabel.text?.components(separatedBy: ": ") as? [String]{
-                for each in value{
-                    if each.contains("-") || each.contains("/"){
+        if toDateLabel.text != "" {
+            if let value = toDateLabel.text?.components(separatedBy: ": ") {
+                for each in value {
+                    if each.contains("-") || each.contains("/") {
                         fromDateLabel.text = each
-                        if let dt = fromDateLabel.text {
-                            if  let dates = dt.components(separatedBy: "-") as? [String]{
-                                var newdate = ""
-                                var format = ""
-                                if each.contains("-"){
-                                    if dates.count > 0{
-                                        newdate = each
-                                        format = "yyyy-MM-dd"
-                                    }
-                                    }else{
-                                        newdate = each
-                                        format = "yyyy-MM-dd"
-                                    }
-                                    let date =  changetoDiffFormatInDate(value:newdate,fromFormat:format ,toFormat:"yyyy-MM-dd hh:mm:ss")
-                                print("hh",date)
-                                let ndate = getprevSelectedDate(date : date as NSDate,value: +1)
-                                let nextDate = getThe5thDayFromSelectedDate(date: date as NSDate, value: +1)
-                                print("hh3",nextDate)
-                                print("hh3",ndate)
-                                    self.toDateLabel.text = "To : " + nextDate
-                                    self.getWeeklyPlanDetails(fromDate: ndate, toDate: nextDate, isSearch: 0, Sub_Id: subId, div: divId)
-                            }
-                        }
+                        let format = "yyyy-MM-dd"
+                        let newdate = each
+                        let date = changetoDiffFormatInDate(value: newdate, fromFormat: format, toFormat: "yyyy-MM-dd hh:mm:ss")
+                        
+                        let ndate = getprevSelectedDate(date: date as NSDate, value: +1)
+                        let nextDate = getThe5thDayFromSelectedDate(date: date as NSDate, value: +1)
+
+                        self.toDateLabel.text = "To : " + nextDate
+                        let formatedStart = ndate.replacingOccurrences(of: "-", with: "/")
+                        let formatedEnd = nextDate.replacingOccurrences(of: "-", with: "/")
+                        self.getWeeklyPlanDetails(fromDate: formatedStart, toDate: formatedEnd, isSearch: 0, Sub_Id: subId, div: divId)
                     }
                 }
             }
         }
-                    
-    }
-        
-        
-    
-    
-    
-    func loadPDFAndShare(url: String,formatString: String,fileName: String){
-        var urlString = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let urls = URL(string: urlString!)
-        addBlurEffectToTableView(inputView: self.view, hide: false)
-        progressBar.isHidden = false
-        progressBar.progressBar.setProgress(1.0, animated: true)
-        progressBar.titleText = "Downloading,Please wait"
-        videoDownload.startDownloadingUrls(urlToDowload:[urlString!],type:"",fileName: fileName)
-        
     }
     
-    @IBAction func FromdatePickerAction(_ sender: Any) {
- //       datePicker.date = startTime
-        self.fromDatePickerTapped()
-    }
-    
-    
-    @IBAction func TodatePickerAction(_ sender: Any) {
-    //    datePicker.date = endTime
-        self.toDatePickerTapped()
-    }
-    
-
-    
-    func getUploadedAttachments(isUpload : Bool, isForDraft: Bool) {
-        
-    }
-    
-    
-    
-    func showPopUpView(){
-        let MainStoyboard = UIStoryboard(name: "Main", bundle: nil)
-        let popvc = commonStoryBoard.instantiateViewController(withIdentifier: "WeeklyPlanFilterController") as! WeeklyPlanFilterController
-        popvc.delegate = self
-        if let _ = weeklyPlan?.divisions {
-            popvc.divisions = weeklyPlan?.divisions
+    func setClassDropDown(){
+        savedTime = nil
+        classDropDown = DropDown()
+        DropDown.startListeningToKeyboard()
+        classDropDown?.direction  = .bottom
+        classDropDown?.anchorView = viewClassDropDown
+        var dataSources = [String]()
+        divisions = self.weeklyPlan?.divisions ?? []
+        for subject in divisions{
+            dataSources.append(subject.division!)
         }
-        if let details = self.completeListDetails{
-            
-            if let start = details["FromDate"] as? String{
-                popvc.startTimeString = start
-            }
-            if let end = details["ToDate"] as? String{
-                popvc.endTimeString = end
+        classDropDown?.dataSource = dataSources
+        if dataSources.count > 0{
+            self.divId = divisions[0].divId.safeValue
+            classDropDown?.selectionAction = {[weak self]  (index: Int, item: String) in
+                guard let self = self else { return }
+                print("Selected item: \(item) at index: \(index)")
+                self.divId = self.filterDivIdWrtName(item: item, array: self.divisions)
+                self.classNameLabel.text = item
+                if  self.startingDateField.text != "" &&  self.endingDateField.text != ""{
+                    self.isSearch = 0
+                    let fullTime = (startTimeString,endTimeString,isSearch,divId,subjectID )
+                    self.refreshParentView(value: fullTime, titleValue: nil, isForDraft: false)
+                }
             }
         }
-        
-//        popUpViewVc = BIZPopupViewController(contentViewController: popvc, contentSize: CGSize(width:300,height: CGFloat(520)))
-//        self.present(popUpViewVc!, animated: true, completion: nil)
-        popvc.view.frame = CGRect(x: 0, y: 0, width: 300, height: CGFloat(520))
-         popUpEffectType = .flipDown
-         presentPopUpViewController(popvc)
     }
     
-    func getBackToParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
-        if let values = value as? (String,String,Int,String,String){
-            
-            let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
-            let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
-            divId = values.3
-            subId = values.4
-            self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
-        }
-        
-        self.popUpViewVc?.dismiss(animated: true, completion: nil)
-        
-    }
-    
-    func refreshParentView(value: Any?, titleValue: String?, isForDraft: Bool) {
-        if let values = value as? (String,String,Int,String,String){
-            let formatedStart = values.0.replacingOccurrences(of: "-", with: "/")
-            let formatedEnd = values.1.replacingOccurrences(of: "-", with: "/")
-            divId = values.3
-            subId = values.4
-            self.getWeeklyPlanDetails(fromDate:formatedStart, toDate: formatedEnd,isSearch: values.2, Sub_Id: subId, div: divId )
-        }
-    }
-    
-    func getBackToTableView(value: Any?,tagValueInt : Int) {
-        
-        
-        if let values = value as? WeeklyPlanList{
-            
-            if isPresent {
-                self.dismiss(animated: true)
-                delegate?.weeklyPlanController(self, didtapOnCellForPopupWith: comment_needed, divId: divId, weeklyPlan: values)
-            } else {
-                self.navigateToDetail(weeklyPlan:values)
+    func setDate(){
+        if let details = self.completeListDetails {
+            if let start = details["FromDate"] as? String {
+                if start != "" {
+                    let date = convertToDateString(from: start) ?? ""
+                    startTimeString = date
+                    startingDateField.text = date
+                    if let date = convertToDate(from: date) {
+                        startTime = date
+                    }
+                }
             }
-            
+            if let end = details["ToDate"] as? String {
+                if end != "" {
+                    let date = convertToDateString(from: end) ?? ""
+                    endTimeString = date
+                    endingDateField.text = date
+                    if let date = convertToDate(from: date) {
+                        endTime = date
+                    }
+                }
+            }
         }
-        
-        
     }
-    
-    func getThe5thDayFromSelectedDate(date : NSDate,value : Int) -> String{
-        var dayComponent = DateComponents()
-        dayComponent.day = value*(weeklyPlan?.no_days ?? 5)
-        
-        let theCalendar = Calendar.current
-        let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
-        print("nextDate: \(nextDate) ...")
-        
-        let dateValue  = dateFormatter1.string(from: nextDate!)
-        print("nextDate1: \(dateValue) ...")
-        return dateValue
-        
-    }
-    
-    func getprevSelectedDate(date : NSDate,value : Int) -> String{
-        var dayComponent = DateComponents()
-        dayComponent.day = value
-        let theCalendar = Calendar.current
-        let nextDate = theCalendar.date(byAdding: dayComponent, to: date as Date)
-        print("nextDate: \(nextDate) ...")
-        let dateValue  = dateFormatter1.string(from: nextDate!)
-        return dateValue
-        
-    }
-    
-    func navigateToDetail(weeklyPlan:WeeklyPlanList){
-        
-        let detailVc = DigitalResourceDetailController.instantiate(from: .digitalResource)
-        detailVc.weeklyPlan = weeklyPlan
-        detailVc.divId = self.divId
-        detailVc.comment_needed = self.comment_needed
-        self.navigationController?.pushViewController(detailVc, animated: true)
-        
-    }
-
-    
 }
 
-
+//MARK: - VideoDownloadDelegate -
 extension WeeklyPlanController:VideoDownloadDelegate{
     
     func loadingStarted(){
@@ -726,97 +637,8 @@ extension WeeklyPlanController: TopHeaderDelegate {
     
 }
 
-
-//MARK: - UICollectionViewDelegate,UICollectionViewDataSource -
-
-extension WeeklyPlanController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !isEmpty {
-            titles = titles.filter { $0 != "" }
-        }
-        if titles.count > 0 {
-            return titles.count
-        }
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeeklyPlanCollectionViewCell", for: indexPath) as? WeeklyPlanCollectionViewCell else { return UICollectionViewCell() }
-        let colorIndex = indexPath.row % viewColors.count
-        let title = titles[indexPath.row]
-        let isSelected = mainTitle.lowercased() == title.lowercased()
-        cell.bgView.backgroundColor = isSelected ? UIColor(named: "AppColor") : UIColor(named: "9CDAE7")
-        cell.titleLabel.textColor = isSelected ? UIColor.white : UIColor.black
-        cell.titleLabel.text = titles[indexPath.row]
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if titles.count > 0{
-            if let value = self.titles[indexPath.item] as? String{
-                mainTitle  = value
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            }
-        }
-        self.startLoadingAnimation()
-        var titleType = String()
-        if indexPath.item < titlesnew.count{
-            var titless = self.titlesnew[indexPath.item]
-            if titless.contains("ASSESSMENT") ||  titless.contains("ASSESSMENTS"){
-                titless = "ASSESSMENT"
-            }
-            else if titless.contains("CLASSWORK") ||  titless.contains("CLASSWORKS"){
-                titless = "CLASSWORK"
-            }
-            switch titless {
-            case "HOMEWORK":
-                titleType = "HomeWork"
-            case "ASSESSMENT":
-                titleType = "Assessments"
-            case "CLASSWORK":
-                titleType = "ClassWork"
-            case "QUIZES":
-                titleType = "Quizes/Project/Research"
-                
-            default:
-                break
-            }
-            
-            if  let list = self.completeListDetails?[titleType] as? NSArray {
-                let arrayObjs = ModelClassManager.sharedManager.createModelArray(data: list, modelType: ModelType.WeeklyPlanList) as! [WeeklyPlanList]
-                dataArray = arrayObjs
-            } else {
-                dataArray = [WeeklyPlanList]()
-            }
-            self.stopLoadingAnimation()
-        }
-        
-        
-    }
-    
-}
-
-extension WeeklyPlanController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 85, height: 110)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-       return 10
-    }
-}
-
-
 extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTableViewCellDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count
     }
@@ -915,34 +737,6 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
             }
         }
     }
-    
-    func setClassDropDown(){
-        savedTime = nil
-        classDropDown = DropDown()
-        DropDown.startListeningToKeyboard()
-        classDropDown?.direction  = .bottom
-        classDropDown?.anchorView = viewClassDropDown
-        var dataSources = [String]()
-        divisions = self.weeklyPlan?.divisions ?? []
-        for subject in divisions{
-            dataSources.append(subject.division!)
-        }
-        classDropDown?.dataSource = dataSources
-        if dataSources.count > 0{
-            classDropDown?.selectionAction = {[weak self]  (index: Int, item: String) in
-                guard let self = self else { return }
-                print("Selected item: \(item) at index: \(index)")
-                self.divId = self.filterDivIdWrtName(item: item, array: self.divisions)
-                self.classNameLabel.text = item
-                if  self.startingDateField.text != "" &&  self.endingDateField.text != ""{
-                    self.isSearch = 0
-                    let fullTime = (startTimeString,endTimeString,isSearch,filterDivId,subjectID )
-                    self.refreshParentView(value: fullTime, titleValue: nil, isForDraft: false)
-                }
-            }
-        }
-    }
-    
 }
 
 extension WeeklyPlanController: DebouncedSearchHandling {
