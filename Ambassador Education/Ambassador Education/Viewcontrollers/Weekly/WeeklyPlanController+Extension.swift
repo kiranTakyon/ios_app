@@ -319,7 +319,6 @@ extension WeeklyPlanController {
                 self.setDate()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     self.setUpInitialData()
-                 
                     self.stopLoadingAnimation()
                 }
             }

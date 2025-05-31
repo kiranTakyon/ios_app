@@ -691,14 +691,18 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
     }
     
     func setDataArray() {
-        
         if dataArray.count == 0 {
             noDataLabel.isHidden = false
             tableView.isHidden = true
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         } else {
             noDataLabel.isHidden = true
             tableView.isHidden = false
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -734,6 +738,9 @@ extension WeeklyPlanController: UITableViewDelegate, UITableViewDataSource, WPTa
                 }
             } else {
                 dataArray = [WeeklyPlanList]()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
