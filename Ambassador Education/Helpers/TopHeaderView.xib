@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopHeaderView" customModule="Ajyal">
+            <connections>
+                <outlet property="backButton" destination="u07-lt-Q8k" id="bLT-ny-8IX"/>
+                <outlet property="searchButton" destination="W8S-Ep-8nD" id="HWB-Eg-km8"/>
+                <outlet property="searchTextField" destination="fmm-hl-gPH" id="AKM-6u-H3e"/>
+                <outlet property="secondRightButton" destination="IxO-Ij-Mvg" id="KI3-oT-zdK"/>
+                <outlet property="stackViewRightButtons" destination="OYa-1I-CvE" id="n5Y-UL-4kB"/>
+                <outlet property="thirdRightButton" destination="XQx-xZ-rM0" id="AhA-rq-ZPg"/>
+                <outlet property="titleLabel" destination="KFw-zB-tCA" id="EVO-Cq-df8"/>
+                <outlet property="view" destination="hjV-hY-tM0" id="wV1-8T-9kE"/>
+                <outlet property="viewHeightConstraint" destination="LXz-RM-ASD" id="s9y-54-OQm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hjV-hY-tM0">
+            <rect key="frame" x="0.0" y="0.0" width="623" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNi-k0-n2F">
+                    <rect key="frame" x="0.0" y="0.0" width="623" height="88"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u07-lt-Q8k">
+                            <rect key="frame" x="2.5" y="38" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="MS2-Ru-ZHG"/>
+                                <constraint firstAttribute="width" constant="40" id="fs3-21-4dk"/>
+                            </constraints>
+                            <state key="normal" image="Back2"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="432-O5-Na1"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-8W-OXn">
+                            <rect key="frame" x="60" y="48" width="465" height="20.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Resource List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFw-zB-tCA">
+                                    <rect key="frame" x="0.0" y="0.0" width="162.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-hl-gPH">
+                                    <rect key="frame" x="162.5" y="0.0" width="302.5" height="20.5"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OYa-1I-CvE">
+                            <rect key="frame" x="545" y="46" width="68" height="24"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8S-Ep-8nD">
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="iYH-ya-76a"/>
+                                        <constraint firstAttribute="width" secondItem="W8S-Ep-8nD" secondAttribute="height" multiplier="1:1" id="tK5-Km-Klc"/>
+                                    </constraints>
+                                    <state key="normal" image="Search"/>
+                                    <connections>
+                                        <action selector="searchButtonAction:" destination="-1" eventType="touchUpInside" id="V1z-PB-FmA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxO-Ij-Mvg">
+                                    <rect key="frame" x="44" y="0.0" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="8bP-ku-UKh"/>
+                                        <constraint firstAttribute="width" secondItem="IxO-Ij-Mvg" secondAttribute="height" multiplier="1:1" id="s5w-Tp-cKb"/>
+                                    </constraints>
+                                    <state key="normal" image="Search"/>
+                                    <connections>
+                                        <action selector="secondRightButtonAction:" destination="-1" eventType="touchUpInside" id="Ggn-AC-ROZ"/>
+                                    </connections>
+                                </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-xZ-rM0">
+                                    <rect key="frame" x="68" y="0.0" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="HfR-Wg-F5C"/>
+                                        <constraint firstAttribute="width" secondItem="XQx-xZ-rM0" secondAttribute="height" multiplier="1:1" id="bnC-OI-JZo"/>
+                                    </constraints>
+                                    <state key="normal" image="Search"/>
+                                    <connections>
+                                        <action selector="thirdRightButtonAction:" destination="-1" eventType="touchUpInside" id="zf7-if-84O"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="XQx-xZ-rM0" firstAttribute="width" secondItem="XQx-xZ-rM0" secondAttribute="height" multiplier="1:1" id="Y5L-9o-Joe"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="OYa-1I-CvE" secondAttribute="trailing" constant="10" id="3eR-5C-yqB"/>
+                        <constraint firstItem="OYa-1I-CvE" firstAttribute="centerY" secondItem="jIl-8W-OXn" secondAttribute="centerY" id="DSJ-LL-ft5"/>
+                        <constraint firstAttribute="height" constant="88" id="LXz-RM-ASD"/>
+                        <constraint firstItem="jIl-8W-OXn" firstAttribute="leading" secondItem="u07-lt-Q8k" secondAttribute="trailing" constant="17.5" id="Tcr-ac-mZR"/>
+                        <constraint firstItem="OYa-1I-CvE" firstAttribute="leading" secondItem="jIl-8W-OXn" secondAttribute="trailing" constant="20" id="W2v-9V-lXg"/>
+                        <constraint firstItem="u07-lt-Q8k" firstAttribute="leading" secondItem="hNi-k0-n2F" secondAttribute="leading" constant="2.5" id="Z8B-aM-Vvx"/>
+                        <constraint firstItem="jIl-8W-OXn" firstAttribute="centerY" secondItem="u07-lt-Q8k" secondAttribute="centerY" id="u77-on-jlt"/>
+                        <constraint firstAttribute="bottom" secondItem="u07-lt-Q8k" secondAttribute="bottom" constant="10" id="z45-kx-9P9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="hOR-uE-hfV"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hNi-k0-n2F" secondAttribute="trailing" id="0dK-SC-Mpp"/>
+                <constraint firstAttribute="bottom" secondItem="hNi-k0-n2F" secondAttribute="bottom" id="GKe-xc-6Do"/>
+                <constraint firstItem="hNi-k0-n2F" firstAttribute="leading" secondItem="hjV-hY-tM0" secondAttribute="leading" id="S9P-2K-i9Y"/>
+                <constraint firstItem="hNi-k0-n2F" firstAttribute="top" secondItem="hjV-hY-tM0" secondAttribute="top" id="u28-48-Vn5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-163.04347826086959" y="100.11160714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Back2" width="25" height="25"/>
+        <image name="Search" width="25" height="25"/>
+    </resources>
+</document>
