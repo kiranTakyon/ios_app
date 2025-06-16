@@ -1,6 +1,6 @@
-# README #
+# ios_app
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This README documents the steps necessary to get your application up and running.
 
 ### What is this repository for? ###
 
