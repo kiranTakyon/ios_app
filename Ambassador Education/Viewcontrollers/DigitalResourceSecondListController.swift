@@ -45,79 +45,95 @@ class DigitalResourceSecondListController: UIViewController,UITextFieldDelegate 
         setRefreshControll()
     }
     
-    func setTitle() {
+    func setTitle(paginationText: String? = nil) {
         if let title = titleValue {
-            topHeaderView.title = title
+            if let paginationText = paginationText {
+                topHeaderView.title = "\(title) - \(paginationText)"
+            } else {
+                topHeaderView.title = title
+            }
         }
     }
 
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if topHeaderView.searchTextField.text != "" {
-            searchText = topHeaderView.searchTextField.text!
+        if let text = topHeaderView.searchTextField.text, !text.isEmpty {
             topHeaderView.searchTextField.resignFirstResponder()
-            getDigitalResources(searcText: searchText)
+            getDigitalResources(searcText: text)
         }
         return true
     }
-    
+
     
     @objc func clearTextField() {
        getDigitalResources(searcText: "")
     }
     
-    func getDigitalResources(searcText : String) {
-        
+    func getDigitalResources(searcText: String) {
         self.startLoadingAnimation()
-        
+
         let url = APIUrls().getDigitalResourceDetails
-        
         let userId = UserDefaultsManager.manager.getUserId()
-        
+
         var dictionary = [String: Any]()
-        
         dictionary[UserIdKey().id] = userId
         dictionary[GalleryCategory.searchText] = searcText
-        if(prevcatId != catId)
-        {
-            pageNumber = 1
+
+        if searchText != searcText || prevcatId != catId {
+            searchText = searcText
             prevcatId = catId
+            pageNumber = 1
+            arrCatgoryAndItem.removeAll()
+            digitalList.removeAll()
+            categoryList.removeAll()
         }
+
         dictionary[GalleryCategory.paginationNumber] = pageNumber
         dictionary["CategoryId"] = Int(catId)
-        
 
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
-            
-            guard let categryValues = result["CategoryItems"] as? NSArray else{ return }
+
+            guard let categryValues = result["CategoryItems"] as? NSArray else { return }
             let cetgories = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNDigitalResourceSubList) as! [TNDigitalResourceSubList]
-            
-            guard let digitalCategory = result["DigitalCategories"] as? NSArray else{return}
+
+            guard let digitalCategory = result["DigitalCategories"] as? NSArray else { return }
             let digitalCategories = ModelClassManager.sharedManager.createModelArray(data: digitalCategory, modelType: ModelType.TNDigitalResource) as! [TNDigitalResourceCategory]
-            self.categoryList = digitalCategories
-            self.digitalList = cetgories
+
+            // ✅ Append to arrays
+            self.digitalList.append(contentsOf: cetgories)
+            self.categoryList.append(contentsOf: digitalCategories)
+
+            // ✅ Merge results
             self.mergeCategoryAndItem(categories: digitalCategories, items: cetgories)
+
             if let totalAvailablePages = result["PaginationTotalNumber"] as? Int {
                 self.shouldEnableLoadMore = totalAvailablePages != self.pageNumber
             }
-            
+
             DispatchQueue.main.async {
-                self.removeNoDataLabel()
                 self.checkAndStopBounce()
                 self.stopLoadingAnimation()
-                if self.arrCatgoryAndItem.count == 0 {
-                    self.collectionView.isHidden = true
-                    self.addNoDataFoundLabel()
-                } else {
-                    self.removeNoDataLabel()
-                    self.collectionView.isHidden = false
-                    self.collectionView.reloadData()
-                    self.removeNoDataLabel()
-                }
+                self.collectionView.isHidden = self.arrCatgoryAndItem.isEmpty
+                self.collectionView.reloadData()
                 self.refreshControl.endRefreshing()
-            }
-        }
 
+                // Show pagination only if not on last page
+                if let totalPages = result["PaginationTotalNumber"] as? Int,
+                   let currentPage = result["PaginationNumber"] as? Int {
+                    
+                    if currentPage < totalPages {
+                        self.topHeaderView.title = "Page \(currentPage) / \(totalPages)"
+                    } else {
+                        self.setTitle() // fallback to original title
+                    }
+                }
+            }
+
+            
+
+        }
     }
+
     
     func checkAndStopBounce() {
         collectionView.bounces = shouldEnableLoadMore
@@ -162,18 +178,29 @@ extension DigitalResourceSecondListController: TopHeaderDelegate {
     
     func searchButtonClicked(_ button: UIButton) {
         button.isSelected = !button.isSelected
+
+        // Always dismiss keyboard
+        topHeaderView.searchTextField.resignFirstResponder()
+
         if button.isSelected {
+            // Show search mode
             topHeaderView.titleLabel.isHidden = true
             topHeaderView.searchTextField.isHidden = false
             button.setImage(#imageLiteral(resourceName: "Close"), for: .normal)
         } else {
+            // Hide search and reset
             topHeaderView.titleLabel.isHidden = false
             topHeaderView.searchTextField.isHidden = true
-            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
             topHeaderView.searchTextField.text = ""
+            searchText = ""
+            arrCatgoryAndItem.removeAll()
+            collectionView.reloadData()
             getDigitalResources(searcText: "")
+            button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
         }
     }
+
+
     
 }
 

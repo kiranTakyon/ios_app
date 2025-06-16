@@ -8,17 +8,21 @@
 
 import UIKit
 import WebKit
-class WebViewController: UIViewController,WKNavigationDelegate {
-    
+class WebViewController: UIViewController, WKNavigationDelegate, UIGestureRecognizerDelegate {
+
     @IBOutlet weak var webView: WKWebView!
     internal var strU : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.setWebViewProperties()
+        self.setWebViewProperties()
         self.loadWebView()
-        // Do any additional setup after loading the view.
+
+        // Enable swipe back gesture
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
+
     
     func setWebViewProperties(){
         self.automaticallyAdjustsScrollViewInsets = false

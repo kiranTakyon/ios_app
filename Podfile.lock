@@ -117,6 +117,9 @@ PODS:
   - PromisesObjC (1.2.12)
   - RichEditorView (4.0.0)
   - SCLAlertView (0.8)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftSoup (2.3.8)
   - Toast-Swift (2.0.0)
@@ -143,6 +146,7 @@ DEPENDENCIES:
   - MXSegmentedPager
   - RichEditorView
   - SCLAlertView
+  - SDWebImage
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftSoup
   - Toast-Swift (~> 2.0.0)
@@ -185,6 +189,7 @@ SPEC REPOS:
     - PromisesObjC
     - RichEditorView
     - SCLAlertView
+    - SDWebImage
     - SkyFloatingLabelTextField
     - SwiftSoup
     - Toast-Swift
@@ -227,6 +232,7 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   RichEditorView: e5990b1a092539559def9df135e064b29ab97e68
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftSoup: ba8ea2c91151881a298cba4b0628ef31e835a77f
   Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
@@ -234,6 +240,6 @@ SPEC CHECKSUMS:
   Updates: 2a35686c1d7c10dcf8bed98a9c194f8d305f7bb6
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: f1045634fedde9bf30cd0579410ca42da5c94bb7
+PODFILE CHECKSUM: 1e83e7b5042c2b14dca38215ee27e283e63820cc
 
 COCOAPODS: 1.16.2

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A38E3ED8E19C92DC3E2F015 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F357E7DD4E6DE197B4EFF82 /* Pods_OrisonSchool_V2.framework */; };
 		131EF95E216F293A007DA6B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 131EF95D216F2939007DA6B3 /* GoogleService-Info.plist */; };
 		1365753C2140F0E90045A958 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		1365753D2140F0E90045A958 /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
@@ -1560,7 +1561,6 @@
 		98D0F5D92B50267F00F4A148 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
 		98D0F5DA2B50268000F4A148 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
 		98D0F5DB2B50268000F4A148 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D0F5922B501EC400F4A148 /* SplashViewController.swift */; };
-		AFC98B9694C2CA2E562CDD72 /* Pods_OrisonSchool_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0813ADB250DD5F0166B8EA8 /* Pods_OrisonSchool_V2.framework */; };
 		B41C1AC621418FD600A9907B /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B419374D20504687002931EA /* FSCalendarHeaderView.m */; };
 		B41C1AC721418FD600A9907B /* ResourceListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFC9C521F6AC6CF00599C36 /* ResourceListOperation.swift */; };
 		B41C1AC821418FD600A9907B /* MessageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21DBDF1F2783B500742127 /* MessageDetailController.swift */; };
@@ -6420,9 +6420,10 @@
 		455DEE911EBC33DD002D6CEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Ambassador_Education-dvqygmjdncondiahrfxpsyhrkuaz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/NVActivityIndicatorView/NVActivityIndicatorView.framework"; sourceTree = "<group>"; };
 		45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGActivityIndicatorView.framework; path = "Pods/../build/Debug-iphoneos/DGActivityIndicatorView/DGActivityIndicatorView.framework"; sourceTree = "<group>"; };
+		6F357E7DD4E6DE197B4EFF82 /* Pods_OrisonSchool_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrisonSchool_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		772EB36621EF21C000620F0E /* Quality Education-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quality Education-Info.plist"; sourceTree = "<group>"; };
 		772EB36A21EF21E000620F0E /* Renaissance School-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Renaissance School-Info.plist"; sourceTree = "<group>"; };
-		88F95CCE3FC482E3FDD8F58B /* Pods-OrisonSchool V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.release.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.release.xcconfig"; sourceTree = "<group>"; };
+		8E4536059D661D843F59AC41 /* Pods-OrisonSchool V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.release.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.release.xcconfig"; sourceTree = "<group>"; };
 		9818D1582A4EFC0900F71FCC /* UIApplication+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helper.swift"; sourceTree = "<group>"; };
 		9841B35E2A3DB8DE00618BDE /* NSObject+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Helper.swift"; sourceTree = "<group>"; };
 		9841B3892A3DB90E00618BDE /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
@@ -6435,7 +6436,6 @@
 		98B10D2E2A3C654500FE000E /* View+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Helper.swift"; sourceTree = "<group>"; };
 		98D0F5922B501EC400F4A148 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		98D0F5942B50207900F4A148 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		A0813ADB250DD5F0166B8EA8 /* Pods_OrisonSchool_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrisonSchool_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE169EA0200687A00019685A /* PaymentDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsController.swift; sourceTree = "<group>"; };
 		AE1D45BC1F545D930042727A /* TNPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPerson.swift; sourceTree = "<group>"; };
 		AE21DBDF1F2783B500742127 /* MessageDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailController.swift; sourceTree = "<group>"; };
@@ -6617,6 +6617,7 @@
 		CDA661DA2DEDB0A100C13561 /* Habitat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA661DB2DEDB0A200C13561 /* Habitat_new-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Habitat_new-Info.plist"; path = "/Users/takyon/Documents/projects/ios_new/Ambassador Education/Habitat_new-Info.plist"; sourceTree = "<absolute>"; };
 		CDA661DD2DEDB84A00C13561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CDA6A0EF135FD15AFBDB9799 /* Pods-OrisonSchool V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.debug.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.debug.xcconfig"; sourceTree = "<group>"; };
 		CDA901E427B8D5B50040FF1A /* HMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA901E627B8D62F0040FF1A /* HMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA901EA27B8D69E0040FF1A /* HMSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HMSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6677,7 +6678,6 @@
 		CEDDB78C2247D1B40079D1DC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE50BFD26E7CEE700D355C4 /* CrescentV2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CrescentV2.xcassets; sourceTree = "<group>"; };
 		CEE50C4826E7CEFA00D355C4 /* LPS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LPS.xcassets; sourceTree = "<group>"; };
-		D7109830B2C87C074F5E6600 /* Pods-OrisonSchool V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrisonSchool V2.debug.xcconfig"; path = "Target Support Files/Pods-OrisonSchool V2/Pods-OrisonSchool V2.debug.xcconfig"; sourceTree = "<group>"; };
 		DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEPS V2.release.xcconfig"; path = "Target Support Files/Pods-PEPS V2/Pods-PEPS V2.release.xcconfig"; sourceTree = "<group>"; };
 		EA738E122BA331DB009E63C2 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -7008,7 +7008,7 @@
 				CDD23663289AD40100A7121D /* MapKit.framework in Frameworks */,
 				CDD23664289AD40100A7121D /* CloudKit.framework in Frameworks */,
 				CDD23665289AD40100A7121D /* DGActivityIndicatorView.framework in Frameworks */,
-				AFC98B9694C2CA2E562CDD72 /* Pods_OrisonSchool_V2.framework in Frameworks */,
+				0A38E3ED8E19C92DC3E2F015 /* Pods_OrisonSchool_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7743,8 +7743,8 @@
 			children = (
 				247CEC55BE10CF400D56BCE5 /* Pods-PEPS V2.debug.xcconfig */,
 				DA6E01CCC17ECE9A8C85B1E8 /* Pods-PEPS V2.release.xcconfig */,
-				D7109830B2C87C074F5E6600 /* Pods-OrisonSchool V2.debug.xcconfig */,
-				88F95CCE3FC482E3FDD8F58B /* Pods-OrisonSchool V2.release.xcconfig */,
+				CDA6A0EF135FD15AFBDB9799 /* Pods-OrisonSchool V2.debug.xcconfig */,
+				8E4536059D661D843F59AC41 /* Pods-OrisonSchool V2.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -8268,7 +8268,7 @@
 				45D794DC1EBC911300B09F63 /* DGActivityIndicatorView.framework */,
 				45D794DA1EBC8F0200B09F63 /* NVActivityIndicatorView.framework */,
 				455DEE911EBC33DD002D6CEF /* Alamofire.framework */,
-				A0813ADB250DD5F0166B8EA8 /* Pods_OrisonSchool_V2.framework */,
+				6F357E7DD4E6DE197B4EFF82 /* Pods_OrisonSchool_V2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -8730,12 +8730,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDD23679289AD40100A7121D /* Build configuration list for PBXNativeTarget "OrisonSchool V2" */;
 			buildPhases = (
-				2BF98AB1DEE757BB2E724F8F /* [CP] Check Pods Manifest.lock */,
+				2FEFB3BAC6798CFCCE5EA9BA /* [CP] Check Pods Manifest.lock */,
 				CDD235E4289AD40100A7121D /* Sources */,
 				CDD23660289AD40100A7121D /* Frameworks */,
 				CDD23667289AD40100A7121D /* Resources */,
 				CDD23677289AD40100A7121D /* ShellScript */,
-				3634918CA2F94AF232B3E6FA /* [CP] Embed Pods Frameworks */,
+				37F3E945873DD572EA967505 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -9073,10 +9073,6 @@
 					};
 					CD760114295B59FA00812F7B = {
 						DevelopmentTeam = T5LYRD8C23;
-						ProvisioningStyle = Manual;
-					};
-					CD7C91DE2B5CB8B200A0D215 = {
-						DevelopmentTeam = 4FZ5TJ46T5;
 						ProvisioningStyle = Manual;
 					};
 					CD7DDEB32AE04921000D0EB4 = {
@@ -10245,7 +10241,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 663d12d03fdc9831d2482613cbe039edb0f2bc83 ddb9735aa48dda3dea1c0f24ee4de0e276544e832173a5b7ffe4735f3255fbe7";
 		};
-		2BF98AB1DEE757BB2E724F8F /* [CP] Check Pods Manifest.lock */ = {
+		2FEFB3BAC6798CFCCE5EA9BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -10267,7 +10263,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3634918CA2F94AF232B3E6FA /* [CP] Embed Pods Frameworks */ = {
+		37F3E945873DD572EA967505 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -10301,6 +10297,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/RichEditorView/RichEditorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
@@ -10339,6 +10336,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RichEditorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
@@ -22247,12 +22245,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.95;
-				DEVELOPMENT_TEAM = 4FZ5TJ46T5;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4FZ5TJ46T5;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -22368,8 +22364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.woodlemV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Woodlem Ajman";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "WP New";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -22383,12 +22378,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Nafran Abdual (4FZ5TJ46T5)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.95;
-				DEVELOPMENT_TEAM = 4FZ5TJ46T5;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4FZ5TJ46T5;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -22553,8 +22546,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.woodlemV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Woodlem Ajman";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "WP New";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -24785,14 +24777,14 @@
 		};
 		CDD2367A289AD40100A7121D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7109830B2C87C074F5E6600 /* Pods-OrisonSchool V2.debug.xcconfig */;
+			baseConfigurationReference = CDA6A0EF135FD15AFBDB9799 /* Pods-OrisonSchool V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4;
+				CURRENT_PROJECT_VERSION = 2.5;
 				DEVELOPMENT_TEAM = 5VXG48XRVV;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24810,7 +24802,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.4.0;
+				MARKETING_VERSION = 6.5.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -24919,14 +24911,14 @@
 		};
 		CDD2367B289AD40100A7121D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88F95CCE3FC482E3FDD8F58B /* Pods-OrisonSchool V2.release.xcconfig */;
+			baseConfigurationReference = 8E4536059D661D843F59AC41 /* Pods-OrisonSchool V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4;
+				CURRENT_PROJECT_VERSION = 2.5;
 				DEVELOPMENT_TEAM = 5VXG48XRVV;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -24944,7 +24936,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.4.0;
+				MARKETING_VERSION = 6.5.0;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -26065,12 +26057,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.93;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = 8DUU25XJP6;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8DUU25XJP6;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -26087,7 +26077,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.93;
+				MARKETING_VERSION = 6.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -26186,8 +26176,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.asdv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Ambassador V2";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Ambassador V2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -26201,12 +26190,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Ambassador Education/Ambassador Education.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Sajin Vasudevan (8DUU25XJP6)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.93;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0;
 				DEVELOPMENT_TEAM = 8DUU25XJP6;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 8DUU25XJP6;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -26223,7 +26210,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.93;
+				MARKETING_VERSION = 6.0.0;
 				"OTHER_CFLAGS[arch=*]" = (
 					"$(inherited)",
 					"-iquote",
@@ -26371,8 +26358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reportz.asdv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Ambassador V2";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Ambassador V2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ambassador Education-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

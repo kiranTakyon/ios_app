@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AwarenessViewController: UIViewController,UITableViewDataSource,UITableViewDelegate ,UITextFieldDelegate{
+class AwarenessViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
 
 
     @IBOutlet weak var articleTableView: UITableView!
@@ -26,6 +26,15 @@ class AwarenessViewController: UIViewController,UITableViewDataSource,UITableVie
         setSlideMenuProporties()
         tableViewProporties()
         getArticleList()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self as UIGestureRecognizerDelegate
+        view.addGestureRecognizer(tapGesture)
+
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     
@@ -219,8 +228,10 @@ extension AwarenessViewController: TopHeaderDelegate {
             topHeaderView.searchTextField.isHidden = true
             button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
             topHeaderView.searchTextField.text = ""
+            searchText = "" 
             topHeaderView.shouldShowSecondRightButton(true)
             getArticleList()
+
         }
     }
     

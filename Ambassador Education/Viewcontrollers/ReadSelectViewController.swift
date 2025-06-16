@@ -36,6 +36,8 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        self.automaticallyAdjustsScrollViewInsets = false
+        options = options.filter { $0 != "Mark As Read" }
+
         checkApprove()
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -63,16 +65,13 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
         switch options[indexPath.row] {
         case "Forward Email":
-            moveToComposeView(type: indexPath.row,tag : tag)
+            moveToComposeView(type: indexPath.row, tag: tag)
         case "Reply All":
-            moveToComposeView(type: indexPath.row,tag : tag)
+            moveToComposeView(type: indexPath.row, tag: tag)
         case "Delete":
             deleteMyMail()
-        case "Mark As Read":
-            callApi(markType: 1)
         case "Mark As UnRead":
             callApi(markType: 0)
         case "Approve":
@@ -82,8 +81,8 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
         default:
             self.dismiss(animated: true, completion: nil)
         }
-        
     }
+
     
     
     func moveToComposeView(type: Int,tag : Int){
@@ -135,7 +134,7 @@ class ReadSelectViewController: UIViewController ,UITableViewDelegate,UITableVie
     }
     
     func deleteMyMail(){
-        self.startLoadingAnimation()
+//        self.startLoadingAnimation()
         
         let url = APIUrls().deleteMail
         

@@ -15,7 +15,7 @@ import EzPopup
 let html =   NSAttributedString.DocumentType.self
 
 
-class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewDataSource,TaykonProtocol {
+class MessageDetailController: UIViewController,UIGestureRecognizerDelegate, UITableViewDelegate,UITableViewDataSource,TaykonProtocol {
     func getBackToParentViewW(value: Any?, titleValue: String?) {
     
     }
@@ -63,9 +63,27 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         if isFromDashboardNotification {
             setSlideMenuProporties()
         }
-        // Do any additional setup after loading the view.
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        view.addGestureRecognizer(tapGesture)
+
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(touch.view is UITextField || touch.view is UIButton)
+    }
+
+
     override func viewWillAppear(_ animated: Bool) {
         messageTable.estimatedRowHeight = 250.0
         messageTable.rowHeight = UITableView.automaticDimension
@@ -225,24 +243,22 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
         
     }
     
-
     func formatDate(date: String) -> String {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd MMM"
+        dateFormatterPrint.dateFormat = "dd-MM-yyyy hh:mm a" // Updated format
         
-        if let date = dateFormatterGet.date(from: date){
-            var convered =  dateFormatterPrint.string(from: date)
-            return convered
-        }
-        else {
+        if let date = dateFormatterGet.date(from: date) {
+            return dateFormatterPrint.string(from: date)
+        } else {
             print("There was an error decoding the string")
+            return ""
         }
-        return ""
     }
- 
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if messageList.count > 0{
@@ -434,10 +450,11 @@ class MessageDetailController: UIViewController,UITableViewDelegate,UITableViewD
                 }
         }
         
-            if let dateValue = message.date{
-                cell.dateLabel.text = formatDate(date: dateValue)
-                
-            }
+        if let dateValue = message.date {
+            cell.dateLabel.text = formatDate(date: dateValue)
+            print("Message Date for row \(indexPath.row): \(dateValue)")
+        }
+
             stringFromHtml(string: message.message!,cell:cell)
 //        stringFromHtml(string: "message.messag",cell:cell)
             cell.imageUrl = message.senderImage!

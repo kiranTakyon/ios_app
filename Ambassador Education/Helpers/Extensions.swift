@@ -86,7 +86,10 @@ extension UIColor{
         return UIColor.colorFromHEX(hexValue: 0xf5f5f5)
     }
     
-    
+    class func appTransparantColor() -> UIColor {
+        return UIColor.colorFromHEX(hexValue: 0x0A1971).withAlphaComponent(0) // Fully transparent
+    }
+
     
     class func appBlueColor() -> UIColor{
         

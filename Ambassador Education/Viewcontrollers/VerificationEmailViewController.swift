@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerificationEmailViewController: UIViewController, UITextFieldDelegate {
+class VerificationEmailViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var verificationNotificationLabel: UILabel!
     @IBOutlet weak var verificationCodeTextField: UITextField!
@@ -18,7 +18,15 @@ class VerificationEmailViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setEmailNotificationMsgInLabel()
-        // Do any additional setup after loading the view.
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

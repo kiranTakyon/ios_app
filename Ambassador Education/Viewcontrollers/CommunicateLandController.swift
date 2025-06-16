@@ -34,8 +34,17 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
         delegate = self
         customizeTab()
         getInboxMessages(searchTextValue : "")
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+        
     }
-    
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     
     func setSlideMenuProporties() {
         if let revealVC = revealViewController() {
@@ -121,7 +130,13 @@ class CommunicateLandController: PagerController,PagerDataSource,TaykonProtocol 
                     
                     self.removeNoDataLabel()
                     self.topHeaderView.title = list.communicateLabel.safeValue
-                    self.setUpPager(list: list)
+                    if self.inBoxVC.type == .none {
+                        // Initial load
+                        self.setUpPager(list: list)
+                    } else {
+                        // Subsequent search or refresh – send notification or use delegation
+                        NotificationCenter.default.post(name: NSNotification.Name("updateCommunicateData"), object: list)
+                    }
                     self.stopLoadingAnimation()
                 }else{
                     self.stopLoadingAnimation()

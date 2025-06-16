@@ -29,6 +29,8 @@ def shared_pods
   pod "Updates"
   pod 'GoogleSignIn'
   pod 'Zip'
+  pod 'SDWebImage'
+
 
   
 end

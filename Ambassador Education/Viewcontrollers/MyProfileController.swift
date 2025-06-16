@@ -596,17 +596,25 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
         }
         return true
     }
+    let takyonRed = UIColor(red: 233/255, green: 80/255, blue: 59/255, alpha: 1)
+
     @IBAction func verifyEmailButtonAction(_ sender: UIButton) {
+        let takyonRed = UIColor(red: 233/255, green: 80/255, blue: 59/255, alpha: 1)
+
         let appearance = SCLAlertView.SCLAppearance(
             kTextFieldHeight: 60,
-            showCloseButton: false
+            showCloseButton: false,
+            circleBackgroundColor: takyonRed,
+            contentViewColor: .white,
+            contentViewBorderColor: .clear,
+            titleColor: .black,
+            dynamicAnimatorActive: true
         )
-        
+
         let alert = SCLAlertView(appearance: appearance)
         let txt = alert.addTextField("Enter your new email id")
-        
-        // "Yes" button action
-        _ = alert.addButton("Yes") {
+
+        let yesButton = alert.addButton("Yes") {
             if txt.text != "" {
                 txt.resignFirstResponder()
                 if isValidEmail(testStr: txt.text.safeValue) {
@@ -620,30 +628,26 @@ class MyProfileController: UIViewController,UITableViewDataSource, UITableViewDe
                 SweetAlert().showAlert("", subTitle: "Please enter a valid email", style: .warning)
             }
         }
-        
-        // "No" button action - just close the alert without doing anything
-        alert.addButton("No") {
-            alert.hideView() // This will close the alert without doing anything else
+
+        let noButton = alert.addButton("No") {
+            alert.hideView()
         }
-        
-        // Show the alert
-        _ = alert.showEdit("Verify Email", subTitle: "Do you want to change your \(getAllVisibleCellsFromTableView().1)?")
+
+        yesButton.backgroundColor = takyonRed
+        noButton.backgroundColor = takyonRed
+        yesButton.setTitleColor(.white, for: .normal)
+        noButton.setTitleColor(.white, for: .normal)
+
+        let icon = UIImage(named: "white_pen_icon") ?? UIImage()
+
+        _ = alert.showCustom(
+            "Verify Email",
+            subTitle: "Do you want to change your \(getAllVisibleCellsFromTableView().1)?",
+            color: takyonRed,
+            icon: icon
+        )
     }
 
-    
-    
-//    @IBAction func profileSaveAction(_ sender: UIButton) {
-//        if saveImageView.image == #imageLiteral(resourceName: "Edit"){
-//            saveImageView.image = #imageLiteral(resourceName: "Save")
-//            isEditClicked = true
-//            profileTable.reloadData()
-//        }
-//        else if saveImageView.image == #imageLiteral(resourceName: "Save"){
-//            profileTable.reloadData()
-//            isEditClicked = true
-//            callProfileEdit()
-//        }
-//    }
     
     func callProfileEdit(){
         if checkValidation(){
@@ -747,12 +751,12 @@ class ProfileCell : UITableViewCell{
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }
 
 

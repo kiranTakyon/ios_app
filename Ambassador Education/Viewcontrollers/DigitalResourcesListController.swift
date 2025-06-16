@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
+class DigitalResourcesListController: UIViewController,UITextFieldDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -24,7 +24,18 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         setSlideMenuProporties()
         setUpCollectionView()
         getCategoryList()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        view.addGestureRecognizer(tapGesture)
+
     }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if topHeaderView.searchTextField.text != ""{
@@ -49,47 +60,43 @@ class DigitalResourcesListController: UIViewController,UITextFieldDelegate {
         collectionView.register(nib, forCellWithReuseIdentifier: "DigitalResourceCategoryCell")
     }
     
-    func getCategoryList(){
-        
+    func getCategoryList() {
         self.startLoadingAnimation()
         
         let url = APIUrls().getDigitalResource
-        
         let userId = UserDefaultsManager.manager.getUserId()
         
         var dictionary = [String: Any]()
-        
         dictionary[UserIdKey().id] = userId
         dictionary[GalleryCategory.searchText] = searchText
         dictionary[GalleryCategory.module] = 20
-        
-        
+
         APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "", requestParameters: dictionary) { (result) in
             
-            guard let categryValues = result["DigitalCategories"] as? NSArray else{return}
-             guard let title = result["DigitalResourcesLabel"] as? String else{return}
+            guard let categryValues = result["DigitalCategories"] as? NSArray else { return }
+            guard let title = result["DigitalResourcesLabel"] as? String else { return }
+
             DispatchQueue.main.async {
                 self.topHeaderView.title = title
             }
-            
-            print("digita categories ",categryValues)
-            
-            let cetgories = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNDigitalResource) as! [TNDigitalResourceCategory]
-            self.categoryList.removeAll()
-            self.categoryList = cetgories
+
+            let categories = ModelClassManager.sharedManager.createModelArray(data: categryValues, modelType: ModelType.TNDigitalResource) as! [TNDigitalResourceCategory]
             
             DispatchQueue.main.async {
+                self.categoryList.removeAll() // ✅ Clear previous data here
+                self.categoryList = categories
                 self.collectionView.reloadData()
                 self.stopLoadingAnimation()
-                if self.categoryList.count == 0{
+
+                if self.categoryList.isEmpty {
                     self.addNoDataFoundLabel()
-                }
-                else{
+                } else {
                     self.removeNoDataLabel()
                 }
             }
         }
     }
+
     
     func navigateTodigitalResourceDetail(category:TNDigitalResourceCategory) {
         let digitalVc = mainStoryBoard.instantiateViewController(withIdentifier: "DigitalResourceSecondListController") as! DigitalResourceSecondListController
@@ -198,8 +205,10 @@ extension DigitalResourcesListController: TopHeaderDelegate {
             topHeaderView.searchTextField.isHidden = true
             button.setImage(#imageLiteral(resourceName: "Search"), for: .normal)
             topHeaderView.searchTextField.text = ""
+            searchText = "" // <-- Reset the searchText variable
             topHeaderView.shouldShowSecondRightButton(true)
             getCategoryList()
+
         }
     }
     
