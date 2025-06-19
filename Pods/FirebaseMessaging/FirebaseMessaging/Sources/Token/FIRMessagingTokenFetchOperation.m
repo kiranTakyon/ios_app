@@ -25,7 +25,7 @@
 #import "FirebaseMessaging/Sources/Token/FIRMessagingCheckinPreferences.h"
 #import "FirebaseMessaging/Sources/Token/FIRMessagingTokenOperation.h"
 
-#import "FirebaseCore/Sources/Private/FirebaseCoreInternal.h"
+#import "FirebaseCore/Extension/FirebaseCoreInternal.h"
 
 // We can have a static int since this error should theoretically only
 // happen once (for the first time). If it repeats there is something
@@ -34,7 +34,6 @@ static int phoneRegistrationErrorRetryCount = 0;
 static const int kMaxPhoneRegistrationErrorRetryCount = 10;
 NSString *const kFIRMessagingFirebaseUserAgentKey = @"X-firebase-client";
 NSString *const kFIRMessagingFirebaseHeartbeatKey = @"X-firebase-client-log-type";
-NSString *const kFIRMessagingHeartbeatTag = @"fire-iid";
 
 @implementation FIRMessagingTokenFetchOperation
 
@@ -42,13 +41,15 @@ NSString *const kFIRMessagingHeartbeatTag = @"fire-iid";
                                    scope:(NSString *)scope
                                  options:(nullable NSDictionary<NSString *, NSString *> *)options
                       checkinPreferences:(FIRMessagingCheckinPreferences *)checkinPreferences
-                              instanceID:(NSString *)instanceID {
+                              instanceID:(NSString *)instanceID
+                         heartbeatLogger:(id<FIRHeartbeatLoggerProtocol>)heartbeatLogger {
   return [super initWithAction:FIRMessagingTokenActionFetch
            forAuthorizedEntity:authorizedEntity
                          scope:scope
                        options:options
             checkinPreferences:checkinPreferences
-                    instanceID:instanceID];
+                    instanceID:instanceID
+               heartbeatLogger:heartbeatLogger];
 }
 
 - (void)performTokenOperation {
@@ -57,7 +58,7 @@ NSString *const kFIRMessagingHeartbeatTag = @"fire-iid";
   [request setValue:checkinVersionInfo forHTTPHeaderField:@"info"];
   [request setValue:[FIRApp firebaseUserAgent]
       forHTTPHeaderField:kFIRMessagingFirebaseUserAgentKey];
-  [request setValue:@([FIRHeartbeatInfo heartbeatCodeForTag:kFIRMessagingHeartbeatTag]).stringValue
+  [request setValue:@([self.heartbeatLogger heartbeatCodeForToday]).stringValue
       forHTTPHeaderField:kFIRMessagingFirebaseHeartbeatKey];
 
   // Build form-encoded body
@@ -107,7 +108,7 @@ NSString *const kFIRMessagingHeartbeatTag = @"fire-iid";
         FIRMessaging_STRONGIFY(self);
         [self handleResponseWithData:data response:response error:error];
       };
-  NSURLSessionConfiguration *config = NSURLSessionConfiguration.defaultSessionConfiguration;
+  NSURLSessionConfiguration *config = NSURLSessionConfiguration.ephemeralSessionConfiguration;
   config.timeoutIntervalForResource = 60.0f;  // 1 minute
   NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
   self.dataTask = [session dataTaskWithRequest:request completionHandler:requestHandler];
@@ -171,6 +172,11 @@ NSString *const kFIRMessagingHeartbeatTag = @"fire-iid";
       FIRMessagingLoggerDebug(kFIRMessagingMessageCodeInternal001, @"%@", failureReason);
       responseError = [NSError messagingErrorWithCode:kFIRMessagingErrorCodeInvalidIdentity
                                         failureReason:failureReason];
+    } else {
+      FIRMessagingLoggerDebug(kFIRMessagingMessageCodeTokenFetchOperationRequestError,
+                              @"Token fetch got an error from server: %@", errorValue);
+      responseError = [NSError messagingErrorWithCode:kFIRMessagingErrorCodeUnknown
+                                        failureReason:errorValue];
     }
   }
   if (!responseError) {

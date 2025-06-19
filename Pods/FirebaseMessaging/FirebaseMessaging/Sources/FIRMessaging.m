@@ -24,8 +24,9 @@
 #import <GoogleUtilities/GULAppEnvironmentUtil.h>
 #import <GoogleUtilities/GULReachabilityChecker.h>
 #import <GoogleUtilities/GULUserDefaults.h>
-#import "FirebaseCore/Sources/Private/FirebaseCoreInternal.h"
+#import "FirebaseCore/Extension/FirebaseCoreInternal.h"
 #import "FirebaseInstallations/Source/Library/Private/FirebaseInstallationsInternal.h"
+#import "FirebaseMessaging/Interop/FIRMessagingInterop.h"
 #import "FirebaseMessaging/Sources/FIRMessagingAnalytics.h"
 #import "FirebaseMessaging/Sources/FIRMessagingCode.h"
 #import "FirebaseMessaging/Sources/FIRMessagingConstants.h"
@@ -38,9 +39,7 @@
 #import "FirebaseMessaging/Sources/FIRMessagingSyncMessageManager.h"
 #import "FirebaseMessaging/Sources/FIRMessagingUtilities.h"
 #import "FirebaseMessaging/Sources/FIRMessaging_Private.h"
-#import "FirebaseMessaging/Sources/Interop/FIRMessagingInterop.h"
 #import "FirebaseMessaging/Sources/NSError+FIRMessaging.h"
-#import "FirebaseMessaging/Sources/Public/FirebaseMessaging/FIRMessagingExtensionHelper.h"
 #import "FirebaseMessaging/Sources/Token/FIRMessagingAuthService.h"
 #import "FirebaseMessaging/Sources/Token/FIRMessagingTokenInfo.h"
 #import "FirebaseMessaging/Sources/Token/FIRMessagingTokenManager.h"
@@ -48,15 +47,9 @@
 
 static NSString *const kFIRMessagingMessageViaAPNSRootKey = @"aps";
 static NSString *const kFIRMessagingReachabilityHostname = @"www.google.com";
-static NSString *const kFIRMessagingFCMTokenFetchAPNSOption = @"apns_token";
 
-#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 const NSNotificationName FIRMessagingRegistrationTokenRefreshedNotification =
     @"com.firebase.messaging.notif.fcm-token-refreshed";
-#else
-NSString *const FIRMessagingRegistrationTokenRefreshedNotification =
-    @"com.firebase.messaging.notif.fcm-token-refreshed";
-#endif  // defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
 NSString *const kFIRMessagingUserDefaultsKeyAutoInitEnabled =
     @"com.firebase.messaging.auto-init.enabled";  // Auto Init Enabled key stored in NSUserDefaults
@@ -64,7 +57,9 @@ NSString *const kFIRMessagingUserDefaultsKeyAutoInitEnabled =
 NSString *const kFIRMessagingPlistAutoInitEnabled =
     @"FirebaseMessagingAutoInitEnabled";  // Auto Init Enabled key stored in Info.plist
 
-const BOOL FIRMessagingIsAPNSSyncMessage(NSDictionary *message) {
+NSString *const FIRMessagingErrorDomain = @"com.google.fcm";
+
+BOOL FIRMessagingIsAPNSSyncMessage(NSDictionary *message) {
   if ([message[kFIRMessagingMessageViaAPNSRootKey] isKindOfClass:[NSDictionary class]]) {
     NSDictionary *aps = message[kFIRMessagingMessageViaAPNSRootKey];
     if (aps && [aps isKindOfClass:[NSDictionary class]]) {
@@ -112,6 +107,7 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
 @property(nonatomic, readwrite, strong) GULUserDefaults *messagingUserDefaults;
 @property(nonatomic, readwrite, strong) FIRInstallations *installations;
 @property(nonatomic, readwrite, strong) FIRMessagingTokenManager *tokenManager;
+@property(nonatomic, readwrite, strong) FIRHeartbeatLogger *heartbeatLogger;
 
 /// Message ID's logged for analytics. This prevents us from logging the same message twice
 /// which can happen if the user inadvertently calls `appDidReceiveMessage` along with us
@@ -134,24 +130,15 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   return (FIRMessaging *)instance;
 }
 
-+ (FIRMessagingExtensionHelper *)extensionHelper {
-  static dispatch_once_t once;
-  static FIRMessagingExtensionHelper *extensionHelper;
-  dispatch_once(&once, ^{
-    extensionHelper = [[FIRMessagingExtensionHelper alloc] init];
-  });
-  return extensionHelper;
-}
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 - (instancetype)initWithAnalytics:(nullable id<FIRAnalyticsInterop>)analytics
-                 withUserDefaults:(GULUserDefaults *)defaults {
-#pragma clang diagnostic pop
+                     userDefaults:(GULUserDefaults *)defaults
+                  heartbeatLogger:(FIRHeartbeatLogger *)heartbeatLogger {
   self = [super init];
   if (self != nil) {
     _loggedMessageIDs = [NSMutableSet set];
     _messagingUserDefaults = defaults;
     _analytics = analytics;
+    _heartbeatLogger = heartbeatLogger;
   }
   return self;
 }
@@ -169,8 +156,6 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
 }
 
 + (nonnull NSArray<FIRComponent *> *)componentsToRegister {
-  FIRDependency *analyticsDep = [FIRDependency dependencyWithProtocol:@protocol(FIRAnalyticsInterop)
-                                                           isRequired:NO];
   FIRComponentCreationBlock creationBlock =
       ^id _Nullable(FIRComponentContainer *container, BOOL *isCacheable) {
     if (!container.app.isDefaultApp) {
@@ -183,12 +168,10 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
     // Ensure it's cached so it returns the same instance every time messaging is called.
     *isCacheable = YES;
     id<FIRAnalyticsInterop> analytics = FIR_COMPONENT(FIRAnalyticsInterop, container);
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     FIRMessaging *messaging =
         [[FIRMessaging alloc] initWithAnalytics:analytics
-                               withUserDefaults:[GULUserDefaults standardUserDefaults]];
-#pragma clang diagnostic pop
+                                   userDefaults:[GULUserDefaults standardUserDefaults]
+                                heartbeatLogger:container.app.heartbeatLogger];
     [messaging start];
     [messaging configureMessagingWithOptions:container.app.options];
 
@@ -198,7 +181,6 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   FIRComponent *messagingProvider =
       [FIRComponent componentWithProtocol:@protocol(FIRMessagingInterop)
                       instantiationTiming:FIRInstantiationTimingEagerInDefaultApp
-                             dependencies:@[ analyticsDep ]
                             creationBlock:creationBlock];
 
   return @[ messagingProvider ];
@@ -209,7 +191,7 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   if (!GCMSenderID.length) {
     FIRMessagingLoggerError(kFIRMessagingMessageCodeFIRApp000,
                             @"Firebase not set up correctly, nil or empty senderID.");
-    [NSException raise:kFIRMessagingDomain
+    [NSException raise:FIRMessagingErrorDomain
                 format:@"Could not configure Firebase Messaging. GCMSenderID must not be nil or "
                        @"empty."];
   }
@@ -221,11 +203,11 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   // This is not needed for app extension except for watch.
 #if TARGET_OS_WATCH
   [self didCompleteConfigure];
-#else
+#else   // TARGET_OS_WATCH
   if (![GULAppEnvironmentUtil isAppExtension]) {
     [self didCompleteConfigure];
   }
-#endif
+#endif  // TARGET_OS_WATCH
 }
 
 - (void)didCompleteConfigure {
@@ -234,11 +216,13 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
                                                        scope:kFIRMessagingDefaultTokenScope]
           .token;
   // When there is a cached token, do the token refresh.
+  // Before fetching FCM token, confirm there is an APNS token to avoid validation error
+  // This error is innocuous since we refetch after APNS token is set but it can seem alarming
   if (cachedToken) {
     // Clean up expired tokens by checking the token refresh policy.
     [self.installations installationIDWithCompletion:^(NSString *_Nullable identifier,
                                                        NSError *_Nullable error) {
-      if ([self.tokenManager checkTokenRefreshPolicyWithIID:identifier]) {
+      if ([self.tokenManager checkTokenRefreshPolicyWithIID:identifier] && self.APNSToken) {
         // Default token is expired, fetch default token from server.
         [self retrieveFCMTokenForSenderID:self.tokenManager.fcmSenderID
                                completion:^(NSString *_Nullable FCMToken, NSError *_Nullable error){
@@ -250,7 +234,7 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
       // TODO(chliangGoogle) Need to investigate better solution.
       [self updateDefaultFCMToken:self.FCMToken];
     }];
-  } else if (self.isAutoInitEnabled) {
+  } else if (self.isAutoInitEnabled && self.APNSToken) {
     // When there is no cached token, must check auto init is enabled.
     // If it's disabled, don't initiate token generation/refresh.
     // If no cache token and auto init is enabled, fetch a token from server.
@@ -281,7 +265,8 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   [self setupFileManagerSubDirectory];
   [self setupNotificationListeners];
 
-  self.tokenManager = [[FIRMessagingTokenManager alloc] init];
+  self.tokenManager =
+      [[FIRMessagingTokenManager alloc] initWithHeartbeatLogger:self.heartbeatLogger];
   self.installations = [FIRInstallations installations];
   [self setupTopics];
 
@@ -390,7 +375,7 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
 }
 
 - (void)handleIncomingLinkIfNeededFromMessage:(NSDictionary *)message {
-#if TARGET_OS_IOS || TARGET_OS_TV
+#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_VISION
   NSURL *url = [self linkURLFromMessage:message];
   if (url == nil) {
     return;
@@ -409,12 +394,6 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   SEL continueUserActivitySelector = @selector(application:
                                       continueUserActivity:restorationHandler:);
 
-  SEL openURLWithOptionsSelector = @selector(application:openURL:options:);
-  SEL openURLWithSourceApplicationSelector = @selector(application:
-                                                           openURL:sourceApplication:annotation:);
-#if TARGET_OS_IOS
-  SEL handleOpenURLSelector = @selector(application:handleOpenURL:);
-#endif
   // Due to FIRAAppDelegateProxy swizzling, this selector will most likely get chosen, whether or
   // not the actual application has implemented
   // |application:continueUserActivity:restorationHandler:|. A warning will be displayed to the user
@@ -429,31 +408,8 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
           restorationHandler:^(NSArray *_Nullable restorableObjects){
               // Do nothing, as we don't support the app calling this block
           }];
-
-  } else if ([appDelegate respondsToSelector:openURLWithOptionsSelector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunguarded-availability"
-    [appDelegate application:application openURL:url options:@{}];
-#pragma clang diagnostic pop
-    // Similarly, |application:openURL:sourceApplication:annotation:| will also always be called,
-    // due to the default swizzling done by FIRAAppDelegateProxy in Firebase Analytics
-  } else if ([appDelegate respondsToSelector:openURLWithSourceApplicationSelector]) {
-#if TARGET_OS_IOS
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    [appDelegate application:application
-                     openURL:url
-           sourceApplication:FIRMessagingAppIdentifier()
-                  annotation:@{}];
-#pragma clang diagnostic pop
-  } else if ([appDelegate respondsToSelector:handleOpenURLSelector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    [appDelegate application:application handleOpenURL:url];
-#pragma clang diagnostic pop
-#endif
   }
-#endif
+#endif  // TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_VISION
 }
 
 - (NSURL *)linkURLFromMessage:(NSDictionary *)message {
@@ -531,14 +487,13 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   BOOL isFCMAutoInitEnabled = [self isAutoInitEnabled];
   [_messagingUserDefaults setBool:autoInitEnabled
                            forKey:kFIRMessagingUserDefaultsKeyAutoInitEnabled];
-  [_messagingUserDefaults synchronize];
   if (!isFCMAutoInitEnabled && autoInitEnabled) {
     [self.tokenManager tokenAndRequestIfNotExist];
   }
 }
 
 - (NSString *)FCMToken {
-  // Gets the current default token, and requets a new one if it doesn't exist.
+  // Gets the current default token, and requests a new one if it doesn't exist.
   NSString *token = [self.tokenManager tokenAndRequestIfNotExist];
   return token;
 }
@@ -568,11 +523,11 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   }
   NSDictionary *options = nil;
   if (self.APNSToken) {
-    options = @{kFIRMessagingFCMTokenFetchAPNSOption : self.APNSToken};
+    options = @{kFIRMessagingTokenOptionsAPNSKey : self.APNSToken};
   } else {
     FIRMessagingLoggerWarn(kFIRMessagingMessageCodeAPNSTokenNotAvailableDuringTokenFetch,
                            @"APNS device token not set before retrieving FCM Token for Sender ID "
-                           @"'%@'. Notifications to this FCM Token will not be delivered over APNS."
+                           @"'%@'."
                            @"Be sure to re-retrieve the FCM token once the APNS device token is "
                            @"set.",
                            senderID);
@@ -1064,4 +1019,22 @@ BOOL FIRMessagingIsContextManagerMessage(NSDictionary *message) {
   return [self currentLocale];
 }
 
+#pragma mark - Force Category Linking
+#if SWIFT_PACKAGE || COCOAPODS || FIREBASE_BUILD_CARTHAGE || FIREBASE_BUILD_ZIP_FILE
+extern void FIRInclude_FIRMessaging_ExtensionHelper_Category(void);
+#endif  // SWIFT_PACKAGE || COCOAPODS || FIREBASE_BUILD_CARTHAGE || FIREBASE_BUILD_ZIP_FILE
+extern void FIRInclude_NSDictionary_FIRMessaging_Category(void);
+extern void FIRInclude_NSError_FIRMessaging_Category(void);
+
+/// Does nothing when called, and not meant to be called.
+///
+/// This method forces the linker to include categories even if
+/// users do not include the '-ObjC' linker flag in their project.
++ (void)noop {
+#if SWIFT_PACKAGE || COCOAPODS || FIREBASE_BUILD_CARTHAGE || FIREBASE_BUILD_ZIP_FILE
+  FIRInclude_FIRMessaging_ExtensionHelper_Category();
+#endif  // SWIFT_PACKAGE || COCOAPODS || FIREBASE_BUILD_CARTHAGE || FIREBASE_BUILD_ZIP_FILE
+  FIRInclude_NSDictionary_FIRMessaging_Category();
+  FIRInclude_NSError_FIRMessaging_Category();
+}
 @end

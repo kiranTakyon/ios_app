@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 import FirebaseCore
 import FirebaseMessaging
 import Messages
@@ -48,22 +46,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     //    let value = 0 // Default value if no target-specific macro is defined
     //#endif
     
-    func application(_ application: UIApplication,didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        //   FirebaseApp.configure()
-        // Override point for customization after application launch.
-        Fabric.with([Crashlytics.self])
-        //FirebaseApp.configure()
-        setFireBase(application : application)
-        //    FirebaseApp.configure()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // ✅ Only call this once
+        FirebaseApp.configure()
+        
+        // ❌ Remove duplicate configure call from inside setFireBase
+        setFireBase(application: application)  // Keep this, but remove configure inside it
+        
         googleSignInConfiguration()
         UIApplication.shared.applicationIconBadgeNumber = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {  /// Showing dealy for update popup on top view
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.showUpdateAppAlert()
         }
 
         if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-            print("App launched from notification with userInfo: \(notification)")
             remoteNotification = notification as NSDictionary
             wasLaunchedFromNotification = true
         } else {
@@ -71,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         }
         return true
     }
+
     // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
     // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
     // the FCM registration token.
@@ -145,51 +144,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
      */  // [END disconnect_gcm_service]
     
     func setFireBase(application : UIApplication){
-        
-        var configureError: NSError?
-        FirebaseApp.configure()
-        
-        // [START set_messaging_delegate]
+
         Messaging.messaging().delegate = self
-        // [END set_messaging_delegate]
-        
-        // Register for remote notifications. This shows a permission dialog on first run, to
-        // show the dialog at a more appropriate time move this registration accordingly.
-        // [START register_for_notifications]
+
         if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
-            
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
                 completionHandler: { _, _ in }
             )
         } else {
-            let settings: UIUserNotificationSettings =
-            UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
+
         application.registerForRemoteNotifications()
-        
         updateFirestorePushTokenIfNeeded()
-        // [END register_for_notifications]
-        
-        
-        
-        //GGLContext.sharedInstance().configureWithError(&configureError)
-        //assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        // gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
-        // [END_EXCLUDE]
-        
-        // [START start_gcm_service]
-        /* let gcmConfig = GCMConfig.default()
-         gcmConfig?.receiverDelegate = self
-         GCMService.sharedInstance().start(with: gcmConfig)
-         */
     }
-    
+
     func saveGCMTokenToUserDefaults(token : String){
         UserDefaultsManager.manager.insertUserDefaultValue(value: token, key: DBKeys.gcmToken)
     }
