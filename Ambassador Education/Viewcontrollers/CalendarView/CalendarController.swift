@@ -178,21 +178,17 @@ class CalendarController: CalendarViewController {
                 let date1 = calendar.startOfDay(for: objStartDate as Date)
                 let date2 = calendar.startOfDay(for: objEndDate as Date)
                 let components = calendar.dateComponents([.day], from: date1, to: date2)
-                if let dayDiff = components.day {
-                    for i in 0..<dayDiff + 1 {
+                if let dayDiff = components.day, dayDiff >= 0 {
+                    for i in 0...dayDiff {
                         let checkDate = convertNextDate(dateString: "\(objStartDate)", incrtemnt: i)
                         if dict["\(checkDate)"] == nil {
-                            var insertArray = [TNCalendarEvent]()
-                            insertArray.append(event)
-                            dict["\(checkDate)"] = insertArray
+                            dict["\(checkDate)"] = [event]
                         } else {
-                            var allValues = dict["\(checkDate)"]
-                            allValues?.append(event)
-                            dict.removeValue(forKey: "\(checkDate)")
-                            dict["\(checkDate)"] = allValues
+                            dict["\(checkDate)"]?.append(event)
                         }
                     }
                 }
+
             }
         }
         return dict

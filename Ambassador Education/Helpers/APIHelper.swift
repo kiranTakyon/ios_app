@@ -33,161 +33,137 @@ class APIHelper {
     
     static let sharedInstance = APIHelper()
     
-    func apiCallHandler(_ originalUrl: String, requestType: MethodType,requestString:String,typingCountVal:Int = 0, requestParameters: [String : Any], completion: @escaping (_ result: NSDictionary) -> Void) {
-        
-        if Reachability.isConnectedToInternet() == true {
-            
-            print("original url = \(originalUrl)")
-            var requestTypeString = String()
-            
-            requestTypeString = requestType.rawValue
-            
-            let completeUrl = BaseUrl + originalUrl
-            
-            let inputUrlString = completeUrl.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed)
-            
-            guard let url = URL(string: inputUrlString!) else{
-                print("Error in creating url")
-                return
-            }
-            
-            let request = NSMutableURLRequest(url: url as URL)
-            request.httpMethod = requestTypeString
-            
-            var baseAuth = ""
-            if originalUrl.contains("_LOGIN"){
-                baseAuth = self.getBasicAuth(dictionary: requestParameters)
-                BaseAuthValue = baseAuth
-                
-            }else{
-                if originalUrl.contains("LOGIN") {
-                    baseAuth = self.getBasicAuth(dictionary: requestParameters)
-                    BaseAuthValue = baseAuth
-                }else if originalUrl.contains("T0048"){
-                    baseAuth = self.getBasicAuthForForgotPassword(dictionary: requestParameters)
-                    BaseAuthValue = baseAuth
-                }
-                else{
-                    baseAuth = BaseAuthValue
-                }
-            }
-            
-            print("Basic \(baseAuth)")
-            request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
-            //  }
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            /*     if let token = UserDefaultsManager.manager.getUserDefaultValue(key: UserDefaultKeys().AccessToken){
-             request.setValue(token as! String, forHTTPHeaderField: "Authorization")
-             print("access token set")
-             } */
-            
-            if let theJSONData = try? JSONSerialization.data(
-                withJSONObject: requestParameters,
-                options: []) {
-                let theJSONText = String(data: theJSONData,
-                                         encoding: .ascii)
-                print("JSON string = \(theJSONText!)")
-            }
-            
-            
-            if requestParameters.count > 0 {
-                do {
-                    
-                    let jsonData = try JSONSerialization.data(withJSONObject: requestParameters, options: JSONSerialization.WritingOptions.prettyPrinted) as Data
-                    request.httpBody = jsonData
-                }
-                catch _ {
-                    completion(["StatusMessage" : []])
-                }
-            }
-            
-            if requestString != "" {
-                
-                let jsonData = requestString.data(using: String.Encoding.utf8, allowLossyConversion: false)
-                request.httpBody = jsonData
-            }
-            
-            
-            let urlconfig = URLSessionConfiguration.default
-            urlconfig.timeoutIntervalForRequest = 300
-            urlconfig.timeoutIntervalForResource = 1000
-            let session = URLSession.shared
-            
-            //   request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringCacheData
-            
-            
-            let dataTask = session.dataTask(with: request as URLRequest) {data,response,error in
-                if let httpResponse = response as? HTTPURLResponse {
-                    
-                    print("reposense code",httpResponse.statusCode)
-                    
-                    //                if httpResponse.statusCode == 401 {
-                    //
-                    //                     guard let data = data else {
-                    //
-                    //                        return
-                    //                    }
-                    //
-                    //                    let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                    //
-                    //                    print("data",datastring)
-                    //
-                    //                  //  self.goToRoot() authorization expired
-                    //                }
-                    //                else{
-                    do {
-                        guard let data = data else {
-                            completion([JsonKeys().message : "Some error occured . Please try again"])
-                            throw JSONError.NoData
-                        }
-                        // print(response)
-                        // let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-                            completion([JsonKeys().message : []])
-                            throw JSONError.ConversionFailed
-                        }
-                        if let theJSONData = try? JSONSerialization.data(
-                            withJSONObject: json,
-                            options: []) {
-                           
-                           // let theJSONText = String(data: theJSONData,encoding: .ascii)
-                            let theJSONText = String(data: theJSONData, encoding: .utf8)
-                            print("JSON response string = \(theJSONText!)")
-                        }
-                        print(json)
-                        if originalUrl.contains("authorize.net"){
-                            completion(json)
-                        }
-                        else{
-                            //   let typingDict = NSDictionary(object: typingCountVal, forKey: "typingCount" as NSCopying)
-                            let combinedDict = NSMutableDictionary(dictionary: json)
-                            combinedDict["typingCount"] = typingCountVal
-                            print("combined dict is :",combinedDict)
-                            let staticDict = NSDictionary(dictionary: combinedDict)
-                            completion(staticDict)
-                        }
-                        
-                    } catch let error as JSONError {
-                        completion([JsonKeys().message : "Json error occured . Please try again"])
-                        print(error.rawValue)
-                    } catch let error as NSError {
-                        completion([JsonKeys().message :"Json error occured . Please try again"])
-                        print("Error = \(error.debugDescription)")
-                    }
-                    // }
-                }
-                else{
-                    completion([JsonKeys().message :"Some error occured . Please try again"])
-                }
-                
-            }
-            dataTask.resume()
+    private func prettyJSONString(_ obj: Any) -> String {
+        guard JSONSerialization.isValidJSONObject(obj),
+              let data = try? JSONSerialization.data(withJSONObject: obj, options: [.prettyPrinted]),
+              let str = String(data: data, encoding: .utf8) else {
+            return String(describing: obj)
         }
-        else{
-            completion([JsonKeys().message :"No Internet Connection"])
-        }
+        return str
     }
-    
+
+    private func dumpHeaders(_ headers: [AnyHashable: Any]?) -> String {
+        guard let headers = headers, !headers.isEmpty else { return "(none)" }
+        return headers.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
+    }
+
+    private func makeCurl(_ request: URLRequest) -> String {
+        var parts = ["curl -i"]
+        if let method = request.httpMethod { parts.append("-X \(method)") }
+        request.allHTTPHeaderFields?.forEach { k, v in parts.append("-H '\(k): \(v)'") }
+        if let body = request.httpBody, let bodyStr = String(data: body, encoding: .utf8) {
+            parts.append("--data '\(bodyStr.replacingOccurrences(of: "'", with: "'\\''"))'")
+        }
+        if let url = request.url?.absoluteString { parts.append("'\(url)'") }
+        return parts.joined(separator: " ")
+    }
+    func apiCallHandler(_ originalUrl: String,
+                           requestType: MethodType,
+                           requestString: String,
+                           typingCountVal: Int = 0,
+                           requestParameters: [String : Any],
+                           completion: @escaping (_ result: NSDictionary) -> Void) {
+           
+           guard Reachability.isConnectedToInternet() else {
+               completion([JsonKeys().message :"No Internet Connection"])
+               return
+           }
+           
+           print("🌐 [API CALL] original url = \(originalUrl)")
+           
+           let completeUrl = BaseUrl + originalUrl
+           guard let url = URL(string: completeUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? "") else {
+               print("❌ Error in creating url")
+               return
+           }
+           
+           let request = NSMutableURLRequest(url: url)
+           request.httpMethod = requestType.rawValue
+           
+           // --- Auth logic (kept same as your code) ---
+           var baseAuth = ""
+           if originalUrl.contains("_LOGIN") || originalUrl.contains("LOGIN") {
+               baseAuth = self.getBasicAuth(dictionary: requestParameters)
+               BaseAuthValue = baseAuth
+           } else if originalUrl.contains("T0048") {
+               baseAuth = self.getBasicAuthForForgotPassword(dictionary: requestParameters)
+               BaseAuthValue = baseAuth
+           } else {
+               baseAuth = BaseAuthValue
+           }
+           
+           request.setValue("Basic \(baseAuth)", forHTTPHeaderField: "authorization")
+           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           
+           // --- Body ---
+           if requestParameters.count > 0 {
+               request.httpBody = try? JSONSerialization.data(withJSONObject: requestParameters, options: .prettyPrinted)
+           }
+           if !requestString.isEmpty {
+               request.httpBody = requestString.data(using: .utf8)
+           }
+           
+           // --- Log full REQUEST ---
+           print("🛰️ [REQUEST] \(request.httpMethod ?? "?") \(request.url?.absoluteString ?? "?")")
+           print("🧾 [HEADERS]\n\(dumpHeaders(request.allHTTPHeaderFields))")
+           if let body = request.httpBody, let bodyStr = String(data: body, encoding: .utf8) {
+               print("📦 [BODY]\n\(bodyStr)")
+           } else {
+               print("📦 [BODY]\n(none)")
+           }
+           print("🧪 [cURL]\n\(makeCurl(request as URLRequest))")
+           
+           // --- URLSession ---
+           let session = URLSession.shared
+           let dataTask = session.dataTask(with: request as URLRequest) { data, response, error in
+               
+               // --- Log full RESPONSE ---
+               if let httpResponse = response as? HTTPURLResponse {
+                   print("📡 [RESPONSE] Status: \(httpResponse.statusCode)")
+                   print("🧾 [RESPONSE HEADERS]\n\(self.dumpHeaders(httpResponse.allHeaderFields))")
+               } else {
+                   print("📡 [RESPONSE] (no HTTPURLResponse)")
+               }
+               
+               if let data = data {
+                   if let rawText = String(data: data, encoding: .utf8) {
+                       print("📨 [RESPONSE BODY RAW]\n\(rawText)")
+                   } else {
+                       print("📨 [RESPONSE BODY RAW] (binary or non-utf8, \(data.count) bytes)")
+                   }
+               } else {
+                   print("📨 [RESPONSE BODY RAW] (none)")
+               }
+               
+               // --- Parse JSON as before ---
+               do {
+                   guard let data = data else {
+                       completion([JsonKeys().message : "Some error occured . Please try again"])
+                       throw JSONError.NoData
+                   }
+                   
+                   guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+                       completion([JsonKeys().message : []])
+                       throw JSONError.ConversionFailed
+                   }
+                   
+                   print("🧩 [RESPONSE BODY JSON]\n\(self.prettyJSONString(json))")
+                   
+                   if originalUrl.contains("authorize.net") {
+                       completion(json)
+                   } else {
+                       let combinedDict = NSMutableDictionary(dictionary: json)
+                       combinedDict["typingCount"] = typingCountVal
+                       completion(NSDictionary(dictionary: combinedDict))
+                   }
+                   
+               } catch {
+                   completion([JsonKeys().message :"Json error occured . Please try again"])
+                   print("❌ JSON Parse Error: \(error.localizedDescription)")
+               }
+           }
+           dataTask.resume()
+       }
     
     func postmanCall(){
         

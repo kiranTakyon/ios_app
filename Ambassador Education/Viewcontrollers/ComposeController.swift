@@ -612,10 +612,24 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
     
     func sendMail() {
         let sendDict = self.getSendDictionary(isReply: isReplyMail)
-        print("sending dictionary is :-",sendDict)
+
+        // Pretty print the outgoing payload
+        if let jsonData = try? JSONSerialization.data(withJSONObject: sendDict, options: [.prettyPrinted]),
+           let jsonStr = String(data: jsonData, encoding: .utf8) {
+            print("🛰️ [SEND MAIL] Request Payload:\n\(jsonStr)")
+        } else {
+            print("🛰️ [SEND MAIL] Request Payload (fallback): \(sendDict)")
+        }
+
         let url = APIUrls().sendMail
-        
-        APIHelper.sharedInstance.apiCallHandler(url, requestType: MethodType.POST, requestString: "",typingCountVal:typingCount, requestParameters: sendDict, completion: { (result) in
+        APIHelper.sharedInstance.apiCallHandler(url,
+                                                requestType: .POST,
+                                                requestString: "",
+                                                typingCountVal: typingCount,
+                                                requestParameters: sendDict) { result in
+            // Print the entire response dictionary you get back from APIHelper
+            print("📬 [SEND MAIL] Full Response (dictionary):\n\(result)")
+
             if let statusCode = result["StatusCode"] as? Int {
                 DispatchQueue.main.async {
                     if statusCode == 1 {
@@ -625,27 +639,24 @@ class ComposeController: UIViewController, RichEditorToolbarDelegate, TaykonProt
                         self.selectedPersonItems.removeAll()
                         self.view.endEditing(true)
                         self.stopLoadingAnimation()
-                        _ = SweetAlert().showAlert("Success", subTitle: "Mail Sent", style: .success, buttonTitle: alertOk, action: { (index) in
+                        _ = SweetAlert().showAlert("Success", subTitle: "Mail Sent", style: .success, buttonTitle: alertOk, action: { index in
                             if index {
                                 self.groupIds.removeAll()
                                 self.backAction(UIButton())
                             }
                         })
                     } else {
-                        //  self.attachmentItems.removeAll()
                         self.stopLoadingAnimation()
                         self.view.endEditing(true)
                     }
                 }
             } else {
-                //  self.attachmentItems.removeAll()
                 self.stopLoadingAnimation()
                 self.view.endEditing(true)
             }
-            print("sent mail response is \(result)")
-            
-        })
+        }
     }
+
     
     //MARK:- removeAutoCompleteOptionFromSuperView
     func removeAutoCompleteOptionFromSuperView() {

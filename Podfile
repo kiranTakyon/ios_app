@@ -28,7 +28,7 @@ def shared_pods
   pod 'SDWebImage'
 end
 
-target 'LPS' do
+target 'Alitqan' do
   shared_pods
 end
 

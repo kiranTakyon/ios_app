@@ -565,79 +565,59 @@ class SlideController: UITableViewController,TaykonProtocol {
     }
     
     
-    func openBuzzApp(){
+    func openBuzzApp() {
         let bundleID = Bundle.main.bundleIdentifier
         var appURLScheme = ""
         var applink = 0
-       // print(bundleID)
-        let details = logInResponseGloabl;
-        
-        //print(details["UMobile"])
-        if ((bundleID?.elementsEqual("com.reportz.habitatv2")) == false)
-        {
+        let details = logInResponseGloabl
+
+        if bundleID != "com.tachyon360.habitat" {
             appURLScheme = "Takyon360Buzz://"
             applink = 1375203859
+            print("📱 Non-habitat bundle detected (\(bundleID ?? "nil")). Using Buzz app, id=\(applink)")
+        } else {
+            appURLScheme = "touchworldbybpro://"
+            applink = 1662188522
+            print("📱 HABITAT bundle detected (\(bundleID ?? "nil")). Using touchworldbybpro, id=\(applink)")
         }
-        else
-        {
-           // if(details["CompanyId"]as! String=="94")
-            //{
-                appURLScheme = "touchworldbybpro://"
-                applink = 1662188522
 
-          /*  }
-            else
-            {
-                appURLScheme = "touchworldbyb://"
-                applink = 1642865230
-            }*/
-        }
-        //Takyon360Buzz://www.example.com/screen1?key1=value1&key2=value2
-        guard let appURL = URL(string: appURLScheme) else {
-            return
-        }
-        
-        if !UIApplication.shared.canOpenURL(appURL){
-            self.showAlertIfAppIsNotInstalled(appID:applink)
-        }
-       else{
-            var dict  = [String : Any]()
-            let md5Data = MD5(string:currentPassword)
-            let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
+        guard let appURL = URL(string: appURLScheme) else { return }
+
+        if !UIApplication.shared.canOpenURL(appURL) {
+            print("⚠️ Cannot open \(appURL). Redirecting to App Store id \(applink)")
+            self.showAlertIfAppIsNotInstalled(appID: applink)
+        } else {
+            var dict = [String: Any]()
+            let md5Data = MD5(string: currentPassword)
+            let md5Hex = md5Data.map { String(format: "%02hhx", $0) }.joined()
             let md5Password = md5Hex
+
             dict[LogInKeys().username] = currentUserName
             dict[LogInKeys().password] = md5Password
             dict[LogInKeys().language] = currentLanguage
             dict[LogInKeys().platform] = "ios"
-            dict[LogInKeys().Package] = Bundle.main.bundleIdentifier
+            dict[LogInKeys().Package] = bundleID
+
             var url = "\(appURL)"
-            if ((bundleID?.elementsEqual("com.reportz.habitatv2")) == false)
-            {
-                url = url + "key1=" + currentUserName + "&key2=" + currentPassword
+            if bundleID != "com.tachyon360.habitat" {
+                url += "key1=\(currentUserName)&key2=\(currentPassword)"
+            } else {
+                if let mobile = details["UMobile"] as? String {
+                    url += "?un=\(mobile)&pass=\(mobile)"
+                }
             }
-            else
-            {
-                UMobile = details["UMobile"] as! String
-                url = url + "?un=" + UMobile + "&pass=" + UMobile
+            print("➡️ Opening URL: \(url)")
+
+            if let ns = URL(string: url) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(ns)
+                } else {
+                    UIApplication.shared.openURL(ns)
+                }
             }
-            let ns = URL(string : url)
-          //  SweetAlert().showAlert(kAppName, subTitle: "You need" + url, style:AlertStyle.warning)
-  
-           /* if #available(iOS 10.0, *) {
-                UIApplication.shared.open(ns!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(dict), completionHandler: nil)
-            }
-            else{
-                UIApplication.shared.open(ns!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary(dict), completionHandler: nil)
-            }
-            */
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(ns!)
-        }
-        else{
-            UIApplication.shared.openURL(ns!)
-        }
         }
     }
+
     
     func showAlertIfAppIsNotInstalled(appID:Int){
         

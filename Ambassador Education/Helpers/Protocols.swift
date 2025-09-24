@@ -9,10 +9,8 @@
 import Foundation
 
 
- protocol TaykonProtocol {
-    
-    
-    func deleteTheSelectedAttachment(index : Int)
+protocol TaykonProtocol: AnyObject {
+    func deleteTheSelectedAttachment(index: Int)
     func downloadPdfButtonAction(url: String,fileName : String?)
     func getBackToParentView(value:Any?,titleValue : String?,isForDraft: Bool, message: TinboxMessage)
     func getBackToParentViewW(value:Any?,titleValue : String?)
